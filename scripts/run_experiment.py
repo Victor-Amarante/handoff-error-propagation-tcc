@@ -1,0 +1,185 @@
+"""Executa a matriz do experimento: perguntas x seeds x tipos de erro x condicoes.
+
+    # ver o tamanho da matriz antes de gastar API
+    uv run python scripts/run_experiment.py --dry-run
+
+    # estudo principal (injecao no Extrator), com braco de controle
+    uv run python scripts/run_experiment.py --error-types value,metadata --include-clean
+
+    # subestudo de atribuicao de estagio (unico onde cabe erro percentual)
+    uv run python scripts/run_experiment.py --injection-stage analyst \\
+        --error-types percentage --questions 8
+
+Retoma por padrao: celulas que ja chegaram ao `run_end` sao puladas, entao o
+comando pode ser re-executado apos uma interrupcao sem refazer nem re-cobrar
+o que ja rodou. `--force` refaz tudo.
+"""
+
+from __future__ import annotations
+
+import argparse
+import json
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+from handoff import config  # noqa: E402
+from handoff.conditions import Condition, Stage  # noqa: E402
+from handoff.injector import ERROR_TYPES, InjectionError  # noqa: E402
+from handoff.logger import is_complete, log_path  # noqa: E402
+from handoff.run import (  # noqa: E402
+    PipelineError,
+    analyze_state,
+    extract_state,
+    run_cell,
+)
+
+
+def load_subset(limit: int | None) -> list[dict]:
+    if not config.SUBSET_PATH.exists():
+        raise SystemExit(
+            f"{config.SUBSET_PATH} nao existe. Rode scripts/build_subset.py primeiro."
+        )
+    rows = [
+        json.loads(line)
+        for line in config.SUBSET_PATH.read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    return rows[:limit] if limit else rows
+
+
+def summarize_cost() -> None:
+    """Tokens e custo acumulados a partir dos proprios logs."""
+    pipeline = auditor = 0
+    cost = 0.0
+    has_cost = False
+    for path in config.LOG_DIR.glob("*.jsonl"):
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if not line.strip():
+                continue
+            event = json.loads(line)
+            usage = event.get("usage")
+            if not usage:
+                continue
+            if event["event_type"] == "audit":
+                auditor += usage.get("total_tokens", 0)
+            else:
+                pipeline += usage.get("total_tokens", 0)
+            if usage.get("cost_usd") is not None:
+                cost += usage["cost_usd"]
+                has_cost = True
+    print(f"\ntokens: pipeline={pipeline:,} auditor={auditor:,} total={pipeline + auditor:,}")
+    print(
+        f"custo: US$ {cost:.4f}"
+        if has_cost
+        else "custo: indisponivel (preencha config.PRICE_PER_MTOK)"
+    )
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--questions", type=int, default=None, help="padrao: todas")
+    parser.add_argument("--seeds", default=",".join(str(s) for s in config.SEEDS))
+    parser.add_argument("--conditions", default="A,B,C,D")
+    parser.add_argument(
+        "--error-types",
+        default="value,metadata",
+        help=f"lista separada por virgula, de {ERROR_TYPES}",
+    )
+    parser.add_argument(
+        "--injection-stage",
+        default="extractor",
+        choices=["extractor", "analyst"],
+        help="'analyst' e o subestudo de atribuicao de estagio (secao 7)",
+    )
+    parser.add_argument("--metadata-subtype", default="year_shift",
+                        choices=["year_shift", "unit_shift"])
+    parser.add_argument("--include-clean", action="store_true",
+                        help="tambem roda o braco de controle, sem injecao")
+    parser.add_argument("--force", action="store_true", help="refaz celulas completas")
+    parser.add_argument("--dry-run", action="store_true")
+    args = parser.parse_args()
+
+    rows = load_subset(args.questions)
+    seeds = [int(s) for s in args.seeds.split(",")]
+    conditions = [Condition(c.strip()) for c in args.conditions.split(",")]
+    stage = Stage(args.injection_stage)
+    arms: list[str | None] = [t.strip() for t in args.error_types.split(",") if t.strip()]
+    if args.include_clean:
+        arms = [None, *arms]
+
+    cells = [
+        (row, seed, arm, cond)
+        for row in rows
+        for seed in seeds
+        for arm in arms
+        for cond in conditions
+    ]
+    def cell_path(cell):
+        row, seed, arm, cond = cell
+        return log_path(
+            row["question_id"],
+            arm,
+            cond,
+            seed,
+            stage,
+            variant=args.metadata_subtype if arm == "metadata" else None,
+        )
+
+    pending = [c for c in cells if args.force or not is_complete(cell_path(c))]
+
+    print(
+        f"modelo={config.MODEL_ID} injecao_em={stage}\n"
+        f"{len(rows)} perguntas x {len(seeds)} seeds x {len(arms)} bracos "
+        f"x {len(conditions)} condicoes = {len(cells)} celulas "
+        f"({len(pending)} pendentes)"
+    )
+    if args.dry_run:
+        calls_per_cell = 2 if stage is Stage.EXTRACTOR else 1
+        shared = len(rows) * len(seeds) * (2 if stage is Stage.ANALYST else 1)
+        print(
+            f"chamadas estimadas: {len(pending) * (calls_per_cell + 1)} "
+            f"(estagios+auditor) + ate {shared} compartilhadas nao cacheadas"
+        )
+        return 0
+
+    started = time.perf_counter()
+    done = skipped = failed = 0
+    for row, seed, arm, condition in pending:
+        try:
+            extraction = extract_state(row, seed)
+            analysis = (
+                analyze_state(row, seed, extraction) if stage is Stage.ANALYST else None
+            )
+            run_cell(
+                row,
+                seed,
+                arm,  # type: ignore[arg-type]
+                condition,
+                extraction=extraction,
+                analysis=analysis,
+                injection_stage=stage,
+                metadata_subtype=args.metadata_subtype,
+            )
+            done += 1
+        except InjectionError as exc:
+            print(f"  PULADA {row['question_id']} {arm} {condition}: {exc}")
+            skipped += 1
+        except PipelineError as exc:
+            print(f"  FALHOU {row['question_id']} {arm} {condition}: {exc}")
+            failed += 1
+        if (done + skipped + failed) % 10 == 0:
+            print(f"  ... {done + skipped + failed}/{len(pending)}")
+
+    print(
+        f"\n{done} celulas concluidas, {skipped} puladas, {failed} falhas "
+        f"em {(time.perf_counter() - started) / 60:.1f} min"
+    )
+    summarize_cost()
+    return 0 if failed == 0 else 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

@@ -1,7 +1,21 @@
 [project]
 name = "handoff-error-propagation-tcc"
 version = "0.1.0"
-description = "Add your description here"
+description = "TCC - contratos de handoff, propagacao e atribuicao de erros em pipelines de IA generativa"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "agno>=3.0.1",
+    "openai>=3.6.0",
+    "pydantic>=2.13.5",
+    "python-dotenv>=1.2.3",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
