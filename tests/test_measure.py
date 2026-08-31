@@ -302,6 +302,34 @@ def test_rcca_rejeita_id_alucinado(tmp_path):
 # ==========================================================================
 # Pareamento
 # ==========================================================================
+def test_estagio_compartilhado_nao_conta_para_schema_validity(tmp_path):
+    """No subestudo o Analista e compartilhado: canonico e igual nas 4 condicoes.
+
+    Contar o `schema_valid=True` dele daria Schema Validity 1.0 para a condicao
+    A, que por definicao nao tem contrato estrutural (secao 9: "aplicavel a
+    B, C e D").
+    """
+    from handoff.measure import schema_validity
+
+    path = tmp_path / "sub.jsonl"
+    logger = JsonlLogger(
+        path, run_id="r", condition=Condition.A, seed=1, question_id="q1",
+        doc_id="doc", error_type="percentage", injection_stage=Stage.ANALYST,
+        gold=GOLD,
+    )
+    with logger:
+        logger.emit("run_start", gold=GOLD)
+        logger.emit("stage_output", stage=Stage.ANALYST, schema_valid=True,
+                    output_raw="canonico", notes={"shared_across_conditions": True})
+        logger.emit("stage_output", stage=Stage.WRITER, schema_valid=None,
+                    output_raw="prosa livre", notes={})
+        logger.emit("run_end", output_raw="prosa livre", gold=GOLD)
+
+    cell = load_cell(path)
+    assert cell.schema_flags == [None], "so o estagio da condicao conta"
+    assert schema_validity(cell) is None, "A nao tem contrato estrutural"
+
+
 def test_controle_do_subestudo_pareia_com_a_celula_injetada_no_analista(tmp_path):
     """O controle precisa carregar o braco (`injection_stage`), nao None.
 

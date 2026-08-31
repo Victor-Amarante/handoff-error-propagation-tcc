@@ -254,6 +254,13 @@ def s9_metricas():
     check("9", "instrumento identico nas 4 condicoes", not contaminadas,
           "nenhuma metrica de containment usa claims/derived_from"
           if not contaminadas else f"contaminadas: {contaminadas}")
+    # No subestudo o Analista e compartilhado (canonico, igual nas 4
+    # condicoes). Contar o schema_valid dele daria Schema Validity 1.0 para a
+    # condicao A, que nao tem contrato estrutural.
+    check("9", "estagio compartilhado fora da Schema Validity",
+          "shared_across_conditions" in inspect.getsource(measure.load_cell),
+          "so estagios que rodam por condicao contam")
+
     check("9", "lineage e sinal secundario, nao metrica primaria",
           "derived_from" in inspect.getsource(measure.lineage_agreement),
           "lineage_agreement valida o instrumento onde ha proveniencia")

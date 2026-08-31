@@ -227,9 +227,15 @@ def load_cell(path: str | Path) -> Cell:
             stage = event["stage"]
             cell.stage_text[stage] = event.get("output_raw") or ""
             cell.stage_claims[stage] = event.get("claims") or []
-            cell.schema_flags.append(event.get("schema_valid"))
-            checks = event.get("contract_checks") or {}
-            cell.contract_flags.append(checks.get("contract_valid"))
+            # Estagio COMPARTILHADO nao mede o contrato desta condicao: ele roda
+            # uma vez, em forma canonica, e serve as quatro. No subestudo o
+            # Analista e compartilhado, e contar o `schema_valid=True` dele
+            # daria Schema Validity 1.0 para a condicao A -- que por definicao
+            # nao tem contrato estrutural (secao 9: "aplicavel a B, C e D").
+            if not (event.get("notes") or {}).get("shared_across_conditions"):
+                cell.schema_flags.append(event.get("schema_valid"))
+                checks = event.get("contract_checks") or {}
+                cell.contract_flags.append(checks.get("contract_valid"))
         elif etype == "audit":
             cell.audit = event.get("audit_report")
         elif etype == "run_end":
