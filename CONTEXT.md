@@ -170,7 +170,7 @@ Não é preciso provar que D é sempre superior. O valor está em decompor causa
 - **Structured outputs:** Pydantic (define os schemas de B/C/D; resolve Schema Validity automaticamente via validação, sem parser manual)
 - **Modelo:** API da OpenAI (modelo específico a definir — ex: gpt-4o, gpt-4o-mini — deve permanecer **constante entre as 4 condições**, conforme exigido pelo desenho experimental)
 - **Structured outputs:** usar o suporte nativo da OpenAI a Structured Outputs (`response_format` com JSON Schema, ou `.parse()` do SDK com Pydantic direto) para as condições B/C/D — reforça Schema Validity sem depender de prompting solto
-- **Prompt caching:** a OpenAI aplica caching automático em prompts longos repetidos (sem configuração manual), o que já cobre o cenário de reuso do documento-fonte entre execuções/condições
+- **Prompt caching:** ~~a OpenAI aplica caching automático em prompts longos repetidos, o que já cobre o reuso do documento-fonte~~ — **medido e falso neste desenho.** `cached_tokens = 0` em todas as células do piloto. O caching automático exige prefixo longo e idêntico entre chamadas; aqui o documento-fonte só aparece no prompt do Extrator (que já é cacheado em disco por nós, então não se repete), e os prompts downstream são curtos e variam por condição. Não contar com isso na análise de custo
 - **Armazenamento:** **JSONL** (um JSON por linha), não CSV puro e não MySQL
   - Motivo: dados são naturalmente aninhados (`derived_from` é lista; payloads de C/D têm campos estruturados). CSV forçaria achatamento/serialização manual. JSONL carrega direto em Pandas (`pd.read_json(lines=True)`) e não exige setup de banco.
   - Um arquivo `.jsonl` por execução completa, ex: `run_condicaoB_seed3.jsonl`
@@ -223,11 +223,18 @@ handoff-error-propagation-tcc/
    US$ 0,02 / output US$ 1,20 por 1M tokens.
    **O modelo rejeita `temperature=0`** ("only the default (1) value is supported"), então
    o parâmetro é omitido da requisição (`HANDOFF_TEMPERATURE=`) e o pipeline roda em
-   temperatura 1. Consequência metodológica: a variância entre execuções é maior do que
-   seria com decodificação gulosa, o que **aumenta** o valor das réplicas por seed — o
-   intervalo de confiança da seção 8 passa a capturar variação real de execução, não
-   ruído residual. A injeção de erro continua determinística: o ground truth não depende
+   temperatura 1. A injeção de erro continua determinística: o ground truth não depende
    do modelo.
+   **Réplicas por seed não geram variância neste desenho — medido.** Apesar da temperatura
+   1, seed 1 e seed 2 produziram respostas finais numericamente idênticas em 8/8 células
+   limpas e 8/8 injetadas (2 perguntas × 4 condições). O modelo converge na aritmética
+   mesmo variando a prosa. **Não tratar seeds como observações independentes**: com
+   respostas idênticas, o intervalo de confiança sairia artificialmente estreito por
+   triplicar o n com dado duplicado. A unidade de análise deve ser a **pergunta**
+   (n = 25). Antes da rodada principal, medir a taxa de discordância entre duas seeds no
+   conjunto inteiro; se continuar ~0, rodar uma seed só. Refazer essa medição sempre que
+   modelo ou `reasoning_effort` mudarem — com `gpt-5.4-mini` as seeds variavam
+   (3,1% / 4,4% / 3,1% na mesma célula).
    **`reasoning_effort = "medium"`**, constante nas 4 condições. É um confundidor de
    primeira ordem, não um detalhe de performance: mais esforço aumenta a chance de o
    próprio estágio detectar a inconsistência do erro injetado, o que comprimiria as

@@ -16,26 +16,30 @@ cp .env.example .env      # preencha OPENAI_API_KEY
 ## Uso
 
 ```bash
-# 1. subconjunto do FinanceBench (~20 perguntas)
-uv run python scripts/build_subset.py --n 20
+# 1. subconjunto do FinanceBench (a cota reserva vagas para perguntas de
+#    resposta percentual, senao o braco de erro percentual fica magro)
+uv run python scripts/build_subset.py --n 25 --ensure-percentage 15
 
-# 2. preflight: valida o subset antes de gastar a matriz inteira
+# 2. preflight de conformidade: o codigo implementa a proposta? (sem API)
+uv run python scripts/conformance.py
+
+# 3. preflight de dados: valida o subset antes de gastar a matriz inteira
 #    (so o Extrator, cacheado -- o custo e reaproveitado pelo experimento)
 uv run python scripts/preflight.py --with-analyst
 
-# 3. piloto: 2 perguntas x 4 condicoes, saida legivel
+# 4. piloto: 2 perguntas x 4 condicoes, saida legivel
 uv run python scripts/run_pilot.py --questions 2 --error-type none    # controle
 uv run python scripts/run_pilot.py --questions 2 --error-type value
 
-# 4. matriz completa (dry-run primeiro: mostra o tamanho antes de gastar API)
+# 5. matriz completa (dry-run primeiro: mostra o tamanho antes de gastar API)
 uv run python scripts/run_experiment.py --dry-run
 uv run python scripts/run_experiment.py --error-types value,metadata --include-clean
 
-# 5. subestudo de atribuicao de estagio (unico lugar onde cabe erro percentual)
+# 6. subestudo de atribuicao de estagio (unico lugar onde cabe erro percentual)
 uv run python scripts/run_experiment.py --injection-stage analyst \
-    --error-types percentage --questions 8
+    --error-types percentage --include-clean
 
-# 6. testes deterministicos (nao gastam API)
+# 7. testes deterministicos (nao gastam API)
 uv run pytest
 ```
 
@@ -93,7 +97,7 @@ handoff/
   logger.py          JSONL, um arquivo por celula
   run.py             uma celula experimental completa
   measure.py         instrumento de medida, uniforme nas 4 condicoes
-scripts/             build_subset, preflight, run_pilot, run_experiment
+scripts/             build_subset, conformance, preflight, run_pilot, run_experiment
 data/                financebench/, cache/, logs/
 tests/               injector, serializacao, logging, guarda de extracao, fiacao
 ```
@@ -109,11 +113,14 @@ truth, e as metricas saem na analise.
 | acuracia por tipo de erro | `error_type` |
 | Correction Rate | `injection.original_value` vs resposta final |
 | Error Survival Rate | `injection.corrupted_value` vs `output_raw` do writer |
-| Propagation Depth | `claims` / `output_raw` / `derived_from` por `stage_output` |
-| Error Amplification | `claims` por estagio + `derived_from` |
+| Propagation Depth | `output_raw` por `stage_output`, contra o mesmo estagio no controle |
+| Error Amplification | idem: numeros novos, ausentes no controle e diferentes do gold |
+| destino do erro | `fate`: preservado/transformado/amplificado/corrigido/contido |
 | RCCA / FESA | `audit_report` x `injection` |
 | Schema Validity | `schema_valid`, `schema_errors`, `contract_checks` |
 | Custo operacional | `usage` por evento (tokens, latencia, custo, nº de chamadas) |
 
-Em A nao ha `derived_from`: containment e reconstruido na analise por matching
-numerico sobre `output_raw`, que por isso e gravado em toda condicao.
+Containment sai de `output_raw` nas 4 condicoes, nunca de `claims`/`derived_from`:
+A nao tem claims e B nao tem lineage, entao usa-los faria D parecer mais
+amplificadora so por emitir mais campos -- mediria o formato do contrato, nao o
+comportamento do erro. `derived_from` vira sinal secundario (`lineage_agreement`).

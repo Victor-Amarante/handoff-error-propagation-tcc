@@ -31,6 +31,23 @@ proposito, porque sem a execucao limpa elas nao sao mensuraveis.
 | Schema Validity | `schema_validity`, `contract_validity` |
 | custo | colunas `*_tokens`, `*_cost_usd`, `latency_ms`, `n_calls` |
 
+## Quatro coisas a nao esquecer
+
+**A unidade de analise e a PERGUNTA, nao a celula.** Seeds nao geram variancia
+neste desenho: medido, seed 1 e seed 2 dao respostas finais identicas em 8/8
+celulas limpas e 8/8 injetadas. Agrupar por `seed` e tratar as replicas como
+observacoes independentes triplicaria o n com dado duplicado e estreitaria o
+intervalo de confianca artificialmente. Calcule os intervalos sobre as 25
+perguntas, com `groupby(["condition", "question_id"])` antes de agregar.
+Confira a premissa nos seus proprios dados:
+
+```python
+# taxa de discordancia entre replicas: deve ser ~0 neste modelo
+piv = df.pivot_table(index=["question_id", "condition", "error_type"],
+                     columns="seed", values="esr")
+(piv[1] != piv[2]).mean()
+```
+
 ## Tres coisas a nao esquecer
 
 **Toda metrica de containment se compara ao braco de controle da MESMA

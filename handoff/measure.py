@@ -329,6 +329,28 @@ Fate = Literal[
 ]
 
 
+def correction(injected: Cell, control: Cell) -> bool | None:
+    """Correction Rate: o pipeline chegou na resposta certa apesar do erro?
+
+    Devolve None -- nao mensuravel -- em dois casos, e isso importa mais do que
+    parece:
+
+    * `sem_efeito`: o claim corrompido estava fora do caminho da resposta, entao
+      o pipeline nunca teve o que corrigir. Contar como sucesso premiaria a
+      condicao que por acaso recebeu mais injecoes irrelevantes.
+    * linha de base ja errada: se a execucao limpa erra a pergunta, a resposta
+      final errada nao diz nada sobre a injecao.
+
+    Sem esses dois cortes a metrica infla: no piloto, 2 de 16 celulas eram
+    `sem_efeito` com resposta correta e seriam contadas como correcao.
+    """
+    if fate(injected, control) == "sem_efeito":
+        return None
+    if final_correct(control) is not True:
+        return None
+    return final_correct(injected) is True
+
+
 def fate(injected: Cell, control: Cell) -> Fate:
     """Destino do erro -- passo 6 do protocolo (secao 8 da proposta).
 
@@ -480,11 +502,8 @@ def to_records(cells: Iterable[Cell]) -> list[dict]:
                 "propagation_depth": propagation_depth(injected, control) if control else None,
                 "amplification": amplification(injected, control) if control else None,
                 "fate": fate(injected, control) if control else None,
-                # Correction Rate: errou por causa da injecao ou ja errava antes?
-                "corrected": (
-                    final_correct(injected) is True and control is not None
-                    and final_correct(control) is True
-                ),
+                # Correction Rate. None = nao mensuravel; ver `correction`.
+                "corrected": correction(injected, control) if control else None,
             }
         )
         records.append(row)

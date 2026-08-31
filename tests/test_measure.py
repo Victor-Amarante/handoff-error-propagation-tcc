@@ -12,8 +12,10 @@ from handoff.measure import (
     Number,
     amplification,
     answer_matches_gold,
+    correction,
     esr,
     extract_numbers,
+    final_correct,
     fate,
     fesa,
     load_cell,
@@ -193,6 +195,44 @@ def test_sem_efeito_nao_e_contencao(tmp_path, control):
     )
     assert propagation_depth(injected, control) == 0
     assert fate(injected, control) == "sem_efeito"
+
+
+def test_correction_rate_nao_conta_erro_fora_do_caminho(tmp_path, control):
+    """`sem_efeito` com resposta certa nao e correcao: nada foi corrigido.
+
+    Contar como sucesso premiaria a condicao que por acaso recebeu mais
+    injecoes irrelevantes.
+    """
+    injected = _write(
+        tmp_path, "inj", error_type="value",
+        analyst="margins 3.1, 2.3, 3.1", writer="average 2.8%", final="The average was 2.8%.",
+    )
+    assert fate(injected, control) == "sem_efeito"
+    assert correction(injected, control) is None
+
+
+def test_correction_rate_conta_erro_que_entrou_e_foi_corrigido(tmp_path, control):
+    injected = _write(
+        tmp_path, "inj", error_type="value",
+        analyst="input said 34903 but evidence shows 39403; using 39403",
+        writer="average 2.8%", final="The average was 2.8%.",
+    )
+    assert fate(injected, control) == "corrigido"
+    assert correction(injected, control) is True
+
+
+def test_correction_rate_nula_quando_a_linha_de_base_ja_errava(tmp_path):
+    """Resposta final errada nao diz nada sobre a injecao se o limpo ja errava."""
+    ctl = _write(
+        tmp_path, "clean_bad", error_type=None,
+        analyst="margins 9, 9, 9", writer="average 9.9%", final="The average was 9.9%.",
+    )
+    injected = _write(
+        tmp_path, "inj_bad", error_type="value",
+        analyst="margins 8, 8, 8", writer="average 8.8%", final="The average was 8.8%.",
+    )
+    assert final_correct(ctl) is False
+    assert correction(injected, ctl) is None
 
 
 def test_amplificacao_conta_so_numeros_novos_e_errados(tmp_path, control):

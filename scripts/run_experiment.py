@@ -170,6 +170,18 @@ def main() -> int:
         except PipelineError as exc:
             print(f"  FALHOU {row['question_id']} {arm} {condition}: {exc}")
             failed += 1
+        except KeyboardInterrupt:
+            print("\ninterrompido -- as celulas concluidas estao gravadas; "
+                  "rode de novo para retomar de onde parou")
+            break
+        except Exception as exc:  # noqa: BLE001
+            # Erro de API (rate limit, rede, quota): registrar e seguir. Numa
+            # matriz de centenas de celulas, deixar a excecao subir jogaria
+            # fora horas de execucao por uma falha transitoria de uma celula.
+            # A celula fica sem `run_end`, entao a retomada a refaz sozinha.
+            print(f"  ERRO   {row['question_id']} {arm} {condition}: "
+                  f"{type(exc).__name__}: {str(exc)[:120]}")
+            failed += 1
         if (done + skipped + failed) % 10 == 0:
             print(f"  ... {done + skipped + failed}/{len(pending)}")
 
