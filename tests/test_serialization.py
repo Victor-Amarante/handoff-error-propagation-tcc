@@ -85,6 +85,36 @@ def test_mesmo_valor_corrompido_nas_quatro_condicoes():
         assert payloads[condition][0]["value"] == record.corrupted_value
 
 
+@pytest.mark.parametrize(
+    ("error_type", "subtype"),
+    [("value", "year_shift"), ("metadata", "year_shift"), ("metadata", "unit_shift")],
+)
+def test_toda_perturbacao_chega_a_condicao_a(error_type, subtype):
+    """Regressao: `year_shift` mexia so no campo `year`, mas a prosa de A e
+    renderizada a partir de `period or year` -- e todos os claims do subset tem
+    `period`. O handoff de A saia IDENTICO ao limpo, o erro nunca chegava a
+    condicao A e o braco de metadata teria medido contencao artificial em 100%
+    das celulas de A, quebrando o passo 3 do protocolo e a comparacao RQ1.
+    """
+    limpo = [CLAIM]
+    corrompido, _ = inject(limpo, error_type, metadata_subtype=subtype)
+    assert to_handoff(corrompido, Condition.A) != to_handoff(limpo, Condition.A)
+
+
+def test_year_shift_reescreve_o_periodo_da_prosa():
+    corrompido, record = inject([CLAIM], "metadata", metadata_subtype="year_shift")
+    assert corrompido[0].year == 2027
+    assert corrompido[0].period == "FY2027"
+    assert "FY2027" in to_handoff(corrompido, Condition.A)
+    # o ground truth continua ancorado no campo primario
+    assert (record.field, record.original_value, record.corrupted_value) == (
+        "year",
+        2026,
+        2027,
+    )
+    assert record.corrupted_claim["period"] == "FY2027"
+
+
 def test_d_exige_evidencia():
     sem_evidencia = CLAIM.model_copy(update={"evidence": None})
     with pytest.raises(ValueError):

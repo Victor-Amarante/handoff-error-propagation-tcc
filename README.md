@@ -16,9 +16,17 @@ cp .env.example .env      # preencha OPENAI_API_KEY
 ## Uso
 
 ```bash
-# 1. subconjunto do FinanceBench (a cota reserva vagas para perguntas de
-#    resposta percentual, senao o braco de erro percentual fica magro)
-uv run python scripts/build_subset.py --n 25 --ensure-percentage 15
+# 1. conjunto de perguntas. O experimento roda o FinanceBench aberto INTEIRO
+#    (150 perguntas, os 3 question_types); o jsonl bruto vem do repositorio
+#    do benchmark e fica em data/financebench/
+curl -sL -o data/financebench/financebench_open_source.jsonl \
+  https://raw.githubusercontent.com/patronus-ai/financebench/main/data/financebench_open_source.jsonl
+uv run python scripts/build_subset.py --n 150 --question-type all \
+  --from-file data/financebench/financebench_open_source.jsonl
+
+#    (variante enxuta, se algum dia for preciso reduzir: 25 perguntas de
+#     resposta numerica limpa, com cota para o braco percentual)
+#    uv run python scripts/build_subset.py --n 25 --ensure-percentage 15
 
 # 2. preflight de conformidade: o codigo implementa a proposta? (sem API)
 uv run python scripts/conformance.py
@@ -41,7 +49,16 @@ uv run python scripts/run_experiment.py --injection-stage analyst \
 
 # 7. testes deterministicos (nao gastam API)
 uv run pytest
+
+# 8. analise: agrega os .jsonl, calcula as metricas e gera a tabela do artigo
+uv sync --group analysis        # pandas, matplotlib, ipykernel
+#    abra analysis/metrics.ipynb
 ```
+
+24 das 150 perguntas tem resposta qualitativa ("Yes, ...", "There are none"):
+nelas a dimensao **Correctness** sai `None` de proposito (`answer_matches_gold`
+nao inventa acerto sem numero no gold), enquanto containment, RCCA/FESA e custo
+continuam mensuraveis, porque comparam com o **controle** e nao com o gold.
 
 `run_experiment.py` retoma por padrao: celulas que chegaram ao `run_end` sao
 puladas, entao da para interromper e re-executar sem refazer nem re-cobrar.
@@ -99,6 +116,7 @@ handoff/
   measure.py         instrumento de medida, uniforme nas 4 condicoes
 scripts/             build_subset, conformance, preflight, run_pilot, run_experiment
 data/                financebench/, cache/, logs/
+analysis/            metrics.ipynb -- agrega os logs, calcula IC e gera a tabela do artigo
 tests/               injector, serializacao, logging, guarda de extracao, fiacao
 ```
 

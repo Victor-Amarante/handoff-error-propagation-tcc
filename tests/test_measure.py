@@ -104,7 +104,7 @@ def test_answer_matches_gold():
 # Celulas sinteticas
 # ==========================================================================
 def _write(tmp_path, name, *, error_type, analyst, writer, final, audit=None,
-           stage=Stage.EXTRACTOR):
+           stage=Stage.EXTRACTOR, record=None):
     path = tmp_path / f"{name}.jsonl"
     logger = JsonlLogger(
         path,
@@ -117,10 +117,11 @@ def _write(tmp_path, name, *, error_type, analyst, writer, final, audit=None,
         injection_stage=stage,
         gold=GOLD,
     )
+    record = record or RECORD
     with logger:
         logger.emit("run_start", gold=GOLD)
         if error_type:
-            logger.emit("injection", stage=Stage.EXTRACTOR, injection=RECORD)
+            logger.emit("injection", stage=Stage.EXTRACTOR, injection=record)
         for stage, text in ((Stage.ANALYST, analyst), (Stage.WRITER, writer)):
             logger.emit(
                 "stage_output",
@@ -131,9 +132,9 @@ def _write(tmp_path, name, *, error_type, analyst, writer, final, audit=None,
                 usage=Usage(input_tokens=10, output_tokens=5, total_tokens=15,
                             cost_usd=0.001, latency_ms=100.0),
             )
-        logger.emit("audit", audit_report=audit, injection=RECORD if error_type else None)
+        logger.emit("audit", audit_report=audit, injection=record if error_type else None)
         logger.emit("run_end", output_raw=final, gold=GOLD,
-                    injection=RECORD if error_type else None)
+                    injection=record if error_type else None)
     return load_cell(path)
 
 
@@ -185,6 +186,41 @@ def test_erro_corrigido_quando_valor_original_reaparece(tmp_path, control):
         writer="average 2.8%", final="The average was 2.8%.",
     )
     assert fate(injected, control) == "corrigido"
+
+
+YEAR_RECORD = InjectionRecord(
+    error_type="metadata",
+    error_subtype="year_shift",
+    rule="ano deslocado em +1 (periodo reescrito: 'FY2017' -> 'FY2018')",
+    selection_rule="teste",
+    stage_injected=Stage.EXTRACTOR,
+    target_claim_id="C01",
+    field="year",
+    original_value=2017,
+    corrupted_value=2018,
+    original_claim={"metric": "revenue", "year": 2017, "period": "FY2017"},
+    corrupted_claim={"metric": "revenue", "year": 2018, "period": "FY2018"},
+)
+
+
+def test_recusa_nao_e_correcao_mesmo_com_o_ano_original_no_trace(tmp_path, control):
+    """Regressao do braco metadata (caso real: financebench_id_02608, condicao B).
+
+    O ano original reaparece no trace por dois motivos que nada tem a ver com
+    correcao -- a pergunta o cita e os claims irmaos nao corrompidos o carregam
+    -- entao 'valor original reapareceu downstream' dava falso-positivo
+    sistematico em toda a classe year_shift. Aqui o Redator RECUSA responder: a
+    resposta perde a figura que a execucao limpa entregava. Isso e contencao.
+    """
+    injected = _write(
+        tmp_path, "inj", error_type="metadata", record=YEAR_RECORD,
+        analyst='{"claims":[]}',
+        writer='{"answer_text":"cannot be determined","answer_claim":{"year":2017}}',
+        final="The FY2015-FY2017 three-year average margin cannot be determined.",
+    )
+    assert propagation_depth(injected, control) >= 1
+    assert fate(injected, control) == "contido"
+    assert correction(injected, control) is False
 
 
 def test_sem_efeito_nao_e_contencao(tmp_path, control):

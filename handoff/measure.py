@@ -364,6 +364,11 @@ def fate(injected: Cell, control: Cell) -> Fate:
     em nenhum estagio, o claim corrompido provavelmente estava fora do caminho
     da resposta. Somar esses casos a `contido` inflaria a contencao com casos
     em que o contrato nunca foi testado.
+
+    Correcao x contencao: as duas terminam com o erro fora da resposta final. O
+    que as separa e a resposta ter voltado a ser a da execucao limpa
+    (correcao) ou a figura ter simplesmente sumido -- recusa, omissao --
+    o que e contencao.
     """
     final = extract_numbers(injected.final_answer)
     corrupted = _corrupted_value(injected)
@@ -376,9 +381,30 @@ def fate(injected: Cell, control: Cell) -> Fate:
         return "amplificado" if amplification(injected, control) > 0 else "transformado"
     if depth == 0:
         return "sem_efeito"
-    restaurou = original is not None and any(
-        contains_number(extract_numbers(injected.stage_text.get(s.value, "")), original)
-        for s in DOWNSTREAM
+
+    # Chegamos aqui com `difference(final, controle) == []`: a resposta injetada
+    # nao trouxe numero NOVO. Mas ela pode ter PERDIDO um -- uma recusa ("cannot
+    # be determined") descarta a figura que a execucao limpa entregava. Como
+    # `difference` e assimetrico, sem olhar o outro sentido esse caso caía na
+    # regra de restauracao abaixo e virava "corrigido".
+    perdeu_a_figura = bool(difference(extract_numbers(control.final_answer), final))
+
+    # `original` reaparecer downstream so significa restauracao se a resposta
+    # final tambem voltou a ser a da execucao limpa. Sem essa condicao a regra
+    # tem falso-positivo sistematico na classe `metadata`/year_shift: o ano
+    # original aparece na propria pergunta ("FY2015-FY2017"), que o Redator
+    # reafirma, e nos claims irmaos nao corrompidos -- observado numa celula
+    # real, em que o Redator recusou responder e ainda assim era classificada
+    # como correcao.
+    restaurou = (
+        not perdeu_a_figura
+        and original is not None
+        and any(
+            contains_number(
+                extract_numbers(injected.stage_text.get(s.value, "")), original
+            )
+            for s in DOWNSTREAM
+        )
     )
     return "corrigido" if restaurou else "contido"
 

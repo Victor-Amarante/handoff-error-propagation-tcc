@@ -5,7 +5,7 @@ a mesma, e a perturbacao e registrada como ground truth do experimento:
 
     value error       $12.4M -> $14.2M   transposicao de digitos adjacentes
     percentage error  8.1%   -> 11.1%    deslocamento fixo de +3.0 p.p.
-    metadata error    2025   -> 2026     year_shift (+1)
+    metadata error    2025   -> 2026     year_shift (+1, e `period` junto)
                       USD_M  -> USD_B    unit_shift (uma ordem de grandeza acima)
 
 Toda perturbacao precisa ser DETECTAVEL na saida final: um erro menor que o
@@ -145,6 +145,29 @@ def shift_year(year: int) -> tuple[int, str]:
     return year + 1, "ano deslocado em +1"
 
 
+#: `period` ("FY2017", "Q3 2017") repete o ano em forma textual. A condicao A e
+#: renderizada a partir de `period or year` (serialization.render_claim_text),
+#: entao deslocar so o campo `year` deixaria o handoff de A IDENTICO ao limpo:
+#: o erro de metadata nunca chegaria a condicao A, e o braco inteiro mediria
+#: contencao artificial em vez do efeito do contrato. Corrigir o `period` junto
+#: mantem o estado canonico internamente consistente e o mesmo erro visivel nas
+#: 4 condicoes (passo 3 do protocolo). B/C/D nao carregam `period`, entao para
+#: elas nada muda.
+def shift_period(period: str | None, original_year: int, new_year: int) -> str | None:
+    """Reescreve o ano dentro do rotulo de periodo: 'FY2017' -> 'FY2018'.
+
+    Devolve None quando o periodo existe mas nao menciona o ano original: sem
+    o ano ali, nao ha o que reescrever, e manter o rotulo antigo esconderia a
+    perturbacao na condicao A. Com `period=None`, `render_claim_text` cai no
+    proprio `year` -- ja corrompido -- e o erro volta a ser visivel.
+    """
+    if not period:
+        return period
+    if str(original_year) not in period:
+        return None
+    return period.replace(str(original_year), str(new_year))
+
+
 def escalate_unit(unit: str) -> tuple[str, str]:
     if unit not in UNIT_ESCALATION:
         raise InjectionError(f"unidade sem regra de escalonamento: {unit}")
@@ -234,6 +257,11 @@ def inject(
         claims, error_type, gold_answer, eligible_ids
     )
 
+    #: Campos corrompidos alem do campo primario. So o `year_shift` usa: o
+    #: rotulo `period` precisa acompanhar o ano para que a perturbacao apareca
+    #: tambem na prosa da condicao A (ver shift_period).
+    extra: dict = {}
+
     if error_type == "value":
         field, subtype = "value", "digit_transposition"
         corrupted, rule = transpose_digits(target.value)
@@ -246,6 +274,14 @@ def inject(
         field, subtype = "year", "year_shift"
         corrupted, rule = shift_year(target.year)
         original = target.year
+        new_period = shift_period(target.period, target.year, corrupted)
+        if new_period != target.period:
+            extra["period"] = new_period
+            rule += (
+                f" (periodo reescrito: {target.period!r} -> {new_period!r})"
+                if new_period
+                else f" (periodo {target.period!r} descartado: nao menciona o ano)"
+            )
     elif error_type == "metadata":
         field, subtype = "unit", "unit_shift"
         corrupted, rule = escalate_unit(target.unit)
@@ -253,7 +289,7 @@ def inject(
     else:
         raise InjectionError(f"tipo de erro desconhecido: {error_type}")
 
-    corrupted_claim = target.model_copy(update={field: corrupted})
+    corrupted_claim = target.model_copy(update={field: corrupted, **extra})
     new_claims = [corrupted_claim if c.claim_id == target.claim_id else c for c in claims]
 
     record = InjectionRecord(

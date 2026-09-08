@@ -299,6 +299,35 @@ handoff-error-propagation-tcc/
    permite rodar um braço em JSON mode sem gramática restrita, se quisermos medir
    validade estrutural bruta.
 
+12. **A perturbação precisa chegar às quatro condições, não só ao estado canônico.**
+   O `year_shift` corrompia apenas o campo `year`, mas a prosa da condição A é renderizada
+   a partir de `period or year` (`render_claim_text`) e **todos os 82 claims do subset têm
+   `period` preenchido** (`FY2017`, ...). O handoff de A saía literalmente idêntico ao do
+   braço de controle: o erro de metadata nunca chegava à condição A, que teria medido
+   ESR = 0 e `fate="sem_efeito"` em 100% das células por construção — quebrando o passo 3
+   do protocolo e invalidando a comparação RQ1 (A×B) nesse braço. O injetor agora reescreve
+   `period` junto com `year` (`FY2017 → FY2018`), e descarta o rótulo (`period=None`) quando
+   ele não menciona o ano original, caso em que a prosa cai no `year` já corrompido. B/C/D
+   não carregam `period`, então nada muda nelas; o ground truth continua ancorado no campo
+   primário (`field="year"`), com a reescrita registrada em `rule` e visível em
+   `corrupted_claim`. A invariante virou checagem permanente: `conformance.py` §8.3 testa as
+   **quatro** combinações de classe/subtipo contra o payload de A, e não só a classe `value`
+   — que era o único caso que a checagem antiga exercia, e por isso o defeito passou.
+
+
+13. **Correção e contenção terminam iguais no log; o que as separa é a resposta ter voltado
+   à da execução limpa.** A regra antiga chamava de correção qualquer célula em que o *valor
+   original reaparecesse* em algum estágio downstream. Na classe `metadata`/`year_shift` isso
+   é falso-positivo sistemático: o ano original aparece na própria pergunta (que o Redator
+   reafirma), nos claims irmãos não corrompidos e no `answer_claim` — observado numa célula
+   real (`financebench_id_02608`, condição B) em que o Redator **recusou responder** e ainda
+   assim era classificada como correção. `fate` agora exige também que a resposta final não
+   tenha *perdido* a figura que a execução limpa entregava (`difference` é assimétrico, então
+   a checagem é feita nos dois sentidos). Recusa e omissão passam a cair em `contido`, que é
+   o que são. Só afeta a classificação de `fate` e o `corrected`; ESR, Propagation Depth e
+   Amplification não usavam essa regra.
+
+
 ## 12. Cronograma
 
 | Período | Entrega |

@@ -10,6 +10,7 @@ from handoff.injector import (
     escalate_unit,
     inject,
     shift_percentage_points,
+    shift_period,
     shift_year,
     transpose_digits,
 )
@@ -135,3 +136,24 @@ def test_evidencia_permanece_correta_apos_a_injecao():
     corrupted, _ = inject([claim()], "value")
     assert "12.4" in (corrupted[0].evidence or "")
     assert corrupted[0].value == 14.2
+
+
+# --- periodo acompanha o ano (visibilidade do erro na condicao A) ---------
+def test_shift_period_reescreve_o_ano_no_rotulo():
+    assert shift_period("FY2025", 2025, 2026) == "FY2026"
+    assert shift_period("Q3 2025", 2025, 2026) == "Q3 2026"
+
+
+def test_shift_period_descarta_rotulo_que_nao_menciona_o_ano():
+    """Sem o ano no rotulo nao ha o que reescrever; manter o antigo esconderia
+    a perturbacao na prosa de A. Com None, render_claim_text cai no `year` ja
+    corrompido."""
+    assert shift_period("primeiro semestre", 2025, 2026) is None
+    assert shift_period(None, 2025, 2026) is None
+    assert shift_period("", 2025, 2026) == ""
+
+
+def test_injecao_de_ano_corrompe_year_e_period_juntos():
+    corrompido, record = inject([claim()], "metadata", metadata_subtype="year_shift")
+    assert (corrompido[0].year, corrompido[0].period) == (2026, "FY2026")
+    assert "periodo reescrito" in record.rule

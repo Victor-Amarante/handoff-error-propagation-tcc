@@ -78,10 +78,47 @@ def summarize_cost() -> None:
     )
 
 
+#: Espera entre tentativas, em segundos. Duas tentativas extras cobrem o
+#: rate limit tipico sem transformar uma quota esgotada em espera longa.
+BACKOFF = (15, 60)
+
+
+def _com_retomada_de_falha_transitoria(func, *args, **kwargs):
+    """Refaz a celula quando a API falha por motivo transitorio.
+
+    NAO e retry de schema: um handoff invalido continua sendo gravado como
+    invalido (`stages._build_agent` mantem `retries=0`, e a conformidade checa
+    isso). Aqui o alvo e rate limit / rede / 5xx numa execucao de horas, em que
+    perder a celula significa uma lacuna na matriz ate a proxima retomada.
+    """
+    ultima: Exception | None = None
+    for espera in (*BACKOFF, None):
+        try:
+            return func(*args, **kwargs)
+        except (InjectionError, PipelineError, KeyboardInterrupt):
+            raise
+        except Exception as exc:  # noqa: BLE001
+            ultima = exc
+            if espera is None:
+                raise
+            print(f"    ...{type(exc).__name__}, nova tentativa em {espera}s")
+            time.sleep(espera)
+    raise ultima  # pragma: no cover -- inalcancavel, o laco sempre sai antes
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--questions", type=int, default=None, help="padrao: todas")
-    parser.add_argument("--seeds", default=",".join(str(s) for s in config.SEEDS))
+    parser.add_argument(
+        "--seeds",
+        default=str(config.SEEDS[0]),
+        help=(
+            "padrao: uma seed so. As replicas nao geram variancia neste modelo "
+            f"(CONTEXT.md 11.4) e a unidade de analise e a pergunta; passe "
+            f"--seeds {','.join(str(x) for x in config.SEEDS)} para rodar as "
+            "replicas declaradas em config.SEEDS"
+        ),
+    )
     parser.add_argument("--conditions", default="A,B,C,D")
     parser.add_argument(
         "--error-types",
@@ -147,13 +184,23 @@ def main() -> int:
 
     started = time.perf_counter()
     done = skipped = failed = 0
+    #: Perguntas cuja extracao ja falhou nesta execucao. Sem isso, uma pergunta
+    #: sem claims extraiveis (comuns entre as de resposta qualitativa) seria
+    #: reextraida em TODAS as suas celulas -- 12 chamadas cobradas por seed para
+    #: falhar 12 vezes, porque a falha nao gera cache.
+    extracao_falhou: set[tuple[str, int]] = set()
+
     for row, seed, arm, condition in pending:
+        if (row["question_id"], seed) in extracao_falhou:
+            skipped += 1
+            continue
         try:
             extraction = extract_state(row, seed)
             analysis = (
                 analyze_state(row, seed, extraction) if stage is Stage.ANALYST else None
             )
-            run_cell(
+            _com_retomada_de_falha_transitoria(
+                run_cell,
                 row,
                 seed,
                 arm,  # type: ignore[arg-type]
@@ -169,13 +216,14 @@ def main() -> int:
             skipped += 1
         except PipelineError as exc:
             print(f"  FALHOU {row['question_id']} {arm} {condition}: {exc}")
+            extracao_falhou.add((row["question_id"], seed))
             failed += 1
         except KeyboardInterrupt:
             print("\ninterrompido -- as celulas concluidas estao gravadas; "
                   "rode de novo para retomar de onde parou")
             break
         except Exception as exc:  # noqa: BLE001
-            # Erro de API (rate limit, rede, quota): registrar e seguir. Numa
+            # Erro de API que sobreviveu ao retry: registrar e seguir. Numa
             # matriz de centenas de celulas, deixar a excecao subir jogaria
             # fora horas de execucao por uma falha transitoria de uma celula.
             # A celula fica sem `run_end`, entao a retomada a refaz sozinha.

@@ -48,12 +48,15 @@ piv = df.pivot_table(index=["question_id", "condition", "error_type"],
 (piv[1] != piv[2]).mean()
 ```
 
-## Tres coisas a nao esquecer
-
 **Toda metrica de containment se compara ao braco de controle da MESMA
 condicao, pergunta e seed.** O pipeline erra algumas perguntas sozinho; sem o
 contrafactual, "erro sobreviveu" e "pipeline ja errava" ficam indistinguiveis.
 O pareamento e automatico em `pair_with_control`.
+
+**`corrigido` x `contido`:** as duas terminam com o erro fora da resposta final. O
+que separa e a resposta ter voltado a ser a da execucao limpa (correcao) ou a
+figura ter sumido -- recusa, omissao (contencao). Recusa e comum no braco
+`metadata`: o estagio percebe a inconsistencia de ano e se nega a calcular.
 
 **`fate == "sem_efeito"` nao e contencao.** Significa que nada mudou em estagio
 nenhum -- quase sempre porque o claim corrompido estava fora do caminho da

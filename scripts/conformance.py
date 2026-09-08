@@ -196,6 +196,28 @@ def s8_protocolo():
     check("8.3", "mesmo estado incorreto serializado em A/B/C/D", mesmo,
           f"valor {rec.corrupted_value} presente nas 4")
 
+    # Passo 3, parte que faltava: a checagem acima so exercia a classe `value`.
+    # O `year_shift` corrompia apenas o campo `year`, e a prosa de A e
+    # renderizada a partir de `period or year` -- o handoff de A saia identico
+    # ao limpo e o erro de metadata nunca chegava a condicao A.
+    invisiveis = []
+    for error_type, subtype in (
+        ("value", "year_shift"),
+        ("percentage", "year_shift"),
+        ("metadata", "year_shift"),
+        ("metadata", "unit_shift"),
+    ):
+        alvo = CLAIM.model_copy(update={"unit": "PCT", "value": 8.1}
+                                if error_type == "percentage" else {})
+        corrompido_x, _ = inject([alvo], error_type, metadata_subtype=subtype)
+        base = to_handoff([alvo], Condition.A)
+        if to_handoff(corrompido_x, Condition.A) == base:
+            invisiveis.append(f"{error_type}/{subtype}")
+    check("8.3", "toda classe de erro e visivel na prosa da condicao A",
+          not invisiveis,
+          "value, percentage, metadata(year/unit)" if not invisiveis
+          else f"invisiveis em A: {invisiveis}")
+
     check("8.4", "C bloqueia recuperacao da fonte / D inclui evidencia",
           "evidence" not in ClaimC.model_fields and "evidence" in ClaimD.model_fields)
 
