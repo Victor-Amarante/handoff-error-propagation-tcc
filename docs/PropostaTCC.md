@@ -129,7 +129,9 @@ Os sete passos abaixo são o protocolo da proposta. Cada um traz a nota de imple
 
 **1. Selecionar um benchmark com documentos, respostas e evidências verificáveis.** FinanceBench [11] foi o escolhido por possuir perguntas financeiras, respostas e trechos de evidência; o experimento roda o conjunto aberto inteiro (150 perguntas, três `question_type`), usando o evidence snippet de cada pergunta como "documento-fonte" (sem parsing de PDF).
 
-> **Nota de implementação — quantas perguntas entram de fato.** Das 150 perguntas, **138 produzem estado extraído**. As 12 restantes são qualitativas ("There are none", descrição de litígios, descrição de linha de negócio) e o Extrator devolve zero claims, porque não há figura numérica literal na evidência: sem claim numérico não existe o que corromper, e elas ficam fora do experimento por construção. Nas 138 restantes o Extrator produziu **548 claims, dos quais 545 (99%) passam no guard de verificação literal** descrito na seção 7. Esses números foram medidos com um preflight que roda apenas o Extrator (cacheado em disco, de modo que o custo é reaproveitado pela rodada principal).
+> **Nota de implementação — quantas perguntas entram de fato.** Das 150 perguntas, **143 produzem estado extraído**. As 7 restantes são qualitativas ("There are none", descrição de litígios, descrição de linha de negócio) e o Extrator devolve zero claims, porque não há figura numérica literal na evidência: sem claim numérico não existe o que corromper, e elas ficam fora do experimento por construção. Nas 143 restantes o Extrator produziu **555 claims, dos quais 551 (99%) passam no guard de verificação literal** descrito na seção 7. Esses números foram medidos com um preflight que roda apenas o Extrator (cacheado em disco, de modo que o custo é reaproveitado pela rodada principal); a medição foi refeita em 28 set 2026 para fechar este documento antes da rodada principal.
+>
+> **A contagem de falhas não é um valor fixo, e isso é esperado.** Uma falha de extração só ocorre quando o Extrator devolve zero claims, o que não é puramente determinístico: com `temperature=1` (decisão 9 abaixo), o modelo às vezes recupera numa segunda tentativa uma pergunta que antes tinha falhado. Como falhas não são cacheadas em disco (só sucesso é, propositalmente — ver `handoff/run.py:extract_state`), rodar o preflight de novo pode reduzir o número de falhas em relação a uma medição anterior, à medida que o cache vai sendo populado. Os 143/150 acima já são um valor **estável** (duas rodadas consecutivas do preflight não mudaram o resultado). Isso não afeta a rodada principal: `run_experiment.py` marca cada `(pergunta, seed)` que falhar como falha *daquela execução* e pula todas as células dependentes dela sem recobrar, em vez de tentar reextrair a cada célula.
 
 **2. Executar o componente responsável pelo estágio alvo e obter um estado correto; em seguida, aplicar um Error Injector determinístico para criar uma das três classes de erro.**
 
@@ -147,15 +149,15 @@ Os sete passos abaixo são o protocolo da proposta. Cada um traz a nota de imple
 >
 > A escolha do claim-alvo também é determinística, por ordem de preferência: (i) claim com unidade compatível com a classe de erro **e** valor presente na resposta gold, de modo que o erro atinja o caminho que responde à pergunta; (ii) claim com unidade compatível; (iii) primeiro claim na ordenação por `claim_id`. Só claims aprovados pelo guard de verificação literal são candidatos.
 >
-> **Consequência direta:** o `n` varia por classe de erro, porque cada perturbação exige uma unidade. O censo dos 548 claims extraídos é `USD_M` 378, `PCT` 82, `USD_K` 34, `USD_B` 31, `RATIO` 23.
+> **Consequência direta:** o `n` varia por classe de erro, porque cada perturbação exige uma unidade. O censo dos 555 claims extraídos é `USD_M` 380, `PCT` 82, `USD_K` 35, `USD_B` 33, `RATIO` 25.
 >
 > | Braço | `n` de perguntas | Restrição |
 > |---|---|---|
-> | `metadata` (Extrator) | **138 / 138** | todo claim tem ano |
-> | `value` (Extrator) | **115 / 138** | exige cifra monetária; as 23 excluídas só têm claims em `PCT`/`RATIO` |
-> | `percentage` (Analista) | **55 / 138** | exige claim derivado em `PCT` na saída do Analista |
+> | `metadata` (Extrator) | **142 / 143** | quase todo claim tem ano; uma pergunta ficou sem claim elegível |
+> | `value` (Extrator) | **118 / 143** | exige cifra monetária; as 25 excluídas só têm claims em `PCT`/`RATIO` |
+> | `percentage` (Analista) | **56 / 143** | exige claim derivado em `PCT` na saída do Analista |
 >
-> As 23 perguntas sem alvo para `value` não são falha de execução: sua evidência só imprime percentuais ou razões, e transpor dígitos de `8.1%` seria a classe `percentage`, não `value`. Misturá-las tornaria a métrica "acurácia por tipo de erro" ininterpretável.
+> As 25 perguntas sem alvo para `value` não são falha de execução: sua evidência só imprime percentuais ou razões, e transpor dígitos de `8.1%` seria a classe `percentage`, não `value`. Misturá-las tornaria a métrica "acurácia por tipo de erro" ininterpretável.
 
 **3. Serializar exatamente o mesmo estado incorreto nas condições A, B, C e D.** A diferença entre as execuções deve estar apenas no contrato de handoff.
 
@@ -194,18 +196,18 @@ Com 1 seed e as quatro condições, a matriz a executar é:
 
 | Estudo principal (injeção no Extrator) | perguntas | × condições | células |
 |---|---|---|---|
-| controle limpo (sem injeção) | 138 | 4 | 552 |
-| braço `value` | 115 | 4 | 460 |
-| braço `metadata` | 138 | 4 | 552 |
-| **subtotal** | | | **1.564** (4.692 chamadas ao modelo) |
+| controle limpo (sem injeção) | 143 | 4 | 572 |
+| braço `value` | 118 | 4 | 472 |
+| braço `metadata` | 142 | 4 | 568 |
+| **subtotal** | | | **1.612** (4.836 chamadas ao modelo) |
 
 | Subestudo de estágio (injeção no Analista) | perguntas | × condições | células |
 |---|---|---|---|
-| controle limpo | 138 | 4 | 552 |
-| braço `percentage` | 55 | 4 | 220 |
-| **subtotal** | | | **772** (1.544 chamadas ao modelo) |
+| controle limpo | 143 | 4 | 572 |
+| braço `percentage` | 56 | 4 | 224 |
+| **subtotal** | | | **796** (1.592 chamadas ao modelo) |
 
-**Total: 2.336 células e 6.236 chamadas**, estimadas em ~5 h de execução sequencial e ~US$ 3 a partir da latência e do custo médios medidos no piloto. Uma **célula** é uma execução completa do pipeline para uma combinação (pergunta × seed × braço × condição) e gera um arquivo `.jsonl` próprio, com todos os eventos daquela execução: saída crua e parseada de cada estágio, payload de handoff, o `InjectionRecord` com o ground truth da perturbação, o relatório do auditor, as checagens de contrato e o consumo de tokens/latência/custo por chamada. No estudo principal cada célula custa 3 chamadas (Analista → Redator → Auditor) e no subestudo 2 (Redator → Auditor), já que os estágios até o ponto de injeção rodam de forma compartilhada.
+**Total: 2.408 células e 6.428 chamadas**, estimadas em ~5 h de execução sequencial e ~US$ 3 a partir da latência e do custo médios medidos no piloto (cerca de 3% maior que a medição anterior — dentro da margem de arredondamento dessa estimativa). Uma **célula** é uma execução completa do pipeline para uma combinação (pergunta × seed × braço × condição) e gera um arquivo `.jsonl` próprio, com todos os eventos daquela execução: saída crua e parseada de cada estágio, payload de handoff, o `InjectionRecord` com o ground truth da perturbação, o relatório do auditor, as checagens de contrato e o consumo de tokens/latência/custo por chamada. No estudo principal cada célula custa 3 chamadas (Analista → Redator → Auditor) e no subestudo 2 (Redator → Auditor), já que os estágios até o ponto de injeção rodam de forma compartilhada.
 
 Duas limitações decorrem diretamente desse desenho e são reportadas junto dos resultados: a Propagation Depth máxima é **2** no estudo principal e **1** no subestudo (onde o Analista também roda compartilhado); e o custo do auditor é registrado em separado (`event_type="audit"`), fora do custo operacional do pipeline, porque ele é instrumento de medida e não estágio.
 
