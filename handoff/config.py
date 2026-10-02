@@ -2,11 +2,18 @@
 
 Tudo que precisa permanecer CONSTANTE entre as 4 condicoes mora aqui, para
 que o desenho experimental seja auditavel a partir de um unico arquivo.
+
+Cada execucao usa UM modelo (um dos tres experimentos: GPT/Luna, Claude/Haiku,
+SLM local/Qwen via Ollama). O modelo nao e uma variavel manipulada dentro de
+um experimento -- e o eixo que separa os tres experimentos entre si. Por isso
+os artefatos de cada um (cache do Extrator/Analista, logs de celula) vivem em
+`data/<slug-do-modelo>/`, nunca misturados.
 """
 
 from __future__ import annotations
 
 import os
+import re
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -18,9 +25,38 @@ load_dotenv()
 # --------------------------------------------------------------------------
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
+
+#: Compartilhado pelos tres experimentos: as perguntas sao as mesmas, so o
+#: modelo muda. Nunca fica dentro da pasta de um modelo especifico.
 SUBSET_PATH = DATA_DIR / "financebench" / "subset.jsonl"
-CACHE_DIR = DATA_DIR / "cache"
-LOG_DIR = DATA_DIR / "logs"
+
+
+def _slugify(model_id: str) -> str:
+    """'claude-haiku-4-5-20251001' -> mesmo nome; 'qwen3.5:9b-mlx' -> 'qwen3.5-9b-mlx'.
+
+    So troca caracteres que nao servem em nome de pasta (':', '/'); mantem o
+    resto do model_id reconhecivel, para que a pasta aponte sem ambiguidade
+    para o mesmo nome gravado em `model_params.model_id` de cada evento.
+    """
+    return re.sub(r"[:/\\]+", "-", model_id)
+
+
+# --------------------------------------------------------------------------
+# Provedor e modelo -- constantes DENTRO de um experimento
+# --------------------------------------------------------------------------
+#: "openai" | "anthropic" | "ollama". Seleciona o client Agno em handoff/stages.py.
+PROVIDER = os.getenv("HANDOFF_PROVIDER", "openai")
+
+MODEL_ID = os.getenv("HANDOFF_MODEL", "gpt-5.6-luna")
+
+#: Nome de pasta derivado do model_id -- pode ser sobrescrito explicitamente
+#: (HANDOFF_MODEL_SLUG) se dois experimentos usassem o mesmo model_id com
+#: configuracoes diferentes, o que nao e o caso aqui.
+MODEL_SLUG = os.getenv("HANDOFF_MODEL_SLUG") or _slugify(MODEL_ID)
+
+MODEL_DIR = DATA_DIR / MODEL_SLUG
+CACHE_DIR = MODEL_DIR / "cache"
+LOG_DIR = MODEL_DIR / "logs"
 
 
 def ensure_dirs() -> None:
@@ -29,62 +65,102 @@ def ensure_dirs() -> None:
 
 
 # --------------------------------------------------------------------------
-# Modelo -- constante nas 4 condicoes (exigencia do desenho experimental)
+# Parametros de geracao -- o que cada provedor aceita difere, entao cada um
+# tem seu proprio bloco. O principio continua o mesmo do desenho original:
+# tudo aqui e constante nas 4 condicoes (A/B/C/D) DENTRO do experimento do
+# provedor ativo.
 # --------------------------------------------------------------------------
-MODEL_ID = os.getenv("HANDOFF_MODEL", "gpt-5.6-luna")
 
-#: Temperatura. Alguns modelos de reasoning rejeitam o parametro; nesse caso
-#: defina HANDOFF_TEMPERATURE="" para omiti-lo da requisicao.
-_temp_raw = os.getenv("HANDOFF_TEMPERATURE", "0.0")
+#: Temperatura. gpt-5.6-luna rejeita temperature=0 (so aceita o default, 1),
+#: entao o valor default aqui e None -- omitido da requisicao. Vale para os
+#: tres provedores: None sempre significa "nao enviar o parametro".
+_temp_raw = os.getenv("HANDOFF_TEMPERATURE", "")
 TEMPERATURE: float | None = float(_temp_raw) if _temp_raw.strip() != "" else None
 
-#: Envia `seed` a API (best-effort do lado da OpenAI). Se o modelo rejeitar,
-#: defina HANDOFF_SEND_SEED=0 -- a seed continua identificando a replica no log.
+# ---- OpenAI (gpt-5.6-luna) ------------------------------------------------
+#: Envia `seed` a API (best-effort). Omitido para Anthropic (a API nao aceita
+#: o parametro); usado em Ollama via `options.seed` (tambem best-effort).
 SEND_SEED = os.getenv("HANDOFF_SEND_SEED", "1") == "1"
 
-#: Esforco de raciocinio. Como tudo que nao e o contrato de handoff, precisa
-#: ser CONSTANTE nas 4 condicoes -- e um confundidor de primeira ordem: mais
-#: esforco significa mais chance de o estagio detectar o erro injetado por
-#: conta propria, o que comprimiria as diferencas entre A/B/C/D. Tambem entra
-#: direto no custo, porque reasoning tokens sao cobrados como output.
+#: Esforco de raciocinio da OpenAI. Confundidor de primeira ordem (CONTEXT.md
+#: 11.4): mais esforco aumenta a chance do proprio estagio corrigir o erro
+#: sozinho, o que comprimiria as diferencas entre A/B/C/D. So se aplica ao
+#: provedor "openai" -- Claude e Ollama tem seus proprios mecanismos abaixo.
 REASONING_EFFORT = os.getenv("HANDOFF_REASONING_EFFORT", "medium") or None
 
-#: True  -> structured outputs nativo (decodificacao restrita): Schema Validity
-#:          de B/C/D e ~1.0 por construcao.
-#: False -> JSON mode sem restricao de gramatica: Schema Validity vira uma
-#:          medida nao-trivial, ao custo de nao seguir o CONTEXT.md secao 11.
-#: Em qualquer modo, as checagens de contrato de `serialization.validate_contract`
-#: (derived_from pendente, ids duplicados, evidencia nao-literal) continuam
-#: valendo -- sao violacoes que nenhum JSON Schema pega.
+#: True -> structured outputs nativo (Schema Validity de B/C/D ~1.0 por
+#: construcao). So se aplica a "openai"; Claude/Ollama usam saida estruturada
+#: nativa sempre que o modelo suporta (Agno decide isso sozinho).
 STRICT_OUTPUT = os.getenv("HANDOFF_STRICT_OUTPUT", "1") == "1"
 
-#: Replicas do experimento. Tambem viram o `seed` enviado a API.
-SEEDS: tuple[int, ...] = (1, 2, 3)
+# ---- Anthropic (Claude Haiku 4.5) -----------------------------------------
+#: Extended thinking do Claude. None (desligado) por padrao: mantem o
+#: experimento Claude no mesmo espirito de "esforco moderado, constante nas 4
+#: condicoes" do reasoning_effort="medium" da OpenAI, e Haiku 4.5 e vendido
+#: como o modelo RAPIDO da familia -- ligar thinking native descaracterizaria
+#: essa escolha. Para ligar: HANDOFF_CLAUDE_THINKING_BUDGET=<int tokens>.
+_claude_budget = os.getenv("HANDOFF_CLAUDE_THINKING_BUDGET", "")
+CLAUDE_THINKING: dict | None = (
+    {"type": "enabled", "budget_tokens": int(_claude_budget)}
+    if _claude_budget.strip()
+    else None
+)
+CLAUDE_MAX_TOKENS = int(os.getenv("HANDOFF_CLAUDE_MAX_TOKENS", "4096"))
+
+# ---- Ollama (SLM local, ex.: qwen3.5:9b-mlx) ------------------------------
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+#: Qwen3 e hibrido (pensa ou nao, por chamada). Mantido desligado pelo mesmo
+#: motivo do Claude acima -- constante e comparavel aos outros dois
+#: experimentos, sem introduzir um eixo de "esforco" que eles nao tem.
+OLLAMA_THINK = os.getenv("HANDOFF_OLLAMA_THINK", "0") == "1"
+
+
+def model_params() -> dict:
+    """Snapshot dos parametros do modelo, gravado em todo evento do log.
+
+    O conjunto de chaves muda por provedor -- gravar `reasoning_effort` para
+    uma rodada Claude seria mentir sobre um parametro que nao existe ali.
+    """
+    base = {
+        "provider": PROVIDER,
+        "model_id": MODEL_ID,
+        "temperature": TEMPERATURE,
+        "pipeline_version": PIPELINE_VERSION,
+    }
+    if PROVIDER == "openai":
+        base.update(
+            {
+                "reasoning_effort": REASONING_EFFORT,
+                "strict_output": STRICT_OUTPUT,
+                "send_seed": SEND_SEED,
+            }
+        )
+    elif PROVIDER == "anthropic":
+        base.update({"thinking": CLAUDE_THINKING, "max_tokens": CLAUDE_MAX_TOKENS})
+    elif PROVIDER == "ollama":
+        base.update({"think": OLLAMA_THINK, "send_seed": SEND_SEED, "host": OLLAMA_HOST})
+    return base
+
 
 PIPELINE_VERSION = "1.0.0"
 LOG_SCHEMA_VERSION = "1"
 
-
-def model_params() -> dict:
-    """Snapshot dos parametros do modelo, gravado em todo evento do log."""
-    return {
-        "model_id": MODEL_ID,
-        "temperature": TEMPERATURE,
-        "reasoning_effort": REASONING_EFFORT,
-        "strict_output": STRICT_OUTPUT,
-        "send_seed": SEND_SEED,
-        "pipeline_version": PIPELINE_VERSION,
-    }
+#: Replicas do experimento. Tambem viram o `seed` enviado a API quando
+#: SEND_SEED=1 (OpenAI/Ollama; Anthropic nao aceita o parametro).
+SEEDS: tuple[int, ...] = (1, 2, 3)
 
 
 # --------------------------------------------------------------------------
 # Custo
 # --------------------------------------------------------------------------
-#: USD por 1 milhao de tokens, da tabela oficial da OpenAI. Modelo fora desta
-#: tabela faz `estimate_cost` devolver None -- a analise ainda funciona, so
-#: perde a dimensao monetaria (tokens sao sempre registrados).
+#: USD por 1 milhao de tokens. Modelo fora desta tabela faz `estimate_cost`
+#: devolver None -- a analise ainda funciona, so perde a dimensao monetaria
+#: (tokens sao sempre registrados). Qwen local fica a zero: sem custo de API,
+#: mas os tokens continuam contados para comparar overhead operacional.
 PRICE_PER_MTOK: dict[str, dict[str, float]] = {
     "gpt-5.6-luna": {"input": 0.20, "cached_input": 0.02, "output": 1.20},
+    "claude-haiku-4-5-20251001": {"input": 1.00, "output": 5.00},
+    "qwen3.5:9b-mlx": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
 }
 
 

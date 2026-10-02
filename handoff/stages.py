@@ -14,7 +14,10 @@ from dataclasses import dataclass, field
 from typing import Any
 
 from agno.agent import Agent
+from agno.models.anthropic import Claude
+from agno.models.ollama import Ollama
 from agno.models.openai import OpenAIChat
+from agno.models.base import Model
 from pydantic import BaseModel
 
 from handoff import config
@@ -50,19 +53,54 @@ class StageResult:
     usage: Usage | None = None
 
 
+def _build_model(seed: int) -> Model:
+    """Constroi o client do provedor ativo (handoff/config.py:PROVIDER).
+
+    Cada provedor aceita um conjunto diferente de parametros de geracao -- nao
+    ha um "minimo comum" alem de id/temperatura. O que e constante nas 4
+    condicoes continua sendo garantido do mesmo jeito: todo parametro vem de
+    config.py, nunca de condicao/estagio.
+    """
+    if config.PROVIDER == "openai":
+        return OpenAIChat(
+            id=config.MODEL_ID,
+            temperature=config.TEMPERATURE,
+            reasoning_effort=config.REASONING_EFFORT,
+            seed=seed if config.SEND_SEED else None,
+            strict_output=config.STRICT_OUTPUT,
+        )
+    if config.PROVIDER == "anthropic":
+        # Sem `seed` (a API da Anthropic nao aceita o parametro) e sem
+        # `strict_output` (saida estruturada nativa e automatica no Agno
+        # quando o modelo suporta -- Haiku 4.5 suporta).
+        return Claude(
+            id=config.MODEL_ID,
+            temperature=config.TEMPERATURE,
+            max_tokens=config.CLAUDE_MAX_TOKENS,
+            thinking=config.CLAUDE_THINKING,
+        )
+    if config.PROVIDER == "ollama":
+        options = {"temperature": config.TEMPERATURE}
+        if config.SEND_SEED:
+            options["seed"] = seed
+        return Ollama(
+            id=config.MODEL_ID,
+            host=config.OLLAMA_HOST,
+            options={k: v for k, v in options.items() if v is not None},
+            # Qwen3 e hibrido: `think` e parametro de request, nao de
+            # `options`. request_params passa direto pro client.chat().
+            request_params={"think": config.OLLAMA_THINK},
+        )
+    raise ValueError(f"provedor desconhecido: {config.PROVIDER!r}")
+
+
 def _build_agent(
     name: str,
     instructions: str,
     output_schema: type[BaseModel] | None,
     seed: int,
 ) -> Agent:
-    model = OpenAIChat(
-        id=config.MODEL_ID,
-        temperature=config.TEMPERATURE,
-        reasoning_effort=config.REASONING_EFFORT,
-        seed=seed if config.SEND_SEED else None,
-        strict_output=config.STRICT_OUTPUT,
-    )
+    model = _build_model(seed)
     return Agent(
         name=name,
         model=model,

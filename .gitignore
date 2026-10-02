@@ -12,14 +12,15 @@ wheels/
 # Segredos
 .env
 
-# Cache do Extrator (regeravel, mas caro: nao versionar)
-data/cache/
+# Cache do Extrator/Analista por modelo (regeravel, mas caro: nao versionar)
+# Tres experimentos, um por familia de modelo -- data/<slug-do-modelo>/cache/
+data/*/cache/
 
-# Logs de execucao: versionar so os do experimento final, quando for o caso
-data/logs/*.jsonl
+# Logs de execucao por modelo: versionar so os do experimento final, quando for o caso
+data/*/logs/*.jsonl
 
 # Saidas regeraveis da analise
-analysis/tabela_resultados.csv
+analysis/tabela_resultados*.csv
 
 .pytest_cache/
 

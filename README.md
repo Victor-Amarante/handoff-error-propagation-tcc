@@ -4,13 +4,47 @@ Infraestrutura experimental do TCC. O desenho completo esta em [CONTEXT.md](CONT
 e na [proposta](docs/PropostaTCC.pdf); este README cobre so como rodar.
 
 Pipeline fixo `Extrator -> Analista -> Redator`, com uma unica variavel
-manipulada: o **contrato de handoff** entre os estagios (condicoes A/B/C/D).
+manipulada DENTRO de um experimento: o **contrato de handoff** entre os
+estagios (condicoes A/B/C/D).
+
+## Tres experimentos, um por familia de modelo
+
+O modelo nao e uma condicao (nao varia dentro de A/B/C/D) -- e o eixo que
+separa tres execucoes independentes do mesmo protocolo, pra checar se o
+achado (estrutura nao basta; lineage+evidencia e que melhoram containment e
+atribuicao) se sustenta fora de uma familia so de modelo:
+
+| Experimento | Provedor | Modelo | `HANDOFF_PROVIDER` / `HANDOFF_MODEL` |
+|---|---|---|---|
+| 1 | OpenAI | `gpt-5.6-luna` | `openai` / `gpt-5.6-luna` (default) |
+| 2 | Anthropic | Claude Haiku 4.5 | `anthropic` / `claude-haiku-4-5-20251001` |
+| 3 | SLM local (Ollama) | Qwen3.5 9B | `ollama` / `qwen3.5:9b-mlx` |
+
+Cada execucao grava em `data/<slug-do-modelo>/{cache,logs}/` automaticamente
+-- nunca e preciso trocar caminho na mao, e os tres experimentos nunca se
+misturam no disco. `data/financebench/` (o benchmark e o subset de perguntas)
+e compartilhado pelos tres, de proposito: mesmas perguntas, modelo diferente.
 
 ## Setup
 
 ```bash
 uv sync
-cp .env.example .env      # preencha OPENAI_API_KEY
+cp .env.example .env
+# preencha a API key do provedor que for rodar primeiro (ver blocos no
+# .env.example -- OPENAI_API_KEY, ANTHROPIC_API_KEY, ou configure o Ollama local)
+```
+
+Pra trocar de experimento, troque `HANDOFF_PROVIDER`/`HANDOFF_MODEL` no `.env`
+(ou exporte na linha de comando, o que nao exige editar o arquivo):
+
+```bash
+# experimento 2 -- Claude
+HANDOFF_PROVIDER=anthropic HANDOFF_MODEL=claude-haiku-4-5-20251001 \
+  uv run python scripts/run_experiment.py --error-types value,metadata --include-clean
+
+# experimento 3 -- SLM local (precisa do Ollama rodando com `ollama pull qwen3.5:9b-mlx`)
+HANDOFF_PROVIDER=ollama HANDOFF_MODEL=qwen3.5:9b-mlx \
+  uv run python scripts/run_experiment.py --error-types value,metadata --include-clean
 ```
 
 ## Uso
@@ -63,10 +97,12 @@ continuam mensuraveis, porque comparam com o **controle** e nao com o gold.
 `run_experiment.py` retoma por padrao: celulas que chegaram ao `run_end` sao
 puladas, entao da para interromper e re-executar sem refazer nem re-cobrar.
 
-Cada celula experimental gera um `.jsonl` em `data/logs/`:
+Cada celula experimental gera um `.jsonl` em `data/<slug-do-modelo>/logs/`:
 `run_<question_id>_<error_type>_<condicao>_seed<seed>.jsonl`. `clean` no lugar do
 tipo de erro identifica o braco de controle; `_atanalyst` marca o subestudo de
-atribuicao de estagio.
+atribuicao de estagio. O slug vem do `model_id` (ex: `gpt-5.6-luna`,
+`claude-haiku-4-5-20251001`, `qwen3.5-9b-mlx`), entao os tres experimentos
+nunca escrevem no mesmo lugar nem por acidente.
 
 ## Os dois estudos (secao 7 da proposta)
 
@@ -88,7 +124,7 @@ de "erro propagado que coincidiu com a resposta certa".
 
 | Controle | Onde |
 |---|---|
-| O mesmo estado incorreto nas 4 condicoes | Extrator roda 1x por (pergunta x seed), cacheado em `data/cache/`; a injecao acontece sobre o estado canonico e so depois e projetada em A/B/C/D |
+| O mesmo estado incorreto nas 4 condicoes | Extrator roda 1x por (pergunta x seed), cacheado em `data/<slug-do-modelo>/cache/`; a injecao acontece sobre o estado canonico e so depois e projetada em A/B/C/D |
 | Perturbacao deterministica | [`handoff/injector.py`](handoff/injector.py) -- sem RNG; regra e claim-alvo registrados no ground truth |
 | Extrator nao computa metricas | `verify_extraction` confere que o valor aparece literal na evidencia; so claims verificados podem ser alvo de injecao |
 | C nao dereferencia a fonte | Nenhum estagio downstream recebe o documento e nenhum agente tem tools; `check_evidence_leak` confere e grava o resultado no log |
@@ -100,7 +136,7 @@ de "erro propagado que coincidiu com a resposta certa".
 
 ```
 handoff/
-  config.py          modelo, seeds, paths, tabela de precos
+  config.py          provedor/modelo, seeds, paths por modelo, tabela de precos
   conditions.py      Condition (A/B/C/D), Stage, capabilities
   schemas/
     claims.py        CanonicalClaim (interno) + ClaimB/C/D (contratos) + saidas por estagio
@@ -108,15 +144,19 @@ handoff/
     events.py        LogEvent, Usage, InjectionRecord, GoldRecord
   prompts.py         prompts citaveis na metodologia
   serialization.py   projecao canonical -> contrato, template de A, checagens de contrato
-  stages.py          Extrator / Analista / Redator sobre Agno
+  stages.py          Extrator / Analista / Redator sobre Agno; _build_model escolhe o provedor
   injector.py        as 3 classes de erro da secao 7
   auditor.py         probe de root-cause (RCCA/FESA)
   logger.py          JSONL, um arquivo por celula
   run.py             uma celula experimental completa
   measure.py         instrumento de medida, uniforme nas 4 condicoes
 scripts/             build_subset, conformance, preflight, run_pilot, run_experiment
-data/                financebench/, cache/, logs/
-analysis/            metrics.ipynb -- agrega os logs, calcula IC e gera a tabela do artigo
+data/
+  financebench/      benchmark e subset de perguntas -- COMPARTILHADO pelos 3 experimentos
+  gpt-5.6-luna/                      cache/ e logs/ do experimento 1 (OpenAI)
+  claude-haiku-4-5-20251001/         cache/ e logs/ do experimento 2 (Anthropic)
+  qwen3.5-9b-mlx/                    cache/ e logs/ do experimento 3 (SLM/Ollama)
+analysis/            metrics.ipynb -- agrega os logs de UM modelo por vez, calcula IC e gera a tabela
 tests/               injector, serializacao, logging, guarda de extracao, fiacao
 ```
 

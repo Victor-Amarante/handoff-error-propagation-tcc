@@ -222,8 +222,8 @@ def s8_protocolo():
           "evidence" not in ClaimC.model_fields and "evidence" in ClaimD.model_fields)
 
     check("8.5", "mesma config de modelo nos estagios",
-          "config.MODEL_ID" in inspect.getsource(stages._build_agent),
-          f"modelo unico: {config.MODEL_ID}")
+          "config.MODEL_ID" in inspect.getsource(stages._build_model),
+          f"modelo unico: {config.PROVIDER}/{config.MODEL_ID}")
 
     destinos = {"preservado", "transformado", "amplificado", "corrigido", "contido"}
     fonte = inspect.getsource(measure.fate)
@@ -358,8 +358,17 @@ def s13_fora_de_escopo():
 def s14_reprodutibilidade():
     """Secao 14: protocolo controlado e reproduzivel."""
     params = config.model_params()
+    # O conjunto de chaves esperado depende do provedor ativo -- gravar
+    # "reasoning_effort" numa rodada Claude seria um campo inventado.
+    comuns = {"provider", "model_id", "temperature"}
+    por_provedor = {
+        "openai": {"reasoning_effort", "strict_output"},
+        "anthropic": {"thinking"},
+        "ollama": {"think"},
+    }
+    esperado = comuns | por_provedor.get(config.PROVIDER, set())
     check("14", "config do modelo gravada em todo evento",
-          {"model_id", "temperature", "reasoning_effort", "strict_output"} <= set(params),
+          esperado <= set(params),
           json.dumps(params))
     check("14", "braco de controle disponivel",
           inspect.signature(run_cell).parameters["error_type"].annotation is not None,
