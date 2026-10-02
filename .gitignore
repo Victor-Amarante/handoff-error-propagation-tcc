@@ -12,12 +12,15 @@ wheels/
 # Segredos
 .env
 
-# Cache do Extrator/Analista por modelo (regeravel, mas caro: nao versionar)
-# Tres experimentos, um por familia de modelo -- data/<slug-do-modelo>/cache/
+# Cache do Extrator/Analista por modelo (regeravel por maquina/modelo, sem
+# motivo pra sincronizar entre maquinas -- cada uma gera o proprio sozinha)
 data/*/cache/
 
-# Logs de execucao por modelo: versionar so os do experimento final, quando for o caso
-data/*/logs/*.jsonl
+# Logs de execucao (resultados de verdade) SAO versionados de proposito: dois
+# dos tres experimentos rodam em maquinas diferentes (Claude aqui, SLM local
+# em outra), e e assim que os resultados se encontram -- git push de cada
+# lado, git pull em quem for fazer a analise final.
+*.log
 
 # Saidas regeraveis da analise
 analysis/tabela_resultados*.csv
