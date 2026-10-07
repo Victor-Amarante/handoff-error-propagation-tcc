@@ -107,7 +107,7 @@ CLAUDE_THINKING: dict | None = (
 )
 CLAUDE_MAX_TOKENS = int(os.getenv("HANDOFF_CLAUDE_MAX_TOKENS", "4096"))
 
-# ---- Ollama (SLM local, ex.: qwen3.5:9b-mlx) ------------------------------
+# ---- Ollama (SLM local, qwen3.5:9b -- NAO a tag "-mlx", ver nota abaixo) --
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 #: Qwen3 e hibrido (pensa ou nao, por chamada). Mantido desligado pelo mesmo
 #: motivo do Claude acima -- constante e comparavel aos outros dois
@@ -160,7 +160,10 @@ SEEDS: tuple[int, ...] = (1, 2, 3)
 PRICE_PER_MTOK: dict[str, dict[str, float]] = {
     "gpt-5.6-luna": {"input": 0.20, "cached_input": 0.02, "output": 1.20},
     "claude-haiku-4-5-20251001": {"input": 1.00, "output": 5.00},
-    "qwen3.5:9b-mlx": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
+    # qwen3.5:9b -- NAO a tag "-mlx": essa usa quantizacao nvfp4, que o motor
+    # de JSON Schema do Ollama ignora silenciosamente (medido no piloto,
+    # ver README). A tag padrao (Q4_K_M) respeita o schema corretamente.
+    "qwen3.5:9b": {"input": 0.0, "cached_input": 0.0, "output": 0.0},
 }
 
 

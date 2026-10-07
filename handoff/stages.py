@@ -90,6 +90,11 @@ def _build_model(seed: int) -> Model:
             # Qwen3 e hibrido: `think` e parametro de request, nao de
             # `options`. request_params passa direto pro client.chat().
             request_params={"think": config.OLLAMA_THINK},
+            # -1 = nunca descarrega o modelo da memoria. Sem isso o Ollama usa
+            # o default de 5min de ociosidade -- numa rodada de varios dias
+            # sem supervisao, qualquer pausa acima disso recarregaria o
+            # modelo do zero (~5s por recarga, medido no piloto).
+            keep_alive=-1,
         )
     raise ValueError(f"provedor desconhecido: {config.PROVIDER!r}")
 
