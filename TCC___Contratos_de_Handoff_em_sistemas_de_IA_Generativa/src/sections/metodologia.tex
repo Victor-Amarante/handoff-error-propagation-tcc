@@ -1,0 +1,21 @@
+% !TEX root = ../tcc.tex
+\section{Metodologia}\label{sec:metodologia}
+
+\subsection{Pipeline}\label{sec:pipeline}
+% Documento-fonte -> Extrator -> Analista -> Redator -> Resposta final.
+% Modelo, prompts, documentos e lógica dos estágios constantes entre condições.
+
+\subsection{Unidade de análise: o claim}\label{sec:claim}
+% claim_id, derived_from e a cadeia de proveniência (ex.: C31 -> C17 -> C08).
+
+\subsection{Condições de contrato de handoff}\label{sec:condicoes}
+% A (texto livre), B (tipado), C (tipado + lineage), D (tipado + lineage + evidência).
+% Tabela comparativa e o controle de validade interna: em C, source_id/page são
+% só metadados; apenas D recebe o trecho de evidência.
+
+\subsection{Injeção de erros}\label{sec:injecao}
+% Três classes (valor, percentual, metadado), perturbações determinísticas
+% registradas como ground truth; mesmo estado corrompido serializado em A/B/C/D.
+
+\subsection{Classificação do destino do erro}\label{sec:destino}
+% Preservado / transformado / amplificado / corrigido / contido.

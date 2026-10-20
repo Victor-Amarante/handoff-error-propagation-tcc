@@ -1,0 +1,18 @@
+% !TEX root = ../tcc.tex
+% Resumo: ate ~250 palavras, sem citacoes nem notas de rodape (regra IEEE).
+
+% TODO: o texto diz "tres familias de modelo" e depois "nas duas familias de
+% modelo" -- conferir qual numero esta correto.
+\begin{abstract}
+Pipelines de IA generativa com múltiplos estágios trafegam saídas probabilísticas entre componentes com poucas garantias sobre o que sobrevive ao handoff, dificultando observar propagação, amplificação e atribuição de causa raiz de erros.
+Este trabalho investiga como o design do contrato de handoff, a estrutura da informação trocada entre estágios, afeta contenção, correção e atribuição de erros, independentemente da capacidade do modelo.
+Usando um pipeline fixo de três estágios (Extrator, Analista, Redator) sobre o benchmark FinanceBench, realizamos ablações controladas em quatro condições de contrato: texto livre (A), saída estruturada tipada (B), saída tipada com proveniência/lineage (C), e saída tipada com lineage e evidência da fonte (D).
+Um injetor de erro determinístico corrompe um claim por execução, e o mesmo estado corrompido é projetado nas quatro condições, isolando o contrato como única variável manipulada.
+Medimos quatro dimensões: correção, contenção de erro, observabilidade de causa raiz e custo operacional, e replicamos o protocolo completo em três famílias de modelo independentes.
+Os resultados mostram que estrutura sozinha não melhora a confiabilidade e pode aumentar a profundidade de propagação; adicionar lineage melhora substancialmente a atribuição de causa raiz e a correção sem conter o erro; apenas a adição de evidência da fonte reduz simultaneamente a sobrevivência/propagação do erro e maximiza correção e atribuição (acurácia de atribuição de causa raiz melhora entre +0,38 e +0,43 em relação à condição apenas com lineage) — padrão que se replica nas duas famílias de modelo.
+Esses achados indicam que ganhos de confiabilidade em handoffs estruturados dependem especificamente de ancorar a proveniência em evidência recuperável, não da estrutura ou do lineage isoladamente.
+\end{abstract}
+
+\begin{IEEEkeywords}
+pipelines de IA generativa, propagação de erros, sistemas multiagente, observabilidade, atribuição de causa raiz, contratos de handoff
+\end{IEEEkeywords}

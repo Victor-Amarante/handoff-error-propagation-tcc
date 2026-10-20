@@ -1,7 +1,8 @@
 # Contratos de Handoff em Pipelines de IA Generativa
 
 Infraestrutura experimental do TCC. O desenho completo esta em [CONTEXT.md](CONTEXT.md)
-e na [proposta](docs/PropostaTCC.pdf); este README cobre so como rodar.
+e na [proposta](docs/PropostaTCC.pdf); este README cobre como rodar e onde
+esta cada parte do [artigo](#artigo-latex).
 
 Pipeline fixo `Extrator -> Analista -> Redator`, com uma unica variavel
 manipulada DENTRO de um experimento: o **contrato de handoff** entre os
@@ -182,3 +183,56 @@ Containment sai de `output_raw` nas 4 condicoes, nunca de `claims`/`derived_from
 A nao tem claims e B nao tem lineage, entao usa-los faria D parecer mais
 amplificadora so por emitir mais campos -- mediria o formato do contrato, nao o
 comportamento do erro. `derived_from` vira sinal secundario (`lineage_agreement`).
+
+## Artigo (LaTeX)
+
+Template IEEE Conference (`IEEEtran`), em
+`TCC___Contratos_de_Handoff_em_sistemas_de_IA_Generativa/`. Compila no VS Code
+com LaTeX Workshop (build ao salvar; PDF e auxiliares vao para `src/build/`,
+ignorado pelo git) ou no terminal:
+
+```bash
+cd TCC___Contratos_de_Handoff_em_sistemas_de_IA_Generativa/src
+latexmk -pdf -outdir=build tcc.tex
+```
+
+Figuras ficam em `images/` (fora de `src/`) e sao referenciadas como
+`\includegraphics{images/<arquivo>}`. Cada arquivo de `sections/` comeca com
+`% !TEX root = ../tcc.tex`, entao salvar qualquer secao compila o documento
+inteiro.
+
+```
+src/
+├── tcc.tex                          ← so preambulo, titulo/autor e a lista de \input
+├── referencias.bib                  ← as 11 referencias da proposta
+└── sections/
+    ├── resumo.tex                   resumo + palavras-chave
+    ├── introducao.tex               I.    Introducao
+    ├── trabalhos-relacionados.tex   II.   Trabalhos Relacionados
+    ├── metodologia.tex              III.  Metodologia
+    ├── configuracao-experimental.tex IV.  Configuracao Experimental
+    ├── resultados.tex               V.    Resultados
+    ├── discussao.tex                VI.   Discussao
+    ├── ameacas-validade.tex         VII.  Ameacas a Validade
+    ├── conclusao.tex                VIII. Conclusao
+    └── agradecimentos.tex           (sem numero, padrao IEEE)
+```
+
+### Andamento da escrita
+
+Status: `roteiro` (so comentarios com o que a secao deve cobrir) ->
+`rascunho` -> `revisado` -> `final`.
+
+| Secao | Arquivo | Status | Observacoes |
+|---|---|---|---|
+| Resumo | `resumo.tex` | rascunho | conferir "tres" vs "duas" familias de modelo |
+| I. Introducao | `introducao.tex` | roteiro | |
+| II. Trabalhos Relacionados | `trabalhos-relacionados.tex` | roteiro | |
+| III. Metodologia | `metodologia.tex` | roteiro | |
+| IV. Configuracao Experimental | `configuracao-experimental.tex` | roteiro | |
+| V. Resultados | `resultados.tex` | roteiro | |
+| VI. Discussao | `discussao.tex` | roteiro | |
+| VII. Ameacas a Validade | `ameacas-validade.tex` | roteiro | |
+| VIII. Conclusao | `conclusao.tex` | roteiro | |
+| Agradecimentos | `agradecimentos.tex` | roteiro | |
+| Referencias | `referencias.bib` | rascunho | completar autores "and others"; remover `\nocite{*}` do `tcc.tex` quando as secoes citarem |
