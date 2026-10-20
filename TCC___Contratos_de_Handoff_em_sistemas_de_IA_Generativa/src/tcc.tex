@@ -1,0 +1,57 @@
+% Arquivo principal: e o unico que se compila. O texto fica em sections/,
+% um arquivo por secao, incluido com \input na ordem do artigo.
+\documentclass[conference]{IEEEtran}
+% \IEEEoverridecommandlockouts % so necessario se usar \thanks no titulo (financiamento)
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\graphicspath{{../}} % figuras ficam em ../images/ -> \includegraphics{images/fig.png}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{url}
+
+\renewcommand{\IEEEkeywordsname}{Palavras-chave} % o babel nao traduz o "Index Terms" do IEEEtran
+
+\begin{document}
+
+\title{Contratos de Handoff, Propagação e Atribuição de Erros em Pipelines de IA Generativa
+% \thanks{Agência de fomento, se houver.}
+}
+
+\author{
+\IEEEauthorblockN{Victor Amarante F. da Silva}
+\IEEEauthorblockA{\textit{Centro de Informática} \\
+\textit{Universidade Federal de Pernambuco}\\
+Recife, Brasil \\
+vafs@cin.ufpe.br}
+% \and
+% \IEEEauthorblockN{Nome do(a) Orientador(a)}
+% \IEEEauthorblockA{\textit{Centro de Informática} \\
+% \textit{Universidade Federal de Pernambuco}\\
+% Recife, Brasil \\
+% email@cin.ufpe.br}
+}
+
+\maketitle
+
+\input{sections/resumo}
+\input{sections/introducao}
+\input{sections/trabalhos-relacionados}
+\input{sections/metodologia}
+\input{sections/configuracao-experimental}
+\input{sections/resultados}
+\input{sections/discussao}
+\input{sections/ameacas-validade}
+\input{sections/conclusao}
+\input{sections/agradecimentos}
+
+% \nocite{*} lista todas as entradas do .bib mesmo sem citacao no texto.
+% Remova quando as secoes ja estiverem citando com \cite{...}.
+\nocite{*}
+\bibliographystyle{IEEEtran}
+\bibliography{referencias}
+
+\end{document}

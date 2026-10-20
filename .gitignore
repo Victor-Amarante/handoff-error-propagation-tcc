@@ -29,3 +29,20 @@ analysis/tabela_resultados*.csv
 
 # macOS
 .DS_Store
+
+# LaTeX: artefatos de build (tudo regeravel a partir do .tex). O build do
+# VS Code vai pra TCC_*/src/build/ (ver .vscode/settings.json), ja coberto
+# por build/ acima; as regras abaixo cobrem builds feitos direto no terminal.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+missfont.log
+TCC_*/src/*.pdf
