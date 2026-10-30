@@ -1,9 +1,90 @@
 % !TEX root = ../tcc.tex
 \section{Trabalhos Relacionados}\label{sec:trabalhos}
 
-% Sugestão de agrupamento (chaves em referencias.bib):
-% - Propagação de erros em pipelines multiagente: \cite{singh2026snowball, barrak2025traceability}
-% - Saídas estruturadas e validade x correção: \cite{geng2025structured, ray2026constraint}
-% - Harness, observabilidade e diagnóstico de falhas: \cite{zhong2026harness, chen2026failed, ran2026caveagent}
-% - Arquiteturas de agentes generativos (contexto): \cite{park2023generative, altera2024sid, park2024selfreports}
-% Fechar com a lacuna que este trabalho preenche.
+Este trabalho se apoia em quatro linhas de pesquisa: propagação de erros em pipelines multiagente, atribuição de falhas, saídas estruturadas e geração ancorada em evidência.
+Cada subseção a seguir discute uma delas, e a última parte resume o que fica em aberto.
+
+\subsection{Propagação de erros em pipelines multiagente}\label{sec:rel-propagacao}
+
+Em arquiteturas de agentes generativos, cada agente guarda sua experiência em linguagem natural e a recupera depois para planejar \cite{park2023generative}.
+O Project Sid propôs a arquitetura PIANO para simular sociedades com mais de mil agentes que interagem entre si e com humanos em tempo real \cite{altera2024sid}.
+Nos dois casos, o que um agente escreve é lido como premissa, seja por ele mesmo mais tarde, seja por outro agente.
+Cemri et al. analisaram 1.642 execuções de sete frameworks multiagente e chegaram a uma taxonomia de 14 modos de falha, agrupados em problemas de desenho do sistema, desalinhamento entre agentes e verificação da tarefa \cite{cemri2025why}.
+O desalinhamento entre agentes inclui, por exemplo, casos em que um agente retém informação ou ignora a entrada de outro, ou seja, falhas na passagem de informação de um estágio para o seguinte.
+
+O trabalho mais próximo deste é o de Singh e Pawar \cite{singh2026snowball}.
+Os autores injetaram 346 alucinações numéricas em 140 perguntas do FinanceBench, logo após o primeiro estágio de um pipeline de quatro agentes (Researcher, Analyst, Writer e Reviewer), e modelaram a sobrevivência do erro como um processo de Markov com quatro estados.
+A intervenção estudada foi a verificação: além do contraste entre verificar a cada handoff e verificar só no fim, já discutido na Seção~\ref{sec:introducao}, o primeiro portão de verificação, colocado depois do Researcher, barrou sozinho 75,4\% das alucinações.
+O formato do handoff, porém, ficou fixo. Cada agente recebe apenas o texto produzido pelo antecessor, sem metadados de proveniência, e os autores deixam a comparação com handoffs estruturados como trabalho futuro \cite{singh2026snowball}.
+
+O presente trabalho usa o mesmo benchmark e um desenho de injeção parecido, mas muda a variável manipulada.
+Em vez de acrescentar verificadores, mantém os estágios fixos e varia apenas o contrato de handoff.
+Há também duas diferenças de medição.
+No estudo de Singh e Pawar, a origem do erro é conhecida por construção e não é medida; aqui ela é uma variável de saída, porque um auditor tenta reconstruí-la a partir do que cada contrato preservou.
+O estudo deles também não reporta execuções sem injeção, o que impede separar o erro injetado dos erros que o pipeline comete por conta própria. Neste trabalho, cada execução com erro injetado é comparada com um controle limpo da mesma pergunta.
+
+\subsection{Atribuição de falhas}\label{sec:rel-atribuicao}
+
+Zhang et al. formalizaram a atribuição automática de falhas em sistemas multiagente: dado o log de uma execução que falhou, identificar o agente responsável e o passo decisivo \cite{zhang2025which}.
+No conjunto Who\&When, com logs de 127 sistemas, o melhor método acertou o agente em 53,5\% dos casos e o passo em apenas 14,2\%, e alguns métodos ficaram abaixo do acaso.
+Barrak instrumentou um pipeline com os papéis de Planner, Executor e Critic para registrar a resposta de cada estágio e marcar a origem de cada erro \cite{barrak2025traceability}.
+Essa atribuição, no entanto, depende de rótulos de ground truth, e o próprio autor observa que ela funciona como análise posterior, não como mecanismo disponível durante a execução.
+
+Outra linha trata o próprio harness como objeto de engenharia.
+Zhong e Zhu definem onze responsabilidades para essa camada, entre elas a seleção de contexto e o registro de intervenções, e quatro níveis de suporte, de H0 a H3 \cite{zhong2026harness}.
+Num experimento controlado, os níveis mais altos produziram evidência mais rica, como logs de reprodução e atribuições de falha, enquanto o nível mais baixo entregou apenas o patch final.
+O HarnessFix, de Chen et al., converte traces e código do harness numa representação estruturada, liga cada falha a passos e componentes específicos e gera correções direcionadas, com ganhos de 6,3\% a 18,4\% sobre os harnesses iniciais \cite{chen2026failed}.
+Nesses trabalhos, a capacidade de atribuir uma falha depende do que o sistema registra durante a execução.
+O presente estudo leva essa ideia para um ponto específico do sistema, o handoff, e mede a atribuição separadamente para cada contrato.
+
+\subsection{Saídas estruturadas: validade não é correção}\label{sec:rel-estruturadas}
+
+A decodificação restrita força o modelo a gerar apenas sequências compatíveis com uma gramática ou um JSON Schema.
+Geng et al. avaliaram seis frameworks desse tipo (Guidance, Outlines, Llamacpp, XGrammar, OpenAI e Gemini) num benchmark com 10 mil schemas reais, medindo eficiência, cobertura de restrições e qualidade da saída \cite{geng2025structured}.
+Garantir o formato, porém, não garante o conteúdo.
+Ray mediu esse descompasso em modelos com menos de 3B parâmetros: em comparação com o JSON pedido apenas no prompt, impor o schema de forma estrita elevou a validade de 61,5\% para 100\%, mas a acurácia caiu de 19,7\% para 11,0\%, e 88,9\% das saídas válidas estavam erradas \cite{ray2026constraint}.
+Tam et al. observaram efeito na mesma direção em tarefas de raciocínio, com quedas maiores quanto mais rígida a restrição de formato \cite{tam2024speak}.
+Os três trabalhos avaliam uma única chamada ao modelo.
+O que a estrutura faz com um erro que já chega errado de um estágio anterior é uma pergunta diferente, e é a que a RQ1 investiga.
+
+\subsection{Proveniência e evidência}\label{sec:rel-evidencia}
+
+Gao et al. propuseram o ALCE, um benchmark em que o modelo precisa responder citando trechos recuperados que sustentem cada afirmação \cite{gao2023citations}.
+Mesmo os melhores modelos avaliados deixaram de ter suporte completo nas citações em metade das respostas do conjunto ELI5.
+Nesse trabalho, a citação é parte da resposta final e se destina ao leitor.
+Na condição D deste estudo, a evidência tem outra função: ela acompanha o claim de um estágio para o outro, e o componente seguinte pode recorrer a ela para conferir o valor antes de seguir com o cálculo.
+
+O CaveAgent aborda a perda de informação por outro caminho.
+Em vez de serializar o estado em texto a cada turno, o modelo opera um runtime Python persistente que guarda objetos vivos, o que, segundo os autores, reduz o desvio de contexto e preserva os dados processados sem perda \cite{ran2026caveagent}.
+Singh e Pawar citam essa abordagem como alternativa aos handoffs em texto \cite{singh2026snowball}.
+Em outro domínio, Park et al. observaram um efeito parecido de ancoragem: agentes construídos a partir de entrevistas de duas horas reproduziram 83\% da consistência dos próprios participantes em itens do General Social Survey, contra 74\% de agentes construídos só com dados demográficos \cite{park2024selfreports}.
+
+\subsection{Lacuna}\label{sec:rel-lacuna}
+
+A Tabela~\ref{tab:relacionados} compara este trabalho com os três mais próximos.
+Singh e Pawar medem propagação com injeção controlada, mas com o handoff fixo em texto livre \cite{singh2026snowball}.
+Zhang et al. e Barrak atribuem falhas, mas sobre erros que surgem naturalmente e sem manipular o formato da comunicação de forma isolada \cite{zhang2025which, barrak2025traceability}.
+Os estudos sobre saídas estruturadas separam validade de correção, mas dentro de uma única chamada \cite{ray2026constraint, tam2024speak}.
+Este trabalho combina injeção controlada, controle sem injeção e quatro níveis de contrato, o que permite medir separadamente o efeito da estrutura, do lineage e da evidência sobre o mesmo erro.
+
+\begin{table}[htbp]
+\caption{Comparação com os trabalhos mais próximos}
+\label{tab:relacionados}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Trabalho} & \textbf{Injeção} & \textbf{Formato do} & \textbf{Atribuição} & \textbf{Controle} \\
+ & \textbf{controlada} & \textbf{handoff} & \textbf{de origem} & \textbf{limpo} \\
+\hline
+Singh e Pawar \cite{singh2026snowball} & sim & fixo (texto) & não & não \\
+Barrak \cite{barrak2025traceability} & não & 2 níveis$^{a}$ & posterior$^{b}$ & n/a \\
+Zhang et al. \cite{zhang2025which} & não & não manipulado & sim & n/a \\
+Este trabalho & sim & 4 níveis (A--D) & sim & sim \\
+\hline
+\multicolumn{5}{l}{\scriptsize $^{a}$Pipeline simples $\times$ auditável; o formato trocado não é descrito.} \\
+\multicolumn{5}{l}{\scriptsize $^{b}$Usa rótulos de ground truth, fora da execução.} \\
+\multicolumn{5}{l}{\scriptsize n/a: estudos sobre erros naturais, sem injeção.} \\
+\end{tabular}
+\end{table}
