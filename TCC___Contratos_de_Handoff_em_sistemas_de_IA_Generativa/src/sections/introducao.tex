@@ -1,13 +1,33 @@
 % !TEX root = ../tcc.tex
 \section{Introdução}\label{sec:introducao}
 
-% - Contexto: pipelines multiestágio de LLMs e handoffs entre componentes probabilísticos.
-% - Problema: um erro introduzido cedo pode ser preservado, transformado, amplificado,
-%   corrigido ou contido -- e hoje é difícil observar e atribuir sua origem.
-% - Foco: observabilidade e atribuição no nível do sistema/harness, não do modelo.
-% - Pergunta central e as perguntas de pesquisa:
-%     RQ1 (A x B): efeito da estruturação do handoff;
-%     RQ2 (B x C): efeito do lineage/proveniência;
-%     RQ3 (C x D): efeito adicional da evidência da fonte.
-% - Contribuições (lista com \begin{itemize}).
-% - Organização do artigo (Seção~\ref{sec:trabalhos} ... Seção~\ref{sec:conclusao}).
+Sistemas construídos com modelos de linguagem de grande porte (LLMs) raramente se resumem a uma única chamada ao modelo.
+Frameworks como o AutoGen organizam uma aplicação em vários agentes que conversam entre si, usam ferramentas e aceitam intervenção humana \cite{wu2023autogen}, e arquiteturas de agentes generativos encadeiam memória, reflexão e planejamento em chamadas sucessivas \cite{park2023generative}.
+Nesses sistemas, a saída de um componente vira entrada, ou premissa, do componente seguinte.
+Neste trabalho, essa passagem é chamada de \emph{handoff}.
+
+Quando um componente probabilístico erra, o erro não fica parado no estágio em que surgiu.
+Singh e Pawar injetaram alucinações logo após o primeiro agente de um pipeline financeiro de quatro estágios e observaram que o erro muda de forma a cada handoff: começa como fato bruto, vira cálculo derivado, depois texto narrativo e, por fim, conclusão aprovada, ficando mais difícil de detectar em cada etapa \cite{singh2026snowball}.
+Verificar só a saída final quase não ajudou. A sobrevivência das alucinações caiu de 60,7\% para 58,4\%, contra 16,2\% quando havia verificação em cada fronteira entre agentes \cite{singh2026snowball}.
+Numa análise de mais de 1.600 execuções de sete frameworks multiagente, Cemri et al. agruparam as falhas em problemas de desenho do sistema, desalinhamento entre agentes e verificação da tarefa, e argumentam que parte delas se resolve com um desenho de sistema melhor, e não com um modelo mais capaz \cite{cemri2025why}.
+
+O foco deste trabalho não é explicar o que acontece dentro do modelo.
+O interesse está no nível do sistema, ou do \emph{harness}: a camada de execução que define o que o modelo observa, como ele age e como suas ações são verificadas \cite{zhong2026harness}.
+Quando a resposta final está errada, a pergunta é se dá para descobrir em que estágio a falha começou, qual claim a originou e como ela se propagou.
+Métodos atuais para melhorar agentes muitas vezes não conseguem apontar qual parte de uma execução causou a falha, e por isso produzem correções genéricas ou mal direcionadas \cite{chen2026failed}.
+Dois sistemas podem ter a mesma acurácia final e, ainda assim, ser muito diferentes do ponto de vista arquitetural, se apenas um deles permitir reconstruir a origem de um erro.
+
+O formato do handoff aparece pouco como variável controlada nesses estudos. Barrak mostrou que um handoff estruturado e auditável entre os papéis de Planner, Executor e Critic melhora a acurácia em relação a um pipeline simples \cite{barrak2025traceability}, mas sem descrever o formato trocado entre os agentes nem manter o handoff como única diferença entre as configurações.
+Do lado das saídas estruturadas, a decodificação restrita já faz o modelo obedecer a um JSON Schema \cite{geng2025structured}, e há evidência de que obedecer ao schema não significa acertar: em modelos pequenos, a decodificação estrita torna quase todas as saídas válidas, mas reduz a acurácia, e a maior parte das saídas válidas está errada \cite{ray2026constraint}.
+O próprio estudo de Singh e Pawar deixa como trabalho futuro a comparação com handoffs estruturados, com campos tipados, passagem de citações e estado que preserva a proveniência \cite{singh2026snowball}.
+
+Este trabalho faz essa comparação por meio de ablações controladas do contrato de handoff. Um pipeline fixo de três estágios (Extrator, Analista e Redator) responde perguntas do FinanceBench \cite{islam2023financebench}, e um injetor determinístico corrompe um claim logo depois do Extrator.
+O mesmo estado corrompido é entregue a quatro contratos, que acrescentam um mecanismo de cada vez: texto livre (A), saída tipada (B), saída tipada com lineage (C) e saída tipada com lineage e o trecho de evidência da fonte (D). A pergunta central é: dado que um componente probabilístico introduziu um erro, como o contrato de comunicação entre componentes influencia a propagação, a contenção, a correção e a atribuição de origem desse erro? Ela se divide em três perguntas de pesquisa. A RQ1 (A $\times$ B) investiga o efeito de estruturar o handoff sobre a propagação e a correção do erro. A RQ2 (B $\times$ C) trata do efeito de preservar o lineage sobre a contenção e a atribuição de causa raiz, e a RQ3 (C $\times$ D), do efeito adicional de entregar a evidência original ao estágio seguinte. O custo operacional de cada condição é medido nas três comparações.
+
+A primeira contribuição do trabalho é um protocolo experimental que isola o contrato de handoff como única variável manipulada, com perturbações determinísticas registradas como ground truth e um braço de controle sem injeção, que separa o erro injetado dos erros que o pipeline já comete sozinho. A segunda é um instrumento de medida aplicado da mesma forma nas quatro condições. Ele compara a saída de cada estágio com a do controle da mesma pergunta, para que o formato do contrato não interfira nas métricas de contenção. A terceira é a decomposição do efeito de estrutura, lineage e evidência em três modelos (GPT-5.6 Luna, Claude Haiku 4.5 e Qwen3.5 9B). A estrutura sozinha aumentou a propagação, o lineage melhorou a atribuição sem conter o erro, e só a evidência reduziu a sobrevivência do erro, efeito observado nos dois modelos de API, mas não no modelo local.
+
+O restante do artigo está organizado da seguinte forma.
+A Seção~\ref{sec:trabalhos} discute os trabalhos relacionados.
+A Seção~\ref{sec:metodologia} descreve o pipeline, as condições de contrato e a injeção de erros, e a Seção~\ref{sec:configuracao} apresenta os dados, os modelos e as métricas.
+Os resultados estão na Seção~\ref{sec:resultados} e são discutidos na Seção~\ref{sec:discussao}.
+A Seção~\ref{sec:ameacas} trata das ameaças à validade, e a Seção~\ref{sec:conclusao} conclui o trabalho.

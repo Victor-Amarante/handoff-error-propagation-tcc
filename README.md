@@ -225,8 +225,8 @@ Status: `roteiro` (so comentarios com o que a secao deve cobrir) ->
 
 | Secao | Arquivo | Status | Observacoes |
 |---|---|---|---|
-| Resumo | `resumo.tex` | rascunho | conferir "tres" vs "duas" familias de modelo |
-| I. Introducao | `introducao.tex` | roteiro | |
+| Resumo | `resumo.tex` | rascunho | numeros conferidos nos logs dos 3 modelos (out/2026); aguardando revisao do autor |
+| I. Introducao | `introducao.tex` | rascunho | aguardando revisao do autor |
 | II. Trabalhos Relacionados | `trabalhos-relacionados.tex` | roteiro | |
 | III. Metodologia | `metodologia.tex` | roteiro | |
 | IV. Configuracao Experimental | `configuracao-experimental.tex` | roteiro | |

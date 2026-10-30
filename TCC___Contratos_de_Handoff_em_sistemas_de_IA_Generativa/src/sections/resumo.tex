@@ -1,16 +1,17 @@
 % !TEX root = ../tcc.tex
 % Resumo: ate ~250 palavras, sem citacoes nem notas de rodape (regra IEEE).
 
-% TODO: o texto diz "tres familias de modelo" e depois "nas duas familias de
-% modelo" -- conferir qual numero esta correto.
 \begin{abstract}
-Pipelines de IA generativa com múltiplos estágios trafegam saídas probabilísticas entre componentes com poucas garantias sobre o que sobrevive ao handoff, dificultando observar propagação, amplificação e atribuição de causa raiz de erros.
-Este trabalho investiga como o design do contrato de handoff, a estrutura da informação trocada entre estágios, afeta contenção, correção e atribuição de erros, independentemente da capacidade do modelo.
-Usando um pipeline fixo de três estágios (Extrator, Analista, Redator) sobre o benchmark FinanceBench, realizamos ablações controladas em quatro condições de contrato: texto livre (A), saída estruturada tipada (B), saída tipada com proveniência/lineage (C), e saída tipada com lineage e evidência da fonte (D).
-Um injetor de erro determinístico corrompe um claim por execução, e o mesmo estado corrompido é projetado nas quatro condições, isolando o contrato como única variável manipulada.
-Medimos quatro dimensões: correção, contenção de erro, observabilidade de causa raiz e custo operacional, e replicamos o protocolo completo em três famílias de modelo independentes.
-Os resultados mostram que estrutura sozinha não melhora a confiabilidade e pode aumentar a profundidade de propagação; adicionar lineage melhora substancialmente a atribuição de causa raiz e a correção sem conter o erro; apenas a adição de evidência da fonte reduz simultaneamente a sobrevivência/propagação do erro e maximiza correção e atribuição (acurácia de atribuição de causa raiz melhora entre +0,38 e +0,43 em relação à condição apenas com lineage) — padrão que se replica nas duas famílias de modelo.
-Esses achados indicam que ganhos de confiabilidade em handoffs estruturados dependem especificamente de ancorar a proveniência em evidência recuperável, não da estrutura ou do lineage isoladamente.
+Em pipelines de IA generativa com vários estágios, a saída de um estágio vira a entrada do próximo, e um erro introduzido cedo pode chegar à resposta final sem que se saiba onde começou.
+Este trabalho investiga como o contrato de handoff, o formato da informação trocada entre estágios, afeta a propagação, a correção e a atribuição de origem desse erro.
+Um pipeline fixo de três estágios (Extrator, Analista e Redator) roda sobre o FinanceBench com quatro contratos: texto livre (A), tipado (B), tipado com lineage (C) e tipado com lineage e o trecho de evidência da fonte (D).
+Um injetor determinístico corrompe um claim por execução, e o mesmo estado corrompido é projetado nas quatro condições.
+O protocolo foi repetido com três modelos: GPT-5.6 Luna, Claude Haiku 4.5 e o SLM Qwen3.5 9B.
+Nos três, a estrutura sozinha não melhorou a acurácia final e aumentou a profundidade de propagação.
+O lineage elevou a atribuição correta do claim de origem de menos de 0,09 para cerca de 0,4, mas não reduziu a sobrevivência do erro.
+Nos dois modelos de API, só a evidência reduziu a sobrevivência e a propagação do erro, e a atribuição chegou a cerca de 0,8 (+0,38 a +0,43 sobre C), com quase quatro vezes mais tokens que o texto livre.
+No Qwen, a evidência melhorou a acurácia final, mas não a contenção nem a atribuição.
+Estrutura e lineage, sozinhos, não tornam o pipeline mais confiável: o ganho vem da evidência que permite conferir a proveniência, e depende de o modelo saber usá-la.
 \end{abstract}
 
 \begin{IEEEkeywords}
