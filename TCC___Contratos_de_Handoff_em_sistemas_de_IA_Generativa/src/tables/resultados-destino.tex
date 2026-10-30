@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\caption{Destino do erro no estudo principal (\% das execuções)}
+\label{tab:destino}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{|l|cccc|cccc|cccc|}
+\hline
+ & \multicolumn{4}{c|}{\textbf{GPT-5.6 Luna}} & \multicolumn{4}{c|}{\textbf{Claude Haiku 4.5}} & \multicolumn{4}{c|}{\textbf{Qwen3.5 9B}} \\
+\textbf{Destino} & A & B & C & D & A & B & C & D & A & B & C & D \\
+\hline
+Preservado & 26 & 23 & 22 & 22 & 39 & 32 & 29 & 27 & 42 & 25 & 24 & 17 \\
+Transformado & 0 & 0 & 2 & 2 & 1 & 1 & 2 & 1 & 0 & 1 & 0 & 2 \\
+Amplificado & 42 & 42 & 44 & 35 & 34 & 37 & 46 & 35 & 29 & 45 & 48 & 48 \\
+Corrigido & 0 & 12 & 18 & 23 & 1 & 10 & 16 & 17 & 4 & 18 & 18 & 22 \\
+Contido & 5 & 21 & 12 & 8 & 9 & 14 & 5 & 10 & 12 & 5 & 7 & 7 \\
+Sem efeito & 27 & 3 & 2 & 9 & 16 & 6 & 2 & 10 & 13 & 6 & 4 & 5 \\
+\hline
+\end{tabular}
+\\[2pt]{\scriptsize Percentual das execuções injetadas de cada condição. As colunas somam 100\% a menos de arredondamento.}
+\end{table*}

@@ -227,10 +227,10 @@ Status: `roteiro` (so comentarios com o que a secao deve cobrir) ->
 |---|---|---|---|
 | Resumo | `resumo.tex` | revisado | aprovado pelo autor |
 | I. Introducao | `introducao.tex` | revisado | aprovada pelo autor |
-| II. Trabalhos Relacionados | `trabalhos-relacionados.tex` | rascunho | aguardando revisao do autor |
-| III. Metodologia | `metodologia.tex` | roteiro | |
-| IV. Configuracao Experimental | `configuracao-experimental.tex` | roteiro | |
-| V. Resultados | `resultados.tex` | roteiro | |
+| II. Trabalhos Relacionados | `trabalhos-relacionados.tex` | revisado | aprovado pelo autor |
+| III. Metodologia | `metodologia.tex` | revisado | aprovada pelo autor |
+| IV. Configuracao Experimental | `configuracao-experimental.tex` | rascunho | metricas ampliadas (Tabela VI); aguardando revisao |
+| V. Resultados | `resultados.tex` | rascunho | tabelas em src/tables/ geradas por scripts/build_tables.py; Fig. 2 por scripts/build_figures.py |
 | VI. Discussao | `discussao.tex` | roteiro | |
 | VII. Ameacas a Validade | `ameacas-validade.tex` | roteiro | |
 | VIII. Conclusao | `conclusao.tex` | roteiro | |

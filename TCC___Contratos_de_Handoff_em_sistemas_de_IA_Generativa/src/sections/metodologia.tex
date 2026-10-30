@@ -1,21 +1,193 @@
 % !TEX root = ../tcc.tex
 \section{Metodologia}\label{sec:metodologia}
 
+O experimento manipula uma única variável, o contrato de handoff, e mantém fixos o modelo, os prompts de tarefa, as perguntas e a lógica de cada estágio.
+Esta seção descreve o pipeline, as quatro condições de contrato, a forma como os erros são injetados e os instrumentos que medem o que acontece com eles.
+Os dados, os modelos e as métricas estão na Seção~\ref{sec:configuracao}.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  box/.style={draw, rounded corners=2pt, minimum height=6mm, minimum width=13mm, align=center, inner sep=2pt},
+  inj/.style={box, fill=black!8},
+  aud/.style={box, dashed},
+  arr/.style={-{Latex[length=1.6mm]}},
+  node distance=4mm and 3.5mm
+]
+\node[box] (doc) {Documento-\\fonte};
+\node[box, right=of doc] (ext) {Extrator};
+\node[inj, right=of ext] (inj) {Injetor\\de erro};
+\node[box, right=of inj] (proj) {Projeção\\A/B/C/D};
+\node[box, below=7mm of proj] (ana) {Analista};
+\node[box, left=of ana] (red) {Redator};
+\node[box, left=of red] (resp) {Resposta\\final};
+\node[aud, left=of resp] (aud) {Auditor};
+\draw[arr] (doc) -- (ext);
+\draw[arr] (ext) -- (inj);
+\draw[arr] (inj) -- (proj);
+\draw[arr] (proj) -- (ana);
+\draw[arr] (ana) -- (red);
+\draw[arr] (red) -- (resp);
+\draw[arr, dashed] (resp) -- (aud);
+\node[draw, dotted, rounded corners=3pt, inner sep=2.5pt, fit=(ana)(red)] (cond) {};
+\node[font=\scriptsize, below=0.5mm of cond] {roda por condição};
+\end{tikzpicture}
+\caption{Pipeline do estudo principal. O Extrator roda uma vez por pergunta; o estado extraído recebe a injeção e é projetado no contrato de cada condição. O auditor lê o trace preservado pelo contrato depois da execução.}
+\label{fig:pipeline}
+\end{figure}
+
 \subsection{Pipeline}\label{sec:pipeline}
-% Documento-fonte -> Extrator -> Analista -> Redator -> Resposta final.
-% Modelo, prompts, documentos e lógica dos estágios constantes entre condições.
+
+O pipeline tem três estágios em sequência (Fig.~\ref{fig:pipeline}).
+O Extrator recebe a pergunta e o documento-fonte e devolve os claims factuais necessários para respondê-la.
+O Analista recebe esses claims e produz as figuras que a pergunta pede, como comparações, margens ou taxas de crescimento.
+O Redator escreve a resposta final para o usuário, em uma a três frases.
+Como documento-fonte, o experimento usa o trecho de evidência que o FinanceBench associa a cada pergunta \cite{islam2023financebench}, sem extração de PDF, para que nenhum erro de leitura do documento concorra com o erro injetado.
+
+Só o Extrator vê o documento. Analista e Redator trabalham apenas com o que receberam do estágio anterior, e nenhum agente tem acesso a ferramentas.
+A instrução de tarefa de cada estágio é idêntica nas quatro condições. O que muda é a instrução de formato, que é a própria variável manipulada.
+
+O Extrator segue duas restrições, ambas motivadas por falhas observadas no piloto.
+Ele não calcula nada, já que razões, margens e variações são trabalho do Analista. No piloto, ele chegou a emitir uma margem operacional de 18,4\% anexando como evidência apenas a linha do lucro operacional.
+Ele também não muda a escala dos valores: uma figura publicada em milhares é reportada em milhares.
+As duas regras são reforçadas por uma checagem determinística, e não só pelo prompt: o valor de cada claim precisa aparecer literalmente no trecho de evidência que o sustenta.
+Claims que não passam continuam no estado, mas não podem ser alvo de injeção, porque corromper um número que o próprio modelo já fabricou deixaria o ground truth da perturbação sem sentido.
+
+O Extrator roda uma única vez por pergunta.
+O estado extraído é guardado e reaproveitado pelas quatro condições, de modo que o erro injetado sobre ele é literalmente o mesmo em A, B, C e D.
 
 \subsection{Unidade de análise: o claim}\label{sec:claim}
-% claim_id, derived_from e a cadeia de proveniência (ex.: C31 -> C17 -> C08).
+
+O claim é a menor afirmação factual que trafega entre os estágios, por exemplo ``a receita no ano fiscal de 2017 foi de US\$ 14,2 milhões''.
+Internamente, todo claim é guardado numa forma canônica completa, com métrica, valor, unidade, ano, período, entidade, fonte, página, estágio de origem, claims de que foi derivado e trecho de evidência.
+Essa forma canônica nunca é o contrato de handoff. Ela existe para receber a injeção uma única vez e depois ser projetada no contrato de cada condição.
+
+Cada claim tem um identificador com o prefixo do estágio que o gerou (C para o Extrator, A para o Analista e W para o Redator), e o campo \texttt{derived\_from} lista os claims de que ele foi derivado.
+Uma resposta W01 derivada de A02, que por sua vez veio de C08, forma a cadeia W01 $\rightarrow$ A02 $\rightarrow$ C08.
+A atribuição de causa raiz é avaliada comparando a origem que o sistema reconstrói com a origem real da injeção. Não basta existir uma cadeia de proveniência: ela precisa apontar para o claim correto.
 
 \subsection{Condições de contrato de handoff}\label{sec:condicoes}
-% A (texto livre), B (tipado), C (tipado + lineage), D (tipado + lineage + evidência).
-% Tabela comparativa e o controle de validade interna: em C, source_id/page são
-% só metadados; apenas D recebe o trecho de evidência.
+
+\begin{table}[htbp]
+\caption{Campos carregados pelo handoff em cada condição}
+\label{tab:condicoes}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|c|>{\raggedright\arraybackslash}p{0.82\columnwidth}|}
+\hline
+\textbf{Cond.} & \textbf{Conteúdo do handoff} \\
+\hline
+A & \textit{Texto livre}: prosa gerada por template fixo \\
+\hline
+B & \textit{Tipado}: metric, value, unit, year \\
+\hline
+C & \textit{Tipado + lineage}: campos de B + claim\_id, source\_id, page, generated\_by, derived\_from \\
+\hline
+D & \textit{Tipado + lineage + evidência}: campos de C + evidence \\
+\hline
+\end{tabular}
+\end{table}
+
+A Tabela~\ref{tab:condicoes} mostra o que cada contrato carrega.
+Na condição A, o handoff é prosa. Para não introduzir uma variável a mais, essa prosa vem de um template fixo, e não de uma paráfrase feita pelo modelo: cada claim vira uma frase como ``According to the report, revenue in FY2017 was \$14.2M.'', sem identificador, fonte ou página.
+Nas condições B, C e D, o handoff é uma lista de claims tipados e validados por schema.
+B leva só a estrutura, C acrescenta a proveniência e D acrescenta o trecho literal do documento que sustenta o claim.
+
+Na condição C, \texttt{source\_id} e \texttt{page} são apenas metadados.
+O estágio seguinte sabe de onde o claim veio, mas não tem como abrir a fonte e conferir o valor.
+Isso é garantido por construção, já que nenhum estágio posterior ao Extrator recebe o documento, e também verificado a cada chamada: uma checagem compara sequências de 12 palavras do prompt com as do documento e registra no log qualquer sobreposição nas condições A, B e C.
+Só a condição D recebe evidência, e depois da injeção essa evidência contradiz o valor corrompido.
+É essa contradição que dá ao estágio seguinte a chance de perceber o erro.
+
+Cada par de condições vizinhas difere em um único mecanismo.
+A comparação A $\times$ B isola o efeito da estrutura, B $\times$ C o da proveniência e C $\times$ D o da evidência, o que corresponde às RQ1, RQ2 e RQ3.
 
 \subsection{Injeção de erros}\label{sec:injecao}
-% Três classes (valor, percentual, metadado), perturbações determinísticas
-% registradas como ground truth; mesmo estado corrompido serializado em A/B/C/D.
 
-\subsection{Classificação do destino do erro}\label{sec:destino}
-% Preservado / transformado / amplificado / corrigido / contido.
+\begin{table}[htbp]
+\caption{Classes de erro e regras de perturbação}
+\label{tab:injecao}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{|l|p{3.7cm}|c|}
+\hline
+\textbf{Classe} & \textbf{Regra} & \textbf{Exemplo} \\
+\hline
+Valor & transposição do par de dígitos adjacentes mais à direita que altere o valor em pelo menos 10\% & 12,4 $\rightarrow$ 14,2 \\
+\hline
+Percentual & deslocamento de +3,0 pontos percentuais & 8,1\% $\rightarrow$ 11,1\% \\
+\hline
+Metadado & ano deslocado em +1, com o rótulo do período reescrito & FY2017 $\rightarrow$ FY2018 \\
+\hline
+\end{tabular}
+\end{table}
+
+Um injetor determinístico corrompe exatamente um claim por execução, segundo as regras da Tabela~\ref{tab:injecao}.
+Não há aleatoriedade: a mesma entrada produz sempre a mesma perturbação.
+Singh e Pawar também usaram perturbações determinísticas em valores e percentuais, com deslocamentos multiplicativos de 15\% a 40\% e aditivos de 3 a 12 pontos percentuais \cite{singh2026snowball}.
+Aqui a regra de valor é uma transposição de dígitos, que gera números plausíveis num demonstrativo financeiro.
+
+O piso de 10\% existe porque a perturbação precisa ser detectável na resposta final.
+Transpor simplesmente os dois últimos dígitos levaria 39403 a 39430, uma variação de 0,07\%, menor que o arredondamento do estágio seguinte. Com o piso, 39403 vira 34903.
+Trocas que levariam um zero para a primeira posição são descartadas, e, quando nenhum par serve, o valor é multiplicado por 1,15, mantendo a forma do número.
+No erro de metadado, o rótulo do período é reescrito junto com o ano.
+Sem isso, o erro nunca chegaria à condição A, cuja prosa usa o período, e não o ano, e o handoff de A sairia idêntico ao do controle.
+
+O claim-alvo também é escolhido sem aleatoriedade.
+A preferência é por um claim com unidade compatível com a classe de erro e cujo valor aparece na resposta do benchmark, para que o erro caia no caminho que responde à pergunta.
+Na falta dele, vale o primeiro claim com unidade compatível, pela ordem dos identificadores.
+Classe, regra, claim-alvo, valor original e valor corrompido ficam registrados como ground truth de cada execução.
+
+\subsection{Estudo principal e subestudo de estágio}\label{sec:estudos}
+
+O experimento tem dois braços de injeção.
+No estudo principal, o erro de valor ou de metadado é injetado na saída do Extrator, e Analista e Redator rodam separadamente em cada condição.
+É esse braço que mede propagação, contenção e atribuição.
+
+O erro percentual não cabe no estudo principal.
+Como o Extrator só extrai figuras brutas, sua saída não tem claims em percentual, e um deslocamento de pontos percentuais só faz sentido sobre um valor derivado.
+Por isso, a classe percentual é injetada na saída do Analista, num subestudo voltado à atribuição de estágio.
+Nele, o Analista roda uma única vez em forma canônica, como o Extrator, e seu estado é projetado nas quatro condições. Só o Redator roda por condição.
+A profundidade máxima de propagação nesse braço é um, e o que interessa é saber se o auditor reconhece que o erro surgiu no Analista, e não no Extrator.
+
+\subsection{Braço de controle}\label{sec:controle}
+
+Toda execução com erro injetado tem uma execução de controle, com a mesma pergunta, a mesma condição e o mesmo estado extraído, mas sem injeção.
+O controle é necessário porque o pipeline erra algumas perguntas por conta própria.
+Sem essa linha de base, não há como separar o erro injetado do erro nativo, nem distinguir um erro contido de um erro que se propagou e, por coincidência, levou à resposta certa.
+Todas as métricas de contenção comparam a execução injetada com o controle da mesma condição e da mesma pergunta, e a comparação nunca cruza condições.
+O controle também mede a taxa de falso positivo do auditor, isto é, quantas execuções sem erro injetado recebem um culpado.
+
+\subsection{Instrumento de medida e destino do erro}\label{sec:destino}
+
+Medir contenção a partir dos claims e do campo \texttt{derived\_from} seria impossível em A, que não tem claims, parcial em B, que não tem proveniência, e completo apenas em C e D.
+A condição D ainda pareceria amplificar mais o erro só por emitir mais campos.
+Para que o formato do contrato não contamine a medida, o instrumento opera sobre a saída textual bruta de cada estágio, que existe nas quatro condições.
+Ele extrai os números de cada saída, trata como iguais os valores que diferem apenas por arredondamento (até 0,5\% em termos relativos) e ignora os números dentro do campo de evidência, que são citação da fonte e não afirmações do estágio.
+O campo \texttt{derived\_from} entra só como sinal secundário, para conferir o instrumento textual nas condições que têm proveniência.
+
+Singh e Pawar descrevem o erro pelos estados de forma que ele assume ao longo do pipeline, de fato bruto a conclusão aprovada \cite{singh2026snowball}.
+Aqui, as categorias descrevem o desfecho do erro em relação ao controle, decidido nesta ordem.
+O erro é \emph{preservado} se o valor corrompido aparece na resposta final.
+Se a resposta final traz números que não estão no controle, ele foi \emph{amplificado}, quando os estágios produziram números novos e incorretos (ausentes do controle e diferentes da resposta do benchmark), ou \emph{transformado}, caso contrário.
+Se nenhum estágio mudou em relação ao controle, a execução é marcada como \emph{sem efeito}.
+O erro foi \emph{corrigido} quando o valor original reaparece em algum estágio e a resposta final volta a ser a do controle. Nos demais casos, como recusas ou omissão da figura, ele foi \emph{contido}.
+
+A categoria sem efeito não estava no protocolo original e foi incluída de propósito.
+Quase sempre ela indica que o claim corrompido estava fora do caminho da resposta, e somá-la à contenção inflaria a métrica com execuções em que o contrato nunca foi posto à prova.
+
+\subsection{Auditor de causa raiz}\label{sec:auditor}
+
+A atribuição de origem é medida por um auditor que roda depois do pipeline, como instrumento de medida, e não como estágio.
+Assim, Extrator, Analista e Redator ficam idênticos entre as condições, e nenhum deles carrega a tarefa extra de diagnosticar o próprio erro.
+O auditor usa o mesmo modelo do pipeline e recebe a pergunta, a resposta final e o trace da execução na forma em que o contrato o preservou: prosa em A, claims tipados sem identificadores em B e claims com a cadeia de proveniência em C e D.
+Ele não vê o documento, a resposta do benchmark nem o registro da injeção.
+
+A saída do auditor segue um schema único nas quatro condições, com o estágio em que o primeiro erro apareceu (ou a indicação de que não há erro), o identificador e a descrição do claim de origem, a métrica e o valor desse claim e uma confiança entre 0 e 1.
+O que varia entre as condições é a entrada do auditor, não o formato da resposta, e é isso que torna as medidas comparáveis.
+A formulação segue a de Zhang et al., que definem a atribuição de falhas como a identificação do agente responsável e do passo decisivo \cite{zhang2025which}. Aqui, os equivalentes são o estágio de origem e o claim de origem.
+Em A e B não há identificadores, então o acerto do claim é verificado pela métrica e pelo valor informados pelo auditor, comparados com os do claim corrompido.
+O custo do auditor é registrado à parte e não entra no custo operacional do pipeline.
