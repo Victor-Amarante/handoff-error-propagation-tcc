@@ -225,14 +225,14 @@ Status: `roteiro` (so comentarios com o que a secao deve cobrir) ->
 
 | Secao | Arquivo | Status | Observacoes |
 |---|---|---|---|
-| Resumo | `resumo.tex` | revisado | aprovado pelo autor |
-| I. Introducao | `introducao.tex` | revisado | aprovada pelo autor |
+| Resumo + Abstract | `resumo.tex` | revisado | ressalva do lineage adicionada; Abstract em ingles adicionado (nov/2026); reconfirmar |
+| I. Introducao | `introducao.tex` | revisado | hipoteses H1-H4 e ressalva do lineage adicionadas; reconfirmar |
 | II. Trabalhos Relacionados | `trabalhos-relacionados.tex` | revisado | aprovado pelo autor |
 | III. Metodologia | `metodologia.tex` | revisado | aprovada pelo autor |
 | IV. Configuracao Experimental | `configuracao-experimental.tex` | rascunho | metricas ampliadas (Tabela VI); aguardando revisao |
 | V. Resultados | `resultados.tex` | rascunho | tabelas em src/tables/ geradas por scripts/build_tables.py; Fig. 2 por scripts/build_figures.py |
-| VI. Discussao | `discussao.tex` | roteiro | |
-| VII. Ameacas a Validade | `ameacas-validade.tex` | roteiro | |
-| VIII. Conclusao | `conclusao.tex` | roteiro | |
-| Agradecimentos | `agradecimentos.tex` | roteiro | |
-| Referencias | `referencias.bib` | rascunho | completar autores "and others"; remover `\nocite{*}` do `tcc.tex` quando as secoes citarem |
+| VI. Discussao | `discussao.tex` | rascunho | aguardando revisao do autor |
+| VII. Ameacas a Validade | `ameacas-validade.tex` | rascunho | aguardando revisao do autor |
+| VIII. Conclusao | `conclusao.tex` | rascunho | aguardando revisao do autor |
+| Agradecimentos | `agradecimentos.tex` | rascunho | aguardando revisao do autor; orientador adicionado ao cabecalho |
+| Referencias | `referencias.bib` | revisado | 27 entradas, todas citadas e conferidas na fonte; `\nocite{*}` removido |

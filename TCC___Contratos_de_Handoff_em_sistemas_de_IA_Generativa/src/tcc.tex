@@ -3,7 +3,7 @@
 \documentclass[conference]{IEEEtran}
 % \IEEEoverridecommandlockouts % so necessario se usar \thanks no titulo (financiamento)
 \usepackage[T1]{fontenc}
-\usepackage[brazilian]{babel}
+\usepackage[english,brazilian]{babel} % brazilian (o ultimo) e o idioma principal
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
@@ -30,12 +30,13 @@
 \textit{Universidade Federal de Pernambuco}\\
 Recife, Brasil \\
 vafs@cin.ufpe.br}
-% \and
-% \IEEEauthorblockN{Nome do(a) Orientador(a)}
-% \IEEEauthorblockA{\textit{Centro de Informática} \\
-% \textit{Universidade Federal de Pernambuco}\\
-% Recife, Brasil \\
-% email@cin.ufpe.br}
+\and
+\IEEEauthorblockN{Cleber Zanchettin}
+\IEEEauthorblockA{\textit{Orientador} \\
+\textit{Centro de Informática} \\
+\textit{Universidade Federal de Pernambuco}\\
+Recife, Brasil \\
+cz@cin.ufpe.br}
 }
 
 \maketitle
@@ -51,9 +52,6 @@ vafs@cin.ufpe.br}
 \input{sections/conclusao}
 \input{sections/agradecimentos}
 
-% \nocite{*} lista todas as entradas do .bib mesmo sem citacao no texto.
-% Remova quando as secoes ja estiverem citando com \cite{...}.
-\nocite{*}
 \bibliographystyle{IEEEtran}
 \bibliography{referencias}
 

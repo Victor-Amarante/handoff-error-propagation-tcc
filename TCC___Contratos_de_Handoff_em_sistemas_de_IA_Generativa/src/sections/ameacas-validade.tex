@@ -1,6 +1,55 @@
 % !TEX root = ../tcc.tex
 \section{Ameaças à Validade}\label{sec:ameacas}
 
-% Interna: o contrato é a única variável manipulada? Vazamento da fonte em C?
-% Externa: um domínio (finanças), um benchmark, topologia linear de 3 estágios.
-% De construto: as métricas capturam propagação e atribuição?
+As ameaças estão organizadas segundo a classificação usual em experimentação de software, que separa validade interna, de construto, externa e de conclusão \cite{wohlin2012experimentation}.
+
+\subsection{Validade interna}\label{sec:ameacas-interna}
+
+A ameaça mais séria à comparação entre condições é o vazamento de informação pelo identificador da fonte.
+Na condição C, o \texttt{source\_id} é o nome do documento no FinanceBench, e em 128 das 142 perguntas do braço de metadado no GPT esse nome contém o ano fiscal original, que contradiz o ano corrompido.
+A condição C deveria carregar apenas proveniência, mas nesse braço carregou também um pedaço de evidência.
+O efeito da RQ2 no erro de metadado está, por isso, inflado, e a estimativa mais limpa do efeito do lineage é a do braço de valor, em que o identificador não revela nada sobre o valor corrompido.
+A correção natural é repetir a condição C com identificadores opacos.
+
+Os modelos não rodaram com a mesma configuração de raciocínio. O GPT-5.6 Luna usou esforço \emph{medium}, enquanto Haiku e Qwen rodaram sem raciocínio.
+Como a configuração é constante dentro de cada modelo, isso não afeta as comparações entre condições, que são o objeto das RQs, mas limita as comparações entre modelos.
+Pelo mesmo motivo, cada execução rodou com uma única seed e com a temperatura padrão de cada provedor.
+A variação entre execuções repetidas foi medida no piloto apenas para o GPT, em que duas seeds deram respostas idênticas, e não foi medida para Haiku e Qwen.
+Essa variação aleatória afeta igualmente as quatro condições, então tende a alargar os intervalos, e não a criar diferenças entre elas.
+
+Por fim, as condições não diferem só na informação que carregam, mas também no tamanho das mensagens, já que um handoff de D tem quase quatro vezes mais tokens que um de A.
+Essa diferença é inerente ao que se quer medir e não pode ser separada da informação adicional sem outro desenho, como condições de controle com texto de enchimento.
+
+\subsection{Validade de construto}\label{sec:ameacas-construto}
+
+A RCCA aceita dois caminhos de acerto, e só as condições C e D têm os dois.
+Em A e B, o auditor só acerta se informar a métrica e o valor corrompido. Em C e D, ele também acerta ao apontar o identificador do claim, e na condição C cerca de 0,3 dos aproximadamente 0,4 de RCCA vêm desse caminho.
+A Seção~\ref{sec:rq2} mostra a RCCA recalculada com o mesmo critério nas quatro condições, e nela o ganho de B para C quase desaparece.
+As duas medidas respondem a perguntas diferentes, a de qual claim originou o erro e a de qual valor está errado, e os resultados devem ser lidos com essa distinção em mente.
+
+O auditor usa o mesmo modelo do pipeline, e a sua confiabilidade varia com o modelo.
+No Haiku e no Qwen, ele apontou culpados em 30\% a 74\% das execuções sem erro injetado, o que torna a FESA desses modelos ininterpretável e limita também a RCCA.
+Um auditor fixo, mais forte e igual para os três experimentos separaria melhor a capacidade de atribuição do contrato da capacidade do modelo que audita.
+
+O instrumento de medida trabalha com os números presentes no texto de cada estágio.
+Erros expressos por extenso ou números que coincidem por acaso com o valor procurado podem escapar ou ser contados indevidamente, e o ano original pode reaparecer na resposta por estar na própria pergunta, o que motivou a regra mais estrita para distinguir correção de contenção (Seção~\ref{sec:destino}).
+A acurácia final também depende de casar números com a resposta do benchmark, e as 18 a 22 perguntas sem resposta numérica ficaram fora dessa métrica.
+
+Os erros injetados são sintéticos.
+A transposição de dígitos e o deslocamento de um ano produzem erros plausíveis, mas não necessariamente parecidos com as alucinações que um modelo comete sozinho, e Singh e Pawar usaram perturbações de outro tipo, com deslocamentos multiplicativos de 15\% a 40\% \cite{singh2026snowball}.
+A facilidade de detectar o erro de ano, que pode entrar em conflito com a pergunta, também difere da do erro de valor, o que justifica reportar os dois braços separadamente.
+
+\subsection{Validade externa}\label{sec:ameacas-externa}
+
+O experimento cobre um único domínio, finanças, com um único benchmark, a amostra aberta de 150 perguntas do FinanceBench \cite{islam2023financebench}.
+O documento-fonte é o trecho de evidência já recortado pelo benchmark, e não o documento completo, então o experimento não inclui recuperação nem documentos longos, situações em que a evidência carregada pelo contrato pode ser mais difícil de localizar e de usar.
+A topologia é linear e tem três estágios, enquanto sistemas reais podem envolver conversas entre vários agentes com ferramentas \cite{wu2023autogen} ou simulações com mais de mil agentes \cite{altera2024sid}.
+Os três modelos são das faixas mais baratas de cada família, e não se sabe se modelos maiores reproduziriam o mesmo padrão.
+
+\subsection{Validade de conclusão}\label{sec:ameacas-conclusao}
+
+A Tabela~\ref{tab:deltas} reúne 63 comparações, sem correção para comparações múltiplas.
+Com intervalos de 95\%, é esperado que algumas diferenças apareçam como significativas por acaso.
+Os achados centrais não dependem desse limite, porque seus intervalos ficam longe de zero e se repetem entre modelos, como o aumento da profundidade de A para B, o aumento da RCCA de B para C e os efeitos da evidência nos modelos de API.
+Resultados isolados, com intervalos que mal excluem zero, devem ser lidos com cautela.
+O subestudo do Qwen tem apenas 19 perguntas, e seus resultados são indicativos.

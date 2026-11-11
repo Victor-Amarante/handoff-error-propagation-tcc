@@ -93,11 +93,12 @@ D & \textit{Tipado + lineage + evidência}: campos de C + evidence \\
 A Tabela~\ref{tab:condicoes} mostra o que cada contrato carrega.
 Na condição A, o handoff é prosa. Para não introduzir uma variável a mais, essa prosa vem de um template fixo, e não de uma paráfrase feita pelo modelo: cada claim vira uma frase como ``According to the report, revenue in FY2017 was \$14.2M.'', sem identificador, fonte ou página.
 Nas condições B, C e D, o handoff é uma lista de claims tipados e validados por schema.
-B leva só a estrutura, C acrescenta a proveniência e D acrescenta o trecho literal do documento que sustenta o claim.
+B leva só a estrutura, C acrescenta a proveniência de cada claim, chamada aqui de lineage (fonte, página, estágio que o gerou e claims de origem), e D acrescenta o trecho literal do documento que sustenta o claim.
 
 Na condição C, \texttt{source\_id} e \texttt{page} são apenas metadados.
 O estágio seguinte sabe de onde o claim veio, mas não tem como abrir a fonte e conferir o valor.
 Isso é garantido por construção, já que nenhum estágio posterior ao Extrator recebe o documento, e também verificado a cada chamada: uma checagem compara sequências de 12 palavras do prompt com as do documento e registra no log qualquer sobreposição nas condições A, B e C.
+O desenho, porém, não previu que o nome do documento usado como \texttt{source\_id} contém o ano fiscal, o que revelou o valor original em parte dos erros de metadado (Seção~\ref{sec:rq2}).
 Só a condição D recebe evidência, e depois da injeção essa evidência contradiz o valor corrompido.
 É essa contradição que dá ao estágio seguinte a chance de perceber o erro.
 
@@ -189,5 +190,5 @@ Ele não vê o documento, a resposta do benchmark nem o registro da injeção.
 A saída do auditor segue um schema único nas quatro condições, com o estágio em que o primeiro erro apareceu (ou a indicação de que não há erro), o identificador e a descrição do claim de origem, a métrica e o valor desse claim e uma confiança entre 0 e 1.
 O que varia entre as condições é a entrada do auditor, não o formato da resposta, e é isso que torna as medidas comparáveis.
 A formulação segue a de Zhang et al., que definem a atribuição de falhas como a identificação do agente responsável e do passo decisivo \cite{zhang2025which}. Aqui, os equivalentes são o estágio de origem e o claim de origem.
-Em A e B não há identificadores, então o acerto do claim é verificado pela métrica e pelo valor informados pelo auditor, comparados com os do claim corrompido.
+Em A e B não há identificadores, então o acerto do claim é verificado pela métrica e pelo valor informados pelo auditor, comparados com os do claim corrompido. Em C e D, apontar o identificador do claim corrompido também conta como acerto, e a Seção~\ref{sec:rq2} mostra o que muda quando o mesmo critério de métrica e valor é aplicado às quatro condições.
 O custo do auditor é registrado à parte e não entra no custo operacional do pipeline.

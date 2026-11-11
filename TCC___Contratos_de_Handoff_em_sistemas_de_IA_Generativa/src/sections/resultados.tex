@@ -62,7 +62,12 @@ O mesmo vale para a acurácia: os ganhos do GPT e do Haiku em C vêm do erro de 
 A explicação está no próprio identificador da fonte.
 Em 128 das 142 perguntas do braço de metadado no GPT, o \texttt{source\_id} traz o ano fiscal original no nome do documento, como em \texttt{AMERICANWATERWORKS\_2022\_10K}, e contradiz o ano corrompido.
 Nesse braço, a condição C carrega, sem que o desenho previsse, um pedaço de evidência junto com a proveniência.
-As implicações disso são discutidas nas Seções~\ref{sec:discussao} e~\ref{sec:ameacas}.
+
+O ganho de RCCA também depende de como o acerto é contado.
+O instrumento aceita como acerto o identificador do claim corrompido ou, na falta dele, a métrica e o valor corrompido informados pelo auditor (Seção~\ref{sec:auditor}).
+Em A e B só existe o segundo caminho, e na condição C a maior parte dos acertos vem do primeiro: o auditor aponta o identificador certo sem informar qual valor está errado.
+Com o critério de métrica e valor aplicado igualmente às quatro condições, a RCCA quase não muda de B para C (+0,03, 0,00 e +0,04), enquanto de C para D sobe 0,33 no GPT e 0,31 no Haiku, com intervalos longe de zero, e 0,06 no Qwen.
+As implicações dos dois pontos são discutidas nas Seções~\ref{sec:discussao} e~\ref{sec:ameacas}.
 
 \subsection{RQ3: efeito da evidência (C $\times$ D)}\label{sec:rq3}
 
@@ -111,6 +116,6 @@ A latência cresceu no mesmo sentido no Haiku (de 4,3~s para 5,4~s) e no Qwen (d
 
 \subsection{Replicação entre modelos}\label{sec:replicacao}
 
-Dois resultados se repetiram nos três modelos: a estrutura sozinha não melhorou a correção e aumentou a profundidade de propagação, e o lineage elevou a RCCA em cerca de 0,34 sem reduzir a sobrevivência do erro, com o ganho concentrado no erro de metadado.
+Dois resultados se repetiram nos três modelos: a estrutura sozinha não melhorou a correção e aumentou a profundidade de propagação, e o lineage elevou a RCCA em cerca de 0,34 sem reduzir a sobrevivência do erro, com o ganho concentrado no erro de metadado e no acerto pelo identificador do claim.
 O efeito da evidência se replicou entre os dois modelos de API, com reduções significativas de ESR e de profundidade e RCCA perto de 0,8, mas não no Qwen, em que a evidência melhorou a acurácia final sem melhorar a contenção nem a atribuição.
 O Qwen também foi o único modelo a violar o contrato com frequência e o que mais perdeu acurácia com o formato estruturado nas execuções de controle.

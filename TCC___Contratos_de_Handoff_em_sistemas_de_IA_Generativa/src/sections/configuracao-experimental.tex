@@ -150,7 +150,7 @@ Ela separa um erro que apenas sobrevive de um erro que gera outros, como uma mar
 Por fim, o destino do erro (Seção~\ref{sec:destino}) dá a visão qualitativa que as médias escondem. Duas condições com a mesma ESR podem ter perfis diferentes, uma preservando o erro literalmente e outra transformando-o. A fração de execuções sem efeito é reportada como qualidade da amostra, e não como contenção.
 
 \emph{Observabilidade de causa raiz.}
-A acurácia de atribuição do claim de origem (RCCA, do inglês \emph{Root Cause Claim Accuracy}) é a fração das execuções injetadas em que o auditor identifica o claim corrompido.
+A acurácia de atribuição do claim de origem (RCCA, do inglês \emph{Root Cause Claim Accuracy}) é a fração das execuções injetadas em que o auditor identifica o claim corrompido, seja pelo identificador, quando o contrato o carrega, seja pela métrica e pelo valor corrompido. Como só C e D carregam identificadores, a RCCA também é reportada com o critério de métrica e valor aplicado às quatro condições, como verificação de robustez.
 A acurácia do estágio do primeiro erro (FESA, \emph{First Error Stage Accuracy}) é a fração em que ele identifica o estágio da injeção.
 As duas seguem a formulação de Zhang et al., que medem separadamente o acerto do agente responsável e do passo decisivo \cite{zhang2025which}, e são as métricas centrais da RQ2: se a proveniência ajuda a diagnosticar falhas, o efeito deve aparecer aqui.
 A RCCA é a mais exigente, porque não basta saber em que estágio o erro surgiu. É preciso apontar o claim, e por isso ela distingue uma cadeia de proveniência útil de uma que apenas existe.
