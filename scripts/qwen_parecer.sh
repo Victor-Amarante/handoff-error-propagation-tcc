@@ -5,7 +5,7 @@
 #
 #   bash scripts/qwen_parecer.sh
 #
-# Custo: zero (local). Tempo estimado: 2 a 3 horas.
+# Custo: zero (local). Tempo estimado na RTX 3090: cerca de 1 hora (~11 s por celula).
 set -euo pipefail
 cd "$(dirname "$0")/.."
 export HANDOFF_PROVIDER=ollama HANDOFF_MODEL=qwen3.5:9b
