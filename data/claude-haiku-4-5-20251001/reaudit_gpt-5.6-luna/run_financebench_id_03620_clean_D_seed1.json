@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03620_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the calculation is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports operating profit of 11,512, depreciation and amortization of 2,763, and capital spending of 5,207. The analyst correctly calculates 11,512 + 2,763 = 14,275 and 14,275 - 5,207 = 9,068, which the writer reproduces accurately."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1285,
+    "output_tokens": 351,
+    "total_tokens": 1636,
+    "cached_tokens": 0,
+    "reasoning_tokens": 214,
+    "cost_usd": 0.0006782,
+    "latency_ms": 3608.6720830062404,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1285,
+      "output_tokens": 351,
+      "total_tokens": 1636,
+      "reasoning_tokens": 214,
+      "time_to_first_token": 3.6084629169781692,
+      "duration": 3.608522875001654,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1285,
+            "output_tokens": 351,
+            "total_tokens": 1636,
+            "reasoning_tokens": 214,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1954,
+    "output_tokens": 181,
+    "total_tokens": 2135,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002859,
+    "latency_ms": 3584.4455419573933,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1954,
+      "output_tokens": 181,
+      "total_tokens": 2135,
+      "time_to_first_token": 3.5835325000225566,
+      "duration": 3.583834083052352,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1954,
+            "output_tokens": 181,
+            "total_tokens": 2135,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

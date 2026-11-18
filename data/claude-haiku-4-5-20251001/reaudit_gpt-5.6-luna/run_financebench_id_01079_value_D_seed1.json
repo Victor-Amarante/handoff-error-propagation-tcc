@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01079_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The FY2022 Czech Republic acquisition had purchase consideration of $95 million.",
+    "reported_metric": "acquisition_purchase_consideration",
+    "reported_value": 95.0,
+    "confidence": 0.99,
+    "rationale": "C01 reports $95 million, but its own evidence explicitly states purchase consideration of $59 million. This is the first internally inconsistent claim; later stages inherit or aggregate the erroneous value, and the trace also provides no evidence supporting the FY2021 absence claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1701,
+    "output_tokens": 348,
+    "total_tokens": 2049,
+    "cached_tokens": 0,
+    "reasoning_tokens": 217,
+    "cost_usd": 0.0007578,
+    "latency_ms": 3673.9877079962753,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1701,
+      "output_tokens": 348,
+      "total_tokens": 2049,
+      "reasoning_tokens": 217,
+      "time_to_first_token": 3.6732744579785503,
+      "duration": 3.6735335419652984,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1701,
+            "output_tokens": 348,
+            "total_tokens": 2049,
+            "reasoning_tokens": 217,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2342,
+    "output_tokens": 162,
+    "total_tokens": 2504,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003152,
+    "latency_ms": 3272.779625025578,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2342,
+      "output_tokens": 162,
+      "total_tokens": 2504,
+      "time_to_first_token": 3.27202908298932,
+      "duration": 3.2722638330305927,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2342,
+            "output_tokens": 162,
+            "total_tokens": 2504,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

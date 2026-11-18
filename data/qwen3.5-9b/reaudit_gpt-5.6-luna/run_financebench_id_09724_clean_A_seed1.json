@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_09724_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported COGS margin is consistently calculated as $15,357 million divided by $38,655 million, which is approximately 39.7%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor provides the two required line items, and the analyst correctly computes 15,357 / 38,655 × 100 ≈ 39.7%. The writer accurately preserves that calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 689,
+    "output_tokens": 195,
+    "total_tokens": 884,
+    "cached_tokens": 0,
+    "reasoning_tokens": 63,
+    "cost_usd": 0.00037180000000000004,
+    "latency_ms": 2493.9709170139395,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 689,
+      "output_tokens": 195,
+      "total_tokens": 884,
+      "reasoning_tokens": 63,
+      "time_to_first_token": 2.4931447909912094,
+      "duration": 2.493398749968037,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 689,
+            "output_tokens": 195,
+            "total_tokens": 884,
+            "reasoning_tokens": 63,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 508,
+    "output_tokens": 172,
+    "total_tokens": 680,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2137.380704982206,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 508,
+      "output_tokens": 172,
+      "total_tokens": 680,
+      "time_to_first_token": 2.1371345660299994,
+      "duration": 2.1372166670043953,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 508,
+            "output_tokens": 172,
+            "total_tokens": 680,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2111978122,
+              "load_duration": 573149,
+              "prompt_eval_duration": 137237000,
+              "eval_duration": 1925808000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02416_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The report contains an acquisition with $2.0 billion in consideration dated 2022, despite the cited source being Pfizer's 2021 10-K.",
+    "reported_metric": "acquisition_consideration",
+    "reported_value": 2.0,
+    "confidence": 0.93,
+    "rationale": "The first inconsistency appears in the extractor output: claim C01 assigns a 2022 acquisition to a source identified as Pfizer's 2021 10-K. The analyst and writer merely propagate this claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1388,
+    "output_tokens": 615,
+    "total_tokens": 2003,
+    "cached_tokens": 0,
+    "reasoning_tokens": 478,
+    "cost_usd": 0.0010156,
+    "latency_ms": 6389.388750016224,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1388,
+      "output_tokens": 615,
+      "total_tokens": 2003,
+      "reasoning_tokens": 478,
+      "time_to_first_token": 6.388880875019822,
+      "duration": 6.389058417000342,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1388,
+            "output_tokens": 615,
+            "total_tokens": 2003,
+            "reasoning_tokens": 478,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1986,
+    "output_tokens": 175,
+    "total_tokens": 2161,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002861,
+    "latency_ms": 3281.303207972087,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1986,
+      "output_tokens": 175,
+      "total_tokens": 2161,
+      "time_to_first_token": 3.2803889170172624,
+      "duration": 3.280688792001456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1986,
+            "output_tokens": 175,
+            "total_tokens": 2161,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

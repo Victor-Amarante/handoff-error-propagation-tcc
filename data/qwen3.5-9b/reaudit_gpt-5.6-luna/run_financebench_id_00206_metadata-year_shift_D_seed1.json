@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Gross margins are irrelevant for JPMorgan Chase, inferred solely from its $3.7 trillion in assets.",
+    "reported_metric": "gross_margins_relevant",
+    "reported_value": 0.0,
+    "confidence": 0.82,
+    "rationale": "The extractor provides only asset and equity figures; neither establishes that gross margins are irrelevant. A01 is therefore an unsupported inference and the first problematic claim. The writer merely repeats it, while also omitting the requested explanation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 943,
+    "output_tokens": 641,
+    "total_tokens": 1584,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009578,
+    "latency_ms": 6571.278291987255,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 943,
+      "output_tokens": 641,
+      "total_tokens": 1584,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.570921332982834,
+      "duration": 6.5710207499796525,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 943,
+            "output_tokens": 641,
+            "total_tokens": 1584,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 811,
+    "output_tokens": 109,
+    "total_tokens": 920,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1607.6475969748572,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 811,
+      "output_tokens": 109,
+      "total_tokens": 920,
+      "time_to_first_token": 1.6073356679989956,
+      "duration": 1.6074850630247965,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 811,
+            "output_tokens": 109,
+            "total_tokens": 920,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1582180373,
+              "load_duration": 516115,
+              "prompt_eval_duration": 236912000,
+              "eval_duration": 1274090000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

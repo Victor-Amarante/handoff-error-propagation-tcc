@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01902_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Entertainment's 9% comparable sales growth was characterized as the strongest top-line performance and as double-digit growth, although 9% is not double-digit and comparable sales change is not necessarily top-line sales.",
+    "reported_metric": "comparable sales growth",
+    "reported_value": 9.0,
+    "confidence": 0.95,
+    "rationale": "The extractor reports category-level comparable sales changes, but the analyst first overstates this metric as top-line performance and incorrectly calls 9% double-digit growth. The writer repeats the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 831,
+    "output_tokens": 496,
+    "total_tokens": 1327,
+    "cached_tokens": 0,
+    "reasoning_tokens": 357,
+    "cost_usd": 0.0007614,
+    "latency_ms": 5374.435208039358,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 831,
+      "output_tokens": 496,
+      "total_tokens": 1327,
+      "reasoning_tokens": 357,
+      "time_to_first_token": 5.373917040997185,
+      "duration": 5.374040000024252,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 831,
+            "output_tokens": 496,
+            "total_tokens": 1327,
+            "reasoning_tokens": 357,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1318,
+    "output_tokens": 156,
+    "total_tokens": 1474,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002098,
+    "latency_ms": 2267.6780000329018,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1318,
+      "output_tokens": 156,
+      "total_tokens": 1474,
+      "time_to_first_token": 2.266666624986101,
+      "duration": 2.266963291040156,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1318,
+            "output_tokens": 156,
+            "total_tokens": 1474,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

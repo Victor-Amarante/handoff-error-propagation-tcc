@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00684_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amcor's FY2023 gross profit was reported as $2,725 million.",
+    "reported_metric": "FY2023 gross profit",
+    "reported_value": 2725.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's FY2023 figures are internally inconsistent: net sales of $16,494M minus cost of sales of $11,969M implies gross profit of $4,525M, not $2,725M. The analyst's FY2023 margin and subsequent conclusions inherit this incorrect gross-profit value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1143,
+    "output_tokens": 428,
+    "total_tokens": 1571,
+    "cached_tokens": 0,
+    "reasoning_tokens": 287,
+    "cost_usd": 0.0007422,
+    "latency_ms": 4544.198167044669,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1143,
+      "output_tokens": 428,
+      "total_tokens": 1571,
+      "reasoning_tokens": 287,
+      "time_to_first_token": 4.543718416010961,
+      "duration": 4.543836791010108,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1143,
+            "output_tokens": 428,
+            "total_tokens": 1571,
+            "reasoning_tokens": 287,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1708,
+    "output_tokens": 202,
+    "total_tokens": 1910,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002718,
+    "latency_ms": 3480.9966669999994,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1708,
+      "output_tokens": 202,
+      "total_tokens": 1910,
+      "time_to_first_token": 3.4801171249710023,
+      "duration": 3.480413709010463,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1708,
+            "output_tokens": 202,
+            "total_tokens": 1910,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

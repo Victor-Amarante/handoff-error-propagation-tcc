@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; corporate bonds have the largest reported investment at 416,420 USD_K.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports corporate bonds at 416,420 USD_K, exceeding U.S. government securities at 57,696, U.S. agency securities at 29,049, and commercial paper and certificates of deposit at 4,561. The analyst and writer preserve this internally consistent result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1153,
+    "output_tokens": 192,
+    "total_tokens": 1345,
+    "cached_tokens": 0,
+    "reasoning_tokens": 58,
+    "cost_usd": 0.000461,
+    "latency_ms": 2501.209917012602,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1153,
+      "output_tokens": 192,
+      "total_tokens": 1345,
+      "reasoning_tokens": 58,
+      "time_to_first_token": 2.5007811669493094,
+      "duration": 2.500908749992959,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1153,
+            "output_tokens": 192,
+            "total_tokens": 1345,
+            "reasoning_tokens": 58,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1732,
+    "output_tokens": 157,
+    "total_tokens": 1889,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002517,
+    "latency_ms": 3174.3251669686288,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1732,
+      "output_tokens": 157,
+      "total_tokens": 1889,
+      "time_to_first_token": 3.1734198330086656,
+      "duration": 3.1737203749944456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1732,
+            "output_tokens": 157,
+            "total_tokens": 1889,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

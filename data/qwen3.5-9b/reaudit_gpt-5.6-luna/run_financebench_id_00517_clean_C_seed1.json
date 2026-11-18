@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00517_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The answer incorrectly labels all three qualifying segments as product categories, even though Global Services is a service category.",
+    "reported_metric": "Product categories representing more than 20% of Boeing's FY2022 revenue",
+    "reported_value": 3.0,
+    "confidence": 0.96,
+    "rationale": "The extracted revenues and analyst percentages are internally consistent, and three segments exceed 20%. However, the writer changes the broader category classification to 'product categories' while including Global Services, which is a service category and the question explicitly distinguishes product/service categories."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1999,
+    "output_tokens": 405,
+    "total_tokens": 2404,
+    "cached_tokens": 0,
+    "reasoning_tokens": 262,
+    "cost_usd": 0.0008858,
+    "latency_ms": 4437.029624998104,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1999,
+      "output_tokens": 405,
+      "total_tokens": 2404,
+      "reasoning_tokens": 262,
+      "time_to_first_token": 4.435965042037424,
+      "duration": 4.436418875004165,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1999,
+            "output_tokens": 405,
+            "total_tokens": 2404,
+            "reasoning_tokens": 262,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2143,
+    "output_tokens": 746,
+    "total_tokens": 2889,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8875.435866997577,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2143,
+      "output_tokens": 746,
+      "total_tokens": 2889,
+      "time_to_first_token": 8.87520123203285,
+      "duration": 8.875274419027846,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2143,
+            "output_tokens": 746,
+            "total_tokens": 2889,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8849079308,
+              "load_duration": 1374324,
+              "prompt_eval_duration": 512095000,
+              "eval_duration": 8252048000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

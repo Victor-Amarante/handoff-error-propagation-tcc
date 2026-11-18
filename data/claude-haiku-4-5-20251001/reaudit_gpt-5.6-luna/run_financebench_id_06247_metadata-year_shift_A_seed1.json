@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06247_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The report's FY2019 cost of sales for Walmart was $373,396 million.",
+    "reported_metric": "FY2019 cost of sales",
+    "reported_value": 373396.0,
+    "confidence": 0.97,
+    "rationale": "The extracted $373,396 million cost-of-sales figure is misattributed to FY2019; it is the FY2018 COGS figure needed by the question. This erroneous year labeling caused the analyst and writer to conclude that FY2018 COGS was missing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1104,
+    "output_tokens": 602,
+    "total_tokens": 1706,
+    "cached_tokens": 0,
+    "reasoning_tokens": 466,
+    "cost_usd": 0.0009432,
+    "latency_ms": 6783.357958018314,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1104,
+      "output_tokens": 602,
+      "total_tokens": 1706,
+      "reasoning_tokens": 466,
+      "time_to_first_token": 6.782699375005905,
+      "duration": 6.78292904200498,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1104,
+            "output_tokens": 602,
+            "total_tokens": 1706,
+            "reasoning_tokens": 466,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1681,
+    "output_tokens": 183,
+    "total_tokens": 1864,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002596,
+    "latency_ms": 2560.127667034976,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1681,
+      "output_tokens": 183,
+      "total_tokens": 1864,
+      "time_to_first_token": 2.559175916016102,
+      "duration": 2.5594782910193317,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1681,
+            "output_tokens": 183,
+            "total_tokens": 1864,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

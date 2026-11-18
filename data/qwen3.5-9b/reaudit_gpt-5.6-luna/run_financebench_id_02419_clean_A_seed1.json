@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Pfizer was not spinning off any large business segments as of Q2 2023.",
+    "reported_metric": "Whether Pfizer was spinning off a large business segment",
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The analyst begins with “No” but immediately says Upjohn was an exception, which is internally inconsistent and conflicts with the writer’s subsequent “Yes” conclusion. The trace contains no claim IDs, and the erroneous value is categorical rather than numeric."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 706,
+    "output_tokens": 841,
+    "total_tokens": 1547,
+    "cached_tokens": 0,
+    "reasoning_tokens": 704,
+    "cost_usd": 0.0011503999999999998,
+    "latency_ms": 8274.761917011347,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 706,
+      "output_tokens": 841,
+      "total_tokens": 1547,
+      "reasoning_tokens": 704,
+      "time_to_first_token": 8.27366104198154,
+      "duration": 8.274214333971031,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 706,
+            "output_tokens": 841,
+            "total_tokens": 1547,
+            "reasoning_tokens": 704,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 509,
+    "output_tokens": 899,
+    "total_tokens": 1408,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9624.745733977761,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 509,
+      "output_tokens": 899,
+      "total_tokens": 1408,
+      "time_to_first_token": 9.624448498012498,
+      "duration": 9.624545581988059,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 509,
+            "output_tokens": 899,
+            "total_tokens": 1408,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9595567140,
+              "load_duration": 445369,
+              "prompt_eval_duration": 161766000,
+              "eval_duration": 9385012000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

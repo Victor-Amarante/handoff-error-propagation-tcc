@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01936_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The restructuring liability totaled $231 million as of June 30, 2023.",
+    "reported_metric": "total restructuring liability",
+    "reported_value": 231.0,
+    "confidence": 0.97,
+    "rationale": "The four stated component balances sum to $236 million (97 + 3 + 18 + 118), not $231 million. The writer also changed the analyst's June 30, 2022 date to June 30, 2023 without support in the trace; the extractor's December 31, 2022 balances were not used."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1387,
+    "output_tokens": 850,
+    "total_tokens": 2237,
+    "cached_tokens": 0,
+    "reasoning_tokens": 699,
+    "cost_usd": 0.0012974,
+    "latency_ms": 8113.221042032819,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1387,
+      "output_tokens": 850,
+      "total_tokens": 2237,
+      "reasoning_tokens": 699,
+      "time_to_first_token": 8.112763250013813,
+      "duration": 8.112906333000865,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1387,
+            "output_tokens": 850,
+            "total_tokens": 2237,
+            "reasoning_tokens": 699,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1252,
+    "output_tokens": 334,
+    "total_tokens": 1586,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4004.8708170070313,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1252,
+      "output_tokens": 334,
+      "total_tokens": 1586,
+      "time_to_first_token": 4.004578616004437,
+      "duration": 4.004653237003367,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1252,
+            "output_tokens": 334,
+            "total_tokens": 1586,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3979822632,
+              "load_duration": 600588,
+              "prompt_eval_duration": 315837000,
+              "eval_duration": 3611846000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

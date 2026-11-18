@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03473_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly attributed Coca-Cola's $1,283M net income figure to FY2018 instead of FY2017.",
+    "reported_metric": "FY2017 net income",
+    "reported_value": 1283.0,
+    "confidence": 0.93,
+    "rationale": "The extracted asset figures of $87,270M and $87,896M correspond to the adjacent FY2016/FY2017 periods, while the $1,283M net income figure is the numerator needed for FY2017 ROA but was assigned to FY2018. The analyst and writer then treated the year labels as unavailable and failed to calculate the metric."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 857,
+    "output_tokens": 1652,
+    "total_tokens": 2509,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1479,
+    "cost_usd": 0.0021537999999999996,
+    "latency_ms": 13971.274584007915,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 1652,
+      "total_tokens": 2509,
+      "reasoning_tokens": 1479,
+      "time_to_first_token": 13.970374791009817,
+      "duration": 13.970716750016436,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 1652,
+            "total_tokens": 2509,
+            "reasoning_tokens": 1479,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 685,
+    "output_tokens": 177,
+    "total_tokens": 862,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2368.2712049921975,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 685,
+      "output_tokens": 177,
+      "total_tokens": 862,
+      "time_to_first_token": 2.3679791020113043,
+      "duration": 2.36806961405091,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 685,
+            "output_tokens": 177,
+            "total_tokens": 862,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2336157542,
+              "load_duration": 436850,
+              "prompt_eval_duration": 187911000,
+              "eval_duration": 2097567000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

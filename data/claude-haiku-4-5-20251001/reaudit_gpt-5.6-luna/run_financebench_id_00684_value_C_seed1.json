@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00684_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "AMCOR's gross margin declined by 4.9 percentage points from 2022 to 2023.",
+    "reported_metric": "gross_margin_trend",
+    "reported_value": -4.9,
+    "confidence": 0.99,
+    "rationale": "The underlying margins are internally consistent: 16.5% in 2023 and 19.4% in 2022. Their difference is -2.9 percentage points, not -4.9. The analyst's A04 claim is therefore the first incorrect claim, which the writer repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1853,
+    "output_tokens": 339,
+    "total_tokens": 2192,
+    "cached_tokens": 0,
+    "reasoning_tokens": 193,
+    "cost_usd": 0.0007774000000000001,
+    "latency_ms": 3687.013000017032,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1853,
+      "output_tokens": 339,
+      "total_tokens": 2192,
+      "reasoning_tokens": 193,
+      "time_to_first_token": 3.6863704579882324,
+      "duration": 3.6866327919997275,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1853,
+            "output_tokens": 339,
+            "total_tokens": 2192,
+            "reasoning_tokens": 193,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2602,
+    "output_tokens": 213,
+    "total_tokens": 2815,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003667,
+    "latency_ms": 3115.997833025176,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2602,
+      "output_tokens": 213,
+      "total_tokens": 2815,
+      "time_to_first_token": 3.1152436659904197,
+      "duration": 3.11548312503146,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2602,
+            "output_tokens": 213,
+            "total_tokens": 2815,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

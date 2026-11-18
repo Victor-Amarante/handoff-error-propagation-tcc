@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07507_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The trace provides FY2015 and FY2017 operating income but no FY2016 value. The analyst and writer correctly state that the requested FY2015-to-FY2016 change cannot be calculated from the supplied data. No incorrect claim is established by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 788,
+    "output_tokens": 196,
+    "total_tokens": 984,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.0003928,
+    "latency_ms": 2477.2786250105128,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 788,
+      "output_tokens": 196,
+      "total_tokens": 984,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.4765240410342813,
+      "duration": 2.476758166041691,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 788,
+            "output_tokens": 196,
+            "total_tokens": 984,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1299,
+    "output_tokens": 172,
+    "total_tokens": 1471,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002159,
+    "latency_ms": 2253.655332955532,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1299,
+      "output_tokens": 172,
+      "total_tokens": 1471,
+      "time_to_first_token": 2.252617666963488,
+      "duration": 2.252920250000898,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1299,
+            "output_tokens": 172,
+            "total_tokens": 1471,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

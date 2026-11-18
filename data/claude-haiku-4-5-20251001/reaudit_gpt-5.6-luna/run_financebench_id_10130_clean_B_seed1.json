@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10130_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY2020 days payable outstanding (DPO) is 68.34.",
+    "reported_metric": "days_payable_outstanding",
+    "reported_value": 68.34,
+    "confidence": 0.99,
+    "rationale": "Using the extracted values, average accounts payable is (1174 + 1587) / 2 = 1380.5, and COGS plus inventory change is 7772 + (2438 - 2320) = 7890. Thus DPO = 365 × 1380.5 / 7890 = 63.86, not 68.34. The first error appears in the analyst output; the writer repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 927,
+    "output_tokens": 399,
+    "total_tokens": 1326,
+    "cached_tokens": 0,
+    "reasoning_tokens": 227,
+    "cost_usd": 0.0006641999999999999,
+    "latency_ms": 4210.76854201965,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 927,
+      "output_tokens": 399,
+      "total_tokens": 1326,
+      "reasoning_tokens": 227,
+      "time_to_first_token": 4.2098933750530705,
+      "duration": 4.210265458037611,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 927,
+            "output_tokens": 399,
+            "total_tokens": 1326,
+            "reasoning_tokens": 227,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1468,
+    "output_tokens": 180,
+    "total_tokens": 1648,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002368,
+    "latency_ms": 2314.3861249554902,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1468,
+      "output_tokens": 180,
+      "total_tokens": 1648,
+      "time_to_first_token": 2.3133696659933776,
+      "duration": 2.3136706660152413,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1468,
+            "output_tokens": 180,
+            "total_tokens": 1648,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

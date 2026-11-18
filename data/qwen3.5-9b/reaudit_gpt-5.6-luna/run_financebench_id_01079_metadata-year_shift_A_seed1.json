@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01079_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported the Czech Republic company's acquisition date as 1% instead of a date in August.",
+    "reported_metric": "acquisition date",
+    "reported_value": 1.0,
+    "confidence": 0.98,
+    "rationale": "The extractor output contains an internally malformed acquisition-date claim, assigning the value 1% to a date field. The analyst then inferred August 2022 from this corrupted extraction, and the writer propagated the resulting fiscal-year summary."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1482,
+    "output_tokens": 635,
+    "total_tokens": 2117,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010584000000000001,
+    "latency_ms": 6359.6881669946015,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1482,
+      "output_tokens": 635,
+      "total_tokens": 2117,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.359104084025603,
+      "duration": 6.359294334019069,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1482,
+            "output_tokens": 635,
+            "total_tokens": 2117,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1387,
+    "output_tokens": 324,
+    "total_tokens": 1711,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4023.058883030899,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1387,
+      "output_tokens": 324,
+      "total_tokens": 1711,
+      "time_to_first_token": 4.022826912987512,
+      "duration": 4.022898720984813,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1387,
+            "output_tokens": 324,
+            "total_tokens": 1711,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3997560588,
+              "load_duration": 476798,
+              "prompt_eval_duration": 366684000,
+              "eval_duration": 3574112000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMD's FY22 quick ratio is 1.88.",
+    "reported_metric": "quick_ratio",
+    "reported_value": 1.88,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, the quick ratio is (8,435 + 1,020 + 4,126) / 6,369 = approximately 2.13, not 1.88. The analyst introduced the first incorrect claim; the writer then repeated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 894,
+    "output_tokens": 315,
+    "total_tokens": 1209,
+    "cached_tokens": 0,
+    "reasoning_tokens": 188,
+    "cost_usd": 0.0005568,
+    "latency_ms": 3539.604625024367,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 894,
+      "output_tokens": 315,
+      "total_tokens": 1209,
+      "reasoning_tokens": 188,
+      "time_to_first_token": 3.5391089999466203,
+      "duration": 3.5392692089662887,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 894,
+            "output_tokens": 315,
+            "total_tokens": 1209,
+            "reasoning_tokens": 188,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1426,
+    "output_tokens": 170,
+    "total_tokens": 1596,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002276,
+    "latency_ms": 2969.5642919978127,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1426,
+      "output_tokens": 170,
+      "total_tokens": 1596,
+      "time_to_first_token": 2.968536166998092,
+      "duration": 2.96883612498641,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1426,
+            "output_tokens": 170,
+            "total_tokens": 1596,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

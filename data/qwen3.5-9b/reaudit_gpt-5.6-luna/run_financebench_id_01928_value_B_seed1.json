@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01928_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted, analyzed, and written values are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reported 2,321 USD million for FY 2023, and the analyst and writer preserved the same value and year. No claim IDs or contradictory provenance are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 651,
+    "output_tokens": 166,
+    "total_tokens": 817,
+    "cached_tokens": 0,
+    "reasoning_tokens": 58,
+    "cost_usd": 0.0003294,
+    "latency_ms": 2207.4840830173343,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 651,
+      "output_tokens": 166,
+      "total_tokens": 817,
+      "reasoning_tokens": 58,
+      "time_to_first_token": 2.2069282089942135,
+      "duration": 2.2070157499983907,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 651,
+            "output_tokens": 166,
+            "total_tokens": 817,
+            "reasoning_tokens": 58,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 484,
+    "output_tokens": 210,
+    "total_tokens": 694,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2680.9320760075934,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 484,
+      "output_tokens": 210,
+      "total_tokens": 694,
+      "time_to_first_token": 2.6806970509933308,
+      "duration": 2.6807697670301422,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 484,
+            "output_tokens": 210,
+            "total_tokens": 694,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2654161920,
+              "load_duration": 520686,
+              "prompt_eval_duration": 161162000,
+              "eval_duration": 2438382000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

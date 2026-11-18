@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_07966_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly stated that the capex-to-revenue ratio rose from FY2017 to FY2018 and then decreased in FY2019; the ratios actually fell from about 2.2% to 1.7% and then rose to about 1.8%.",
+    "reported_metric": "capex as a percentage of revenue trend",
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extracted figures produce ratios of approximately 2.2%, 1.7%, and 1.8%, and their average is correctly 1.9%. The only factual error is the analyst's reversal of the year-over-year trend descriptions; the writer repeats the correct final average."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 814,
+    "output_tokens": 602,
+    "total_tokens": 1416,
+    "cached_tokens": 0,
+    "reasoning_tokens": 424,
+    "cost_usd": 0.0008852,
+    "latency_ms": 5791.867166000884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 814,
+      "output_tokens": 602,
+      "total_tokens": 1416,
+      "reasoning_tokens": 424,
+      "time_to_first_token": 5.791264416999184,
+      "duration": 5.791395167005248,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 814,
+            "output_tokens": 602,
+            "total_tokens": 1416,
+            "reasoning_tokens": 424,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 647,
+    "output_tokens": 1237,
+    "total_tokens": 1884,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13420.145155978389,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 647,
+      "output_tokens": 1237,
+      "total_tokens": 1884,
+      "time_to_first_token": 13.419905766029842,
+      "duration": 13.419981883023866,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 647,
+            "output_tokens": 1237,
+            "total_tokens": 1884,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13394335711,
+              "load_duration": 416066,
+              "prompt_eval_duration": 198808000,
+              "eval_duration": 13146335000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

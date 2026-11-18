@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00605_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Q4 FY2023 accounted for 0.0% of Ulta Beauty's FY2023 stock-repurchase spending.",
+    "reported_metric": "share_repurchases_cost_q4_2023_pct_of_fy2023",
+    "reported_value": 0.0,
+    "confidence": 0.88,
+    "rationale": "The extractor supplied only two stock-repurchase values, both labeled 2022, and provided no Q4 FY2023 or FY2023 total data. The analyst therefore introduced an unsupported 0.0% claim; the writer repeated and amplified it as evidence that no repurchases occurred."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 746,
+    "output_tokens": 522,
+    "total_tokens": 1268,
+    "cached_tokens": 0,
+    "reasoning_tokens": 367,
+    "cost_usd": 0.0007756,
+    "latency_ms": 5390.625125030056,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 746,
+      "output_tokens": 522,
+      "total_tokens": 1268,
+      "reasoning_tokens": 367,
+      "time_to_first_token": 5.390075250004884,
+      "duration": 5.390317415993195,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 746,
+            "output_tokens": 522,
+            "total_tokens": 1268,
+            "reasoning_tokens": 367,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1269,
+    "output_tokens": 173,
+    "total_tokens": 1442,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002134,
+    "latency_ms": 2262.1524590067565,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1269,
+      "output_tokens": 173,
+      "total_tokens": 1442,
+      "time_to_first_token": 2.261362250021193,
+      "duration": 2.2616183339850977,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1269,
+            "output_tokens": 173,
+            "total_tokens": 1442,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

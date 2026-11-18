@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01346_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Corning's effective tax rate increased by 3% between FY2021 and FY2022.",
+    "reported_metric": "effective_tax_rate_change_FY2021_to_FY2022",
+    "reported_value": 3.0,
+    "confidence": 0.78,
+    "rationale": "The extracted rates are 20% and 23%, and the analyst correctly computes a difference of 3 percentage points. The writer labels that difference as 3%, which is technically imprecise: a change from 20% to 23% is an increase of 3 percentage points, or 15% relative."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 901,
+    "output_tokens": 667,
+    "total_tokens": 1568,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009806,
+    "latency_ms": 6812.524458044209,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 901,
+      "output_tokens": 667,
+      "total_tokens": 1568,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.8122070410172455,
+      "duration": 6.812278666009661,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 901,
+            "output_tokens": 667,
+            "total_tokens": 1568,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 786,
+    "output_tokens": 239,
+    "total_tokens": 1025,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2862.2583159594797,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 786,
+      "output_tokens": 239,
+      "total_tokens": 1025,
+      "time_to_first_token": 2.861982581031043,
+      "duration": 2.862061118998099,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 786,
+            "output_tokens": 239,
+            "total_tokens": 1025,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2836755135,
+              "load_duration": 684990,
+              "prompt_eval_duration": 201163000,
+              "eval_duration": 2565097000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

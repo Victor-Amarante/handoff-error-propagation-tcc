@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03031_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 1.0,
+    "rationale": "The extractor reports total current assets of USD 19,815 million and total current liabilities of USD 13,997 million. The analyst correctly computes 19,815 − 13,997 = 5,818, and the writer accurately reports that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 999,
+    "output_tokens": 152,
+    "total_tokens": 1151,
+    "cached_tokens": 0,
+    "reasoning_tokens": 45,
+    "cost_usd": 0.0003822,
+    "latency_ms": 2269.6928750374354,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 999,
+      "output_tokens": 152,
+      "total_tokens": 1151,
+      "reasoning_tokens": 45,
+      "time_to_first_token": 2.2690389169729315,
+      "duration": 2.2691869999980554,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 999,
+            "output_tokens": 152,
+            "total_tokens": 1151,
+            "reasoning_tokens": 45,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 901,
+    "output_tokens": 1112,
+    "total_tokens": 2013,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12074.808334000409,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 901,
+      "output_tokens": 1112,
+      "total_tokens": 2013,
+      "time_to_first_token": 12.074519260029774,
+      "duration": 12.074601479049306,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 901,
+            "output_tokens": 1112,
+            "total_tokens": 2013,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12048345662,
+              "load_duration": 492935,
+              "prompt_eval_duration": 262601999,
+              "eval_duration": 11711306000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

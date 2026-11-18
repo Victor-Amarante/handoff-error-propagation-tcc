@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00651_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "FY2023 adjusted EPS growth is expected to accelerate to 3.5%.",
+    "reported_metric": "FY2023 guidance adjusted EPS growth rate",
+    "reported_value": 3.5,
+    "confidence": 0.98,
+    "rationale": "The 3.5% FY2023 guidance is supported by C15 and A01, but it is lower than the prior-period adjusted EPS growth of 3.6% in C12. Thus, the writer's added conclusion that growth would accelerate is incorrect; the rate implies slight deceleration."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2440,
+    "output_tokens": 655,
+    "total_tokens": 3095,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001274,
+    "latency_ms": 6365.893165988382,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2440,
+      "output_tokens": 655,
+      "total_tokens": 3095,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.365467083000112,
+      "duration": 6.365550832997542,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2440,
+            "output_tokens": 655,
+            "total_tokens": 3095,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2601,
+    "output_tokens": 299,
+    "total_tokens": 2900,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3710.5238679796457,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2601,
+      "output_tokens": 299,
+      "total_tokens": 2900,
+      "time_to_first_token": 3.710280929983128,
+      "duration": 3.710354415990878,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2601,
+            "output_tokens": 299,
+            "total_tokens": 2900,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3683126142,
+              "load_duration": 509890,
+              "prompt_eval_duration": 301100000,
+              "eval_duration": 3290966000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

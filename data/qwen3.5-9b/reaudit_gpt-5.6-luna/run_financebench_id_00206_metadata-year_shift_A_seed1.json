@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Gross margin remains a standard profitability metric applicable to JPMorgan Chase, rather than being generally inappropriate for a banking company.",
+    "reported_metric": "gross margin",
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor only reported assets and stockholders’ equity and made no gross-margin claim. The analyst first introduced the incorrect relevance claim, which the writer repeated. For a bank, conventional gross margin based on revenue and cost of goods sold is generally not a meaningful metric; banking-specific measures such as net interest margin are more appropriate. The statement that the available data are insufficient to calculate a margin is otherwise supported by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 784,
+    "output_tokens": 404,
+    "total_tokens": 1188,
+    "cached_tokens": 0,
+    "reasoning_tokens": 240,
+    "cost_usd": 0.0006415999999999999,
+    "latency_ms": 4205.985208041966,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 784,
+      "output_tokens": 404,
+      "total_tokens": 1188,
+      "reasoning_tokens": 240,
+      "time_to_first_token": 4.204870584013406,
+      "duration": 4.205126167042181,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 784,
+            "output_tokens": 404,
+            "total_tokens": 1188,
+            "reasoning_tokens": 240,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 576,
+    "output_tokens": 179,
+    "total_tokens": 755,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2224.974520970136,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 576,
+      "output_tokens": 179,
+      "total_tokens": 755,
+      "time_to_first_token": 2.224707659042906,
+      "duration": 2.224781021999661,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 576,
+            "output_tokens": 179,
+            "total_tokens": 755,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2200153336,
+              "load_duration": 469906,
+              "prompt_eval_duration": 154896000,
+              "eval_duration": 1996155000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

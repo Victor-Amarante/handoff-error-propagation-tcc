@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00494_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer recorded the aggregate FY2023 production-rate forecast as 0.0, which conflicts with the stated 787 and 737 rates of 5 and 31 units per month.",
+    "reported_metric": "production_rate_forecast",
+    "reported_value": 0.0,
+    "confidence": 0.97,
+    "rationale": "The extractor and analyst outputs are internally consistent and preserve the component values. The writer's answer text reports nonzero 787 and 737 rates, but its attributed answer claim assigns the aggregate forecast a value of 0.0, creating the first traceable inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1189,
+    "output_tokens": 665,
+    "total_tokens": 1854,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010358,
+    "latency_ms": 6836.984833993483,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1189,
+      "output_tokens": 665,
+      "total_tokens": 1854,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.836796999967191,
+      "duration": 6.836853124957997,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1189,
+            "output_tokens": 665,
+            "total_tokens": 1854,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1772,
+    "output_tokens": 175,
+    "total_tokens": 1947,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002647,
+    "latency_ms": 3377.4344999692403,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1772,
+      "output_tokens": 175,
+      "total_tokens": 1947,
+      "time_to_first_token": 3.376580832991749,
+      "duration": 3.376843417005148,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1772,
+            "output_tokens": 175,
+            "total_tokens": 1947,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

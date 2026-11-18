@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04854_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY2020 free cash flow was calculated as 5,889.97 USD million using cash from operations of 6,376.2 minus capex of 486.2.",
+    "reported_metric": "free cash flow",
+    "reported_value": 5889.97,
+    "confidence": 0.94,
+    "rationale": "The analyst's FCF value is arithmetically inconsistent with its selected inputs: 6,376.2 - 486.2 = 5,890.0, not 5,889.97. The writer's rounded value of 5,890 is consistent with those inputs, so the first identifiable error is in the analyst output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 824,
+    "output_tokens": 681,
+    "total_tokens": 1505,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000982,
+    "latency_ms": 6541.441708046477,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 824,
+      "output_tokens": 681,
+      "total_tokens": 1505,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.5407598340534605,
+      "duration": 6.540998334006872,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 824,
+            "output_tokens": 681,
+            "total_tokens": 1505,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 683,
+    "output_tokens": 396,
+    "total_tokens": 1079,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4703.757348004729,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 683,
+      "output_tokens": 396,
+      "total_tokens": 1079,
+      "time_to_first_token": 4.7035209339810535,
+      "duration": 4.70359508896945,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 683,
+            "output_tokens": 396,
+            "total_tokens": 1079,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4678467109,
+              "load_duration": 562018,
+              "prompt_eval_duration": 214092000,
+              "eval_duration": 4392800000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

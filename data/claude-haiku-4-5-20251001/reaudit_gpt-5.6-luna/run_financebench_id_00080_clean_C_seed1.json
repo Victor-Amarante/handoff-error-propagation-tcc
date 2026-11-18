@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00080_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The analyst reported a working-capital assessment ratio of 1.0, although the cited customer-funds balances imply funds receivable of $36,357 million divided by funds payable of $40,107 million, or approximately 0.91.",
+    "reported_metric": "working_capital_assessment",
+    "reported_value": 1.0,
+    "confidence": 0.86,
+    "rationale": "A01 is arithmetically correct: $57,517 million of current assets minus $45,101 million of current liabilities equals $12,416 million. However, A02 is inconsistent with its cited inputs and supports the writer's unsupported conclusion that positive working capital demonstrates PayPal's operational liquidity and financial stability. PayPal's current balances are heavily driven by customer funds and corresponding obligations, making conventional working capital less informative."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1944,
+    "output_tokens": 711,
+    "total_tokens": 2655,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001242,
+    "latency_ms": 7157.676417031325,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1944,
+      "output_tokens": 711,
+      "total_tokens": 2655,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.156874417036306,
+      "duration": 7.157179625006393,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1944,
+            "output_tokens": 711,
+            "total_tokens": 2655,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2710,
+    "output_tokens": 246,
+    "total_tokens": 2956,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00394,
+    "latency_ms": 4279.389833041932,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2710,
+      "output_tokens": 246,
+      "total_tokens": 2956,
+      "time_to_first_token": 4.278358209005091,
+      "duration": 4.27865799999563,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2710,
+            "output_tokens": 246,
+            "total_tokens": 2956,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

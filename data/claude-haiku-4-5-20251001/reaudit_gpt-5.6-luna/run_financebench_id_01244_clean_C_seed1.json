@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01244_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "CVS Health paid dividends to common shareholders in Q2 of FY2022 at $0.55 per share.",
+    "reported_metric": "dividend_per_share",
+    "reported_value": 0.55,
+    "confidence": 0.96,
+    "rationale": "The extracted and analyzed claims only report a 2022 dividend per share of 0.55; neither establishes that the dividend was paid specifically in Q2. The writer introduced the unsupported Q2-specific claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 360,
+    "total_tokens": 1160,
+    "cached_tokens": 0,
+    "reasoning_tokens": 234,
+    "cost_usd": 0.000592,
+    "latency_ms": 3665.3729169629514,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 360,
+      "total_tokens": 1160,
+      "reasoning_tokens": 234,
+      "time_to_first_token": 3.6648929590010084,
+      "duration": 3.664992459001951,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 360,
+            "total_tokens": 1160,
+            "reasoning_tokens": 234,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1327,
+    "output_tokens": 210,
+    "total_tokens": 1537,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002377,
+    "latency_ms": 2815.2259589987807,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1327,
+      "output_tokens": 210,
+      "total_tokens": 1537,
+      "time_to_first_token": 2.8146243329974823,
+      "duration": 2.81485112500377,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1327,
+            "output_tokens": 210,
+            "total_tokens": 1537,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_09724_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly labeled net operating revenues of $38,655M as FY2022 rather than FY2021.",
+    "reported_metric": "Net operating revenues",
+    "reported_value": 38655.0,
+    "confidence": 0.98,
+    "rationale": "The extracted $38,655M revenue figure is presented with the wrong fiscal year, causing the analyst to believe FY2021 revenue was missing and preventing calculation of the requested margin."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 812,
+    "output_tokens": 319,
+    "total_tokens": 1131,
+    "cached_tokens": 0,
+    "reasoning_tokens": 201,
+    "cost_usd": 0.0005452,
+    "latency_ms": 3439.313957991544,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 812,
+      "output_tokens": 319,
+      "total_tokens": 1131,
+      "reasoning_tokens": 201,
+      "time_to_first_token": 3.4384065000340343,
+      "duration": 3.4386807500268333,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 812,
+            "output_tokens": 319,
+            "total_tokens": 1131,
+            "reasoning_tokens": 201,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1325,
+    "output_tokens": 202,
+    "total_tokens": 1527,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002335,
+    "latency_ms": 3592.904000019189,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1325,
+      "output_tokens": 202,
+      "total_tokens": 1527,
+      "time_to_first_token": 3.5921839579823427,
+      "duration": 3.5924127909820527,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1325,
+            "output_tokens": 202,
+            "total_tokens": 1527,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

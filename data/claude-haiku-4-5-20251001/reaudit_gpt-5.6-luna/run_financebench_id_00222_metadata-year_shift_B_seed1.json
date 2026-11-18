@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMD's FY22 quick ratio was 0.81.",
+    "reported_metric": "quick_ratio",
+    "reported_value": 0.81,
+    "confidence": 0.96,
+    "rationale": "The 0.81 figure equals (FY22 short-term investments of 1,020 plus FY22 receivables of 4,126) divided by FY22 current liabilities of 6,369, but it omits cash. The only extracted cash figure is 4,835 for FY23, so the analyst reported a FY22 quick ratio from incomplete inputs; no claim IDs were provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 956,
+    "output_tokens": 402,
+    "total_tokens": 1358,
+    "cached_tokens": 0,
+    "reasoning_tokens": 250,
+    "cost_usd": 0.0006736,
+    "latency_ms": 4772.807375004049,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 956,
+      "output_tokens": 402,
+      "total_tokens": 1358,
+      "reasoning_tokens": 250,
+      "time_to_first_token": 4.772013667039573,
+      "duration": 4.77220795804169,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 956,
+            "output_tokens": 402,
+            "total_tokens": 1358,
+            "reasoning_tokens": 250,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1490,
+    "output_tokens": 222,
+    "total_tokens": 1712,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0026,
+    "latency_ms": 2869.3239170243032,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1490,
+      "output_tokens": 222,
+      "total_tokens": 1712,
+      "time_to_first_token": 2.8683936659945175,
+      "duration": 2.8686902910121717,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1490,
+            "output_tokens": 222,
+            "total_tokens": 1712,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

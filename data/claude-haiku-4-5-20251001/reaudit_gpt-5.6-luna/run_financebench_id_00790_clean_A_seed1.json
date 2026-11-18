@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly describes the $17,872 million operating lease right-of-use assets as operating lease obligations.",
+    "reported_metric": "operating lease obligations",
+    "reported_value": 17872.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst consistently identify $17,872 million as operating lease right-of-use assets. The writer changes this metric to operating lease obligations, so the first error appears in the writer stage; the numerical calculations otherwise reconcile."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1040,
+    "output_tokens": 353,
+    "total_tokens": 1393,
+    "cached_tokens": 0,
+    "reasoning_tokens": 228,
+    "cost_usd": 0.0006316,
+    "latency_ms": 3943.4395830030553,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1040,
+      "output_tokens": 353,
+      "total_tokens": 1393,
+      "reasoning_tokens": 228,
+      "time_to_first_token": 3.9431623749551363,
+      "duration": 3.9432263749768026,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1040,
+            "output_tokens": 353,
+            "total_tokens": 1393,
+            "reasoning_tokens": 228,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1560,
+    "output_tokens": 188,
+    "total_tokens": 1748,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0025,
+    "latency_ms": 2612.5921250204556,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1560,
+      "output_tokens": 188,
+      "total_tokens": 1748,
+      "time_to_first_token": 2.611869999964256,
+      "duration": 2.612106791988481,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1560,
+            "output_tokens": 188,
+            "total_tokens": 1748,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

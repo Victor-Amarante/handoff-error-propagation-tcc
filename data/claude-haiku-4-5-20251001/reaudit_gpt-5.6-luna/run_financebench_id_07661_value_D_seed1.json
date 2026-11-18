@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07661_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported FY2020 operating cash flow as 318,603 USD thousands, while its own evidence shows 381,603.",
+    "reported_metric": "operating_cash_flow",
+    "reported_value": 318603.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim conflicts with the cited cash flow statement evidence (381,603). The analyst and writer use the evidence-derived value of 381.603 USD millions, so the initial inconsistency originated in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 857,
+    "output_tokens": 283,
+    "total_tokens": 1140,
+    "cached_tokens": 0,
+    "reasoning_tokens": 152,
+    "cost_usd": 0.000511,
+    "latency_ms": 3436.8362500099465,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 283,
+      "total_tokens": 1140,
+      "reasoning_tokens": 152,
+      "time_to_first_token": 3.4363071670522913,
+      "duration": 3.436413084040396,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 283,
+            "total_tokens": 1140,
+            "reasoning_tokens": 152,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1398,
+    "output_tokens": 179,
+    "total_tokens": 1577,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002293,
+    "latency_ms": 3236.060415976681,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1398,
+      "output_tokens": 179,
+      "total_tokens": 1577,
+      "time_to_first_token": 3.2352160420268774,
+      "duration": 3.235514791973401,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1398,
+            "output_tokens": 179,
+            "total_tokens": 1577,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

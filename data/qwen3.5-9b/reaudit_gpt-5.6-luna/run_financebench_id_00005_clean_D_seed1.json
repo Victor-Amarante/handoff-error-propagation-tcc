@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No factual error is evident in the trace. The analyst correctly computes working capital as total current assets minus total current liabilities: USD 7,453 million − USD 5,175 million = USD 2,278 million, which the writer correctly rounds and reports as USD 2.28 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1608,
+    "output_tokens": 199,
+    "total_tokens": 1807,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.0005604,
+    "latency_ms": 2470.838833018206,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1608,
+      "output_tokens": 199,
+      "total_tokens": 1807,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.470082707994152,
+      "duration": 2.470365874993149,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1608,
+            "output_tokens": 199,
+            "total_tokens": 1807,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1649,
+    "output_tokens": 218,
+    "total_tokens": 1867,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2921.5175950084813,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1649,
+      "output_tokens": 218,
+      "total_tokens": 1867,
+      "time_to_first_token": 2.9212661759811454,
+      "duration": 2.921339017979335,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1649,
+            "output_tokens": 218,
+            "total_tokens": 1867,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2890439686,
+              "load_duration": 478390,
+              "prompt_eval_duration": 407275000,
+              "eval_duration": 2429464000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

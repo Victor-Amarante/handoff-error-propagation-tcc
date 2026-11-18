@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04980_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor reports capital expenditure of -$6,425 million as a cash outflow. The analyst appropriately expresses the expenditure amount as a positive $6.43 billion after converting units and rounding, and the writer preserves that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 658,
+    "output_tokens": 281,
+    "total_tokens": 939,
+    "cached_tokens": 0,
+    "reasoning_tokens": 180,
+    "cost_usd": 0.00046879999999999996,
+    "latency_ms": 3422.8465409833007,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 658,
+      "output_tokens": 281,
+      "total_tokens": 939,
+      "reasoning_tokens": 180,
+      "time_to_first_token": 3.4220069579896517,
+      "duration": 3.4222502909833565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 658,
+            "output_tokens": 281,
+            "total_tokens": 939,
+            "reasoning_tokens": 180,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 479,
+    "output_tokens": 1292,
+    "total_tokens": 1771,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14112.800062983297,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 479,
+      "output_tokens": 1292,
+      "total_tokens": 1771,
+      "time_to_first_token": 14.112500731018372,
+      "duration": 14.11260430404218,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 479,
+            "output_tokens": 1292,
+            "total_tokens": 1771,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14087581214,
+              "load_duration": 526560,
+              "prompt_eval_duration": 160141000,
+              "eval_duration": 13857940000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

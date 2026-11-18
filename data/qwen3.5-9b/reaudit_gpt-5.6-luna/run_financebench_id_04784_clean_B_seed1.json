@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04784_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2018-FY2019 change in unadjusted operating income margin for Walmart is 1.8%.",
+    "reported_metric": "FY2018 - FY2019 change in unadjusted operating income % margin",
+    "reported_value": 1.8,
+    "confidence": 0.99,
+    "rationale": "The analyst margins are internally consistent with the extracted figures: 4.2685% for FY2019 and 4.0846% for FY2018. Their change is 0.1839 percentage points, which rounds to 0.2%, not 1.8%; the first error appears in the writer output. No claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 851,
+    "output_tokens": 300,
+    "total_tokens": 1151,
+    "cached_tokens": 0,
+    "reasoning_tokens": 130,
+    "cost_usd": 0.0005302000000000001,
+    "latency_ms": 3946.750624978449,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 851,
+      "output_tokens": 300,
+      "total_tokens": 1151,
+      "reasoning_tokens": 130,
+      "time_to_first_token": 3.9460422919946723,
+      "duration": 3.946292291977443,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 851,
+            "output_tokens": 300,
+            "total_tokens": 1151,
+            "reasoning_tokens": 130,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 716,
+    "output_tokens": 324,
+    "total_tokens": 1040,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3827.7237419970334,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 716,
+      "output_tokens": 324,
+      "total_tokens": 1040,
+      "time_to_first_token": 3.827471291006077,
+      "duration": 3.8275421610451303,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 716,
+            "output_tokens": 324,
+            "total_tokens": 1040,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3799666244,
+              "load_duration": 412158,
+              "prompt_eval_duration": 192950000,
+              "eval_duration": 3537337000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

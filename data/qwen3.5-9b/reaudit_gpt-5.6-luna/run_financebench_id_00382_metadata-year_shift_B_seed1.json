@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The answer identifies the highest FY2022 EBITDAR contribution as 1,294,630 USD_K but does not identify the region, which is what the question asks for.",
+    "reported_metric": "Highest EBITDAR Contribution",
+    "reported_value": 1294630.0,
+    "confidence": 0.98,
+    "rationale": "The extracted FY2022 values support 1,294,630 as the maximum, but no region labels appear anywhere in the trace. The writer therefore cannot substantiate or answer the requested regional identification; the failure first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1126,
+    "output_tokens": 658,
+    "total_tokens": 1784,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010148000000000002,
+    "latency_ms": 7095.217292022426,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1126,
+      "output_tokens": 658,
+      "total_tokens": 1784,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.0943929579807445,
+      "duration": 7.094623457989655,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1126,
+            "output_tokens": 658,
+            "total_tokens": 1784,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1106,
+    "output_tokens": 631,
+    "total_tokens": 1737,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7234.192128002178,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1106,
+      "output_tokens": 631,
+      "total_tokens": 1737,
+      "time_to_first_token": 7.2339153490029275,
+      "duration": 7.234006875019986,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1106,
+            "output_tokens": 631,
+            "total_tokens": 1737,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7209425926,
+              "load_duration": 534642,
+              "prompt_eval_duration": 308679000,
+              "eval_duration": 6844559000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01491_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Johnson & Johnson had not yet realized any total cash proceeds from the Kenvue separation by August 30, 2023.",
+    "reported_metric": "Cash proceeds realized from the Kenvue separation as of August 30, 2023",
+    "reported_value": null,
+    "confidence": 0.88,
+    "rationale": "The analyst correctly stated that the supplied extraction did not establish the August 30, 2023 amount. The writer then introduced the unsupported conclusion that proceeds had not yet been realized. The trace contains no claim IDs, and no numeric value is asserted for this unsupported conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 820,
+    "output_tokens": 664,
+    "total_tokens": 1484,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009607999999999999,
+    "latency_ms": 6475.440874986816,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 820,
+      "output_tokens": 664,
+      "total_tokens": 1484,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.474934292025864,
+      "duration": 6.475083750032354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 820,
+            "output_tokens": 664,
+            "total_tokens": 1484,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 630,
+    "output_tokens": 184,
+    "total_tokens": 814,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2363.3261910290457,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 630,
+      "output_tokens": 184,
+      "total_tokens": 814,
+      "time_to_first_token": 2.3630746669950895,
+      "duration": 2.363146768999286,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 630,
+            "output_tokens": 184,
+            "total_tokens": 814,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2334202758,
+              "load_duration": 441105,
+              "prompt_eval_duration": 157382000,
+              "eval_duration": 2126424000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

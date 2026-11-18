@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08286_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Amazon's FY2019 net income was reported as USD 15,188 million, although the cited income statement evidence lists FY2019 net income as USD 11,588 million.",
+    "reported_metric": "net_income",
+    "reported_value": 15188.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's value of 15,188 conflicts with its own cited evidence, which lists net income as 3,033, 10,073, and 11,588 for the successive years; the analyst and writer merely propagate the extractor's claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 866,
+    "output_tokens": 282,
+    "total_tokens": 1148,
+    "cached_tokens": 0,
+    "reasoning_tokens": 132,
+    "cost_usd": 0.0005116000000000001,
+    "latency_ms": 3763.8834169483744,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 866,
+      "output_tokens": 282,
+      "total_tokens": 1148,
+      "reasoning_tokens": 132,
+      "time_to_first_token": 3.763217792031355,
+      "duration": 3.763444917043671,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 866,
+            "output_tokens": 282,
+            "total_tokens": 1148,
+            "reasoning_tokens": 132,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1407,
+    "output_tokens": 232,
+    "total_tokens": 1639,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002567,
+    "latency_ms": 3804.893499996979,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1407,
+      "output_tokens": 232,
+      "total_tokens": 1639,
+      "time_to_first_token": 3.803980790951755,
+      "duration": 3.8042788329767063,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1407,
+            "output_tokens": 232,
+            "total_tokens": 1639,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

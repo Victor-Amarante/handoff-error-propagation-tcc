@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02987_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2019 fixed asset turnover ratio was reported as 16.78, but using FY2019 revenue of 6,489 and average PP&E of (253 + 282) / 2 = 267.5 gives 24.26.",
+    "reported_metric": "FY2019 fixed asset turnover ratio for Activision Blizzard",
+    "reported_value": 16.78,
+    "confidence": 0.98,
+    "rationale": "The extracted numeric inputs used by the analyst imply 6,489 / 267.5 = 24.26, not 16.78. The writer merely repeated the analyst's incorrect result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1215,
+    "output_tokens": 1553,
+    "total_tokens": 2768,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1380,
+    "cost_usd": 0.0021065999999999997,
+    "latency_ms": 13655.2848329884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1215,
+      "output_tokens": 1553,
+      "total_tokens": 2768,
+      "reasoning_tokens": 1380,
+      "time_to_first_token": 13.654842750052921,
+      "duration": 13.654947416041978,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1215,
+            "output_tokens": 1553,
+            "total_tokens": 2768,
+            "reasoning_tokens": 1380,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1168,
+    "output_tokens": 762,
+    "total_tokens": 1930,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8562.476752034854,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1168,
+      "output_tokens": 762,
+      "total_tokens": 1930,
+      "time_to_first_token": 8.56222402304411,
+      "duration": 8.56230874103494,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1168,
+            "output_tokens": 762,
+            "total_tokens": 1930,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8533833588,
+              "load_duration": 442809,
+              "prompt_eval_duration": 298496000,
+              "eval_duration": 8180267000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

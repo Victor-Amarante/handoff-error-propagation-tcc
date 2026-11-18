@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor lists corporate bonds at $416,420K, the largest of the four categories. The analyst and writer preserve this comparison and value consistently; no error is evident from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 798,
+    "output_tokens": 144,
+    "total_tokens": 942,
+    "cached_tokens": 0,
+    "reasoning_tokens": 51,
+    "cost_usd": 0.0003324,
+    "latency_ms": 2591.4639999973588,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 798,
+      "output_tokens": 144,
+      "total_tokens": 942,
+      "reasoning_tokens": 51,
+      "time_to_first_token": 2.5908913749735802,
+      "duration": 2.5910975000006147,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 798,
+            "output_tokens": 144,
+            "total_tokens": 942,
+            "reasoning_tokens": 51,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1289,
+    "output_tokens": 157,
+    "total_tokens": 1446,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002074,
+    "latency_ms": 2354.677208000794,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1289,
+      "output_tokens": 157,
+      "total_tokens": 1446,
+      "time_to_first_token": 2.353971874981653,
+      "duration": 2.354200459027197,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1289,
+            "output_tokens": 157,
+            "total_tokens": 1446,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

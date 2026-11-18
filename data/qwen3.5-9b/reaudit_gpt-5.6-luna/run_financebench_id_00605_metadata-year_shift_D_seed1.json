@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00605_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Q4 FY2023 stock repurchase spending was $186.5 million.",
+    "reported_metric": "share_repurchase_cost_Q4_FY2023",
+    "reported_value": 186.5,
+    "confidence": 0.99,
+    "rationale": "The extractor evidence states $328.1 million was spent in Q4 of FY2022, not $186.5 million in Q4 of FY2023. The analyst introduced the unsupported $186.5 million FY2023 claim, which the writer then used to calculate 20.7%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1274,
+    "output_tokens": 485,
+    "total_tokens": 1759,
+    "cached_tokens": 0,
+    "reasoning_tokens": 340,
+    "cost_usd": 0.0008368,
+    "latency_ms": 5383.825000026263,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1274,
+      "output_tokens": 485,
+      "total_tokens": 1759,
+      "reasoning_tokens": 340,
+      "time_to_first_token": 5.383283292001579,
+      "duration": 5.383459916978609,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1274,
+            "output_tokens": 485,
+            "total_tokens": 1759,
+            "reasoning_tokens": 340,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1233,
+    "output_tokens": 279,
+    "total_tokens": 1512,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3509.939036972355,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1233,
+      "output_tokens": 279,
+      "total_tokens": 1512,
+      "time_to_first_token": 3.5096957809873857,
+      "duration": 3.5097714199800976,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1233,
+            "output_tokens": 279,
+            "total_tokens": 1512,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3484366539,
+              "load_duration": 648066,
+              "prompt_eval_duration": 337284000,
+              "eval_duration": 3068645000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

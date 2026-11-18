@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01328_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly attributed the FY2022 restructuring-cost figure of $141,000 to Pepco instead of PepsiCo.",
+    "reported_metric": "FY2022 restructuring costs",
+    "reported_value": 141000.0,
+    "confidence": 0.97,
+    "rationale": "The extractor consistently identifies PepsiCo, while the analyst is the first stage to change the company name to Pepco; the writer then repeats that misattribution. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 627,
+    "output_tokens": 533,
+    "total_tokens": 1160,
+    "cached_tokens": 0,
+    "reasoning_tokens": 407,
+    "cost_usd": 0.000765,
+    "latency_ms": 5752.8370000072755,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 627,
+      "output_tokens": 533,
+      "total_tokens": 1160,
+      "reasoning_tokens": 407,
+      "time_to_first_token": 5.752269082993735,
+      "duration": 5.752464917022735,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 627,
+            "output_tokens": 533,
+            "total_tokens": 1160,
+            "reasoning_tokens": 407,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 438,
+    "output_tokens": 232,
+    "total_tokens": 670,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2900.3168380004354,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 438,
+      "output_tokens": 232,
+      "total_tokens": 670,
+      "time_to_first_token": 2.9000631559756584,
+      "duration": 2.9001472799573094,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 438,
+            "output_tokens": 232,
+            "total_tokens": 670,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2871712131,
+              "load_duration": 452966,
+              "prompt_eval_duration": 127094000,
+              "eval_duration": 2696668000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

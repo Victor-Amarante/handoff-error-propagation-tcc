@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00822_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The average votes against for the nine nominees other than Richard A. Johnson was reported as 5,109,825.4.",
+    "reported_metric": "votes_against_average_other_nominees",
+    "reported_value": 5109825.4,
+    "confidence": 0.99,
+    "rationale": "The extractor values for the nine other nominees sum to 40,936,192, which averages to approximately 4,548,466.9, not 5,109,825.4. A03 and the writer's comparison therefore inherit this arithmetic error, although the conclusion that Johnson received substantially more votes against remains supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2417,
+    "output_tokens": 580,
+    "total_tokens": 2997,
+    "cached_tokens": 0,
+    "reasoning_tokens": 421,
+    "cost_usd": 0.0011794000000000002,
+    "latency_ms": 6151.379374961834,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2417,
+      "output_tokens": 580,
+      "total_tokens": 2997,
+      "reasoning_tokens": 421,
+      "time_to_first_token": 6.150707583001349,
+      "duration": 6.1510609579854645,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2417,
+            "output_tokens": 580,
+            "total_tokens": 2997,
+            "reasoning_tokens": 421,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3147,
+    "output_tokens": 177,
+    "total_tokens": 3324,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004032,
+    "latency_ms": 3683.756791986525,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3147,
+      "output_tokens": 177,
+      "total_tokens": 3324,
+      "time_to_first_token": 3.683024500031024,
+      "duration": 3.6832612919970416,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3147,
+            "output_tokens": 177,
+            "total_tokens": 3324,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

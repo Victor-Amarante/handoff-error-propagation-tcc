@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly characterized consolidated earnings before provision for taxes on income as operating profit or EBIT; it is a pre-tax earnings measure and is not necessarily operating income.",
+    "reported_metric": "consolidated earnings before provision for taxes on income",
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The extractor reported pre-tax earnings and earnings as a percentage of sales, not operating income. The analyst introduced the misclassification, which the writer repeated. No numerical value itself was shown to be incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1001,
+    "output_tokens": 603,
+    "total_tokens": 1604,
+    "cached_tokens": 0,
+    "reasoning_tokens": 466,
+    "cost_usd": 0.0009238000000000001,
+    "latency_ms": 6177.61995800538,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1001,
+      "output_tokens": 603,
+      "total_tokens": 1604,
+      "reasoning_tokens": 466,
+      "time_to_first_token": 6.177165541972499,
+      "duration": 6.177288666949607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1001,
+            "output_tokens": 603,
+            "total_tokens": 1604,
+            "reasoning_tokens": 466,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 808,
+    "output_tokens": 155,
+    "total_tokens": 963,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2046.925551025197,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 808,
+      "output_tokens": 155,
+      "total_tokens": 963,
+      "time_to_first_token": 2.0466877019498497,
+      "duration": 2.0467614099616185,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 808,
+            "output_tokens": 155,
+            "total_tokens": 963,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2021282673,
+              "load_duration": 480533,
+              "prompt_eval_duration": 234325000,
+              "eval_duration": 1734640000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

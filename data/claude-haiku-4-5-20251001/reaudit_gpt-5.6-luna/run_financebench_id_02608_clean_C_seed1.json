@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02608_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the extracted figures, calculated annual margins, and reported three-year average are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The margins calculate to approximately 3.1% (2017), 2.3% (2016), and 3.1% (2015); their average is approximately 2.8% when rounded to one decimal place."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1584,
+    "output_tokens": 253,
+    "total_tokens": 1837,
+    "cached_tokens": 0,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.0006204,
+    "latency_ms": 2859.5144579885527,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1584,
+      "output_tokens": 253,
+      "total_tokens": 1837,
+      "reasoning_tokens": 128,
+      "time_to_first_token": 2.858755790977739,
+      "duration": 2.8589738329756074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1584,
+            "output_tokens": 253,
+            "total_tokens": 1837,
+            "reasoning_tokens": 128,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2266,
+    "output_tokens": 355,
+    "total_tokens": 2621,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004041,
+    "latency_ms": 5426.931582973339,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2266,
+      "output_tokens": 355,
+      "total_tokens": 2621,
+      "time_to_first_token": 5.426035541982856,
+      "duration": 5.426342958002351,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2266,
+            "output_tokens": 355,
+            "total_tokens": 2621,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

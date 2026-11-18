@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01474_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Organic revenue growth guidance was reported as 8% for FY2024, although the evidence explicitly states it applies to full-year 2023.",
+    "reported_metric": "organic_revenue_growth_guidance",
+    "reported_value": 8.0,
+    "confidence": 0.98,
+    "rationale": "The extractor assigned year 2024 to C01, directly contradicting its evidence, which says full-year 2023. The 8% value itself is supported; the error is the associated year metadata. The analyst then normalized the year to 2023, while the writer also added an unsupported explanation about strong quarterly operational performance."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1436,
+    "output_tokens": 634,
+    "total_tokens": 2070,
+    "cached_tokens": 0,
+    "reasoning_tokens": 474,
+    "cost_usd": 0.001048,
+    "latency_ms": 6242.221458000131,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1436,
+      "output_tokens": 634,
+      "total_tokens": 2070,
+      "reasoning_tokens": 474,
+      "time_to_first_token": 6.241703332983889,
+      "duration": 6.241863666975405,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1436,
+            "output_tokens": 634,
+            "total_tokens": 2070,
+            "reasoning_tokens": 474,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2062,
+    "output_tokens": 184,
+    "total_tokens": 2246,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002982,
+    "latency_ms": 3582.171791989822,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2062,
+      "output_tokens": 184,
+      "total_tokens": 2246,
+      "time_to_first_token": 3.5812774159712717,
+      "duration": 3.581570875016041,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2062,
+            "output_tokens": 184,
+            "total_tokens": 2246,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

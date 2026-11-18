@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01077_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Best Buy completed one major acquisition in FY2021 and had no major acquisitions in FY2022 or FY2023.",
+    "reported_metric": "acquisition_count",
+    "reported_value": 1.0,
+    "confidence": 0.94,
+    "rationale": "The extractor and analyst both contain an acquisition-date record of 2021 associated with year 2022, which conflicts with the writer's claim that FY2022 had no acquisition. The writer also introduces an unsupported count of one acquisition in FY2021; no claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 720,
+    "output_tokens": 615,
+    "total_tokens": 1335,
+    "cached_tokens": 0,
+    "reasoning_tokens": 475,
+    "cost_usd": 0.000882,
+    "latency_ms": 6124.742041982245,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 720,
+      "output_tokens": 615,
+      "total_tokens": 1335,
+      "reasoning_tokens": 475,
+      "time_to_first_token": 6.124309999984689,
+      "duration": 6.124430749972817,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 720,
+            "output_tokens": 615,
+            "total_tokens": 1335,
+            "reasoning_tokens": 475,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 563,
+    "output_tokens": 232,
+    "total_tokens": 795,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2888.250291987788,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 563,
+      "output_tokens": 232,
+      "total_tokens": 795,
+      "time_to_first_token": 2.887985009001568,
+      "duration": 2.8880693560349755,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 563,
+            "output_tokens": 232,
+            "total_tokens": 795,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2860900771,
+              "load_duration": 599368,
+              "prompt_eval_duration": 170826000,
+              "eval_duration": 2617258000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

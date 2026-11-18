@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04302_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly used FY2017 revenue of $34,350M as FY2018 revenue, producing a FY2018 cost-of-sales ratio of 59.5%.",
+    "reported_metric": "FY2018 cost of goods sold as a percentage of revenue",
+    "reported_value": 59.5,
+    "confidence": 0.99,
+    "rationale": "The extractor supplied FY2017 revenue of $34,350M but did not supply FY2018 revenue; it supplied FY2019 revenue of $36,397M. The analyst nevertheless labeled $34,350M as FY2018 revenue, so the first incorrect claim appears in the analyst stage and propagates to the average."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 922,
+    "output_tokens": 391,
+    "total_tokens": 1313,
+    "cached_tokens": 0,
+    "reasoning_tokens": 219,
+    "cost_usd": 0.0006536000000000001,
+    "latency_ms": 4523.420249985065,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 922,
+      "output_tokens": 391,
+      "total_tokens": 1313,
+      "reasoning_tokens": 219,
+      "time_to_first_token": 4.52279679197818,
+      "duration": 4.5230472079711035,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 922,
+            "output_tokens": 391,
+            "total_tokens": 1313,
+            "reasoning_tokens": 219,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1426,
+    "output_tokens": 203,
+    "total_tokens": 1629,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002441,
+    "latency_ms": 2561.169749998953,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1426,
+      "output_tokens": 203,
+      "total_tokens": 1629,
+      "time_to_first_token": 2.5602532909833826,
+      "duration": 2.5605544580030255,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1426,
+            "output_tokens": 203,
+            "total_tokens": 1629,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

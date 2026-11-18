@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04784_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported Walmart FY2019 net sales as $150,329 million, a figure inconsistent with the consolidated operating income used.",
+    "reported_metric": "FY2019 net sales",
+    "reported_value": 150329.0,
+    "confidence": 0.98,
+    "rationale": "The extractor supplied an anomalous FY2019 net-sales denominator, causing the analyst to compute a 14.61% margin and a 10.5 percentage-point change. The trace has no claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 822,
+    "output_tokens": 424,
+    "total_tokens": 1246,
+    "cached_tokens": 0,
+    "reasoning_tokens": 294,
+    "cost_usd": 0.0006731999999999999,
+    "latency_ms": 4671.511708991602,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 822,
+      "output_tokens": 424,
+      "total_tokens": 1246,
+      "reasoning_tokens": 294,
+      "time_to_first_token": 4.6709083750029095,
+      "duration": 4.671110792027321,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 822,
+            "output_tokens": 424,
+            "total_tokens": 1246,
+            "reasoning_tokens": 294,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1349,
+    "output_tokens": 197,
+    "total_tokens": 1546,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002334,
+    "latency_ms": 2459.770124987699,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1349,
+      "output_tokens": 197,
+      "total_tokens": 1546,
+      "time_to_first_token": 2.4587678749812767,
+      "duration": 2.459072042023763,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1349,
+            "output_tokens": 197,
+            "total_tokens": 1546,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

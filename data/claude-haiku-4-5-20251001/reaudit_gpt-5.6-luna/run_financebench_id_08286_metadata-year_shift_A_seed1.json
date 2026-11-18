@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08286_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The trace provides only a FY2020 net income figure ($11,588 million) and never claims it is Amazon's FY2019 value. The analyst and writer correctly identify that the requested FY2019 figure is unavailable, so no incorrect claim is established from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 653,
+    "output_tokens": 210,
+    "total_tokens": 863,
+    "cached_tokens": 0,
+    "reasoning_tokens": 100,
+    "cost_usd": 0.00038260000000000003,
+    "latency_ms": 2653.8648339919746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 653,
+      "output_tokens": 210,
+      "total_tokens": 863,
+      "reasoning_tokens": 100,
+      "time_to_first_token": 2.65319062495837,
+      "duration": 2.6533469159621745,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 653,
+            "output_tokens": 210,
+            "total_tokens": 863,
+            "reasoning_tokens": 100,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1141,
+    "output_tokens": 153,
+    "total_tokens": 1294,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001906,
+    "latency_ms": 2058.2722920225933,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1141,
+      "output_tokens": 153,
+      "total_tokens": 1294,
+      "time_to_first_token": 2.0573447920032777,
+      "duration": 2.0576447079656646,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1141,
+            "output_tokens": 153,
+            "total_tokens": 1294,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

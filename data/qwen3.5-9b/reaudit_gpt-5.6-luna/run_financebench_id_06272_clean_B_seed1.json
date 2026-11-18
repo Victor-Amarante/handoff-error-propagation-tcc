@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06272_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer claimed that Coca-Cola's FY2022 dividend payout ratio was 7.36%.",
+    "reported_metric": "dividend_payout_ratio",
+    "reported_value": 7.36,
+    "confidence": 0.99,
+    "rationale": "The extractor reported total cash dividends of 7,616.0 USD million and the analyst reported net income attributable to shareholders of 34,876.9 USD million. Their ratio is approximately 0.2184, or 21.84%, consistent with the analyst's 0.22 ratio but not the writer's 7.36%. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 705,
+    "output_tokens": 589,
+    "total_tokens": 1294,
+    "cached_tokens": 0,
+    "reasoning_tokens": 429,
+    "cost_usd": 0.0008478,
+    "latency_ms": 5933.180167048704,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 705,
+      "output_tokens": 589,
+      "total_tokens": 1294,
+      "reasoning_tokens": 429,
+      "time_to_first_token": 5.9324798750458285,
+      "duration": 5.932667667046189,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 705,
+            "output_tokens": 589,
+            "total_tokens": 1294,
+            "reasoning_tokens": 429,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 531,
+    "output_tokens": 327,
+    "total_tokens": 858,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3866.3207599893212,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 531,
+      "output_tokens": 327,
+      "total_tokens": 858,
+      "time_to_first_token": 3.866085641027894,
+      "duration": 3.86616006703116,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 531,
+            "output_tokens": 327,
+            "total_tokens": 858,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3841713535,
+              "load_duration": 558803,
+              "prompt_eval_duration": 144965000,
+              "eval_duration": 3629512000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

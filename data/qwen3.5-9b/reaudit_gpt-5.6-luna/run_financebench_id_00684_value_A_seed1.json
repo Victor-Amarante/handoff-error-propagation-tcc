@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00684_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMCOR net sales for June 30 were reported as $16,494 million, which is inconsistent with the corresponding cost of sales and gross profit figures.",
+    "reported_metric": "net sales",
+    "reported_value": 16494.0,
+    "confidence": 0.92,
+    "rationale": "The extracted figures imply net sales should equal cost of sales plus gross profit. For the first period, $11,969M + $2,725M = $14,694M, not $16,494M. The other two period sets reconcile exactly, indicating the first net-sales value is the originating extraction error. The later analyst and writer conclusions inherit the missing/incorrect data context."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 951,
+    "output_tokens": 1098,
+    "total_tokens": 2049,
+    "cached_tokens": 0,
+    "reasoning_tokens": 924,
+    "cost_usd": 0.0015078,
+    "latency_ms": 9931.751833006274,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 951,
+      "output_tokens": 1098,
+      "total_tokens": 2049,
+      "reasoning_tokens": 924,
+      "time_to_first_token": 9.931256582960486,
+      "duration": 9.931405999988783,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 951,
+            "output_tokens": 1098,
+            "total_tokens": 2049,
+            "reasoning_tokens": 924,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 787,
+    "output_tokens": 227,
+    "total_tokens": 1014,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2706.485695031006,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 787,
+      "output_tokens": 227,
+      "total_tokens": 1014,
+      "time_to_first_token": 2.7062450110097416,
+      "duration": 2.7063185200095177,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 787,
+            "output_tokens": 227,
+            "total_tokens": 1014,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2681266931,
+              "load_duration": 650935,
+              "prompt_eval_duration": 219784000,
+              "eval_duration": 2410258000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

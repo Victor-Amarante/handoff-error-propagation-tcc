@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported growth calculations and conclusion are internally consistent with the extracted values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Data Center growth is (6043−3694)/3694 ≈ 63.6%, greater than Gaming's ≈21.4%, while Client declined by ≈9.9%. The analyst and writer conclusions correctly follow from the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 935,
+    "output_tokens": 255,
+    "total_tokens": 1190,
+    "cached_tokens": 0,
+    "reasoning_tokens": 129,
+    "cost_usd": 0.000493,
+    "latency_ms": 2886.7887500091456,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 935,
+      "output_tokens": 255,
+      "total_tokens": 1190,
+      "reasoning_tokens": 129,
+      "time_to_first_token": 2.8862963750143535,
+      "duration": 2.886428583995439,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 935,
+            "output_tokens": 255,
+            "total_tokens": 1190,
+            "reasoning_tokens": 129,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1439,
+    "output_tokens": 161,
+    "total_tokens": 1600,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002244,
+    "latency_ms": 2349.0540420170873,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1439,
+      "output_tokens": 161,
+      "total_tokens": 1600,
+      "time_to_first_token": 2.348197542014532,
+      "duration": 2.348501959000714,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1439,
+            "output_tokens": 161,
+            "total_tokens": 1600,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

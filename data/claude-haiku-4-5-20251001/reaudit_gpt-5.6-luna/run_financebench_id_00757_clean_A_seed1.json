@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00757_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be established from the trace; all stages consistently report that AMD disclosed FY22 customer concentration of 16%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, and writer outputs are internally consistent, and the trace provides no contradictory provenance or source evidence indicating that the 16% figure is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 603,
+    "output_tokens": 157,
+    "total_tokens": 760,
+    "cached_tokens": 0,
+    "reasoning_tokens": 44,
+    "cost_usd": 0.000309,
+    "latency_ms": 2238.5565000004135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 603,
+      "output_tokens": 157,
+      "total_tokens": 760,
+      "reasoning_tokens": 44,
+      "time_to_first_token": 2.2381804159958847,
+      "duration": 2.238316875009332,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 603,
+            "output_tokens": 157,
+            "total_tokens": 760,
+            "reasoning_tokens": 44,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1066,
+    "output_tokens": 164,
+    "total_tokens": 1230,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001886,
+    "latency_ms": 3325.2862080116756,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1066,
+      "output_tokens": 164,
+      "total_tokens": 1230,
+      "time_to_first_token": 3.3245721670100465,
+      "duration": 3.3248008340015076,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1066,
+            "output_tokens": 164,
+            "total_tokens": 1230,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

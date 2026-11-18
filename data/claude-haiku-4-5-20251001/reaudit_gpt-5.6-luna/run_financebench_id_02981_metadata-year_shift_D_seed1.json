@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02981_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor misclassified Corning's $14,082 million net sales as FY2022 rather than FY2021.",
+    "reported_metric": "net_sales",
+    "reported_value": 14082.0,
+    "confidence": 0.98,
+    "rationale": "The 2021 10-K data needed for FY2019-FY2021 includes $14,082 million net sales for FY2021. Assigning it to 2022 left the analyst without a FY2021 denominator, causing the unsupported 11.5% margin and incorrect 9.1% average."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1787,
+    "output_tokens": 592,
+    "total_tokens": 2379,
+    "cached_tokens": 0,
+    "reasoning_tokens": 442,
+    "cost_usd": 0.0010678,
+    "latency_ms": 5899.546790984459,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1787,
+      "output_tokens": 592,
+      "total_tokens": 2379,
+      "reasoning_tokens": 442,
+      "time_to_first_token": 5.898854915983975,
+      "duration": 5.899123457958922,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1787,
+            "output_tokens": 592,
+            "total_tokens": 2379,
+            "reasoning_tokens": 442,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2503,
+    "output_tokens": 174,
+    "total_tokens": 2677,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003373,
+    "latency_ms": 2758.011375030037,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2503,
+      "output_tokens": 174,
+      "total_tokens": 2677,
+      "time_to_first_token": 2.757470334006939,
+      "duration": 2.757560374971945,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2503,
+            "output_tokens": 174,
+            "total_tokens": 2677,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

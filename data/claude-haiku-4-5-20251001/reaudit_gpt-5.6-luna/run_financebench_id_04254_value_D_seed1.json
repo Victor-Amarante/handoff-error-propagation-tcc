@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04254_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2021 operating income was reported as $1,916 million, despite the cited evidence showing $1,196 million.",
+    "reported_metric": "operating_income",
+    "reported_value": 1916.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's numeric value conflicts with its own evidence. The analyst and writer correctly use the evidenced operating income of $1,196 million with depreciation and amortization of $636 million, yielding $2,552 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1027,
+    "output_tokens": 218,
+    "total_tokens": 1245,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.000467,
+    "latency_ms": 2898.210916959215,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1027,
+      "output_tokens": 218,
+      "total_tokens": 1245,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.897818500001449,
+      "duration": 2.8979253750294447,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1027,
+            "output_tokens": 218,
+            "total_tokens": 1245,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1601,
+    "output_tokens": 223,
+    "total_tokens": 1824,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002716,
+    "latency_ms": 3714.9801659979858,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1601,
+      "output_tokens": 223,
+      "total_tokens": 1824,
+      "time_to_first_token": 3.7141762080136687,
+      "duration": 3.714490458020009,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1601,
+            "output_tokens": 223,
+            "total_tokens": 1824,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

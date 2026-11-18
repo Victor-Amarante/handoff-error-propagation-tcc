@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "No factual error is evident from the trace. The writer accurately uses the analyst/extractor claim that 2019 discontinued operations net of tax contributed $5,318 million, and this is higher than the reported 2020 amount of $2,529 million and 2021 amount of negative $434 million. Discontinued operations are, by definition, outside standard continuing business operations."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 5202,
+    "output_tokens": 491,
+    "total_tokens": 5693,
+    "cached_tokens": 0,
+    "reasoning_tokens": 360,
+    "cost_usd": 0.0016296,
+    "latency_ms": 5820.336458040401,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5202,
+      "output_tokens": 491,
+      "total_tokens": 5693,
+      "reasoning_tokens": 360,
+      "time_to_first_token": 5.819588667014614,
+      "duration": 5.81984300003387,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5202,
+            "output_tokens": 491,
+            "total_tokens": 5693,
+            "reasoning_tokens": 360,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 6051,
+    "output_tokens": 540,
+    "total_tokens": 6591,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7432.314697012771,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 6051,
+      "output_tokens": 540,
+      "total_tokens": 6591,
+      "time_to_first_token": 7.432076998986304,
+      "duration": 7.432151196000632,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 6051,
+            "output_tokens": 540,
+            "total_tokens": 6591,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7406694279,
+              "load_duration": 683152,
+              "prompt_eval_duration": 1400146000,
+              "eval_duration": 5911763000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

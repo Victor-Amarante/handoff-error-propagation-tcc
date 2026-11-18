@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00215_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FY 2022 figures are consistent with the extractor output.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The writer accurately converts USD 107,434 million of net PP&E to approximately USD 107 billion and USD 149,796 million of wireless licenses to approximately USD 150 billion, matching the extractor and analyst outputs. The trailing '{' is a formatting issue, not a factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1340,
+    "output_tokens": 250,
+    "total_tokens": 1590,
+    "cached_tokens": 0,
+    "reasoning_tokens": 118,
+    "cost_usd": 0.000568,
+    "latency_ms": 3098.166082985699,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1340,
+      "output_tokens": 250,
+      "total_tokens": 1590,
+      "reasoning_tokens": 118,
+      "time_to_first_token": 3.0979339590412565,
+      "duration": 3.0979850420262665,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1340,
+            "output_tokens": 250,
+            "total_tokens": 1590,
+            "reasoning_tokens": 118,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1352,
+    "output_tokens": 428,
+    "total_tokens": 1780,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5192.745673004538,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1352,
+      "output_tokens": 428,
+      "total_tokens": 1780,
+      "time_to_first_token": 5.1925061360234395,
+      "duration": 5.1925801080069505,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1352,
+            "output_tokens": 428,
+            "total_tokens": 1780,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5167473646,
+              "load_duration": 526450,
+              "prompt_eval_duration": 360587000,
+              "eval_duration": 4756428000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

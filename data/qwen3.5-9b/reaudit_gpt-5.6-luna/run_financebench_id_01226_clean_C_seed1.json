@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01226_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "The extractor claimed that 3M's FY2022 operating-margin change was driven by an unspecified amount of 1.2 USD_B.",
+    "reported_metric": "operating margin change driver",
+    "reported_value": 1.2,
+    "confidence": 0.93,
+    "rationale": "The first unsupported and malformed claim appears in the extractor output. It labels a generic 'operating margin change driver' as 1.2 USD_B without identifying the actual driver or explaining how a dollar amount represents a margin change. The analyst and writer merely propagate this claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 890,
+    "output_tokens": 658,
+    "total_tokens": 1548,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009676,
+    "latency_ms": 6424.108291976154,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 890,
+      "output_tokens": 658,
+      "total_tokens": 1548,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.423589749960229,
+      "duration": 6.423728791996837,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 890,
+            "output_tokens": 658,
+            "total_tokens": 1548,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 757,
+    "output_tokens": 331,
+    "total_tokens": 1088,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4006.996523006819,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 757,
+      "output_tokens": 331,
+      "total_tokens": 1088,
+      "time_to_first_token": 4.006764104007743,
+      "duration": 4.006836373999249,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 757,
+            "output_tokens": 331,
+            "total_tokens": 1088,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3980533287,
+              "load_duration": 511069,
+              "prompt_eval_duration": 220114000,
+              "eval_duration": 3689404000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Pfizer's property, plant, and equipment was reported as $14,882 million for FY2022, but the cited Pfizer 2021 10-K and the FY20–FY21 comparison indicate this value belongs to FY2021.",
+    "reported_metric": "property_plant_equipment",
+    "reported_value": 14882.0,
+    "confidence": 0.98,
+    "rationale": "The extractor labels $14,882 million as 2022, while the source identifier is Pfizer's 2021 10-K and the question asks for FY20 to FY21. The analyst and writer then propagate that year mismatch; the indicator is also derived only from the FY20 claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1133,
+    "output_tokens": 546,
+    "total_tokens": 1679,
+    "cached_tokens": 0,
+    "reasoning_tokens": 374,
+    "cost_usd": 0.0008818,
+    "latency_ms": 5386.87350001419,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1133,
+      "output_tokens": 546,
+      "total_tokens": 1679,
+      "reasoning_tokens": 374,
+      "time_to_first_token": 5.386299041972961,
+      "duration": 5.386486709001474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1133,
+            "output_tokens": 546,
+            "total_tokens": 1679,
+            "reasoning_tokens": 374,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1733,
+    "output_tokens": 223,
+    "total_tokens": 1956,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002848,
+    "latency_ms": 3698.3674169750884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1733,
+      "output_tokens": 223,
+      "total_tokens": 1956,
+      "time_to_first_token": 3.6974363330518827,
+      "duration": 3.697736125031952,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1733,
+            "output_tokens": 223,
+            "total_tokens": 1956,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00723_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMEX has a notably improving operating margin profile, with the margin improving from 25.0% in 2020 to 29.4% in 2022.",
+    "reported_metric": "operating_margin",
+    "reported_value": 29.4,
+    "confidence": 0.88,
+    "rationale": "The calculated margins are internally consistent: 29.4% in 2022, 21.9% in 2021, and 25.0% in 2020. However, this is not a steadily improving profile because the margin declined from 2020 to 2021 before rising in 2022. The extractor and analyst calculations do not contain an arithmetic error; the overstrong trend conclusion first appears in the writer output. The claim that operating margin is appropriate for AMEX is also insufficiently supported for a financial-services company."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1062,
+    "output_tokens": 717,
+    "total_tokens": 1779,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010728,
+    "latency_ms": 7440.096625010483,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1062,
+      "output_tokens": 717,
+      "total_tokens": 1779,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.43955129099777,
+      "duration": 7.439697665977292,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1062,
+            "output_tokens": 717,
+            "total_tokens": 1779,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1602,
+    "output_tokens": 211,
+    "total_tokens": 1813,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002657,
+    "latency_ms": 4029.353457968682,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1602,
+      "output_tokens": 211,
+      "total_tokens": 1813,
+      "time_to_first_token": 4.028554583026562,
+      "duration": 4.0288457500282675,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1602,
+            "output_tokens": 211,
+            "total_tokens": 1813,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

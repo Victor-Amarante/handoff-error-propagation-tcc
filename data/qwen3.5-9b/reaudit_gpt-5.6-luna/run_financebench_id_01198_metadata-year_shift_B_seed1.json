@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01198_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be established from the trace; the reported $7,200 million increase is consistent with $23.6 billion minus $16.4 billion.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The revenue figures are internally consistent: $23.6 billion in FY22 less $16.4 billion in FY21 equals $7.2 billion. The cited data-center and gaming growth rates are also carried consistently from extractor to writer. Although the extractor labels a 44% growth item as year 2023, that item is not used in the final answer and does not establish an error in the reported FY22 change."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1001,
+    "output_tokens": 588,
+    "total_tokens": 1589,
+    "cached_tokens": 0,
+    "reasoning_tokens": 414,
+    "cost_usd": 0.0009058000000000001,
+    "latency_ms": 5989.180208009202,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1001,
+      "output_tokens": 588,
+      "total_tokens": 1589,
+      "reasoning_tokens": 414,
+      "time_to_first_token": 5.988703667011578,
+      "duration": 5.988891208020505,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1001,
+            "output_tokens": 588,
+            "total_tokens": 1589,
+            "reasoning_tokens": 414,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 912,
+    "output_tokens": 248,
+    "total_tokens": 1160,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3143.609913997352,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 912,
+      "output_tokens": 248,
+      "total_tokens": 1160,
+      "time_to_first_token": 3.143376490974333,
+      "duration": 3.143444927991368,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 912,
+            "output_tokens": 248,
+            "total_tokens": 1160,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3117857699,
+              "load_duration": 477512,
+              "prompt_eval_duration": 238869000,
+              "eval_duration": 2827540000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

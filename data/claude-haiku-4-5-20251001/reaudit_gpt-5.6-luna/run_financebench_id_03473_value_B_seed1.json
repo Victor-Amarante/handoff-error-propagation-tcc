@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03473_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY2017 return on assets was 1.63 as a ratio.",
+    "reported_metric": "return_on_assets",
+    "reported_value": 1.63,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, average total assets are (87,896 + 87,270) / 2 = 87,583 USD millions, so ROA is 1,428 / 87,583 = 0.0163 as a ratio, or 1.63% when expressed as a percentage. The analyst reported 1.63 with unit RATIO, creating the first error; the writer then repeated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 804,
+    "output_tokens": 335,
+    "total_tokens": 1139,
+    "cached_tokens": 0,
+    "reasoning_tokens": 172,
+    "cost_usd": 0.0005627999999999999,
+    "latency_ms": 3517.257208994124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 804,
+      "output_tokens": 335,
+      "total_tokens": 1139,
+      "reasoning_tokens": 172,
+      "time_to_first_token": 3.516765584005043,
+      "duration": 3.5169155839830637,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 804,
+            "output_tokens": 335,
+            "total_tokens": 1139,
+            "reasoning_tokens": 172,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1325,
+    "output_tokens": 232,
+    "total_tokens": 1557,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002485,
+    "latency_ms": 3768.868542043492,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1325,
+      "output_tokens": 232,
+      "total_tokens": 1557,
+      "time_to_first_token": 3.7678449159720913,
+      "duration": 3.768144082976505,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1325,
+            "output_tokens": 232,
+            "total_tokens": 1557,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

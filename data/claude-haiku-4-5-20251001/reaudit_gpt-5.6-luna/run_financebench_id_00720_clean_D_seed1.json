@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "No internal inconsistency or unsupported numerical transformation appears in the trace. The response appropriately explains that gross margin is not a useful conventional metric for American Express, a financial-services company, and identifies more relevant profitability measures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1438,
+    "output_tokens": 215,
+    "total_tokens": 1653,
+    "cached_tokens": 0,
+    "reasoning_tokens": 118,
+    "cost_usd": 0.0005456,
+    "latency_ms": 2667.6647909916937,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1438,
+      "output_tokens": 215,
+      "total_tokens": 1653,
+      "reasoning_tokens": 118,
+      "time_to_first_token": 2.6671362089691684,
+      "duration": 2.667256833985448,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1438,
+            "output_tokens": 215,
+            "total_tokens": 1653,
+            "reasoning_tokens": 118,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2030,
+    "output_tokens": 160,
+    "total_tokens": 2190,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00283,
+    "latency_ms": 3501.624750031624,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2030,
+      "output_tokens": 160,
+      "total_tokens": 2190,
+      "time_to_first_token": 3.5007695000385866,
+      "duration": 3.5010164999985136,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2030,
+            "output_tokens": 160,
+            "total_tokens": 2190,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

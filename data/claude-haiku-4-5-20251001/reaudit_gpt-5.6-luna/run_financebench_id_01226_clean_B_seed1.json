@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No quantifiable operating margin change driver was identified for 3M in FY2022, resulting in a neutral assessment.",
+    "reported_metric": "operating_margin_change_driver_assessment",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor identified a $1.2 billion SG&A litigation charge and a 1.0 ratio-point change in SG&A as a percentage of sales, which are quantifiable operating-margin drivers. The analyst's neutral 0.0 assessment therefore conflicts with the extracted evidence; the writer merely repeated that incorrect assessment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 790,
+    "output_tokens": 288,
+    "total_tokens": 1078,
+    "cached_tokens": 0,
+    "reasoning_tokens": 137,
+    "cost_usd": 0.0005036,
+    "latency_ms": 3272.9083750164136,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 790,
+      "output_tokens": 288,
+      "total_tokens": 1078,
+      "reasoning_tokens": 137,
+      "time_to_first_token": 3.2719873749883845,
+      "duration": 3.272266792017035,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 790,
+            "output_tokens": 288,
+            "total_tokens": 1078,
+            "reasoning_tokens": 137,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1292,
+    "output_tokens": 209,
+    "total_tokens": 1501,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002337,
+    "latency_ms": 2558.6836250149645,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1292,
+      "output_tokens": 209,
+      "total_tokens": 1501,
+      "time_to_first_token": 2.557690333982464,
+      "duration": 2.5579808749607764,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1292,
+            "output_tokens": 209,
+            "total_tokens": 1501,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

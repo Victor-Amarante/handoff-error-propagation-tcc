@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported total revenues net of interest expense for the first geography as USD 14,396 million, although the provided evidence shows USD 41,396 million for the consolidated total and does not support 14,396.",
+    "reported_metric": "total_revenues_net_of_interest_expense",
+    "reported_value": 14396.0,
+    "confidence": 0.86,
+    "rationale": "C01 is the first unsupported numerical claim in the trace: its value is absent from its evidence and conflicts with the displayed 41,396 consolidated figure. The analyst and writer then rely on the extracted geography list, with the writer also treating 'Other Unallocated' as a geography."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1380,
+    "output_tokens": 1717,
+    "total_tokens": 3097,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1536,
+    "cost_usd": 0.0023364,
+    "latency_ms": 14985.53445795551,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1380,
+      "output_tokens": 1717,
+      "total_tokens": 3097,
+      "reasoning_tokens": 1536,
+      "time_to_first_token": 14.984825749997981,
+      "duration": 14.985054125019815,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1380,
+            "output_tokens": 1717,
+            "total_tokens": 3097,
+            "reasoning_tokens": 1536,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2068,
+    "output_tokens": 191,
+    "total_tokens": 2259,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003023,
+    "latency_ms": 2981.974958034698,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2068,
+      "output_tokens": 191,
+      "total_tokens": 2259,
+      "time_to_first_token": 2.9812137920525856,
+      "duration": 2.9814497920451686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2068,
+            "output_tokens": 191,
+            "total_tokens": 2259,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

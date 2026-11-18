@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01488_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Consumer Health segment was treated as a discontinued operation as of August 30, 2023.",
+    "reported_metric": "discontinued_operation_segment",
+    "reported_value": 13.2,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst outputs provide only a USD 13.2 billion value and do not identify any segment. The writer introduced the specific label “Consumer Health” without supporting provenance, making this the first unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 639,
+    "output_tokens": 282,
+    "total_tokens": 921,
+    "cached_tokens": 0,
+    "reasoning_tokens": 159,
+    "cost_usd": 0.0004662,
+    "latency_ms": 3073.151374992449,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 639,
+      "output_tokens": 282,
+      "total_tokens": 921,
+      "reasoning_tokens": 159,
+      "time_to_first_token": 3.0724964170367457,
+      "duration": 3.07274575001793,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 639,
+            "output_tokens": 282,
+            "total_tokens": 921,
+            "reasoning_tokens": 159,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 455,
+    "output_tokens": 210,
+    "total_tokens": 665,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2633.3091880078427,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 455,
+      "output_tokens": 210,
+      "total_tokens": 665,
+      "time_to_first_token": 2.6330840080045164,
+      "duration": 2.63315056002466,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 455,
+            "output_tokens": 210,
+            "total_tokens": 665,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2606245628,
+              "load_duration": 464359,
+              "prompt_eval_duration": 136312000,
+              "eval_duration": 2403953000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01351_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports 21.6% for FY2021 and 24.6% for FY2022. Their difference is 3.0 percentage points, which the analyst and writer correctly report as an increase of 3% in the trace's PCT convention."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 983,
+    "output_tokens": 224,
+    "total_tokens": 1207,
+    "cached_tokens": 0,
+    "reasoning_tokens": 114,
+    "cost_usd": 0.00046540000000000004,
+    "latency_ms": 2938.860125024803,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 983,
+      "output_tokens": 224,
+      "total_tokens": 1207,
+      "reasoning_tokens": 114,
+      "time_to_first_token": 2.9382927080150694,
+      "duration": 2.9385309999925084,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 983,
+            "output_tokens": 224,
+            "total_tokens": 1207,
+            "reasoning_tokens": 114,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 874,
+    "output_tokens": 180,
+    "total_tokens": 1054,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2357.592372049112,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 874,
+      "output_tokens": 180,
+      "total_tokens": 1054,
+      "time_to_first_token": 2.357319942966569,
+      "duration": 2.3574104069848545,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 874,
+            "output_tokens": 180,
+            "total_tokens": 1054,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2330861464,
+              "load_duration": 578728,
+              "prompt_eval_duration": 215267000,
+              "eval_duration": 2063949000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

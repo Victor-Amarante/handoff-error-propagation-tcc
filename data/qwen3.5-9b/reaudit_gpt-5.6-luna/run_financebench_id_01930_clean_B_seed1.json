@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01930_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The real change in Sales excluding FX, passthrough costs, and one-off items was approximately $150M USD.",
+    "reported_metric": "Real change in Sales",
+    "reported_value": 150.0,
+    "confidence": 0.98,
+    "rationale": "The $150M figure is simply the difference between reported FY2023 and FY2022 Total Packaging sales (14,694 - 14,544). The trace provides no FX or one-off adjustments, and the passthrough percentages are duplicated and inconsistent (8% and 5%), so the adjusted real change cannot be established. The first unsupported claim appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1442,
+    "output_tokens": 430,
+    "total_tokens": 1872,
+    "cached_tokens": 0,
+    "reasoning_tokens": 269,
+    "cost_usd": 0.0008044,
+    "latency_ms": 4469.15312501369,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1442,
+      "output_tokens": 430,
+      "total_tokens": 1872,
+      "reasoning_tokens": 269,
+      "time_to_first_token": 4.468381375016179,
+      "duration": 4.468644457985647,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1442,
+            "output_tokens": 430,
+            "total_tokens": 1872,
+            "reasoning_tokens": 269,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1441,
+    "output_tokens": 401,
+    "total_tokens": 1842,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5041.645300982054,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1441,
+      "output_tokens": 401,
+      "total_tokens": 1842,
+      "time_to_first_token": 5.041339541028719,
+      "duration": 5.0414349579950795,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1441,
+            "output_tokens": 401,
+            "total_tokens": 1842,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5010126132,
+              "load_duration": 465767,
+              "prompt_eval_duration": 383226000,
+              "eval_duration": 4570379000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

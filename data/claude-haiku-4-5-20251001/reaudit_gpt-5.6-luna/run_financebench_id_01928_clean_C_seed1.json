@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01928_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the extractor, analyst, and writer consistently report Adjusted EBITDA of $2,018 million for FY 2023.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "All pipeline stages preserve the same metric, value, unit, and year, with valid provenance from C01 through A01 to W01. The wording 'Adjusted Non-GAAP EBITDA' is consistent with the reported 'Adjusted EBITDA' metric, and no contradictory evidence appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 784,
+    "output_tokens": 215,
+    "total_tokens": 999,
+    "cached_tokens": 0,
+    "reasoning_tokens": 70,
+    "cost_usd": 0.0004148,
+    "latency_ms": 3120.257041999139,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 784,
+      "output_tokens": 215,
+      "total_tokens": 999,
+      "reasoning_tokens": 70,
+      "time_to_first_token": 3.1195044579799287,
+      "duration": 3.1197436659713276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 784,
+            "output_tokens": 215,
+            "total_tokens": 999,
+            "reasoning_tokens": 70,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1340,
+    "output_tokens": 191,
+    "total_tokens": 1531,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002295,
+    "latency_ms": 2984.480542014353,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1340,
+      "output_tokens": 191,
+      "total_tokens": 1531,
+      "time_to_first_token": 2.9834598749876022,
+      "duration": 2.9837569579831325,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1340,
+            "output_tokens": 191,
+            "total_tokens": 1531,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

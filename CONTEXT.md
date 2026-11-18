@@ -328,6 +328,16 @@ handoff-error-propagation-tcc/
    Amplification não usavam essa regra.
 
 
+## 11b. Revisão do parecer do orientador (17/11/2026)
+
+O desenho principal (A/B/C/D) não mudou. Para responder ao parecer, entraram:
+
+- **Condições complementares** (só GPT e Haiku, logs em `data/<modelo>/logs_parecer/`): **E** = tipado + evidência sem lineage, que fecha o fatorial lineage × evidência; **R** (B′ no artigo) = B com campo `reasoning` no schema do Analista, só nos controles; **V** (D′ no artigo) = D + instrução de conferir o valor contra a evidência. Como V muda a instrução de tarefa, fica fora do desenho principal.
+- **Teste A/A** (`logs_aa/`): réplica dos controles de 50 perguntas, que mede o piso de ruído de ESR e de profundidade.
+- **Auditoria cruzada** (`reaudit_gpt-5.6-luna/`): o auditor GPT relê os traces de Haiku e Qwen.
+- **RCCA principal = critério de conteúdo** (`measure.rcca_conteudo`): métrica + valor do claim-alvo como aparece no trace, igual nas quatro condições e nos dois braços. O critério antigo (id ou métrica + valor corrompido) virou medida secundária.
+- **Novas métricas e linhas de base**: placebo do auditor, FESA líquida, retenção (denominador comum), acurácia estrita, profundidade decomposta (repetição literal × valores novos) e a categoria "neutralizado no Analista" no lugar de "sem efeito" quando o claim não está fora do caminho nas quatro condições.
+
 ## 12. Cronograma
 
 | Período | Entrega |

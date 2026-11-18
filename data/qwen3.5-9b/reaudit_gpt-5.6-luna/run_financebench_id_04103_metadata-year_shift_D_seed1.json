@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04103_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported the FY2019 cash conversion cycle as 55.32 days, despite not using the required FY2018 balances and inventory change in the calculation.",
+    "reported_metric": "FY2019 Cash Conversion Cycle",
+    "reported_value": 55.32,
+    "confidence": 0.97,
+    "rationale": "A01 is the first synthesized claim and its provenance includes only FY2019 values, omitting the FY2018 inventory, receivables, and payables needed for the required averages and omitting the inventory change required for DPO. The subsequent component values are also inconsistent with the stated formulas, so the writer merely propagated the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2558,
+    "output_tokens": 1876,
+    "total_tokens": 4434,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1691,
+    "cost_usd": 0.0027627999999999997,
+    "latency_ms": 18296.466334024444,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2558,
+      "output_tokens": 1876,
+      "total_tokens": 4434,
+      "reasoning_tokens": 1691,
+      "time_to_first_token": 18.295704125019256,
+      "duration": 18.296006250020582,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2558,
+            "output_tokens": 1876,
+            "total_tokens": 4434,
+            "reasoning_tokens": 1691,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2857,
+    "output_tokens": 1924,
+    "total_tokens": 4781,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21531.738249992486,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2857,
+      "output_tokens": 1924,
+      "total_tokens": 4781,
+      "time_to_first_token": 21.531428601010703,
+      "duration": 21.531553357956,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2857,
+            "output_tokens": 1924,
+            "total_tokens": 4781,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21506007253,
+              "load_duration": 574195,
+              "prompt_eval_duration": 692296000,
+              "eval_duration": 20733388000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

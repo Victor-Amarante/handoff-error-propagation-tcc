@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Operating margin was assessed as not useful for evaluating 3M's FY2022 financial performance.",
+    "reported_metric": "operating_margin_usefulness_assessment",
+    "reported_value": 0.0,
+    "confidence": 0.95,
+    "rationale": "The analyst's conclusion is not supported by the extracted claims: one concerns a 2023 litigation charge, outside the requested FY2022 period, and the other only reports a change in SG&A as a percentage of sales. Neither establishes that operating margin is not useful, nor does the trace identify the actual drivers of the FY2022 margin change. The writer then repeats this unsupported conclusion and adds restructuring as an unproven factor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 966,
+    "output_tokens": 554,
+    "total_tokens": 1520,
+    "cached_tokens": 0,
+    "reasoning_tokens": 383,
+    "cost_usd": 0.000858,
+    "latency_ms": 5942.695082980208,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 966,
+      "output_tokens": 554,
+      "total_tokens": 1520,
+      "reasoning_tokens": 383,
+      "time_to_first_token": 5.941279708000366,
+      "duration": 5.942191792011727,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 966,
+            "output_tokens": 554,
+            "total_tokens": 1520,
+            "reasoning_tokens": 383,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1514,
+    "output_tokens": 181,
+    "total_tokens": 1695,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002419,
+    "latency_ms": 2495.0492909993045,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1514,
+      "output_tokens": 181,
+      "total_tokens": 1695,
+      "time_to_first_token": 2.4942192500457168,
+      "duration": 2.4945148749975488,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1514,
+            "output_tokens": 181,
+            "total_tokens": 1695,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

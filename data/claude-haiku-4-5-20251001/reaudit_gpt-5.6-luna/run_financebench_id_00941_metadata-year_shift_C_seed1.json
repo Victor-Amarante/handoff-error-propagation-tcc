@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00941_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly characterized the value 1.0, whose unit is RATIO, as a registration count of one debt security.",
+    "reported_metric": "debt_securities_registered",
+    "reported_value": 1.0,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst preserve 1.0 with unit RATIO, supporting an indicator rather than a count. The writer introduces the unsupported interpretation 'registration count of 1.0' and does not identify any specific debt security."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1009,
+    "output_tokens": 576,
+    "total_tokens": 1585,
+    "cached_tokens": 0,
+    "reasoning_tokens": 442,
+    "cost_usd": 0.000893,
+    "latency_ms": 5939.04633296188,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1009,
+      "output_tokens": 576,
+      "total_tokens": 1585,
+      "reasoning_tokens": 442,
+      "time_to_first_token": 5.938344416033942,
+      "duration": 5.938645041023847,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1009,
+            "output_tokens": 576,
+            "total_tokens": 1585,
+            "reasoning_tokens": 442,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1550,
+    "output_tokens": 200,
+    "total_tokens": 1750,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00255,
+    "latency_ms": 3582.9114579828456,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1550,
+      "output_tokens": 200,
+      "total_tokens": 1750,
+      "time_to_first_token": 3.5819862079806626,
+      "duration": 3.582286207994912,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1550,
+            "output_tokens": 200,
+            "total_tokens": 1750,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05915_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the reported ratio is internally consistent with the extracted revenue and PP&E values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The average PP&E is (11,349 + 10,292) / 2 = 10,820.5M, and 149,579 / 10,820.5 = 13.8237, which rounds to 13.82. The analyst and writer outputs preserve this calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 871,
+    "output_tokens": 253,
+    "total_tokens": 1124,
+    "cached_tokens": 0,
+    "reasoning_tokens": 116,
+    "cost_usd": 0.00047779999999999996,
+    "latency_ms": 2972.5563329993747,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 253,
+      "total_tokens": 1124,
+      "reasoning_tokens": 116,
+      "time_to_first_token": 2.9718692079768516,
+      "duration": 2.972066458023619,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 253,
+            "total_tokens": 1124,
+            "reasoning_tokens": 116,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1385,
+    "output_tokens": 195,
+    "total_tokens": 1580,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00236,
+    "latency_ms": 2234.5653339871205,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1385,
+      "output_tokens": 195,
+      "total_tokens": 1580,
+      "time_to_first_token": 2.233592833043076,
+      "duration": 2.2338868750375696,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1385,
+            "output_tokens": 195,
+            "total_tokens": 1580,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

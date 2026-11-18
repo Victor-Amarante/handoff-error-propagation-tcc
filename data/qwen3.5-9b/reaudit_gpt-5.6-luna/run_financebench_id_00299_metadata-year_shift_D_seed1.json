@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00299_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Consumer & Community Banking total net revenue is reported as $12,517 million for 2021, but the claim's year field is 2022.",
+    "reported_metric": "Consumer & Community Banking Total net revenue 2021",
+    "reported_value": 12517.0,
+    "confidence": 0.98,
+    "rationale": "C01 is internally inconsistent: its metric and evidence indicate 2021, while its structured year is 2022. The downstream answer relies on C05 and is numerically consistent with the listed values, so this extractor metadata error does not propagate into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1305,
+    "output_tokens": 1184,
+    "total_tokens": 2489,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016818,
+    "latency_ms": 10793.568500026595,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1305,
+      "output_tokens": 1184,
+      "total_tokens": 2489,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.792269708996173,
+      "duration": 10.793128166988026,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1305,
+            "output_tokens": 1184,
+            "total_tokens": 2489,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1281,
+    "output_tokens": 529,
+    "total_tokens": 1810,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6148.679656966124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1281,
+      "output_tokens": 529,
+      "total_tokens": 1810,
+      "time_to_first_token": 6.148394053976517,
+      "duration": 6.148492304026149,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1281,
+            "output_tokens": 529,
+            "total_tokens": 1810,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6123084116,
+              "load_duration": 620911,
+              "prompt_eval_duration": 349746000,
+              "eval_duration": 5719131000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

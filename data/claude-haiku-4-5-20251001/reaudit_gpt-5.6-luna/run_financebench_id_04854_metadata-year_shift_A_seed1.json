@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04854_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the pipeline correctly notes that FY2020 cash from operations is missing.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor provides FY2021 cash from operations and FY2020 capex. The analyst and writer correctly explain that FY2020 FCF cannot be calculated without FY2020 cash from operations."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 778,
+    "output_tokens": 226,
+    "total_tokens": 1004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 109,
+    "cost_usd": 0.0004268,
+    "latency_ms": 3161.2447919906117,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 778,
+      "output_tokens": 226,
+      "total_tokens": 1004,
+      "reasoning_tokens": 109,
+      "time_to_first_token": 3.160367958014831,
+      "duration": 3.160591082996689,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 778,
+            "output_tokens": 226,
+            "total_tokens": 1004,
+            "reasoning_tokens": 109,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1270,
+    "output_tokens": 159,
+    "total_tokens": 1429,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002065,
+    "latency_ms": 2867.983666015789,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1270,
+      "output_tokens": 159,
+      "total_tokens": 1429,
+      "time_to_first_token": 2.867070749984123,
+      "duration": 2.86737087497022,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1270,
+            "output_tokens": 159,
+            "total_tokens": 1429,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

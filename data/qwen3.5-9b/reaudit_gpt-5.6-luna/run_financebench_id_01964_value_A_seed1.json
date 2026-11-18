@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported American Express's other liabilities as $37,350 million, which is inconsistent with the reported total liabilities and the other listed liability components.",
+    "reported_metric": "other liabilities",
+    "reported_value": 37350.0,
+    "confidence": 0.98,
+    "rationale": "The listed liability components sum to $220,179 million, exceeding the reported total liabilities of $203,643 million. The discrepancy originates in the extractor's other-liabilities figure; the customer-deposits conclusion remains the largest-category result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 775,
+    "output_tokens": 646,
+    "total_tokens": 1421,
+    "cached_tokens": 0,
+    "reasoning_tokens": 510,
+    "cost_usd": 0.0009302,
+    "latency_ms": 6383.802708005533,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 775,
+      "output_tokens": 646,
+      "total_tokens": 1421,
+      "reasoning_tokens": 510,
+      "time_to_first_token": 6.38325954094762,
+      "duration": 6.383392165997066,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 775,
+            "output_tokens": 646,
+            "total_tokens": 1421,
+            "reasoning_tokens": 510,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 617,
+    "output_tokens": 2104,
+    "total_tokens": 2721,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 23039.10731297219,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 617,
+      "output_tokens": 2104,
+      "total_tokens": 2721,
+      "time_to_first_token": 23.03717098297784,
+      "duration": 23.038925224973354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 617,
+            "output_tokens": 2104,
+            "total_tokens": 2721,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 23012397749,
+              "load_duration": 591901,
+              "prompt_eval_duration": 157472000,
+              "eval_duration": 22806379000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

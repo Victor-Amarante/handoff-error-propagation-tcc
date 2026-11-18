@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00822_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "No factual error is evident from the trace. The writer correctly identifies Richard A. Johnson as having the highest votes-against value (16,105,005), exceeding the other listed nominees, whose maximum is 6,074,467. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1495,
+    "output_tokens": 430,
+    "total_tokens": 1925,
+    "cached_tokens": 0,
+    "reasoning_tokens": 320,
+    "cost_usd": 0.000815,
+    "latency_ms": 5042.87037497852,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1495,
+      "output_tokens": 430,
+      "total_tokens": 1925,
+      "reasoning_tokens": 320,
+      "time_to_first_token": 5.042475750029553,
+      "duration": 5.0425928750191815,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1495,
+            "output_tokens": 430,
+            "total_tokens": 1925,
+            "reasoning_tokens": 320,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1528,
+    "output_tokens": 2675,
+    "total_tokens": 4203,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 29268.07190699037,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1528,
+      "output_tokens": 2675,
+      "total_tokens": 4203,
+      "time_to_first_token": 29.26776171399979,
+      "duration": 29.267867994960397,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1528,
+            "output_tokens": 2675,
+            "total_tokens": 4203,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 29238734633,
+              "load_duration": 435385,
+              "prompt_eval_duration": 395291000,
+              "eval_duration": 28786802000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

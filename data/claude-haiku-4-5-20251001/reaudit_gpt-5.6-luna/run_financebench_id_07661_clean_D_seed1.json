@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07661_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; 381,603 USD thousand correctly converts to 381.603 USD million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 381,603 in USD thousands, and the analyst correctly converts this to 381.603 USD millions. The writer preserves the same value and unit."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 857,
+    "output_tokens": 210,
+    "total_tokens": 1067,
+    "cached_tokens": 0,
+    "reasoning_tokens": 100,
+    "cost_usd": 0.0004234,
+    "latency_ms": 2458.9656250318512,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 210,
+      "total_tokens": 1067,
+      "reasoning_tokens": 100,
+      "time_to_first_token": 2.458370499953162,
+      "duration": 2.458507750008721,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 210,
+            "total_tokens": 1067,
+            "reasoning_tokens": 100,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1398,
+    "output_tokens": 252,
+    "total_tokens": 1650,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002658,
+    "latency_ms": 3017.310124996584,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1398,
+      "output_tokens": 252,
+      "total_tokens": 1650,
+      "time_to_first_token": 3.016483292041812,
+      "duration": 3.0167100840481,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1398,
+            "output_tokens": 252,
+            "total_tokens": 1650,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

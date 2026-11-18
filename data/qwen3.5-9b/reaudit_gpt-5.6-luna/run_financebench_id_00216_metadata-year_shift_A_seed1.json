@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00216_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly stated that the quick ratio cannot be calculated without knowing the exact components of total current assets; the quick ratio uses quick assets divided by current liabilities, not total current assets.",
+    "reported_metric": "quick ratio calculation basis",
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extractor's figures are internally consistent with FY2023, so the period observation is supported. However, the analyst misstated the quick-ratio formula and denominator. Exact total-current-asset components are not required; the missing issue would instead be any unreported quick assets such as marketable securities. No claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1192,
+    "output_tokens": 1192,
+    "total_tokens": 2384,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016688,
+    "latency_ms": 11169.028499978594,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1192,
+      "output_tokens": 1192,
+      "total_tokens": 2384,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.168364083045162,
+      "duration": 11.168638791015837,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1192,
+            "output_tokens": 1192,
+            "total_tokens": 2384,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1070,
+    "output_tokens": 182,
+    "total_tokens": 1252,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2468.894046964124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1070,
+      "output_tokens": 182,
+      "total_tokens": 1252,
+      "time_to_first_token": 2.468667958979495,
+      "duration": 2.468738473020494,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1070,
+            "output_tokens": 182,
+            "total_tokens": 1252,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2443939911,
+              "load_duration": 688246,
+              "prompt_eval_duration": 279850000,
+              "eval_duration": 2109492000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

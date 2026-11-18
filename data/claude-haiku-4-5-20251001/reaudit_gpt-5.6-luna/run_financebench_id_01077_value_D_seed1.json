@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01077_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Current Health was acquired for net cash consideration of $839 million.",
+    "reported_metric": "acquisition_price",
+    "reported_value": 839.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's value of $839 million directly contradicts its evidence, which states that Current Health was acquired for $389 million. The analyst also incorrectly relabeled the acquisition as FY2021 instead of FY2022, but the initial factual error appears in extractor claim C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1454,
+    "output_tokens": 642,
+    "total_tokens": 2096,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010612,
+    "latency_ms": 6540.878458006773,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1454,
+      "output_tokens": 642,
+      "total_tokens": 2096,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.540535082982387,
+      "duration": 6.540597874962259,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1454,
+            "output_tokens": 642,
+            "total_tokens": 2096,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2103,
+    "output_tokens": 212,
+    "total_tokens": 2315,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003163,
+    "latency_ms": 3990.833542018663,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2103,
+      "output_tokens": 212,
+      "total_tokens": 2315,
+      "time_to_first_token": 3.9897951249731705,
+      "duration": 3.9900997919612564,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2103,
+            "output_tokens": 212,
+            "total_tokens": 2315,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

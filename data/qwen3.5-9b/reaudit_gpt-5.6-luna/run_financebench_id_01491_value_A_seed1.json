@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01491_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be identified from the trace; all stages consistently report $31.2 billion in cash proceeds.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.82,
+    "rationale": "The extractor, analyst, writer, and final answer consistently state the same amount and describe it as proceeds from Kenvue’s debt offering and IPO. The trace provides no contradictory evidence or claim IDs indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 697,
+    "output_tokens": 903,
+    "total_tokens": 1600,
+    "cached_tokens": 0,
+    "reasoning_tokens": 776,
+    "cost_usd": 0.001223,
+    "latency_ms": 9117.080583004281,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 697,
+      "output_tokens": 903,
+      "total_tokens": 1600,
+      "reasoning_tokens": 776,
+      "time_to_first_token": 9.116312792000826,
+      "duration": 9.116517874994315,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 697,
+            "output_tokens": 903,
+            "total_tokens": 1600,
+            "reasoning_tokens": 776,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 492,
+    "output_tokens": 180,
+    "total_tokens": 672,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2225.929375970736,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 492,
+      "output_tokens": 180,
+      "total_tokens": 672,
+      "time_to_first_token": 2.2256749059888534,
+      "duration": 2.225747456017416,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 492,
+            "output_tokens": 180,
+            "total_tokens": 672,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2196516725,
+              "load_duration": 464640,
+              "prompt_eval_duration": 136390000,
+              "eval_duration": 2012435000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

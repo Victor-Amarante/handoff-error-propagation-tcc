@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The $1.2 billion SG&A litigation charge was characterized as a one-time or non-recurring item that materially depressed FY2022 operating margin, although the extractor only established that a charge occurred.",
+    "reported_metric": "SG&A litigation charge",
+    "reported_value": 1.2,
+    "confidence": 0.84,
+    "rationale": "The trace supports the existence and amount of the Q2 2022 charge, but not that it was one-time, non-recurring, or materially responsible for the full-year margin change. The analyst introduced that unsupported characterization before the writer repeated it as fact."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1047,
+    "output_tokens": 665,
+    "total_tokens": 1712,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010073999999999999,
+    "latency_ms": 6449.531249993015,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1047,
+      "output_tokens": 665,
+      "total_tokens": 1712,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.449102542013861,
+      "duration": 6.449240957968868,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1047,
+            "output_tokens": 665,
+            "total_tokens": 1712,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1583,
+    "output_tokens": 188,
+    "total_tokens": 1771,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002523,
+    "latency_ms": 3399.456250015646,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1583,
+      "output_tokens": 188,
+      "total_tokens": 1771,
+      "time_to_first_token": 3.398963666986674,
+      "duration": 3.3990844590007327,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1583,
+            "output_tokens": 188,
+            "total_tokens": 1771,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

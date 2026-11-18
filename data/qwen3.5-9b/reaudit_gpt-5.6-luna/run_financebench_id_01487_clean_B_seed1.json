@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01487_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports net earnings margins of 20.1% for Q2 FY2023 and 20.0% for Q2 FY2022; the analyst preserves these values, and the writer correctly concludes that the margin increased."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 880,
+    "output_tokens": 157,
+    "total_tokens": 1037,
+    "cached_tokens": 0,
+    "reasoning_tokens": 55,
+    "cost_usd": 0.00036439999999999997,
+    "latency_ms": 2012.3292499920353,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 880,
+      "output_tokens": 157,
+      "total_tokens": 1037,
+      "reasoning_tokens": 55,
+      "time_to_first_token": 2.0116259999922477,
+      "duration": 2.011908833985217,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 880,
+            "output_tokens": 157,
+            "total_tokens": 1037,
+            "reasoning_tokens": 55,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 749,
+    "output_tokens": 169,
+    "total_tokens": 918,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2213.8163240160793,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 749,
+      "output_tokens": 169,
+      "total_tokens": 918,
+      "time_to_first_token": 2.2135974430129863,
+      "duration": 2.2136617099749856,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 749,
+            "output_tokens": 169,
+            "total_tokens": 918,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2187292479,
+              "load_duration": 509640,
+              "prompt_eval_duration": 194728000,
+              "eval_duration": 1923143000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

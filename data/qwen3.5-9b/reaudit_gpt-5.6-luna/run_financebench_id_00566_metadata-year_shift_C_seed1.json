@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00566_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Verizon's total long-term debt, including current maturities, was reported as $150.489 billion for 2022, but the claim is tagged with year 2023.",
+    "reported_metric": "Verizon Communications total long-term debt, including current maturities 2022",
+    "reported_value": 150489.0,
+    "confidence": 0.91,
+    "rationale": "C01 contains an internal year inconsistency: its metric identifies fiscal 2022 while its year field says 2023. The analyst then uses C01 as the 2022 value in A01. The writer's final direction is supported by C03/C04, but C01 is the first inconsistent claim in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1351,
+    "output_tokens": 689,
+    "total_tokens": 2040,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001097,
+    "latency_ms": 6212.215417006519,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1351,
+      "output_tokens": 689,
+      "total_tokens": 2040,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.2115991250029765,
+      "duration": 6.211789000022691,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1351,
+            "output_tokens": 689,
+            "total_tokens": 2040,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1351,
+    "output_tokens": 1722,
+    "total_tokens": 3073,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 18891.623463016003,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1351,
+      "output_tokens": 1722,
+      "total_tokens": 3073,
+      "time_to_first_token": 18.891342360991985,
+      "duration": 18.891444445005618,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1351,
+            "output_tokens": 1722,
+            "total_tokens": 3073,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 18861905637,
+              "load_duration": 515123,
+              "prompt_eval_duration": 360660000,
+              "eval_duration": 18445550000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

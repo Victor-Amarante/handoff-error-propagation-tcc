@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01079_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "AMCOR completed three acquisitions in FY2022.",
+    "reported_metric": "AMCOR FY2022 Acquisitions:",
+    "reported_value": 3.0,
+    "confidence": 0.98,
+    "rationale": "The extractor evidence for FY2022 describes one acquisition dated August 1, 2022, with a single purchase consideration of $59 million. The analyst incorrectly converted the number of extracted detail claims into an acquisition count of three."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 6256,
+    "output_tokens": 512,
+    "total_tokens": 6768,
+    "cached_tokens": 0,
+    "reasoning_tokens": 391,
+    "cost_usd": 0.0018655999999999998,
+    "latency_ms": 5628.3112919772975,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 6256,
+      "output_tokens": 512,
+      "total_tokens": 6768,
+      "reasoning_tokens": 391,
+      "time_to_first_token": 5.627285791968461,
+      "duration": 5.627579499967396,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 6256,
+            "output_tokens": 512,
+            "total_tokens": 6768,
+            "reasoning_tokens": 391,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 7232,
+    "output_tokens": 351,
+    "total_tokens": 7583,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5809.061218984425,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 7232,
+      "output_tokens": 351,
+      "total_tokens": 7583,
+      "time_to_first_token": 5.808766961970832,
+      "duration": 5.808858714997768,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 7232,
+            "output_tokens": 351,
+            "total_tokens": 7583,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5778937361,
+              "load_duration": 1083525,
+              "prompt_eval_duration": 1662833000,
+              "eval_duration": 3988286000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

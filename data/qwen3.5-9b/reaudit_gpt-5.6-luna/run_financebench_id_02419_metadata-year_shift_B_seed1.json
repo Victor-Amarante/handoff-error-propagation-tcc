@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Costs incurred by Q2 2023 were reported as 90.0 percent, although the surrounding separation-cost claim indicates this should be a monetary cost amount.",
+    "reported_metric": "costs incurred by Q2 2023",
+    "reported_value": 90.0,
+    "confidence": 0.78,
+    "rationale": "The extractor assigns a percentage unit to a claim about incurred separation costs, while the related expected separation-cost figure is denominated in USD millions. That unit error is propagated by the analyst and writer; no claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 688,
+    "output_tokens": 918,
+    "total_tokens": 1606,
+    "cached_tokens": 0,
+    "reasoning_tokens": 769,
+    "cost_usd": 0.0012391999999999998,
+    "latency_ms": 8593.061082996428,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 688,
+      "output_tokens": 918,
+      "total_tokens": 1606,
+      "reasoning_tokens": 769,
+      "time_to_first_token": 8.591628999973182,
+      "duration": 8.591963124985341,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 688,
+            "output_tokens": 918,
+            "total_tokens": 1606,
+            "reasoning_tokens": 769,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 516,
+    "output_tokens": 234,
+    "total_tokens": 750,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2900.2470370032825,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 516,
+      "output_tokens": 234,
+      "total_tokens": 750,
+      "time_to_first_token": 2.900021540990565,
+      "duration": 2.9000890320166945,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 516,
+            "output_tokens": 234,
+            "total_tokens": 750,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2873977164,
+              "load_duration": 633971,
+              "prompt_eval_duration": 139451000,
+              "eval_duration": 2668578000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

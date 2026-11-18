@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY 2022 net property, plant and equipment was reported as $107,434 million, but gross PP&E of $370,689 million less accumulated depreciation of $200,255 million implies net PP&E of $170,434 million.",
+    "reported_metric": "property_plant_equipment_net",
+    "reported_value": 107434.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's PP&E figures are internally inconsistent: gross PP&E minus accumulated depreciation does not equal the reported net PP&E. This incorrect net value propagated into the analyst's 28.3% ratio and the writer's conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1066,
+    "output_tokens": 340,
+    "total_tokens": 1406,
+    "cached_tokens": 0,
+    "reasoning_tokens": 181,
+    "cost_usd": 0.0006212,
+    "latency_ms": 3864.6218329668045,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1066,
+      "output_tokens": 340,
+      "total_tokens": 1406,
+      "reasoning_tokens": 181,
+      "time_to_first_token": 3.8641379170003347,
+      "duration": 3.864266916993074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1066,
+            "output_tokens": 340,
+            "total_tokens": 1406,
+            "reasoning_tokens": 181,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1622,
+    "output_tokens": 303,
+    "total_tokens": 1925,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003137,
+    "latency_ms": 4543.314499955159,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1622,
+      "output_tokens": 303,
+      "total_tokens": 1925,
+      "time_to_first_token": 4.542690375004895,
+      "duration": 4.542818708985578,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1622,
+            "output_tokens": 303,
+            "total_tokens": 1925,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

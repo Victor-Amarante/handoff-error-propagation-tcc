@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00723_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMEX's 2023 revenues were reported as $42,967 million.",
+    "reported_metric": "AMEX 2023 revenues",
+    "reported_value": 42967.0,
+    "confidence": 0.9,
+    "rationale": "The extracted revenue figure is internally inconsistent with the same output: total revenues net of interest expense is reported as $52,862 million, which cannot be lower than total revenues of $42,967 million if both describe the same period and revenue basis. The analyst and writer then propagated the extractor's unsupported conclusion that all relevant figures were for 2023, overlooking that the trace does not establish a 2022 trend."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 962,
+    "output_tokens": 968,
+    "total_tokens": 1930,
+    "cached_tokens": 0,
+    "reasoning_tokens": 799,
+    "cost_usd": 0.001354,
+    "latency_ms": 8715.496416029055,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 962,
+      "output_tokens": 968,
+      "total_tokens": 1930,
+      "reasoning_tokens": 799,
+      "time_to_first_token": 8.714932332979515,
+      "duration": 8.715131125005428,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 962,
+            "output_tokens": 968,
+            "total_tokens": 1930,
+            "reasoning_tokens": 799,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 781,
+    "output_tokens": 194,
+    "total_tokens": 975,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2533.804186969064,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 781,
+      "output_tokens": 194,
+      "total_tokens": 975,
+      "time_to_first_token": 2.5335352870170027,
+      "duration": 2.533610012033023,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 781,
+            "output_tokens": 194,
+            "total_tokens": 975,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2504322869,
+              "load_duration": 454213,
+              "prompt_eval_duration": 221198000,
+              "eval_duration": 2232262000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

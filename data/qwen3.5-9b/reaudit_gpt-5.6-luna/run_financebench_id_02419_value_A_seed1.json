@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly concluded that Pfizer was not spinning off any large business segment, despite stating that Pfizer was in the process of separating the significant Upjohn segment.",
+    "reported_metric": "Pfizer spinning off a large business segment",
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor reports 90% of Upjohn separation costs incurred and $805 million in expected costs, which supports an ongoing Upjohn separation. The analyst's initial 'No' conclusion conflicts with its own subsequent statement that Upjohn's separation was underway; the writer repeats this inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 725,
+    "output_tokens": 1181,
+    "total_tokens": 1906,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015622000000000001,
+    "latency_ms": 10159.059416968375,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 725,
+      "output_tokens": 1181,
+      "total_tokens": 1906,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.15816845803056,
+      "duration": 10.158570417028386,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 725,
+            "output_tokens": 1181,
+            "total_tokens": 1906,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 526,
+    "output_tokens": 241,
+    "total_tokens": 767,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2856.625925982371,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 526,
+      "output_tokens": 241,
+      "total_tokens": 767,
+      "time_to_first_token": 2.8563848449848592,
+      "duration": 2.8564589329762384,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 526,
+            "output_tokens": 241,
+            "total_tokens": 767,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2830945134,
+              "load_duration": 430169,
+              "prompt_eval_duration": 142476000,
+              "eval_duration": 2634935000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

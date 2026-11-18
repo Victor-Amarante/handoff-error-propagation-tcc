@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04660_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; 1,001,425 divided by 577,464 equals approximately 1.7342, which rounds to 1.73.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor values are internally consistent, and the analyst correctly computes 1,001,425 / 577,464 ≈ 1.7342. Rounded to two decimal places, the working capital ratio is 1.73, matching the writer's answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1021,
+    "output_tokens": 266,
+    "total_tokens": 1287,
+    "cached_tokens": 0,
+    "reasoning_tokens": 125,
+    "cost_usd": 0.0005233999999999999,
+    "latency_ms": 2844.8797920136712,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1021,
+      "output_tokens": 266,
+      "total_tokens": 1287,
+      "reasoning_tokens": 125,
+      "time_to_first_token": 2.8440945000038482,
+      "duration": 2.8442526669823565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1021,
+            "output_tokens": 266,
+            "total_tokens": 1287,
+            "reasoning_tokens": 125,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1597,
+    "output_tokens": 223,
+    "total_tokens": 1820,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002712,
+    "latency_ms": 3482.277292001527,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1597,
+      "output_tokens": 223,
+      "total_tokens": 1820,
+      "time_to_first_token": 3.4815592920058407,
+      "duration": 3.4817877499735914,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1597,
+            "output_tokens": 223,
+            "total_tokens": 1820,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

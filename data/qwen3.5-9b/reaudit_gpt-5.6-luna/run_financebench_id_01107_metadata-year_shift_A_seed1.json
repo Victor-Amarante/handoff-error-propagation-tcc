@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01107_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.95,
+    "rationale": "No factual error is evident in the trace. The extractor reports a $4.3B settlement tied to 2023 and $625M in attorneys' fees for ongoing legal battles, but neither figure is explicitly attributed to 2022, 2021, or 2020. The analyst and writer appropriately limit the conclusion to what the provided evidence supports."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 903,
+    "output_tokens": 393,
+    "total_tokens": 1296,
+    "cached_tokens": 0,
+    "reasoning_tokens": 266,
+    "cost_usd": 0.0006522,
+    "latency_ms": 3977.6426249882206,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 903,
+      "output_tokens": 393,
+      "total_tokens": 1296,
+      "reasoning_tokens": 266,
+      "time_to_first_token": 3.976916124986019,
+      "duration": 3.977144458971452,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 903,
+            "output_tokens": 393,
+            "total_tokens": 1296,
+            "reasoning_tokens": 266,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 729,
+    "output_tokens": 486,
+    "total_tokens": 1215,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5762.0292660431005,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 729,
+      "output_tokens": 486,
+      "total_tokens": 1215,
+      "time_to_first_token": 5.761748621996958,
+      "duration": 5.761841149011161,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 729,
+            "output_tokens": 486,
+            "total_tokens": 1215,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5736751262,
+              "load_duration": 938341,
+              "prompt_eval_duration": 214970000,
+              "eval_duration": 5469491000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

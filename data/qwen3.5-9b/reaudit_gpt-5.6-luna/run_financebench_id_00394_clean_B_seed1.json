@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Corporate & Investment Bank net income as negative $45 million for 2022 Q2.",
+    "reported_metric": "Net income Corporate & Investment Bank",
+    "reported_value": -45.0,
+    "confidence": 0.97,
+    "rationale": "The extractor's segment values are internally inconsistent with the reported total net income: the listed segments sum to $4,879 million versus the $8,649 million total, with the Corporate & Investment Bank figure of -$45 million appearing to be the erroneous input. The analyst propagated it, while the writer's selected highest segment remains consistent with the other listed values."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1011,
+    "output_tokens": 952,
+    "total_tokens": 1963,
+    "cached_tokens": 0,
+    "reasoning_tokens": 788,
+    "cost_usd": 0.0013445999999999998,
+    "latency_ms": 8822.829999960959,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1011,
+      "output_tokens": 952,
+      "total_tokens": 1963,
+      "reasoning_tokens": 788,
+      "time_to_first_token": 8.822182459000032,
+      "duration": 8.822298458951991,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1011,
+            "output_tokens": 952,
+            "total_tokens": 1963,
+            "reasoning_tokens": 788,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 909,
+    "output_tokens": 292,
+    "total_tokens": 1201,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3562.152443046216,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 909,
+      "output_tokens": 292,
+      "total_tokens": 1201,
+      "time_to_first_token": 3.561925557034556,
+      "duration": 3.561996426025871,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 909,
+            "output_tokens": 292,
+            "total_tokens": 1201,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3536126858,
+              "load_duration": 523364,
+              "prompt_eval_duration": 263625000,
+              "eval_duration": 3221060000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

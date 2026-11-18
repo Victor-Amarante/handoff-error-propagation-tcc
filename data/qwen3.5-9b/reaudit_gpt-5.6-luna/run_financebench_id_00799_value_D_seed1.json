@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00799_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported AMCOR's 2023 cash and cash equivalents as $869 million, while its cited evidence says $689 million.",
+    "reported_metric": "Cash and cash equivalents 2023",
+    "reported_value": 869.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 directly contradicts its own evidence. This is the earliest identifiable error and contaminates the analyst's quick-ratio calculations; the reported ratios also use inconsistent inputs and do not follow from the extracted figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3738,
+    "output_tokens": 434,
+    "total_tokens": 4172,
+    "cached_tokens": 0,
+    "reasoning_tokens": 301,
+    "cost_usd": 0.0012684,
+    "latency_ms": 4427.01120802667,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3738,
+      "output_tokens": 434,
+      "total_tokens": 4172,
+      "reasoning_tokens": 301,
+      "time_to_first_token": 4.426287916954607,
+      "duration": 4.426533041987568,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3738,
+            "output_tokens": 434,
+            "total_tokens": 4172,
+            "reasoning_tokens": 301,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4346,
+    "output_tokens": 693,
+    "total_tokens": 5039,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8599.253955995664,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4346,
+      "output_tokens": 693,
+      "total_tokens": 5039,
+      "time_to_first_token": 8.598974301014096,
+      "duration": 8.59906741901068,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4346,
+            "output_tokens": 693,
+            "total_tokens": 5039,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8573867667,
+              "load_duration": 721856,
+              "prompt_eval_duration": 989072000,
+              "eval_duration": 7522381000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

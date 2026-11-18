@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05718_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. The statement of cash flows reports dividends paid of $389 million, and the analyst correctly converts this to $0.389 billion; the writer preserves that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 976,
+    "output_tokens": 202,
+    "total_tokens": 1178,
+    "cached_tokens": 0,
+    "reasoning_tokens": 110,
+    "cost_usd": 0.0004376,
+    "latency_ms": 2917.942875006702,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 976,
+      "output_tokens": 202,
+      "total_tokens": 1178,
+      "reasoning_tokens": 110,
+      "time_to_first_token": 2.9172491249628365,
+      "duration": 2.917438749980647,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 976,
+            "output_tokens": 202,
+            "total_tokens": 1178,
+            "reasoning_tokens": 110,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 871,
+    "output_tokens": 743,
+    "total_tokens": 1614,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8328.661800012924,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 743,
+      "total_tokens": 1614,
+      "time_to_first_token": 8.328413662035018,
+      "duration": 8.328495702997316,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 743,
+            "total_tokens": 1614,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8301176010,
+              "load_duration": 544437,
+              "prompt_eval_duration": 215930000,
+              "eval_duration": 8011720000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

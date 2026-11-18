@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00678_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported FY2022 gross margin as 95.81%, but the extracted FY2022 revenue and costs imply approximately 5.30%: (66,608 - 53,969 - 9,109) / 66,608.",
+    "reported_metric": "Gross margin FY2022",
+    "reported_value": 95.81,
+    "confidence": 0.99,
+    "rationale": "Using the extractor's own figures, FY2022 gross profit is 3,530 million and gross margin is about 5.30%, not 95.81%. The error first appears in the analyst's calculation; the writer then propagates it. The extractor contains a year-field inconsistency for C01, but its stated FY2022 value is consistent with the FY2022 total and is not needed to calculate A01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1625,
+    "output_tokens": 714,
+    "total_tokens": 2339,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011818,
+    "latency_ms": 7435.591292043682,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1625,
+      "output_tokens": 714,
+      "total_tokens": 2339,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.435068749997299,
+      "duration": 7.435302500030957,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1625,
+            "output_tokens": 714,
+            "total_tokens": 2339,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1728,
+    "output_tokens": 1153,
+    "total_tokens": 2881,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12884.10967902746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1728,
+      "output_tokens": 1153,
+      "total_tokens": 2881,
+      "time_to_first_token": 12.883812888001557,
+      "duration": 12.88390671898378,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1728,
+            "output_tokens": 1153,
+            "total_tokens": 2881,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12854405809,
+              "load_duration": 547499,
+              "prompt_eval_duration": 423274000,
+              "eval_duration": 12372611000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

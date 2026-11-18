@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00566_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Verizon's total debt was $150,639 million in fiscal 2023.",
+    "reported_metric": "total_debt",
+    "reported_value": 150639.0,
+    "confidence": 0.99,
+    "rationale": "The evidence is from Verizon's 2022 10-K and the question compares 2022 with 2021, but claim C01 labels the $150,639 million figure as 2023. The subsequent analyst and writer outputs propagate or partially mask this year-label error; the $229 million decrease itself is internally consistent with $150,639 million versus $150,868 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 546,
+    "total_tokens": 1537,
+    "cached_tokens": 0,
+    "reasoning_tokens": 389,
+    "cost_usd": 0.0008533999999999999,
+    "latency_ms": 5767.990832973737,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 991,
+      "output_tokens": 546,
+      "total_tokens": 1537,
+      "reasoning_tokens": 389,
+      "time_to_first_token": 5.7672233750345185,
+      "duration": 5.76750150002772,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 991,
+            "output_tokens": 546,
+            "total_tokens": 1537,
+            "reasoning_tokens": 389,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1547,
+    "output_tokens": 192,
+    "total_tokens": 1739,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002507,
+    "latency_ms": 3240.8838749979623,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1547,
+      "output_tokens": 192,
+      "total_tokens": 1739,
+      "time_to_first_token": 3.240172917023301,
+      "duration": 3.2403939589858055,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1547,
+            "output_tokens": 192,
+            "total_tokens": 1739,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

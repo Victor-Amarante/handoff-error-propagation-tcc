@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the reported FY 2022 figures and the 28% net-PPE-to-total-assets calculation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The extracted values are used consistently. $107,434M divided by $379,680M is approximately 28.3%, supporting the stated 28% figure, and the qualitative conclusion that Verizon is capital intensive is reasonable given its large net PP&E and wireless-license assets."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1037,
+    "output_tokens": 377,
+    "total_tokens": 1414,
+    "cached_tokens": 0,
+    "reasoning_tokens": 234,
+    "cost_usd": 0.0006598,
+    "latency_ms": 4321.711249998771,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1037,
+      "output_tokens": 377,
+      "total_tokens": 1414,
+      "reasoning_tokens": 234,
+      "time_to_first_token": 4.321332665975206,
+      "duration": 4.3213933749939315,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1037,
+            "output_tokens": 377,
+            "total_tokens": 1414,
+            "reasoning_tokens": 234,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1588,
+    "output_tokens": 189,
+    "total_tokens": 1777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002533,
+    "latency_ms": 3441.355457995087,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1588,
+      "output_tokens": 189,
+      "total_tokens": 1777,
+      "time_to_first_token": 3.4403490840340964,
+      "duration": 3.4406499169999734,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1588,
+            "output_tokens": 189,
+            "total_tokens": 1777,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

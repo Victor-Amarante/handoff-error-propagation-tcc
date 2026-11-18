@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor recorded the 1.500% Notes due 2026 as debt securities with a USD_K value of 1.5 and year 2027, although the evidence identifies 1.500% as the interest rate and the notes as due 2026.",
+    "reported_metric": "debt securities",
+    "reported_value": 1.5,
+    "confidence": 0.98,
+    "rationale": "The first clear inconsistency appears in extractor claim C01: the evidence says “1.500% Notes due 2026,” but the claim treats 1.500% as a USD_K value and assigns year 2027. The analyst and writer propagate the malformed numeric interpretation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1505,
+    "output_tokens": 685,
+    "total_tokens": 2190,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001123,
+    "latency_ms": 6677.114124991931,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1505,
+      "output_tokens": 685,
+      "total_tokens": 2190,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.67661045800196,
+      "duration": 6.676731540996116,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1505,
+            "output_tokens": 685,
+            "total_tokens": 2190,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1509,
+    "output_tokens": 403,
+    "total_tokens": 1912,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4904.8273579683155,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1509,
+      "output_tokens": 403,
+      "total_tokens": 1912,
+      "time_to_first_token": 4.9045926639810205,
+      "duration": 4.904666076996364,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1509,
+            "output_tokens": 403,
+            "total_tokens": 1912,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4880155779,
+              "load_duration": 656983,
+              "prompt_eval_duration": 394149000,
+              "eval_duration": 4428371000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

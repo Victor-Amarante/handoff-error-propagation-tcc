@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00299_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Consumer & Community Banking had net revenue of $12,517 million in 2022, although the evidence belongs to the 2021 Q1 segment set.",
+    "reported_metric": "net_revenue",
+    "reported_value": 12517.0,
+    "confidence": 0.98,
+    "rationale": "C01 is labeled 2022 despite citing the 2021 Q1 filing and matching the other 2021 segment revenues; the analyst consequently omitted it from the 2021 comparison. The omission does not change the lowest value, since Corporate's -$473 million remains lowest."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1773,
+    "output_tokens": 1021,
+    "total_tokens": 2794,
+    "cached_tokens": 0,
+    "reasoning_tokens": 864,
+    "cost_usd": 0.0015798000000000001,
+    "latency_ms": 10513.60233296873,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1773,
+      "output_tokens": 1021,
+      "total_tokens": 2794,
+      "reasoning_tokens": 864,
+      "time_to_first_token": 10.513210999954026,
+      "duration": 10.513360665994696,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1773,
+            "output_tokens": 1021,
+            "total_tokens": 2794,
+            "reasoning_tokens": 864,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2455,
+    "output_tokens": 206,
+    "total_tokens": 2661,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003485,
+    "latency_ms": 3275.608416995965,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2455,
+      "output_tokens": 206,
+      "total_tokens": 2661,
+      "time_to_first_token": 3.274993499973789,
+      "duration": 3.2752114579780027,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2455,
+            "output_tokens": 206,
+            "total_tokens": 2661,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

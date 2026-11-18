@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01981_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "Card Member retention remained high in 2022, but it was incorrectly encoded as 0.0%.",
+    "reported_metric": "card_member_retention_status_2022",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor’s evidence says retention remained high, which is internally inconsistent with a reported value of 0.0 PCT. The analyst and writer propagated this claim without introducing a new error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1052,
+    "output_tokens": 284,
+    "total_tokens": 1336,
+    "cached_tokens": 0,
+    "reasoning_tokens": 158,
+    "cost_usd": 0.0005512000000000001,
+    "latency_ms": 3339.035374985542,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1052,
+      "output_tokens": 284,
+      "total_tokens": 1336,
+      "reasoning_tokens": 158,
+      "time_to_first_token": 3.3387576250243,
+      "duration": 3.3388384580030106,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1052,
+            "output_tokens": 284,
+            "total_tokens": 1336,
+            "reasoning_tokens": 158,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 948,
+    "output_tokens": 302,
+    "total_tokens": 1250,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3648.265022027772,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 948,
+      "output_tokens": 302,
+      "total_tokens": 1250,
+      "time_to_first_token": 3.6480329179903492,
+      "duration": 3.648103558982257,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 948,
+            "output_tokens": 302,
+            "total_tokens": 1250,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3621039200,
+              "load_duration": 455842,
+              "prompt_eval_duration": 265189000,
+              "eval_duration": 3303437000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

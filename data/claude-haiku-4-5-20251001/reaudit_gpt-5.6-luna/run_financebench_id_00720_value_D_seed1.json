@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Total revenues net of interest expense for FY2022 were reported as USD 58,262 million, despite the cited evidence showing USD 52,862 million.",
+    "reported_metric": "Total revenues net of interest expense",
+    "reported_value": 58262.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value conflicts directly with its evidence. Subsequent analyst calculations use 58,262, propagating the error into the reported margins and growth rates."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1917,
+    "output_tokens": 269,
+    "total_tokens": 2186,
+    "cached_tokens": 0,
+    "reasoning_tokens": 138,
+    "cost_usd": 0.0007062,
+    "latency_ms": 3236.2206670222804,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1917,
+      "output_tokens": 269,
+      "total_tokens": 2186,
+      "reasoning_tokens": 138,
+      "time_to_first_token": 3.2358150419895537,
+      "duration": 3.235947458015289,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1917,
+            "output_tokens": 269,
+            "total_tokens": 2186,
+            "reasoning_tokens": 138,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2581,
+    "output_tokens": 188,
+    "total_tokens": 2769,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003521,
+    "latency_ms": 3786.344124993775,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2581,
+      "output_tokens": 188,
+      "total_tokens": 2769,
+      "time_to_first_token": 3.785605166980531,
+      "duration": 3.785828042018693,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2581,
+            "output_tokens": 188,
+            "total_tokens": 2769,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

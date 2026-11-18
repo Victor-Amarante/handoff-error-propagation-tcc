@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01009_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor claimed that the geography metric had a value of 200 for 2023 in USD_K units, which does not support the FY2022 geography answer and is internally inconsistent with a geography count.",
+    "reported_metric": "geographies",
+    "reported_value": 200.0,
+    "confidence": 0.99,
+    "rationale": "C01 is the first problematic claim: it is tagged to 2023 and USD_K, while the question asks for FY2022 geographies. The analyst merely propagated it, and the writer changed the year and unit without provenance support."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1110,
+    "output_tokens": 344,
+    "total_tokens": 1454,
+    "cached_tokens": 0,
+    "reasoning_tokens": 195,
+    "cost_usd": 0.0006347999999999999,
+    "latency_ms": 4137.921707995702,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1110,
+      "output_tokens": 344,
+      "total_tokens": 1454,
+      "reasoning_tokens": 195,
+      "time_to_first_token": 4.137312333041336,
+      "duration": 4.137519083044026,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1110,
+            "output_tokens": 344,
+            "total_tokens": 1454,
+            "reasoning_tokens": 195,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1040,
+    "output_tokens": 201,
+    "total_tokens": 1241,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2606.7719230195507,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1040,
+      "output_tokens": 201,
+      "total_tokens": 1241,
+      "time_to_first_token": 2.606530839984771,
+      "duration": 2.6066024170140736,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1040,
+            "output_tokens": 201,
+            "total_tokens": 1241,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2580933746,
+              "load_duration": 467180,
+              "prompt_eval_duration": 298066000,
+              "eval_duration": 2210049000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

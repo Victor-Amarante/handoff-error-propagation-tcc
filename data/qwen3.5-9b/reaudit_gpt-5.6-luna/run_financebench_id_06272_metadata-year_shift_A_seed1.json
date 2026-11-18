@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06272_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be established from the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor reports only a 2023 dividend figure, and both the analyst and writer consistently explain that FY2022 numerator and denominator data are absent from the provided input. Without the source statements or additional provenance, no factual error can be demonstrated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 752,
+    "output_tokens": 626,
+    "total_tokens": 1378,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009015999999999999,
+    "latency_ms": 6575.860499986447,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 752,
+      "output_tokens": 626,
+      "total_tokens": 1378,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.575325583980884,
+      "duration": 6.5755481669912115,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 752,
+            "output_tokens": 626,
+            "total_tokens": 1378,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 569,
+    "output_tokens": 180,
+    "total_tokens": 749,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2236.4817039924674,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 569,
+      "output_tokens": 180,
+      "total_tokens": 749,
+      "time_to_first_token": 2.2362002250156365,
+      "duration": 2.2362974989810027,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 569,
+            "output_tokens": 180,
+            "total_tokens": 749,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2211984946,
+              "load_duration": 470989,
+              "prompt_eval_duration": 153142000,
+              "eval_duration": 2007825000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

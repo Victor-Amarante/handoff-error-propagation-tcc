@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03029_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "3M capital expenditures were USD 1,577 million in FY2019; the cash-flow sequence indicates USD 1,577 million corresponds to FY2018, followed by USD 1,373 million for FY2017 and USD 1,420 million for FY2016.",
+    "reported_metric": "Capital Expenditure",
+    "reported_value": 1577.0,
+    "confidence": 0.93,
+    "rationale": "The extractor incorrectly assigned the first cash-flow value, 1,577, to FY2019. In a 3M 2018 10-K, the sequence is internally consistent with FY2018, FY2017, and FY2016. The analyst then selected the second value, 1,373, as FY2018, propagating the year misalignment into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 900,
+    "output_tokens": 711,
+    "total_tokens": 1611,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010331999999999997,
+    "latency_ms": 6650.690792012028,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 900,
+      "output_tokens": 711,
+      "total_tokens": 1611,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.649484957975801,
+      "duration": 6.65009683300741,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 900,
+            "output_tokens": 711,
+            "total_tokens": 1611,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 787,
+    "output_tokens": 219,
+    "total_tokens": 1006,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2808.7086570449173,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 787,
+      "output_tokens": 219,
+      "total_tokens": 1006,
+      "time_to_first_token": 2.808430976001546,
+      "duration": 2.80854796996573,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 787,
+            "output_tokens": 219,
+            "total_tokens": 1006,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2783669496,
+              "load_duration": 672955,
+              "prompt_eval_duration": 198596000,
+              "eval_duration": 2513582000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01928_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported Adjusted EBITDA of USD 2,018 million for the twelve months ended June 30, 2023, but tagged the claim as year 2024.",
+    "reported_metric": "Twelve Months Ended June 30, 2023 Adjusted EBITDA",
+    "reported_value": 2018.0,
+    "confidence": 0.98,
+    "rationale": "C01 is the earliest claim and contains an internal year inconsistency: its metric identifies FY2023 while its year field is 2024. The analyst then propagated this value into both FY2024 and FY2023 claims, and the writer carried it into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 922,
+    "output_tokens": 594,
+    "total_tokens": 1516,
+    "cached_tokens": 0,
+    "reasoning_tokens": 430,
+    "cost_usd": 0.0008971999999999999,
+    "latency_ms": 6247.957416984718,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 922,
+      "output_tokens": 594,
+      "total_tokens": 1516,
+      "reasoning_tokens": 430,
+      "time_to_first_token": 6.246948832995258,
+      "duration": 6.247341750015039,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 922,
+            "output_tokens": 594,
+            "total_tokens": 1516,
+            "reasoning_tokens": 430,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 819,
+    "output_tokens": 266,
+    "total_tokens": 1085,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3269.934246025514,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 819,
+      "output_tokens": 266,
+      "total_tokens": 1085,
+      "time_to_first_token": 3.2696987449890003,
+      "duration": 3.269771844963543,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 819,
+            "output_tokens": 266,
+            "total_tokens": 1085,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3244602764,
+              "load_duration": 714403,
+              "prompt_eval_duration": 238006000,
+              "eval_duration": 2934086000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

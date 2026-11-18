@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00566_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the extracted debt values and the stated $229 million decrease are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports $150,639 million for 2022 and $150,868 million for 2021. The analyst and writer correctly conclude that debt decreased by $229 million, so the final answer accurately follows the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 668,
+    "output_tokens": 205,
+    "total_tokens": 873,
+    "cached_tokens": 0,
+    "reasoning_tokens": 85,
+    "cost_usd": 0.0003796,
+    "latency_ms": 2429.619457980152,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 668,
+      "output_tokens": 205,
+      "total_tokens": 873,
+      "reasoning_tokens": 85,
+      "time_to_first_token": 2.4293403329793364,
+      "duration": 2.429393832979258,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 668,
+            "output_tokens": 205,
+            "total_tokens": 873,
+            "reasoning_tokens": 85,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1161,
+    "output_tokens": 176,
+    "total_tokens": 1337,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002041,
+    "latency_ms": 3294.7189999977127,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1161,
+      "output_tokens": 176,
+      "total_tokens": 1337,
+      "time_to_first_token": 3.2942315000109375,
+      "duration": 3.2943561660358682,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1161,
+            "output_tokens": 176,
+            "total_tokens": 1337,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

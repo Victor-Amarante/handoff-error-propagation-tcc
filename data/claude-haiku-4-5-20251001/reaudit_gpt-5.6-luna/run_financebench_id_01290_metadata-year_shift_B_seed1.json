@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01290_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's revenue from U.S. government contracts was reported as 40.0% for 2023, even though the question asks about FY2022.",
+    "reported_metric": "revenue_from_us_government_contracts",
+    "reported_value": 40.0,
+    "confidence": 0.93,
+    "rationale": "The earliest trace output supplies only a 2023 metric for a FY2022 question. The analyst propagates it unchanged, and the writer then uses that 2023 figure in an answer framed as of FY2022."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 691,
+    "output_tokens": 588,
+    "total_tokens": 1279,
+    "cached_tokens": 0,
+    "reasoning_tokens": 444,
+    "cost_usd": 0.0008438,
+    "latency_ms": 5958.974332956132,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 691,
+      "output_tokens": 588,
+      "total_tokens": 1279,
+      "reasoning_tokens": 444,
+      "time_to_first_token": 5.9585749579709955,
+      "duration": 5.958689624967519,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 691,
+            "output_tokens": 588,
+            "total_tokens": 1279,
+            "reasoning_tokens": 444,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1176,
+    "output_tokens": 154,
+    "total_tokens": 1330,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001946,
+    "latency_ms": 2149.182999972254,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1176,
+      "output_tokens": 154,
+      "total_tokens": 1330,
+      "time_to_first_token": 2.148190749983769,
+      "duration": 2.148484790988732,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1176,
+            "output_tokens": 154,
+            "total_tokens": 1330,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

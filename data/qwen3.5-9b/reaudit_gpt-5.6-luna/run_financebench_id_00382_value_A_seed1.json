@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently reports Las Vegas Strip Resorts as having the highest FY2022 EBITDAR contribution.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted values show Las Vegas Strip Resorts at $1.34231e+06K, higher than Regional Operations at $1.29463e+06K, with all other listed categories negative. The analyst and writer correctly convert this to approximately $1,342,310,000."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 910,
+    "output_tokens": 264,
+    "total_tokens": 1174,
+    "cached_tokens": 0,
+    "reasoning_tokens": 126,
+    "cost_usd": 0.0004988,
+    "latency_ms": 3424.003583029844,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 910,
+      "output_tokens": 264,
+      "total_tokens": 1174,
+      "reasoning_tokens": 126,
+      "time_to_first_token": 3.4234927090001293,
+      "duration": 3.4236221249448135,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 910,
+            "output_tokens": 264,
+            "total_tokens": 1174,
+            "reasoning_tokens": 126,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 787,
+    "output_tokens": 166,
+    "total_tokens": 953,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2149.6645220322534,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 787,
+      "output_tokens": 166,
+      "total_tokens": 953,
+      "time_to_first_token": 2.1494053290225565,
+      "duration": 2.149486585985869,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 787,
+            "output_tokens": 166,
+            "total_tokens": 953,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2121686486,
+              "load_duration": 563343,
+              "prompt_eval_duration": 197875000,
+              "eval_duration": 1873213000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

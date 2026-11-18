@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00517_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Commercial Airplanes FY2022 revenue was reported as $28,567 million, although the accompanying evidence states $25,867 million.",
+    "reported_metric": "revenue",
+    "reported_value": 28567.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts with its own evidence. The analyst and writer use the evidence value of $25,867 million rather than the extracted value, so the first inconsistency appears in the extractor stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1523,
+    "output_tokens": 395,
+    "total_tokens": 1918,
+    "cached_tokens": 0,
+    "reasoning_tokens": 265,
+    "cost_usd": 0.0007786000000000001,
+    "latency_ms": 4884.500209009275,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1523,
+      "output_tokens": 395,
+      "total_tokens": 1918,
+      "reasoning_tokens": 265,
+      "time_to_first_token": 4.884312082955148,
+      "duration": 4.8843752079992555,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1523,
+            "output_tokens": 395,
+            "total_tokens": 1918,
+            "reasoning_tokens": 265,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2150,
+    "output_tokens": 172,
+    "total_tokens": 2322,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00301,
+    "latency_ms": 3445.6919580115937,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2150,
+      "output_tokens": 172,
+      "total_tokens": 2322,
+      "time_to_first_token": 3.444751582981553,
+      "duration": 3.44504791602958,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2150,
+            "output_tokens": 172,
+            "total_tokens": 2322,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04080_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Nike cost of sales was reported as USD 24,576 million for FY2022, but this figure is associated with the FY2021 10-K and should be treated as FY2021 cost of sales.",
+    "reported_metric": "cost_of_sales",
+    "reported_value": 24576.0,
+    "confidence": 0.98,
+    "rationale": "C01 is the first inconsistent claim: a 2021 10-K is used while the cost-of-sales value is labeled FY2022. The analyst's 4.37 is also arithmetically inconsistent with the supplied inputs, since 24,576 divided by average inventory of 7,110.5 equals approximately 3.46."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1197,
+    "output_tokens": 956,
+    "total_tokens": 2153,
+    "cached_tokens": 0,
+    "reasoning_tokens": 774,
+    "cost_usd": 0.0013866000000000002,
+    "latency_ms": 9407.002667023335,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1197,
+      "output_tokens": 956,
+      "total_tokens": 2153,
+      "reasoning_tokens": 774,
+      "time_to_first_token": 9.406269666971639,
+      "duration": 9.406481332960539,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1197,
+            "output_tokens": 956,
+            "total_tokens": 2153,
+            "reasoning_tokens": 774,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1161,
+    "output_tokens": 971,
+    "total_tokens": 2132,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10879.823467053939,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1161,
+      "output_tokens": 971,
+      "total_tokens": 2132,
+      "time_to_first_token": 10.879530373960733,
+      "duration": 10.879622383974493,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1161,
+            "output_tokens": 971,
+            "total_tokens": 2132,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10853902261,
+              "load_duration": 451024,
+              "prompt_eval_duration": 299460000,
+              "eval_duration": 10477948000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

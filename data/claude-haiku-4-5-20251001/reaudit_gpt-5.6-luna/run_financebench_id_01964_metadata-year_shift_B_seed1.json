@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Long-term debt was the largest liability on American Express's 2022 balance sheet, valued at $42,573 million.",
+    "reported_metric": "long_term_debt",
+    "reported_value": 42573.0,
+    "confidence": 0.92,
+    "rationale": "The extractor lists customer deposits of $110,239 million for 2023 but provides no 2022 customer-deposit figure. The analyst nevertheless concludes that long-term debt was the largest 2022 liability, comparing only an incomplete set of liabilities. The writer merely repeats that unsupported conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 620,
+    "total_tokens": 1420,
+    "cached_tokens": 0,
+    "reasoning_tokens": 475,
+    "cost_usd": 0.000904,
+    "latency_ms": 5775.090541981626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 620,
+      "total_tokens": 1420,
+      "reasoning_tokens": 475,
+      "time_to_first_token": 5.774501791980583,
+      "duration": 5.774723500013351,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 620,
+            "total_tokens": 1420,
+            "reasoning_tokens": 475,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1314,
+    "output_tokens": 271,
+    "total_tokens": 1585,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002669,
+    "latency_ms": 4096.464333997574,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1314,
+      "output_tokens": 271,
+      "total_tokens": 1585,
+      "time_to_first_token": 4.095437125011813,
+      "duration": 4.095740500022657,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1314,
+            "output_tokens": 271,
+            "total_tokens": 1585,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

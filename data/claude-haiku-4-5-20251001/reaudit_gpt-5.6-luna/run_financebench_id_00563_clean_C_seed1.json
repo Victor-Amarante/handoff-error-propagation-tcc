@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The Computing and Graphics segment had the highest proportional sales increase from FY21 to FY22, at 63.5%.",
+    "reported_metric": "revenue_growth_rate",
+    "reported_value": 63.5,
+    "confidence": 0.86,
+    "rationale": "The analyst calculations are internally correct, and 63.5% is the largest computed growth rate. However, the extractor and analyst traces contain no segment labels, so the writer's attribution of that rate to Computing and Graphics is unsupported and conflicts with the FY22 reporting-segment framing; the error first appears in the writer's segment identification."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1409,
+    "output_tokens": 1184,
+    "total_tokens": 2593,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0017025999999999999,
+    "latency_ms": 11474.40008400008,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1409,
+      "output_tokens": 1184,
+      "total_tokens": 2593,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.473704333999194,
+      "duration": 11.473983542004135,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1409,
+            "output_tokens": 1184,
+            "total_tokens": 2593,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2040,
+    "output_tokens": 203,
+    "total_tokens": 2243,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003055,
+    "latency_ms": 3168.300958001055,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2040,
+      "output_tokens": 203,
+      "total_tokens": 2243,
+      "time_to_first_token": 3.1677255000104196,
+      "duration": 3.167866291012615,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2040,
+            "output_tokens": 203,
+            "total_tokens": 2243,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

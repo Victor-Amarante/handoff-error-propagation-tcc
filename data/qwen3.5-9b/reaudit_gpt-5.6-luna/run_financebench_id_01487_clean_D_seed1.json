@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01487_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident: the extracted margins of 20.1% and 20.0% support an increase of 0.1 percentage points.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The analyst correctly subtracts the FY2022 Q2 margin (20.0%) from the FY2023 Q2 margin (20.1%), and the writer preserves that result. The answer to whether the margin increased is therefore supported by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1265,
+    "output_tokens": 461,
+    "total_tokens": 1726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 323,
+    "cost_usd": 0.0008062,
+    "latency_ms": 4584.93750001071,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1265,
+      "output_tokens": 461,
+      "total_tokens": 1726,
+      "reasoning_tokens": 323,
+      "time_to_first_token": 4.584056542022154,
+      "duration": 4.5843561249785125,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1265,
+            "output_tokens": 461,
+            "total_tokens": 1726,
+            "reasoning_tokens": 323,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1207,
+    "output_tokens": 2174,
+    "total_tokens": 3381,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 23902.197394985706,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1207,
+      "output_tokens": 2174,
+      "total_tokens": 3381,
+      "time_to_first_token": 23.90192149701761,
+      "duration": 23.902017104031984,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1207,
+            "output_tokens": 2174,
+            "total_tokens": 3381,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 23870682012,
+              "load_duration": 460953,
+              "prompt_eval_duration": 330094000,
+              "eval_duration": 23487177000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

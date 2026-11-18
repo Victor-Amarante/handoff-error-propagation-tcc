@@ -1,0 +1,80 @@
+{
+  "log": "run_financebench_id_00603_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C04",
+    "root_cause_claim_text": "Merchandise inventories increased by USD 104.2 million in Q4 2022 versus Q4 2021.",
+    "reported_metric": "inventory_increase_q4_2022_vs_q4_2021",
+    "reported_value": 104.2,
+    "confidence": 0.96,
+    "rationale": "The extractor reports Q4 2022 and Q4 2021 inventory balances of USD 1,600.0 million and USD 1,500.0 million, implying an increase of USD 100.0 million, not USD 104.2 million. The analyst and writer then omitted the FY2023 period and produced an answer to a different question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1246,
+    "output_tokens": 683,
+    "total_tokens": 1929,
+    "cached_tokens": 1243,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.00084506,
+    "latency_ms": 7078.034916019533,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1246,
+      "output_tokens": 683,
+      "total_tokens": 1929,
+      "cache_read_tokens": 1243,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.074929624970537,
+      "duration": 7.075822999991942,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1246,
+            "output_tokens": 683,
+            "total_tokens": 1929,
+            "cache_read_tokens": 1243,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1198,
+    "output_tokens": 520,
+    "total_tokens": 1718,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5996.5462340041995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1198,
+      "output_tokens": 520,
+      "total_tokens": 1718,
+      "time_to_first_token": 5.996302473009564,
+      "duration": 5.996378692041617,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1198,
+            "output_tokens": 520,
+            "total_tokens": 1718,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5970887394,
+              "load_duration": 697912,
+              "prompt_eval_duration": 305370000,
+              "eval_duration": 5612133000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

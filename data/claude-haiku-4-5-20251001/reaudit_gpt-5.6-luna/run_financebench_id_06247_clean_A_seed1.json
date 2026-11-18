@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06247_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly reported FY2018 Walmart DPO as 42.70 days; using the extracted figures and formula gives approximately 42.69 days.",
+    "reported_metric": "FY2018 days payable outstanding (DPO)",
+    "reported_value": 42.7,
+    "confidence": 0.98,
+    "rationale": "The extracted inputs and intermediate arithmetic are consistent, but the final calculation is misrounded: 365 × 43,762.50 / 374,133 = approximately 42.6942, which rounds to 42.69, not 42.70. The writer repeats the analyst's incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1001,
+    "output_tokens": 633,
+    "total_tokens": 1634,
+    "cached_tokens": 0,
+    "reasoning_tokens": 473,
+    "cost_usd": 0.0009598,
+    "latency_ms": 6334.256166999694,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1001,
+      "output_tokens": 633,
+      "total_tokens": 1634,
+      "reasoning_tokens": 473,
+      "time_to_first_token": 6.333660083007999,
+      "duration": 6.333837125042919,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1001,
+            "output_tokens": 633,
+            "total_tokens": 1634,
+            "reasoning_tokens": 473,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1563,
+    "output_tokens": 155,
+    "total_tokens": 1718,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002338,
+    "latency_ms": 2354.3415410094894,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1563,
+      "output_tokens": 155,
+      "total_tokens": 1718,
+      "time_to_first_token": 2.3533417499857023,
+      "duration": 2.353633249993436,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1563,
+            "output_tokens": 155,
+            "total_tokens": 1718,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

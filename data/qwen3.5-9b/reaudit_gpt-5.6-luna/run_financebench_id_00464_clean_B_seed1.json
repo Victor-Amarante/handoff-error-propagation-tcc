@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00464_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly converted an extracted industry cyclicality value of 1.0 PCT into a claim of 100% cyclicality and described Boeing's business as fully cyclical.",
+    "reported_metric": "Industry_cyclicality",
+    "reported_value": 100.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst consistently report 1.0 with unit PCT. The writer changes this to 100%, an unsupported factor-of-100 conversion, making the first error occur at the writer stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 626,
+    "output_tokens": 267,
+    "total_tokens": 893,
+    "cached_tokens": 0,
+    "reasoning_tokens": 132,
+    "cost_usd": 0.0004456,
+    "latency_ms": 3144.679915974848,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 626,
+      "output_tokens": 267,
+      "total_tokens": 893,
+      "reasoning_tokens": 132,
+      "time_to_first_token": 3.1444592909538187,
+      "duration": 3.144538874970749,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 626,
+            "output_tokens": 267,
+            "total_tokens": 893,
+            "reasoning_tokens": 132,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 434,
+    "output_tokens": 194,
+    "total_tokens": 628,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2434.551225975156,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 434,
+      "output_tokens": 194,
+      "total_tokens": 628,
+      "time_to_first_token": 2.4343172070221044,
+      "duration": 2.434389685979113,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 434,
+            "output_tokens": 194,
+            "total_tokens": 628,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2408998058,
+              "load_duration": 433793,
+              "prompt_eval_duration": 128139999,
+              "eval_duration": 2215393000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

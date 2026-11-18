@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01484_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "JnJ's U.S. sales growth was reported as 3.6% in FY2022, but 3.6 percentage points is the difference between the correct U.S. growth of 3.0% and international growth of -0.6%.",
+    "reported_metric": "U.S. sales growth (FY2022)",
+    "reported_value": 3.6,
+    "confidence": 0.99,
+    "rationale": "The extractor reports U.S. growth of 3.0% and international growth of -0.6%; the analyst correctly calculates their difference as 3.6 percentage points. The writer incorrectly relabels that difference as the U.S. growth rate."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1081,
+    "output_tokens": 431,
+    "total_tokens": 1512,
+    "cached_tokens": 0,
+    "reasoning_tokens": 258,
+    "cost_usd": 0.0007333999999999999,
+    "latency_ms": 4107.128750008997,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1081,
+      "output_tokens": 431,
+      "total_tokens": 1512,
+      "reasoning_tokens": 258,
+      "time_to_first_token": 4.106649958004709,
+      "duration": 4.106791666999925,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1081,
+            "output_tokens": 431,
+            "total_tokens": 1512,
+            "reasoning_tokens": 258,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 985,
+    "output_tokens": 172,
+    "total_tokens": 1157,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2265.2752499561757,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 985,
+      "output_tokens": 172,
+      "total_tokens": 1157,
+      "time_to_first_token": 2.2650020489818417,
+      "duration": 2.265072178968694,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 985,
+            "output_tokens": 172,
+            "total_tokens": 1157,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2238905778,
+              "load_duration": 550913,
+              "prompt_eval_duration": 246479000,
+              "eval_duration": 1919008000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04980_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2021 capital spending was reported as -$6,425 million.",
+    "reported_metric": "capital_expenditure",
+    "reported_value": -6425.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's evidence shows Capital spending (4,625), but claim C01 records -6,425 million. The analyst and writer merely propagate and convert that incorrect extracted value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 848,
+    "output_tokens": 301,
+    "total_tokens": 1149,
+    "cached_tokens": 0,
+    "reasoning_tokens": 187,
+    "cost_usd": 0.0005308,
+    "latency_ms": 3477.972500026226,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 848,
+      "output_tokens": 301,
+      "total_tokens": 1149,
+      "reasoning_tokens": 187,
+      "time_to_first_token": 3.4771870000404306,
+      "duration": 3.477414083026815,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 848,
+            "output_tokens": 301,
+            "total_tokens": 1149,
+            "reasoning_tokens": 187,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 717,
+    "output_tokens": 1636,
+    "total_tokens": 2353,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 17619.69192000106,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 717,
+      "output_tokens": 1636,
+      "total_tokens": 2353,
+      "time_to_first_token": 17.619397330039646,
+      "duration": 17.619526986032724,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 717,
+            "output_tokens": 1636,
+            "total_tokens": 2353,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 17593319548,
+              "load_duration": 403786,
+              "prompt_eval_duration": 192870000,
+              "eval_duration": 17328169000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

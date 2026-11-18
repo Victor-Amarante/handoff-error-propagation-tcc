@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00956_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "No factual error is evident in the trace. The FY2022 sales-growth figure of 1.3% is internally consistent with the reported components: 6.9% volume - 0.8% price - 4.8% currency = 1.3%. The analyst and writer accurately carry this figure into a reasonable conclusion that J&J was not a high-growth company based on FY2022 worldwide sales."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 927,
+    "output_tokens": 244,
+    "total_tokens": 1171,
+    "cached_tokens": 0,
+    "reasoning_tokens": 103,
+    "cost_usd": 0.0004782,
+    "latency_ms": 3120.1475000125356,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 927,
+      "output_tokens": 244,
+      "total_tokens": 1171,
+      "reasoning_tokens": 103,
+      "time_to_first_token": 3.119412374973763,
+      "duration": 3.1197108330088668,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 927,
+            "output_tokens": 244,
+            "total_tokens": 1171,
+            "reasoning_tokens": 103,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 765,
+    "output_tokens": 205,
+    "total_tokens": 970,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2612.3234889819287,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 765,
+      "output_tokens": 205,
+      "total_tokens": 970,
+      "time_to_first_token": 2.6120379909989424,
+      "duration": 2.6121087290230207,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 765,
+            "output_tokens": 205,
+            "total_tokens": 970,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2584727303,
+              "load_duration": 479935,
+              "prompt_eval_duration": 218249000,
+              "eval_duration": 2316639000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

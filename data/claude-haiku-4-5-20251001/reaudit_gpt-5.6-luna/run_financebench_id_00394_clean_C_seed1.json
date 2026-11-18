@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00394_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim appears in the trace; among the extracted net-income values, $3,725 million is the maximum.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extracted values show 3,725 as the highest net income, and the analyst and writer preserve that value. The trace omits segment labels, so the final answer is incomplete for the question but does not contain an internally demonstrable incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1166,
+    "output_tokens": 583,
+    "total_tokens": 1749,
+    "cached_tokens": 0,
+    "reasoning_tokens": 454,
+    "cost_usd": 0.0009328000000000001,
+    "latency_ms": 5954.287666012533,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1166,
+      "output_tokens": 583,
+      "total_tokens": 1749,
+      "reasoning_tokens": 454,
+      "time_to_first_token": 5.953675750002731,
+      "duration": 5.95383520796895,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1166,
+            "output_tokens": 583,
+            "total_tokens": 1749,
+            "reasoning_tokens": 454,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1759,
+    "output_tokens": 175,
+    "total_tokens": 1934,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002634,
+    "latency_ms": 2801.1596249998547,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1759,
+      "output_tokens": 175,
+      "total_tokens": 1934,
+      "time_to_first_token": 2.8004312500124797,
+      "duration": 2.800672041019425,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1759,
+            "output_tokens": 175,
+            "total_tokens": 1934,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

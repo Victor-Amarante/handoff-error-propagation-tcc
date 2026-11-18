@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02119_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JPM's 2021 TBVPS was reported as 76.54 with unit USD_B, which is inconsistent with a per-share metric.",
+    "reported_metric": "TBVPS",
+    "reported_value": 76.54,
+    "confidence": 0.91,
+    "rationale": "The extractor is the first stage containing an internally inconsistent claim: TBVPS is a per-share measure and should be expressed in USD per share, not USD billions. The analyst and writer preserve the numeric value while converting it to USD per share, so no later numerical error is introduced."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 664,
+    "output_tokens": 659,
+    "total_tokens": 1323,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009235999999999999,
+    "latency_ms": 6141.641792026348,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 664,
+      "output_tokens": 659,
+      "total_tokens": 1323,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.1413023339700885,
+      "duration": 6.141434375022072,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 664,
+            "output_tokens": 659,
+            "total_tokens": 1323,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 487,
+    "output_tokens": 159,
+    "total_tokens": 646,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2060.929091006983,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 487,
+      "output_tokens": 159,
+      "total_tokens": 646,
+      "time_to_first_token": 2.060654765984509,
+      "duration": 2.0607425539637916,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 487,
+            "output_tokens": 159,
+            "total_tokens": 646,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2035309726,
+              "load_duration": 436075,
+              "prompt_eval_duration": 160926000,
+              "eval_duration": 1808076000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00517_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. The analyst's percentages are consistent with the extracted revenues divided by total FY2022 revenue of USD 66,608 million, and the writer correctly identifies the three categories exceeding 20%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 987,
+    "output_tokens": 188,
+    "total_tokens": 1175,
+    "cached_tokens": 0,
+    "reasoning_tokens": 90,
+    "cost_usd": 0.000423,
+    "latency_ms": 2802.025249984581,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 987,
+      "output_tokens": 188,
+      "total_tokens": 1175,
+      "reasoning_tokens": 90,
+      "time_to_first_token": 2.801041374972556,
+      "duration": 2.801436209003441,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 987,
+            "output_tokens": 188,
+            "total_tokens": 1175,
+            "reasoning_tokens": 90,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 906,
+    "output_tokens": 1510,
+    "total_tokens": 2416,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 16400.819709000643,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 906,
+      "output_tokens": 1510,
+      "total_tokens": 2416,
+      "time_to_first_token": 16.400573534949217,
+      "duration": 16.400654855999164,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 906,
+            "output_tokens": 1510,
+            "total_tokens": 2416,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 16375600670,
+              "load_duration": 505001,
+              "prompt_eval_duration": 242589000,
+              "eval_duration": 16082455000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

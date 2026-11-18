@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst claimed that J&J's FY2022 gross-margin change driver was 26.9 USD billion, based on consolidated earnings before taxes and its percentage of sales.",
+    "reported_metric": "JnJ gross margin change driver (FY2022)",
+    "reported_value": 26.9,
+    "confidence": 0.99,
+    "rationale": "The extractor provided earnings-before-tax and amortization facts, but no gross-margin figure or driver calculation. A01 improperly relabeled earnings-before-tax data as a gross-margin change driver and reports an unsupported 26.9 value. The writer then compounded the issue by presenting FY2022 amortization expense of $4.3 billion as the change driver, even though the evidence gives a level rather than the year-over-year change (which would be a decrease from $4.7 billion to $4.3 billion)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1893,
+    "output_tokens": 462,
+    "total_tokens": 2355,
+    "cached_tokens": 0,
+    "reasoning_tokens": 255,
+    "cost_usd": 0.000933,
+    "latency_ms": 5484.657125023659,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1893,
+      "output_tokens": 462,
+      "total_tokens": 2355,
+      "reasoning_tokens": 255,
+      "time_to_first_token": 5.4839264579932205,
+      "duration": 5.4841728750034235,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1893,
+            "output_tokens": 462,
+            "total_tokens": 2355,
+            "reasoning_tokens": 255,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1960,
+    "output_tokens": 372,
+    "total_tokens": 2332,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4675.791318004485,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1960,
+      "output_tokens": 372,
+      "total_tokens": 2332,
+      "time_to_first_token": 4.675534832989797,
+      "duration": 4.675610605976544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1960,
+            "output_tokens": 372,
+            "total_tokens": 2332,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4645563618,
+              "load_duration": 485168,
+              "prompt_eval_duration": 499288000,
+              "eval_duration": 4066293000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

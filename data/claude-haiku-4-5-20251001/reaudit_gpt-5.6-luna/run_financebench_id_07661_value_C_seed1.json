@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07661_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reported 318,603 USD thousands, and the analyst correctly converted this to 318.603 USD millions. The writer preserved the same metric and value, so no internal inconsistency or apparent error is present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 803,
+    "output_tokens": 174,
+    "total_tokens": 977,
+    "cached_tokens": 0,
+    "reasoning_tokens": 75,
+    "cost_usd": 0.0003694,
+    "latency_ms": 2516.329833015334,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 803,
+      "output_tokens": 174,
+      "total_tokens": 977,
+      "reasoning_tokens": 75,
+      "time_to_first_token": 2.5158872079919092,
+      "duration": 2.516002207994461,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 803,
+            "output_tokens": 174,
+            "total_tokens": 977,
+            "reasoning_tokens": 75,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1326,
+    "output_tokens": 187,
+    "total_tokens": 1513,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002261,
+    "latency_ms": 2555.9900410007685,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1326,
+      "output_tokens": 187,
+      "total_tokens": 1513,
+      "time_to_first_token": 2.555104625003878,
+      "duration": 2.555381167039741,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1326,
+            "output_tokens": 187,
+            "total_tokens": 1513,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

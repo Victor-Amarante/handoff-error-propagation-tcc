@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst reported a 2021-to-2022 revenue growth rate of 21.6%, which is inconsistent with the extracted revenue pairs; 6,201 versus 6,887 implies approximately -10.0%, while 6,805 versus 5,607 implies approximately 21.4%.",
+    "reported_metric": "revenue_growth_rate_2021_to_2022",
+    "reported_value": 21.6,
+    "confidence": 0.99,
+    "rationale": "The extractor values support 88.1% for 6,949 versus 3,694 and approximately 21.4% for 6,805 versus 5,607. The analyst's 21.6% claim does not match any extracted pair, making the analyst the first stage with an incorrect claim. The writer's selected 88.1% value is internally supported, though it does not identify the segment by name."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 952,
+    "output_tokens": 731,
+    "total_tokens": 1683,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010676,
+    "latency_ms": 7318.815375037957,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 952,
+      "output_tokens": 731,
+      "total_tokens": 1683,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.318334791983943,
+      "duration": 7.318518957996275,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 952,
+            "output_tokens": 731,
+            "total_tokens": 1683,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1483,
+    "output_tokens": 272,
+    "total_tokens": 1755,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002843,
+    "latency_ms": 3378.967791039031,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1483,
+      "output_tokens": 272,
+      "total_tokens": 1755,
+      "time_to_first_token": 3.3780670409905724,
+      "duration": 3.3783628329983912,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1483,
+            "output_tokens": 272,
+            "total_tokens": 1755,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

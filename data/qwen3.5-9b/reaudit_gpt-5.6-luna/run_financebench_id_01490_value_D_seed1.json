@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01490_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The gain accruing to Johnson & Johnson was reported as $23 billion in 2023.",
+    "reported_metric": "gain_amount",
+    "reported_value": 23.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's structured value of $23 billion conflicts with its own cited evidence, which explicitly states an approximate gain of $20 billion. The analyst propagated the incorrect value, while the writer ultimately used the evidence-supported $20 billion figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1009,
+    "output_tokens": 216,
+    "total_tokens": 1225,
+    "cached_tokens": 0,
+    "reasoning_tokens": 90,
+    "cost_usd": 0.000461,
+    "latency_ms": 3058.853959024418,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1009,
+      "output_tokens": 216,
+      "total_tokens": 1225,
+      "reasoning_tokens": 90,
+      "time_to_first_token": 3.058090957987588,
+      "duration": 3.0582891249796376,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1009,
+            "output_tokens": 216,
+            "total_tokens": 1225,
+            "reasoning_tokens": 90,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 887,
+    "output_tokens": 845,
+    "total_tokens": 1732,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9089.018829981796,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 887,
+      "output_tokens": 845,
+      "total_tokens": 1732,
+      "time_to_first_token": 9.088734597025905,
+      "duration": 9.088834232999943,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 887,
+            "output_tokens": 845,
+            "total_tokens": 1732,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9061617807,
+              "load_duration": 459557,
+              "prompt_eval_duration": 216006000,
+              "eval_duration": 8791595000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

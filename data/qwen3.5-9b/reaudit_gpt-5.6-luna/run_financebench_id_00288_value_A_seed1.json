@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00288_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extraction labels the $1,874 million balance dated January 28, 2023 as FY_Q2, even though the requested comparison concerns Q2 of FY2024.",
+    "reported_metric": "Cash and cash equivalents",
+    "reported_value": 1874.0,
+    "confidence": 0.84,
+    "rationale": "The extracted dates and fiscal labels are internally inconsistent: January 28, 2023 cannot represent Q2 of FY2024. The analyst then compares FY_Q2 and Q4 in the wrong direction and the writer repeats that conclusion, obscuring the requested FY2023-versus-Q2-FY2024 comparison."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 937,
+    "output_tokens": 1572,
+    "total_tokens": 2509,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1400,
+    "cost_usd": 0.0020737999999999998,
+    "latency_ms": 14516.036166984122,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 937,
+      "output_tokens": 1572,
+      "total_tokens": 2509,
+      "reasoning_tokens": 1400,
+      "time_to_first_token": 14.515384708007332,
+      "duration": 14.51567462499952,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 937,
+            "output_tokens": 1572,
+            "total_tokens": 2509,
+            "reasoning_tokens": 1400,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 777,
+    "output_tokens": 234,
+    "total_tokens": 1011,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2818.1823539780453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 777,
+      "output_tokens": 234,
+      "total_tokens": 1011,
+      "time_to_first_token": 2.817949932999909,
+      "duration": 2.8180223350063898,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 777,
+            "output_tokens": 234,
+            "total_tokens": 1011,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2793290982,
+              "load_duration": 654798,
+              "prompt_eval_duration": 197545000,
+              "eval_duration": 2542962000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01351_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The effective tax rate was 21.6% in FY2023.",
+    "reported_metric": "effective_tax_rate",
+    "reported_value": 21.6,
+    "confidence": 0.99,
+    "rationale": "The 2022 10-K cannot support a FY2023 figure, and the question asks for FY2022. C01 mislabels the 21.6% value as 2023; the analyst then computes a 2021–2023 change and the writer incorrectly relabels it as FY2021–FY2022."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1116,
+    "output_tokens": 315,
+    "total_tokens": 1431,
+    "cached_tokens": 0,
+    "reasoning_tokens": 170,
+    "cost_usd": 0.0006012000000000001,
+    "latency_ms": 3207.1341249975376,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1116,
+      "output_tokens": 315,
+      "total_tokens": 1431,
+      "reasoning_tokens": 170,
+      "time_to_first_token": 3.2063972909818403,
+      "duration": 3.206550040980801,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1116,
+            "output_tokens": 315,
+            "total_tokens": 1431,
+            "reasoning_tokens": 170,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1700,
+    "output_tokens": 168,
+    "total_tokens": 1868,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00254,
+    "latency_ms": 2556.437499995809,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1700,
+      "output_tokens": 168,
+      "total_tokens": 1868,
+      "time_to_first_token": 2.5555063339998014,
+      "duration": 2.5558074170257896,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1700,
+            "output_tokens": 168,
+            "total_tokens": 1868,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

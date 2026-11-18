@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00669_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Consolidated earnings before provision for taxes in FY2022 was reported as $27.1 billion, although the cited evidence states $21.7 billion.",
+    "reported_metric": "earnings_before_tax",
+    "reported_value": 27.1,
+    "confidence": 0.99,
+    "rationale": "The extractor’s structured FY2022 value directly contradicts its own cited evidence, which says earnings before taxes were $21.7 billion. This is the earliest identifiable error; later outputs also fail to answer what drove gross-margin change, but they derive from the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1918,
+    "output_tokens": 233,
+    "total_tokens": 2151,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.0006632000000000001,
+    "latency_ms": 2907.773833023384,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1918,
+      "output_tokens": 233,
+      "total_tokens": 2151,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.907123041979503,
+      "duration": 2.9073013329762034,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1918,
+            "output_tokens": 233,
+            "total_tokens": 2151,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2565,
+    "output_tokens": 182,
+    "total_tokens": 2747,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003475,
+    "latency_ms": 3654.9155000247993,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2565,
+      "output_tokens": 182,
+      "total_tokens": 2747,
+      "time_to_first_token": 3.6540960000129417,
+      "duration": 3.6543950419873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2565,
+            "output_tokens": 182,
+            "total_tokens": 2747,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

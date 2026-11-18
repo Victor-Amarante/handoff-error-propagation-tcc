@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04672_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FY2018 net PP&E of $8.738 billion is internally consistent and correctly rounded to $8.74 billion.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor reports FY2018 net PP&E of $8,738 million, and the analyst converts this to $8.738 billion. The writer's $8.74 billion is a valid rounding. Although the gross PP&E record has a conflicting year field (2019), it does not affect the stated net FY2018 value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 809,
+    "output_tokens": 647,
+    "total_tokens": 1456,
+    "cached_tokens": 0,
+    "reasoning_tokens": 492,
+    "cost_usd": 0.0009382,
+    "latency_ms": 7125.912332965527,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 809,
+      "output_tokens": 647,
+      "total_tokens": 1456,
+      "reasoning_tokens": 492,
+      "time_to_first_token": 7.125209000019822,
+      "duration": 7.125452333013527,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 809,
+            "output_tokens": 647,
+            "total_tokens": 1456,
+            "reasoning_tokens": 492,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 667,
+    "output_tokens": 150,
+    "total_tokens": 817,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2043.2255800114945,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 667,
+      "output_tokens": 150,
+      "total_tokens": 817,
+      "time_to_first_token": 2.0429919169982895,
+      "duration": 2.0430647330358624,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 667,
+            "output_tokens": 150,
+            "total_tokens": 817,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2018092038,
+              "load_duration": 627889,
+              "prompt_eval_duration": 177215000,
+              "eval_duration": 1767538000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

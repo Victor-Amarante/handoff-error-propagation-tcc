@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03882_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, and writer consistently report FY2020 net trade receivables of USD 1,615.9 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages preserve the same metric, value, year, unit, source, and page provenance. No internal inconsistency or unsupported transformation appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 848,
+    "output_tokens": 214,
+    "total_tokens": 1062,
+    "cached_tokens": 0,
+    "reasoning_tokens": 95,
+    "cost_usd": 0.0004264,
+    "latency_ms": 2675.1315420260653,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 848,
+      "output_tokens": 214,
+      "total_tokens": 1062,
+      "reasoning_tokens": 95,
+      "time_to_first_token": 2.6746392500353977,
+      "duration": 2.6747677079983987,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 848,
+            "output_tokens": 214,
+            "total_tokens": 1062,
+            "reasoning_tokens": 95,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1387,
+    "output_tokens": 174,
+    "total_tokens": 1561,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002257,
+    "latency_ms": 3076.9046249915846,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1387,
+      "output_tokens": 174,
+      "total_tokens": 1561,
+      "time_to_first_token": 3.075873458990827,
+      "duration": 3.0761736670392565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1387,
+            "output_tokens": 174,
+            "total_tokens": 1561,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

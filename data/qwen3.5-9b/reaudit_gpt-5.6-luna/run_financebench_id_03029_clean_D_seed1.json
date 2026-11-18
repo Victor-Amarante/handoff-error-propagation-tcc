@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03029_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the pipeline consistently reports FY2018 purchases of PP&E of 1,577 USD millions, shown as a cash outflow in parentheses.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, and writer all agree on 1,577 USD millions for FY2018, and the cash flow statement evidence lists (1,577), where parentheses denote an outflow."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 924,
+    "output_tokens": 198,
+    "total_tokens": 1122,
+    "cached_tokens": 0,
+    "reasoning_tokens": 69,
+    "cost_usd": 0.00042239999999999997,
+    "latency_ms": 2965.103958034888,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 924,
+      "output_tokens": 198,
+      "total_tokens": 1122,
+      "reasoning_tokens": 69,
+      "time_to_first_token": 2.9645570419961587,
+      "duration": 2.96474629198201,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 924,
+            "output_tokens": 198,
+            "total_tokens": 1122,
+            "reasoning_tokens": 69,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 807,
+    "output_tokens": 219,
+    "total_tokens": 1026,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2806.8959719967097,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 807,
+      "output_tokens": 219,
+      "total_tokens": 1026,
+      "time_to_first_token": 2.8066539709689096,
+      "duration": 2.8067284370190464,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 807,
+            "output_tokens": 219,
+            "total_tokens": 1026,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2779182087,
+              "load_duration": 455374,
+              "prompt_eval_duration": 212661000,
+              "eval_duration": 2494706000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

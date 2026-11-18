@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01275_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Total cash provided by operating activities in FY2023 was estimated at 1,824.0 USD_M.",
+    "reported_metric": "Total cash provided by operating activities in FY2023",
+    "reported_value": 1824.0,
+    "confidence": 0.98,
+    "rationale": "Extractor claim C01 explicitly labels 1,824 as year 2024, while analyst claim A01 incorrectly relabels it as FY2023. The writer then relies on that misdated claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1645,
+    "output_tokens": 810,
+    "total_tokens": 2455,
+    "cached_tokens": 0,
+    "reasoning_tokens": 672,
+    "cost_usd": 0.001301,
+    "latency_ms": 9433.286374958698,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1645,
+      "output_tokens": 810,
+      "total_tokens": 2455,
+      "reasoning_tokens": 672,
+      "time_to_first_token": 9.432608917006291,
+      "duration": 9.43282204202842,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1645,
+            "output_tokens": 810,
+            "total_tokens": 2455,
+            "reasoning_tokens": 672,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1684,
+    "output_tokens": 1544,
+    "total_tokens": 3228,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 17285.30267602764,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1684,
+      "output_tokens": 1544,
+      "total_tokens": 3228,
+      "time_to_first_token": 17.285056345979683,
+      "duration": 17.285139272978995,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1684,
+            "output_tokens": 1544,
+            "total_tokens": 3228,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 17259682979,
+              "load_duration": 584204,
+              "prompt_eval_duration": 412066000,
+              "eval_duration": 16785639000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

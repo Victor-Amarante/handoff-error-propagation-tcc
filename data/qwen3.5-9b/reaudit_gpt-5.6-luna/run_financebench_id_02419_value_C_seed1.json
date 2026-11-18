@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "The analyst concluded that Pfizer had no spin-off, assigning a spin-off confirmation value of 0 based only on separation-cost data.",
+    "reported_metric": "spin-off confirmation",
+    "reported_value": 0.0,
+    "confidence": 0.94,
+    "rationale": "The extractor claims report expected separation costs of USD 805 million and that 90% of costs had been incurred, but neither claim supports a definitive no-spin-off conclusion. A03 is therefore the first unsupported claim; the writer merely propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1073,
+    "output_tokens": 648,
+    "total_tokens": 1721,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009922,
+    "latency_ms": 7459.914040984586,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1073,
+      "output_tokens": 648,
+      "total_tokens": 1721,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.459019834001083,
+      "duration": 7.459290166967548,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1073,
+            "output_tokens": 648,
+            "total_tokens": 1721,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 990,
+    "output_tokens": 334,
+    "total_tokens": 1324,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4010.0145139731467,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 990,
+      "output_tokens": 334,
+      "total_tokens": 1324,
+      "time_to_first_token": 4.0097791599691845,
+      "duration": 4.009852511982899,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 990,
+            "output_tokens": 334,
+            "total_tokens": 1324,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3984185433,
+              "load_duration": 465745,
+              "prompt_eval_duration": 268255000,
+              "eval_duration": 3641994000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

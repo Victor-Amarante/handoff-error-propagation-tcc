@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07507_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted values and the 65.4% year-over-year calculation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculation ((1,493,600 - 903,095) / 903,095) × 100 equals approximately 65.4%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 762,
+    "output_tokens": 363,
+    "total_tokens": 1125,
+    "cached_tokens": 0,
+    "reasoning_tokens": 248,
+    "cost_usd": 0.000588,
+    "latency_ms": 3802.2400000481866,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 762,
+      "output_tokens": 363,
+      "total_tokens": 1125,
+      "reasoning_tokens": 248,
+      "time_to_first_token": 3.7998103330028243,
+      "duration": 3.801071750000119,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 762,
+            "output_tokens": 363,
+            "total_tokens": 1125,
+            "reasoning_tokens": 248,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1272,
+    "output_tokens": 173,
+    "total_tokens": 1445,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002137,
+    "latency_ms": 2387.2702500084415,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1272,
+      "output_tokens": 173,
+      "total_tokens": 1445,
+      "time_to_first_token": 2.3863573750131764,
+      "duration": 2.386663708020933,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1272,
+            "output_tokens": 173,
+            "total_tokens": 1445,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

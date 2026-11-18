@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04412_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2020 asset turnover ratio is 1.14.",
+    "reported_metric": "Asset Turnover Ratio (FY2020)",
+    "reported_value": 1.14,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, average total assets are (47,528 + 50,710) / 2 = 49,119 million. Dividing FY2020 revenue of 56,398 million by 49,119 gives approximately 1.1482, which rounds to 1.15, not 1.14. The first incorrect claim appears in the analyst output; the writer repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 779,
+    "output_tokens": 304,
+    "total_tokens": 1083,
+    "cached_tokens": 0,
+    "reasoning_tokens": 142,
+    "cost_usd": 0.0005206,
+    "latency_ms": 3236.2094579730183,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 304,
+      "total_tokens": 1083,
+      "reasoning_tokens": 142,
+      "time_to_first_token": 3.235491917002946,
+      "duration": 3.2356928329681978,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 304,
+            "total_tokens": 1083,
+            "reasoning_tokens": 142,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 629,
+    "output_tokens": 161,
+    "total_tokens": 790,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2075.758375984151,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 629,
+      "output_tokens": 161,
+      "total_tokens": 790,
+      "time_to_first_token": 2.07552322401898,
+      "duration": 2.0755960550159216,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 629,
+            "output_tokens": 161,
+            "total_tokens": 790,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2049917995,
+              "load_duration": 626923,
+              "prompt_eval_duration": 181876000,
+              "eval_duration": 1793159000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

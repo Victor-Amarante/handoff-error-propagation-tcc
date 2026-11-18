@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02119_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported TBVPS of 66.56 with the unit USD_B, which is inconsistent with a per-share metric and therefore cannot directly support a liquidation value of $66.56 per shareholder share.",
+    "reported_metric": "TBVPS",
+    "reported_value": 66.56,
+    "confidence": 0.88,
+    "rationale": "The first trace inconsistency appears in the extractor output: TBVPS is a per-share measure, but its unit is given as USD_B (billions of dollars). The analyst then silently changes the unit to USD and reinterprets the figure as liquidation value per share, and the writer repeats that unsupported conversion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 656,
+    "output_tokens": 677,
+    "total_tokens": 1333,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009436000000000001,
+    "latency_ms": 7036.012166994624,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 656,
+      "output_tokens": 677,
+      "total_tokens": 1333,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.0355998749728315,
+      "duration": 7.035714207973797,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 656,
+            "output_tokens": 677,
+            "total_tokens": 1333,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 477,
+    "output_tokens": 272,
+    "total_tokens": 749,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3259.8651509615593,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 477,
+      "output_tokens": 272,
+      "total_tokens": 749,
+      "time_to_first_token": 3.2595922269974835,
+      "duration": 3.2596608549938537,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 477,
+            "output_tokens": 272,
+            "total_tokens": 749,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3233282793,
+              "load_duration": 453409,
+              "prompt_eval_duration": 136394000,
+              "eval_duration": 3049087000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

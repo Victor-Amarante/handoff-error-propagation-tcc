@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01226_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor recorded SG&A as 1,200,000 USD millions, although the cited evidence says $1.2 billion, which equals 1,200 USD millions.",
+    "reported_metric": "SG&A",
+    "reported_value": 1200000.0,
+    "confidence": 0.96,
+    "rationale": "C01 is internally inconsistent: its value and unit imply $1.2 trillion, while its evidence supports $1.2 billion. This is the earliest clear numerical error in the trace. C02 also has a year-label mismatch, but its amount is consistent with the evidence and the analyst subsequently labels it 2022."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1094,
+    "output_tokens": 1014,
+    "total_tokens": 2108,
+    "cached_tokens": 0,
+    "reasoning_tokens": 846,
+    "cost_usd": 0.0014356,
+    "latency_ms": 9364.786249992903,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1094,
+      "output_tokens": 1014,
+      "total_tokens": 2108,
+      "reasoning_tokens": 846,
+      "time_to_first_token": 9.364213583990932,
+      "duration": 9.364420624973718,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1094,
+            "output_tokens": 1014,
+            "total_tokens": 2108,
+            "reasoning_tokens": 846,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 996,
+    "output_tokens": 211,
+    "total_tokens": 1207,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2712.232390011195,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 996,
+      "output_tokens": 211,
+      "total_tokens": 1207,
+      "time_to_first_token": 2.7120007930207066,
+      "duration": 2.7120717340148985,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 996,
+            "output_tokens": 211,
+            "total_tokens": 1207,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2687162691,
+              "load_duration": 657956,
+              "prompt_eval_duration": 248012000,
+              "eval_duration": 2364306000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

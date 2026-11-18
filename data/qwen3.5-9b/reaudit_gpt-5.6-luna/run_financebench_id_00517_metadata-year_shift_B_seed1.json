@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00517_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Commercial Airplanes FY2022 revenue as USD 25,867 million, but tagged the record as year 2023, making the FY2022 input inconsistent and incorrect.",
+    "reported_metric": "Commercial Airplanes revenue FY2022",
+    "reported_value": 25867.0,
+    "confidence": 0.98,
+    "rationale": "The extractor's Commercial Airplanes record is the first inconsistency: it claims FY2022 while carrying year 2023. The analyst then uses that value to calculate the 38.84% FY2022 share, propagating the error into the final answer. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 976,
+    "output_tokens": 674,
+    "total_tokens": 1650,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001004,
+    "latency_ms": 6741.996875032783,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 976,
+      "output_tokens": 674,
+      "total_tokens": 1650,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.7417234589811414,
+      "duration": 6.741788125014864,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 976,
+            "output_tokens": 674,
+            "total_tokens": 1650,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 885,
+    "output_tokens": 235,
+    "total_tokens": 1120,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2972.322328016162,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 885,
+      "output_tokens": 235,
+      "total_tokens": 1120,
+      "time_to_first_token": 2.9720840909867547,
+      "duration": 2.972157693991903,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 885,
+            "output_tokens": 235,
+            "total_tokens": 1120,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2946671740,
+              "load_duration": 471063,
+              "prompt_eval_duration": 216213000,
+              "eval_duration": 2680013000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01858_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, writer, and final answer are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages report the same metric and value: a 65-year dividend increase streak in 2024. No contradictory provenance or internal inconsistency appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 615,
+    "output_tokens": 175,
+    "total_tokens": 790,
+    "cached_tokens": 0,
+    "reasoning_tokens": 67,
+    "cost_usd": 0.000333,
+    "latency_ms": 2485.953416035045,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 615,
+      "output_tokens": 175,
+      "total_tokens": 790,
+      "reasoning_tokens": 67,
+      "time_to_first_token": 2.4853803330333903,
+      "duration": 2.4855527080362663,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 615,
+            "output_tokens": 175,
+            "total_tokens": 790,
+            "reasoning_tokens": 67,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 424,
+    "output_tokens": 145,
+    "total_tokens": 569,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1978.6723740398884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 424,
+      "output_tokens": 145,
+      "total_tokens": 569,
+      "time_to_first_token": 1.9784102750127204,
+      "duration": 1.9784938149969094,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 424,
+            "output_tokens": 145,
+            "total_tokens": 569,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1951276353,
+              "load_duration": 396609,
+              "prompt_eval_duration": 127685000,
+              "eval_duration": 1759552000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

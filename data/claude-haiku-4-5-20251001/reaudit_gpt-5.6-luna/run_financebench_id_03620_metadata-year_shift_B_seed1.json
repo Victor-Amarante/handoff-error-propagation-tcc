@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03620_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo's FY2022 unadjusted EBITDA less capex is -$1,932 million.",
+    "reported_metric": "unadjusted_ebitda_less_capex",
+    "reported_value": -1932.0,
+    "confidence": 0.98,
+    "rationale": "The extractor lists operating profit of $11,512 million for 2023, plus 2022 depreciation and amortization of $2,763 million and 2022 capital spending of $5,207 million. Even using those listed values, the calculation is 11,512 + 2,763 - 5,207 = $9,068 million, not -$1,932 million. The writer merely repeats the analyst's incorrect result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 829,
+    "output_tokens": 882,
+    "total_tokens": 1711,
+    "cached_tokens": 0,
+    "reasoning_tokens": 694,
+    "cost_usd": 0.0012241999999999997,
+    "latency_ms": 8499.416874954477,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 829,
+      "output_tokens": 882,
+      "total_tokens": 1711,
+      "reasoning_tokens": 694,
+      "time_to_first_token": 8.498801709036343,
+      "duration": 8.49899487500079,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 829,
+            "output_tokens": 882,
+            "total_tokens": 1711,
+            "reasoning_tokens": 694,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1382,
+    "output_tokens": 173,
+    "total_tokens": 1555,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002247,
+    "latency_ms": 3273.1017919722944,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1382,
+      "output_tokens": 173,
+      "total_tokens": 1555,
+      "time_to_first_token": 3.272595290967729,
+      "duration": 3.2727280000108294,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1382,
+            "output_tokens": 173,
+            "total_tokens": 1555,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

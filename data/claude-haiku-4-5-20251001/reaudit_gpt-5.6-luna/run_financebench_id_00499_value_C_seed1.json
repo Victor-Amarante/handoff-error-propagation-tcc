@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00499_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported ratios are internally consistent with the extracted FY2022 values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The calculations check out: net PPE divided by net sales is approximately 21.2%, net PPE divided by total assets is approximately 19.8%, and capital expenditures divided by net sales is approximately 4.0%. The writer's conclusion is a qualitative interpretation of these figures, with no internally demonstrable factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1523,
+    "output_tokens": 352,
+    "total_tokens": 1875,
+    "cached_tokens": 0,
+    "reasoning_tokens": 213,
+    "cost_usd": 0.000727,
+    "latency_ms": 3708.696665999014,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1523,
+      "output_tokens": 352,
+      "total_tokens": 1875,
+      "reasoning_tokens": 213,
+      "time_to_first_token": 3.7081400839961134,
+      "duration": 3.7082924169953912,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1523,
+            "output_tokens": 352,
+            "total_tokens": 1875,
+            "reasoning_tokens": 213,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2180,
+    "output_tokens": 227,
+    "total_tokens": 2407,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003315,
+    "latency_ms": 3503.1708329916,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2180,
+      "output_tokens": 227,
+      "total_tokens": 2407,
+      "time_to_first_token": 3.502147999999579,
+      "duration": 3.5024481670116074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2180,
+            "output_tokens": 227,
+            "total_tokens": 2407,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

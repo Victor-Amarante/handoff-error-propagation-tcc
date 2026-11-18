@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst claimed that the operating-margin analysis constraint was 0.0 despite inputs indicating a $2.1 billion litigation charge and a 1.0 ratio change in SG&A as a percentage of sales.",
+    "reported_metric": "operating_margin_analysis_constraint",
+    "reported_value": 0.0,
+    "confidence": 0.9,
+    "rationale": "The extractor claims are internally coherent, but the analyst's derived 0.0 constraint is not supported by them and conflicts with the writer's conclusion that significant charges distorted operating-margin interpretation. The writer then propagated this unsupported conclusion and additionally mentioned restructuring charges not present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 984,
+    "output_tokens": 550,
+    "total_tokens": 1534,
+    "cached_tokens": 0,
+    "reasoning_tokens": 390,
+    "cost_usd": 0.0008567999999999999,
+    "latency_ms": 5533.774042036384,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 984,
+      "output_tokens": 550,
+      "total_tokens": 1534,
+      "reasoning_tokens": 390,
+      "time_to_first_token": 5.533068291959353,
+      "duration": 5.533343374961987,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 984,
+            "output_tokens": 550,
+            "total_tokens": 1534,
+            "reasoning_tokens": 390,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1540,
+    "output_tokens": 183,
+    "total_tokens": 1723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002455,
+    "latency_ms": 2449.291708006058,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1540,
+      "output_tokens": 183,
+      "total_tokens": 1723,
+      "time_to_first_token": 2.448559459007811,
+      "duration": 2.448785874992609,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1540,
+            "output_tokens": 183,
+            "total_tokens": 1723,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

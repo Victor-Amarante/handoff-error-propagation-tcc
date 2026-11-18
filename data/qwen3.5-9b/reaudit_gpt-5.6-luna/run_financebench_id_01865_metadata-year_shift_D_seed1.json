@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01865_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C09",
+    "root_cause_claim_text": "The extractor reported Consumer's organic sales contribution to 2022 sales change as 0.0%, despite the evidence showing (0.9%), i.e. -0.9%.",
+    "reported_metric": "Consumer - Organic sales contribution to sales change",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "C09 is internally inconsistent: its numeric value is 0.0, while its evidence explicitly shows (0.9). The analyst and writer propagated the evidence-derived -0.9% value, but the first incorrect claim appeared in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2997,
+    "output_tokens": 369,
+    "total_tokens": 3366,
+    "cached_tokens": 0,
+    "reasoning_tokens": 214,
+    "cost_usd": 0.0010422,
+    "latency_ms": 4433.5767920129,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2997,
+      "output_tokens": 369,
+      "total_tokens": 3366,
+      "reasoning_tokens": 214,
+      "time_to_first_token": 4.432742416975088,
+      "duration": 4.433101583970711,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2997,
+            "output_tokens": 369,
+            "total_tokens": 3366,
+            "reasoning_tokens": 214,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3188,
+    "output_tokens": 212,
+    "total_tokens": 3400,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3277.8198610176332,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3188,
+      "output_tokens": 212,
+      "total_tokens": 3400,
+      "time_to_first_token": 3.277584070980083,
+      "duration": 3.277655527985189,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3188,
+            "output_tokens": 212,
+            "total_tokens": 3400,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3252579141,
+              "load_duration": 666575,
+              "prompt_eval_duration": 761555000,
+              "eval_duration": 2431293000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

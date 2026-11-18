@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD's FY22 net income was reported as USD 3,120 million, although the attached evidence states USD 1,320 million.",
+    "reported_metric": "net income",
+    "reported_value": 3120.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts directly with its own evidence. The later operating, investing, and financing totals are internally consistent and correctly identify operating activities as the largest positive cash flow, but C01 is the first incorrect claim in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 4144,
+    "output_tokens": 305,
+    "total_tokens": 4449,
+    "cached_tokens": 0,
+    "reasoning_tokens": 168,
+    "cost_usd": 0.0011948000000000002,
+    "latency_ms": 3477.537958009634,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4144,
+      "output_tokens": 305,
+      "total_tokens": 4449,
+      "reasoning_tokens": 168,
+      "time_to_first_token": 3.4770578750176355,
+      "duration": 3.4771917079924606,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4144,
+            "output_tokens": 305,
+            "total_tokens": 4449,
+            "reasoning_tokens": 168,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4739,
+    "output_tokens": 152,
+    "total_tokens": 4891,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2948.4423350077122,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4739,
+      "output_tokens": 152,
+      "total_tokens": 4891,
+      "time_to_first_token": 2.9482070109806955,
+      "duration": 2.948277239978779,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4739,
+            "output_tokens": 152,
+            "total_tokens": 4891,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2923142870,
+              "load_duration": 748583,
+              "prompt_eval_duration": 1102448000,
+              "eval_duration": 1760627000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

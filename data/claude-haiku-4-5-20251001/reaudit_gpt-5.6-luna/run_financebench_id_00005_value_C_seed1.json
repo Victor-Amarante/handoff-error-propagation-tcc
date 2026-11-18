@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00005_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported working capital of negative $422 million is consistent with current assets of $4,753 million minus current liabilities of $5,175 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculation is internally consistent: $4,753M − $5,175M = −$422M. The analyst and writer correctly derived and reported negative working capital."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 922,
+    "output_tokens": 162,
+    "total_tokens": 1084,
+    "cached_tokens": 0,
+    "reasoning_tokens": 37,
+    "cost_usd": 0.0003788,
+    "latency_ms": 2438.085542002227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 922,
+      "output_tokens": 162,
+      "total_tokens": 1084,
+      "reasoning_tokens": 37,
+      "time_to_first_token": 2.4377027500304393,
+      "duration": 2.4378199169877917,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 922,
+            "output_tokens": 162,
+            "total_tokens": 1084,
+            "reasoning_tokens": 37,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1468,
+    "output_tokens": 172,
+    "total_tokens": 1640,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002328,
+    "latency_ms": 2296.417833014857,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1468,
+      "output_tokens": 172,
+      "total_tokens": 1640,
+      "time_to_first_token": 2.2956707090488635,
+      "duration": 2.2959572500549257,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1468,
+            "output_tokens": 172,
+            "total_tokens": 1640,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

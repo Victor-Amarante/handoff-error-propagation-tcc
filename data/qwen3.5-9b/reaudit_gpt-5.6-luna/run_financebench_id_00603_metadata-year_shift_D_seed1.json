@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00603_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Ulta Beauty's merchandise inventories increased by $104.2 million at the end of FY2023, primarily driven by opening 47 new stores since January 29, 2022.",
+    "reported_metric": "driver_of_inventory_increase",
+    "reported_value": 104.2,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst consistently identify the $104.2 million increase as occurring in fiscal 2022, not FY2023. The writer is the first stage that relabels this FY2022 claim as an FY2023 result; its structured year remains 2022, creating an internal mismatch."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1722,
+    "output_tokens": 673,
+    "total_tokens": 2395,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001152,
+    "latency_ms": 6452.238917001523,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1722,
+      "output_tokens": 673,
+      "total_tokens": 2395,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.451720833021682,
+      "duration": 6.4518673330312595,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1722,
+            "output_tokens": 673,
+            "total_tokens": 2395,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1762,
+    "output_tokens": 2046,
+    "total_tokens": 3808,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21760.320447967388,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1762,
+      "output_tokens": 2046,
+      "total_tokens": 3808,
+      "time_to_first_token": 21.7600562889711,
+      "duration": 21.76014008198399,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1762,
+            "output_tokens": 2046,
+            "total_tokens": 3808,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21730788845,
+              "load_duration": 496804,
+              "prompt_eval_duration": 448460000,
+              "eval_duration": 21221621000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

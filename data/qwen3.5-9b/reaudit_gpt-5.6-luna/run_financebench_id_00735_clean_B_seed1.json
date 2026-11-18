@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00735_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor reports zero legal-proceedings impact for both FY2022 and FY2021, and the analyst and writer preserve those values consistently. The final wording limits the conclusion to no material impact; it does not assert that PepsiCo had no ongoing legal proceedings."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 746,
+    "output_tokens": 620,
+    "total_tokens": 1366,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0008932,
+    "latency_ms": 6805.614999961108,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 746,
+      "output_tokens": 620,
+      "total_tokens": 1366,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.804829625005368,
+      "duration": 6.805107708030846,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 746,
+            "output_tokens": 620,
+            "total_tokens": 1366,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 577,
+    "output_tokens": 563,
+    "total_tokens": 1140,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6450.08376496844,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 577,
+      "output_tokens": 563,
+      "total_tokens": 1140,
+      "time_to_first_token": 6.4497906810138375,
+      "duration": 6.449883962981403,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 577,
+            "output_tokens": 563,
+            "total_tokens": 1140,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6420636821,
+              "load_duration": 452580,
+              "prompt_eval_duration": 178611000,
+              "eval_duration": 6175073000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

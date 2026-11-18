@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00917_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMD's FY22 operating margin was 15.38%.",
+    "reported_metric": "operating_margin_2022",
+    "reported_value": 15.38,
+    "confidence": 0.93,
+    "rationale": "The extractor supplied operating income figures but no revenue or margin data, so the analyst introduced unsupported margin percentages. The writer then repeated the unsupported FY22 margin claim. The trace also does not provide any substantiated driver of the change."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 783,
+    "output_tokens": 634,
+    "total_tokens": 1417,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009174,
+    "latency_ms": 6862.732624984346,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 783,
+      "output_tokens": 634,
+      "total_tokens": 1417,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.862152208050247,
+      "duration": 6.86233437503688,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 783,
+            "output_tokens": 634,
+            "total_tokens": 1417,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 637,
+    "output_tokens": 292,
+    "total_tokens": 929,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3525.6096129887737,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 637,
+      "output_tokens": 292,
+      "total_tokens": 929,
+      "time_to_first_token": 3.5253674519481137,
+      "duration": 3.5254354779608548,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 637,
+            "output_tokens": 292,
+            "total_tokens": 929,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3494340287,
+              "load_duration": 462499,
+              "prompt_eval_duration": 181440000,
+              "eval_duration": 3244290000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

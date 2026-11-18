@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00288_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2024 cash and cash equivalents balance was reported as $781 million, although the extractor reported $1,093 million for FY2024.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 781.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values imply a drop of $781 million, or approximately 41.7% of $1,874 million, but $781 million is the absolute decline rather than the Q2 FY2024 cash balance. The analyst first mislabels this difference as the FY2024 balance, and the writer propagates it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 788,
+    "output_tokens": 298,
+    "total_tokens": 1086,
+    "cached_tokens": 0,
+    "reasoning_tokens": 140,
+    "cost_usd": 0.0005152000000000001,
+    "latency_ms": 3196.226249972824,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 788,
+      "output_tokens": 298,
+      "total_tokens": 1086,
+      "reasoning_tokens": 140,
+      "time_to_first_token": 3.1958855420234613,
+      "duration": 3.195963334001135,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 788,
+            "output_tokens": 298,
+            "total_tokens": 1086,
+            "reasoning_tokens": 140,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1308,
+    "output_tokens": 230,
+    "total_tokens": 1538,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002458,
+    "latency_ms": 3708.64204200916,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1308,
+      "output_tokens": 230,
+      "total_tokens": 1538,
+      "time_to_first_token": 3.7077271250309423,
+      "duration": 3.708035166026093,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1308,
+            "output_tokens": 230,
+            "total_tokens": 1538,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01981_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extractor reports a 0% year-over-year card member retention status for 2022, and the analyst and writer consistently interpret this as no decline in the membership base. No contradictory evidence or unsupported numerical change appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 676,
+    "output_tokens": 419,
+    "total_tokens": 1095,
+    "cached_tokens": 0,
+    "reasoning_tokens": 317,
+    "cost_usd": 0.000638,
+    "latency_ms": 4769.671000016388,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 676,
+      "output_tokens": 419,
+      "total_tokens": 1095,
+      "reasoning_tokens": 317,
+      "time_to_first_token": 4.76915274997009,
+      "duration": 4.769330832990818,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 676,
+            "output_tokens": 419,
+            "total_tokens": 1095,
+            "reasoning_tokens": 317,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 478,
+    "output_tokens": 2391,
+    "total_tokens": 2869,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 25406.079330015928,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 478,
+      "output_tokens": 2391,
+      "total_tokens": 2869,
+      "time_to_first_token": 25.40583163400879,
+      "duration": 25.405920832999982,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 478,
+            "output_tokens": 2391,
+            "total_tokens": 2869,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 25378616134,
+              "load_duration": 450264,
+              "prompt_eval_duration": 136275000,
+              "eval_duration": 25190680000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

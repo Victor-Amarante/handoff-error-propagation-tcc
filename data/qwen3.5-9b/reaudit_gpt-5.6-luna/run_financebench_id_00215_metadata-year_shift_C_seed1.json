@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00215_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Verizon's FY2022 capital-intensity ratio is 34.62 USD million per 100 USD of revenue, based on net PP&E divided by revenue.",
+    "reported_metric": "capital_intensity_analysis_verizon_fy2022",
+    "reported_value": 34.62,
+    "confidence": 0.98,
+    "rationale": "A01 derives from C07 (net PP&E of 107,434) and C14 (revenue of 136,835), which implies approximately 78.51 USD million per 100 USD of revenue, not 34.62. The trace also contains no capital-expenditure figure, so the writer's description of the value as capex is unsupported and compounds the analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2116,
+    "output_tokens": 1316,
+    "total_tokens": 3432,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1124,
+    "cost_usd": 0.0020024,
+    "latency_ms": 13295.756542007439,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2116,
+      "output_tokens": 1316,
+      "total_tokens": 3432,
+      "reasoning_tokens": 1124,
+      "time_to_first_token": 13.295297292002942,
+      "duration": 13.295432417013217,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2116,
+            "output_tokens": 1316,
+            "total_tokens": 3432,
+            "reasoning_tokens": 1124,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2297,
+    "output_tokens": 1302,
+    "total_tokens": 3599,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14791.497797996271,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2297,
+      "output_tokens": 1302,
+      "total_tokens": 3599,
+      "time_to_first_token": 14.791261944978032,
+      "duration": 14.791339755989611,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2297,
+            "output_tokens": 1302,
+            "total_tokens": 3599,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14764411895,
+              "load_duration": 510745,
+              "prompt_eval_duration": 543388000,
+              "eval_duration": 14167261000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

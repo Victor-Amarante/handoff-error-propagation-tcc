@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Verizon's gross property, plant and equipment was reported as $370,689 million, although the evidence states $307,689 million and net PPE plus accumulated depreciation also equals $307,689 million.",
+    "reported_metric": "property_plant_equipment_gross",
+    "reported_value": 370689.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts directly with its evidence and with the internal reconciliation: $107,434 million net PPE plus $200,255 million accumulated depreciation equals $307,689 million. The incorrect gross PPE value propagates to analyst claim A03 and the writer's conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1704,
+    "output_tokens": 275,
+    "total_tokens": 1979,
+    "cached_tokens": 0,
+    "reasoning_tokens": 112,
+    "cost_usd": 0.0006707999999999999,
+    "latency_ms": 3216.2109590135515,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1704,
+      "output_tokens": 275,
+      "total_tokens": 1979,
+      "reasoning_tokens": 112,
+      "time_to_first_token": 3.215755207987968,
+      "duration": 3.215900374983903,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1704,
+            "output_tokens": 275,
+            "total_tokens": 1979,
+            "reasoning_tokens": 112,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2390,
+    "output_tokens": 177,
+    "total_tokens": 2567,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003275,
+    "latency_ms": 3687.154290964827,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2390,
+      "output_tokens": 177,
+      "total_tokens": 2567,
+      "time_to_first_token": 3.68610945797991,
+      "duration": 3.686416000011377,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2390,
+            "output_tokens": 177,
+            "total_tokens": 2567,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

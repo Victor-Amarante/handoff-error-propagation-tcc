@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00669_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly characterized earnings-before-tax margin as operating profitability or operating margin, reporting a decline from 24.3% to 22.9%.",
+    "reported_metric": "operating margin (misstated as earnings before tax percentage of sales)",
+    "reported_value": 22.9,
+    "confidence": 0.98,
+    "rationale": "The extractor labels the figures as earnings before tax percentage of sales, not operating margin. The analyst first changes that metric's meaning; the writer repeats the same mischaracterization."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1149,
+    "output_tokens": 407,
+    "total_tokens": 1556,
+    "cached_tokens": 0,
+    "reasoning_tokens": 269,
+    "cost_usd": 0.0007182,
+    "latency_ms": 4668.419583002105,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1149,
+      "output_tokens": 407,
+      "total_tokens": 1556,
+      "reasoning_tokens": 269,
+      "time_to_first_token": 4.665804249991197,
+      "duration": 4.666711000027135,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1149,
+            "output_tokens": 407,
+            "total_tokens": 1556,
+            "reasoning_tokens": 269,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1691,
+    "output_tokens": 202,
+    "total_tokens": 1893,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002701,
+    "latency_ms": 2914.3804580089636,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1691,
+      "output_tokens": 202,
+      "total_tokens": 1893,
+      "time_to_first_token": 2.9134602079866454,
+      "duration": 2.9137769999797456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1691,
+            "output_tokens": 202,
+            "total_tokens": 1893,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

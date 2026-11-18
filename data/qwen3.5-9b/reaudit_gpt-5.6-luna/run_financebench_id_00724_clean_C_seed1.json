@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00724_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. The reported -74% decline for Developed Rest of World is supported by extractor claim C09 and is the largest drop among the listed regions (-74%, versus -56%, -53%, and -45%)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2162,
+    "output_tokens": 213,
+    "total_tokens": 2375,
+    "cached_tokens": 0,
+    "reasoning_tokens": 112,
+    "cost_usd": 0.000688,
+    "latency_ms": 2387.657625018619,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2162,
+      "output_tokens": 213,
+      "total_tokens": 2375,
+      "reasoning_tokens": 112,
+      "time_to_first_token": 2.387054833001457,
+      "duration": 2.3872932079830207,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2162,
+            "output_tokens": 213,
+            "total_tokens": 2375,
+            "reasoning_tokens": 112,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2310,
+    "output_tokens": 416,
+    "total_tokens": 2726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5188.029493030626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2310,
+      "output_tokens": 416,
+      "total_tokens": 2726,
+      "time_to_first_token": 5.187796820013318,
+      "duration": 5.18786754203029,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2310,
+            "output_tokens": 416,
+            "total_tokens": 2726,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5160745068,
+              "load_duration": 454107,
+              "prompt_eval_duration": 575386000,
+              "eval_duration": 4522804000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

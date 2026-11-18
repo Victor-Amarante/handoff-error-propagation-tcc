@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04302_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst reported Nike's FY2018 revenue as USD 32,997 million, despite the extractor providing no FY2018 revenue value and providing USD 36,397 million for 2019 instead.",
+    "reported_metric": "revenue_2018",
+    "reported_value": 32997.0,
+    "confidence": 0.93,
+    "rationale": "The FY2018 revenue claim is unsupported by the extractor output and leads to an incorrect calculation. Using the analyst's own three annual inputs, the simple average of cost-of-sales percentages is approximately 57.0%, not 59.4%, so the writer's result is also inconsistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1109,
+    "output_tokens": 1192,
+    "total_tokens": 2301,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016521999999999997,
+    "latency_ms": 10993.319625034928,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1109,
+      "output_tokens": 1192,
+      "total_tokens": 2301,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.992482750036288,
+      "duration": 10.992741624999326,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1109,
+            "output_tokens": 1192,
+            "total_tokens": 2301,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1047,
+    "output_tokens": 804,
+    "total_tokens": 1851,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9088.364865980111,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1047,
+      "output_tokens": 804,
+      "total_tokens": 1851,
+      "time_to_first_token": 9.088123045978136,
+      "duration": 9.08820201799972,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1047,
+            "output_tokens": 804,
+            "total_tokens": 1851,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9063117386,
+              "load_duration": 632175,
+              "prompt_eval_duration": 271759000,
+              "eval_duration": 8718167000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

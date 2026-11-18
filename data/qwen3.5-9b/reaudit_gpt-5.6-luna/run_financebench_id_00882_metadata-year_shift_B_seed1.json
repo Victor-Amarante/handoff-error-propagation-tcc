@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00882_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The trace consistently associates the 2023 amount with $4.95 billion, and the analyst correctly selects the 2023 value for the May 26, 2023 date. The writer's answer matches that value. No claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 618,
+    "total_tokens": 1418,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009016,
+    "latency_ms": 6275.58554103598,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 618,
+      "total_tokens": 1418,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.275167916959617,
+      "duration": 6.275321624998469,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 618,
+            "total_tokens": 1418,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 667,
+    "output_tokens": 1266,
+    "total_tokens": 1933,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13991.716814984102,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 667,
+      "output_tokens": 1266,
+      "total_tokens": 1933,
+      "time_to_first_token": 13.991465369996149,
+      "duration": 13.991541035997216,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 667,
+            "output_tokens": 1266,
+            "total_tokens": 1933,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13962271013,
+              "load_duration": 452710,
+              "prompt_eval_duration": 181024000,
+              "eval_duration": 13711451000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

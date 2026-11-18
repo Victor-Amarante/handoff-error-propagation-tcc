@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: PP&E increased from $13,745M to $18,482M, a difference of $4,737M, and $4,737M divided by $13,745M is approximately 34.5%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 684,
+    "output_tokens": 170,
+    "total_tokens": 854,
+    "cached_tokens": 0,
+    "reasoning_tokens": 63,
+    "cost_usd": 0.0003408,
+    "latency_ms": 2603.0530410353094,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 684,
+      "output_tokens": 170,
+      "total_tokens": 854,
+      "reasoning_tokens": 63,
+      "time_to_first_token": 2.602539290965069,
+      "duration": 2.602674207999371,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 684,
+            "output_tokens": 170,
+            "total_tokens": 854,
+            "reasoning_tokens": 63,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1193,
+    "output_tokens": 154,
+    "total_tokens": 1347,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001963,
+    "latency_ms": 2991.791375039611,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1193,
+      "output_tokens": 154,
+      "total_tokens": 1347,
+      "time_to_first_token": 2.990802874963265,
+      "duration": 2.9910907089943066,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1193,
+            "output_tokens": 154,
+            "total_tokens": 1347,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

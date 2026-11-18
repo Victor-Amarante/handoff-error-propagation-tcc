@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01981_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Card Member retention remained high, but the extractor incorrectly represented this qualitative statement as an exact retention ratio of 1.0 (100%) for 2022.",
+    "reported_metric": "card_member_retention",
+    "reported_value": 1.0,
+    "confidence": 0.99,
+    "rationale": "The source evidence only says retention 'remained high' and does not provide a numerical rate or support a value of exactly 1.0. The analyst and writer propagated this unsupported value from C02."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 957,
+    "output_tokens": 275,
+    "total_tokens": 1232,
+    "cached_tokens": 0,
+    "reasoning_tokens": 140,
+    "cost_usd": 0.0005214,
+    "latency_ms": 3217.8832089994103,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 957,
+      "output_tokens": 275,
+      "total_tokens": 1232,
+      "reasoning_tokens": 140,
+      "time_to_first_token": 3.2172567500383593,
+      "duration": 3.2174352500005625,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 957,
+            "output_tokens": 275,
+            "total_tokens": 1232,
+            "reasoning_tokens": 140,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1493,
+    "output_tokens": 153,
+    "total_tokens": 1646,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002258,
+    "latency_ms": 2966.310625022743,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1493,
+      "output_tokens": 153,
+      "total_tokens": 1646,
+      "time_to_first_token": 2.965616500005126,
+      "duration": 2.9658429169794545,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1493,
+            "output_tokens": 153,
+            "total_tokens": 1646,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

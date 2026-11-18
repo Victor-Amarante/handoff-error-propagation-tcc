@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10130_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2020 Accounts Payable was reported as USD 1,714 million, although the accompanying evidence shows USD 1,174 million.",
+    "reported_metric": "FY2020 Accounts Payable",
+    "reported_value": 1714.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts with its own evidence, which lists FY2020 accounts payable as 1,174. This erroneous input appears before the analyst and writer stages."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1517,
+    "output_tokens": 438,
+    "total_tokens": 1955,
+    "cached_tokens": 0,
+    "reasoning_tokens": 312,
+    "cost_usd": 0.000829,
+    "latency_ms": 4554.637624998577,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1517,
+      "output_tokens": 438,
+      "total_tokens": 1955,
+      "reasoning_tokens": 312,
+      "time_to_first_token": 4.554436833015643,
+      "duration": 4.5544895000057295,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1517,
+            "output_tokens": 438,
+            "total_tokens": 1955,
+            "reasoning_tokens": 312,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1565,
+    "output_tokens": 4445,
+    "total_tokens": 6010,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 46547.39188199164,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1565,
+      "output_tokens": 4445,
+      "total_tokens": 6010,
+      "time_to_first_token": 46.54576851002639,
+      "duration": 46.547232299053576,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1565,
+            "output_tokens": 4445,
+            "total_tokens": 6010,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 46520166890,
+              "load_duration": 492173,
+              "prompt_eval_duration": 377360000,
+              "eval_duration": 46087267000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

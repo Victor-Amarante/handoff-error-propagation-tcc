@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01491_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The cash proceeds from the Kenvue separation were reported with the year 2024, despite the cited filing and question referring to August 30, 2023.",
+    "reported_metric": "cash_proceeds_from_kenvue_separation",
+    "reported_value": 13.2,
+    "confidence": 0.87,
+    "rationale": "The extractor first assigns year 2024 to the claim, and the analyst propagates it. The writer changes the year to 2023 without provenance support, creating an internal year inconsistency. The $13.2 billion value itself is unchanged across stages."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 890,
+    "output_tokens": 665,
+    "total_tokens": 1555,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000976,
+    "latency_ms": 6797.301875019912,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 890,
+      "output_tokens": 665,
+      "total_tokens": 1555,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.796801333024632,
+      "duration": 6.796955583035015,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 890,
+            "output_tokens": 665,
+            "total_tokens": 1555,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1408,
+    "output_tokens": 158,
+    "total_tokens": 1566,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002198,
+    "latency_ms": 2352.7472499990836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1408,
+      "output_tokens": 158,
+      "total_tokens": 1566,
+      "time_to_first_token": 2.351863083022181,
+      "duration": 2.352104500052519,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1408,
+            "output_tokens": 158,
+            "total_tokens": 1566,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

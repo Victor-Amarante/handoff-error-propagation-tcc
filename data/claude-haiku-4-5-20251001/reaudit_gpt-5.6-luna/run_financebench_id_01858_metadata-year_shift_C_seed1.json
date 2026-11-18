@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01858_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "3M had increased its dividend for 65 consecutive years as of 2024.",
+    "reported_metric": "consecutive_years_of_dividend_increases",
+    "reported_value": 65.0,
+    "confidence": 0.95,
+    "rationale": "The extractor is the first stage introducing the claim, and it attributes a 2024 value to a source identified as 3M_2023Q2_10Q. The analyst and writer merely propagate C01 without adding independent evidence, so the temporal/provenance inconsistency originates in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 811,
+    "output_tokens": 582,
+    "total_tokens": 1393,
+    "cached_tokens": 0,
+    "reasoning_tokens": 437,
+    "cost_usd": 0.0008606,
+    "latency_ms": 5676.632207992952,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 811,
+      "output_tokens": 582,
+      "total_tokens": 1393,
+      "reasoning_tokens": 437,
+      "time_to_first_token": 5.675877000030596,
+      "duration": 5.676086500054225,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 811,
+            "output_tokens": 582,
+            "total_tokens": 1393,
+            "reasoning_tokens": 437,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1322,
+    "output_tokens": 220,
+    "total_tokens": 1542,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002422,
+    "latency_ms": 3483.654582989402,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1322,
+      "output_tokens": 220,
+      "total_tokens": 1542,
+      "time_to_first_token": 3.4829973339801654,
+      "duration": 3.483134499983862,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1322,
+            "output_tokens": 220,
+            "total_tokens": 1542,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

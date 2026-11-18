@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06272_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Total cash dividends paid were $7,616 million in FY2023.",
+    "reported_metric": "total_cash_dividends_paid",
+    "reported_value": 7616.0,
+    "confidence": 0.98,
+    "rationale": "The source is Coca-Cola's 2022 10-K and the $7,616 million dividend figure is used for the FY2022 calculation, but the extractor incorrectly labels it as year 2023. The analyst and writer propagate or overwrite this year inconsistency; the arithmetic 7,616 / 9,582 rounds to 0.79."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1095,
+    "output_tokens": 628,
+    "total_tokens": 1723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 476,
+    "cost_usd": 0.0009726,
+    "latency_ms": 5966.213125037029,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1095,
+      "output_tokens": 628,
+      "total_tokens": 1723,
+      "reasoning_tokens": 476,
+      "time_to_first_token": 5.965227417007554,
+      "duration": 5.965694624988828,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1095,
+            "output_tokens": 628,
+            "total_tokens": 1723,
+            "reasoning_tokens": 476,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1010,
+    "output_tokens": 246,
+    "total_tokens": 1256,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3049.618902034126,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1010,
+      "output_tokens": 246,
+      "total_tokens": 1256,
+      "time_to_first_token": 3.049366537015885,
+      "duration": 3.049439111026004,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1010,
+            "output_tokens": 246,
+            "total_tokens": 1256,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3018929853,
+              "load_duration": 456930,
+              "prompt_eval_duration": 245998000,
+              "eval_duration": 2695446000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04209_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Costco's total assets were $59,268 million in FY2022; the value appears to be mislabeled because it corresponds to FY2021.",
+    "reported_metric": "total assets",
+    "reported_value": 59268.0,
+    "confidence": 0.98,
+    "rationale": "The trace's extracted value of $59,268 million is presented for FY2022, but the later stages correctly note that the question asks for FY2021. The likely first error is the extractor's fiscal-year attribution, causing the pipeline to miss the requested answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 668,
+    "output_tokens": 280,
+    "total_tokens": 948,
+    "cached_tokens": 0,
+    "reasoning_tokens": 137,
+    "cost_usd": 0.00046960000000000003,
+    "latency_ms": 3355.1390829961747,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 668,
+      "output_tokens": 280,
+      "total_tokens": 948,
+      "reasoning_tokens": 137,
+      "time_to_first_token": 3.3544665839872323,
+      "duration": 3.354781791975256,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 668,
+            "output_tokens": 280,
+            "total_tokens": 948,
+            "reasoning_tokens": 137,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1157,
+    "output_tokens": 166,
+    "total_tokens": 1323,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001987,
+    "latency_ms": 2456.7664579954,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1157,
+      "output_tokens": 166,
+      "total_tokens": 1323,
+      "time_to_first_token": 2.4558340000221506,
+      "duration": 2.456137957982719,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1157,
+            "output_tokens": 166,
+            "total_tokens": 1323,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

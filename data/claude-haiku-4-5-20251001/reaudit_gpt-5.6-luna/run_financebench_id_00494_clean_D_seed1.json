@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00494_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the writer's statements are consistent with the extractor and analyst evidence.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "All three claims are propagated consistently: 787 increases to 5 per month, 737 is described as stabilizing at 31 per month, and 777X is paused but expected to resume in 2023. The trace provides no contradictory provenance or ground truth establishing an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1464,
+    "output_tokens": 563,
+    "total_tokens": 2027,
+    "cached_tokens": 0,
+    "reasoning_tokens": 429,
+    "cost_usd": 0.0009684000000000001,
+    "latency_ms": 5631.273249979131,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1464,
+      "output_tokens": 563,
+      "total_tokens": 2027,
+      "reasoning_tokens": 429,
+      "time_to_first_token": 5.630766249960288,
+      "duration": 5.630888957995921,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1464,
+            "output_tokens": 563,
+            "total_tokens": 2027,
+            "reasoning_tokens": 429,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2066,
+    "output_tokens": 138,
+    "total_tokens": 2204,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002756,
+    "latency_ms": 2478.9010410313495,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2066,
+      "output_tokens": 138,
+      "total_tokens": 2204,
+      "time_to_first_token": 2.4780119589995593,
+      "duration": 2.478309000027366,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2066,
+            "output_tokens": 138,
+            "total_tokens": 2204,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

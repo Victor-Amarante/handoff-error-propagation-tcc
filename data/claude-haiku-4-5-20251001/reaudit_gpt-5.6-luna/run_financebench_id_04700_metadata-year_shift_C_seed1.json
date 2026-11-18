@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04700_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Microsoft's cost of revenue was reported as USD 32,780 million for FY2017, although this value corresponds to the FY2016 statement of income.",
+    "reported_metric": "cost_of_revenue",
+    "reported_value": 32780.0,
+    "confidence": 0.96,
+    "rationale": "The extractor claim is internally inconsistent with the MICROSOFT_2016_10K provenance and the requested FY2016 period: USD 32,780 million is presented with year 2017. The analyst then supplied no claims, and the writer's USD 0 million placeholder is downstream of that extraction error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 732,
+    "output_tokens": 521,
+    "total_tokens": 1253,
+    "cached_tokens": 0,
+    "reasoning_tokens": 363,
+    "cost_usd": 0.0007715999999999999,
+    "latency_ms": 6033.35074998904,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 732,
+      "output_tokens": 521,
+      "total_tokens": 1253,
+      "reasoning_tokens": 363,
+      "time_to_first_token": 6.03242520801723,
+      "duration": 6.032779750006739,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 732,
+            "output_tokens": 521,
+            "total_tokens": 1253,
+            "reasoning_tokens": 363,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1242,
+    "output_tokens": 169,
+    "total_tokens": 1411,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002087,
+    "latency_ms": 2353.5611249972135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1242,
+      "output_tokens": 169,
+      "total_tokens": 1411,
+      "time_to_first_token": 2.352723582996987,
+      "duration": 2.352960375021212,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1242,
+            "output_tokens": 169,
+            "total_tokens": 1411,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

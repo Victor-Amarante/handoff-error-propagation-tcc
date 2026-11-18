@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00807_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst incorrectly reported a Q2 FY2023 quick ratio of 1.24 by subtracting inventory from total current assets and miscomputing the resulting division.",
+    "reported_metric": "quick_ratio_q2_2023",
+    "reported_value": 1.24,
+    "confidence": 0.99,
+    "rationale": "The stated calculation is internally inconsistent: ($15,754M - $5,280M) / $10,936M equals approximately 0.96, not 1.24. Moreover, a conventional quick ratio generally excludes inventory and other less-liquid current assets such as prepaids, so subtracting inventory alone is not a valid quick-assets calculation. The writer then propagated this analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3816,
+    "output_tokens": 690,
+    "total_tokens": 4506,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0015912,
+    "latency_ms": 7036.363208957482,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3816,
+      "output_tokens": 690,
+      "total_tokens": 4506,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.035697082988918,
+      "duration": 7.035841583041474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3816,
+            "output_tokens": 690,
+            "total_tokens": 4506,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4372,
+    "output_tokens": 1029,
+    "total_tokens": 5401,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12164.966795011424,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4372,
+      "output_tokens": 1029,
+      "total_tokens": 5401,
+      "time_to_first_token": 12.164681313966867,
+      "duration": 12.164779449987691,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4372,
+            "output_tokens": 1029,
+            "total_tokens": 5401,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12139810561,
+              "load_duration": 587552,
+              "prompt_eval_duration": 1022786000,
+              "eval_duration": 11056888000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

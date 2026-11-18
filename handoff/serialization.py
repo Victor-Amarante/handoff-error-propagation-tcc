@@ -68,8 +68,8 @@ def project_claim(claim: CanonicalClaim, condition: Condition) -> ClaimB | Claim
     silenciosamente pelo modelo (todos usam extra="forbid").
     """
     condition = Condition(condition)
-    if condition is Condition.D and not claim.evidence:
-        raise ValueError(f"condicao D exige evidence em {claim.claim_id}")
+    if caps(condition).evidence and not claim.evidence:
+        raise ValueError(f"condicao {condition} exige evidence em {claim.claim_id}")
 
     model = CLAIM_SCHEMA[condition]
     if model is None:

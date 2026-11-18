@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04980_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the analyst correctly converted USD 6,425 million to USD 6.425 billion.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reported 6,425 USD million, and the analyst and writer consistently converted and reported this as 6.425 USD billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 820,
+    "output_tokens": 193,
+    "total_tokens": 1013,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.0003956,
+    "latency_ms": 2520.2113749692217,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 820,
+      "output_tokens": 193,
+      "total_tokens": 1013,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.5196194159798324,
+      "duration": 2.519855665974319,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 820,
+            "output_tokens": 193,
+            "total_tokens": 1013,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1357,
+    "output_tokens": 178,
+    "total_tokens": 1535,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002247,
+    "latency_ms": 2864.7804579813965,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1357,
+      "output_tokens": 178,
+      "total_tokens": 1535,
+      "time_to_first_token": 2.8637388339848258,
+      "duration": 2.8640531669952907,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1357,
+            "output_tokens": 178,
+            "total_tokens": 1535,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

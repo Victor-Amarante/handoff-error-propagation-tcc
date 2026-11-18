@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00499_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst used FY2023 net sales as the denominator for a purported FY2022 capital-expenditure intensity measure.",
+    "reported_metric": "Capital expenditures as a percentage of net sales",
+    "reported_value": 5.1,
+    "confidence": 0.97,
+    "rationale": "The extracted sales figure is explicitly FY2023, while capex and the other operating metrics are FY2022. The analyst's 5.1% calculation is arithmetically correct using FY2023 sales, but it is incorrectly presented as evidence based on FY2022 data; the writer carries forward the same mixed-year basis."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1055,
+    "output_tokens": 668,
+    "total_tokens": 1723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010126,
+    "latency_ms": 7050.242749974132,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1055,
+      "output_tokens": 668,
+      "total_tokens": 1723,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.050049541983753,
+      "duration": 7.05010570801096,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1055,
+            "output_tokens": 668,
+            "total_tokens": 1723,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1563,
+    "output_tokens": 172,
+    "total_tokens": 1735,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002423,
+    "latency_ms": 3159.5347500406206,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1563,
+      "output_tokens": 172,
+      "total_tokens": 1735,
+      "time_to_first_token": 3.1588496660115197,
+      "duration": 3.1590689580189064,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1563,
+            "output_tokens": 172,
+            "total_tokens": 1735,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

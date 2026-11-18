@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03620_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "FY2022 unadjusted EBITDA less capex was calculated as USD 13,768.5 million using operating profit, without evidencing depreciation and amortization or subtracting capex.",
+    "reported_metric": "Unadjusted EBITDA less capex for FY2022",
+    "reported_value": 13768.5,
+    "confidence": 0.99,
+    "rationale": "The extractor provided only operating profit and net revenue. The analyst claim derives solely from operating profit and contains no depreciation-and-amortization or capex inputs, so the reported value is unsupported and appears to omit capex; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 966,
+    "output_tokens": 341,
+    "total_tokens": 1307,
+    "cached_tokens": 0,
+    "reasoning_tokens": 183,
+    "cost_usd": 0.0006024,
+    "latency_ms": 3816.2022919859737,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 966,
+      "output_tokens": 341,
+      "total_tokens": 1307,
+      "reasoning_tokens": 183,
+      "time_to_first_token": 3.815844167023897,
+      "duration": 3.8159573749871925,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 966,
+            "output_tokens": 341,
+            "total_tokens": 1307,
+            "reasoning_tokens": 183,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 860,
+    "output_tokens": 315,
+    "total_tokens": 1175,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3803.906524030026,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 860,
+      "output_tokens": 315,
+      "total_tokens": 1175,
+      "time_to_first_token": 3.803635666030459,
+      "duration": 3.8037240200210363,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 860,
+            "output_tokens": 315,
+            "total_tokens": 1175,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3776842187,
+              "load_duration": 459210,
+              "prompt_eval_duration": 239396000,
+              "eval_duration": 3464780000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

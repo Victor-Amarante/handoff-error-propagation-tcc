@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02024_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported estimated pension benefits of $1,097 million for 2025, despite the evidence indicating that the amount applies to 2024.",
+    "reported_metric": "estimated pension benefits for retirees in 2024",
+    "reported_value": 1097.0,
+    "confidence": 0.87,
+    "rationale": "C01 contains an internal year inconsistency: its claim/evidence identify 2024, but its structured year is 2025. The analyst then used this claim and omitted the separate $862 million retiree health-care/life-insurance amount (C02), producing an incomplete final figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 999,
+    "output_tokens": 669,
+    "total_tokens": 1668,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010026,
+    "latency_ms": 6611.140916997101,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 999,
+      "output_tokens": 669,
+      "total_tokens": 1668,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.610298708023038,
+      "duration": 6.6104775830172,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 999,
+            "output_tokens": 669,
+            "total_tokens": 1668,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 908,
+    "output_tokens": 161,
+    "total_tokens": 1069,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2194.6894630091265,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 908,
+      "output_tokens": 161,
+      "total_tokens": 1069,
+      "time_to_first_token": 2.194413708988577,
+      "duration": 2.194501746969763,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 908,
+            "output_tokens": 161,
+            "total_tokens": 1069,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2168753523,
+              "load_duration": 577077,
+              "prompt_eval_duration": 239566000,
+              "eval_duration": 1855732000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

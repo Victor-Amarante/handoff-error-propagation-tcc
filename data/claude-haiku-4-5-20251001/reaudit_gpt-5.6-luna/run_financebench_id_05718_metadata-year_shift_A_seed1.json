@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05718_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is established by the trace; the extractor reported a FY2021 amount, while the analyst and writer correctly noted that FY2020 cannot be determined from the provided information.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The trace contains no claim IDs and no contradiction establishing that the FY2021 dividend figure of $389 million is false. The response is incomplete for the requested FY2020 metric, but incompleteness alone is not a factual error given the supplied evidence."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 737,
+    "output_tokens": 475,
+    "total_tokens": 1212,
+    "cached_tokens": 0,
+    "reasoning_tokens": 332,
+    "cost_usd": 0.0007174,
+    "latency_ms": 5152.658791979775,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 737,
+      "output_tokens": 475,
+      "total_tokens": 1212,
+      "reasoning_tokens": 332,
+      "time_to_first_token": 5.151870000001509,
+      "duration": 5.152109374990687,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 737,
+            "output_tokens": 475,
+            "total_tokens": 1212,
+            "reasoning_tokens": 332,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1233,
+    "output_tokens": 161,
+    "total_tokens": 1394,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002038,
+    "latency_ms": 3102.85374999512,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1233,
+      "output_tokens": 161,
+      "total_tokens": 1394,
+      "time_to_first_token": 3.1020396249950863,
+      "duration": 3.1023362500127405,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1233,
+            "output_tokens": 161,
+            "total_tokens": 1394,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

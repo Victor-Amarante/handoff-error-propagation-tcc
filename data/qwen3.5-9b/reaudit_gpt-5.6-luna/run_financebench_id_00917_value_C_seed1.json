@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00917_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "The driver of AMD's operating income change in 2022 was reported as $0.0 billion, despite operating income declining from $3.6 billion in 2021 to $3.1 billion in 2022.",
+    "reported_metric": "driver_of_operating_income_change",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "Claims C01 and C02 imply a $0.5 billion decline in operating income, but C03 reports no change. The analyst and writer then propagate that unsupported zero into a 0.0% operating-margin result; no revenue or margin data is provided to justify that percentage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1093,
+    "output_tokens": 359,
+    "total_tokens": 1452,
+    "cached_tokens": 0,
+    "reasoning_tokens": 192,
+    "cost_usd": 0.0006494000000000001,
+    "latency_ms": 4303.201499977149,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1093,
+      "output_tokens": 359,
+      "total_tokens": 1452,
+      "reasoning_tokens": 192,
+      "time_to_first_token": 4.302316582994536,
+      "duration": 4.302683875022922,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1093,
+            "output_tokens": 359,
+            "total_tokens": 1452,
+            "reasoning_tokens": 192,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1010,
+    "output_tokens": 187,
+    "total_tokens": 1197,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2518.7891609966755,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1010,
+      "output_tokens": 187,
+      "total_tokens": 1197,
+      "time_to_first_token": 2.518551187007688,
+      "duration": 2.518625514989253,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1010,
+            "output_tokens": 187,
+            "total_tokens": 1197,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2493681955,
+              "load_duration": 573650,
+              "prompt_eval_duration": 275155000,
+              "eval_duration": 2143304999
+            }
+          }
+        ]
+      }
+    }
+  }
+}

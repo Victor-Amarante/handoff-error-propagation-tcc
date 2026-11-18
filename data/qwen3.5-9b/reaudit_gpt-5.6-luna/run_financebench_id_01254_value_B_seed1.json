@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01254_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The annual dividend was reported as 0.1 USD, although the extractor recorded the unit as USD_M, meaning 0.1 million USD.",
+    "reported_metric": "annual dividend",
+    "reported_value": 0.1,
+    "confidence": 0.99,
+    "rationale": "The extractor's unit is USD_M, but the analyst changed it to USD without conversion or explanation. The writer propagated this unit error into the final answer; the value should be interpreted as 0.1 million USD, not 0.1 USD."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 623,
+    "output_tokens": 340,
+    "total_tokens": 963,
+    "cached_tokens": 0,
+    "reasoning_tokens": 200,
+    "cost_usd": 0.0005326,
+    "latency_ms": 3821.186332963407,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 623,
+      "output_tokens": 340,
+      "total_tokens": 963,
+      "reasoning_tokens": 200,
+      "time_to_first_token": 3.8204144159681164,
+      "duration": 3.820639624958858,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 623,
+            "output_tokens": 340,
+            "total_tokens": 963,
+            "reasoning_tokens": 200,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 434,
+    "output_tokens": 426,
+    "total_tokens": 860,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5031.972553988453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 434,
+      "output_tokens": 426,
+      "total_tokens": 860,
+      "time_to_first_token": 5.031732044997625,
+      "duration": 5.031807487015612,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 434,
+            "output_tokens": 426,
+            "total_tokens": 860,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5005969782,
+              "load_duration": 437911,
+              "prompt_eval_duration": 151267000,
+              "eval_duration": 4787943000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

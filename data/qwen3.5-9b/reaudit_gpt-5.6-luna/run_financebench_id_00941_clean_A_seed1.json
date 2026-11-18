@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor provides only monetary figures and no security names or exchange-registration details. The analyst and writer correctly state that the requested securities cannot be identified from the supplied trace; they do not assert that no such securities exist."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 739,
+    "output_tokens": 186,
+    "total_tokens": 925,
+    "cached_tokens": 0,
+    "reasoning_tokens": 88,
+    "cost_usd": 0.000371,
+    "latency_ms": 2390.03504201537,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 739,
+      "output_tokens": 186,
+      "total_tokens": 925,
+      "reasoning_tokens": 88,
+      "time_to_first_token": 2.389300415990874,
+      "duration": 2.3894815410021693,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 739,
+            "output_tokens": 186,
+            "total_tokens": 925,
+            "reasoning_tokens": 88,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 534,
+    "output_tokens": 150,
+    "total_tokens": 684,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1978.7774740252644,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 534,
+      "output_tokens": 150,
+      "total_tokens": 684,
+      "time_to_first_token": 1.9785527539788745,
+      "duration": 1.978618455992546,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 534,
+            "output_tokens": 150,
+            "total_tokens": 684,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1950106373,
+              "load_duration": 434615,
+              "prompt_eval_duration": 168744000,
+              "eval_duration": 1731836000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

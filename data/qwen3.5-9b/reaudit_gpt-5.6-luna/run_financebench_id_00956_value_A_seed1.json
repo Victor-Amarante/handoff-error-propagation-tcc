@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00956_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No internally demonstrable incorrect claim appears in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.72,
+    "rationale": "The reported FY2022 growth components reconcile exactly: 6.9% volume - 0.8% price - 4.8% currency = 1.3% total growth. The conclusion that 1.3% growth does not indicate high growth follows from the supplied figures. No claim IDs are present, and the sales amount cannot be shown to be erroneous using only the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 924,
+    "output_tokens": 1176,
+    "total_tokens": 2100,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.001596,
+    "latency_ms": 10927.901457995176,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 924,
+      "output_tokens": 1176,
+      "total_tokens": 2100,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.927344541007187,
+      "duration": 10.92752179101808,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 924,
+            "output_tokens": 1176,
+            "total_tokens": 2100,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 758,
+    "output_tokens": 270,
+    "total_tokens": 1028,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3472.290310950484,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 758,
+      "output_tokens": 270,
+      "total_tokens": 1028,
+      "time_to_first_token": 3.4720106779714115,
+      "duration": 3.472103642008733,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 758,
+            "output_tokens": 270,
+            "total_tokens": 1028,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3446928792,
+              "load_duration": 560107,
+              "prompt_eval_duration": 219717000,
+              "eval_duration": 3157670000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

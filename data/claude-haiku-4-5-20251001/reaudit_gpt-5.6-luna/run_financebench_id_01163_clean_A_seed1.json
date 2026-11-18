@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly classified Nike's $564 million of investing cash flow as a cash inflow rather than cash used (an outflow).",
+    "reported_metric": "FY2023 investing activities cash flow",
+    "reported_value": 564.0,
+    "confidence": 0.82,
+    "rationale": "The extractor's wording indicates the $564M was cash used by investing activities, but the analyst reinterpreted it as an inflow. The writer then repeated that misclassification. Operating activities still correctly ranked first."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 791,
+    "output_tokens": 645,
+    "total_tokens": 1436,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009322,
+    "latency_ms": 5985.455957998056,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 791,
+      "output_tokens": 645,
+      "total_tokens": 1436,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 5.9848336249706335,
+      "duration": 5.98502899997402,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 791,
+            "output_tokens": 645,
+            "total_tokens": 1436,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1268,
+    "output_tokens": 208,
+    "total_tokens": 1476,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002308,
+    "latency_ms": 2865.430750011001,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1268,
+      "output_tokens": 208,
+      "total_tokens": 1476,
+      "time_to_first_token": 2.8647017080220394,
+      "duration": 2.8649590000277385,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1268,
+            "output_tokens": 208,
+            "total_tokens": 1476,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00724_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the reported figures and ranking are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted year-over-year changes match the revenue figures after rounding: Developed Rest of World falls from $5034M to $1305M, approximately -74%, the largest percentage decline among the listed regions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 905,
+    "output_tokens": 238,
+    "total_tokens": 1143,
+    "cached_tokens": 0,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.00046659999999999996,
+    "latency_ms": 3124.3171250098385,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 905,
+      "output_tokens": 238,
+      "total_tokens": 1143,
+      "reasoning_tokens": 128,
+      "time_to_first_token": 3.123627374996431,
+      "duration": 3.123820999986492,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 905,
+            "output_tokens": 238,
+            "total_tokens": 1143,
+            "reasoning_tokens": 128,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1434,
+    "output_tokens": 157,
+    "total_tokens": 1591,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002219,
+    "latency_ms": 2866.3732089917175,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1434,
+      "output_tokens": 157,
+      "total_tokens": 1591,
+      "time_to_first_token": 2.8654692079871893,
+      "duration": 2.865766207978595,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1434,
+            "output_tokens": 157,
+            "total_tokens": 1591,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

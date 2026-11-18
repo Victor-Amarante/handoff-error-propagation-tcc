@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00540_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "AES Corporation's FY2022 inventory turnover ratio was 9.55, calculated as FY2022 cost of sales divided by inventory of 1,055.",
+    "reported_metric": "inventory_turnover_ratio",
+    "reported_value": 9.55,
+    "confidence": 0.98,
+    "rationale": "The calculation itself is arithmetically correct, but the extractor labels the 1,055 inventory figure as year 2023 (C01), while the analyst presents the resulting ratio as FY2022. Thus A01 is the first claim that incorrectly combines data from different years; the writer repeats that error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1236,
+    "output_tokens": 527,
+    "total_tokens": 1763,
+    "cached_tokens": 0,
+    "reasoning_tokens": 370,
+    "cost_usd": 0.0008796,
+    "latency_ms": 5656.313000014052,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1236,
+      "output_tokens": 527,
+      "total_tokens": 1763,
+      "reasoning_tokens": 370,
+      "time_to_first_token": 5.6557690420304425,
+      "duration": 5.655971375002991,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1236,
+            "output_tokens": 527,
+            "total_tokens": 1763,
+            "reasoning_tokens": 370,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1827,
+    "output_tokens": 166,
+    "total_tokens": 1993,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002657,
+    "latency_ms": 2642.199041962158,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1827,
+      "output_tokens": 166,
+      "total_tokens": 1993,
+      "time_to_first_token": 2.6413619170198217,
+      "duration": 2.6415952080278657,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1827,
+            "output_tokens": 166,
+            "total_tokens": 1993,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

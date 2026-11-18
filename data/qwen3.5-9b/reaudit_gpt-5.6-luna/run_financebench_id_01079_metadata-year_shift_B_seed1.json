@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01079_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMCOR made three major acquisitions in FY2023, including an acquisition valued at USD 59 million.",
+    "reported_metric": "FY2023 major acquisition count",
+    "reported_value": 3.0,
+    "confidence": 0.98,
+    "rationale": "The analyst output contains two FY2023 acquisition considerations (USD 60 million and USD 45 million); the USD 59 million acquisition is explicitly associated with 2022. The writer incorrectly counts/includes the 2022 acquisition as part of FY2023. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2486,
+    "output_tokens": 412,
+    "total_tokens": 2898,
+    "cached_tokens": 0,
+    "reasoning_tokens": 270,
+    "cost_usd": 0.0009916,
+    "latency_ms": 4398.015332990326,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2486,
+      "output_tokens": 412,
+      "total_tokens": 2898,
+      "reasoning_tokens": 270,
+      "time_to_first_token": 4.39741429197602,
+      "duration": 4.397626708960161,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2486,
+            "output_tokens": 412,
+            "total_tokens": 2898,
+            "reasoning_tokens": 270,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2601,
+    "output_tokens": 181,
+    "total_tokens": 2782,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2808.1328570260666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2601,
+      "output_tokens": 181,
+      "total_tokens": 2782,
+      "time_to_first_token": 2.807855765975546,
+      "duration": 2.8079479740117677,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2601,
+            "output_tokens": 181,
+            "total_tokens": 2782,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2783287179,
+              "load_duration": 643872,
+              "prompt_eval_duration": 624171000,
+              "eval_duration": 2090606000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

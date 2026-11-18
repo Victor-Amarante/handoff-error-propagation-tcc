@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly claimed that all segments other than Las Vegas Strip Resorts recorded negative EBITDAR contributions, overlooking the positive Regional Operations contribution.",
+    "reported_metric": "EBITDAR Contribution for Regional Operations",
+    "reported_value": 1294630.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reported Regional Operations at $1.29463e+06K, a positive contribution, but the analyst stated that all other listed segments were negative. The highest-region conclusion itself remains correct."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 931,
+    "output_tokens": 642,
+    "total_tokens": 1573,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009566,
+    "latency_ms": 7194.175124983303,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 931,
+      "output_tokens": 642,
+      "total_tokens": 1573,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.193892540992238,
+      "duration": 7.193952624977101,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 931,
+            "output_tokens": 642,
+            "total_tokens": 1573,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 788,
+    "output_tokens": 1505,
+    "total_tokens": 2293,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 15960.71875601774,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 788,
+      "output_tokens": 1505,
+      "total_tokens": 2293,
+      "time_to_first_token": 15.960478360997513,
+      "duration": 15.960558313003276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 788,
+            "output_tokens": 1505,
+            "total_tokens": 2293,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 15935144007,
+              "load_duration": 861820,
+              "prompt_eval_duration": 222210000,
+              "eval_duration": 15661497000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

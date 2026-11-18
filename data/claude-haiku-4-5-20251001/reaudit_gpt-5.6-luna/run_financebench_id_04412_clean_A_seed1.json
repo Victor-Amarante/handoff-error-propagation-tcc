@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04412_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the provided figures and calculation consistently produce an FY2020 asset turnover ratio of 1.33.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The average total assets are correctly calculated as ($50,710M + $47,528M) / 2 = $49,119M, and $65,398M / $49,119M = approximately 1.3314, which rounds to 1.33."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 856,
+    "output_tokens": 219,
+    "total_tokens": 1075,
+    "cached_tokens": 0,
+    "reasoning_tokens": 81,
+    "cost_usd": 0.000434,
+    "latency_ms": 2714.0047079883516,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 856,
+      "output_tokens": 219,
+      "total_tokens": 1075,
+      "reasoning_tokens": 81,
+      "time_to_first_token": 2.713366625015624,
+      "duration": 2.713538832962513,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 856,
+            "output_tokens": 219,
+            "total_tokens": 1075,
+            "reasoning_tokens": 81,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1375,
+    "output_tokens": 200,
+    "total_tokens": 1575,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002375,
+    "latency_ms": 2456.9086669944227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1375,
+      "output_tokens": 200,
+      "total_tokens": 1575,
+      "time_to_first_token": 2.4558931250358,
+      "duration": 2.4561934170196764,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1375,
+            "output_tokens": 200,
+            "total_tokens": 1575,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

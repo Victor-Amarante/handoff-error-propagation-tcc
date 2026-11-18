@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00070_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports current assets of $1,520M and current liabilities of $2,811M. The analyst correctly calculates working capital as $1,520M − $2,811M = −$1,291M, and the writer preserves that conclusion. The explanation that working capital may be less diagnostic for a regulated utility is consistent with the requested qualification, and no internal contradiction or provenance-supported error appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1038,
+    "output_tokens": 283,
+    "total_tokens": 1321,
+    "cached_tokens": 0,
+    "reasoning_tokens": 141,
+    "cost_usd": 0.0005472000000000001,
+    "latency_ms": 3254.0121659985743,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1038,
+      "output_tokens": 283,
+      "total_tokens": 1321,
+      "reasoning_tokens": 141,
+      "time_to_first_token": 3.253347042016685,
+      "duration": 3.2535942920367233,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1038,
+            "output_tokens": 283,
+            "total_tokens": 1321,
+            "reasoning_tokens": 141,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1543,
+    "output_tokens": 191,
+    "total_tokens": 1734,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002498,
+    "latency_ms": 3790.3093330096453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1543,
+      "output_tokens": 191,
+      "total_tokens": 1734,
+      "time_to_first_token": 3.7893121669767424,
+      "duration": 3.7896053749718703,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1543,
+            "output_tokens": 191,
+            "total_tokens": 1734,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

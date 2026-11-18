@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01198_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD FY22 net revenue was reported as 23,600,000,000 while the claim's unit is USD_M (millions of U.S. dollars), making the value-unit pairing inconsistent.",
+    "reported_metric": "net_revenue",
+    "reported_value": 23600000000.0,
+    "confidence": 0.86,
+    "rationale": "C01 labels its value in USD_M but gives 23.6 billion rather than 23,600 million. The analyst implicitly rescales it to 23,600 USD_M, and the writer reports the economically consistent $23.6B figure; however, the first provenance inconsistency appears in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1470,
+    "output_tokens": 679,
+    "total_tokens": 2149,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011087999999999998,
+    "latency_ms": 6620.472999988124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1470,
+      "output_tokens": 679,
+      "total_tokens": 2149,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.619734875042923,
+      "duration": 6.620029291021638,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1470,
+            "output_tokens": 679,
+            "total_tokens": 2149,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1484,
+    "output_tokens": 2904,
+    "total_tokens": 4388,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 30260.73473895667,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1484,
+      "output_tokens": 2904,
+      "total_tokens": 4388,
+      "time_to_first_token": 30.26048218802316,
+      "duration": 30.26057555701118,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1484,
+            "output_tokens": 2904,
+            "total_tokens": 4388,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 30234237616,
+              "load_duration": 424798,
+              "prompt_eval_duration": 392245000,
+              "eval_duration": 29785735000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

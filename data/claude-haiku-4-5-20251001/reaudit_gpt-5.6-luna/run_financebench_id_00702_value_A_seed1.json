@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00702_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "After subtracting the $8,107 million transaction gain from net income, the remaining $2,519 million was characterized as Pfizer's underlying operational net income.",
+    "reported_metric": "underlying operational net income",
+    "reported_value": 2519.0,
+    "confidence": 0.93,
+    "rationale": "The arithmetic is correct ($10,626M − $8,107M = $2,519M), but the trace only establishes total net income and the transaction gain. It does not establish that all remaining income was operational; other non-operating items, taxes, and adjustments could be included. The unsupported characterization first appears in the analyst output and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 839,
+    "output_tokens": 681,
+    "total_tokens": 1520,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000985,
+    "latency_ms": 6564.155916974414,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 839,
+      "output_tokens": 681,
+      "total_tokens": 1520,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.563687292044051,
+      "duration": 6.563840459042694,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 839,
+            "output_tokens": 681,
+            "total_tokens": 1520,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1350,
+    "output_tokens": 182,
+    "total_tokens": 1532,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00226,
+    "latency_ms": 3376.391917001456,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1350,
+      "output_tokens": 182,
+      "total_tokens": 1532,
+      "time_to_first_token": 3.375835000013467,
+      "duration": 3.375983999983873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1350,
+            "output_tokens": 182,
+            "total_tokens": 1532,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

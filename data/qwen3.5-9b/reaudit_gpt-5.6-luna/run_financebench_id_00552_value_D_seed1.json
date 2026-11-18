@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00552_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported Microsoft’s FY2023 current portion of long-term debt as USD 2,547 million, although the accompanying evidence shows USD 5,247 million.",
+    "reported_metric": "Current portion of long-term debt FY2023",
+    "reported_value": 2547.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 conflicts with its own evidence, which states 5,247. This error propagated into analyst claim A02 and the writer’s FY2023 total. Using 5,247 plus 41,990 gives FY2023 total debt of 47,237 million, while FY2022 is correctly calculated as 49,781 million; the conclusion that debt decreased remains directionally correct, but the reported FY2023 value is wrong."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1626,
+    "output_tokens": 329,
+    "total_tokens": 1955,
+    "cached_tokens": 0,
+    "reasoning_tokens": 137,
+    "cost_usd": 0.00072,
+    "latency_ms": 3663.0297920200974,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1626,
+      "output_tokens": 329,
+      "total_tokens": 1955,
+      "reasoning_tokens": 137,
+      "time_to_first_token": 3.662570415996015,
+      "duration": 3.6627175410394557,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1626,
+            "output_tokens": 329,
+            "total_tokens": 1955,
+            "reasoning_tokens": 137,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1699,
+    "output_tokens": 2278,
+    "total_tokens": 3977,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 24859.37435197411,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1699,
+      "output_tokens": 2278,
+      "total_tokens": 3977,
+      "time_to_first_token": 24.859126051014755,
+      "duration": 24.85921188001521,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1699,
+            "output_tokens": 2278,
+            "total_tokens": 3977,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 24834289167,
+              "load_duration": 570291,
+              "prompt_eval_duration": 421209000,
+              "eval_duration": 24354075000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

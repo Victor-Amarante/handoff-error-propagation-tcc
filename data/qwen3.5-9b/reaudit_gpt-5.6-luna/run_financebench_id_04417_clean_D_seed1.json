@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04417_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor incorrectly assigned merchandise inventories of $5,409 million to FY2019; the FY2019 balance-sheet amount is $5,209 million, while $5,409 million corresponds to the comparison year.",
+    "reported_metric": "inventory_value",
+    "reported_value": 5409.0,
+    "confidence": 0.98,
+    "rationale": "The extractor reversed the two balance-sheet inventory figures. The analyst and writer propagated claim C01 without introducing a new discrepancy."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 953,
+    "output_tokens": 713,
+    "total_tokens": 1666,
+    "cached_tokens": 0,
+    "reasoning_tokens": 577,
+    "cost_usd": 0.0010462,
+    "latency_ms": 7694.590166967828,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 953,
+      "output_tokens": 713,
+      "total_tokens": 1666,
+      "reasoning_tokens": 577,
+      "time_to_first_token": 7.692870708007831,
+      "duration": 7.693487874988932,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 953,
+            "output_tokens": 713,
+            "total_tokens": 1666,
+            "reasoning_tokens": 577,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 849,
+    "output_tokens": 195,
+    "total_tokens": 1044,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2498.858670995105,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 849,
+      "output_tokens": 195,
+      "total_tokens": 1044,
+      "time_to_first_token": 2.4986154660000466,
+      "duration": 2.4986878219642676,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 849,
+            "output_tokens": 195,
+            "total_tokens": 1044,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2471767726,
+              "load_duration": 472669,
+              "prompt_eval_duration": 214339000,
+              "eval_duration": 2184526000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

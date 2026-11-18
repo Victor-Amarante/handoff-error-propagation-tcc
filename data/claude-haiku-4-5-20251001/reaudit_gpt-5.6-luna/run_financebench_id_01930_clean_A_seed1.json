@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01930_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The entire $150M nominal sales increase was attributable to FX, passthrough costs, and one-off items rather than organic growth.",
+    "reported_metric": "Percentage of nominal sales increase attributable to excluded factors",
+    "reported_value": 100.0,
+    "confidence": 0.88,
+    "rationale": "The extracted 0% comparable constant-currency growth supports a flat underlying metric, and the $150M nominal increase is calculated correctly. However, the trace does not establish that comparable constant-currency growth excludes passthrough costs and one-off items, nor that 100% of the nominal increase was caused by those factors. The analyst first converts this unsupported inference into a definitive claim; the writer repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 908,
+    "output_tokens": 685,
+    "total_tokens": 1593,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010036,
+    "latency_ms": 7377.515416010283,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 908,
+      "output_tokens": 685,
+      "total_tokens": 1593,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.376798457989935,
+      "duration": 7.377039582992438,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 908,
+            "output_tokens": 685,
+            "total_tokens": 1593,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1425,
+    "output_tokens": 133,
+    "total_tokens": 1558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00209,
+    "latency_ms": 2074.168917024508,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1425,
+      "output_tokens": 133,
+      "total_tokens": 1558,
+      "time_to_first_token": 2.0731493750354275,
+      "duration": 2.0734475000062957,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1425,
+            "output_tokens": 133,
+            "total_tokens": 1558,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

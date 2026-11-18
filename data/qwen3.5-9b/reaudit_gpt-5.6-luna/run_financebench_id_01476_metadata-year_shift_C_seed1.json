@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01476_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The prior full-year 2023 core constant currency EPS growth guidance was incorrectly tagged with year 2024 instead of 2023.",
+    "reported_metric": "full-year 2023 core constant currency EPS growth guidance prior update",
+    "reported_value": 8.0,
+    "confidence": 0.97,
+    "rationale": "C01's metric explicitly refers to full-year 2023 but its year field is 2024, unlike the corresponding updated guidance and revenue guidance claims, which are tagged 2023. This year error propagated into the analyst claims. The 1-point arithmetic is consistent, but the pipeline's year attribution is not."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1326,
+    "output_tokens": 847,
+    "total_tokens": 2173,
+    "cached_tokens": 0,
+    "reasoning_tokens": 679,
+    "cost_usd": 0.0012816,
+    "latency_ms": 8391.081582987681,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1326,
+      "output_tokens": 847,
+      "total_tokens": 2173,
+      "reasoning_tokens": 679,
+      "time_to_first_token": 8.390498582972214,
+      "duration": 8.390668082982302,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1326,
+            "output_tokens": 847,
+            "total_tokens": 2173,
+            "reasoning_tokens": 679,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1265,
+    "output_tokens": 837,
+    "total_tokens": 2102,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9524.676728004124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1265,
+      "output_tokens": 837,
+      "total_tokens": 2102,
+      "time_to_first_token": 9.52438825299032,
+      "duration": 9.524484561989084,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1265,
+            "output_tokens": 837,
+            "total_tokens": 2102,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9498723924,
+              "load_duration": 468935,
+              "prompt_eval_duration": 343386000,
+              "eval_duration": 9071374000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00299_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The Corporate & Investment Bank had the lowest net revenue in 2021 Q1 at $14,605 million.",
+    "reported_metric": "Corporate & Investment Bank Total net revenue 2021 Q1 had the lowest net revenue among business segments",
+    "reported_value": 14605.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values show Corporate had -$473 million, which is lower than all other listed segments. Analyst claim A01 incorrectly labels the Corporate & Investment Bank's $14,605 million as the lowest; subsequent analyst claims similarly mislabel other segments, although the writer ultimately selects the correct Corporate value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1909,
+    "output_tokens": 402,
+    "total_tokens": 2311,
+    "cached_tokens": 0,
+    "reasoning_tokens": 240,
+    "cost_usd": 0.0008642000000000001,
+    "latency_ms": 4587.337916018441,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1909,
+      "output_tokens": 402,
+      "total_tokens": 2311,
+      "reasoning_tokens": 240,
+      "time_to_first_token": 4.586829416977707,
+      "duration": 4.586938249995001,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1909,
+            "output_tokens": 402,
+            "total_tokens": 2311,
+            "reasoning_tokens": 240,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2023,
+    "output_tokens": 1409,
+    "total_tokens": 3432,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 15430.909213027917,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2023,
+      "output_tokens": 1409,
+      "total_tokens": 3432,
+      "time_to_first_token": 15.430624475004151,
+      "duration": 15.430722143035382,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2023,
+            "output_tokens": 1409,
+            "total_tokens": 3432,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 15405895411,
+              "load_duration": 655450,
+              "prompt_eval_duration": 503616000,
+              "eval_duration": 14819341000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

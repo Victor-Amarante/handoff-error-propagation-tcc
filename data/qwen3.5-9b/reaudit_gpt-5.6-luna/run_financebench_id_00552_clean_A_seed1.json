@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00552_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor values are used consistently, and the arithmetic is correct: FY2022 total debt is $47,032M + $2,749M = $49,781M, while FY2023 is $41,990M + $5,247M = $47,237M. The conclusion that debt decreased is therefore internally supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 840,
+    "output_tokens": 258,
+    "total_tokens": 1098,
+    "cached_tokens": 0,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.00047759999999999995,
+    "latency_ms": 2938.1517079891637,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 840,
+      "output_tokens": 258,
+      "total_tokens": 1098,
+      "reasoning_tokens": 128,
+      "time_to_first_token": 2.937846167013049,
+      "duration": 2.937941125012003,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 840,
+            "output_tokens": 258,
+            "total_tokens": 1098,
+            "reasoning_tokens": 128,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 725,
+    "output_tokens": 526,
+    "total_tokens": 1251,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5920.079446979798,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 725,
+      "output_tokens": 526,
+      "total_tokens": 1251,
+      "time_to_first_token": 5.919789339997806,
+      "duration": 5.919916598009877,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 725,
+            "output_tokens": 526,
+            "total_tokens": 1251,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5893833034,
+              "load_duration": 460862,
+              "prompt_eval_duration": 215387000,
+              "eval_duration": 5627077000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

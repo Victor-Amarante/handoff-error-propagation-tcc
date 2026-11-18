@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04784_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Walmart's unadjusted operating income was $21,957 million in FY2020.",
+    "reported_metric": "unadjusted operating income",
+    "reported_value": 21957.0,
+    "confidence": 0.86,
+    "rationale": "The extracted $21,957M figure is the needed operating-income value for FY2019, yet it is labeled FY2020. This misattribution caused the analyst and writer to conclude that FY2019 operating income was missing and prevented calculation of the requested margin change."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 970,
+    "output_tokens": 488,
+    "total_tokens": 1458,
+    "cached_tokens": 0,
+    "reasoning_tokens": 353,
+    "cost_usd": 0.0007796,
+    "latency_ms": 4628.368874953594,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 970,
+      "output_tokens": 488,
+      "total_tokens": 1458,
+      "reasoning_tokens": 353,
+      "time_to_first_token": 4.627956457959954,
+      "duration": 4.628093666979112,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 970,
+            "output_tokens": 488,
+            "total_tokens": 1458,
+            "reasoning_tokens": 353,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 843,
+    "output_tokens": 179,
+    "total_tokens": 1022,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2354.092388995923,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 843,
+      "output_tokens": 179,
+      "total_tokens": 1022,
+      "time_to_first_token": 2.3538033699733205,
+      "duration": 2.3538929609931074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 843,
+            "output_tokens": 179,
+            "total_tokens": 1022,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2323684831,
+              "load_duration": 463037,
+              "prompt_eval_duration": 213028000,
+              "eval_duration": 2054591000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

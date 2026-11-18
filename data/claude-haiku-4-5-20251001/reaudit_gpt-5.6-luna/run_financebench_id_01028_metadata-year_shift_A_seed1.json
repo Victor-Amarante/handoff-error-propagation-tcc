@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "American Express primarily operates in four geographic regions as of 2022, including the United States, even though the extracted United States figure is explicitly for 2023 rather than 2022.",
+    "reported_metric": "United States geography/revenue as of 2022",
+    "reported_value": null,
+    "confidence": 0.78,
+    "rationale": "The extractor provides 2022 figures for EMEA, APAC, and LACC, but the United States figure is for 2023. The analyst first generalizes the United States into the 2022 geographic set; the writer then repeats that unsupported temporal attribution."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 937,
+    "output_tokens": 607,
+    "total_tokens": 1544,
+    "cached_tokens": 0,
+    "reasoning_tokens": 450,
+    "cost_usd": 0.0009157999999999999,
+    "latency_ms": 6234.145707974676,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 937,
+      "output_tokens": 607,
+      "total_tokens": 1544,
+      "reasoning_tokens": 450,
+      "time_to_first_token": 6.233214041974861,
+      "duration": 6.23351441702107,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 937,
+            "output_tokens": 607,
+            "total_tokens": 1544,
+            "reasoning_tokens": 450,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1432,
+    "output_tokens": 180,
+    "total_tokens": 1612,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002332,
+    "latency_ms": 3067.0615829876624,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1432,
+      "output_tokens": 180,
+      "total_tokens": 1612,
+      "time_to_first_token": 3.0663175840163603,
+      "duration": 3.066546209040098,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1432,
+            "output_tokens": 180,
+            "total_tokens": 1612,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

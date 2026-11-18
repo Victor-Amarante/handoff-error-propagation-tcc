@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01148_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No erroneous claim identified; the trace supports that AMCOR operates primarily in the packaging industry.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor evidence explicitly describes AMCOR as a global leader in producing packaging, and the analyst and writer preserve that conclusion. The numeric category encodings are opaque but do not contradict the supported final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 846,
+    "output_tokens": 279,
+    "total_tokens": 1125,
+    "cached_tokens": 0,
+    "reasoning_tokens": 166,
+    "cost_usd": 0.000504,
+    "latency_ms": 3049.423167016357,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 846,
+      "output_tokens": 279,
+      "total_tokens": 1125,
+      "reasoning_tokens": 166,
+      "time_to_first_token": 3.048782375000883,
+      "duration": 3.049005415989086,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 846,
+            "output_tokens": 279,
+            "total_tokens": 1125,
+            "reasoning_tokens": 166,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 683,
+    "output_tokens": 196,
+    "total_tokens": 879,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2531.102741952054,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 683,
+      "output_tokens": 196,
+      "total_tokens": 879,
+      "time_to_first_token": 2.530864118016325,
+      "duration": 2.5309364490094595,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 683,
+            "output_tokens": 196,
+            "total_tokens": 879,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2503382259,
+              "load_duration": 462797,
+              "prompt_eval_duration": 213800000,
+              "eval_duration": 2217453000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

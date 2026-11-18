@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00799_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Cash and cash equivalents of USD 689 million was incorrectly labeled as FY2024; the cited AMCOR 2023 10-K data is being used for the FY2023 comparison.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 689.0,
+    "confidence": 0.93,
+    "rationale": "C01 is the first internally inconsistent claim: it is sourced to AMCOR's 2023 10-K yet labeled 2024, while the subsequent FY2023 quick-ratio calculation uses the USD 689 million figure. The quick-ratio values themselves are arithmetically consistent when that figure is treated as FY2023, but the extractor's year labeling is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1901,
+    "output_tokens": 689,
+    "total_tokens": 2590,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001207,
+    "latency_ms": 7157.891292008571,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1901,
+      "output_tokens": 689,
+      "total_tokens": 2590,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.157351916015614,
+      "duration": 7.1574938330450095,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1901,
+            "output_tokens": 689,
+            "total_tokens": 2590,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2672,
+    "output_tokens": 275,
+    "total_tokens": 2947,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004047,
+    "latency_ms": 4483.306208043359,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2672,
+      "output_tokens": 275,
+      "total_tokens": 2947,
+      "time_to_first_token": 4.482380207977258,
+      "duration": 4.482689582975581,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2672,
+            "output_tokens": 275,
+            "total_tokens": 2947,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

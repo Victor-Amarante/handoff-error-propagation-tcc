@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01328_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The $411,000 restructuring-cost figure was explicitly outlined in PepsiCo's FY2022 income statement.",
+    "reported_metric": "restructuring costs",
+    "reported_value": 411000.0,
+    "confidence": 0.78,
+    "rationale": "The extractor only states that the report gives restructuring costs of $411K; it does not establish that the amount appears directly in the income statement. The analyst first converts this unsupported report-level statement into the requested income-statement claim, and the writer repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 633,
+    "output_tokens": 645,
+    "total_tokens": 1278,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009006,
+    "latency_ms": 6848.150665988214,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 633,
+      "output_tokens": 645,
+      "total_tokens": 1278,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.847467290994246,
+      "duration": 6.847640416002832,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 633,
+            "output_tokens": 645,
+            "total_tokens": 1278,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 443,
+    "output_tokens": 216,
+    "total_tokens": 659,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2682.863100024406,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 443,
+      "output_tokens": 216,
+      "total_tokens": 659,
+      "time_to_first_token": 2.6826041319873184,
+      "duration": 2.682676436030306,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 443,
+            "output_tokens": 216,
+            "total_tokens": 659,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2657587006,
+              "load_duration": 615890,
+              "prompt_eval_duration": 127332000,
+              "eval_duration": 2482620000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

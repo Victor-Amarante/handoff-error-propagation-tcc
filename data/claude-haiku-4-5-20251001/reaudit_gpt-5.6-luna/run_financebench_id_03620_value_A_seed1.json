@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03620_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported PepsiCo's FY2022 operating profit (used as unadjusted operating income) as $15,112 million.",
+    "reported_metric": "FY2022 unadjusted operating income",
+    "reported_value": 15112.0,
+    "confidence": 0.98,
+    "rationale": "The first incorrect claim appears in the extractor output; the analyst and writer merely apply consistent arithmetic to the extracted figures, so their $12,668 million result inherits the extractor's operating-income error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 915,
+    "output_tokens": 1161,
+    "total_tokens": 2076,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015762,
+    "latency_ms": 11957.696584053338,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 915,
+      "output_tokens": 1161,
+      "total_tokens": 2076,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.956705667020287,
+      "duration": 11.957347707997542,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 915,
+            "output_tokens": 1161,
+            "total_tokens": 2076,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1513,
+    "output_tokens": 213,
+    "total_tokens": 1726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002578,
+    "latency_ms": 2559.2804580228403,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1513,
+      "output_tokens": 213,
+      "total_tokens": 1726,
+      "time_to_first_token": 2.558258500008378,
+      "duration": 2.558558290998917,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1513,
+            "output_tokens": 213,
+            "total_tokens": 1726,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

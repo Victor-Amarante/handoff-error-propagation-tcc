@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The highest EBITDAR contribution for FY2022 was 3,142,308 thousand USD.",
+    "reported_metric": "Highest EBITDAR Contribution",
+    "reported_value": 3142308.0,
+    "confidence": 0.99,
+    "rationale": "A01 is derived from C01, which is explicitly for 2023, while the question asks for FY2022. The analyst incorrectly selected and relabeled the 2023 value as the FY2022 maximum; the writer then propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1945,
+    "output_tokens": 288,
+    "total_tokens": 2233,
+    "cached_tokens": 0,
+    "reasoning_tokens": 155,
+    "cost_usd": 0.0007345999999999999,
+    "latency_ms": 3382.0591249968857,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1945,
+      "output_tokens": 288,
+      "total_tokens": 2233,
+      "reasoning_tokens": 155,
+      "time_to_first_token": 3.3815216250368394,
+      "duration": 3.38168766599847,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1945,
+            "output_tokens": 288,
+            "total_tokens": 2233,
+            "reasoning_tokens": 155,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2085,
+    "output_tokens": 235,
+    "total_tokens": 2320,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3251.139205007348,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2085,
+      "output_tokens": 235,
+      "total_tokens": 2320,
+      "time_to_first_token": 3.2508642760221846,
+      "duration": 3.2509544970234856,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2085,
+            "output_tokens": 235,
+            "total_tokens": 2320,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3225973068,
+              "load_duration": 646004,
+              "prompt_eval_duration": 523510999,
+              "eval_duration": 2632917000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

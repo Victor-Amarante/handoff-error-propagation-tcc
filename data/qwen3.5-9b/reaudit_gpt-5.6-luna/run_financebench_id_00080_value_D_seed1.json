@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00080_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "PayPal's FY2022 cash and cash equivalents were reported as $8,942 million, but the associated evidence shows $7,776 million.",
+    "reported_metric": "cash_and_cash_equivalents_fy2022",
+    "reported_value": 8942.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts with its own evidence. The other extracted current-asset components sum to $57,517 million only when cash is $7,776 million, confirming that $8,942 million is the first inconsistent value. The working-capital arithmetic itself, $57,517 million minus $45,101 million equals $12,416 million, is internally correct."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2225,
+    "output_tokens": 391,
+    "total_tokens": 2616,
+    "cached_tokens": 0,
+    "reasoning_tokens": 215,
+    "cost_usd": 0.0009142,
+    "latency_ms": 4450.521208986174,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2225,
+      "output_tokens": 391,
+      "total_tokens": 2616,
+      "reasoning_tokens": 215,
+      "time_to_first_token": 4.450046791986097,
+      "duration": 4.450177083024755,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2225,
+            "output_tokens": 391,
+            "total_tokens": 2616,
+            "reasoning_tokens": 215,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2439,
+    "output_tokens": 161,
+    "total_tokens": 2600,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2488.484936999157,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2439,
+      "output_tokens": 161,
+      "total_tokens": 2600,
+      "time_to_first_token": 2.4881925170193426,
+      "duration": 2.488281371013727,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2439,
+            "output_tokens": 161,
+            "total_tokens": 2600,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2461459957,
+              "load_duration": 673912,
+              "prompt_eval_duration": 601702000,
+              "eval_duration": 1803317000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01028_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The report stated that American Express's geographies in the fiscal year were 0.",
+    "reported_metric": "American Express geographies in FY 2022",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "The extractor introduced the unsupported and semantically invalid claim that geographies were zero. The analyst and writer merely propagated and rephrased that claim as geography data being zero or unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 654,
+    "output_tokens": 236,
+    "total_tokens": 890,
+    "cached_tokens": 0,
+    "reasoning_tokens": 119,
+    "cost_usd": 0.000414,
+    "latency_ms": 2966.417957970407,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 654,
+      "output_tokens": 236,
+      "total_tokens": 890,
+      "reasoning_tokens": 119,
+      "time_to_first_token": 2.9657928749802522,
+      "duration": 2.9660321659757756,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 654,
+            "output_tokens": 236,
+            "total_tokens": 890,
+            "reasoning_tokens": 119,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 441,
+    "output_tokens": 174,
+    "total_tokens": 615,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2190.530366031453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 441,
+      "output_tokens": 174,
+      "total_tokens": 615,
+      "time_to_first_token": 2.1903061749762855,
+      "duration": 2.1903760279528797,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 441,
+            "output_tokens": 174,
+            "total_tokens": 615,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2162271133,
+              "load_duration": 441602,
+              "prompt_eval_duration": 150739000,
+              "eval_duration": 1963702000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

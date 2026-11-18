@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00822_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The mean votes against for the other nominees was reported as 5,104,451 in 2022.",
+    "reported_metric": "votes_against_mean_other_nominees",
+    "reported_value": 5104451.0,
+    "confidence": 0.98,
+    "rationale": "The extractor lists eight non-highest 2022 vote counts totaling 40,641,257, whose mean is approximately 5,080,157, not 5,104,451. The writer repeats the analyst's incorrect mean, while the highest value of 16,105,005 is consistent with the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1098,
+    "output_tokens": 462,
+    "total_tokens": 1560,
+    "cached_tokens": 0,
+    "reasoning_tokens": 311,
+    "cost_usd": 0.000774,
+    "latency_ms": 4503.255959018134,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1098,
+      "output_tokens": 462,
+      "total_tokens": 1560,
+      "reasoning_tokens": 311,
+      "time_to_first_token": 4.502605375018902,
+      "duration": 4.502841959008947,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1098,
+            "output_tokens": 462,
+            "total_tokens": 1560,
+            "reasoning_tokens": 311,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1630,
+    "output_tokens": 172,
+    "total_tokens": 1802,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00249,
+    "latency_ms": 2429.2117499862798,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1630,
+      "output_tokens": 172,
+      "total_tokens": 1802,
+      "time_to_first_token": 2.4281621249974705,
+      "duration": 2.4284591249888763,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1630,
+            "output_tokens": 172,
+            "total_tokens": 1802,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

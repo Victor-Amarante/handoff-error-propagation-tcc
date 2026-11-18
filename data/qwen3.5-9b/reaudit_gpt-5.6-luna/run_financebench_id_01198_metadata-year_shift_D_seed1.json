@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01198_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "The 44% year-over-year net revenue growth is labeled as occurring in 2023, although the evidence and the surrounding FY22 revenue figures indicate it refers to 2022.",
+    "reported_metric": "net_revenue_growth_yoy",
+    "reported_value": 44.0,
+    "confidence": 0.96,
+    "rationale": "C02 is internally inconsistent: C01 reports 2022 revenue of $23.6B, C03 reports 2021 revenue of $16.4B, and the cited evidence says the 44% increase was compared with 2021. Thus the growth claim's year is the first apparent error in the trace. The later Data Center claim is supported by C04, though it may be incomplete as an explanation of all revenue drivers."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1239,
+    "output_tokens": 703,
+    "total_tokens": 1942,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010914000000000002,
+    "latency_ms": 6810.159125016071,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1239,
+      "output_tokens": 703,
+      "total_tokens": 1942,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.8095082500367425,
+      "duration": 6.809683125000447,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1239,
+            "output_tokens": 703,
+            "total_tokens": 1942,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1192,
+    "output_tokens": 277,
+    "total_tokens": 1469,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3488.611031032633,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1192,
+      "output_tokens": 277,
+      "total_tokens": 1469,
+      "time_to_first_token": 3.4883772309985943,
+      "duration": 3.488450415956322,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1192,
+            "output_tokens": 277,
+            "total_tokens": 1469,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3462925585,
+              "load_duration": 472653,
+              "prompt_eval_duration": 328333000,
+              "eval_duration": 3080524000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

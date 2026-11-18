@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00070_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be established from the trace; the pipeline correctly notes that the provided current-assets and current-liabilities figures are from different fiscal years.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extractor reports FY2023 current assets and FY2022 current liabilities, so FY2022 working capital cannot be calculated from those figures. The analyst and writer accurately identify this limitation. The discussion of working capital being less relevant for a regulated utility is qualitative and not internally contradicted by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 932,
+    "output_tokens": 657,
+    "total_tokens": 1589,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009748,
+    "latency_ms": 6529.330291959923,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 932,
+      "output_tokens": 657,
+      "total_tokens": 1589,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.528883833030704,
+      "duration": 6.529016625019722,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 932,
+            "output_tokens": 657,
+            "total_tokens": 1589,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1438,
+    "output_tokens": 213,
+    "total_tokens": 1651,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002503,
+    "latency_ms": 3492.8080840036273,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1438,
+      "output_tokens": 213,
+      "total_tokens": 1651,
+      "time_to_first_token": 3.4917997499578632,
+      "duration": 3.4920989999664016,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1438,
+            "output_tokens": 213,
+            "total_tokens": 1651,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

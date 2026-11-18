@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Pfizer separation costs incurred by Q2 2023 were $63 million.",
+    "reported_metric": "Pfizer separation costs incurred by Q2 2023",
+    "reported_value": 63.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports expected separation costs of $700 million and that approximately 90% had been incurred by Q2 2023. Ninety percent of $700 million is $630 million, not $63 million. The analyst introduced the first incorrect claim; the writer propagated it and additionally asserted an unsupported Viiv spin-off."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1119,
+    "output_tokens": 288,
+    "total_tokens": 1407,
+    "cached_tokens": 0,
+    "reasoning_tokens": 138,
+    "cost_usd": 0.0005694,
+    "latency_ms": 3341.585375019349,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1119,
+      "output_tokens": 288,
+      "total_tokens": 1407,
+      "reasoning_tokens": 138,
+      "time_to_first_token": 3.3410836670082062,
+      "duration": 3.341262292000465,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1119,
+            "output_tokens": 288,
+            "total_tokens": 1407,
+            "reasoning_tokens": 138,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1041,
+    "output_tokens": 213,
+    "total_tokens": 1254,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2738.4867520304397,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1041,
+      "output_tokens": 213,
+      "total_tokens": 1254,
+      "time_to_first_token": 2.7381943950313143,
+      "duration": 2.7382832990260795,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1041,
+            "output_tokens": 213,
+            "total_tokens": 1254,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2708937780,
+              "load_duration": 480095,
+              "prompt_eval_duration": 272522000,
+              "eval_duration": 2353047000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

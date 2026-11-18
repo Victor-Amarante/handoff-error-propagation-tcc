@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02419_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Pfizer had incurred $724.5 million and would incur an additional $805.0 million in separation costs.",
+    "reported_metric": "separation_costs_expected",
+    "reported_value": 805.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst outputs are internally consistent: 90% of $805.0 million equals $724.5 million. However, the writer incorrectly describes the full expected amount of $805.0 million as additional costs, even though $724.5 million is already 90% of that total; the remaining expected amount would be approximately $80.5 million. The trace also does not establish that large business segments were being spun off."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1038,
+    "output_tokens": 686,
+    "total_tokens": 1724,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010308,
+    "latency_ms": 6752.854415972251,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1038,
+      "output_tokens": 686,
+      "total_tokens": 1724,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.752325917012058,
+      "duration": 6.752549208002165,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1038,
+            "output_tokens": 686,
+            "total_tokens": 1724,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1600,
+    "output_tokens": 179,
+    "total_tokens": 1779,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002495,
+    "latency_ms": 2453.338541032281,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1600,
+      "output_tokens": 179,
+      "total_tokens": 1779,
+      "time_to_first_token": 2.4527758749900386,
+      "duration": 2.4529155420023017,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1600,
+            "output_tokens": 179,
+            "total_tokens": 1779,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

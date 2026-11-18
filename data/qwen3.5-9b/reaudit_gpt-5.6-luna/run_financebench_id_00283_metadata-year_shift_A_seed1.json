@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00283_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident from the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer, and final answer consistently report an expected 2024 cost of $700 million, with no conflicting provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 554,
+    "output_tokens": 163,
+    "total_tokens": 717,
+    "cached_tokens": 0,
+    "reasoning_tokens": 67,
+    "cost_usd": 0.00030639999999999997,
+    "latency_ms": 2265.0779169634916,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 554,
+      "output_tokens": 163,
+      "total_tokens": 717,
+      "reasoning_tokens": 67,
+      "time_to_first_token": 2.2644929999951273,
+      "duration": 2.2647245840053074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 554,
+            "output_tokens": 163,
+            "total_tokens": 717,
+            "reasoning_tokens": 67,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 349,
+    "output_tokens": 127,
+    "total_tokens": 476,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1671.0819370346144,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 349,
+      "output_tokens": 127,
+      "total_tokens": 476,
+      "time_to_first_token": 1.6708458890207112,
+      "duration": 1.6709179769968614,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 349,
+            "output_tokens": 127,
+            "total_tokens": 476,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1646427217,
+              "load_duration": 583091,
+              "prompt_eval_duration": 109956000,
+              "eval_duration": 1490555000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

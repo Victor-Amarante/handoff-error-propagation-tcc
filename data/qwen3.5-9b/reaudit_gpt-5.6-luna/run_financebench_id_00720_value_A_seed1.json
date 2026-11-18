@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The response is internally consistent with the trace. The extractor provides revenue categories but no gross-profit, cost-of-revenue, or expense data, so the analyst and writer appropriately explain that traditional gross margin cannot be calculated and is not the most useful metric for American Express."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1181,
+    "output_tokens": 415,
+    "total_tokens": 1596,
+    "cached_tokens": 0,
+    "reasoning_tokens": 307,
+    "cost_usd": 0.0007342000000000001,
+    "latency_ms": 4699.583999987226,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1181,
+      "output_tokens": 415,
+      "total_tokens": 1596,
+      "reasoning_tokens": 307,
+      "time_to_first_token": 4.699118333053775,
+      "duration": 4.699263708025683,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1181,
+            "output_tokens": 415,
+            "total_tokens": 1596,
+            "reasoning_tokens": 307,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1006,
+    "output_tokens": 254,
+    "total_tokens": 1260,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3053.843303991016,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1006,
+      "output_tokens": 254,
+      "total_tokens": 1260,
+      "time_to_first_token": 3.053611524985172,
+      "duration": 3.0536834159865975,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1006,
+            "output_tokens": 254,
+            "total_tokens": 1260,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3028270811,
+              "load_duration": 460365,
+              "prompt_eval_duration": 246707000,
+              "eval_duration": 2725268000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

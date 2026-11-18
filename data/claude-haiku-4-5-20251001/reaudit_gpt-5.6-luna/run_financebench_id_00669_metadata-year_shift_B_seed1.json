@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00669_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Gross margin is not a useful metric for Johnson & Johnson in FY2022.",
+    "reported_metric": "gross_margin_not_useful",
+    "reported_value": 1.0,
+    "confidence": 0.93,
+    "rationale": "The extractor provided earnings-before-tax margins and intangible-asset amortization in COGS, but no evidence that gross margin is inherently unuseful. The analyst introduced that unsupported conclusion, which the writer repeated and expanded with additional unproven explanations."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 978,
+    "output_tokens": 461,
+    "total_tokens": 1439,
+    "cached_tokens": 0,
+    "reasoning_tokens": 333,
+    "cost_usd": 0.0007488,
+    "latency_ms": 4860.718166979495,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 978,
+      "output_tokens": 461,
+      "total_tokens": 1439,
+      "reasoning_tokens": 333,
+      "time_to_first_token": 4.8597709169844165,
+      "duration": 4.860047916998155,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 978,
+            "output_tokens": 461,
+            "total_tokens": 1439,
+            "reasoning_tokens": 333,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1517,
+    "output_tokens": 170,
+    "total_tokens": 1687,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002367,
+    "latency_ms": 2555.9217919944786,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1517,
+      "output_tokens": 170,
+      "total_tokens": 1687,
+      "time_to_first_token": 2.555141624994576,
+      "duration": 2.5554000419797376,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1517,
+            "output_tokens": 170,
+            "total_tokens": 1687,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

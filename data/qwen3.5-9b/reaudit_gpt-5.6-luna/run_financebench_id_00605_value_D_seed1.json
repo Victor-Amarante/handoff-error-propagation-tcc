@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00605_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Q4 FY2022 stock repurchase cost was reported as $382.1 million, although the cited evidence states $328.1 million.",
+    "reported_metric": "share_repurchase_cost_Q4_FY2022",
+    "reported_value": 382.1,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value conflicts directly with its own evidence. This is the earliest error and propagates into the analyst's FY2023 figures and the writer's conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1332,
+    "output_tokens": 244,
+    "total_tokens": 1576,
+    "cached_tokens": 0,
+    "reasoning_tokens": 112,
+    "cost_usd": 0.0005592,
+    "latency_ms": 3044.2790840170346,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1332,
+      "output_tokens": 244,
+      "total_tokens": 1576,
+      "reasoning_tokens": 112,
+      "time_to_first_token": 3.0438014589599334,
+      "duration": 3.0438707919674926,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1332,
+            "output_tokens": 244,
+            "total_tokens": 1576,
+            "reasoning_tokens": 112,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1291,
+    "output_tokens": 360,
+    "total_tokens": 1651,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4413.298779982142,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1291,
+      "output_tokens": 360,
+      "total_tokens": 1651,
+      "time_to_first_token": 4.4130298210075125,
+      "duration": 4.413103201019112,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1291,
+            "output_tokens": 360,
+            "total_tokens": 1651,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4387950295,
+              "load_duration": 561158,
+              "prompt_eval_duration": 353667000,
+              "eval_duration": 3956807000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

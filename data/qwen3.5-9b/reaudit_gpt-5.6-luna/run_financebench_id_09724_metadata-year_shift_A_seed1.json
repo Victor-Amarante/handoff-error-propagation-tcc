@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_09724_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Net Operating Revenues for Coca-Cola Company in FY2022 was $38,655 million.",
+    "reported_metric": "FY2022 Net Operating Revenues",
+    "reported_value": 38655.0,
+    "confidence": 0.97,
+    "rationale": "The extractor mislabels the $38,655M revenue line as FY2022, creating an apparent missing denominator for FY2021. The same revenue figure is the FY2021 line item needed with FY2021 COGS of $15,357M, yielding a COGS margin of approximately 39.7%. The analyst and writer then propagate the extractor's year-label error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 763,
+    "output_tokens": 673,
+    "total_tokens": 1436,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009602,
+    "latency_ms": 6544.704416999593,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 763,
+      "output_tokens": 673,
+      "total_tokens": 1436,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.544352458033245,
+      "duration": 6.5445010830299,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 763,
+            "output_tokens": 673,
+            "total_tokens": 1436,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 579,
+    "output_tokens": 138,
+    "total_tokens": 717,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1827.864466002211,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 579,
+      "output_tokens": 138,
+      "total_tokens": 717,
+      "time_to_first_token": 1.8276338140130974,
+      "duration": 1.8277041550027207,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 579,
+            "output_tokens": 138,
+            "total_tokens": 717,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1802105908,
+              "load_duration": 447997,
+              "prompt_eval_duration": 177703000,
+              "eval_duration": 1574488000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

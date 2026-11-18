@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01198_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD's FY22 revenue was reported as $26.3 billion, although the accompanying evidence states it was $23.6 billion.",
+    "reported_metric": "revenue",
+    "reported_value": 26.3,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value directly contradicts its own evidence. Later stages propagate the evidence-based $23.6 billion figure, so C01 is the first internally identifiable error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1520,
+    "output_tokens": 294,
+    "total_tokens": 1814,
+    "cached_tokens": 0,
+    "reasoning_tokens": 171,
+    "cost_usd": 0.0006567999999999999,
+    "latency_ms": 3337.556709011551,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1520,
+      "output_tokens": 294,
+      "total_tokens": 1814,
+      "reasoning_tokens": 171,
+      "time_to_first_token": 3.336781166959554,
+      "duration": 3.3370317919761874,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1520,
+            "output_tokens": 294,
+            "total_tokens": 1814,
+            "reasoning_tokens": 171,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2147,
+    "output_tokens": 137,
+    "total_tokens": 2284,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002832,
+    "latency_ms": 2261.1704589799047,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2147,
+      "output_tokens": 137,
+      "total_tokens": 2284,
+      "time_to_first_token": 2.26030449999962,
+      "duration": 2.2605947499978356,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2147,
+            "output_tokens": 137,
+            "total_tokens": 2284,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_09724_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported Coca-Cola's FY2021 net operating revenues as $83,655 million.",
+    "reported_metric": "net operating revenues",
+    "reported_value": 83655.0,
+    "confidence": 0.98,
+    "rationale": "The analyst and writer consistently and correctly calculate 15,357 ÷ 83,655 = 18.36%, so the error originates in the extracted revenue line item. The FY2021 income-statement revenue figure is misstated as $83,655 million, leading to the incorrect COGS margin."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 834,
+    "output_tokens": 453,
+    "total_tokens": 1287,
+    "cached_tokens": 0,
+    "reasoning_tokens": 311,
+    "cost_usd": 0.0007104000000000001,
+    "latency_ms": 4509.163499984425,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 834,
+      "output_tokens": 453,
+      "total_tokens": 1287,
+      "reasoning_tokens": 311,
+      "time_to_first_token": 4.508339624968357,
+      "duration": 4.508664291992318,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 834,
+            "output_tokens": 453,
+            "total_tokens": 1287,
+            "reasoning_tokens": 311,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1344,
+    "output_tokens": 154,
+    "total_tokens": 1498,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002114,
+    "latency_ms": 3103.1445839907974,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1344,
+      "output_tokens": 154,
+      "total_tokens": 1498,
+      "time_to_first_token": 3.102304624975659,
+      "duration": 3.1025449170265347,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1344,
+            "output_tokens": 154,
+            "total_tokens": 1498,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

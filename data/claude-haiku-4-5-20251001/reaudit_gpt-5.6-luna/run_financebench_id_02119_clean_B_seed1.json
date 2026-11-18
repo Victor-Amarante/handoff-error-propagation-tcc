@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02119_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The tangible book value per share was reported as 66.56 thousand USD rather than 66.56 USD per share.",
+    "reported_metric": "tangible book value per share",
+    "reported_value": 66.56,
+    "confidence": 0.98,
+    "rationale": "The trace consistently carries the value 66.56, but the USD_K unit causes the writer to inflate it to $66,560 per share. The likely intended per-share figure is $66.56; therefore the first error is the extractor's unit assignment, with later stages propagating it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 713,
+    "output_tokens": 396,
+    "total_tokens": 1109,
+    "cached_tokens": 0,
+    "reasoning_tokens": 248,
+    "cost_usd": 0.0006178,
+    "latency_ms": 4677.765542000998,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 713,
+      "output_tokens": 396,
+      "total_tokens": 1109,
+      "reasoning_tokens": 248,
+      "time_to_first_token": 4.677184666972607,
+      "duration": 4.67741483298596,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 713,
+            "output_tokens": 396,
+            "total_tokens": 1109,
+            "reasoning_tokens": 248,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1216,
+    "output_tokens": 183,
+    "total_tokens": 1399,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002131,
+    "latency_ms": 2456.688666017726,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1216,
+      "output_tokens": 183,
+      "total_tokens": 1399,
+      "time_to_first_token": 2.4558151249657385,
+      "duration": 2.456114874978084,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1216,
+            "output_tokens": 183,
+            "total_tokens": 1399,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

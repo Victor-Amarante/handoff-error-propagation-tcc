@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01488_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The gain from discontinued operations for Johnson & Johnson in Q3 2023 was $20,000 billion.",
+    "reported_metric": "gain from discontinued operation",
+    "reported_value": 20000.0,
+    "confidence": 0.93,
+    "rationale": "The extractor explicitly reports \"$20000B,\" which denotes $20,000 billion, while the analyst and writer silently reinterpret it as $20 billion. This unsupported unit/value transformation begins in the extractor output; no claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 891,
+    "output_tokens": 1677,
+    "total_tokens": 2568,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1536,
+    "cost_usd": 0.0021906,
+    "latency_ms": 16402.138959034346,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 891,
+      "output_tokens": 1677,
+      "total_tokens": 2568,
+      "reasoning_tokens": 1536,
+      "time_to_first_token": 16.401748417003546,
+      "duration": 16.40187345800223,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 891,
+            "output_tokens": 1677,
+            "total_tokens": 2568,
+            "reasoning_tokens": 1536,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1366,
+    "output_tokens": 148,
+    "total_tokens": 1514,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002106,
+    "latency_ms": 3171.538375027012,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1366,
+      "output_tokens": 148,
+      "total_tokens": 1514,
+      "time_to_first_token": 3.170723374991212,
+      "duration": 3.170946666970849,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1366,
+            "output_tokens": 148,
+            "total_tokens": 1514,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

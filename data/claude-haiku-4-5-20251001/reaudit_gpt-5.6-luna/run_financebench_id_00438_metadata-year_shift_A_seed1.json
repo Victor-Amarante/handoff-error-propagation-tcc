@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00438_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the calculations for FY2020 and FY2021 are internally consistent, and the response appropriately states that FY2022 operating margin cannot be determined from the extracted data.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The reported margins calculate correctly from the supplied revenue and operating-income figures: 4237/12868 is approximately 32.9% and 5802/15785 is approximately 36.8%. The trace provides no FY2022 revenue, so the limitation is valid based on the available evidence. Operating margin is also reasonably characterized as relevant for Adobe's software and subscription business."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1099,
+    "output_tokens": 586,
+    "total_tokens": 1685,
+    "cached_tokens": 0,
+    "reasoning_tokens": 416,
+    "cost_usd": 0.000923,
+    "latency_ms": 6217.826041975059,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1099,
+      "output_tokens": 586,
+      "total_tokens": 1685,
+      "reasoning_tokens": 416,
+      "time_to_first_token": 6.217328040977009,
+      "duration": 6.217461124993861,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1099,
+            "output_tokens": 586,
+            "total_tokens": 1685,
+            "reasoning_tokens": 416,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1613,
+    "output_tokens": 179,
+    "total_tokens": 1792,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002508,
+    "latency_ms": 2503.028250008356,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1613,
+      "output_tokens": 179,
+      "total_tokens": 1792,
+      "time_to_first_token": 2.502011250006035,
+      "duration": 2.5023141669807956,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1613,
+            "output_tokens": 179,
+            "total_tokens": 1792,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

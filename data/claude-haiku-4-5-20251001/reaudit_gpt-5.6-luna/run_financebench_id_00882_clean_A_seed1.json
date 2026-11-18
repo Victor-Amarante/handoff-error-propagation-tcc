@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00882_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo's 2023 unsecured revolving credit commitment was reported as $4.2e+09 billion.",
+    "reported_metric": "unsecured revolving credit commitment",
+    "reported_value": 4200000000.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports the amount with the unit '$4.2e+09B', which means 4.2 billion billion, while the analyst and writer silently reinterpret it as $4.2 billion. The first malformed numerical claim therefore appears in the extractor stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 640,
+    "output_tokens": 277,
+    "total_tokens": 917,
+    "cached_tokens": 0,
+    "reasoning_tokens": 138,
+    "cost_usd": 0.00046039999999999997,
+    "latency_ms": 3340.016415982973,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 640,
+      "output_tokens": 277,
+      "total_tokens": 917,
+      "reasoning_tokens": 138,
+      "time_to_first_token": 3.3395197079516947,
+      "duration": 3.339661082951352,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 640,
+            "output_tokens": 277,
+            "total_tokens": 917,
+            "reasoning_tokens": 138,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1141,
+    "output_tokens": 192,
+    "total_tokens": 1333,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002101,
+    "latency_ms": 3480.85633298615,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1141,
+      "output_tokens": 192,
+      "total_tokens": 1333,
+      "time_to_first_token": 3.480047832999844,
+      "duration": 3.4803384160040878,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1141,
+            "output_tokens": 192,
+            "total_tokens": 1333,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

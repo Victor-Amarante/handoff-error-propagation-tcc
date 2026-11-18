@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00757_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer are internally consistent: each reports that AMD disclosed FY22 customer concentration of 16%. The trace provides no contradictory provenance or evidence of an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 542,
+    "output_tokens": 143,
+    "total_tokens": 685,
+    "cached_tokens": 0,
+    "reasoning_tokens": 49,
+    "cost_usd": 0.00028,
+    "latency_ms": 2180.1001250278205,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 542,
+      "output_tokens": 143,
+      "total_tokens": 685,
+      "reasoning_tokens": 49,
+      "time_to_first_token": 2.1794950839830562,
+      "duration": 2.1796470840345137,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 542,
+            "output_tokens": 143,
+            "total_tokens": 685,
+            "reasoning_tokens": 49,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 336,
+    "output_tokens": 304,
+    "total_tokens": 640,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3570.464220014401,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 336,
+      "output_tokens": 304,
+      "total_tokens": 640,
+      "time_to_first_token": 3.5701698760385625,
+      "duration": 3.570282164029777,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 336,
+            "output_tokens": 304,
+            "total_tokens": 640,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3541266192,
+              "load_duration": 951244,
+              "prompt_eval_duration": 104308000,
+              "eval_duration": 3390584000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

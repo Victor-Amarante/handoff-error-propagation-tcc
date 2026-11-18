@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03718_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FY2020 and FY2022 revenues and the resulting 0.4% CAGR are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "Using the trace values, (65,984 / 65,398)^(1/2) - 1 equals approximately 0.446%, which rounds to 0.4% as reported. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 867,
+    "output_tokens": 286,
+    "total_tokens": 1153,
+    "cached_tokens": 0,
+    "reasoning_tokens": 156,
+    "cost_usd": 0.0005166,
+    "latency_ms": 3431.5005830139853,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 867,
+      "output_tokens": 286,
+      "total_tokens": 1153,
+      "reasoning_tokens": 156,
+      "time_to_first_token": 3.431036458001472,
+      "duration": 3.4311754999798723,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 867,
+            "output_tokens": 286,
+            "total_tokens": 1153,
+            "reasoning_tokens": 156,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1427,
+    "output_tokens": 223,
+    "total_tokens": 1650,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002542,
+    "latency_ms": 3071.8513330211863,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1427,
+      "output_tokens": 223,
+      "total_tokens": 1650,
+      "time_to_first_token": 3.0716509170015343,
+      "duration": 3.0717091250116937,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1427,
+            "output_tokens": 223,
+            "total_tokens": 1650,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

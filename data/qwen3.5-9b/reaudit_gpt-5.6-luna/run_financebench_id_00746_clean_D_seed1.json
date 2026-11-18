@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00746_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor incorrectly recorded Ulta Beauty's common stock par value of $0.01 as the common stock trading symbol.",
+    "reported_metric": "common_stock_trading_symbol",
+    "reported_value": 0.01,
+    "confidence": 0.98,
+    "rationale": "The evidence states “Common stock, par value $0.01 per share,” which does not identify a trading symbol. Thus C01 is the first internally demonstrable factual/mapping error; later stages inherit malformed extractor data."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1029,
+    "output_tokens": 644,
+    "total_tokens": 1673,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009785999999999998,
+    "latency_ms": 7172.194249986205,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1029,
+      "output_tokens": 644,
+      "total_tokens": 1673,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.171486957988236,
+      "duration": 7.171704541950021,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1029,
+            "output_tokens": 644,
+            "total_tokens": 1673,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 900,
+    "output_tokens": 281,
+    "total_tokens": 1181,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3497.110507974867,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 900,
+      "output_tokens": 281,
+      "total_tokens": 1181,
+      "time_to_first_token": 3.496877097990364,
+      "duration": 3.4969488350325264,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 900,
+            "output_tokens": 281,
+            "total_tokens": 1181,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3470066103,
+              "load_duration": 483003,
+              "prompt_eval_duration": 241780000,
+              "eval_duration": 3154543000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

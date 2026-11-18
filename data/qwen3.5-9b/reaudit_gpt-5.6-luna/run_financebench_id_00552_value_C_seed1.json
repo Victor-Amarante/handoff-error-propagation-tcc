@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00552_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident from the trace. The analyst correctly sums current and long-term debt: USD 44,537 million in FY2023 versus USD 49,781 million in FY2022, a decrease of USD 5,244 million. The writer reports these figures and difference consistently."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1198,
+    "output_tokens": 189,
+    "total_tokens": 1387,
+    "cached_tokens": 0,
+    "reasoning_tokens": 75,
+    "cost_usd": 0.00046639999999999995,
+    "latency_ms": 2679.6296670218,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1198,
+      "output_tokens": 189,
+      "total_tokens": 1387,
+      "reasoning_tokens": 75,
+      "time_to_first_token": 2.6791500420076773,
+      "duration": 2.679303125012666,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1198,
+            "output_tokens": 189,
+            "total_tokens": 1387,
+            "reasoning_tokens": 75,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1169,
+    "output_tokens": 1217,
+    "total_tokens": 2386,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13398.55039602844,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1169,
+      "output_tokens": 1217,
+      "total_tokens": 2386,
+      "time_to_first_token": 13.39824353903532,
+      "duration": 13.398330013034865,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1169,
+            "output_tokens": 1217,
+            "total_tokens": 2386,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13373513859,
+              "load_duration": 506660,
+              "prompt_eval_duration": 325247000,
+              "eval_duration": 12995219000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

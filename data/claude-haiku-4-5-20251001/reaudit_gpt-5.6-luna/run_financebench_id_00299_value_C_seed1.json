@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00299_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extracted net revenue values show that -$473 million is the lowest value, and the analyst and writer consistently propagate that value. The writer's Corporate/Other label is not contradicted by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1158,
+    "output_tokens": 358,
+    "total_tokens": 1516,
+    "cached_tokens": 0,
+    "reasoning_tokens": 257,
+    "cost_usd": 0.0006612,
+    "latency_ms": 4190.800249984022,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1158,
+      "output_tokens": 358,
+      "total_tokens": 1516,
+      "reasoning_tokens": 257,
+      "time_to_first_token": 4.190221874974668,
+      "duration": 4.190402583975811,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1158,
+            "output_tokens": 358,
+            "total_tokens": 1516,
+            "reasoning_tokens": 257,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1746,
+    "output_tokens": 245,
+    "total_tokens": 1991,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002971,
+    "latency_ms": 3828.0078749521635,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1746,
+      "output_tokens": 245,
+      "total_tokens": 1991,
+      "time_to_first_token": 3.827066332974937,
+      "duration": 3.82735637499718,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1746,
+            "output_tokens": 245,
+            "total_tokens": 1991,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

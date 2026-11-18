@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted liability values are internally consistent: customer deposits at $110,239 million exceed long-term debt ($42,573 million), other liabilities ($37,350 million), accounts payable ($12,133 million), and short-term borrowings ($1,348 million). The analyst and writer correctly identified customer deposits as the largest liability."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1284,
+    "output_tokens": 177,
+    "total_tokens": 1461,
+    "cached_tokens": 0,
+    "reasoning_tokens": 56,
+    "cost_usd": 0.0004692,
+    "latency_ms": 2686.8703750078566,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1284,
+      "output_tokens": 177,
+      "total_tokens": 1461,
+      "reasoning_tokens": 56,
+      "time_to_first_token": 2.6864190839696676,
+      "duration": 2.686556875007227,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1284,
+            "output_tokens": 177,
+            "total_tokens": 1461,
+            "reasoning_tokens": 56,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1892,
+    "output_tokens": 255,
+    "total_tokens": 2147,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003167,
+    "latency_ms": 3829.0408750181086,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1892,
+      "output_tokens": 255,
+      "total_tokens": 2147,
+      "time_to_first_token": 3.828203333017882,
+      "duration": 3.828507207974326,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1892,
+            "output_tokens": 255,
+            "total_tokens": 2147,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

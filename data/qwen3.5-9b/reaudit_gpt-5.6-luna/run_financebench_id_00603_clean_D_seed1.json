@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00603_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The increase in merchandise inventories at the end of FY2023 was primarily driven by opening 47 new stores.",
+    "reported_metric": "driving_factor_merchandise_inventory_increase",
+    "reported_value": 47.0,
+    "confidence": 0.98,
+    "rationale": "The trace's evidence refers to fiscal 2022 and stores opened since January 29, 2022, not FY2023. The extractor and analyst claims are framed as 2022 claims; the writer is the first stage that incorrectly applies the 47-store driver to FY2023."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1298,
+    "output_tokens": 428,
+    "total_tokens": 1726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 281,
+    "cost_usd": 0.0007732,
+    "latency_ms": 4587.644625047687,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1298,
+      "output_tokens": 428,
+      "total_tokens": 1726,
+      "reasoning_tokens": 281,
+      "time_to_first_token": 4.586969916999806,
+      "duration": 4.587142749980558,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1298,
+            "output_tokens": 428,
+            "total_tokens": 1726,
+            "reasoning_tokens": 281,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1246,
+    "output_tokens": 2354,
+    "total_tokens": 3600,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 25627.431661006995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1246,
+      "output_tokens": 2354,
+      "total_tokens": 3600,
+      "time_to_first_token": 25.627178310998715,
+      "duration": 25.627268971002195,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1246,
+            "output_tokens": 2354,
+            "total_tokens": 3600,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 25600470290,
+              "load_duration": 484189,
+              "prompt_eval_duration": 313557000,
+              "eval_duration": 25233716000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

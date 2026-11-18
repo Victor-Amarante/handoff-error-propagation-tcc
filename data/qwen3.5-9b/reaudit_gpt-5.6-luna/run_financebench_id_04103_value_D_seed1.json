@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04103_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported FY2019 Net Sales as USD 18,665.2 million, but the cited evidence shows USD 16,865.2 million.",
+    "reported_metric": "FY2019 Net Sales",
+    "reported_value": 18665.2,
+    "confidence": 0.99,
+    "rationale": "Claim C01 directly contradicts its own provenance evidence. It is the earliest incorrect claim in the trace; the analyst and writer propagate a materially incorrect CCC calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2184,
+    "output_tokens": 640,
+    "total_tokens": 2824,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012048,
+    "latency_ms": 6609.168375027366,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2184,
+      "output_tokens": 640,
+      "total_tokens": 2824,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.608175791974645,
+      "duration": 6.608553041995037,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2184,
+            "output_tokens": 640,
+            "total_tokens": 2824,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2387,
+    "output_tokens": 2527,
+    "total_tokens": 4914,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 27789.499628997874,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2387,
+      "output_tokens": 2527,
+      "total_tokens": 4914,
+      "time_to_first_token": 27.789192120020743,
+      "duration": 27.7892939170124,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2387,
+            "output_tokens": 2527,
+            "total_tokens": 4914,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 27758785684,
+              "load_duration": 494110,
+              "prompt_eval_duration": 566849000,
+              "eval_duration": 27133139000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

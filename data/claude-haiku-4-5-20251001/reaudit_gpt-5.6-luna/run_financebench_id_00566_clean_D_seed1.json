@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00566_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports total debt of $150,639 million in 2022 versus $150,868 million in 2021. The analyst correctly calculates a decrease of $229 million, and the writer accurately states that Verizon did not increase its debt."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 989,
+    "output_tokens": 163,
+    "total_tokens": 1152,
+    "cached_tokens": 0,
+    "reasoning_tokens": 58,
+    "cost_usd": 0.00039339999999999997,
+    "latency_ms": 2372.4619580316357,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 989,
+      "output_tokens": 163,
+      "total_tokens": 1152,
+      "reasoning_tokens": 58,
+      "time_to_first_token": 2.371817415987607,
+      "duration": 2.372024499985855,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 989,
+            "output_tokens": 163,
+            "total_tokens": 1152,
+            "reasoning_tokens": 58,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1545,
+    "output_tokens": 152,
+    "total_tokens": 1697,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002305,
+    "latency_ms": 2987.67208395293,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1545,
+      "output_tokens": 152,
+      "total_tokens": 1697,
+      "time_to_first_token": 2.987060332961846,
+      "duration": 2.987290790944826,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1545,
+            "output_tokens": 152,
+            "total_tokens": 1697,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

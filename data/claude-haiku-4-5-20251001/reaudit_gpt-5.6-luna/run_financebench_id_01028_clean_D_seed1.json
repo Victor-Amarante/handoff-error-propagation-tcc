@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the trace consistently identifies four geographic regions and excludes Other Unallocated as a geography.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The analyst and writer correctly distinguish the four named geographies—United States, EMEA, APAC, and LACC—from the residual category Other Unallocated. The extractor's 'EMAA' appears to be a labeling inconsistency, but the writer uses the standard 'EMEA' expansion and the final answer is internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1367,
+    "output_tokens": 594,
+    "total_tokens": 1961,
+    "cached_tokens": 0,
+    "reasoning_tokens": 451,
+    "cost_usd": 0.0009862,
+    "latency_ms": 6452.595958020538,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1367,
+      "output_tokens": 594,
+      "total_tokens": 1961,
+      "reasoning_tokens": 451,
+      "time_to_first_token": 6.451949915965088,
+      "duration": 6.452190165990032,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1367,
+            "output_tokens": 594,
+            "total_tokens": 1961,
+            "reasoning_tokens": 451,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2049,
+    "output_tokens": 177,
+    "total_tokens": 2226,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002934,
+    "latency_ms": 3316.159250040073,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2049,
+      "output_tokens": 177,
+      "total_tokens": 2226,
+      "time_to_first_token": 3.3153210830059834,
+      "duration": 3.3155495829996653,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2049,
+            "output_tokens": 177,
+            "total_tokens": 2226,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01254_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated a reported annual dividend of $0.1 million as meaning that MGM Resorts effectively paid no dividends to common shareholders.",
+    "reported_metric": "annual dividend to common shareholders",
+    "reported_value": 0.1,
+    "confidence": 0.67,
+    "rationale": "The extractor explicitly reported a nonzero dividend of $0.1 million. The analyst and writer changed that into a conclusion that no meaningful dividend was paid, which does not directly answer the yes/no question and is not supported by the extracted figure. The analyst also added unsupported claims about cessation or suspension and prior higher dividends."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 661,
+    "output_tokens": 665,
+    "total_tokens": 1326,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009302000000000001,
+    "latency_ms": 6666.89754097024,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 661,
+      "output_tokens": 665,
+      "total_tokens": 1326,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.666420416033361,
+      "duration": 6.666502624982968,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 661,
+            "output_tokens": 665,
+            "total_tokens": 1326,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 450,
+    "output_tokens": 292,
+    "total_tokens": 742,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3570.5580850481056,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 450,
+      "output_tokens": 292,
+      "total_tokens": 742,
+      "time_to_first_token": 3.5703207649639808,
+      "duration": 3.570395266986452,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 450,
+            "output_tokens": 292,
+            "total_tokens": 742,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3545382108,
+              "load_duration": 882710,
+              "prompt_eval_duration": 128114000,
+              "eval_duration": 3368597000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

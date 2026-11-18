@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03838_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FY2019–FY2020 total net revenue growth rate is internally consistent with the extracted values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the extracted revenues, growth is (9,497,578 − 4,713,500) / 4,713,500 × 100 = approximately 101.5%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 739,
+    "output_tokens": 282,
+    "total_tokens": 1021,
+    "cached_tokens": 0,
+    "reasoning_tokens": 155,
+    "cost_usd": 0.0004862,
+    "latency_ms": 3434.863291971851,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 739,
+      "output_tokens": 282,
+      "total_tokens": 1021,
+      "reasoning_tokens": 155,
+      "time_to_first_token": 3.434500625007786,
+      "duration": 3.4345749999629334,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 739,
+            "output_tokens": 282,
+            "total_tokens": 1021,
+            "reasoning_tokens": 155,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1247,
+    "output_tokens": 282,
+    "total_tokens": 1529,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002657,
+    "latency_ms": 3977.1755000110716,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1247,
+      "output_tokens": 282,
+      "total_tokens": 1529,
+      "time_to_first_token": 3.9762626250158064,
+      "duration": 3.9765623340499587,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1247,
+            "output_tokens": 282,
+            "total_tokens": 1529,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

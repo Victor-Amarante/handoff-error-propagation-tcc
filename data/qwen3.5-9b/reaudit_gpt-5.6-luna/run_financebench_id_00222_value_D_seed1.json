@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00222_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Cash and cash equivalents for 2022 were reported as USD 8,435 million, although the evidence states USD 4,835 million and the balance-sheet components reconcile only with USD 4,835 million.",
+    "reported_metric": "cash_and_cash_equivalents_2022",
+    "reported_value": 8435.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's value conflicts directly with its cited evidence. Using USD 4,835 million makes the listed current-asset components sum to the reported total current assets of USD 15,019 million; using USD 8,435 million does not. This erroneous input propagates into the analyst's quick-ratio calculation and the writer's conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2412,
+    "output_tokens": 312,
+    "total_tokens": 2724,
+    "cached_tokens": 0,
+    "reasoning_tokens": 134,
+    "cost_usd": 0.0008567999999999999,
+    "latency_ms": 3574.033708020579,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2412,
+      "output_tokens": 312,
+      "total_tokens": 2724,
+      "reasoning_tokens": 134,
+      "time_to_first_token": 3.5735659579513595,
+      "duration": 3.5736823749612086,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2412,
+            "output_tokens": 312,
+            "total_tokens": 2724,
+            "reasoning_tokens": 134,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2627,
+    "output_tokens": 230,
+    "total_tokens": 2857,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3259.276768018026,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2627,
+      "output_tokens": 230,
+      "total_tokens": 2857,
+      "time_to_first_token": 3.2589834179962054,
+      "duration": 3.2590555389760993,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2627,
+            "output_tokens": 230,
+            "total_tokens": 2857,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3233261597,
+              "load_duration": 533863,
+              "prompt_eval_duration": 636199000,
+              "eval_duration": 2535257000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

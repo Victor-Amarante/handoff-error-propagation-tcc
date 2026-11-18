@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04417_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports FY2020 inventories of $5,409M, which does not answer the FY2019 question, but the trace provides no evidence that this reported FY2020 figure is incorrect. The analyst and writer accurately state that FY2019 data is unavailable rather than making an unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 711,
+    "output_tokens": 303,
+    "total_tokens": 1014,
+    "cached_tokens": 0,
+    "reasoning_tokens": 188,
+    "cost_usd": 0.0005057999999999999,
+    "latency_ms": 3160.903167037759,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 711,
+      "output_tokens": 303,
+      "total_tokens": 1014,
+      "reasoning_tokens": 188,
+      "time_to_first_token": 3.1599068339564838,
+      "duration": 3.1603835839778185,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 711,
+            "output_tokens": 303,
+            "total_tokens": 1014,
+            "reasoning_tokens": 188,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1195,
+    "output_tokens": 177,
+    "total_tokens": 1372,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00208,
+    "latency_ms": 3174.82833302347,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1195,
+      "output_tokens": 177,
+      "total_tokens": 1372,
+      "time_to_first_token": 3.1738005410297774,
+      "duration": 3.174100291042123,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1195,
+            "output_tokens": 177,
+            "total_tokens": 1372,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

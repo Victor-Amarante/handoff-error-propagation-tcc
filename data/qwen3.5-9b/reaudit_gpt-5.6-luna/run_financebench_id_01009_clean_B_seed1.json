@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01009_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo's geographies were reported as a numeric value of 200, with unit USD_K, rather than as identifiable geography names or a clearly defined count.",
+    "reported_metric": "geographies",
+    "reported_value": 200.0,
+    "confidence": 0.93,
+    "rationale": "The extractor output provides no geography names and assigns the implausible USD_K unit to a geography value. The analyst merely propagates this unsupported claim, while the writer introduces a list of geographies that is not present in the trace. Therefore the first error originates in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 786,
+    "output_tokens": 571,
+    "total_tokens": 1357,
+    "cached_tokens": 0,
+    "reasoning_tokens": 423,
+    "cost_usd": 0.0008424,
+    "latency_ms": 5631.8097920157015,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 786,
+      "output_tokens": 571,
+      "total_tokens": 1357,
+      "reasoning_tokens": 423,
+      "time_to_first_token": 5.631503959011752,
+      "duration": 5.631619166990276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 786,
+            "output_tokens": 571,
+            "total_tokens": 1357,
+            "reasoning_tokens": 423,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 630,
+    "output_tokens": 280,
+    "total_tokens": 910,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3429.1132680373266,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 630,
+      "output_tokens": 280,
+      "total_tokens": 910,
+      "time_to_first_token": 3.428880320978351,
+      "duration": 3.428953961993102,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 630,
+            "output_tokens": 280,
+            "total_tokens": 910,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3404412798,
+              "load_duration": 479879,
+              "prompt_eval_duration": 182469000,
+              "eval_duration": 3153953000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

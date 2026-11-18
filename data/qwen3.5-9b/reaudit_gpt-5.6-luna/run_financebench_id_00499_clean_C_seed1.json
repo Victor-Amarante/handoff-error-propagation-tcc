@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "The extracted FY2021 net property, plant, and equipment value is reported as $27,213 million, which is inconsistent with the surrounding PP&E data and appears to be the erroneous input that produces the distorted prior-year ratio.",
+    "reported_metric": "Property, plant and equipment net",
+    "reported_value": 27213.0,
+    "confidence": 0.78,
+    "rationale": "C03 is a major outlier versus FY2022 PP&E of $9,178 million and causes the analyst's prior-year ratio to be misleading. A02 also uses FY2022 sales for a FY2021 ratio, but that is a downstream analytical error; the anomalous extracted input is the earliest error indicated by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1444,
+    "output_tokens": 689,
+    "total_tokens": 2133,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011156,
+    "latency_ms": 7282.062416023109,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1444,
+      "output_tokens": 689,
+      "total_tokens": 2133,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.281241916993167,
+      "duration": 7.281676334037911,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1444,
+            "output_tokens": 689,
+            "total_tokens": 2133,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1437,
+    "output_tokens": 837,
+    "total_tokens": 2274,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9341.483015974518,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1437,
+      "output_tokens": 837,
+      "total_tokens": 2274,
+      "time_to_first_token": 9.341189122991636,
+      "duration": 9.341295513033401,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1437,
+            "output_tokens": 837,
+            "total_tokens": 2274,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9314575566,
+              "load_duration": 608155,
+              "prompt_eval_duration": 383510000,
+              "eval_duration": 8878915000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

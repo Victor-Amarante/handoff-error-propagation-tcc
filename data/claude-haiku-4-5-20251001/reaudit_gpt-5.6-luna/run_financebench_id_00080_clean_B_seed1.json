@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00080_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Working capital is a relevant metric for PayPal and indicates that its current assets sufficiently cover its short-term obligations.",
+    "reported_metric": "working_capital",
+    "reported_value": 12416.0,
+    "confidence": 0.84,
+    "rationale": "The arithmetic is internally consistent: $57,517 million of current assets minus $45,101 million of current liabilities equals $12,416 million. However, the writer incorrectly treats this as a meaningful liquidity conclusion for PayPal, where current assets and liabilities prominently include matched customer-funds balances ($36,357 million receivable versus $40,107 million payable). The extractor supplied the figures and the analyst computed the difference; the unsupported relevance and interpretation first appear in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1216,
+    "output_tokens": 691,
+    "total_tokens": 1907,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010723999999999998,
+    "latency_ms": 7332.744333019946,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1216,
+      "output_tokens": 691,
+      "total_tokens": 1907,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.332127500034403,
+      "duration": 7.332324458984658,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1216,
+            "output_tokens": 691,
+            "total_tokens": 1907,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1807,
+    "output_tokens": 285,
+    "total_tokens": 2092,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003232,
+    "latency_ms": 3747.419167018961,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1807,
+      "output_tokens": 285,
+      "total_tokens": 2092,
+      "time_to_first_token": 3.746391249995213,
+      "duration": 3.746693332970608,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1807,
+            "output_tokens": 285,
+            "total_tokens": 2092,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

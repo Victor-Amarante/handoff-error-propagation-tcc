@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Total revenues net of interest expense were $52,862 million in FY2023.",
+    "reported_metric": "Total revenues net of interest expense (year misclassified as 2023)",
+    "reported_value": 52862.0,
+    "confidence": 0.98,
+    "rationale": "The trace identifies the source as American Express's FY2022 10-K, while the $52,862 million revenue figure is presented as FY2023. This is a year-labeling error in the extractor. The analyst and writer correctly state that gross margin is not a meaningful metric for American Express, and they do not rely on C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1356,
+    "output_tokens": 673,
+    "total_tokens": 2029,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010788,
+    "latency_ms": 6501.1688329977915,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1356,
+      "output_tokens": 673,
+      "total_tokens": 2029,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.5004607909941114,
+      "duration": 6.500748958031181,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1356,
+            "output_tokens": 673,
+            "total_tokens": 2029,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1942,
+    "output_tokens": 145,
+    "total_tokens": 2087,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002667,
+    "latency_ms": 2451.176041038707,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1942,
+      "output_tokens": 145,
+      "total_tokens": 2087,
+      "time_to_first_token": 2.450268499960657,
+      "duration": 2.450564457976725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1942,
+            "output_tokens": 145,
+            "total_tokens": 2087,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

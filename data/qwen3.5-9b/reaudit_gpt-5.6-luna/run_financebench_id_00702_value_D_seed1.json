@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The analyst concluded that no non-standard event substantially increased Pfizer's 2019 net income, despite identifying $5.318 billion from discontinued operations.",
+    "reported_metric": "Conclusion on substantial increase in net income due to non-standard events",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The analyst output itself reports discontinued operations net of tax of $5,318 million for 2019 (A03), which is inconsistent with the zero-valued conclusion in A04. The writer then propagated that incorrect conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 5399,
+    "output_tokens": 1174,
+    "total_tokens": 6573,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0024886,
+    "latency_ms": 10919.168166990858,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5399,
+      "output_tokens": 1174,
+      "total_tokens": 6573,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.918269749963656,
+      "duration": 10.918713916966226,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5399,
+            "output_tokens": 1174,
+            "total_tokens": 6573,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 6312,
+    "output_tokens": 666,
+    "total_tokens": 6978,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8899.905110010877,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 6312,
+      "output_tokens": 666,
+      "total_tokens": 6978,
+      "time_to_first_token": 8.899669396982063,
+      "duration": 8.899744367983658,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 6312,
+            "output_tokens": 666,
+            "total_tokens": 6978,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8874732782,
+              "load_duration": 839118,
+              "prompt_eval_duration": 1453310000,
+              "eval_duration": 7356254000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05915_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted values and calculation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The average PP&E is (11,349 + 10,292) / 2 = 10,820.5 USD_M, and 149,579 / 10,820.5 = 13.8237, which rounds to 13.82 as reported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1159,
+    "output_tokens": 239,
+    "total_tokens": 1398,
+    "cached_tokens": 0,
+    "reasoning_tokens": 113,
+    "cost_usd": 0.0005186,
+    "latency_ms": 3169.2288339836523,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1159,
+      "output_tokens": 239,
+      "total_tokens": 1398,
+      "reasoning_tokens": 113,
+      "time_to_first_token": 3.1687794160097837,
+      "duration": 3.168895250011701,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1159,
+            "output_tokens": 239,
+            "total_tokens": 1398,
+            "reasoning_tokens": 113,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1757,
+    "output_tokens": 160,
+    "total_tokens": 1917,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002557,
+    "latency_ms": 2437.427541008219,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1757,
+      "output_tokens": 160,
+      "total_tokens": 1917,
+      "time_to_first_token": 2.436677250021603,
+      "duration": 2.4369711250183173,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1757,
+            "output_tokens": 160,
+            "total_tokens": 1917,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

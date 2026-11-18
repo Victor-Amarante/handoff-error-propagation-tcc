@@ -19,7 +19,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from handoff import config, measure, prompts, stages  # noqa: E402
-from handoff.conditions import CAPS, Condition, Stage, caps  # noqa: E402
+from handoff.conditions import CAPS, MAIN_CONDITIONS, Condition, Stage, caps  # noqa: E402
 from handoff.injector import (  # noqa: E402
     ERROR_TYPES,
     escalate_unit,
@@ -85,7 +85,7 @@ def s5_escopo():
     check("5", "pipeline Extrator -> Analista -> Redator",
           [s.value for s in Stage] == ["extractor", "analyst", "writer"])
 
-    check("5", "quatro condicoes A/B/C/D", [c.value for c in Condition] == list("ABCD"))
+    check("5", "quatro condicoes A/B/C/D", [c.value for c in MAIN_CONDITIONS] == list("ABCD"))
 
     esperado = {
         Condition.A: (False, False, False), Condition.B: (True, False, False),
@@ -187,7 +187,7 @@ def s8_protocolo():
 
     # Passo 3: o MESMO estado incorreto nas 4 condicoes.
     corrompido, rec = inject([CLAIM.model_copy(update={"value": 12.4})], "value")
-    payloads = {c: to_handoff(corrompido, c) for c in Condition}
+    payloads = {c: to_handoff(corrompido, c) for c in MAIN_CONDITIONS}
     mesmo = (
         str(rec.corrupted_value) in payloads[Condition.A]
         and all(payloads[c][0]["value"] == rec.corrupted_value

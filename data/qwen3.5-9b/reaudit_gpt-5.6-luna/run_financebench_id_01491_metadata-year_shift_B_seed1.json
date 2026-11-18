@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01491_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The cash proceeds from the Kenvue debt offering and initial public offering were $13.2 billion in 2024, which does not match the question's August 30, 2023 cutoff.",
+    "reported_metric": "cash proceeds from Kenvue debt offering and initial public offering",
+    "reported_value": 13.2,
+    "confidence": 0.98,
+    "rationale": "The earliest claim already assigns the $13.2 billion proceeds to 2024, while the question asks for the amount as of August 30, 2023; the analyst and writer merely propagate that extractor claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 705,
+    "output_tokens": 352,
+    "total_tokens": 1057,
+    "cached_tokens": 0,
+    "reasoning_tokens": 198,
+    "cost_usd": 0.0005633999999999999,
+    "latency_ms": 3681.6417920053937,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 705,
+      "output_tokens": 352,
+      "total_tokens": 1057,
+      "reasoning_tokens": 198,
+      "time_to_first_token": 3.6809335419675335,
+      "duration": 3.681132666999474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 705,
+            "output_tokens": 352,
+            "total_tokens": 1057,
+            "reasoning_tokens": 198,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 524,
+    "output_tokens": 228,
+    "total_tokens": 752,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2856.19887302164,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 524,
+      "output_tokens": 228,
+      "total_tokens": 752,
+      "time_to_first_token": 2.855965492024552,
+      "duration": 2.856037023011595,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 524,
+            "output_tokens": 228,
+            "total_tokens": 752,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2831067557,
+              "load_duration": 584733,
+              "prompt_eval_duration": 145402000,
+              "eval_duration": 2617744000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

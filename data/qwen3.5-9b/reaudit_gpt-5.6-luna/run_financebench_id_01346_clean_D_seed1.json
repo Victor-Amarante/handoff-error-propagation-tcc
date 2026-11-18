@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01346_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is apparent: the effective tax rate rises from 20% in FY2021 to 23% in FY2022, a 3-percentage-point increase.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor assigns 20% to FY2021 and 23% to FY2022, and the analyst correctly computes 23.0 - 20.0 = 3.0 percentage points. The writer faithfully reports that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1177,
+    "output_tokens": 253,
+    "total_tokens": 1430,
+    "cached_tokens": 0,
+    "reasoning_tokens": 114,
+    "cost_usd": 0.000539,
+    "latency_ms": 2977.1779169677757,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1177,
+      "output_tokens": 253,
+      "total_tokens": 1430,
+      "reasoning_tokens": 114,
+      "time_to_first_token": 2.9764714170014486,
+      "duration": 2.9766899999813177,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1177,
+            "output_tokens": 253,
+            "total_tokens": 1430,
+            "reasoning_tokens": 114,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1118,
+    "output_tokens": 941,
+    "total_tokens": 2059,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10317.9332910222,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1118,
+      "output_tokens": 941,
+      "total_tokens": 2059,
+      "time_to_first_token": 10.317601096990984,
+      "duration": 10.317699787032325,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1118,
+            "output_tokens": 941,
+            "total_tokens": 2059,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10290535086,
+              "load_duration": 444160,
+              "prompt_eval_duration": 288125000,
+              "eval_duration": 9926901000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

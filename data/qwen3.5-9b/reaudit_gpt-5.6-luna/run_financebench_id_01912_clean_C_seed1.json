@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01912_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "MGM China FY2022 net revenues were reported as 674,000,000 USD_M, creating an inconsistent scale relative to the other regional revenue figures.",
+    "reported_metric": "MGM China net revenues FY2022",
+    "reported_value": 674000000.0,
+    "confidence": 0.86,
+    "rationale": "The extractor labels the value as USD_M but records 674,000,000, while the writer later converts it to 674.0 without any derivation supporting that scale change. The analyst merely propagated the extractor claim, so the first identifiable error is in C03."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1209,
+    "output_tokens": 1185,
+    "total_tokens": 2394,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016638,
+    "latency_ms": 11278.575667005498,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1209,
+      "output_tokens": 1185,
+      "total_tokens": 2394,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.277918625040911,
+      "duration": 11.278184583003167,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1209,
+            "output_tokens": 1185,
+            "total_tokens": 2394,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1166,
+    "output_tokens": 2751,
+    "total_tokens": 3917,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 29855.400811997242,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1166,
+      "output_tokens": 2751,
+      "total_tokens": 3917,
+      "time_to_first_token": 29.85515065403888,
+      "duration": 29.85523333499441,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1166,
+            "output_tokens": 2751,
+            "total_tokens": 3917,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 29827310103,
+              "load_duration": 932199,
+              "prompt_eval_duration": 331270000,
+              "eval_duration": 29419441000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00517_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Commercial Airplanes revenue as $25,867M for FY2023, providing the wrong fiscal-year data for the FY2022 comparison and causing that category to be omitted.",
+    "reported_metric": "Commercial Airplanes revenue (FY2023)",
+    "reported_value": 25867.0,
+    "confidence": 0.96,
+    "rationale": "The analyst explicitly identified the Commercial Airplanes figure as FY2023 and excluded it, but Commercial Airplanes is a relevant category for the FY2022 question. The arithmetic for the other extracted categories is internally consistent; the omission originates in the extractor's wrong-period claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 879,
+    "output_tokens": 906,
+    "total_tokens": 1785,
+    "cached_tokens": 0,
+    "reasoning_tokens": 743,
+    "cost_usd": 0.001263,
+    "latency_ms": 9447.37583299866,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 879,
+      "output_tokens": 906,
+      "total_tokens": 1785,
+      "reasoning_tokens": 743,
+      "time_to_first_token": 9.446980125037953,
+      "duration": 9.447074834024534,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 879,
+            "output_tokens": 906,
+            "total_tokens": 1785,
+            "reasoning_tokens": 743,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1375,
+    "output_tokens": 173,
+    "total_tokens": 1548,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00224,
+    "latency_ms": 2565.850041981321,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1375,
+      "output_tokens": 173,
+      "total_tokens": 1548,
+      "time_to_first_token": 2.5649561249883845,
+      "duration": 2.5652597920270637,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1375,
+            "output_tokens": 173,
+            "total_tokens": 1548,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

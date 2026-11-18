@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01911_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "MGM's FY2022 interest coverage ratio is 0.0.",
+    "reported_metric": "interest_coverage_ratio",
+    "reported_value": 0.0,
+    "confidence": 0.97,
+    "rationale": "The extractor supplied annual Interest Expense of 954,954 USD_K, but no Adjusted EBIT, so the ratio cannot be calculated—not assigned a value of 0.0. The writer's structured claim is therefore unsupported and internally inconsistent with its statement that calculation is impossible."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 624,
+    "output_tokens": 642,
+    "total_tokens": 1266,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0008952000000000001,
+    "latency_ms": 6465.9322499646805,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 624,
+      "output_tokens": 642,
+      "total_tokens": 1266,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.465336000022944,
+      "duration": 6.46556916704867,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 624,
+            "output_tokens": 642,
+            "total_tokens": 1266,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1116,
+    "output_tokens": 229,
+    "total_tokens": 1345,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002261,
+    "latency_ms": 4117.8113329806365,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1116,
+      "output_tokens": 229,
+      "total_tokens": 1345,
+      "time_to_first_token": 4.11693129100604,
+      "duration": 4.117216665996239,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1116,
+            "output_tokens": 229,
+            "total_tokens": 1345,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

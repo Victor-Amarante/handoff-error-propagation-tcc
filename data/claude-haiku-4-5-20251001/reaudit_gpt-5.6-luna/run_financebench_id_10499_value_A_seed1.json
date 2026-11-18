@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10499_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2019 inventory turnover ratio was calculated and reported as 6.91, but 18,630 / ((2,721 + 2,667) / 2) = 6.9154, which rounds to 6.92.",
+    "reported_metric": "Inventory turnover ratio",
+    "reported_value": 6.91,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs are internally consistent, but the analyst incorrectly rounded 6.9154 to 6.91 instead of 6.92. The writer then repeated the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 874,
+    "output_tokens": 324,
+    "total_tokens": 1198,
+    "cached_tokens": 0,
+    "reasoning_tokens": 174,
+    "cost_usd": 0.0005636,
+    "latency_ms": 3442.7367920288816,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 874,
+      "output_tokens": 324,
+      "total_tokens": 1198,
+      "reasoning_tokens": 174,
+      "time_to_first_token": 3.441908083972521,
+      "duration": 3.442173458985053,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 874,
+            "output_tokens": 324,
+            "total_tokens": 1198,
+            "reasoning_tokens": 174,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1416,
+    "output_tokens": 231,
+    "total_tokens": 1647,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002571,
+    "latency_ms": 3790.3870420414023,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1416,
+      "output_tokens": 231,
+      "total_tokens": 1647,
+      "time_to_first_token": 3.7896579580265097,
+      "duration": 3.78989283303963,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1416,
+            "output_tokens": 231,
+            "total_tokens": 1647,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

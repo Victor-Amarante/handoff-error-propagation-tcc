@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "JPMorgan's 2022 stockholders' equity was reported as $229.3 billion, despite the accompanying evidence stating $292.3 billion.",
+    "reported_metric": "stockholders_equity",
+    "reported_value": 229.3,
+    "confidence": 0.99,
+    "rationale": "The extractor claim conflicts directly with its own evidence: the claim reports 229.3 billion, while the evidence says 292.3 billion. This is the first identifiable factual inconsistency in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 322,
+    "total_tokens": 1313,
+    "cached_tokens": 0,
+    "reasoning_tokens": 188,
+    "cost_usd": 0.0005846,
+    "latency_ms": 3580.6227499851957,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 991,
+      "output_tokens": 322,
+      "total_tokens": 1313,
+      "reasoning_tokens": 188,
+      "time_to_first_token": 3.5803483329946175,
+      "duration": 3.5804427500115708,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 991,
+            "output_tokens": 322,
+            "total_tokens": 1313,
+            "reasoning_tokens": 188,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 857,
+    "output_tokens": 170,
+    "total_tokens": 1027,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2270.0703970040195,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 170,
+      "total_tokens": 1027,
+      "time_to_first_token": 2.2698222479666583,
+      "duration": 2.269892089010682,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 170,
+            "total_tokens": 1027,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2240633147,
+              "load_duration": 858264,
+              "prompt_eval_duration": 238045000,
+              "eval_duration": 1932084000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

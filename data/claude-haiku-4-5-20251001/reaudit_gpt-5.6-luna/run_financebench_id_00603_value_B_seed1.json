@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00603_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Ulta Beauty's merchandise inventories increased by $140.2 million in FY2023, primarily due to opening 47 new stores.",
+    "reported_metric": "merchandise_inventories_increase",
+    "reported_value": 140.2,
+    "confidence": 0.97,
+    "rationale": "The extracted and analyzed records identify the $140.2 million increase and 47-store figure as year 2022, not FY2023. The writer incorrectly relabeled those figures as FY2023 and added a causal explanation not established by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 654,
+    "total_tokens": 1599,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009737999999999999,
+    "latency_ms": 6404.507667000871,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 945,
+      "output_tokens": 654,
+      "total_tokens": 1599,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.403965083998628,
+      "duration": 6.404143458988983,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 945,
+            "output_tokens": 654,
+            "total_tokens": 1599,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1463,
+    "output_tokens": 161,
+    "total_tokens": 1624,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002268,
+    "latency_ms": 2232.0441670017317,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1463,
+      "output_tokens": 161,
+      "total_tokens": 1624,
+      "time_to_first_token": 2.2311508750426583,
+      "duration": 2.2314401250332594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1463,
+            "output_tokens": 161,
+            "total_tokens": 1624,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

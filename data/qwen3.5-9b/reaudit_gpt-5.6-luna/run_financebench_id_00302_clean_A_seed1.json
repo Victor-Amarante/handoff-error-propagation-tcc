@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00302_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported PPNE values are consistent across the extractor, analyst, and writer outputs.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports PP&E of $13,745 million in FY20 and $14,882 million in FY21. The analyst and writer reproduce these same values and correctly conclude that PPNE increased."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 987,
+    "output_tokens": 188,
+    "total_tokens": 1175,
+    "cached_tokens": 0,
+    "reasoning_tokens": 71,
+    "cost_usd": 0.000423,
+    "latency_ms": 2599.2181659676135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 987,
+      "output_tokens": 188,
+      "total_tokens": 1175,
+      "reasoning_tokens": 71,
+      "time_to_first_token": 2.5989202500204556,
+      "duration": 2.598979166999925,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 987,
+            "output_tokens": 188,
+            "total_tokens": 1175,
+            "reasoning_tokens": 71,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 863,
+    "output_tokens": 2024,
+    "total_tokens": 2887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21440.953583049122,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 863,
+      "output_tokens": 2024,
+      "total_tokens": 2887,
+      "time_to_first_token": 21.44069189199945,
+      "duration": 21.440775720053352,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 863,
+            "output_tokens": 2024,
+            "total_tokens": 2887,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21408673561,
+              "load_duration": 453785,
+              "prompt_eval_duration": 215051000,
+              "eval_duration": 21145486000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

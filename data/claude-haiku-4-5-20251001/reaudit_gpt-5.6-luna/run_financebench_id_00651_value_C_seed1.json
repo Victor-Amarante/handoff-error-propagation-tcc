@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00651_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Adjusted EPS growth was -10.0% in FY2022.",
+    "reported_metric": "adjusted_eps_growth",
+    "reported_value": -10.0,
+    "confidence": 0.98,
+    "rationale": "A02 derives -10.0% from FY2022 EPS of 11.67 and FY2023 EPS of 10.5, so the calculation represents the FY2023 year-over-year change and is mislabeled as FY2022. The writer then uses this mislabeled claim to conclude that FY2023 growth is not accelerating, despite the trace's 3.5% FY2023 growth projection."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1168,
+    "output_tokens": 673,
+    "total_tokens": 1841,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010412,
+    "latency_ms": 7302.524500002619,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1168,
+      "output_tokens": 673,
+      "total_tokens": 1841,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.3001439169747755,
+      "duration": 7.301392583991401,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1168,
+            "output_tokens": 673,
+            "total_tokens": 1841,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1732,
+    "output_tokens": 205,
+    "total_tokens": 1937,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002757,
+    "latency_ms": 2764.8214169894345,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1732,
+      "output_tokens": 205,
+      "total_tokens": 1937,
+      "time_to_first_token": 2.7640324590029195,
+      "duration": 2.7642808749806136,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1732,
+            "output_tokens": 205,
+            "total_tokens": 1937,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

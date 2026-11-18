@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10499_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated the extracted FY2020 cost of products sold of $16,830 million as FY2019 COGS.",
+    "reported_metric": "cost_of_products_sold",
+    "reported_value": 16830.0,
+    "confidence": 0.99,
+    "rationale": "The extractor explicitly labels $16,830 million as cost of products sold for 2020, while the analyst changes only the year to 2019 without supporting provenance; the writer then repeats that unsupported relabeling."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 883,
+    "output_tokens": 270,
+    "total_tokens": 1153,
+    "cached_tokens": 0,
+    "reasoning_tokens": 138,
+    "cost_usd": 0.0005006,
+    "latency_ms": 3312.3509159777313,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 883,
+      "output_tokens": 270,
+      "total_tokens": 1153,
+      "reasoning_tokens": 138,
+      "time_to_first_token": 3.3115171249955893,
+      "duration": 3.3117993340129033,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 883,
+            "output_tokens": 270,
+            "total_tokens": 1153,
+            "reasoning_tokens": 138,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1424,
+    "output_tokens": 248,
+    "total_tokens": 1672,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002664,
+    "latency_ms": 3073.6175830243155,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1424,
+      "output_tokens": 248,
+      "total_tokens": 1672,
+      "time_to_first_token": 3.0729434589738958,
+      "duration": 3.073181667015888,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1424,
+            "output_tokens": 248,
+            "total_tokens": 1672,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

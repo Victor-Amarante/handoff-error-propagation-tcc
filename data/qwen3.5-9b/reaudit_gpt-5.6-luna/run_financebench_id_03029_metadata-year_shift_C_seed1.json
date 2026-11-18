@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03029_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Capital expenditure was USD 1,577 million for FY2019, although the requested period is FY2018.",
+    "reported_metric": "Capital Expenditure",
+    "reported_value": 1577.0,
+    "confidence": 0.95,
+    "rationale": "The extractor’s claim is explicitly tagged with year 2019. The analyst and writer then relabeled that same claim as FY2018 without any supporting transformation, propagating the temporal mismatch into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 916,
+    "output_tokens": 566,
+    "total_tokens": 1482,
+    "cached_tokens": 0,
+    "reasoning_tokens": 439,
+    "cost_usd": 0.0008623999999999999,
+    "latency_ms": 5760.075209022034,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 916,
+      "output_tokens": 566,
+      "total_tokens": 1482,
+      "reasoning_tokens": 439,
+      "time_to_first_token": 5.759686374978628,
+      "duration": 5.759780999971554,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 916,
+            "output_tokens": 566,
+            "total_tokens": 1482,
+            "reasoning_tokens": 439,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 808,
+    "output_tokens": 422,
+    "total_tokens": 1230,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4920.186691975687,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 808,
+      "output_tokens": 422,
+      "total_tokens": 1230,
+      "time_to_first_token": 4.919903594010975,
+      "duration": 4.919997001008596,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 808,
+            "output_tokens": 422,
+            "total_tokens": 1230,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4894316229,
+              "load_duration": 504466,
+              "prompt_eval_duration": 212232000,
+              "eval_duration": 4610650000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

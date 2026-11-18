@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01928_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMCOR's FY 2023 Adjusted EBITDA was $2,321 million.",
+    "reported_metric": "Adjusted EBITDA",
+    "reported_value": 2321.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports a value of 2,321.0, but its accompanying evidence explicitly shows 2,018 for the twelve months ended June 30, 2023. The analyst and writer reproduce the extractor's incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 915,
+    "output_tokens": 195,
+    "total_tokens": 1110,
+    "cached_tokens": 0,
+    "reasoning_tokens": 70,
+    "cost_usd": 0.000417,
+    "latency_ms": 2362.391958013177,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 915,
+      "output_tokens": 195,
+      "total_tokens": 1110,
+      "reasoning_tokens": 70,
+      "time_to_first_token": 2.3616864579962566,
+      "duration": 2.3618957920116372,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 915,
+            "output_tokens": 195,
+            "total_tokens": 1110,
+            "reasoning_tokens": 70,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1507,
+    "output_tokens": 181,
+    "total_tokens": 1688,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002412,
+    "latency_ms": 2557.7216249657795,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1507,
+      "output_tokens": 181,
+      "total_tokens": 1688,
+      "time_to_first_token": 2.5571992499753833,
+      "duration": 2.557326333015226,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1507,
+            "output_tokens": 181,
+            "total_tokens": 1688,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

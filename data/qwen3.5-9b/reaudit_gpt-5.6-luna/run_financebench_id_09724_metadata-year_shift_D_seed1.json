@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_09724_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Net Operating Revenues of $38,655 million was incorrectly labeled as FY2022 instead of FY2021.",
+    "reported_metric": "Net Operating Revenues",
+    "reported_value": 38655.0,
+    "confidence": 0.91,
+    "rationale": "The trace identifies the source as Coca-Cola's 2021 10-K, and $38,655 million is the FY2021 revenue line paired with FY2021 COGS of $15,357 million. The extractor's FY2022 label is therefore the first apparent error. The analyst then compounded the issue by failing to divide COGS by revenue; the implied FY2021 COGS margin is approximately 39.7%, not 4.0%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 952,
+    "output_tokens": 1213,
+    "total_tokens": 2165,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.001646,
+    "latency_ms": 10950.749124982394,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 952,
+      "output_tokens": 1213,
+      "total_tokens": 2165,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.950319874973502,
+      "duration": 10.950453999976162,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 952,
+            "output_tokens": 1213,
+            "total_tokens": 2165,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 842,
+    "output_tokens": 239,
+    "total_tokens": 1081,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3030.1222399575636,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 842,
+      "output_tokens": 239,
+      "total_tokens": 1081,
+      "time_to_first_token": 3.0298764610197395,
+      "duration": 3.0299498349777423,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 842,
+            "output_tokens": 239,
+            "total_tokens": 1081,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3004794525,
+              "load_duration": 559500,
+              "prompt_eval_duration": 214868000,
+              "eval_duration": 2716419000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

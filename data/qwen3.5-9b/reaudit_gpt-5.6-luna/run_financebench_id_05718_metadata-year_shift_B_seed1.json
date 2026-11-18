@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05718_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "American Water Works paid $297.5 billion in cash dividends for FY2020.",
+    "reported_metric": "dividends_paid",
+    "reported_value": 297.5,
+    "confidence": 0.98,
+    "rationale": "The extractor provides only a 2021 dividends-paid figure of $389.0 million and a unit scale, with no 2020 dividend figure. The analyst introduces an unsupported 2020 value of $297.5 billion, which the writer repeats."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 688,
+    "output_tokens": 332,
+    "total_tokens": 1020,
+    "cached_tokens": 0,
+    "reasoning_tokens": 203,
+    "cost_usd": 0.000536,
+    "latency_ms": 3666.5650840150192,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 688,
+      "output_tokens": 332,
+      "total_tokens": 1020,
+      "reasoning_tokens": 203,
+      "time_to_first_token": 3.6657972920220345,
+      "duration": 3.6660394169739448,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 688,
+            "output_tokens": 332,
+            "total_tokens": 1020,
+            "reasoning_tokens": 203,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 519,
+    "output_tokens": 294,
+    "total_tokens": 813,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3522.9850729811005,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 519,
+      "output_tokens": 294,
+      "total_tokens": 813,
+      "time_to_first_token": 3.522741181019228,
+      "duration": 3.522814416035544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 519,
+            "output_tokens": 294,
+            "total_tokens": 813,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3497152275,
+              "load_duration": 445356,
+              "prompt_eval_duration": 144912000,
+              "eval_duration": 3281600000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

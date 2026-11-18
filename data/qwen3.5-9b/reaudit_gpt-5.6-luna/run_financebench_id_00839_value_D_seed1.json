@@ -1,0 +1,80 @@
+{
+  "log": "run_financebench_id_00839_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Ulta Beauty is similar in industry to Foot Locker.",
+    "reported_metric": "Ulta Beauty industry similarity to Foot Locker",
+    "reported_value": 1.0,
+    "confidence": 0.93,
+    "rationale": "The extractor supports that Mary N. Dillon was formerly CEO of Ulta Beauty, but it does not establish that Ulta Beauty is similar to Foot Locker. The analyst first introduced that unsupported similarity claim, which the writer then repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1552,
+    "output_tokens": 269,
+    "total_tokens": 1821,
+    "cached_tokens": 1549,
+    "reasoning_tokens": 146,
+    "cost_usd": 0.00035438,
+    "latency_ms": 3281.7747090011835,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1552,
+      "output_tokens": 269,
+      "total_tokens": 1821,
+      "cache_read_tokens": 1549,
+      "reasoning_tokens": 146,
+      "time_to_first_token": 3.2811799159971997,
+      "duration": 3.281441333005205,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1552,
+            "output_tokens": 269,
+            "total_tokens": 1821,
+            "cache_read_tokens": 1549,
+            "reasoning_tokens": 146,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1509,
+    "output_tokens": 261,
+    "total_tokens": 1770,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3013.9319759909995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1509,
+      "output_tokens": 261,
+      "total_tokens": 1770,
+      "time_to_first_token": 3.0136857790057547,
+      "duration": 3.013767836964689,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1509,
+            "output_tokens": 261,
+            "total_tokens": 1770,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2986388032,
+              "load_duration": 611370,
+              "prompt_eval_duration": 40437000,
+              "eval_duration": 2862577000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04481_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident in the trace. Unadjusted EBITDA is correctly calculated as $11,512 million operating income plus $2,763 million D&A = $14,275 million, and $14,275 million divided by $86,392 million revenue equals approximately 16.52%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1142,
+    "output_tokens": 229,
+    "total_tokens": 1371,
+    "cached_tokens": 0,
+    "reasoning_tokens": 114,
+    "cost_usd": 0.0005032000000000001,
+    "latency_ms": 2838.4990000049584,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1142,
+      "output_tokens": 229,
+      "total_tokens": 1371,
+      "reasoning_tokens": 114,
+      "time_to_first_token": 2.838103374990169,
+      "duration": 2.838198041950818,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1142,
+            "output_tokens": 229,
+            "total_tokens": 1371,
+            "reasoning_tokens": 114,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1765,
+    "output_tokens": 205,
+    "total_tokens": 1970,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00279,
+    "latency_ms": 3680.0626250333153,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1765,
+      "output_tokens": 205,
+      "total_tokens": 1970,
+      "time_to_first_token": 3.6795951669919305,
+      "duration": 3.679696957988199,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1765,
+            "output_tokens": 205,
+            "total_tokens": 1970,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

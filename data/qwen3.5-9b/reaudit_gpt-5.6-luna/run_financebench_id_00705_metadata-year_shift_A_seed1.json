@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00705_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The original PepsiCo credit agreement amount was reported as $3.8e+09M, which is inconsistent with the analyst's interpretation of $3.8 billion.",
+    "reported_metric": "original credit agreement amount",
+    "reported_value": 3800000000.0,
+    "confidence": 0.93,
+    "rationale": "The extractor explicitly appends 'M' to both scientific-notation amounts, while the analyst silently interprets them as billions. Under the extractor's stated units, the $400 million conclusion does not follow; the unit/magnitude error begins in extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 631,
+    "output_tokens": 658,
+    "total_tokens": 1289,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009158,
+    "latency_ms": 6546.160750032868,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 631,
+      "output_tokens": 658,
+      "total_tokens": 1289,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.545178750006016,
+      "duration": 6.545725959003903,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 631,
+            "output_tokens": 658,
+            "total_tokens": 1289,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 435,
+    "output_tokens": 315,
+    "total_tokens": 750,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3661.184502998367,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 435,
+      "output_tokens": 315,
+      "total_tokens": 750,
+      "time_to_first_token": 3.6609490449773148,
+      "duration": 3.661023535998538,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 435,
+            "output_tokens": 315,
+            "total_tokens": 750,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3633191595,
+              "load_duration": 503501,
+              "prompt_eval_duration": 126773000,
+              "eval_duration": 3458785000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

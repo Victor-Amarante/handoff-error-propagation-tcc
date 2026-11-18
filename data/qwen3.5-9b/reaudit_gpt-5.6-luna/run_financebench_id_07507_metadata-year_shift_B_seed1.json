@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_07507_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Adobe's year-over-year change in unadjusted operating income from FY2015 to FY2016 was 65.3%.",
+    "reported_metric": "year-over-year change in unadjusted operating income",
+    "reported_value": 65.3,
+    "confidence": 0.98,
+    "rationale": "Using the analyst's values, (1,493,602 - 903,095) / 903,095 × 100 = 65.3869%, which rounds to 65.4%, not 65.3%. The underlying values are internally consistent; the error first appears in the writer's calculation or rounding."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 771,
+    "output_tokens": 671,
+    "total_tokens": 1442,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009594,
+    "latency_ms": 6931.217624980491,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 771,
+      "output_tokens": 671,
+      "total_tokens": 1442,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.930664666986559,
+      "duration": 6.9309003339731134,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 771,
+            "output_tokens": 671,
+            "total_tokens": 1442,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 617,
+    "output_tokens": 390,
+    "total_tokens": 1007,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4455.271058017388,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 617,
+      "output_tokens": 390,
+      "total_tokens": 1007,
+      "time_to_first_token": 4.454981942952145,
+      "duration": 4.45506538299378,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 617,
+            "output_tokens": 390,
+            "total_tokens": 1007,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4425708094,
+              "load_duration": 459732,
+              "prompt_eval_duration": 182880000,
+              "eval_duration": 4172942000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

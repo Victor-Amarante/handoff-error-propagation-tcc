@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the final answer correctly states that operating activities provided the most cash in FY22 at $3,565 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted and analyzed figures are internally consistent: operating cash flow was $3,565 million, investing was $1,999 million, and financing was negative $3,264 million. The writer correctly selected operating activities as the largest cash inflow."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3795,
+    "output_tokens": 206,
+    "total_tokens": 4001,
+    "cached_tokens": 0,
+    "reasoning_tokens": 74,
+    "cost_usd": 0.0010062,
+    "latency_ms": 2684.866709052585,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3795,
+      "output_tokens": 206,
+      "total_tokens": 4001,
+      "reasoning_tokens": 74,
+      "time_to_first_token": 2.6840932909981348,
+      "duration": 2.684329624986276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3795,
+            "output_tokens": 206,
+            "total_tokens": 4001,
+            "reasoning_tokens": 74,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4291,
+    "output_tokens": 812,
+    "total_tokens": 5103,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9887.28855602676,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4291,
+      "output_tokens": 812,
+      "total_tokens": 5103,
+      "time_to_first_token": 9.887029673962388,
+      "duration": 9.88710979995085,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4291,
+            "output_tokens": 812,
+            "total_tokens": 5103,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9855491667,
+              "load_duration": 566985,
+              "prompt_eval_duration": 1008025000,
+              "eval_duration": 8784840000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

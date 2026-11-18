@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06741_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported Walmart FY2018 net sales as 945,761 USD million, although its evidence shows $495,761.",
+    "reported_metric": "net_sales_2018",
+    "reported_value": 945761.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 is internally inconsistent: the extracted value is 945,761 while the attached evidence states $495,761. This inflated sales figure propagates through the three-year sales average and produces the incorrect 61.6% margin."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2415,
+    "output_tokens": 261,
+    "total_tokens": 2676,
+    "cached_tokens": 0,
+    "reasoning_tokens": 123,
+    "cost_usd": 0.0007962000000000001,
+    "latency_ms": 3004.066000052262,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2415,
+      "output_tokens": 261,
+      "total_tokens": 2676,
+      "reasoning_tokens": 123,
+      "time_to_first_token": 3.0034701250260696,
+      "duration": 3.003583042009268,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2415,
+            "output_tokens": 261,
+            "total_tokens": 2676,
+            "reasoning_tokens": 123,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2704,
+    "output_tokens": 1256,
+    "total_tokens": 3960,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14290.687929955311,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2704,
+      "output_tokens": 1256,
+      "total_tokens": 3960,
+      "time_to_first_token": 14.290449733030982,
+      "duration": 14.290526780008804,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2704,
+            "output_tokens": 1256,
+            "total_tokens": 3960,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14265345891,
+              "load_duration": 695649,
+              "prompt_eval_duration": 655657000,
+              "eval_duration": 13524793000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

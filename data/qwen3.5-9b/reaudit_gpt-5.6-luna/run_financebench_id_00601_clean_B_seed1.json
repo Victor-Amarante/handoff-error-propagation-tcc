@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00601_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The reduction in SG&A expense as a percentage of net sales was driven by cost management initiatives and operational efficiencies.",
+    "reported_metric": "driver of FY2023 SG&A expenses as a percentage of net sales reduction",
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The extractor and analyst outputs only support the percentages (23.5% in FY2023 and 23.9% in FY2021). The writer introduced the causal explanation about cost management and operational efficiencies without any supporting provenance in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 801,
+    "output_tokens": 456,
+    "total_tokens": 1257,
+    "cached_tokens": 0,
+    "reasoning_tokens": 316,
+    "cost_usd": 0.0007074,
+    "latency_ms": 4709.231207962148,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 801,
+      "output_tokens": 456,
+      "total_tokens": 1257,
+      "reasoning_tokens": 316,
+      "time_to_first_token": 4.708885708008893,
+      "duration": 4.7089613329735585,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 801,
+            "output_tokens": 456,
+            "total_tokens": 1257,
+            "reasoning_tokens": 316,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 644,
+    "output_tokens": 256,
+    "total_tokens": 900,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3185.765456990339,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 644,
+      "output_tokens": 256,
+      "total_tokens": 900,
+      "time_to_first_token": 3.1854921050253324,
+      "duration": 3.1855720930034295,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 644,
+            "output_tokens": 256,
+            "total_tokens": 900,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3156478149,
+              "load_duration": 482839,
+              "prompt_eval_duration": 182738000,
+              "eval_duration": 2906656000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

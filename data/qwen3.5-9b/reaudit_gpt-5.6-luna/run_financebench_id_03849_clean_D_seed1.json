@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03849_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The reported three-year average of capex as a percentage of revenue is 7.8%.",
+    "reported_metric": "3-Year Average Capex % of Revenue",
+    "reported_value": 7.8,
+    "confidence": 0.98,
+    "rationale": "Using the extracted values, the annual ratios are approximately 12.64%, 5.73%, and 5.24%; their arithmetic mean is 7.87%, which rounds to 7.9%, not 7.8%. The error first appears in analyst claim A04 and is propagated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1769,
+    "output_tokens": 543,
+    "total_tokens": 2312,
+    "cached_tokens": 0,
+    "reasoning_tokens": 392,
+    "cost_usd": 0.0010054,
+    "latency_ms": 4996.98770896066,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1769,
+      "output_tokens": 543,
+      "total_tokens": 2312,
+      "reasoning_tokens": 392,
+      "time_to_first_token": 4.996464708005078,
+      "duration": 4.9966179999755695,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1769,
+            "output_tokens": 543,
+            "total_tokens": 2312,
+            "reasoning_tokens": 392,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1904,
+    "output_tokens": 503,
+    "total_tokens": 2407,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5912.428695999552,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1904,
+      "output_tokens": 503,
+      "total_tokens": 2407,
+      "time_to_first_token": 5.912153701996431,
+      "duration": 5.912226728978567,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1904,
+            "output_tokens": 503,
+            "total_tokens": 2407,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5885829048,
+              "load_duration": 645240,
+              "prompt_eval_duration": 449035000,
+              "eval_duration": 5377568000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

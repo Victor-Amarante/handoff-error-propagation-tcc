@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10285_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; all stages consistently report Boeing's FY2018 net property, plant, and equipment as $12,645 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer, and final answer all agree on the same metric and value, and the trace provides no contradictory provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 622,
+    "output_tokens": 271,
+    "total_tokens": 893,
+    "cached_tokens": 0,
+    "reasoning_tokens": 153,
+    "cost_usd": 0.00044960000000000003,
+    "latency_ms": 3247.582332987804,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 622,
+      "output_tokens": 271,
+      "total_tokens": 893,
+      "reasoning_tokens": 153,
+      "time_to_first_token": 3.2469655000022613,
+      "duration": 3.247153167030774,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 622,
+            "output_tokens": 271,
+            "total_tokens": 893,
+            "reasoning_tokens": 153,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1093,
+    "output_tokens": 140,
+    "total_tokens": 1233,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001793,
+    "latency_ms": 2782.392124994658,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1093,
+      "output_tokens": 140,
+      "total_tokens": 1233,
+      "time_to_first_token": 2.781377750041429,
+      "duration": 2.7816733750514686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1093,
+            "output_tokens": 140,
+            "total_tokens": 1233,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

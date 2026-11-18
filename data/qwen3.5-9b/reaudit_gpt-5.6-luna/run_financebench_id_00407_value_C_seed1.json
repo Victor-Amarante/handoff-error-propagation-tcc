@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00407_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident in the trace. Corporate bonds have the largest short-term investment value at 416,420 USD_K, exceeding all other listed categories, and the writer correctly converts this to 416,420,000 USD."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1967,
+    "output_tokens": 185,
+    "total_tokens": 2152,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.0006154000000000001,
+    "latency_ms": 2676.2117909966037,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1967,
+      "output_tokens": 185,
+      "total_tokens": 2152,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.676020333019551,
+      "duration": 2.67607525002677,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1967,
+            "output_tokens": 185,
+            "total_tokens": 2152,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2084,
+    "output_tokens": 493,
+    "total_tokens": 2577,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6138.876540993806,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2084,
+      "output_tokens": 493,
+      "total_tokens": 2577,
+      "time_to_first_token": 6.138565007015131,
+      "duration": 6.138660577998962,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2084,
+            "output_tokens": 493,
+            "total_tokens": 2577,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6109239112,
+              "load_duration": 497032,
+              "prompt_eval_duration": 522827000,
+              "eval_duration": 5485912000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

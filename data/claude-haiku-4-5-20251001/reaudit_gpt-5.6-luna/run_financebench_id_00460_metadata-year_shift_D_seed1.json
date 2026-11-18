@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00460_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Best Buy had 907 stores at the end of Q2 of FY2025.",
+    "reported_metric": "store_count",
+    "reported_value": 907.0,
+    "confidence": 0.96,
+    "rationale": "The evidence and source identifier indicate Q2 FY2024, but C01 labels the 907-store figure as year 2025. The analyst later reattributes it to 2024, so the first inconsistency appears in the extractor metadata; the final numerical comparison itself is internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 998,
+    "output_tokens": 645,
+    "total_tokens": 1643,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009736,
+    "latency_ms": 6782.250042015221,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 998,
+      "output_tokens": 645,
+      "total_tokens": 1643,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.781470542016905,
+      "duration": 6.781776916992385,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 998,
+            "output_tokens": 645,
+            "total_tokens": 1643,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1565,
+    "output_tokens": 190,
+    "total_tokens": 1755,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002515,
+    "latency_ms": 2730.360916990321,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1565,
+      "output_tokens": 190,
+      "total_tokens": 1755,
+      "time_to_first_token": 2.7298352499492466,
+      "duration": 2.729915957956109,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1565,
+            "output_tokens": 190,
+            "total_tokens": 1755,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

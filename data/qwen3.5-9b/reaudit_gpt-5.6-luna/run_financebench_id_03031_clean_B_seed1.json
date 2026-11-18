@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03031_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 1.0,
+    "rationale": "The analyst correctly calculated net working capital as total current assets less total current liabilities: $19,815 million − $13,997 million = $5,818 million. The writer reproduced this result accurately."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 707,
+    "output_tokens": 187,
+    "total_tokens": 894,
+    "cached_tokens": 0,
+    "reasoning_tokens": 86,
+    "cost_usd": 0.0003658,
+    "latency_ms": 2466.6341670090333,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 707,
+      "output_tokens": 187,
+      "total_tokens": 894,
+      "reasoning_tokens": 86,
+      "time_to_first_token": 2.4645578340278007,
+      "duration": 2.46558120904956,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 707,
+            "output_tokens": 187,
+            "total_tokens": 894,
+            "reasoning_tokens": 86,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 535,
+    "output_tokens": 162,
+    "total_tokens": 697,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2083.087766019162,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 535,
+      "output_tokens": 162,
+      "total_tokens": 697,
+      "time_to_first_token": 2.082858643028885,
+      "duration": 2.0829275730066,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 535,
+            "output_tokens": 162,
+            "total_tokens": 697,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2056349175,
+              "load_duration": 620385,
+              "prompt_eval_duration": 168543000,
+              "eval_duration": 1820265000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

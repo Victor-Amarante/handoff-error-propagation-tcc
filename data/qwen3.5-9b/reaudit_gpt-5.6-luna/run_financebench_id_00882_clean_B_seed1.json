@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00882_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported $4,200,000,000 in units of USD millions, which would imply $4.2 trillion rather than the apparent $4.2 billion amount.",
+    "reported_metric": "total_amount_possibly_borrow_under_unsecured_revolving_credit_agreements",
+    "reported_value": 4200000000.0,
+    "confidence": 0.78,
+    "rationale": "The extractor's numeric value is consistent with $4.2 billion when interpreted as dollars, but its USD_M unit is inconsistent. The analyst then propagated that unit inconsistency as 4,200 USD_B, producing the final $4,200 billion error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 796,
+    "output_tokens": 1193,
+    "total_tokens": 1989,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015907999999999999,
+    "latency_ms": 10531.990999996196,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 796,
+      "output_tokens": 1193,
+      "total_tokens": 1989,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.531398084014654,
+      "duration": 10.53159179200884,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 796,
+            "output_tokens": 1193,
+            "total_tokens": 1989,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 657,
+    "output_tokens": 625,
+    "total_tokens": 1282,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6998.819808999542,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 657,
+      "output_tokens": 625,
+      "total_tokens": 1282,
+      "time_to_first_token": 6.998579720966518,
+      "duration": 6.9986531879985705,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 657,
+            "output_tokens": 625,
+            "total_tokens": 1282,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6973625165,
+              "load_duration": 1361968,
+              "prompt_eval_duration": 179487000,
+              "eval_duration": 6744376000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

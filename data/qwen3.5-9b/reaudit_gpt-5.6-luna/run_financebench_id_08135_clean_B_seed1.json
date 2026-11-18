@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08135_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the reported year-over-year increase is consistent with the extracted values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the extracted line items, (177866 - 135987) / 135987 × 100 = 30.796...%, which rounds to 30.8%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 703,
+    "output_tokens": 225,
+    "total_tokens": 928,
+    "cached_tokens": 0,
+    "reasoning_tokens": 116,
+    "cost_usd": 0.0004106,
+    "latency_ms": 3099.655124999117,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 703,
+      "output_tokens": 225,
+      "total_tokens": 928,
+      "reasoning_tokens": 116,
+      "time_to_first_token": 3.098962208023295,
+      "duration": 3.0992290410213172,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 703,
+            "output_tokens": 225,
+            "total_tokens": 928,
+            "reasoning_tokens": 116,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 544,
+    "output_tokens": 213,
+    "total_tokens": 757,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2626.226813008543,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 544,
+      "output_tokens": 213,
+      "total_tokens": 757,
+      "time_to_first_token": 2.625993116002064,
+      "duration": 2.6260645799920894,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 544,
+            "output_tokens": 213,
+            "total_tokens": 757,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2599044481,
+              "load_duration": 406275,
+              "prompt_eval_duration": 145018000,
+              "eval_duration": 2377652000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

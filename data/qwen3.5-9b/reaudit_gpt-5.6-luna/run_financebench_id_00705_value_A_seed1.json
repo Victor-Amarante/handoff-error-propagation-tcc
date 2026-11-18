@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00705_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst treated the extractor's amounts reported as $3.08e+09M and $4.2e+09M as $3.08 billion and $4.2 billion, respectively, without accounting for the stated M unit.",
+    "reported_metric": "increase in PepsiCo's unsecured five-year revolving credit agreement",
+    "reported_value": 1.12,
+    "confidence": 0.86,
+    "rationale": "The extractor values include an explicit M suffix, but the analyst silently reinterprets them as billions and reports a $1.12 billion increase. The writer repeats that unsupported unit conversion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 637,
+    "output_tokens": 666,
+    "total_tokens": 1303,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009265999999999999,
+    "latency_ms": 6871.552249998786,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 637,
+      "output_tokens": 666,
+      "total_tokens": 1303,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.870942500012461,
+      "duration": 6.871150040999055,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 637,
+            "output_tokens": 666,
+            "total_tokens": 1303,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 441,
+    "output_tokens": 153,
+    "total_tokens": 594,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1996.1234439979307,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 441,
+      "output_tokens": 153,
+      "total_tokens": 594,
+      "time_to_first_token": 1.9958887680550106,
+      "duration": 1.9959607820492238,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 441,
+            "output_tokens": 153,
+            "total_tokens": 594,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1970622387,
+              "load_duration": 439324,
+              "prompt_eval_duration": 127939000,
+              "eval_duration": 1786524000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

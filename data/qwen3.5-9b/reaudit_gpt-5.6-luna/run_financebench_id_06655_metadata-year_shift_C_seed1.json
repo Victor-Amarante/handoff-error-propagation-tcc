@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06655_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Amazon's FY2017 DPO was reported as 96.53 days, but the supplied line items calculate it as 93.86 days.",
+    "reported_metric": "Amazon's FY2017 days payable outstanding (DPO)",
+    "reported_value": 96.53,
+    "confidence": 0.99,
+    "rationale": "Using the trace values, average accounts payable is (25,309 + 34,616) / 2 = 29,962.5, and the denominator is FY2017 COGS plus inventory change = 111,934 + (16,047 - 11,461) = 116,520. Thus DPO = 365 × 29,962.5 / 116,520 = 93.86 days, not 96.53."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1646,
+    "output_tokens": 1704,
+    "total_tokens": 3350,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1496,
+    "cost_usd": 0.002374,
+    "latency_ms": 15251.189542002976,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1646,
+      "output_tokens": 1704,
+      "total_tokens": 3350,
+      "reasoning_tokens": 1496,
+      "time_to_first_token": 15.25078504200792,
+      "duration": 15.250950417015702,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1646,
+            "output_tokens": 1704,
+            "total_tokens": 3350,
+            "reasoning_tokens": 1496,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1737,
+    "output_tokens": 2610,
+    "total_tokens": 4347,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 27714.313548000064,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1737,
+      "output_tokens": 2610,
+      "total_tokens": 4347,
+      "time_to_first_token": 27.714053403993603,
+      "duration": 27.714147578983102,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1737,
+            "output_tokens": 2610,
+            "total_tokens": 4347,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 27689126859,
+              "load_duration": 624084,
+              "prompt_eval_duration": 425519000,
+              "eval_duration": 27208192000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

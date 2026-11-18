@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00070_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident: FY2022 working capital is correctly calculated as total current assets of $1,250 million minus total current liabilities of $2,811 million, or negative $1,561 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The analyst's arithmetic and the writer's reported value are internally consistent and correctly trace to C08 and C16. The response does omit the requested discussion of whether working capital is useful or relevant for this company, but that is an omission rather than an identifiable incorrect factual claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2489,
+    "output_tokens": 665,
+    "total_tokens": 3154,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012958,
+    "latency_ms": 6800.540250027552,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2489,
+      "output_tokens": 665,
+      "total_tokens": 3154,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.800060042005498,
+      "duration": 6.800203749968205,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2489,
+            "output_tokens": 665,
+            "total_tokens": 3154,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2700,
+    "output_tokens": 1328,
+    "total_tokens": 4028,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14758.44080594834,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2700,
+      "output_tokens": 1328,
+      "total_tokens": 4028,
+      "time_to_first_token": 14.758206642000005,
+      "duration": 14.758284400973935,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2700,
+            "output_tokens": 1328,
+            "total_tokens": 4028,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14731348799,
+              "load_duration": 464123,
+              "prompt_eval_duration": 653108000,
+              "eval_duration": 14019526000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01474_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "PepsiCo's guidance adjustments were made based on improved performance in specific regions and categories.",
+    "reported_metric": "PepsiCo raised its full-year 2023 organic revenue guidance from 6.0% to 8.0% and core constant currency EPS guidance from 8.0% to 9.0%. These adjustments were made based on improved performance in specific regions and categories.",
+    "reported_value": 2.0,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst claims support the two guidance increases and their magnitudes. However, the trace provides no claim or provenance supporting the writer's causal explanation about improved performance in specific regions and categories; that unsupported assertion first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1361,
+    "output_tokens": 634,
+    "total_tokens": 1995,
+    "cached_tokens": 0,
+    "reasoning_tokens": 454,
+    "cost_usd": 0.001033,
+    "latency_ms": 6401.052000001073,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1361,
+      "output_tokens": 634,
+      "total_tokens": 1995,
+      "reasoning_tokens": 454,
+      "time_to_first_token": 6.400362749991473,
+      "duration": 6.400633916957304,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1361,
+            "output_tokens": 634,
+            "total_tokens": 1995,
+            "reasoning_tokens": 454,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1297,
+    "output_tokens": 629,
+    "total_tokens": 1926,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7189.429819991346,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1297,
+      "output_tokens": 629,
+      "total_tokens": 1926,
+      "time_to_first_token": 7.189141865004785,
+      "duration": 7.189235538011417,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1297,
+            "output_tokens": 629,
+            "total_tokens": 1926,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7163575135,
+              "load_duration": 589819,
+              "prompt_eval_duration": 358687000,
+              "eval_duration": 6749255000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04302_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2016 cost of sales margin was reported as 57.2962%, although 17,405 divided by 32,376 equals approximately 53.8%.",
+    "reported_metric": "cost_of_sales_margin_pct_avg",
+    "reported_value": 57.2961605839427,
+    "confidence": 0.98,
+    "rationale": "The extractor inputs for A01 are explicit, and the reported percentage does not match their quotient. A02 does match its inputs, while A04 propagates the incorrect annual percentage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1592,
+    "output_tokens": 1534,
+    "total_tokens": 3126,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1382,
+    "cost_usd": 0.0021592,
+    "latency_ms": 14810.81862503197,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1592,
+      "output_tokens": 1534,
+      "total_tokens": 3126,
+      "reasoning_tokens": 1382,
+      "time_to_first_token": 14.810268250002991,
+      "duration": 14.8104211249738,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1592,
+            "output_tokens": 1534,
+            "total_tokens": 3126,
+            "reasoning_tokens": 1382,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1666,
+    "output_tokens": 306,
+    "total_tokens": 1972,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3896.733822999522,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1666,
+      "output_tokens": 306,
+      "total_tokens": 1972,
+      "time_to_first_token": 3.8964925430482253,
+      "duration": 3.8965693510253914,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1666,
+            "output_tokens": 306,
+            "total_tokens": 1972,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3871373855,
+              "load_duration": 706285,
+              "prompt_eval_duration": 430210000,
+              "eval_duration": 3376081000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

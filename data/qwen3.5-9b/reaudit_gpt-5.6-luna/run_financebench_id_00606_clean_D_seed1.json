@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00606_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Ulta Beauty's FY2023 wages expense was reported as 4,713,500 USD thousands.",
+    "reported_metric": "Wages expense FY2023",
+    "reported_value": 4713500.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's evidence discusses FY2022 net sales, not wages expense or FY2023. The unsupported C01 value was then used to derive the analyst's percentage and the writer's decrease claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 946,
+    "output_tokens": 287,
+    "total_tokens": 1233,
+    "cached_tokens": 0,
+    "reasoning_tokens": 162,
+    "cost_usd": 0.0005336000000000001,
+    "latency_ms": 3433.1079170224257,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 946,
+      "output_tokens": 287,
+      "total_tokens": 1233,
+      "reasoning_tokens": 162,
+      "time_to_first_token": 3.432727415987756,
+      "duration": 3.432828499993775,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 946,
+            "output_tokens": 287,
+            "total_tokens": 1233,
+            "reasoning_tokens": 162,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 829,
+    "output_tokens": 312,
+    "total_tokens": 1141,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3730.1905599888414,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 829,
+      "output_tokens": 312,
+      "total_tokens": 1141,
+      "time_to_first_token": 3.729958201001864,
+      "duration": 3.7300295690074563,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 829,
+            "output_tokens": 312,
+            "total_tokens": 1141,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3702674144,
+              "load_duration": 466792,
+              "prompt_eval_duration": 214119000,
+              "eval_duration": 3435390000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

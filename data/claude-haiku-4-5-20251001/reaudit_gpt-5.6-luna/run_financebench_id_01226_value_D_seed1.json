@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The 2022 litigation-related charge was reported as $2.1 billion, although the cited evidence states it was approximately $1.2 billion.",
+    "reported_metric": "SG&A_litigation_charge",
+    "reported_value": 2.1,
+    "confidence": 0.99,
+    "rationale": "Claim C01 is internally inconsistent with its own evidence, which says the charge was approximately $1.2 billion. This is the earliest error and propagates into the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1356,
+    "output_tokens": 268,
+    "total_tokens": 1624,
+    "cached_tokens": 0,
+    "reasoning_tokens": 136,
+    "cost_usd": 0.0005928,
+    "latency_ms": 3152.686875022482,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1356,
+      "output_tokens": 268,
+      "total_tokens": 1624,
+      "reasoning_tokens": 136,
+      "time_to_first_token": 3.1518179590348154,
+      "duration": 3.1520158339990303,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1356,
+            "output_tokens": 268,
+            "total_tokens": 1624,
+            "reasoning_tokens": 136,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1964,
+    "output_tokens": 181,
+    "total_tokens": 2145,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002869,
+    "latency_ms": 3480.2325000055134,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1964,
+      "output_tokens": 181,
+      "total_tokens": 2145,
+      "time_to_first_token": 3.4793292499962263,
+      "duration": 3.479620459023863,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1964,
+            "output_tokens": 181,
+            "total_tokens": 2145,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

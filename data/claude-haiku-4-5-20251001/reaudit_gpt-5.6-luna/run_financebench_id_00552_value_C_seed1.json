@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00552_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the debt totals and decrease are internally consistent with the extracted values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst correctly sums current and long-term debt: $2,547M + $41,990M = $44,537M for FY2023 and $2,749M + $47,032M = $49,781M for FY2022. The change is $44,537M - $49,781M = -$5,244M, which supports the writer's answer that debt decreased."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1326,
+    "output_tokens": 290,
+    "total_tokens": 1616,
+    "cached_tokens": 0,
+    "reasoning_tokens": 131,
+    "cost_usd": 0.0006132,
+    "latency_ms": 3484.4030829844996,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1326,
+      "output_tokens": 290,
+      "total_tokens": 1616,
+      "reasoning_tokens": 131,
+      "time_to_first_token": 3.4839835420134477,
+      "duration": 3.484117417014204,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1326,
+            "output_tokens": 290,
+            "total_tokens": 1616,
+            "reasoning_tokens": 131,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1937,
+    "output_tokens": 159,
+    "total_tokens": 2096,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002732,
+    "latency_ms": 3289.447458984796,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1937,
+      "output_tokens": 159,
+      "total_tokens": 2096,
+      "time_to_first_token": 3.288547042000573,
+      "duration": 3.2888437919900753,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1937,
+            "output_tokens": 159,
+            "total_tokens": 2096,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

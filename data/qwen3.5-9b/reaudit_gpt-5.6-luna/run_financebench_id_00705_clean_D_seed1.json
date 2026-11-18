@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00705_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The original $3.8 billion credit agreement was recorded as 3,800,000,000 while labeled in USD millions, where it should be recorded as 3,800 USD million.",
+    "reported_metric": "original_credit_agreement_amount",
+    "reported_value": 3800000000.0,
+    "confidence": 0.86,
+    "rationale": "The extractor’s numeric values are in absolute dollars, but their unit is labeled USD_M. This inconsistency propagates to the analyst’s 400,000,000 value, also labeled USD_M. The final $400 million conclusion is numerically correct, but the first malformed claim appears in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1004,
+    "output_tokens": 679,
+    "total_tokens": 1683,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010156,
+    "latency_ms": 7097.021957975812,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1004,
+      "output_tokens": 679,
+      "total_tokens": 1683,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.096360583032947,
+      "duration": 7.09653416601941,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1004,
+            "output_tokens": 679,
+            "total_tokens": 1683,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 929,
+    "output_tokens": 682,
+    "total_tokens": 1611,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7778.578511963133,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 929,
+      "output_tokens": 682,
+      "total_tokens": 1611,
+      "time_to_first_token": 7.778331870969851,
+      "duration": 7.778410967963282,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 929,
+            "output_tokens": 682,
+            "total_tokens": 1611,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7752807310,
+              "load_duration": 449127,
+              "prompt_eval_duration": 243032000,
+              "eval_duration": 7447634000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01198_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMD's FY22 revenue growth was 44%.",
+    "reported_metric": "revenue_growth",
+    "reported_value": 44.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports FY22 revenue of $26.3B versus FY21 revenue of $16.4B, which implies approximately 60.4% year-over-year growth, not 44%. The analyst and writer reproduce this inconsistent growth figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 938,
+    "output_tokens": 305,
+    "total_tokens": 1243,
+    "cached_tokens": 0,
+    "reasoning_tokens": 186,
+    "cost_usd": 0.0005536,
+    "latency_ms": 3818.512416037265,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 938,
+      "output_tokens": 305,
+      "total_tokens": 1243,
+      "reasoning_tokens": 186,
+      "time_to_first_token": 3.8177976660081185,
+      "duration": 3.818011708033737,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 938,
+            "output_tokens": 305,
+            "total_tokens": 1243,
+            "reasoning_tokens": 186,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1463,
+    "output_tokens": 147,
+    "total_tokens": 1610,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002198,
+    "latency_ms": 2891.163417021744,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1463,
+      "output_tokens": 147,
+      "total_tokens": 1610,
+      "time_to_first_token": 2.890156665991526,
+      "duration": 2.8904508329578675,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1463,
+            "output_tokens": 147,
+            "total_tokens": 1610,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

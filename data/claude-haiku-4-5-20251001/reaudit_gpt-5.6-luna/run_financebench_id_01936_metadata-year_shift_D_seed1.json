@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01936_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The reported total is internally consistent: $81 million + $2 million + $10 million = $93 million, and $81 million/$93 million rounds to 87.1%. December 31, 2022 corresponds to the close of Amcor's fiscal Q2 FY2023, so the date labeling does not establish an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1682,
+    "output_tokens": 636,
+    "total_tokens": 2318,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010995999999999998,
+    "latency_ms": 6452.098583045881,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1682,
+      "output_tokens": 636,
+      "total_tokens": 2318,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.4515412919572555,
+      "duration": 6.4516386250033975,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1682,
+            "output_tokens": 636,
+            "total_tokens": 2318,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2364,
+    "output_tokens": 235,
+    "total_tokens": 2599,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003539,
+    "latency_ms": 4091.815082996618,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2364,
+      "output_tokens": 235,
+      "total_tokens": 2599,
+      "time_to_first_token": 4.0907796249957755,
+      "duration": 4.0910822919686325,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2364,
+            "output_tokens": 235,
+            "total_tokens": 2599,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

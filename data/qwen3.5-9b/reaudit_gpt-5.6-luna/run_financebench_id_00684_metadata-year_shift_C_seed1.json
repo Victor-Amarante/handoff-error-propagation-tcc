@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00684_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Net sales of $14,694 million were incorrectly labeled as FY2024 rather than FY2023 in the FY2023 10-K trace.",
+    "reported_metric": "net_sales",
+    "reported_value": 14694.0,
+    "confidence": 0.95,
+    "rationale": "The FY2023 10-K is paired with FY2022 and FY2021 sales figures, making the $14,694 million figure the FY2023 comparator; labeling it FY2024 causes the analyst to mix years when calculating FY2023 gross margin. Separately, the analyst's FY2021 margin of 20.88% is also arithmetically inconsistent: $2,732 million divided by $12,861 million is about 21.24%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2286,
+    "output_tokens": 1218,
+    "total_tokens": 3504,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0019188,
+    "latency_ms": 16468.148791987915,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2286,
+      "output_tokens": 1218,
+      "total_tokens": 3504,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 16.467525416985154,
+      "duration": 16.46774649998406,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2286,
+            "output_tokens": 1218,
+            "total_tokens": 3504,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2502,
+    "output_tokens": 290,
+    "total_tokens": 2792,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3894.4223590078764,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2502,
+      "output_tokens": 290,
+      "total_tokens": 2792,
+      "time_to_first_token": 3.8941638990072533,
+      "duration": 3.8942399439984,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2502,
+            "output_tokens": 290,
+            "total_tokens": 2792,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3865144592,
+              "load_duration": 506081,
+              "prompt_eval_duration": 617693000,
+              "eval_duration": 3161565000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

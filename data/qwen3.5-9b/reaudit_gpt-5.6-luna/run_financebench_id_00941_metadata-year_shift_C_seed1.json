@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "As of Q2 2023, 3M has only 1.5 billion USD_K in debt securities registered to trade on a national securities exchange under its name.",
+    "reported_metric": "debt securities registered under 3M's name as of Q2 2023",
+    "reported_value": 1.5,
+    "confidence": 0.99,
+    "rationale": "The analyst output identifies three debt securities with values of 1.5, 1.75, and 1.5, but the writer incorrectly reports only the first 1.5 value as the complete answer. The answer text also inconsistently describes the USD_K unit as 'billion USD_K.'"
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1567,
+    "output_tokens": 683,
+    "total_tokens": 2250,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001133,
+    "latency_ms": 6709.166957996786,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1567,
+      "output_tokens": 683,
+      "total_tokens": 2250,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.7082645000191405,
+      "duration": 6.708685000019614,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1567,
+            "output_tokens": 683,
+            "total_tokens": 2250,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1558,
+    "output_tokens": 252,
+    "total_tokens": 1810,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3300.169241032563,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1558,
+      "output_tokens": 252,
+      "total_tokens": 1810,
+      "time_to_first_token": 3.2999330810271204,
+      "duration": 3.300005091994535,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1558,
+            "output_tokens": 252,
+            "total_tokens": 1810,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3274195031,
+              "load_duration": 515962,
+              "prompt_eval_duration": 403249000,
+              "eval_duration": 2789369000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01009_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The report states that PepsiCo's geographies in 2023 were valued at $200K.",
+    "reported_metric": "geographies for PepsiCo in 2023",
+    "reported_value": 200000.0,
+    "confidence": 0.98,
+    "rationale": "The extractor introduced an unsupported and semantically malformed monetary claim about 'geographies.' The analyst and writer appropriately declined to infer named operating regions from it, so the first error appears in the extractor stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 735,
+    "output_tokens": 305,
+    "total_tokens": 1040,
+    "cached_tokens": 0,
+    "reasoning_tokens": 180,
+    "cost_usd": 0.000513,
+    "latency_ms": 3394.6494999690913,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 735,
+      "output_tokens": 305,
+      "total_tokens": 1040,
+      "reasoning_tokens": 180,
+      "time_to_first_token": 3.3940444169566035,
+      "duration": 3.3941778329899535,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 735,
+            "output_tokens": 305,
+            "total_tokens": 1040,
+            "reasoning_tokens": 180,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 530,
+    "output_tokens": 176,
+    "total_tokens": 706,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2269.2248729872517,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 530,
+      "output_tokens": 176,
+      "total_tokens": 706,
+      "time_to_first_token": 2.2689725550008006,
+      "duration": 2.269044718996156,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 530,
+            "output_tokens": 176,
+            "total_tokens": 706,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2239763767,
+              "load_duration": 466507,
+              "prompt_eval_duration": 145039000,
+              "eval_duration": 2045831000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

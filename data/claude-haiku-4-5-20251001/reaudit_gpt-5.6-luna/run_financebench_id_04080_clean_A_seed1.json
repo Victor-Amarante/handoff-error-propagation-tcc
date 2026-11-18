@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04080_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculation is internally consistent: average inventory is (6,854 + 7,367) / 2 = 7,110.5 million, and 24,576 / 7,110.5 = 3.456..., which rounds to 3.46. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 908,
+    "output_tokens": 210,
+    "total_tokens": 1118,
+    "cached_tokens": 0,
+    "reasoning_tokens": 92,
+    "cost_usd": 0.0004336,
+    "latency_ms": 2480.9242920018733,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 908,
+      "output_tokens": 210,
+      "total_tokens": 1118,
+      "reasoning_tokens": 92,
+      "time_to_first_token": 2.4798192500020377,
+      "duration": 2.4800877909874544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 908,
+            "output_tokens": 210,
+            "total_tokens": 1118,
+            "reasoning_tokens": 92,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1425,
+    "output_tokens": 156,
+    "total_tokens": 1581,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002205,
+    "latency_ms": 2213.365999981761,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1425,
+      "output_tokens": 156,
+      "total_tokens": 1581,
+      "time_to_first_token": 2.212617749988567,
+      "duration": 2.212913708994165,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1425,
+            "output_tokens": 156,
+            "total_tokens": 1581,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

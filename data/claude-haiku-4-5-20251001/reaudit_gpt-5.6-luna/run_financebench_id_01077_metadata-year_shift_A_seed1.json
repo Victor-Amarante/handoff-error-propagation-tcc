@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01077_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly attributed Current Health Ltd.'s $389 million acquisition price to FY2023; the accompanying FY2022 goodwill indicates the acquisition belongs to FY2022.",
+    "reported_metric": "Current Health Ltd. acquisition price fiscal-year attribution",
+    "reported_value": 389.0,
+    "confidence": 0.88,
+    "rationale": "The trace internally places Current Health goodwill in FY2022 while also assigning its acquisition price to FY2023. The analyst and writer then propagate the FY2023 attribution, making the extractor the first stage where the error appears."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 832,
+    "output_tokens": 921,
+    "total_tokens": 1753,
+    "cached_tokens": 0,
+    "reasoning_tokens": 774,
+    "cost_usd": 0.0012716000000000001,
+    "latency_ms": 9878.343625052366,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 832,
+      "output_tokens": 921,
+      "total_tokens": 1753,
+      "reasoning_tokens": 774,
+      "time_to_first_token": 9.877795582986437,
+      "duration": 9.877956790965982,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 832,
+            "output_tokens": 921,
+            "total_tokens": 1753,
+            "reasoning_tokens": 774,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1374,
+    "output_tokens": 210,
+    "total_tokens": 1584,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002424,
+    "latency_ms": 3652.512333006598,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1374,
+      "output_tokens": 210,
+      "total_tokens": 1584,
+      "time_to_first_token": 3.6515057919896208,
+      "duration": 3.6518064999836497,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1374,
+            "output_tokens": 210,
+            "total_tokens": 1584,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

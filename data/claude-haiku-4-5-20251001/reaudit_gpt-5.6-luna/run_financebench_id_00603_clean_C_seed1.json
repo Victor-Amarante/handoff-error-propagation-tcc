@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00603_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Ulta Beauty's merchandise inventories net balance was $1,600M in FY2023.",
+    "reported_metric": "merchandise_inventories_net",
+    "reported_value": 1600.0,
+    "confidence": 0.99,
+    "rationale": "The extractor explicitly identifies the $1,600M balance as year 2022 (C01), but the analyst relabels it as year 2023 in A01 without support. The writer then repeats this incorrect FY2023 attribution."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1343,
+    "output_tokens": 412,
+    "total_tokens": 1755,
+    "cached_tokens": 0,
+    "reasoning_tokens": 280,
+    "cost_usd": 0.000763,
+    "latency_ms": 4548.171041999012,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1343,
+      "output_tokens": 412,
+      "total_tokens": 1755,
+      "reasoning_tokens": 280,
+      "time_to_first_token": 4.547489708987996,
+      "duration": 4.54771625000285,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1343,
+            "output_tokens": 412,
+            "total_tokens": 1755,
+            "reasoning_tokens": 280,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1949,
+    "output_tokens": 214,
+    "total_tokens": 2163,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003019,
+    "latency_ms": 3955.7879170170054,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1949,
+      "output_tokens": 214,
+      "total_tokens": 2163,
+      "time_to_first_token": 3.954878583957907,
+      "duration": 3.955178583972156,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1949,
+            "output_tokens": 214,
+            "total_tokens": 2163,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

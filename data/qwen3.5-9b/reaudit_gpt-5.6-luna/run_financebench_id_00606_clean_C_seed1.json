@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00606_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Wages expense in FY2022 was 4,175,000 USD_K.",
+    "reported_metric": "Wages expense FY2022",
+    "reported_value": 4175000.0,
+    "confidence": 0.98,
+    "rationale": "The extractor provided only FY2023 wages expense (C01). The analyst introduced a FY2022 value with C01 as its sole derivation, even though C01 contains no FY2022 information. The subsequent percentage claims and writer conclusion depend on this unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1052,
+    "output_tokens": 362,
+    "total_tokens": 1414,
+    "cached_tokens": 0,
+    "reasoning_tokens": 227,
+    "cost_usd": 0.0006448,
+    "latency_ms": 4222.0709579996765,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1052,
+      "output_tokens": 362,
+      "total_tokens": 1414,
+      "reasoning_tokens": 227,
+      "time_to_first_token": 4.221373375039548,
+      "duration": 4.2215319580282085,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1052,
+            "output_tokens": 362,
+            "total_tokens": 1414,
+            "reasoning_tokens": 227,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 971,
+    "output_tokens": 925,
+    "total_tokens": 1896,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10413.827435986605,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 971,
+      "output_tokens": 925,
+      "total_tokens": 1896,
+      "time_to_first_token": 10.413575193029828,
+      "duration": 10.413657900004182,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 971,
+            "output_tokens": 925,
+            "total_tokens": 1896,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10386294827,
+              "load_duration": 443248,
+              "prompt_eval_duration": 245020000,
+              "eval_duration": 10067333000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

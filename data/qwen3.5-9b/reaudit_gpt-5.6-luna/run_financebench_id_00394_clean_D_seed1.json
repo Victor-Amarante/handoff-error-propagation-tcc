@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "The Corporate & Investment Bank had net income of negative $45 million in Q2 2022.",
+    "reported_metric": "Net income Corporate & Investment Bank",
+    "reported_value": -45.0,
+    "confidence": 0.98,
+    "rationale": "The extracted segment values do not reconcile to the extracted total: the other four segment values sum to $4,924 million, so Corporate & Investment Bank would need to be $3,725 million to reach the $8,649 million total. Thus C02 is the first inconsistent claim, and it causes the analyst to incorrectly identify Consumer & Community Banking as highest."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1350,
+    "output_tokens": 878,
+    "total_tokens": 2228,
+    "cached_tokens": 0,
+    "reasoning_tokens": 714,
+    "cost_usd": 0.0013235999999999999,
+    "latency_ms": 8104.913957999088,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1350,
+      "output_tokens": 878,
+      "total_tokens": 2228,
+      "reasoning_tokens": 714,
+      "time_to_first_token": 8.104425749974325,
+      "duration": 8.104579209000804,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1350,
+            "output_tokens": 878,
+            "total_tokens": 2228,
+            "reasoning_tokens": 714,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1322,
+    "output_tokens": 312,
+    "total_tokens": 1634,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3854.3982669943944,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1322,
+      "output_tokens": 312,
+      "total_tokens": 1634,
+      "time_to_first_token": 3.8541114979889244,
+      "duration": 3.8542408269713633,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1322,
+            "output_tokens": 312,
+            "total_tokens": 1634,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3827915909,
+              "load_duration": 518147,
+              "prompt_eval_duration": 358455000,
+              "eval_duration": 3416620000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

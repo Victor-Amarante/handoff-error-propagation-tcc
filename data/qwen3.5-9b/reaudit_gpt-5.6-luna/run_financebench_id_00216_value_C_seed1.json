@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00216_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst incorrectly calculated quick-ratio current assets as USD 50,921 million by summing cash, receivables, inventory, and prepaid expenses.",
+    "reported_metric": "current_assets_for_quick_ratio",
+    "reported_value": 50921.0,
+    "confidence": 0.99,
+    "rationale": "The quick ratio should exclude inventory and prepaid expenses, using cash plus accounts receivable: (2,065 + 24,506) / 50,171 ≈ 0.53. The analyst's A01 value is also inconsistent with the listed inputs, which sum to USD 37,317 million, so the incorrect 1.01 ratio and writer conclusion originated in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1912,
+    "output_tokens": 375,
+    "total_tokens": 2287,
+    "cached_tokens": 0,
+    "reasoning_tokens": 201,
+    "cost_usd": 0.0008324000000000001,
+    "latency_ms": 4698.590374959167,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1912,
+      "output_tokens": 375,
+      "total_tokens": 2287,
+      "reasoning_tokens": 201,
+      "time_to_first_token": 4.698071583989076,
+      "duration": 4.698260416975245,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1912,
+            "output_tokens": 375,
+            "total_tokens": 2287,
+            "reasoning_tokens": 201,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2016,
+    "output_tokens": 374,
+    "total_tokens": 2390,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4673.231994966045,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2016,
+      "output_tokens": 374,
+      "total_tokens": 2390,
+      "time_to_first_token": 4.673000291979406,
+      "duration": 4.673072179022711,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2016,
+            "output_tokens": 374,
+            "total_tokens": 2390,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4646194212,
+              "load_duration": 505073,
+              "prompt_eval_duration": 500451000,
+              "eval_duration": 4089566000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

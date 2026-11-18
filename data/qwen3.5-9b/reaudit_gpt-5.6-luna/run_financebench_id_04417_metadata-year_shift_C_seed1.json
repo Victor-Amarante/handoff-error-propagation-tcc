@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04417_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Best Buy had total inventories of $5,409 million in FY2020 according to the FY2019 10-K.",
+    "reported_metric": "inventory_value",
+    "reported_value": 5409.0,
+    "confidence": 0.86,
+    "rationale": "The FY2019 10-K balance-sheet provenance is inconsistent with a FY2020 value. The extractor labels $5,409 million as FY2020, while the analyst's FY2019 figure of $5,378 million is unsupported by the extractor output and is merely introduced downstream."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1153,
+    "output_tokens": 656,
+    "total_tokens": 1809,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010178,
+    "latency_ms": 6585.197542037349,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1153,
+      "output_tokens": 656,
+      "total_tokens": 1809,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.584411250019912,
+      "duration": 6.584654333011713,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1153,
+            "output_tokens": 656,
+            "total_tokens": 1809,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1104,
+    "output_tokens": 1507,
+    "total_tokens": 2611,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 16520.200496015605,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1104,
+      "output_tokens": 1507,
+      "total_tokens": 2611,
+      "time_to_first_token": 16.519955802999903,
+      "duration": 16.520031869993545,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1104,
+            "output_tokens": 1507,
+            "total_tokens": 2611,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 16494626186,
+              "load_duration": 613186,
+              "prompt_eval_duration": 308571000,
+              "eval_duration": 16108612000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

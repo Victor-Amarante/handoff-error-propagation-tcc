@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_07661_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Cash flow from operating activities in FY2020 was 381,603 USD millions.",
+    "reported_metric": "cash_flow_from_operating_activities",
+    "reported_value": 381603.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reported 381,603 in USD thousands for 2021. The analyst incorrectly relabeled both the year as 2020 and the unit as USD millions; the writer propagated that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 672,
+    "output_tokens": 538,
+    "total_tokens": 1210,
+    "cached_tokens": 0,
+    "reasoning_tokens": 414,
+    "cost_usd": 0.00078,
+    "latency_ms": 5361.212040996179,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 672,
+      "output_tokens": 538,
+      "total_tokens": 1210,
+      "reasoning_tokens": 414,
+      "time_to_first_token": 5.360548791009933,
+      "duration": 5.360685332969297,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 672,
+            "output_tokens": 538,
+            "total_tokens": 1210,
+            "reasoning_tokens": 414,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 497,
+    "output_tokens": 191,
+    "total_tokens": 688,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2390.5813220189884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 497,
+      "output_tokens": 191,
+      "total_tokens": 688,
+      "time_to_first_token": 2.3903469660435803,
+      "duration": 2.3904191570472904,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 497,
+            "output_tokens": 191,
+            "total_tokens": 688,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2364881922,
+              "load_duration": 442255,
+              "prompt_eval_duration": 138529000,
+              "eval_duration": 2157903000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

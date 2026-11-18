@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00302_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "PPNE FY20 was reported as 35,067 USD million, but the provenance points to Total current assets rather than Property, plant and equipment.",
+    "reported_metric": "PPNE FY20",
+    "reported_value": 35067.0,
+    "confidence": 0.99,
+    "rationale": "The extractor identifies Property, plant and equipment as 13,745 million in FY20 (C19) and 14,882 million in FY21 (C20). The analyst instead relabeled Total current assets (C13/C14) as PPNE, creating the error propagated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3042,
+    "output_tokens": 256,
+    "total_tokens": 3298,
+    "cached_tokens": 0,
+    "reasoning_tokens": 103,
+    "cost_usd": 0.0009155999999999999,
+    "latency_ms": 7276.356999995187,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3042,
+      "output_tokens": 256,
+      "total_tokens": 3298,
+      "reasoning_tokens": 103,
+      "time_to_first_token": 7.275816083012614,
+      "duration": 7.275979833037127,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3042,
+            "output_tokens": 256,
+            "total_tokens": 3298,
+            "reasoning_tokens": 103,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3476,
+    "output_tokens": 193,
+    "total_tokens": 3669,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3113.720324006863,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3476,
+      "output_tokens": 193,
+      "total_tokens": 3669,
+      "time_to_first_token": 3.1134412119863555,
+      "duration": 3.1135301109752618,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3476,
+            "output_tokens": 193,
+            "total_tokens": 3669,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3086787252,
+              "load_duration": 687972,
+              "prompt_eval_duration": 803690000,
+              "eval_duration": 2226729000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

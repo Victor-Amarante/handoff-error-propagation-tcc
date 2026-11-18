@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00735_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "PepsiCo had no materially important legal proceedings in FY2022, inferred from a statement that the proceedings' final outcome would not materially adversely affect its finances.",
+    "reported_metric": "has_material_legal_proceedings",
+    "reported_value": 0.0,
+    "confidence": 0.95,
+    "rationale": "The evidence refers to 'the foregoing,' indicating that legal proceedings exist, while only stating that their final outcome is not expected to have a material adverse financial effect. The analyst incorrectly converted zero expected financial impact into the absence of material ongoing legal proceedings. The same error is repeated for FY2021 in A02."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1145,
+    "output_tokens": 455,
+    "total_tokens": 1600,
+    "cached_tokens": 0,
+    "reasoning_tokens": 296,
+    "cost_usd": 0.000775,
+    "latency_ms": 4531.828459003009,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1145,
+      "output_tokens": 455,
+      "total_tokens": 1600,
+      "reasoning_tokens": 296,
+      "time_to_first_token": 4.531151207978837,
+      "duration": 4.53144724998856,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1145,
+            "output_tokens": 455,
+            "total_tokens": 1600,
+            "reasoning_tokens": 296,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1038,
+    "output_tokens": 307,
+    "total_tokens": 1345,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3775.3716250299476,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1038,
+      "output_tokens": 307,
+      "total_tokens": 1345,
+      "time_to_first_token": 3.775114696996752,
+      "duration": 3.775187951978296,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1038,
+            "output_tokens": 307,
+            "total_tokens": 1345,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3746161563,
+              "load_duration": 448532,
+              "prompt_eval_duration": 299829000,
+              "eval_duration": 3363338000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

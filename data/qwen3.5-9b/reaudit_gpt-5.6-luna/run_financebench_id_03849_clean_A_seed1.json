@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03849_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst initially claimed that MGM Resorts' FY2018–FY2020 average capex was 5.2% of revenue.",
+    "reported_metric": "FY2018–FY2020 average capex as a percentage of revenue",
+    "reported_value": 5.2,
+    "confidence": 0.98,
+    "rationale": "The extractor values imply ratios of approximately 12.6%, 5.7%, and 5.2%, whose arithmetic average is 7.9%, not 5.2%. The analyst also temporarily misstated FY2018 as 127.2% before correcting it. The writer propagated the corrected 7.9% figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2281,
+    "output_tokens": 680,
+    "total_tokens": 2961,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012722,
+    "latency_ms": 7033.799458004069,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2281,
+      "output_tokens": 680,
+      "total_tokens": 2961,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.033413875033148,
+      "duration": 7.033558125025593,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2281,
+            "output_tokens": 680,
+            "total_tokens": 2961,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2568,
+    "output_tokens": 888,
+    "total_tokens": 3456,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10370.216551003978,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2568,
+      "output_tokens": 888,
+      "total_tokens": 3456,
+      "time_to_first_token": 10.369958729017526,
+      "duration": 10.370032170030754,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2568,
+            "output_tokens": 888,
+            "total_tokens": 3456,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10337760068,
+              "load_duration": 502153,
+              "prompt_eval_duration": 626946000,
+              "eval_duration": 9613355000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

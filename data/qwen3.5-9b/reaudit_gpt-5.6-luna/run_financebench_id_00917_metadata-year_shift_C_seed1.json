@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00917_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "The extractor asserted that the drivers of AMD's FY22 operating-income change totaled 0.0 USD_B without supporting derivation or evidence.",
+    "reported_metric": "driver_of_operating_income_change",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "C03 is the unsupported zero-valued claim directly propagated into A01 and then W01. The final answer also incorrectly labels this USD amount as operating-margin change; margin should be expressed as a percentage. The extractor output additionally contains a year inconsistency in C01, but C03 is the claim that specifically initiates the reported error chain."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 997,
+    "output_tokens": 673,
+    "total_tokens": 1670,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001007,
+    "latency_ms": 7114.254750020336,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 997,
+      "output_tokens": 673,
+      "total_tokens": 1670,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.113474957994185,
+      "duration": 7.1138529169838876,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 997,
+            "output_tokens": 673,
+            "total_tokens": 1670,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 880,
+    "output_tokens": 240,
+    "total_tokens": 1120,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3019.6391270146705,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 880,
+      "output_tokens": 240,
+      "total_tokens": 1120,
+      "time_to_first_token": 3.0193900219746865,
+      "duration": 3.019468370010145,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 880,
+            "output_tokens": 240,
+            "total_tokens": 1120,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2993580087,
+              "load_duration": 447313,
+              "prompt_eval_duration": 217903000,
+              "eval_duration": 2702276000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

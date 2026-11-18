@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly represented the 1.500% debt security due in 2026 as a USD_K-valued debt-security amount.",
+    "reported_metric": "debt securities",
+    "reported_value": 1.5,
+    "confidence": 0.98,
+    "rationale": "The extracted values 1.5, 1.75, and 1.5 paired with maturity years 2026, 2030, and 2031 are internally consistent with coupon percentages, not USD_K amounts. The analyst propagated that misclassification, and the writer then incorrectly characterized the securities as projected figures and assigned an unsupported zero value for 2023."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 866,
+    "output_tokens": 945,
+    "total_tokens": 1811,
+    "cached_tokens": 0,
+    "reasoning_tokens": 776,
+    "cost_usd": 0.0013072000000000001,
+    "latency_ms": 9098.190375021659,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 866,
+      "output_tokens": 945,
+      "total_tokens": 1811,
+      "reasoning_tokens": 776,
+      "time_to_first_token": 9.097569708013907,
+      "duration": 9.097779917006847,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 866,
+            "output_tokens": 945,
+            "total_tokens": 1811,
+            "reasoning_tokens": 776,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 714,
+    "output_tokens": 193,
+    "total_tokens": 907,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2496.8858099891804,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 714,
+      "output_tokens": 193,
+      "total_tokens": 907,
+      "time_to_first_token": 2.496657460986171,
+      "duration": 2.496725433971733,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 714,
+            "output_tokens": 193,
+            "total_tokens": 907,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2469439918,
+              "load_duration": 490176,
+              "prompt_eval_duration": 216274000,
+              "eval_duration": 2182102000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

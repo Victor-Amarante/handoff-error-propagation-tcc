@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04481_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "FY2022 unadjusted EBITDA margin is 11.83%.",
+    "reported_metric": "unadjusted_ebitda_margin_percent",
+    "reported_value": 11.83,
+    "confidence": 0.98,
+    "rationale": "The extracted operating income (15,112) and D&A (2,763) correctly produce EBITDA of 17,875. However, the analyst's 11.83% margin is unsupported because no revenue denominator was extracted or cited, and A02 is derived only from C01 and C02. The error first appears in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1141,
+    "output_tokens": 392,
+    "total_tokens": 1533,
+    "cached_tokens": 0,
+    "reasoning_tokens": 240,
+    "cost_usd": 0.0006986000000000001,
+    "latency_ms": 4384.61687497329,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1141,
+      "output_tokens": 392,
+      "total_tokens": 1533,
+      "reasoning_tokens": 240,
+      "time_to_first_token": 4.3839817909756675,
+      "duration": 4.38417637499515,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1141,
+            "output_tokens": 392,
+            "total_tokens": 1533,
+            "reasoning_tokens": 240,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1069,
+    "output_tokens": 3591,
+    "total_tokens": 4660,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 38837.68350997707,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1069,
+      "output_tokens": 3591,
+      "total_tokens": 4660,
+      "time_to_first_token": 38.83742416999303,
+      "duration": 38.83751823101193,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1069,
+            "output_tokens": 3591,
+            "total_tokens": 4660,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 38811555947,
+              "load_duration": 426954,
+              "prompt_eval_duration": 301326000,
+              "eval_duration": 38469927000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

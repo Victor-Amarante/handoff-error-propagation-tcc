@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00005_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported working capital is correctly calculated as current assets of $7,453 million minus current liabilities of $5,175 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor values are internally consistent, and the analyst correctly computes working capital as $2,278 million. The writer accurately reports that positive amount and its basic implication that current assets exceed current liabilities. No trace evidence indicates that working capital is irrelevant for Corning."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1016,
+    "output_tokens": 229,
+    "total_tokens": 1245,
+    "cached_tokens": 0,
+    "reasoning_tokens": 91,
+    "cost_usd": 0.000478,
+    "latency_ms": 2918.3360419701785,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1016,
+      "output_tokens": 229,
+      "total_tokens": 1245,
+      "reasoning_tokens": 91,
+      "time_to_first_token": 2.9175842920085415,
+      "duration": 2.91780141700292,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1016,
+            "output_tokens": 229,
+            "total_tokens": 1245,
+            "reasoning_tokens": 91,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1583,
+    "output_tokens": 178,
+    "total_tokens": 1761,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002473,
+    "latency_ms": 3332.579500041902,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1583,
+      "output_tokens": 178,
+      "total_tokens": 1761,
+      "time_to_first_token": 3.331669042003341,
+      "duration": 3.3319669580087066,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1583,
+            "output_tokens": 178,
+            "total_tokens": 1761,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01930_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The nominal net sales difference of $150 million was incorrectly reported as the real change excluding FX, passthrough costs, and one-off items.",
+    "reported_metric": "net_sales_change_real",
+    "reported_value": 150.0,
+    "confidence": 0.96,
+    "rationale": "The analyst simply subtracts reported sales (14,694 minus 14,544) and labels the result as a real, adjusted change. The trace provides no calculation or evidence removing FX, passthrough costs, or one-off items. The extractor's comparable constant currency field is blank, not evidence of a zero adjustment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1307,
+    "output_tokens": 668,
+    "total_tokens": 1975,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001063,
+    "latency_ms": 6949.201125011314,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1307,
+      "output_tokens": 668,
+      "total_tokens": 1975,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.948456291982438,
+      "duration": 6.94873025000561,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1307,
+            "output_tokens": 668,
+            "total_tokens": 1975,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1927,
+    "output_tokens": 228,
+    "total_tokens": 2155,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003067,
+    "latency_ms": 4168.7915829825215,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1927,
+      "output_tokens": 228,
+      "total_tokens": 2155,
+      "time_to_first_token": 4.16789191699354,
+      "duration": 4.168185833957978,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1927,
+            "output_tokens": 228,
+            "total_tokens": 2155,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

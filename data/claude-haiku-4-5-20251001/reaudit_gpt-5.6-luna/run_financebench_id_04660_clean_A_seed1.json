@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04660_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the reported ratio is consistent with the extracted figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the trace's figures, $1,001,420K divided by $577,464K equals approximately 1.734, which rounds to 1.73. The analyst and writer outputs are consistent with the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 845,
+    "output_tokens": 263,
+    "total_tokens": 1108,
+    "cached_tokens": 0,
+    "reasoning_tokens": 147,
+    "cost_usd": 0.00048459999999999996,
+    "latency_ms": 3296.22845799895,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 845,
+      "output_tokens": 263,
+      "total_tokens": 1108,
+      "reasoning_tokens": 147,
+      "time_to_first_token": 3.2958681660238653,
+      "duration": 3.2959604159696028,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 845,
+            "output_tokens": 263,
+            "total_tokens": 1108,
+            "reasoning_tokens": 147,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1347,
+    "output_tokens": 166,
+    "total_tokens": 1513,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002177,
+    "latency_ms": 2457.373542012647,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1347,
+      "output_tokens": 166,
+      "total_tokens": 1513,
+      "time_to_first_token": 2.4564696250017732,
+      "duration": 2.4567752910079435,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1347,
+            "output_tokens": 166,
+            "total_tokens": 1513,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

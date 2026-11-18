@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03069_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported margin is internally consistent with D&A of $167 million divided by revenue of $9,391 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculation 167 / 9,391 × 100 equals approximately 1.78%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 956,
+    "output_tokens": 173,
+    "total_tokens": 1129,
+    "cached_tokens": 0,
+    "reasoning_tokens": 64,
+    "cost_usd": 0.0003988,
+    "latency_ms": 3099.725915992167,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 956,
+      "output_tokens": 173,
+      "total_tokens": 1129,
+      "reasoning_tokens": 64,
+      "time_to_first_token": 3.0990508749964647,
+      "duration": 3.0992804170236923,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 956,
+            "output_tokens": 173,
+            "total_tokens": 1129,
+            "reasoning_tokens": 64,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1501,
+    "output_tokens": 119,
+    "total_tokens": 1620,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002096,
+    "latency_ms": 2660.882457974367,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1501,
+      "output_tokens": 119,
+      "total_tokens": 1620,
+      "time_to_first_token": 2.6598568750196137,
+      "duration": 2.660152292053681,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1501,
+            "output_tokens": 119,
+            "total_tokens": 1620,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

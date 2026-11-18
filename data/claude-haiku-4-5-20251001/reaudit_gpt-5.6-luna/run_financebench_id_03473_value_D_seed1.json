@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03473_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2017 net income attributable to Coca-Cola shareholders was reported as $1,428 million, but the cited evidence states $1,248 million.",
+    "reported_metric": "net_income",
+    "reported_value": 1428.0,
+    "confidence": 1.0,
+    "rationale": "The extractor's numeric value conflicts directly with its evidence. The analyst then used $1,428 million, producing 1.63%, while the evidence-supported $1,248 million would produce approximately 1.42% using the stated average assets."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1296,
+    "output_tokens": 242,
+    "total_tokens": 1538,
+    "cached_tokens": 0,
+    "reasoning_tokens": 101,
+    "cost_usd": 0.0005495999999999999,
+    "latency_ms": 3116.015999985393,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1296,
+      "output_tokens": 242,
+      "total_tokens": 1538,
+      "reasoning_tokens": 101,
+      "time_to_first_token": 3.1154820839874446,
+      "duration": 3.115637750015594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1296,
+            "output_tokens": 242,
+            "total_tokens": 1538,
+            "reasoning_tokens": 101,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1899,
+    "output_tokens": 194,
+    "total_tokens": 2093,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002869,
+    "latency_ms": 3250.779874972068,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1899,
+      "output_tokens": 194,
+      "total_tokens": 2093,
+      "time_to_first_token": 3.2498793749837205,
+      "duration": 3.2501716659753583,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1899,
+            "output_tokens": 194,
+            "total_tokens": 2093,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04302_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Nike's FY2018 revenue was reported as USD 63,397 million.",
+    "reported_metric": "revenue",
+    "reported_value": 63397.0,
+    "confidence": 0.99,
+    "rationale": "The FY2018 revenue claim is inconsistent with the adjacent FY2016 and FY2017 revenue figures and causes the FY2018 cost-of-sales percentage to be 32.2%, unlike the roughly 54–56% ratios for the other years. The analyst and writer correctly propagated and averaged the extracted inputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1618,
+    "output_tokens": 835,
+    "total_tokens": 2453,
+    "cached_tokens": 0,
+    "reasoning_tokens": 689,
+    "cost_usd": 0.0013256,
+    "latency_ms": 7665.414292016067,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1618,
+      "output_tokens": 835,
+      "total_tokens": 2453,
+      "reasoning_tokens": 689,
+      "time_to_first_token": 7.664598500006832,
+      "duration": 7.664990832970943,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1618,
+            "output_tokens": 835,
+            "total_tokens": 2453,
+            "reasoning_tokens": 689,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2314,
+    "output_tokens": 306,
+    "total_tokens": 2620,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003844,
+    "latency_ms": 4430.939333047718,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2314,
+      "output_tokens": 306,
+      "total_tokens": 2620,
+      "time_to_first_token": 4.430111333029345,
+      "duration": 4.4304095830302685,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2314,
+            "output_tokens": 306,
+            "total_tokens": 2620,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

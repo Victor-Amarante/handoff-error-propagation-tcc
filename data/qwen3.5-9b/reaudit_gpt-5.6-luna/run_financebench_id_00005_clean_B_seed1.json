@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident from the trace. Working capital is correctly calculated as total current assets of 7,453 USD million minus total current liabilities of 5,175 USD million, yielding positive working capital of 2,278 USD million (2.278 billion)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 976,
+    "output_tokens": 203,
+    "total_tokens": 1179,
+    "cached_tokens": 0,
+    "reasoning_tokens": 95,
+    "cost_usd": 0.0004388,
+    "latency_ms": 2949.4330000015907,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 976,
+      "output_tokens": 203,
+      "total_tokens": 1179,
+      "reasoning_tokens": 95,
+      "time_to_first_token": 2.9484234169940464,
+      "duration": 2.9486765419715084,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 976,
+            "output_tokens": 203,
+            "total_tokens": 1179,
+            "reasoning_tokens": 95,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 869,
+    "output_tokens": 677,
+    "total_tokens": 1546,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7724.422486033291,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 869,
+      "output_tokens": 677,
+      "total_tokens": 1546,
+      "time_to_first_token": 7.724176111049019,
+      "duration": 7.724250803992618,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 869,
+            "output_tokens": 677,
+            "total_tokens": 1546,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7697488530,
+              "load_duration": 436816,
+              "prompt_eval_duration": 234348000,
+              "eval_duration": 7413070000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

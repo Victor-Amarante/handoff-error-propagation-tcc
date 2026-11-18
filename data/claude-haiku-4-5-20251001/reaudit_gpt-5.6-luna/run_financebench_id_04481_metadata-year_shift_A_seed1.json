@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04481_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly identified PepsiCo's $86,392 million net revenue as FY2023 revenue; it is the FY2022 revenue needed for the margin calculation.",
+    "reported_metric": "Net revenue (FY2023)",
+    "reported_value": 86392.0,
+    "confidence": 0.98,
+    "rationale": "The operating income and D&A are explicitly FY2022, while the extracted $86,392 million revenue is mislabeled FY2023. This caused the analyst and writer to conclude that FY2022 EBITDA margin could not be calculated; using that revenue gives approximately 16.5%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 911,
+    "output_tokens": 544,
+    "total_tokens": 1455,
+    "cached_tokens": 0,
+    "reasoning_tokens": 390,
+    "cost_usd": 0.000835,
+    "latency_ms": 6178.969125030562,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 911,
+      "output_tokens": 544,
+      "total_tokens": 1455,
+      "reasoning_tokens": 390,
+      "time_to_first_token": 6.178197125031147,
+      "duration": 6.178594291035552,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 911,
+            "output_tokens": 544,
+            "total_tokens": 1455,
+            "reasoning_tokens": 390,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1513,
+    "output_tokens": 183,
+    "total_tokens": 1696,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002428,
+    "latency_ms": 3277.420041966252,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1513,
+      "output_tokens": 183,
+      "total_tokens": 1696,
+      "time_to_first_token": 3.2766172909759916,
+      "duration": 3.276917124981992,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1513,
+            "output_tokens": 183,
+            "total_tokens": 1696,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

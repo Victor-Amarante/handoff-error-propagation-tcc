@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05915_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the calculation is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted values are used consistently: average PP&E is (10,292 + 11,349) / 2 = 10,820.5, and 194,579 / 10,820.5 = 17.9824, which rounds to 17.98."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 834,
+    "output_tokens": 249,
+    "total_tokens": 1083,
+    "cached_tokens": 0,
+    "reasoning_tokens": 124,
+    "cost_usd": 0.00046560000000000004,
+    "latency_ms": 2981.7574999760836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 834,
+      "output_tokens": 249,
+      "total_tokens": 1083,
+      "reasoning_tokens": 124,
+      "time_to_first_token": 2.980938500026241,
+      "duration": 2.9811736249830574,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 834,
+            "output_tokens": 249,
+            "total_tokens": 1083,
+            "reasoning_tokens": 124,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1344,
+    "output_tokens": 188,
+    "total_tokens": 1532,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002284,
+    "latency_ms": 2461.1535409931093,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1344,
+      "output_tokens": 188,
+      "total_tokens": 1532,
+      "time_to_first_token": 2.460394542024005,
+      "duration": 2.460692958033178,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1344,
+            "output_tokens": 188,
+            "total_tokens": 1532,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

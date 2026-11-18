@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03882_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly represented Amcor's FY2020 reporting date as a monetary value of $2,020 million.",
+    "reported_metric": "reporting date",
+    "reported_value": 2020.0,
+    "confidence": 0.98,
+    "rationale": "The reporting date is a fiscal year/date, not a dollar-denominated metric, so the extractor's '$2020M' claim is internally inconsistent. The net AR value of $1,615.9 million is stated consistently through the pipeline and is not shown to be erroneous."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 696,
+    "output_tokens": 1168,
+    "total_tokens": 1864,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015408,
+    "latency_ms": 11143.74108298216,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 696,
+      "output_tokens": 1168,
+      "total_tokens": 1864,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.142769999976736,
+      "duration": 11.143196415971033,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 696,
+            "output_tokens": 1168,
+            "total_tokens": 1864,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 503,
+    "output_tokens": 404,
+    "total_tokens": 907,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4756.259558023885,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 503,
+      "output_tokens": 404,
+      "total_tokens": 907,
+      "time_to_first_token": 4.7559533169842325,
+      "duration": 4.756039205007255,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 503,
+            "output_tokens": 404,
+            "total_tokens": 907,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4726878477,
+              "load_duration": 446705,
+              "prompt_eval_duration": 137952000,
+              "eval_duration": 4540392000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

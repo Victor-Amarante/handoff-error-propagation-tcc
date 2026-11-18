@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03882_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amcor's year-end FY2020 net Accounts Receivable is $1,615.9 million.",
+    "reported_metric": "net_ar",
+    "reported_value": 1615.9,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst both identify $1,615.9 million as net AR for year 2021, while the writer relabels it as FY2020. The first unsupported year change therefore occurs in the writer stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 769,
+    "output_tokens": 638,
+    "total_tokens": 1407,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009194000000000001,
+    "latency_ms": 6036.61045798799,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 769,
+      "output_tokens": 638,
+      "total_tokens": 1407,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.035737750004046,
+      "duration": 6.035911415994633,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 769,
+            "output_tokens": 638,
+            "total_tokens": 1407,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 620,
+    "output_tokens": 181,
+    "total_tokens": 801,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2303.443844022695,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 620,
+      "output_tokens": 181,
+      "total_tokens": 801,
+      "time_to_first_token": 2.3031647609896027,
+      "duration": 2.3032577609992586,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 620,
+            "output_tokens": 181,
+            "total_tokens": 801,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2277751828,
+              "load_duration": 466636,
+              "prompt_eval_duration": 160076000,
+              "eval_duration": 2058697000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

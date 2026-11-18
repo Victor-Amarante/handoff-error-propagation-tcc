@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04481_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2022 unadjusted EBITDA margin for PepsiCo is approximately 11%.",
+    "reported_metric": "unadjusted_EBITDA_margin",
+    "reported_value": 11.0,
+    "confidence": 0.98,
+    "rationale": "The extractor supplied operating income of 11,512 and D&A of 2,763, and the analyst correctly calculated EBITDA as 14,275. However, the trace provides no revenue figure or margin calculation supporting 11%; the writer introduced the unsupported margin claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 804,
+    "output_tokens": 322,
+    "total_tokens": 1126,
+    "cached_tokens": 0,
+    "reasoning_tokens": 187,
+    "cost_usd": 0.0005472000000000001,
+    "latency_ms": 3606.8217499996535,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 804,
+      "output_tokens": 322,
+      "total_tokens": 1126,
+      "reasoning_tokens": 187,
+      "time_to_first_token": 3.6063239999930374,
+      "duration": 3.6064313749666326,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 804,
+            "output_tokens": 322,
+            "total_tokens": 1126,
+            "reasoning_tokens": 187,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 651,
+    "output_tokens": 300,
+    "total_tokens": 951,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3616.975206998177,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 651,
+      "output_tokens": 300,
+      "total_tokens": 951,
+      "time_to_first_token": 3.6167401960119605,
+      "duration": 3.616813060012646,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 651,
+            "output_tokens": 300,
+            "total_tokens": 951,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3588661129,
+              "load_duration": 454153,
+              "prompt_eval_duration": 198799000,
+              "eval_duration": 3315935000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

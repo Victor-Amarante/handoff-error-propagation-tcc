@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04458_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2015 unadjusted EBITDA margin was reported as 5.43%, using the extracted revenue figure labeled FY2016 rather than FY2015.",
+    "reported_metric": "unadjusted_ebitda_margin",
+    "reported_value": 5.43,
+    "confidence": 0.98,
+    "rationale": "The EBITDA calculation is internally correct: 305,826 + 62,283 = 368,109. However, 5.43% equals approximately 368,109 divided by 6,779,511, and the extractor explicitly labels 6,779,511 as 2016 revenue. Thus the first incorrect claim appears in the analyst output, which assigns that calculation to FY2015."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 843,
+    "output_tokens": 566,
+    "total_tokens": 1409,
+    "cached_tokens": 0,
+    "reasoning_tokens": 388,
+    "cost_usd": 0.0008478,
+    "latency_ms": 5870.364500035066,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 843,
+      "output_tokens": 566,
+      "total_tokens": 1409,
+      "reasoning_tokens": 388,
+      "time_to_first_token": 5.870032917009667,
+      "duration": 5.870143000036478,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 843,
+            "output_tokens": 566,
+            "total_tokens": 1409,
+            "reasoning_tokens": 388,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1388,
+    "output_tokens": 212,
+    "total_tokens": 1600,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002448,
+    "latency_ms": 3687.0843750075437,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1388,
+      "output_tokens": 212,
+      "total_tokens": 1600,
+      "time_to_first_token": 3.6862537909764796,
+      "duration": 3.686556999979075,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1388,
+            "output_tokens": 212,
+            "total_tokens": 1600,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

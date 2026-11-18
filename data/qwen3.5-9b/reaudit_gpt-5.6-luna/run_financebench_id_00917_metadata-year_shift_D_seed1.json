@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00917_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst incorrectly treated FY22 operating income of $1.3 billion as the operating-margin change amount/driver.",
+    "reported_metric": "operating_margin_change_driver_2022",
+    "reported_value": 1.3,
+    "confidence": 0.98,
+    "rationale": "The trace states operating income was $1.3B in 2022 versus $3.6B in 2021, implying a $2.3B decrease—not $1.3B. The analyst also relabeled operating income as an operating-margin change driver, despite no margin percentages being provided. The writer then propagated this error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1378,
+    "output_tokens": 989,
+    "total_tokens": 2367,
+    "cached_tokens": 0,
+    "reasoning_tokens": 825,
+    "cost_usd": 0.0014624,
+    "latency_ms": 9270.618042035494,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1378,
+      "output_tokens": 989,
+      "total_tokens": 2367,
+      "reasoning_tokens": 825,
+      "time_to_first_token": 9.270019666990265,
+      "duration": 9.270281209028326,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1378,
+            "output_tokens": 989,
+            "total_tokens": 2367,
+            "reasoning_tokens": 825,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1326,
+    "output_tokens": 350,
+    "total_tokens": 1676,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4229.799863998778,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1326,
+      "output_tokens": 350,
+      "total_tokens": 1676,
+      "time_to_first_token": 4.229561302054208,
+      "duration": 4.229637786047533,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1326,
+            "output_tokens": 350,
+            "total_tokens": 1676,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4204267249,
+              "load_duration": 685383,
+              "prompt_eval_duration": 361368000,
+              "eval_duration": 3764343000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

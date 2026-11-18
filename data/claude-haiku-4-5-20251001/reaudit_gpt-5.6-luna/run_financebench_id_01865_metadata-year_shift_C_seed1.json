@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01865_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly presented the -0.9% segment organic-sales change as 3M's overall organic-sales change.",
+    "reported_metric": "overall organic sales change",
+    "reported_value": -0.9,
+    "confidence": 0.93,
+    "rationale": "W01 is derived from A01, which identifies -0.9% as a segment change, not an overall change. The extractor also contains a separate 2022 organic-sales value of 1.2%, so attributing -0.9% to the overall company is internally inconsistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1443,
+    "output_tokens": 1502,
+    "total_tokens": 2945,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1345,
+    "cost_usd": 0.002091,
+    "latency_ms": 14432.622082997113,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1443,
+      "output_tokens": 1502,
+      "total_tokens": 2945,
+      "reasoning_tokens": 1345,
+      "time_to_first_token": 14.43191562499851,
+      "duration": 14.43215470801806,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1443,
+            "output_tokens": 1502,
+            "total_tokens": 2945,
+            "reasoning_tokens": 1345,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2065,
+    "output_tokens": 202,
+    "total_tokens": 2267,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003075,
+    "latency_ms": 4143.584583012853,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2065,
+      "output_tokens": 202,
+      "total_tokens": 2267,
+      "time_to_first_token": 4.142554832971655,
+      "duration": 4.14285495801596,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2065,
+            "output_tokens": 202,
+            "total_tokens": 2267,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

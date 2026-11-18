@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04458_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident in the trace. The analyst correctly calculates unadjusted EBITDA as $305,826K + $62,283K = $368,109K, and the resulting margin is approximately 5.43% of $6,779,510K."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 847,
+    "output_tokens": 250,
+    "total_tokens": 1097,
+    "cached_tokens": 0,
+    "reasoning_tokens": 140,
+    "cost_usd": 0.00046939999999999997,
+    "latency_ms": 2842.903709039092,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 847,
+      "output_tokens": 250,
+      "total_tokens": 1097,
+      "reasoning_tokens": 140,
+      "time_to_first_token": 2.8424706250079907,
+      "duration": 2.8425280840019695,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 847,
+            "output_tokens": 250,
+            "total_tokens": 1097,
+            "reasoning_tokens": 140,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1419,
+    "output_tokens": 209,
+    "total_tokens": 1628,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002464,
+    "latency_ms": 3681.313292006962,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1419,
+      "output_tokens": 209,
+      "total_tokens": 1628,
+      "time_to_first_token": 3.680736291978974,
+      "duration": 3.680841749999672,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1419,
+            "output_tokens": 209,
+            "total_tokens": 1628,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04700_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extractor, analyst, writer, and final answer consistently report FY2016 cost of revenue/COGS as $32,780 million. The trace provides no contradictory figure or provenance indicating that this value is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 604,
+    "output_tokens": 350,
+    "total_tokens": 954,
+    "cached_tokens": 0,
+    "reasoning_tokens": 244,
+    "cost_usd": 0.0005407999999999999,
+    "latency_ms": 3894.8089579935186,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 604,
+      "output_tokens": 350,
+      "total_tokens": 954,
+      "reasoning_tokens": 244,
+      "time_to_first_token": 3.894479417009279,
+      "duration": 3.8946117919986136,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 604,
+            "output_tokens": 350,
+            "total_tokens": 954,
+            "reasoning_tokens": 244,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1081,
+    "output_tokens": 158,
+    "total_tokens": 1239,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001871,
+    "latency_ms": 2464.5370410289615,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1081,
+      "output_tokens": 158,
+      "total_tokens": 1239,
+      "time_to_first_token": 2.463699624990113,
+      "duration": 2.4639378340216354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1081,
+            "output_tokens": 158,
+            "total_tokens": 1239,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

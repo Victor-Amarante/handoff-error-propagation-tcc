@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00724_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer identified the region associated with the 74% decline as “international markets,” although the extractor and analyst outputs provide no geographic-region labels or mapping for the revenue figures.",
+    "reported_metric": "revenue_yoy_change_biggest_drop",
+    "reported_value": -74.0,
+    "confidence": 0.97,
+    "rationale": "The -74% value is internally supported: (1305 - 5034) / 5034 is approximately -74%. However, the trace never identifies which geographic region those figures represent, so the writer’s attribution to international markets is unsupported and is the first error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1109,
+    "output_tokens": 667,
+    "total_tokens": 1776,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010222,
+    "latency_ms": 6618.13879199326,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1109,
+      "output_tokens": 667,
+      "total_tokens": 1776,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.617462333990261,
+      "duration": 6.617689250037074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1109,
+            "output_tokens": 667,
+            "total_tokens": 1776,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1653,
+    "output_tokens": 180,
+    "total_tokens": 1833,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002553,
+    "latency_ms": 2657.541416992899,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1653,
+      "output_tokens": 180,
+      "total_tokens": 1833,
+      "time_to_first_token": 2.656785624974873,
+      "duration": 2.657021542021539,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1653,
+            "output_tokens": 180,
+            "total_tokens": 1833,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

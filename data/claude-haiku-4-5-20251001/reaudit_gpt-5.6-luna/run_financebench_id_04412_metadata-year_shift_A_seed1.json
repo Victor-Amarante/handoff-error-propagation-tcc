@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04412_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor mislabeled Lockheed Martin's $65,398 million revenue as FY2021 revenue; it is the FY2020 revenue needed for the calculation.",
+    "reported_metric": "FY2021 revenue",
+    "reported_value": 65398.0,
+    "confidence": 0.98,
+    "rationale": "The trace's only revenue figure is $65,398 million, and the requested FY2020 calculation requires FY2020 revenue. The analyst and writer then propagated the extractor's year mislabel and incorrectly treated the needed revenue as missing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 933,
+    "output_tokens": 399,
+    "total_tokens": 1332,
+    "cached_tokens": 0,
+    "reasoning_tokens": 260,
+    "cost_usd": 0.0006654,
+    "latency_ms": 4636.097709008027,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 933,
+      "output_tokens": 399,
+      "total_tokens": 1332,
+      "reasoning_tokens": 260,
+      "time_to_first_token": 4.635428707988467,
+      "duration": 4.635674374992959,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 933,
+            "output_tokens": 399,
+            "total_tokens": 1332,
+            "reasoning_tokens": 260,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1468,
+    "output_tokens": 192,
+    "total_tokens": 1660,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002428,
+    "latency_ms": 2608.0182080040686,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1468,
+      "output_tokens": 192,
+      "total_tokens": 1660,
+      "time_to_first_token": 2.6072407080209814,
+      "duration": 2.6075259170029312,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1468,
+            "output_tokens": 192,
+            "total_tokens": 1660,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

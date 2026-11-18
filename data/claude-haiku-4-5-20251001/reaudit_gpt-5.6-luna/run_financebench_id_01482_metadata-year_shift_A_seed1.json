@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01482_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated the approximately 19.7 million votes in favor as belonging to the May 3, 2023 AGM, even though the extractor dated that figure May 3, 2024.",
+    "reported_metric": "votes in favor of the congruency report proposal",
+    "reported_value": 19718800.0,
+    "confidence": 0.98,
+    "rationale": "The extractor explicitly assigns the 19.7 million favorable votes to May 3, 2024 and the 977.229 million against votes to May 3, 2023. The analyst then incorrectly applies both figures to 2023; the writer repeats that misattribution."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 891,
+    "output_tokens": 356,
+    "total_tokens": 1247,
+    "cached_tokens": 0,
+    "reasoning_tokens": 189,
+    "cost_usd": 0.0006054,
+    "latency_ms": 3948.383291019127,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 891,
+      "output_tokens": 356,
+      "total_tokens": 1247,
+      "reasoning_tokens": 189,
+      "time_to_first_token": 3.9477477080072276,
+      "duration": 3.947921749961097,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 891,
+            "output_tokens": 356,
+            "total_tokens": 1247,
+            "reasoning_tokens": 189,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1406,
+    "output_tokens": 236,
+    "total_tokens": 1642,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002586,
+    "latency_ms": 2985.1576249930076,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1406,
+      "output_tokens": 236,
+      "total_tokens": 1642,
+      "time_to_first_token": 2.984255083021708,
+      "duration": 2.984553540998604,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1406,
+            "output_tokens": 236,
+            "total_tokens": 1642,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

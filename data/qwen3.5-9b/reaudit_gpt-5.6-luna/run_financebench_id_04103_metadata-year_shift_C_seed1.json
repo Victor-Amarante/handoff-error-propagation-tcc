@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04103_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported the FY2019 cash conversion cycle as 67.48 days, but applying the stated DIO, DSO, and DPO formulas to the extracted line items yields approximately -3.70 days.",
+    "reported_metric": "FY2019 Cash Conversion Cycle (CCC) for General Mills",
+    "reported_value": 67.48,
+    "confidence": 0.98,
+    "rationale": "Using the trace values gives DIO = 52.60 days, DSO = 36.40 days, and DPO = 92.70 days, so CCC = 52.60 + 36.40 - 92.70 = -3.70 days. The writer merely propagated the analyst's incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1792,
+    "output_tokens": 2755,
+    "total_tokens": 4547,
+    "cached_tokens": 0,
+    "reasoning_tokens": 2536,
+    "cost_usd": 0.0036644,
+    "latency_ms": 24351.75958299078,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1792,
+      "output_tokens": 2755,
+      "total_tokens": 4547,
+      "reasoning_tokens": 2536,
+      "time_to_first_token": 24.350365334015805,
+      "duration": 24.350777209037915,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1792,
+            "output_tokens": 2755,
+            "total_tokens": 4547,
+            "reasoning_tokens": 2536,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1903,
+    "output_tokens": 343,
+    "total_tokens": 2246,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4534.748134028632,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1903,
+      "output_tokens": 343,
+      "total_tokens": 2246,
+      "time_to_first_token": 4.534464633965399,
+      "duration": 4.534558704006486,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1903,
+            "output_tokens": 343,
+            "total_tokens": 2246,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4509337828,
+              "load_duration": 564132,
+              "prompt_eval_duration": 477925000,
+              "eval_duration": 3934417000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

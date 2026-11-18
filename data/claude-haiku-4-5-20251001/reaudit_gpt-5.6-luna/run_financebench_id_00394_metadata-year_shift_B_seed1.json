@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00394_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JPM's 2022 Q2 net income was $1,004 million, treated as the relevant highest segment value.",
+    "reported_metric": "net_income",
+    "reported_value": 1004.0,
+    "confidence": 0.96,
+    "rationale": "The extractor output includes a higher 2022 net-income value of $3,100 million, along with $994 million, $1,004 million, and -$174 million. The analyst incorrectly selected $1,004 million and omitted the higher value; the writer then repeated that selection and failed to identify the segment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 842,
+    "output_tokens": 454,
+    "total_tokens": 1296,
+    "cached_tokens": 0,
+    "reasoning_tokens": 304,
+    "cost_usd": 0.0007131999999999999,
+    "latency_ms": 5351.1327499873005,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 842,
+      "output_tokens": 454,
+      "total_tokens": 1296,
+      "reasoning_tokens": 304,
+      "time_to_first_token": 5.350741375004873,
+      "duration": 5.350806124974042,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 842,
+            "output_tokens": 454,
+            "total_tokens": 1296,
+            "reasoning_tokens": 304,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1362,
+    "output_tokens": 178,
+    "total_tokens": 1540,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002252,
+    "latency_ms": 3267.795208026655,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1362,
+      "output_tokens": 178,
+      "total_tokens": 1540,
+      "time_to_first_token": 3.266897915978916,
+      "duration": 3.2671950410003774,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1362,
+            "output_tokens": 178,
+            "total_tokens": 1540,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

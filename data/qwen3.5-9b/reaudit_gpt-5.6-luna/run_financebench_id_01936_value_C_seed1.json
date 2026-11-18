@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01936_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C05",
+    "root_cause_claim_text": "The total restructuring-costs liability balance was reported as USD 97 million.",
+    "reported_metric": "Total Restructuring Costs Liability balance",
+    "reported_value": 97.0,
+    "confidence": 0.98,
+    "rationale": "The extracted component liability balances are USD 81 million (employee), USD 2 million (fixed asset), USD 10 million (related), and USD 93 million (other), which sum to USD 186 million—not USD 97 million. The analyst and writer propagated the inconsistent C05 total."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3128,
+    "output_tokens": 652,
+    "total_tokens": 3780,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001408,
+    "latency_ms": 6561.179167008959,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3128,
+      "output_tokens": 652,
+      "total_tokens": 3780,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.56055362499319,
+      "duration": 6.560748666001018,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3128,
+            "output_tokens": 652,
+            "total_tokens": 3780,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3466,
+    "output_tokens": 247,
+    "total_tokens": 3713,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3713.5886710020714,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3466,
+      "output_tokens": 247,
+      "total_tokens": 3713,
+      "time_to_first_token": 3.713311556028202,
+      "duration": 3.713405487011187,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3466,
+            "output_tokens": 247,
+            "total_tokens": 3713,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3686497754,
+              "load_duration": 568593,
+              "prompt_eval_duration": 824063000,
+              "eval_duration": 2790706000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

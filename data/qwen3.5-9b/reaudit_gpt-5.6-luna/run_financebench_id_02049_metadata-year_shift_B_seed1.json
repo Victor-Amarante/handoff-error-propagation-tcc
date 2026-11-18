@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02049_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JPM's VaR risk in Q2 2023 decreased by $1 million compared with Q2 2022.",
+    "reported_metric": "VaR Q2 2023 risk change",
+    "reported_value": -1.0,
+    "confidence": 0.97,
+    "rationale": "The extractor provides only an average total VaR value of $7 million for 2024 and contains no Q2 2023 or prior-year comparison. The analyst introduces the unsupported -$1 million change, which the writer repeats."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 679,
+    "output_tokens": 294,
+    "total_tokens": 973,
+    "cached_tokens": 0,
+    "reasoning_tokens": 155,
+    "cost_usd": 0.0004886000000000001,
+    "latency_ms": 3249.374707986135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 679,
+      "output_tokens": 294,
+      "total_tokens": 973,
+      "reasoning_tokens": 155,
+      "time_to_first_token": 3.2488251659669913,
+      "duration": 3.248977457988076,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 679,
+            "output_tokens": 294,
+            "total_tokens": 973,
+            "reasoning_tokens": 155,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 496,
+    "output_tokens": 188,
+    "total_tokens": 684,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2389.0092310030013,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 496,
+      "output_tokens": 188,
+      "total_tokens": 684,
+      "time_to_first_token": 2.388725403987337,
+      "duration": 2.3887998840073124,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 496,
+            "output_tokens": 188,
+            "total_tokens": 684,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2363763020,
+              "load_duration": 643173,
+              "prompt_eval_duration": 163187000,
+              "eval_duration": 2130349000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

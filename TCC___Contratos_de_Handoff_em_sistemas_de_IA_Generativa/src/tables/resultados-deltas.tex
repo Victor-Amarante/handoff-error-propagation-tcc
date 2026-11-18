@@ -8,30 +8,33 @@
 \hline
 \textbf{Comparação} & \textbf{Métrica} & \textbf{GPT-5.6 Luna} & \textbf{Claude Haiku 4.5} & \textbf{Qwen3.5 9B} \\
 \hline
-RQ1: A $\to$ B & Acurácia factual final & \textbf{$-$0,06 [$-$0,12; $-$0,01]} & $-$0,04 [$-$0,11; +0,03] & \textbf{$-$0,07 [$-$0,13; $-$0,02]} \\
- & Taxa de correção & +0,04 [$-$0,03; +0,10] & +0,03 [$-$0,06; +0,11] & +0,01 [$-$0,07; +0,09] \\
+RQ1: A $\to$ B & Acurácia factual final & \textbf{$-$0,06 [$-$0,12; $-$0,01]}$^{\dagger}$ & $-$0,04 [$-$0,11; +0,03] & \textbf{$-$0,07 [$-$0,13; $-$0,02]}$^{\dagger}$ \\
+ & Retenção & \textbf{$-$0,09 [$-$0,17; $-$0,02]}$^{\dagger}$ & $-$0,06 [$-$0,17; +0,04] & +0,01 [$-$0,07; +0,10] \\
+ & Taxa de correção$^{a}$ & +0,04 [$-$0,03; +0,10] & +0,03 [$-$0,06; +0,11] & +0,01 [$-$0,07; +0,09] \\
  & ESR & $-$0,03 [$-$0,09; +0,02] & $-$0,05 [$-$0,10; +0,01] & $-$0,02 [$-$0,08; +0,04] \\
  & Profundidade & \textbf{+0,43 [+0,32; +0,54]} & \textbf{+0,26 [+0,15; +0,37]} & \textbf{+0,31 [+0,22; +0,41]} \\
  & Amplificação & $-$0,17 [$-$0,42; +0,07] & \textbf{$-$0,66 [$-$0,90; $-$0,44]} & $-$0,35 [$-$0,75; +0,04] \\
- & RCCA & $-$0,01 [$-$0,04; +0,01] & +0,02 [$-$0,01; +0,05] & \textbf{+0,04 [+0,01; +0,08]} \\
- & FESA & $-$0,04 [$-$0,10; +0,02] & $-$0,07 [$-$0,13; +0,00] & \textbf{+0,12 [+0,04; +0,20]} \\
+ & RCCA & +0,01 [$-$0,05; +0,07] & $-$0,02 [$-$0,09; +0,04] & \textbf{+0,22 [+0,16; +0,28]} \\
+ & FESA líquida$^{b}$ & $-$0,03 [$-$0,10; +0,04] & \textbf{$-$0,09 [$-$0,16; $-$0,02]}$^{\dagger}$ & \textbf{+0,16 [+0,05; +0,28]}$^{\dagger}$ \\
 \hline
 RQ2: B $\to$ C & Acurácia factual final & \textbf{+0,11 [+0,05; +0,16]} & \textbf{+0,11 [+0,05; +0,18]} & $-$0,03 [$-$0,07; +0,02] \\
- & Taxa de correção & \textbf{+0,15 [+0,07; +0,22]} & \textbf{+0,18 [+0,09; +0,28]} & +0,00 [$-$0,06; +0,06] \\
- & ESR & +0,03 [$-$0,03; +0,09] & \textbf{+0,07 [+0,02; +0,13]} & +0,01 [$-$0,05; +0,08] \\
+ & Retenção & \textbf{+0,17 [+0,09; +0,24]} & \textbf{+0,19 [+0,09; +0,29]} & +0,00 [$-$0,06; +0,06] \\
+ & Taxa de correção$^{a}$ & \textbf{+0,15 [+0,07; +0,22]} & \textbf{+0,18 [+0,09; +0,28]} & +0,00 [$-$0,06; +0,06] \\
+ & ESR & +0,03 [$-$0,03; +0,09] & \textbf{+0,07 [+0,02; +0,13]}$^{\dagger}$ & +0,01 [$-$0,05; +0,08] \\
  & Profundidade & \textbf{+0,12 [+0,07; +0,18]} & \textbf{+0,17 [+0,12; +0,24]} & +0,05 [+0,00; +0,11] \\
  & Amplificação & +0,18 [$-$0,05; +0,40] & \textbf{+0,60 [+0,36; +0,86]} & +0,32 [$-$0,01; +0,66] \\
- & RCCA & \textbf{+0,34 [+0,29; +0,39]} & \textbf{+0,34 [+0,28; +0,40]} & \textbf{+0,35 [+0,29; +0,41]} \\
- & FESA & \textbf{+0,16 [+0,10; +0,22]} & $-$0,03 [$-$0,08; +0,03] & +0,06 [$-$0,00; +0,12] \\
+ & RCCA & \textbf{+0,15 [+0,09; +0,20]} & \textbf{+0,07 [+0,02; +0,13]}$^{\dagger}$ & \textbf{+0,08 [+0,02; +0,15]}$^{\dagger}$ \\
+ & FESA líquida$^{b}$ & \textbf{+0,16 [+0,09; +0,23]} & \textbf{+0,09 [+0,01; +0,17]}$^{\dagger}$ & $-$0,03 [$-$0,12; +0,07] \\
 \hline
 RQ3: C $\to$ D & Acurácia factual final & \textbf{+0,15 [+0,08; +0,21]} & \textbf{+0,10 [+0,04; +0,16]} & \textbf{+0,10 [+0,05; +0,14]} \\
- & Taxa de correção & \textbf{+0,16 [+0,08; +0,24]} & +0,09 [+0,00; +0,17] & \textbf{+0,10 [+0,02; +0,18]} \\
+ & Retenção & \textbf{+0,17 [+0,09; +0,25]} & \textbf{+0,14 [+0,05; +0,24]} & \textbf{+0,11 [+0,01; +0,21]}$^{\dagger}$ \\
+ & Taxa de correção$^{a}$ & \textbf{+0,16 [+0,08; +0,24]} & +0,09 [+0,00; +0,17] & \textbf{+0,10 [+0,02; +0,18]}$^{\dagger}$ \\
  & ESR & \textbf{$-$0,10 [$-$0,16; $-$0,04]} & \textbf{$-$0,14 [$-$0,21; $-$0,08]} & $-$0,05 [$-$0,11; +0,02] \\
  & Profundidade & \textbf{$-$0,12 [$-$0,19; $-$0,05]} & \textbf{$-$0,16 [$-$0,23; $-$0,09]} & $-$0,05 [$-$0,11; +0,01] \\
  & Amplificação & $-$0,04 [$-$0,27; +0,21] & \textbf{$-$0,41 [$-$0,65; $-$0,18]} & +0,20 [$-$0,28; +0,86] \\
- & RCCA & \textbf{+0,43 [+0,36; +0,49]} & \textbf{+0,38 [+0,32; +0,44]} & +0,03 [$-$0,03; +0,09] \\
- & FESA & \textbf{+0,43 [+0,36; +0,49]} & \textbf{+0,30 [+0,24; +0,37]} & +0,01 [$-$0,06; +0,07] \\
+ & RCCA & \textbf{+0,43 [+0,37; +0,49]} & \textbf{+0,35 [+0,29; +0,41]} & +0,01 [$-$0,05; +0,07] \\
+ & FESA líquida$^{b}$ & \textbf{+0,45 [+0,38; +0,52]} & \textbf{+0,31 [+0,24; +0,38]} & \textbf{+0,10 [+0,01; +0,20]}$^{\dagger}$ \\
 \hline
 \end{tabular}
-\\[2pt]{\scriptsize Diferença média pareada por pergunta (segunda condição menos a primeira) e IC95\% bootstrap. Em negrito: intervalo que não inclui zero.}
+\\[2pt]{\scriptsize\raggedright Diferença média pareada por pergunta (segunda condição menos a primeira) e IC95\% bootstrap. Em negrito: intervalo que não inclui zero; $^{\dagger}$: não sobrevive à correção de Holm sobre as 24 comparações do modelo. $^{a}$Calculada só sobre as perguntas elegíveis nas duas condições comparadas, por isso não é a diferença das médias da Tabela~\ref{tab:principal}. $^{b}$FESA menos o placebo da mesma pergunta e condição.\par}
 \end{table*}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01858_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "3M had 65 consecutive years of dividend increases as of 2024.",
+    "reported_metric": "consecutive_years_of_dividend_increases",
+    "reported_value": 65.0,
+    "confidence": 0.93,
+    "rationale": "The claim is attributed to a 2023 Q2 source, yet it labels the 65-year figure as applying to 2024. The analyst and writer reproduce this extractor claim without introducing a new discrepancy."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 895,
+    "output_tokens": 318,
+    "total_tokens": 1213,
+    "cached_tokens": 0,
+    "reasoning_tokens": 195,
+    "cost_usd": 0.0005605999999999999,
+    "latency_ms": 3271.4314999757335,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 895,
+      "output_tokens": 318,
+      "total_tokens": 1213,
+      "reasoning_tokens": 195,
+      "time_to_first_token": 3.2710430420120247,
+      "duration": 3.2711634170264006,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 895,
+            "output_tokens": 318,
+            "total_tokens": 1213,
+            "reasoning_tokens": 195,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1410,
+    "output_tokens": 178,
+    "total_tokens": 1588,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0023,
+    "latency_ms": 3358.3520830143243,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1410,
+      "output_tokens": 178,
+      "total_tokens": 1588,
+      "time_to_first_token": 3.3573395420098677,
+      "duration": 3.357632542029023,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1410,
+            "output_tokens": 178,
+            "total_tokens": 1588,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

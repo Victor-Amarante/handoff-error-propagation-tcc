@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05915_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2018 fixed asset turnover ratio is 17.99, but 194579.0 divided by 10820.5 equals approximately 17.9824, which rounds to 17.98.",
+    "reported_metric": "Fixed Asset Turnover Ratio",
+    "reported_value": 17.99,
+    "confidence": 0.99,
+    "rationale": "The extractor's figures imply 194579.0 / 10820.5 = 17.9824, so the analyst introduced an incorrect rounding result; the writer propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 723,
+    "output_tokens": 330,
+    "total_tokens": 1053,
+    "cached_tokens": 0,
+    "reasoning_tokens": 188,
+    "cost_usd": 0.0005406,
+    "latency_ms": 3550.7488750154153,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 723,
+      "output_tokens": 330,
+      "total_tokens": 1053,
+      "reasoning_tokens": 188,
+      "time_to_first_token": 3.5500621250248514,
+      "duration": 3.550234582973644,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 723,
+            "output_tokens": 330,
+            "total_tokens": 1053,
+            "reasoning_tokens": 188,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 567,
+    "output_tokens": 375,
+    "total_tokens": 942,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4442.676016013138,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 567,
+      "output_tokens": 375,
+      "total_tokens": 942,
+      "time_to_first_token": 4.442426466033794,
+      "duration": 4.442508806998376,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 567,
+            "output_tokens": 375,
+            "total_tokens": 942,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4414550228,
+              "load_duration": 445076,
+              "prompt_eval_duration": 179324000,
+              "eval_duration": 4165006000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

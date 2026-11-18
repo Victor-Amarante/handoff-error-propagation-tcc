@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The analyst incorrectly identified the 2019 Other (income)/deductions net amount of USD 3,497 million as a gain from completion of the Consumer Healthcare JV transaction.",
+    "reported_metric": "(Gain) on completion of Consumer Healthcare JV transaction (2019)",
+    "reported_value": 3497.0,
+    "confidence": 0.99,
+    "rationale": "Extractor claim C23 reports USD 3,497 million as Other (income)/deductions net in 2019, while the specifically identified Consumer Healthcare JV transaction appears only for 2020 (C20) and 2021 (C19), not 2019. A04 therefore introduces the unsupported attribution, which the writer propagates."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 5007,
+    "output_tokens": 446,
+    "total_tokens": 5453,
+    "cached_tokens": 0,
+    "reasoning_tokens": 269,
+    "cost_usd": 0.0015366,
+    "latency_ms": 4880.4548750049435,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5007,
+      "output_tokens": 446,
+      "total_tokens": 5453,
+      "reasoning_tokens": 269,
+      "time_to_first_token": 4.879950625007041,
+      "duration": 4.880088625010103,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5007,
+            "output_tokens": 446,
+            "total_tokens": 5453,
+            "reasoning_tokens": 269,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 5797,
+    "output_tokens": 1459,
+    "total_tokens": 7256,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 17549.036670010537,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5797,
+      "output_tokens": 1459,
+      "total_tokens": 7256,
+      "time_to_first_token": 17.54874799202662,
+      "duration": 17.54884679999668,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5797,
+            "output_tokens": 1459,
+            "total_tokens": 7256,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 17523676189,
+              "load_duration": 656281,
+              "prompt_eval_duration": 1345337000,
+              "eval_duration": 16096975000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

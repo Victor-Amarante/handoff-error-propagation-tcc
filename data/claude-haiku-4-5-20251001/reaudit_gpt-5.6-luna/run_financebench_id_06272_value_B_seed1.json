@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06272_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident from the trace. The analyst correctly computes 7,616 divided by 5,942 = approximately 1.2817, which rounds to 1.28, and the writer preserves that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 738,
+    "output_tokens": 362,
+    "total_tokens": 1100,
+    "cached_tokens": 0,
+    "reasoning_tokens": 262,
+    "cost_usd": 0.000582,
+    "latency_ms": 4114.216042042244,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 738,
+      "output_tokens": 362,
+      "total_tokens": 1100,
+      "reasoning_tokens": 262,
+      "time_to_first_token": 4.113824375031982,
+      "duration": 4.1139609580277465,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 738,
+            "output_tokens": 362,
+            "total_tokens": 1100,
+            "reasoning_tokens": 262,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1244,
+    "output_tokens": 138,
+    "total_tokens": 1382,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001934,
+    "latency_ms": 1964.1374169732444,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1244,
+      "output_tokens": 138,
+      "total_tokens": 1382,
+      "time_to_first_token": 1.963196541997604,
+      "duration": 1.963495249976404,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1244,
+            "output_tokens": 138,
+            "total_tokens": 1382,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

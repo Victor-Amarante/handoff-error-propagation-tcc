@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00685_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Best Buy's annual gross-margin fluctuations were less than 1%.",
+    "reported_metric": "Annual gross-margin fluctuation",
+    "reported_value": 1.0,
+    "confidence": 0.98,
+    "rationale": "The extracted figures and analyst calculations are internally consistent. However, FY2023 gross margin of 21.41% versus FY2022's 22.49% is a 1.08 percentage-point decline, so the writer's claim of fluctuations below 1% is incorrect. The broader conclusion of consistency under the roughly 2% criterion remains supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2245,
+    "output_tokens": 660,
+    "total_tokens": 2905,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001241,
+    "latency_ms": 6410.883874981664,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2245,
+      "output_tokens": 660,
+      "total_tokens": 2905,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.410316666995641,
+      "duration": 6.410478207981214,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2245,
+            "output_tokens": 660,
+            "total_tokens": 2905,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2481,
+    "output_tokens": 1950,
+    "total_tokens": 4431,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21285.457203979604,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2481,
+      "output_tokens": 1950,
+      "total_tokens": 4431,
+      "time_to_first_token": 21.28519373695599,
+      "duration": 21.285277821996715,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2481,
+            "output_tokens": 1950,
+            "total_tokens": 4431,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21253925478,
+              "load_duration": 478837,
+              "prompt_eval_duration": 585858000,
+              "eval_duration": 20580135000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

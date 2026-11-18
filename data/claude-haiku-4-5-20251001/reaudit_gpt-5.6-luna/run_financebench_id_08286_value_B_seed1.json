@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08286_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be established from the trace; the extractor, analyst, and writer outputs are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages report the same FY2019 net income value of 15,188 USD millions, and the trace provides no source or provenance indicating that this value is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 649,
+    "output_tokens": 382,
+    "total_tokens": 1031,
+    "cached_tokens": 0,
+    "reasoning_tokens": 270,
+    "cost_usd": 0.0005882000000000001,
+    "latency_ms": 4105.260666983668,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 649,
+      "output_tokens": 382,
+      "total_tokens": 1031,
+      "reasoning_tokens": 270,
+      "time_to_first_token": 4.104600708989892,
+      "duration": 4.104835042031482,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 649,
+            "output_tokens": 382,
+            "total_tokens": 1031,
+            "reasoning_tokens": 270,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1142,
+    "output_tokens": 127,
+    "total_tokens": 1269,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001777,
+    "latency_ms": 2149.1024579736404,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1142,
+      "output_tokens": 127,
+      "total_tokens": 1269,
+      "time_to_first_token": 2.1480869579827413,
+      "duration": 2.1483814580133185,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1142,
+            "output_tokens": 127,
+            "total_tokens": 1269,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02987_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2019 fixed asset turnover ratio equals 17.52.",
+    "reported_metric": "FY2019 fixed asset turnover ratio",
+    "reported_value": 17.52,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs are internally consistent, but the analyst's arithmetic is incorrect: $4,689M divided by the $267.5M average PP&E equals approximately 17.5299, which rounds to 17.53, not 17.52."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 937,
+    "output_tokens": 293,
+    "total_tokens": 1230,
+    "cached_tokens": 0,
+    "reasoning_tokens": 162,
+    "cost_usd": 0.000539,
+    "latency_ms": 3592.033958993852,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 937,
+      "output_tokens": 293,
+      "total_tokens": 1230,
+      "reasoning_tokens": 162,
+      "time_to_first_token": 3.5912605839548633,
+      "duration": 3.591596749960445,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 937,
+            "output_tokens": 293,
+            "total_tokens": 1230,
+            "reasoning_tokens": 162,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1499,
+    "output_tokens": 180,
+    "total_tokens": 1679,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002399,
+    "latency_ms": 2251.773249998223,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1499,
+      "output_tokens": 180,
+      "total_tokens": 1679,
+      "time_to_first_token": 2.2507445419905707,
+      "duration": 2.2510505000245757,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1499,
+            "output_tokens": 180,
+            "total_tokens": 1679,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

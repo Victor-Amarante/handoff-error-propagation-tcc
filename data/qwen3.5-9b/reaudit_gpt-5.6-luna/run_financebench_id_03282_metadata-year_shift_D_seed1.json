@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03282_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The total current liabilities figure of 5,466,312 USD thousands was incorrectly attributed to year 2018 instead of FY2017.",
+    "reported_metric": "total current liabilities",
+    "reported_value": 5466312.0,
+    "confidence": 0.96,
+    "rationale": "The balance-sheet figure and unit conversion are internally consistent: 5,466,312 USD thousands equals 5,466.312 USD millions. However, the extractor labels the claim as year 2018 even though the question asks for FY2017 and the source is a 2017 10-K. That year misattribution is propagated by the analyst and writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 857,
+    "output_tokens": 678,
+    "total_tokens": 1535,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000985,
+    "latency_ms": 7047.370124957524,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 678,
+      "total_tokens": 1535,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.046793292043731,
+      "duration": 7.046913959027734,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 678,
+            "total_tokens": 1535,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 745,
+    "output_tokens": 207,
+    "total_tokens": 952,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2581.4237279701047,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 745,
+      "output_tokens": 207,
+      "total_tokens": 952,
+      "time_to_first_token": 2.581172392005101,
+      "duration": 2.581262286985293,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 745,
+            "output_tokens": 207,
+            "total_tokens": 952,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2556412133,
+              "load_duration": 498535,
+              "prompt_eval_duration": 193886000,
+              "eval_duration": 2290808000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

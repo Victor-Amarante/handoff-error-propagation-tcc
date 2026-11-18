@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06655_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The analyst incorrectly calculated FY2017 Cost of Sales plus Change in Inventory as 123,848 USD_M; using FY2017 cost of sales of 111,934 and inventory change of 16,047 minus 11,461 gives 116,520 USD_M.",
+    "reported_metric": "FY2017 Cost of Sales + Change in Inventory",
+    "reported_value": 123848.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values are internally consistent. Analyst claim A02 uses an incorrect denominator, which propagates to the incorrect DPO claim A03 and the writer's final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1992,
+    "output_tokens": 451,
+    "total_tokens": 2443,
+    "cached_tokens": 0,
+    "reasoning_tokens": 295,
+    "cost_usd": 0.0009396,
+    "latency_ms": 4719.5152919739485,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1992,
+      "output_tokens": 451,
+      "total_tokens": 2443,
+      "reasoning_tokens": 295,
+      "time_to_first_token": 4.718893459008541,
+      "duration": 4.719156709033996,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1992,
+            "output_tokens": 451,
+            "total_tokens": 2443,
+            "reasoning_tokens": 295,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2221,
+    "output_tokens": 2664,
+    "total_tokens": 4885,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 28028.23597099632,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2221,
+      "output_tokens": 2664,
+      "total_tokens": 4885,
+      "time_to_first_token": 28.0279918530141,
+      "duration": 28.028071902983356,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2221,
+            "output_tokens": 2664,
+            "total_tokens": 4885,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 28002168737,
+              "load_duration": 492385,
+              "prompt_eval_duration": 530597000,
+              "eval_duration": 27411812000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

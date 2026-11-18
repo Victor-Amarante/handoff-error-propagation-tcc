@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01079_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The company made no other major acquisitions disclosed in FY2022 and FY2021.",
+    "reported_metric": "major acquisitions in FY2022 and FY2021",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "The trace contains sourced claims only for FY2023 and provides no evidence supporting the writer's assertion that there were no major acquisitions in FY2022 or FY2021. The extractor and analyst merely passed through the FY2023 claims; the unsupported negative claim first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1699,
+    "output_tokens": 652,
+    "total_tokens": 2351,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011222,
+    "latency_ms": 6607.136417005677,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1699,
+      "output_tokens": 652,
+      "total_tokens": 2351,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.605428125010803,
+      "duration": 6.606445249984972,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1699,
+            "output_tokens": 652,
+            "total_tokens": 2351,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2338,
+    "output_tokens": 175,
+    "total_tokens": 2513,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003213,
+    "latency_ms": 3417.994624993298,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2338,
+      "output_tokens": 175,
+      "total_tokens": 2513,
+      "time_to_first_token": 3.4171762500191107,
+      "duration": 3.4174658749834634,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2338,
+            "output_tokens": 175,
+            "total_tokens": 2513,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

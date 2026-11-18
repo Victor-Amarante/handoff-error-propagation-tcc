@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00790_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The claim that CVS Health is capital-intensive because operating costs are high relative to revenue and because it has a significant asset base.",
+    "reported_metric": "Capital intensity based on FY2022 financial metrics",
+    "reported_value": 314721.0,
+    "confidence": 0.97,
+    "rationale": "The extractor and analyst consistently report the same figures, but the writer incorrectly uses operating costs as the reported measure of capital intensity. Operating costs are not capital expenditures, and the trace does not establish that the reported property and equipment or asset base is unusually large relative to revenue."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1734,
+    "output_tokens": 375,
+    "total_tokens": 2109,
+    "cached_tokens": 0,
+    "reasoning_tokens": 230,
+    "cost_usd": 0.0007968,
+    "latency_ms": 4132.615416019689,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1734,
+      "output_tokens": 375,
+      "total_tokens": 2109,
+      "reasoning_tokens": 230,
+      "time_to_first_token": 4.1318457500310615,
+      "duration": 4.132070000050589,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1734,
+            "output_tokens": 375,
+            "total_tokens": 2109,
+            "reasoning_tokens": 230,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1830,
+    "output_tokens": 354,
+    "total_tokens": 2184,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4480.434914003126,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1830,
+      "output_tokens": 354,
+      "total_tokens": 2184,
+      "time_to_first_token": 4.4801673290203325,
+      "duration": 4.480240005010273,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1830,
+            "output_tokens": 354,
+            "total_tokens": 2184,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4455391386,
+              "load_duration": 487965,
+              "prompt_eval_duration": 467013000,
+              "eval_duration": 3929466000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

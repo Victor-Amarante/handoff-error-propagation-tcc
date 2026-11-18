@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00585_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's effective tax rate was -0.5% in FY2022.",
+    "reported_metric": "effective_tax_rate",
+    "reported_value": -0.5,
+    "confidence": 0.99,
+    "rationale": "Using the extracted FY2022 figures, income tax expense/benefit divided by loss before income taxes is (-31)/(-5775) = approximately +0.5%, not -0.5%. The FY2021 calculation is consistent at approximately -14.7%, so the first error occurred when the analyst assigned the FY2022 rate's sign."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 916,
+    "output_tokens": 388,
+    "total_tokens": 1304,
+    "cached_tokens": 0,
+    "reasoning_tokens": 237,
+    "cost_usd": 0.0006487999999999999,
+    "latency_ms": 4692.62395898113,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 916,
+      "output_tokens": 388,
+      "total_tokens": 1304,
+      "reasoning_tokens": 237,
+      "time_to_first_token": 4.692133374977857,
+      "duration": 4.69223524996778,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 916,
+            "output_tokens": 388,
+            "total_tokens": 1304,
+            "reasoning_tokens": 237,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1438,
+    "output_tokens": 208,
+    "total_tokens": 1646,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002478,
+    "latency_ms": 2572.482708026655,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1438,
+      "output_tokens": 208,
+      "total_tokens": 1646,
+      "time_to_first_token": 2.5715716669801623,
+      "duration": 2.571865917008836,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1438,
+            "output_tokens": 208,
+            "total_tokens": 1646,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

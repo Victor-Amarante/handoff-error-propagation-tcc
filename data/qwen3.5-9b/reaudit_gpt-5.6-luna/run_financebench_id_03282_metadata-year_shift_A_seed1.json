@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03282_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The report's year-end total current liabilities were $5,466,310 thousand for FY2018.",
+    "reported_metric": "Total current liabilities",
+    "reported_value": 5466310.0,
+    "confidence": 0.86,
+    "rationale": "The extractor assigns the reported figure to FY2018 even though the question asks for FY2017. The analyst and writer then propagate the resulting incorrect conclusion that the FY2017 figure is unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 639,
+    "output_tokens": 1084,
+    "total_tokens": 1723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 957,
+    "cost_usd": 0.0014286,
+    "latency_ms": 10339.52237496851,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 639,
+      "output_tokens": 1084,
+      "total_tokens": 1723,
+      "reasoning_tokens": 957,
+      "time_to_first_token": 10.339077082986478,
+      "duration": 10.339230916986708,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 639,
+            "output_tokens": 1084,
+            "total_tokens": 1723,
+            "reasoning_tokens": 957,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 444,
+    "output_tokens": 149,
+    "total_tokens": 593,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1900.0064359861426,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 444,
+      "output_tokens": 149,
+      "total_tokens": 593,
+      "time_to_first_token": 1.8997721699997783,
+      "duration": 1.8998453639796935,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 444,
+            "output_tokens": 149,
+            "total_tokens": 593,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1874909146,
+              "load_duration": 497191,
+              "prompt_eval_duration": 127369000,
+              "eval_duration": 1699970000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00299_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly stated that Consumer & Community Banking's $12,517M figure was for 2022 rather than 2021 Q1.",
+    "reported_metric": "Consumer & Community Banking total net revenue",
+    "reported_value": 12517.0,
+    "confidence": 0.84,
+    "rationale": "The extractor explicitly labels the $12,517M figure as 2021 total net revenue, while the analyst reclassifies it as 2022 and excludes it. The final lowest-segment conclusion remains unchanged because Corporate's -$473M is still lower."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 765,
+    "output_tokens": 657,
+    "total_tokens": 1422,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009414,
+    "latency_ms": 6232.821208017413,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 765,
+      "output_tokens": 657,
+      "total_tokens": 1422,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.232341541966889,
+      "duration": 6.232411541976035,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 765,
+            "output_tokens": 657,
+            "total_tokens": 1422,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 597,
+    "output_tokens": 208,
+    "total_tokens": 805,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2640.142353018746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 597,
+      "output_tokens": 208,
+      "total_tokens": 805,
+      "time_to_first_token": 2.639862929994706,
+      "duration": 2.6399554910021834,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 597,
+            "output_tokens": 208,
+            "total_tokens": 805,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2615034428,
+              "load_duration": 485468,
+              "prompt_eval_duration": 154986000,
+              "eval_duration": 2409268000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

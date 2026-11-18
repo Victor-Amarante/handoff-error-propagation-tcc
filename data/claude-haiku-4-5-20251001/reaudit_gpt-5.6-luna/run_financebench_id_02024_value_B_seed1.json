@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02024_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Verizon's retiree obligations for 2024 were 0 USD million.",
+    "reported_metric": "retiree_obligations",
+    "reported_value": 0.0,
+    "confidence": 0.96,
+    "rationale": "The writer's structured claim assigns a value of zero despite stating that the amount cannot be determined. The extractor also reported nonzero benefit figures, so zero is unsupported and internally inconsistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 689,
+    "output_tokens": 626,
+    "total_tokens": 1315,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000889,
+    "latency_ms": 6352.414791996125,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 689,
+      "output_tokens": 626,
+      "total_tokens": 1315,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.351884208037518,
+      "duration": 6.35202529100934,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 689,
+            "output_tokens": 626,
+            "total_tokens": 1315,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1183,
+    "output_tokens": 180,
+    "total_tokens": 1363,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002083,
+    "latency_ms": 3484.023791970685,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1183,
+      "output_tokens": 180,
+      "total_tokens": 1363,
+      "time_to_first_token": 3.4831924999598414,
+      "duration": 3.4834259590134025,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1183,
+            "output_tokens": 180,
+            "total_tokens": 1363,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

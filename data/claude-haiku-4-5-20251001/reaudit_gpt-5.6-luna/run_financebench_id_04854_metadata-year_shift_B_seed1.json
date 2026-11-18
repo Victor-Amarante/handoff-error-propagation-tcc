@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04854_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY2020 free cash flow for General Mills was 0.0 USD millions.",
+    "reported_metric": "free_cash_flow",
+    "reported_value": 0.0,
+    "confidence": 0.94,
+    "rationale": "The extractor supplied only FY2021 cash from operations and FY2020 capex, while the analyst produced no claims. Thus the writer could not calculate FY2020 FCF, but its structured answer claim of 0.0 USD millions is unsupported and inconsistent with the refusal text."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 697,
+    "output_tokens": 645,
+    "total_tokens": 1342,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009134,
+    "latency_ms": 6812.134583014995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 697,
+      "output_tokens": 645,
+      "total_tokens": 1342,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.811559209018014,
+      "duration": 6.811772584042046,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 697,
+            "output_tokens": 645,
+            "total_tokens": 1342,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1189,
+    "output_tokens": 182,
+    "total_tokens": 1371,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002099,
+    "latency_ms": 2931.982917012647,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1189,
+      "output_tokens": 182,
+      "total_tokens": 1371,
+      "time_to_first_token": 2.9309718330041505,
+      "duration": 2.9312696660053916,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1189,
+            "output_tokens": 182,
+            "total_tokens": 1371,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

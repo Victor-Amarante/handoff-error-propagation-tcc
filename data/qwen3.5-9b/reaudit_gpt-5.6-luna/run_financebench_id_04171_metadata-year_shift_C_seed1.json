@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04171_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled the accounts payable amount of 302,578 USD thousands as year 2019, despite the claim originating from the MGM Resorts 2018 10-K balance sheet.",
+    "reported_metric": "accounts_payable",
+    "reported_value": 302578.0,
+    "confidence": 0.84,
+    "rationale": "C01 is the earliest claim and carries the inconsistent 2019 year label. The analyst then relabeled the same extracted amount as FY2018, creating the downstream claim used in the final answer. The trace does not establish that the numeric amount itself is wrong, only that its year attribution first became inconsistent at extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 991,
+    "output_tokens": 673,
+    "total_tokens": 1664,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010058,
+    "latency_ms": 6855.685832968447,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 991,
+      "output_tokens": 673,
+      "total_tokens": 1664,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.854901999991853,
+      "duration": 6.855154707969632,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 991,
+            "output_tokens": 673,
+            "total_tokens": 1664,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 912,
+    "output_tokens": 281,
+    "total_tokens": 1193,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3461.7574639851227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 912,
+      "output_tokens": 281,
+      "total_tokens": 1193,
+      "time_to_first_token": 3.461483618011698,
+      "duration": 3.4615759379812516,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 912,
+            "output_tokens": 281,
+            "total_tokens": 1193,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3436699014,
+              "load_duration": 624574,
+              "prompt_eval_duration": 264031999,
+              "eval_duration": 3100480000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

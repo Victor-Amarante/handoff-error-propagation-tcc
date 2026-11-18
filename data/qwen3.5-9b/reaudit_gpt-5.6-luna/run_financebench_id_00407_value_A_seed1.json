@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00407_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently reports corporate bonds as the largest short-term investment at $416,420K ($416.42 million).",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor lists corporate bonds at $416,420K, higher than all other short-term investment categories. The analyst correctly converts this to $416.42 million, and the writer preserves the conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 873,
+    "output_tokens": 212,
+    "total_tokens": 1085,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.000429,
+    "latency_ms": 2382.5420000357553,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 873,
+      "output_tokens": 212,
+      "total_tokens": 1085,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.382342584023718,
+      "duration": 2.382398292014841,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 873,
+            "output_tokens": 212,
+            "total_tokens": 1085,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 718,
+    "output_tokens": 165,
+    "total_tokens": 883,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2174.364998994861,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 718,
+      "output_tokens": 165,
+      "total_tokens": 883,
+      "time_to_first_token": 2.1740623420337215,
+      "duration": 2.1741525630350225,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 718,
+            "output_tokens": 165,
+            "total_tokens": 883,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2144956442,
+              "load_duration": 447207,
+              "prompt_eval_duration": 192995000,
+              "eval_duration": 1902003000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

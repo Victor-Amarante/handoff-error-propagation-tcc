@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08286_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amazon's net income was $11,588 million in FY2020.",
+    "reported_metric": "net income",
+    "reported_value": 11588.0,
+    "confidence": 0.98,
+    "rationale": "The trace's $11,588 million figure is presented as FY2020, but the question asks for FY2019 and the subsequent stages rely on that year assignment. The first error therefore appears in the extractor; no claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 654,
+    "output_tokens": 308,
+    "total_tokens": 962,
+    "cached_tokens": 0,
+    "reasoning_tokens": 186,
+    "cost_usd": 0.0005004,
+    "latency_ms": 3797.393541026395,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 654,
+      "output_tokens": 308,
+      "total_tokens": 962,
+      "reasoning_tokens": 186,
+      "time_to_first_token": 3.7965147079667076,
+      "duration": 3.7967372079729103,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 654,
+            "output_tokens": 308,
+            "total_tokens": 962,
+            "reasoning_tokens": 186,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 465,
+    "output_tokens": 144,
+    "total_tokens": 609,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1932.3971079429612,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 465,
+      "output_tokens": 144,
+      "total_tokens": 609,
+      "time_to_first_token": 1.932154340960551,
+      "duration": 1.9322299140039831,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 465,
+            "output_tokens": 144,
+            "total_tokens": 609,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1907328647,
+              "load_duration": 670959,
+              "prompt_eval_duration": 158747000,
+              "eval_duration": 1700085000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

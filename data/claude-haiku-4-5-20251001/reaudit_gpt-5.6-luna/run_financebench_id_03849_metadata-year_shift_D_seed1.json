@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03849_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor mislabeled MGM Resorts' FY2020 revenue of 5,162,082 USD_K as FY2021 revenue.",
+    "reported_metric": "revenue",
+    "reported_value": 5162082.0,
+    "confidence": 0.98,
+    "rationale": "The 2020 10-K and the FY2018–FY2020 question indicate that 5,162,082 is FY2020 revenue, not FY2021. This mislabel propagated into A03, which also calculated the FY2020 ratio incorrectly; the reported 3.2% is inconsistent with 270,579 / 5,162,082, approximately 5.2%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1939,
+    "output_tokens": 623,
+    "total_tokens": 2562,
+    "cached_tokens": 0,
+    "reasoning_tokens": 452,
+    "cost_usd": 0.0011354000000000002,
+    "latency_ms": 5989.785374957137,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1939,
+      "output_tokens": 623,
+      "total_tokens": 2562,
+      "reasoning_tokens": 452,
+      "time_to_first_token": 5.989138333010487,
+      "duration": 5.989273624960333,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1939,
+            "output_tokens": 623,
+            "total_tokens": 2562,
+            "reasoning_tokens": 452,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2658,
+    "output_tokens": 192,
+    "total_tokens": 2850,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003618,
+    "latency_ms": 3782.903457991779,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2658,
+      "output_tokens": 192,
+      "total_tokens": 2850,
+      "time_to_first_token": 3.782518792024348,
+      "duration": 3.7825754579971544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2658,
+            "output_tokens": 192,
+            "total_tokens": 2850,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

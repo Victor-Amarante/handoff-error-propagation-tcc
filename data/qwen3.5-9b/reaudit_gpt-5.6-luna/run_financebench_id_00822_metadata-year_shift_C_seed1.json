@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00822_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently shows Richard A. Johnson had the most votes against among the 2023 nominees.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extracted 2023 values show Richard A. Johnson with 16,105,005 votes against, substantially above the next-highest nominee, Alan D. Feldman with 5,184,437. The analyst and writer correctly identify Johnson as the highest among 2023 nominees."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2018,
+    "output_tokens": 273,
+    "total_tokens": 2291,
+    "cached_tokens": 0,
+    "reasoning_tokens": 135,
+    "cost_usd": 0.0007312,
+    "latency_ms": 3311.4939579972997,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2018,
+      "output_tokens": 273,
+      "total_tokens": 2291,
+      "reasoning_tokens": 135,
+      "time_to_first_token": 3.3107003340264782,
+      "duration": 3.311070334049873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2018,
+            "output_tokens": 273,
+            "total_tokens": 2291,
+            "reasoning_tokens": 135,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2180,
+    "output_tokens": 263,
+    "total_tokens": 2443,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3544.472975016106,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2180,
+      "output_tokens": 263,
+      "total_tokens": 2443,
+      "time_to_first_token": 3.5441782120033167,
+      "duration": 3.544271667022258,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2180,
+            "output_tokens": 263,
+            "total_tokens": 2443,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3515107192,
+              "load_duration": 509018,
+              "prompt_eval_duration": 548292000,
+              "eval_duration": 2900012000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

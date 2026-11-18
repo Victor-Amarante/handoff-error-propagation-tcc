@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00460_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the reported end-of-quarter counts (930 versus 907) consistently support a decrease of 23 stores.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports 930 Best Buy stores at the end of Q2 FY2023 and 907 at the end of Q2 FY2024. The analyst and writer correctly calculate the difference as 907 - 930 = -23, with no internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 931,
+    "output_tokens": 239,
+    "total_tokens": 1170,
+    "cached_tokens": 0,
+    "reasoning_tokens": 103,
+    "cost_usd": 0.000473,
+    "latency_ms": 2921.7650829814374,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 931,
+      "output_tokens": 239,
+      "total_tokens": 1170,
+      "reasoning_tokens": 103,
+      "time_to_first_token": 2.921578417008277,
+      "duration": 2.9216364580206573,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 931,
+            "output_tokens": 239,
+            "total_tokens": 1170,
+            "reasoning_tokens": 103,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 801,
+    "output_tokens": 310,
+    "total_tokens": 1111,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3756.3987130415626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 801,
+      "output_tokens": 310,
+      "total_tokens": 1111,
+      "time_to_first_token": 3.756161414028611,
+      "duration": 3.7562348570208997,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 801,
+            "output_tokens": 310,
+            "total_tokens": 1111,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3730946294,
+              "load_duration": 834164,
+              "prompt_eval_duration": 233004000,
+              "eval_duration": 3446928000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

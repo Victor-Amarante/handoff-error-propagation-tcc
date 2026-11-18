@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02024_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly treated Verizon's expected pension and health-care/life-insurance payments of $1,907 million and $862 million as payments for 2021 rather than expected payments for 2024 as of FY 2021.",
+    "reported_metric": "Pension benefits",
+    "reported_value": 1907.0,
+    "confidence": 0.78,
+    "rationale": "The question distinguishes the FY 2021 reporting date from the 2024 payment year. The extracted figures appear to be the 2024 expected payments, while the extractor labeled them as 2021 amounts; the analyst and writer then propagated that temporal misreading and failed to sum the two figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 801,
+    "output_tokens": 1196,
+    "total_tokens": 1997,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015954,
+    "latency_ms": 11134.87474998692,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 801,
+      "output_tokens": 1196,
+      "total_tokens": 1997,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.134032999980263,
+      "duration": 11.1344137910055,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 801,
+            "output_tokens": 1196,
+            "total_tokens": 1997,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1311,
+    "output_tokens": 169,
+    "total_tokens": 1480,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002156,
+    "latency_ms": 3178.086625004653,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1311,
+      "output_tokens": 169,
+      "total_tokens": 1480,
+      "time_to_first_token": 3.1772163750138134,
+      "duration": 3.177512458001729,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1311,
+            "output_tokens": 169,
+            "total_tokens": 1480,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

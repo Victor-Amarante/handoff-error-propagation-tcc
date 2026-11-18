@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Corporate & Investment Bank net income as negative $45 million for the three months ended June 30, 2022.",
+    "reported_metric": "Net income — Corporate & Investment Bank",
+    "reported_value": -45.0,
+    "confidence": 0.86,
+    "rationale": "The extracted segment figures do not reconcile to the reported total net income of $8,649 million, indicating an extraction error before the analyst and writer repeated the result. The Corporate & Investment Bank value of -$45 million is the anomalous claim most likely starting the error chain."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 791,
+    "output_tokens": 840,
+    "total_tokens": 1631,
+    "cached_tokens": 0,
+    "reasoning_tokens": 688,
+    "cost_usd": 0.0011662,
+    "latency_ms": 8044.394584023394,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 791,
+      "output_tokens": 840,
+      "total_tokens": 1631,
+      "reasoning_tokens": 688,
+      "time_to_first_token": 8.043585708015598,
+      "duration": 8.043830166046973,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 791,
+            "output_tokens": 840,
+            "total_tokens": 1631,
+            "reasoning_tokens": 688,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 618,
+    "output_tokens": 152,
+    "total_tokens": 770,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2038.5825510020368,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 618,
+      "output_tokens": 152,
+      "total_tokens": 770,
+      "time_to_first_token": 2.038335803023074,
+      "duration": 2.038404927996453,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 618,
+            "output_tokens": 152,
+            "total_tokens": 770,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2009164163,
+              "load_duration": 454995,
+              "prompt_eval_duration": 181255000,
+              "eval_duration": 1759372000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

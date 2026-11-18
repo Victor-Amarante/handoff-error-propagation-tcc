@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01936_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amcor's total restructuring liability was $93.0 million as of Q2 FY2023.",
+    "reported_metric": "restructuring_liability_total",
+    "reported_value": 93.0,
+    "confidence": 0.93,
+    "rationale": "The extractor and analyst consistently identify the $93.0 million total as year 2022, while the writer changes its year to 2023 without support. The component figures also carry mixed years, so the FY2023 attribution is not justified by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1003,
+    "output_tokens": 647,
+    "total_tokens": 1650,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000977,
+    "latency_ms": 7018.802292004693,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1003,
+      "output_tokens": 647,
+      "total_tokens": 1650,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.0180297089973465,
+      "duration": 7.018266334023792,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1003,
+            "output_tokens": 647,
+            "total_tokens": 1650,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1552,
+    "output_tokens": 192,
+    "total_tokens": 1744,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002512,
+    "latency_ms": 2560.7732919743285,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1552,
+      "output_tokens": 192,
+      "total_tokens": 1744,
+      "time_to_first_token": 2.5600649580010213,
+      "duration": 2.560284250008408,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1552,
+            "output_tokens": 192,
+            "total_tokens": 1744,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

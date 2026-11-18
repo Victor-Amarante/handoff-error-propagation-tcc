@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00882_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The total amount PepsiCo could borrow under its unsecured revolving credit agreements as of May 26, 2023 was $4.2 billion.",
+    "reported_metric": "total_amount_possibly_borrow_under_unsecured_revolving_credit_agreements",
+    "reported_value": 4200000000.0,
+    "confidence": 0.96,
+    "rationale": "The extractor supplied both the original $4.2 billion amount (C01) and an increased $4.95 billion amount (C02). The analyst selected C01 for the as-of-2023 claim, omitting the increase, so the first incorrect current-date claim appeared at the analyst stage and propagated through the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1088,
+    "output_tokens": 434,
+    "total_tokens": 1522,
+    "cached_tokens": 0,
+    "reasoning_tokens": 263,
+    "cost_usd": 0.0007384,
+    "latency_ms": 4628.211292030755,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1088,
+      "output_tokens": 434,
+      "total_tokens": 1522,
+      "reasoning_tokens": 263,
+      "time_to_first_token": 4.627384624967817,
+      "duration": 4.627653707982972,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1088,
+            "output_tokens": 434,
+            "total_tokens": 1522,
+            "reasoning_tokens": 263,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1024,
+    "output_tokens": 308,
+    "total_tokens": 1332,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3700.373806001153,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1024,
+      "output_tokens": 308,
+      "total_tokens": 1332,
+      "time_to_first_token": 3.700138001004234,
+      "duration": 3.700210517970845,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1024,
+            "output_tokens": 308,
+            "total_tokens": 1332,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3675577891,
+              "load_duration": 531161,
+              "prompt_eval_duration": 270263000,
+              "eval_duration": 3353391000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

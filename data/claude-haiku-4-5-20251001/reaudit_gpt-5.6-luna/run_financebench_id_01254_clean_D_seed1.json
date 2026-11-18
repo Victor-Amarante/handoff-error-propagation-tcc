@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01254_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, and writer claims are consistent with one another and share the same cited evidence.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The claim is propagated unchanged from C01 through A01 to W01, with consistent metric, value, year, and evidence. The trace provides no contradictory information or provenance issue."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 871,
+    "output_tokens": 304,
+    "total_tokens": 1175,
+    "cached_tokens": 0,
+    "reasoning_tokens": 188,
+    "cost_usd": 0.000539,
+    "latency_ms": 3551.9520419766195,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 304,
+      "total_tokens": 1175,
+      "reasoning_tokens": 188,
+      "time_to_first_token": 3.551213958999142,
+      "duration": 3.5514754590112716,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 304,
+            "total_tokens": 1175,
+            "reasoning_tokens": 188,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1403,
+    "output_tokens": 154,
+    "total_tokens": 1557,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002173,
+    "latency_ms": 3825.0798340304755,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1403,
+      "output_tokens": 154,
+      "total_tokens": 1557,
+      "time_to_first_token": 3.824178875016514,
+      "duration": 3.82447770802537,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1403,
+            "output_tokens": 154,
+            "total_tokens": 1557,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

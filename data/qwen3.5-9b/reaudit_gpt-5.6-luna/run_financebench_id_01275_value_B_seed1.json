@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01275_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly stated that investing activities brought in the most cash flow at USD 1,284 million; the trace shows USD 1,284 million was provided by operating activities, while investing activities used USD 962 million.",
+    "reported_metric": "Best Buy FY2023 cash flow source (most net inflow)",
+    "reported_value": 1284.0,
+    "confidence": 0.99,
+    "rationale": "The extractor correctly identifies operating activities as +USD 1,284 million and investing activities as -USD 962 million. The analyst preserves the correct value for the most net inflow, but the writer mislabels it as investing activities."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 756,
+    "output_tokens": 281,
+    "total_tokens": 1037,
+    "cached_tokens": 0,
+    "reasoning_tokens": 118,
+    "cost_usd": 0.0004883999999999999,
+    "latency_ms": 3137.442250037566,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 756,
+      "output_tokens": 281,
+      "total_tokens": 1037,
+      "reasoning_tokens": 118,
+      "time_to_first_token": 3.136763125017751,
+      "duration": 3.13699304201873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 756,
+            "output_tokens": 281,
+            "total_tokens": 1037,
+            "reasoning_tokens": 118,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 598,
+    "output_tokens": 240,
+    "total_tokens": 838,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3017.7985280170105,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 598,
+      "output_tokens": 240,
+      "total_tokens": 838,
+      "time_to_first_token": 3.0175725020235404,
+      "duration": 3.017641165002715,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 598,
+            "output_tokens": 240,
+            "total_tokens": 838,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2992147042,
+              "load_duration": 487299,
+              "prompt_eval_duration": 181198000,
+              "eval_duration": 2742738000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

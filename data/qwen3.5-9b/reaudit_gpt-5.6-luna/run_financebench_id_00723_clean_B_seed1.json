@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00723_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly characterized AMEX as a stock exchange and therefore incorrectly dismissed operating margin as unsuitable for evaluating the company.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extracted figures support the analyst's 18.2% calculation because 9,585 divided by 52,862 is approximately 18.2%. The first unsupported factual error appears in the writer's characterization of AMEX as a stock exchange; no claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1050,
+    "output_tokens": 649,
+    "total_tokens": 1699,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009888,
+    "latency_ms": 7012.597208027728,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1050,
+      "output_tokens": 649,
+      "total_tokens": 1699,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.012080209038686,
+      "duration": 7.012224083999172,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1050,
+            "output_tokens": 649,
+            "total_tokens": 1699,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 947,
+    "output_tokens": 345,
+    "total_tokens": 1292,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4196.009305014741,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 947,
+      "output_tokens": 345,
+      "total_tokens": 1292,
+      "time_to_first_token": 4.195717872993555,
+      "duration": 4.195805656956509,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 947,
+            "output_tokens": 345,
+            "total_tokens": 1292,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4166859047,
+              "load_duration": 458855,
+              "prompt_eval_duration": 266406000,
+              "eval_duration": 3845151000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

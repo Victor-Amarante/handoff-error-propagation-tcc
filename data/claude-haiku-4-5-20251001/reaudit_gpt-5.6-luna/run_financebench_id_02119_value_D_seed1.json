@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02119_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "JPMorgan's tangible book value per share at the end of Q1 2021 was reported as 76.54 (thousand USD), despite the cited evidence stating $66.56.",
+    "reported_metric": "tangible book value per share",
+    "reported_value": 76.54,
+    "confidence": 0.99,
+    "rationale": "The extractor claim is internally inconsistent: its structured value is 76.54 with unit USD_K, while its evidence explicitly says the figure was $66.56. The analyst and writer merely propagated this error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 953,
+    "output_tokens": 234,
+    "total_tokens": 1187,
+    "cached_tokens": 0,
+    "reasoning_tokens": 88,
+    "cost_usd": 0.0004714,
+    "latency_ms": 2825.5982090486214,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 953,
+      "output_tokens": 234,
+      "total_tokens": 1187,
+      "reasoning_tokens": 88,
+      "time_to_first_token": 2.825123749964405,
+      "duration": 2.825263958016876,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 953,
+            "output_tokens": 234,
+            "total_tokens": 1187,
+            "reasoning_tokens": 88,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1496,
+    "output_tokens": 187,
+    "total_tokens": 1683,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002431,
+    "latency_ms": 3172.498291998636,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1496,
+      "output_tokens": 187,
+      "total_tokens": 1683,
+      "time_to_first_token": 3.171642667031847,
+      "duration": 3.1718863749993034,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1496,
+            "output_tokens": 187,
+            "total_tokens": 1683,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

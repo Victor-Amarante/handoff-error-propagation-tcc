@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00585_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst calculated Boeing's FY2022 effective tax rate as approximately -0.62% using the 2023 loss-before-tax figure of -5,022 million rather than a FY2022 figure.",
+    "reported_metric": "Boeing's effective tax rate in FY2022",
+    "reported_value": -0.62,
+    "confidence": 0.98,
+    "rationale": "A01 claims to derive its calculation from C02 and C03, but its stated arithmetic uses -5,022, which is C01 and is labeled FY2023. Thus the FY2022 rate is based on a mismatched-year denominator; the writer propagated this analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1382,
+    "output_tokens": 680,
+    "total_tokens": 2062,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010924,
+    "latency_ms": 6914.514250005595,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1382,
+      "output_tokens": 680,
+      "total_tokens": 2062,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.914018959039822,
+      "duration": 6.914170750009362,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1382,
+            "output_tokens": 680,
+            "total_tokens": 2062,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1375,
+    "output_tokens": 1629,
+    "total_tokens": 3004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 17759.89839900285,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1375,
+      "output_tokens": 1629,
+      "total_tokens": 3004,
+      "time_to_first_token": 17.759613490023185,
+      "duration": 17.75971070001833,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1375,
+            "output_tokens": 1629,
+            "total_tokens": 3004,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 17734610988,
+              "load_duration": 534727,
+              "prompt_eval_duration": 346649000,
+              "eval_duration": 17329834000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

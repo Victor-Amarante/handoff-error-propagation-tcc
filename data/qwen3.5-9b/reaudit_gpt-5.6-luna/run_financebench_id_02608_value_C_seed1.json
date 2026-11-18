@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2015–FY2017 average net profit margin is 6.3%.",
+    "reported_metric": "FY2015-2017 Average Net Profit Margin",
+    "reported_value": 6.3,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, the annual margins are approximately 5.3% (2133/40339), 2.3% (897/39528), and 3.1% (1228/39403); their three-year average is approximately 3.6%, not 6.3%. The writer merely propagated the analyst's incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1314,
+    "output_tokens": 275,
+    "total_tokens": 1589,
+    "cached_tokens": 0,
+    "reasoning_tokens": 115,
+    "cost_usd": 0.0005928,
+    "latency_ms": 2999.8120829695836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1314,
+      "output_tokens": 275,
+      "total_tokens": 1589,
+      "reasoning_tokens": 115,
+      "time_to_first_token": 2.9988798329723068,
+      "duration": 2.999268707993906,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1314,
+            "output_tokens": 275,
+            "total_tokens": 1589,
+            "reasoning_tokens": 115,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1306,
+    "output_tokens": 470,
+    "total_tokens": 1776,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5417.161274002865,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1306,
+      "output_tokens": 470,
+      "total_tokens": 1776,
+      "time_to_first_token": 5.41692706203321,
+      "duration": 5.417001547990367,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1306,
+            "output_tokens": 470,
+            "total_tokens": 1776,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5389389195,
+              "load_duration": 467113,
+              "prompt_eval_duration": 327308000,
+              "eval_duration": 5009218000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02416_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer treated three acquisition-consideration figures as three main company acquisitions, although the trace identifies only Therachon and provides no company names for the other two.",
+    "reported_metric": "acquisition_consideration",
+    "reported_value": 11.2,
+    "confidence": 0.93,
+    "rationale": "The extractor and analyst only support three consideration amounts; they do not establish the identities of three acquired companies. The unsupported conversion of those amounts into the requested company list first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1412,
+    "output_tokens": 646,
+    "total_tokens": 2058,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010576,
+    "latency_ms": 6585.385625017807,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1412,
+      "output_tokens": 646,
+      "total_tokens": 2058,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.584792916022707,
+      "duration": 6.5850218330160715,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1412,
+            "output_tokens": 646,
+            "total_tokens": 2058,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2014,
+    "output_tokens": 145,
+    "total_tokens": 2159,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002739,
+    "latency_ms": 3273.264041985385,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2014,
+      "output_tokens": 145,
+      "total_tokens": 2159,
+      "time_to_first_token": 3.2722563330316916,
+      "duration": 3.272551250003744,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2014,
+            "output_tokens": 145,
+            "total_tokens": 2159,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

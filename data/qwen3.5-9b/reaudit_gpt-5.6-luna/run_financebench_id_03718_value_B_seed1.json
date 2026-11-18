@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03718_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The 2-year total revenue CAGR from FY2020 revenue of 65,398 to FY2022 revenue of 56,984 is reported as -13.9%.",
+    "reported_metric": "FY2020-FY2022 Total Revenue CAGR",
+    "reported_value": -13.9,
+    "confidence": 0.99,
+    "rationale": "Using the extracted and analyst-provided values, CAGR = (56,984 / 65,398)^(1/2) - 1, which is approximately -6.7%, not -13.9%. The extractor and analyst values are consistent; the first error appears in the writer's calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 844,
+    "output_tokens": 588,
+    "total_tokens": 1432,
+    "cached_tokens": 0,
+    "reasoning_tokens": 423,
+    "cost_usd": 0.0008744000000000001,
+    "latency_ms": 6244.308832974639,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 844,
+      "output_tokens": 588,
+      "total_tokens": 1432,
+      "reasoning_tokens": 423,
+      "time_to_first_token": 6.243521124997642,
+      "duration": 6.2438063329900615,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 844,
+            "output_tokens": 588,
+            "total_tokens": 1432,
+            "reasoning_tokens": 423,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 729,
+    "output_tokens": 1355,
+    "total_tokens": 2084,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14356.882699998096,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 729,
+      "output_tokens": 1355,
+      "total_tokens": 2084,
+      "time_to_first_token": 14.356647592037916,
+      "duration": 14.356725101009943,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 729,
+            "output_tokens": 1355,
+            "total_tokens": 2084,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14331794792,
+              "load_duration": 578006,
+              "prompt_eval_duration": 190647000,
+              "eval_duration": 14069208000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

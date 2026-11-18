@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00070_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Working capital was calculated as negative $1,560 million in FY2022.",
+    "reported_metric": "Working capital",
+    "reported_value": -1560.0,
+    "confidence": 0.99,
+    "rationale": "The analyst incorrectly subtracted total current liabilities of $2,811 million from total current assets of $1,250 million: 1,250 - 2,811 = -1,561, not -1,560. The writer propagated this incorrect calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2587,
+    "output_tokens": 428,
+    "total_tokens": 3015,
+    "cached_tokens": 0,
+    "reasoning_tokens": 297,
+    "cost_usd": 0.001031,
+    "latency_ms": 4766.972957993858,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2587,
+      "output_tokens": 428,
+      "total_tokens": 3015,
+      "reasoning_tokens": 297,
+      "time_to_first_token": 4.76642262499081,
+      "duration": 4.766545041988138,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2587,
+            "output_tokens": 428,
+            "total_tokens": 3015,
+            "reasoning_tokens": 297,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2807,
+    "output_tokens": 203,
+    "total_tokens": 3010,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3019.843092013616,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2807,
+      "output_tokens": 203,
+      "total_tokens": 3010,
+      "time_to_first_token": 3.0195700580370612,
+      "duration": 3.0196583160432056,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2807,
+            "output_tokens": 203,
+            "total_tokens": 3010,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2994403632,
+              "load_duration": 559071,
+              "prompt_eval_duration": 649381000,
+              "eval_duration": 2288834000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

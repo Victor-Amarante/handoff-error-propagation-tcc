@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10285_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, writer, and final answer consistently report Boeing's FY2018 net property, plant, and equipment as $12,645 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The trace is internally consistent across all stages, and the reported metric directly matches the requested balance-sheet item and fiscal year."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 581,
+    "output_tokens": 250,
+    "total_tokens": 831,
+    "cached_tokens": 0,
+    "reasoning_tokens": 135,
+    "cost_usd": 0.0004162,
+    "latency_ms": 3098.5980829573236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 581,
+      "output_tokens": 250,
+      "total_tokens": 831,
+      "reasoning_tokens": 135,
+      "time_to_first_token": 3.0978999999933876,
+      "duration": 3.0979572500218637,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 581,
+            "output_tokens": 250,
+            "total_tokens": 831,
+            "reasoning_tokens": 135,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 378,
+    "output_tokens": 167,
+    "total_tokens": 545,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2133.2214690046385,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 378,
+      "output_tokens": 167,
+      "total_tokens": 545,
+      "time_to_first_token": 2.132989101985004,
+      "duration": 2.1330600209767,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 378,
+            "output_tokens": 167,
+            "total_tokens": 545,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2107710371,
+              "load_duration": 441875,
+              "prompt_eval_duration": 135009000,
+              "eval_duration": 1921213000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

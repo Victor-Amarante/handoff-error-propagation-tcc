@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01328_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2022 restructuring costs were 141 USD_K.",
+    "reported_metric": "restructuring_costs",
+    "reported_value": 141.0,
+    "confidence": 0.97,
+    "rationale": "C01 reports 141 USD_K, but its attached evidence shows total restructuring and impairment charges of 411 for FY2022. The analyst then propagated the evidence's 411 value, while the extractor claim itself is the first internally inconsistent claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1117,
+    "output_tokens": 635,
+    "total_tokens": 1752,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009854,
+    "latency_ms": 5919.306207972113,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1117,
+      "output_tokens": 635,
+      "total_tokens": 1752,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 5.9187675409484655,
+      "duration": 5.918928957951721,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1117,
+            "output_tokens": 635,
+            "total_tokens": 1752,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1051,
+    "output_tokens": 409,
+    "total_tokens": 1460,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4813.152461021673,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1051,
+      "output_tokens": 409,
+      "total_tokens": 1460,
+      "time_to_first_token": 4.812860250007361,
+      "duration": 4.812950561987236,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1051,
+            "output_tokens": 409,
+            "total_tokens": 1460,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4781621213,
+              "load_duration": 457823,
+              "prompt_eval_duration": 276574000,
+              "eval_duration": 4428969000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

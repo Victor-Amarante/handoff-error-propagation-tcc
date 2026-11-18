@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00283_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; all stages consistently report that Pfizer expects to pay $700 million to spin off Upjohn in the future.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer all consistently state the same amount and metric, with no conflicting provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 538,
+    "output_tokens": 159,
+    "total_tokens": 697,
+    "cached_tokens": 0,
+    "reasoning_tokens": 46,
+    "cost_usd": 0.0002984,
+    "latency_ms": 1996.1205419967882,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 538,
+      "output_tokens": 159,
+      "total_tokens": 697,
+      "reasoning_tokens": 46,
+      "time_to_first_token": 1.9956773340236396,
+      "duration": 1.9958135419874452,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 538,
+            "output_tokens": 159,
+            "total_tokens": 697,
+            "reasoning_tokens": 46,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 325,
+    "output_tokens": 129,
+    "total_tokens": 454,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1626.6336340340786,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 325,
+      "output_tokens": 129,
+      "total_tokens": 454,
+      "time_to_first_token": 1.6264013950130902,
+      "duration": 1.6264730700058863,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 325,
+            "output_tokens": 129,
+            "total_tokens": 454,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1600954430,
+              "load_duration": 424739,
+              "prompt_eval_duration": 103284000,
+              "eval_duration": 1450724000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

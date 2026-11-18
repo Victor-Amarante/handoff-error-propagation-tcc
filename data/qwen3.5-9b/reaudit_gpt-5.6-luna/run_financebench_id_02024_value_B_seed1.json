@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02024_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported total of $2,769 million equals $1,907 million in estimated pension benefits plus $862 million in estimated health care and life insurance benefits.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst report $1,907 million and $862 million, and the writer correctly sums them to $2,769 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 767,
+    "output_tokens": 165,
+    "total_tokens": 932,
+    "cached_tokens": 0,
+    "reasoning_tokens": 45,
+    "cost_usd": 0.0003514,
+    "latency_ms": 2266.4503330015577,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 767,
+      "output_tokens": 165,
+      "total_tokens": 932,
+      "reasoning_tokens": 45,
+      "time_to_first_token": 2.2656578340101987,
+      "duration": 2.2658239590236917,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 767,
+            "output_tokens": 165,
+            "total_tokens": 932,
+            "reasoning_tokens": 45,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 619,
+    "output_tokens": 1099,
+    "total_tokens": 1718,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12175.164529995527,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 619,
+      "output_tokens": 1099,
+      "total_tokens": 1718,
+      "time_to_first_token": 12.174926645006053,
+      "duration": 12.17500063899206,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 619,
+            "output_tokens": 1099,
+            "total_tokens": 1718,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12147663608,
+              "load_duration": 433821,
+              "prompt_eval_duration": 157642000,
+              "eval_duration": 11922278000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

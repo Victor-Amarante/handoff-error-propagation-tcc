@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08286_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst equated the extracted generic net income figure of USD 15,188 million with net income attributable to shareholders without supporting evidence.",
+    "reported_metric": "net income attributable to shareholders",
+    "reported_value": 15188.0,
+    "confidence": 0.84,
+    "rationale": "The extractor only reported generic net income (C01). The analyst introduced the more specific shareholder-attributable metric by relabeling that claim, with no trace evidence establishing the equivalence. The writer merely repeated the analyst's claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 892,
+    "output_tokens": 650,
+    "total_tokens": 1542,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009584,
+    "latency_ms": 6705.748292035423,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 892,
+      "output_tokens": 650,
+      "total_tokens": 1542,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.7048522920231335,
+      "duration": 6.70516629202757,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 892,
+            "output_tokens": 650,
+            "total_tokens": 1542,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 780,
+    "output_tokens": 625,
+    "total_tokens": 1405,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7172.421494033188,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 780,
+      "output_tokens": 625,
+      "total_tokens": 1405,
+      "time_to_first_token": 7.172174540988635,
+      "duration": 7.172252724005375,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 780,
+            "output_tokens": 625,
+            "total_tokens": 1405,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7146254755,
+              "load_duration": 451181,
+              "prompt_eval_duration": 199953000,
+              "eval_duration": 6874418000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

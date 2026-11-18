@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03531_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Nike had total current assets of $61,525 million at the end of FY2019.",
+    "reported_metric": "total_current_assets",
+    "reported_value": 61525.0,
+    "confidence": 0.99,
+    "rationale": "The extractor is the first stage asserting the incorrect value; the analyst and writer merely propagate it unchanged. Nike's FY2019 balance-sheet total current assets were $16,525 million, indicating a digit/transcription error in the extracted value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 654,
+    "output_tokens": 415,
+    "total_tokens": 1069,
+    "cached_tokens": 0,
+    "reasoning_tokens": 287,
+    "cost_usd": 0.0006288,
+    "latency_ms": 4905.601374979597,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 654,
+      "output_tokens": 415,
+      "total_tokens": 1069,
+      "reasoning_tokens": 287,
+      "time_to_first_token": 4.905164666008204,
+      "duration": 4.905289375048596,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 654,
+            "output_tokens": 415,
+            "total_tokens": 1069,
+            "reasoning_tokens": 287,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1146,
+    "output_tokens": 135,
+    "total_tokens": 1281,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001821,
+    "latency_ms": 2970.3491660184227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1146,
+      "output_tokens": 135,
+      "total_tokens": 1281,
+      "time_to_first_token": 2.969328416045755,
+      "duration": 2.969628582999576,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1146,
+            "output_tokens": 135,
+            "total_tokens": 1281,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

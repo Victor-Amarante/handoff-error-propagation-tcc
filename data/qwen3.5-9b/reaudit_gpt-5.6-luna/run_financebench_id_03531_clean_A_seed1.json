@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03531_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; all pipeline stages consistently report Nike's FY2019 total current assets as $16,525 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer agree on the same metric and value, with no internal inconsistency or provenance indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 569,
+    "output_tokens": 237,
+    "total_tokens": 806,
+    "cached_tokens": 0,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.0003982,
+    "latency_ms": 2966.4032500004396,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 569,
+      "output_tokens": 237,
+      "total_tokens": 806,
+      "reasoning_tokens": 128,
+      "time_to_first_token": 2.965953874983825,
+      "duration": 2.9660771670169197,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 569,
+            "output_tokens": 237,
+            "total_tokens": 806,
+            "reasoning_tokens": 128,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 369,
+    "output_tokens": 382,
+    "total_tokens": 751,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4417.981468955986,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 369,
+      "output_tokens": 382,
+      "total_tokens": 751,
+      "time_to_first_token": 4.417697454977315,
+      "duration": 4.417791316984221,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 369,
+            "output_tokens": 382,
+            "total_tokens": 751,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4392526035,
+              "load_duration": 480547,
+              "prompt_eval_duration": 135079000,
+              "eval_duration": 4210488000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

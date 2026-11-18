@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The analyst incorrectly concluded that investing activities were the strongest FY2023 cash activity based only on investing and financing figures, while omitting operations.",
+    "reported_metric": "strongest_cash_activity_in_fy2023",
+    "reported_value": 564.0,
+    "confidence": 0.94,
+    "rationale": "The extractor's operations figure is labeled FY2024, whereas the other figures are FY2023. The analyst therefore made an unsupported FY2023 comparison using only two activities; the writer propagated that conclusion unchanged."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1323,
+    "output_tokens": 1167,
+    "total_tokens": 2490,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.001665,
+    "latency_ms": 11414.45795801701,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1323,
+      "output_tokens": 1167,
+      "total_tokens": 2490,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.41401779098669,
+      "duration": 11.414146875031292,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1323,
+            "output_tokens": 1167,
+            "total_tokens": 2490,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1948,
+    "output_tokens": 214,
+    "total_tokens": 2162,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003018,
+    "latency_ms": 3898.4493329771794,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1948,
+      "output_tokens": 214,
+      "total_tokens": 2162,
+      "time_to_first_token": 3.8975334169808775,
+      "duration": 3.897835624986328,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1948,
+            "output_tokens": 214,
+            "total_tokens": 2162,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

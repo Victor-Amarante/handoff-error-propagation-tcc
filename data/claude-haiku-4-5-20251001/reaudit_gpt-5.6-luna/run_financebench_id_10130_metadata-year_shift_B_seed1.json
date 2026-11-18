@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10130_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported cost of sales as $7,772 million for FY2021 instead of providing the FY2020 COGS required for the DPO calculation.",
+    "reported_metric": "cost_of_sales",
+    "reported_value": 7772.0,
+    "confidence": 0.88,
+    "rationale": "The accounts payable and inventory figures for FY2019-FY2020 were extracted, but the only cost-of-sales figure is labeled FY2021. This omission or wrong-year extraction caused the analyst to return no data and led the writer to incorrectly claim that all required figures were absent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 884,
+    "output_tokens": 663,
+    "total_tokens": 1547,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009724000000000001,
+    "latency_ms": 6707.227375009097,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 884,
+      "output_tokens": 663,
+      "total_tokens": 1547,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.7062256669742055,
+      "duration": 6.706598334014416,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 884,
+            "output_tokens": 663,
+            "total_tokens": 1547,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1418,
+    "output_tokens": 177,
+    "total_tokens": 1595,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002303,
+    "latency_ms": 2558.718834014144,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1418,
+      "output_tokens": 177,
+      "total_tokens": 1595,
+      "time_to_first_token": 2.5578160409932025,
+      "duration": 2.5581181659945287,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1418,
+            "output_tokens": 177,
+            "total_tokens": 1595,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

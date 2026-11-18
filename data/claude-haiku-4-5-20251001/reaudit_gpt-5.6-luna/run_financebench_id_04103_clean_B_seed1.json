@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04103_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2019 DIO is 51.43 days.",
+    "reported_metric": "dio",
+    "reported_value": 51.43,
+    "confidence": 0.99,
+    "rationale": "Using the extracted line items, DIO = 365 × ((1,559.3 + 1,642.2) / 2) / 11,108.4 ≈ 52.60 days, not 51.43. Thus the first error appears in the analyst output; the subsequent CCC is consequently incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1247,
+    "output_tokens": 651,
+    "total_tokens": 1898,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010306,
+    "latency_ms": 7076.195249974262,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1247,
+      "output_tokens": 651,
+      "total_tokens": 1898,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.075384332973044,
+      "duration": 7.075702333007939,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1247,
+            "output_tokens": 651,
+            "total_tokens": 1898,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1832,
+    "output_tokens": 258,
+    "total_tokens": 2090,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003122,
+    "latency_ms": 4094.8093329789117,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1832,
+      "output_tokens": 258,
+      "total_tokens": 2090,
+      "time_to_first_token": 4.093895374971908,
+      "duration": 4.094194958976004,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1832,
+            "output_tokens": 258,
+            "total_tokens": 2090,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

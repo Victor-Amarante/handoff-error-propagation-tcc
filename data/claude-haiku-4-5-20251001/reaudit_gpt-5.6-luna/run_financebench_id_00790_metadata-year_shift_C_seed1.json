@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Total physical assets were incorrectly reported as 13.51% of total assets; using property and equipment plus operating lease right-of-use assets gives approximately 13.47%.",
+    "reported_metric": "total_physical_assets_to_total_assets",
+    "reported_value": 13.51,
+    "confidence": 0.99,
+    "rationale": "The underlying extractor values imply (12,873 + 17,872) / 228,275 × 100 = approximately 13.47%, not 13.51%. A01 is arithmetically consistent, so A02 is the first incorrect claim and the writer propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1333,
+    "output_tokens": 480,
+    "total_tokens": 1813,
+    "cached_tokens": 0,
+    "reasoning_tokens": 321,
+    "cost_usd": 0.0008426,
+    "latency_ms": 5103.462541010231,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1333,
+      "output_tokens": 480,
+      "total_tokens": 1813,
+      "reasoning_tokens": 321,
+      "time_to_first_token": 5.102536458987743,
+      "duration": 5.103105416987091,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1333,
+            "output_tokens": 480,
+            "total_tokens": 1813,
+            "reasoning_tokens": 321,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1961,
+    "output_tokens": 198,
+    "total_tokens": 2159,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002951,
+    "latency_ms": 3737.5707080354914,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1961,
+      "output_tokens": 198,
+      "total_tokens": 2159,
+      "time_to_first_token": 3.736637542024255,
+      "duration": 3.736928917001933,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1961,
+            "output_tokens": 198,
+            "total_tokens": 2159,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

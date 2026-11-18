@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02416_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Therachon's total fair value of consideration transferred as $3.22e+08K (about $322 million), despite separately reporting an upfront payment of $3.4e+08K, which already exceeds that total.",
+    "reported_metric": "Therachon total fair value of consideration transferred",
+    "reported_value": 322000000.0,
+    "confidence": 0.84,
+    "rationale": "The extractor's Therachon figures are internally inconsistent: a total consideration of $322 million cannot be less than the separately reported $340 million upfront payment. The analyst and writer propagated this unsupported value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1236,
+    "output_tokens": 1132,
+    "total_tokens": 2368,
+    "cached_tokens": 0,
+    "reasoning_tokens": 971,
+    "cost_usd": 0.0016056,
+    "latency_ms": 10118.650000018533,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1236,
+      "output_tokens": 1132,
+      "total_tokens": 2368,
+      "reasoning_tokens": 971,
+      "time_to_first_token": 10.118229374988005,
+      "duration": 10.118311124970205,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1236,
+            "output_tokens": 1132,
+            "total_tokens": 2368,
+            "reasoning_tokens": 971,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1084,
+    "output_tokens": 213,
+    "total_tokens": 1297,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2679.930243990384,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1084,
+      "output_tokens": 213,
+      "total_tokens": 1297,
+      "time_to_first_token": 2.679640319023747,
+      "duration": 2.679728370043449,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1084,
+            "output_tokens": 213,
+            "total_tokens": 1297,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2647121765,
+              "load_duration": 469611,
+              "prompt_eval_duration": 277696000,
+              "eval_duration": 2316711000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

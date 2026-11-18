@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01254_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The 2022 annual dividend was $0.01 USD per share.",
+    "reported_metric": "Annual Dividend",
+    "reported_value": 0.01,
+    "confidence": 0.96,
+    "rationale": "The extractor reports the value in USD_M, but the analyst changes the unit to USD per share without any supporting conversion or provenance. The writer then repeats that unsupported per-share interpretation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 627,
+    "output_tokens": 260,
+    "total_tokens": 887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 150,
+    "cost_usd": 0.00043739999999999995,
+    "latency_ms": 3368.273207976017,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 627,
+      "output_tokens": 260,
+      "total_tokens": 887,
+      "reasoning_tokens": 150,
+      "time_to_first_token": 3.3676005409797654,
+      "duration": 3.367888208013028,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 627,
+            "output_tokens": 260,
+            "total_tokens": 887,
+            "reasoning_tokens": 150,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 444,
+    "output_tokens": 2868,
+    "total_tokens": 3312,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 29957.663126988336,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 444,
+      "output_tokens": 2868,
+      "total_tokens": 3312,
+      "time_to_first_token": 29.957419893995393,
+      "duration": 29.957502083969302,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 444,
+            "output_tokens": 2868,
+            "total_tokens": 3312,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 29931485539,
+              "load_duration": 557403,
+              "prompt_eval_duration": 128887000,
+              "eval_duration": 29737153000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

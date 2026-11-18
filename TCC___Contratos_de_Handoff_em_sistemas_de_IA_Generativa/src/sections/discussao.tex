@@ -7,15 +7,17 @@ Esta seção interpreta cada um deles, discute por que o Qwen se comportou de fo
 \subsection{Estrutura transporta o erro com fidelidade}\label{sec:disc-estrutura}
 
 A estrutura não melhorou a correção nem a contenção, e aumentou a profundidade de propagação nos três modelos.
-Uma leitura possível é que o claim tipado é um canal mais fiel, e transporta o erro com a mesma fidelidade com que transporta o dado correto.
-Em prosa, o Analista resume, reorganiza e às vezes deixa de usar parte das frases que recebe, o que aparece na fração maior de execuções sem efeito na condição A.
-Com uma lista de claims tipados, a tendência é carregar todos eles adiante.
-No GPT, o Analista repete literalmente o valor corrompido em 52\% das execuções na condição B, contra 30\% em A. No Haiku e no Qwen essa diferença é pequena, e o aumento de profundidade nesses modelos deve ter outras causas além da repetição literal.
+A decomposição da profundidade mostra que o claim tipado é um canal mais fiel, que repete o valor corrompido em mais estágios.
+O schema de B pede métrica, valor, unidade e ano em cada claim, e o Analista reemite o ano trocado mesmo quando não o usa no cálculo, enquanto em prosa ele descreve as figuras sem repetir o período de cada uma.
+É por isso que a condição A neutraliza no Analista uma fração bem maior dos erros de ano: o erro some do caminho porque a prosa não o carrega adiante, e não porque alguém o percebeu.
+Esse aumento de profundidade não se traduziu em mais sobrevivência na resposta final, e a profundidade medida por valores novos, que indicaria o erro sendo usado em cálculos, quase não mudou no GPT e no Haiku.
+A perda de acurácia que o formato estruturado impôs ao Haiku mesmo sem erro também tem uma explicação mais simples que o contrato. Com um campo de raciocínio antes dos claims, a acurácia do controle do Haiku voltou ao nível da prosa, e no GPT, que raciocina em tokens ocultos, o campo não mudou nada. É o mecanismo descrito por Tam et al. \cite{tam2024speak}: a restrição de formato tira do modelo o espaço onde ele calcularia por extenso. Parte do que a comparação A $\times$ B atribui à estrutura é efeito do modo de saída.
 
 Esse resultado não contradiz os de Barrak, em que um handoff estruturado e auditável melhorou a acurácia de um pipeline \cite{barrak2025traceability}.
 Lá, o handoff estruturado vem junto com validação entre estágios e com outras mudanças no protocolo, e o formato trocado não é descrito.
+O mesmo vale para a tese do MetaGPT, que associa documentos estruturados entre papéis a menos alucinações em cascata, mas os testa junto com procedimentos padronizados e verificação de resultados intermediários \cite{hong2023metagpt}.
 Aqui, a estrutura foi isolada, e isolada ela não contém o erro.
-O custo de acurácia que a estrutura impôs ao Haiku e ao Qwen, mesmo nas execuções de controle, vai na mesma direção dos resultados de Ray e de Tam et al. sobre saídas estruturadas \cite{ray2026constraint, tam2024speak}: obedecer ao formato não garante, e às vezes atrapalha, o conteúdo.
+O resultado também é coerente com o de Banerjee e Chadha, em que trocar a linguagem natural por um grafo tipado de delegação piorou o desempenho em parte das tarefas \cite{banerjee2026routed}.
 O valor da estrutura neste experimento está em outro lugar. Ela é pré-requisito para os dois mecanismos seguintes, já que não há como anexar proveniência ou evidência a uma frase em prosa sem transformá-la num registro.
 
 \subsection{Proveniência ajuda a diagnosticar, não a conter}\label{sec:disc-lineage}
@@ -23,64 +25,65 @@ O valor da estrutura neste experimento está em outro lugar. Ela é pré-requisi
 O lineage elevou a RCCA nos três modelos sem reduzir a sobrevivência do erro.
 A explicação mais simples é que proveniência diz de onde um claim veio, mas não se ele está certo.
 Um estágio que recebe \texttt{source\_id} e \texttt{page} sem acesso à fonte não tem com o que comparar o valor, e por isso segue adiante com ele.
-O auditor, por outro lado, ganha algo concreto: uma cadeia de identificadores que liga a resposta final ao claim do Extrator.
+O auditor, por outro lado, ganha uma cadeia de identificadores que liga a resposta final ao claim do Extrator.
 Zhang et al. mostraram que, mesmo com o log completo da execução, atribuir uma falha ao passo certo é difícil, com acerto de 14,2\% no melhor método \cite{zhang2025which}, e Zhong e Zhu observaram que harnesses com mais suporte produzem atribuições de falha mais ricas \cite{zhong2026harness}.
-O lineage oferece um atalho para essa tarefa: em vez de reconstruir a origem a partir do texto, o auditor segue uma cadeia explícita.
 
-A separação por tipo de erro, porém, mostra que o ganho depende de que informação a proveniência carrega.
-No erro de valor, o lineage sozinho quase não melhorou a atribuição.
-No erro de metadado, a RCCA subiu para cerca de 0,6, e a acurácia final do GPT e do Haiku também subiu, porque o nome do documento contradiz o ano corrompido.
-Esse acidente do desenho acaba funcionando como um teste: quando o identificador da fonte carrega uma informação verificável, o pipeline e o auditor passam a usá-la.
-O que ajudou não foi o ponteiro em si, mas o pedaço de evidência embutido nele.
-A consequência é que o efeito da RQ2 medido aqui superestima o efeito da proveniência pura, e o braço de valor é a estimativa mais limpa dela.
-
-A forma como o acerto é contado aponta na mesma direção.
-Na condição C, o auditor acerta sobretudo apontando o identificador do claim corrompido, sem dizer qual valor está errado, e pelo critério de métrica e valor, comum às quatro condições, a RCCA quase não muda de B para C.
-Já de C para D, pelo mesmo critério, ela sobe cerca de 0,3 nos modelos de API.
-O lineage indica ao auditor qual claim examinar, e a evidência permite dizer o que há de errado nele.
-As implicações para a validade são discutidas na Seção~\ref{sec:ameacas}.
+O tamanho desse ganho, porém, depende de como se conta o acerto e de que informação a proveniência carrega.
+Pelo critério original, que aceitava o identificador, o lineage parecia multiplicar a atribuição por dez. Pelo critério de conteúdo, o ganho fica entre 0,07 e 0,15, e só o do GPT resiste à correção de Holm.
+O identificador permite ao auditor apontar um claim sem dizer o que há de errado nele, e o placebo mostra que, no Qwen, seguir o \texttt{derived\_from} até a raiz acerta o claim em 22\% das execuções limpas.
+O que resta do ganho está quase todo no erro de metadado, em que o nome do documento contradiz o ano corrompido.
+Esse acidente do desenho acaba funcionando como um teste: quando o identificador da fonte carrega uma informação verificável, o pipeline e o auditor passam a usá-la, e a retenção do GPT e do Haiku no erro de ano sobe de cerca de 0,5 para 0,8.
+O que ajudou foi o pedaço de evidência embutido no ponteiro, e o braço de valor, em que o lineage quase não muda a RCCA nem a retenção, é a estimativa mais limpa do efeito da proveniência pura.
+O fatorial confirma essa leitura. Com a evidência já presente, acrescentar o lineage não reduziu a sobrevivência do erro, aumentou a profundidade e custou cerca de três vezes mais tokens que a própria evidência, e o único ganho, de atribuição, ficou restrito ao erro de ano, em que o \texttt{source\_id} revela o valor original.
 
 \subsection{Evidência funciona como uma checagem dentro do handoff}\label{sec:disc-evidencia}
 
-Nos modelos de API, a evidência foi o único mecanismo que reduziu a sobrevivência e a propagação do erro, e levou a RCCA a cerca de 0,8.
-No erro de valor, o efeito foi maior: a RCCA chegou a 0,97 no GPT e a 0,88 no Haiku.
+Nos modelos de API, a evidência foi o único mecanismo do desenho principal que melhorou o destino do erro, com mais retenção e mais acurácia estrita, e levou a RCCA a cerca de 0,8.
+As quedas de ESR e de profundidade que a acompanharam, porém, ficaram dentro do piso de ruído do instrumento.
+O efeito está no erro de valor. Sem acesso à fonte, esse erro é praticamente indetectável, com ESR entre 0,86 e 0,96 e retenção entre 0,16 e 0,24 nas condições A, B e C, e é aí que a evidência faz diferença.
 Com o trecho da fonte ao lado do claim, o estágio seguinte pode comparar o valor recebido com o documento, e a contradição criada pela injeção fica visível.
-Na prática, o contrato da condição D embute uma checagem local em cada handoff.
+Na prática, o contrato da condição D embute uma checagem local em cada handoff, e parte das correções que ela produz é silenciosa: o Analista usa o valor da evidência e a execução fica idêntica ao controle.
+No erro de ano, ao contrário, a evidência quase não ajuda, e o motivo é que ela raramente o contradiz, já que o trecho do claim corrompido contém o ano original em menos de 20\% dos casos.
+O fatorial mostra também que o efeito da evidência não depende do lineage. Entregue sobre um handoff tipado sem proveniência, ela produziu ganhos de retenção, de acurácia e de atribuição do mesmo tamanho dos observados de C para D, e reduziu a presença literal do valor corrompido na resposta, o que de C para D não aconteceu. No erro de valor, a condição E chegou a ter acurácia final maior que a D nos dois modelos.
 
-A comparação com Singh e Pawar ajuda a dimensionar esse efeito.
-Lá, portões de verificação após cada handoff, com um verificador dedicado, reduziram a sobrevivência das alucinações para 16,2\% \cite{singh2026snowball}.
+A comparação com Singh e Pawar ajuda a dimensionar esse efeito, com cautela.
+Lá, portões de verificação após cada handoff, com um verificador dedicado e acesso a uma ferramenta de recuperação, reduziram a sobrevivência das alucinações para 16,2\% \cite{singh2026snowball}.
 Aqui, sem verificador nenhum, a ESR na condição D ficou entre 0,57 e 0,61 nos modelos de API.
-A evidência no contrato é, portanto, mais barata e bem menos eficaz que um portão explícito: ela dá ao estágio a chance de perceber o erro, mas não o obriga a procurá-lo.
-Gao et al. observaram algo parecido com citações, que mesmo os melhores modelos deixam sem suporte completo em metade das respostas do ELI5 \cite{gao2023citations}.
-As duas abordagens parecem complementares, e um portão que leia a evidência carregada pelo contrato é uma combinação natural a testar.
+Os números não são diretamente comparáveis, porque a métrica, o pipeline, os modelos e a perturbação são diferentes, e a ESR deste trabalho conta também a influência indireta do erro. A ordem de grandeza, ainda assim, sugere que a evidência no contrato, sem instrução de conferência, fica longe do que um portão dedicado alcança: ela dá ao estágio a chance de perceber o erro, mas não o obriga a procurá-lo.
+O próprio experimento mostra essa diferença. No erro de valor, o auditor de D aponta o claim corrompido em quase todas as execuções dos modelos de API, mas a ESR desse braço continua perto de 0,7: o mesmo modelo, com a mesma evidência, encontra o erro quando é perguntado e o deixa passar quando não é.
+A condição D$'$ mostra que boa parte dessa diferença era de instrução. A informação já estava no handoff. Uma única frase pedindo para conferir cada valor contra a evidência levou a ESR do erro de valor no GPT de 0,69 para 0,25 e quase eliminou a presença literal do valor corrompido nos dois modelos, por menos de cem tokens a mais. No Haiku, o efeito sobre a ESR foi menor, mas a retenção e a acurácia subiram na mesma proporção que no GPT. A evidência no contrato e a instrução de usá-la funcionam, juntas, como um portão de verificação embutido no próprio estágio.
+Gao et al. observaram algo parecido com citações, que mesmo os melhores modelos deixam sem suporte completo em metade das respostas do ELI5 \cite{gao2023citations}, e o Chain-of-Verification mostra que separar a etapa de verificação da de geração reduz alucinações \cite{dhuliawala2023cove}.
 
 O custo da evidência também foi menor que o esperado.
 A maior parte do aumento de tokens de A para D veio do lineage, com cerca de mil tokens a mais por execução, enquanto a evidência acrescentou entre 259 e 357 tokens.
-Como o experimento não testou uma condição com evidência e sem lineage, não dá para saber se a evidência sozinha teria o mesmo efeito com custo bem menor. Essa é a extensão mais direta deste trabalho.
+Por mil tokens adicionais, a evidência rendeu um ganho de RCCA cerca de oito vezes maior que o do lineage no GPT e mais de vinte vezes maior no Haiku, além da redução de ESR que o lineage não trouxe.
 
 \subsection{O modelo importa}\label{sec:disc-modelo}
 
-O Qwen3.5 9B foi o único modelo em que a evidência não melhorou a contenção nem a atribuição, embora tenha melhorado a acurácia final.
+O Qwen3.5 9B foi o único modelo em que a evidência não melhorou a contenção nem a atribuição, embora tenha melhorado a acurácia final e a acurácia estrita.
 Três observações ajudam a entender esse resultado.
-O Qwen violou o contrato em cerca de metade dos handoffs estruturados, quase sempre por rótulos de unidade fora da lista, e uma proveniência com esses defeitos é mais difícil de seguir.
+O Qwen violou o contrato em cerca de metade dos handoffs estruturados, quase sempre por rótulos de unidade fora da lista, e uma proveniência com esses defeitos é mais difícil de seguir. Parte dessas violações, porém, vem do próprio schema, que não restringia a unidade, e da penalidade de presença de 1,5 da configuração padrão, que desestimula repetir o mesmo rótulo.
 Ele também foi o modelo que mais perdeu acurácia com o formato estruturado nas execuções de controle, o que é coerente com a perda de acurácia que Ray mediu em modelos pequenos sob restrições de formato \cite{ray2026constraint}.
-Por fim, o auditor do Qwen apontou culpados em mais da metade das execuções limpas, e um auditor com tanto falso positivo limita a RCCA que se pode medir.
+Por fim, o auditor do Qwen apontou culpados em mais da metade das execuções limpas, com placebos de até 0,26 para o claim e 0,35 para o estágio.
+A auditoria cruzada separa essa última causa das outras duas. Lidos pelo auditor do GPT, os traces do Qwen na condição D tiveram RCCA de 0,73, contra 0,45 com o auditor do próprio Qwen. O handoff do Qwen carrega a evidência que permite localizar o erro, apesar das violações de contrato, e o que falhou foi o Qwen como auditor. Isso é coerente com a observação de Bhardwaj et al. de que instâncias do mesmo modelo tendem a falhar juntas \cite{bhardwaj2026contracts}, e sugere que a atribuição de origem deve ser medida com um auditor diferente do modelo que executa o pipeline.
 Há ainda uma diferença de configuração. O GPT rodou com raciocínio, enquanto Haiku e Qwen rodaram sem ele, e parte da diferença entre os modelos pode vir daí. O Haiku, no entanto, também rodou sem raciocínio e reproduziu o padrão do GPT, o que sugere que o raciocínio sozinho não explica a diferença.
 
 \subsection{Revisão das hipóteses}\label{sec:disc-hipoteses}
 
-A H1 se confirma em parte.
-O texto livre teve a pior atribuição de origem, com RCCA de no máximo 0,05 nos três modelos, mas não favoreceu a transformação do erro, que foi rara em todas as condições, com no máximo 2\% das execuções.
-A H2 se confirma.
-A validade de schema foi 1,00 nas condições estruturadas sem nenhum ganho de correção, a acurácia final caiu de A para B em dois modelos e, no Qwen, nem a coerência do contrato foi garantida além do que o schema verifica.
+A H1 se confirma só em parte.
+O texto livre não favoreceu a transformação do erro, que foi rara em todas as condições, com no máximo 2\% das execuções.
+Quanto à perda da origem, pelo critério de conteúdo a RCCA de A ficou próxima da de B no GPT e no Haiku, e no subestudo o auditor do GPT localizou o estágio e o claim da injeção em quase todas as execuções, inclusive em A.
+A origem se perdeu menos por falta de proveniência do que por falta de algo que permitisse conferir o claim. Quando o erro é um percentual que pode ser recalculado a partir dos claims do trace, a prosa basta para encontrá-lo.
+Os dados são compatíveis com a H2.
+A validade de schema foi 1,00 nas condições estruturadas sem nenhum ganho de correção, a acurácia final caiu de A para B em dois modelos e, no Qwen, nem a coerência do contrato foi garantida além do que o schema verifica. Como a hipótese diz apenas que a estrutura não reduz \emph{necessariamente} os erros semânticos, ela é difícil de refutar, e o resultado deve ser lido como ausência de efeito, e não como confirmação forte.
 A H3 se confirma com ressalvas.
-A RCCA subiu nos três modelos, mas o ganho depende de o auditor poder apontar um identificador e se concentra nos erros de metadado, em que o \texttt{source\_id} carregava o ano original. No erro de valor e com um critério de acerto comum, o efeito é pequeno.
-A H4 se confirma nos modelos de API, em que a evidência reduziu a sobrevivência e a profundidade de propagação e aumentou a acurácia final. No Qwen, ela se confirma só em parte, já que a acurácia e a taxa de correção subiram, mas a contenção não.
+A RCCA subiu nos três modelos, mas o ganho pelo critério de conteúdo é pequeno, resiste à correção de Holm só no GPT e se concentra nos erros de metadado, em que o \texttt{source\_id} carregava o ano original. No erro de valor, o efeito é próximo de zero.
+A H4 se confirma nos modelos de API e para o erro de valor, em que a evidência aumentou a acurácia final, a acurácia estrita e a retenção, com ou sem lineage. A redução da sobrevivência medida pela ESR não se distingue do piso de ruído, e a queda da presença literal do valor corrompido só aparece sem o lineage ou com a instrução de conferência. No erro de ano, cuja evidência raramente o contradiz, e no Qwen, a hipótese se confirma só em parte.
 
 \subsection{Implicações para quem projeta pipelines}\label{sec:disc-implicacoes}
 
 Para quem constrói pipelines com vários estágios, os resultados sugerem que schemas tipados não devem ser tratados como mecanismo de confiabilidade.
-Eles garantem o formato, e neste experimento não contiveram o erro.
+Eles garantem o formato, e neste experimento não contiveram o erro. Em modelos sem raciocínio, convém ainda deixar no schema um campo para o cálculo, já que o JSON imposto sozinho custou acurácia.
 Registrar proveniência vale a pena quando o objetivo é diagnosticar falhas depois que elas acontecem, e vale mais quando o registro aponta para algo verificável.
-Carregar o trecho de evidência junto com o claim foi a mudança de contrato com maior efeito sobre a contenção, e o seu custo marginal foi pequeno em relação ao do lineage.
-Por fim, métricas de atribuição só se interpretam junto com a taxa de falso positivo de quem atribui. Sem essa linha de base, o Haiku e o Qwen pareceriam bem melhores em localizar o estágio do erro do que de fato são.
+Carregar o trecho de evidência junto com o claim foi a mudança de contrato com maior efeito sobre o destino do erro, com ou sem lineage, e o seu custo marginal foi cerca de um terço do custo do lineage. Acompanhada de uma instrução explícita para conferir o valor contra a evidência, ela teve o maior efeito de todo o experimento, por menos de cem tokens a mais.
+Por fim, métricas de atribuição só se interpretam junto com uma linha de base de quem atribui. O falso positivo mostra com que frequência o auditor culpa alguém sem motivo, e o placebo mostra com que frequência ele acertaria a origem por acaso. Sem essas linhas, o Haiku e o Qwen pareceriam bem melhores em localizar o estágio do erro do que de fato são.

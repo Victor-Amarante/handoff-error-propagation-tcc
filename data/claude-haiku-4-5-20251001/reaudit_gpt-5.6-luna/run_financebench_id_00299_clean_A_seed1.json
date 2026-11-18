@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00299_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Commercial Banking had the lowest net revenue in Q1 2021 at $2,393M.",
+    "reported_metric": "net revenue",
+    "reported_value": 2393.0,
+    "confidence": 0.99,
+    "rationale": "The extractor output lists Corporate net revenue as -$473M, which is lower than Commercial Banking's $2,393M. The analyst incorrectly excluded the negative value by selecting the smallest positive figure, and the writer repeated that error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 762,
+    "output_tokens": 209,
+    "total_tokens": 971,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.0004032,
+    "latency_ms": 2579.8958329833113,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 762,
+      "output_tokens": 209,
+      "total_tokens": 971,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.5796168340020813,
+      "duration": 2.579694791988004,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 762,
+            "output_tokens": 209,
+            "total_tokens": 971,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1234,
+    "output_tokens": 129,
+    "total_tokens": 1363,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001879,
+    "latency_ms": 1946.447000023909,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1234,
+      "output_tokens": 129,
+      "total_tokens": 1363,
+      "time_to_first_token": 1.9455350000062026,
+      "duration": 1.9458345829625614,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1234,
+            "output_tokens": 129,
+            "total_tokens": 1363,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

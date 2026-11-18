@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The claim that commercial paper received the largest investment, totaling $416.42 million, is incorrect; the extracted values show corporate bonds had the largest investment.",
+    "reported_metric": "short_term_investments_largest_type",
+    "reported_value": 416420.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports corporate bonds at 416,420 USD_K, while commercial paper and certificates of deposit are only 4,561 USD_K. The analyst correctly selected the largest value, but the writer mislabeled that value as commercial paper."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 808,
+    "output_tokens": 230,
+    "total_tokens": 1038,
+    "cached_tokens": 0,
+    "reasoning_tokens": 88,
+    "cost_usd": 0.0004376,
+    "latency_ms": 2760.122917010449,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 808,
+      "output_tokens": 230,
+      "total_tokens": 1038,
+      "reasoning_tokens": 88,
+      "time_to_first_token": 2.7593864589580335,
+      "duration": 2.759609541972168,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 808,
+            "output_tokens": 230,
+            "total_tokens": 1038,
+            "reasoning_tokens": 88,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1325,
+    "output_tokens": 212,
+    "total_tokens": 1537,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002385,
+    "latency_ms": 3481.8175000254996,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1325,
+      "output_tokens": 212,
+      "total_tokens": 1537,
+      "time_to_first_token": 3.480890000006184,
+      "duration": 3.4811956249759533,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1325,
+            "output_tokens": 212,
+            "total_tokens": 1537,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

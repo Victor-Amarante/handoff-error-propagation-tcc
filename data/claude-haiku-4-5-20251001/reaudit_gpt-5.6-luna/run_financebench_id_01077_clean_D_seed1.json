@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01077_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Current Health was classified as a FY2021 acquisition rather than a FY2022 acquisition.",
+    "reported_metric": "acquisition_price",
+    "reported_value": 389.0,
+    "confidence": 0.97,
+    "rationale": "The extractor labels the $389 million Current Health acquisition as year 2022, consistent with its November 2, 2021 transaction date falling within Best Buy's FY2022. The analyst changes the year to 2021, creating the first error; the writer then carries this misclassification forward and incorrectly reports no FY2022 acquisitions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1503,
+    "output_tokens": 437,
+    "total_tokens": 1940,
+    "cached_tokens": 0,
+    "reasoning_tokens": 289,
+    "cost_usd": 0.000825,
+    "latency_ms": 4413.192167005036,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1503,
+      "output_tokens": 437,
+      "total_tokens": 1940,
+      "reasoning_tokens": 289,
+      "time_to_first_token": 4.4126135829719715,
+      "duration": 4.412841040990315,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1503,
+            "output_tokens": 437,
+            "total_tokens": 1940,
+            "reasoning_tokens": 289,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2161,
+    "output_tokens": 179,
+    "total_tokens": 2340,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003056,
+    "latency_ms": 2664.8407080210745,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2161,
+      "output_tokens": 179,
+      "total_tokens": 2340,
+      "time_to_first_token": 2.664099082991015,
+      "duration": 2.664351458020974,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2161,
+            "output_tokens": 179,
+            "total_tokens": 2340,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

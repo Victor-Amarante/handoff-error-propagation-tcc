@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly rendered the highest-net-income segment as “USD_M,” which is the unit rather than the segment name Consumer & Community Banking.",
+    "reported_metric": "JPM's business segment with the highest net income in 2022 Q2",
+    "reported_value": 1300.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values show Consumer & Community Banking at 1,300 million, higher than the other business segments, and the analyst correctly selected it. The writer introduced the error by substituting the unit USD_M for the segment name."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1270,
+    "output_tokens": 641,
+    "total_tokens": 1911,
+    "cached_tokens": 0,
+    "reasoning_tokens": 493,
+    "cost_usd": 0.0010232,
+    "latency_ms": 6674.871375027578,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1270,
+      "output_tokens": 641,
+      "total_tokens": 1911,
+      "reasoning_tokens": 493,
+      "time_to_first_token": 6.674016667006072,
+      "duration": 6.674337917007506,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1270,
+            "output_tokens": 641,
+            "total_tokens": 1911,
+            "reasoning_tokens": 493,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1223,
+    "output_tokens": 602,
+    "total_tokens": 1825,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6754.783392010722,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1223,
+      "output_tokens": 602,
+      "total_tokens": 1825,
+      "time_to_first_token": 6.754531370010227,
+      "duration": 6.754605530004483,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1223,
+            "output_tokens": 602,
+            "total_tokens": 1825,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6724789213,
+              "load_duration": 455381,
+              "prompt_eval_duration": 334509000,
+              "eval_duration": 6338640000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

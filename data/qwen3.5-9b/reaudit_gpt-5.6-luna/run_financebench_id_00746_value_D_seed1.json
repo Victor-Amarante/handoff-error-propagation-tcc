@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00746_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor incorrectly reported the common stock trading symbol as 0.1 USD billion, even though the evidence only states the stock's $0.01 par value per share.",
+    "reported_metric": "common_stock_trading_symbol",
+    "reported_value": 0.1,
+    "confidence": 0.98,
+    "rationale": "C01 is internally inconsistent: its metric and numeric value do not correspond to the cited evidence. The analyst then inferred the absence of debt securities from these malformed common-stock claims, and the writer repeated that unsupported inference."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1125,
+    "output_tokens": 544,
+    "total_tokens": 1669,
+    "cached_tokens": 0,
+    "reasoning_tokens": 403,
+    "cost_usd": 0.0008778,
+    "latency_ms": 5667.962124978658,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1125,
+      "output_tokens": 544,
+      "total_tokens": 1669,
+      "reasoning_tokens": 403,
+      "time_to_first_token": 5.667686666012742,
+      "duration": 5.6677742910105735,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1125,
+            "output_tokens": 544,
+            "total_tokens": 1669,
+            "reasoning_tokens": 403,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1024,
+    "output_tokens": 211,
+    "total_tokens": 1235,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2709.4101500115357,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1024,
+      "output_tokens": 211,
+      "total_tokens": 1235,
+      "time_to_first_token": 2.709111756994389,
+      "duration": 2.709201290970668,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1024,
+            "output_tokens": 211,
+            "total_tokens": 1235,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2679836620,
+              "load_duration": 459505,
+              "prompt_eval_duration": 273439000,
+              "eval_duration": 2329794000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

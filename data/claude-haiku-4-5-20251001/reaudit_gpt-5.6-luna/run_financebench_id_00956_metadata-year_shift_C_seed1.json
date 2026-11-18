@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00956_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Johnson & Johnson's sales growth rate was 1.3% in FY2023.",
+    "reported_metric": "sales_growth_rate",
+    "reported_value": 1.3,
+    "confidence": 0.89,
+    "rationale": "The 1.3% rate is internally derived from the FY2022 component rates (6.9% volume growth, -0.8% price change, and -4.8% currency effect), and the analyst correctly assigns it to FY2022. Thus, the extractor's FY2023 year label for C02 is the first apparent factual error. The final conclusion about FY2022 is otherwise consistent with the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1404,
+    "output_tokens": 678,
+    "total_tokens": 2082,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010944000000000001,
+    "latency_ms": 6647.174582991283,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1404,
+      "output_tokens": 678,
+      "total_tokens": 2082,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.6462617089855485,
+      "duration": 6.6466989170294255,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1404,
+            "output_tokens": 678,
+            "total_tokens": 2082,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2003,
+    "output_tokens": 242,
+    "total_tokens": 2245,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003213,
+    "latency_ms": 3994.3360830075108,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2003,
+      "output_tokens": 242,
+      "total_tokens": 2245,
+      "time_to_first_token": 3.993561665993184,
+      "duration": 3.993796332972124,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2003,
+            "output_tokens": 242,
+            "total_tokens": 2245,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

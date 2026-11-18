@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Quick assets were incorrectly calculated as $10,981 million; the extracted components sum to $9,981 million.",
+    "reported_metric": "quick_assets",
+    "reported_value": 10981.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values are internally consistent, but 4,835 + 1,020 + 4,126 equals 9,981, not 10,981. The analyst's incorrect quick-assets total propagates into the quick ratio and liquidity assessment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1716,
+    "output_tokens": 258,
+    "total_tokens": 1974,
+    "cached_tokens": 0,
+    "reasoning_tokens": 125,
+    "cost_usd": 0.0006527999999999999,
+    "latency_ms": 3144.148541963659,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1716,
+      "output_tokens": 258,
+      "total_tokens": 1974,
+      "reasoning_tokens": 125,
+      "time_to_first_token": 3.143475709017366,
+      "duration": 3.143710792006459,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1716,
+            "output_tokens": 258,
+            "total_tokens": 1974,
+            "reasoning_tokens": 125,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2387,
+    "output_tokens": 206,
+    "total_tokens": 2593,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003417,
+    "latency_ms": 3174.593417032156,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2387,
+      "output_tokens": 206,
+      "total_tokens": 2593,
+      "time_to_first_token": 3.173679416999221,
+      "duration": 3.1739866249845363,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2387,
+            "output_tokens": 206,
+            "total_tokens": 2593,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

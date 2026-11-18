@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated the discontinued-operations values as evidence that a sale or termination substantially increased 2019 net income, without preserving the year-to-value mapping; the 2019 value is negative $434 million, not a positive gain.",
+    "reported_metric": "Discontinued operations net of tax",
+    "reported_value": 5318.0,
+    "confidence": 0.98,
+    "rationale": "The extractor lists three years' values in sequence. The surrounding figures align with 2021, 2020, and 2019, making $5,318 million the earliest year's value and -$434 million the 2019 value. The analyst first converts these unmapped values into a claim about a substantial positive non-recurring contribution, which the writer then repeats."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1984,
+    "output_tokens": 697,
+    "total_tokens": 2681,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012332,
+    "latency_ms": 7120.711792027578,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1984,
+      "output_tokens": 697,
+      "total_tokens": 2681,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.120125624991488,
+      "duration": 7.120293000014499,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1984,
+            "output_tokens": 697,
+            "total_tokens": 2681,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1897,
+    "output_tokens": 225,
+    "total_tokens": 2122,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3046.898317988962,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1897,
+      "output_tokens": 225,
+      "total_tokens": 2122,
+      "time_to_first_token": 3.046624999959022,
+      "duration": 3.046714304946363,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1897,
+            "output_tokens": 225,
+            "total_tokens": 2122,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3021641414,
+              "load_duration": 591476,
+              "prompt_eval_duration": 450325000,
+              "eval_duration": 2516163000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

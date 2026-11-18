@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Pfizer's PP&E was reported as $14,882 million for FY2022, even though the question required the FY2021 value.",
+    "reported_metric": "property_plant_equipment",
+    "reported_value": 14882.0,
+    "confidence": 0.98,
+    "rationale": "The extractor supplied FY2020 and FY2022 data, omitting FY2021. The analyst and writer consistently propagated those years, so the first error arose at extraction and caused the response to answer a different comparison."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 785,
+    "output_tokens": 383,
+    "total_tokens": 1168,
+    "cached_tokens": 0,
+    "reasoning_tokens": 247,
+    "cost_usd": 0.0006165999999999999,
+    "latency_ms": 4770.753666001838,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 785,
+      "output_tokens": 383,
+      "total_tokens": 1168,
+      "reasoning_tokens": 247,
+      "time_to_first_token": 4.770249208027963,
+      "duration": 4.770397916028742,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 785,
+            "output_tokens": 383,
+            "total_tokens": 1168,
+            "reasoning_tokens": 247,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1296,
+    "output_tokens": 150,
+    "total_tokens": 1446,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002046,
+    "latency_ms": 2868.8128339708783,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1296,
+      "output_tokens": 150,
+      "total_tokens": 1446,
+      "time_to_first_token": 2.8685005829902366,
+      "duration": 2.8686099579790607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1296,
+            "output_tokens": 150,
+            "total_tokens": 1446,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

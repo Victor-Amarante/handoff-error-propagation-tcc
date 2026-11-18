@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00552_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Microsoft did not increase its total debt between FY2022 and FY2023; the reported reduction was $5,042 million.",
+    "reported_metric": "Total debt change from FY2022 to FY2023 (in millions)",
+    "reported_value": -5042.0,
+    "confidence": 0.97,
+    "rationale": "The extracted data supports a $5,042 million decrease in long-term debt only. It provides no FY2023 current-portion debt figure, so the analyst could not conclude that total balance-sheet debt decreased or did not increase. The writer repeated this unsupported conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 856,
+    "output_tokens": 476,
+    "total_tokens": 1332,
+    "cached_tokens": 0,
+    "reasoning_tokens": 325,
+    "cost_usd": 0.0007423999999999999,
+    "latency_ms": 5272.648915997706,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 856,
+      "output_tokens": 476,
+      "total_tokens": 1332,
+      "reasoning_tokens": 325,
+      "time_to_first_token": 5.272239207988605,
+      "duration": 5.272377457993571,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 856,
+            "output_tokens": 476,
+            "total_tokens": 1332,
+            "reasoning_tokens": 325,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1377,
+    "output_tokens": 164,
+    "total_tokens": 1541,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002197,
+    "latency_ms": 3081.7282079951838,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1377,
+      "output_tokens": 164,
+      "total_tokens": 1541,
+      "time_to_first_token": 3.0808629160164855,
+      "duration": 3.0810978750232607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1377,
+            "output_tokens": 164,
+            "total_tokens": 1541,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

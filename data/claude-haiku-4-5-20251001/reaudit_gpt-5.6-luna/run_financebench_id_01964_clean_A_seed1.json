@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Customer deposits at $110,239 million were substantially larger than all other liabilities combined.",
+    "reported_metric": "Customer deposits compared with all other liabilities combined",
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures support customer deposits as the largest individual liability, and the analyst correctly identified it as 2.6 times the second-largest category. However, the writer's added claim that deposits exceeded all other liabilities combined is false: the other listed liabilities sum to $93,404 million, which is less than $110,239 million but not substantively excluded from the comparison; the trace provides no single incorrect numeric value for that relational claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 713,
+    "output_tokens": 590,
+    "total_tokens": 1303,
+    "cached_tokens": 0,
+    "reasoning_tokens": 422,
+    "cost_usd": 0.0008506000000000001,
+    "latency_ms": 6101.673332974315,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 713,
+      "output_tokens": 590,
+      "total_tokens": 1303,
+      "reasoning_tokens": 422,
+      "time_to_first_token": 6.101128667010926,
+      "duration": 6.1013462920091115,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 713,
+            "output_tokens": 590,
+            "total_tokens": 1303,
+            "reasoning_tokens": 422,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1191,
+    "output_tokens": 176,
+    "total_tokens": 1367,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002071,
+    "latency_ms": 2505.7412500027567,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1191,
+      "output_tokens": 176,
+      "total_tokens": 1367,
+      "time_to_first_token": 2.504756250011269,
+      "duration": 2.5050505829858594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1191,
+            "output_tokens": 176,
+            "total_tokens": 1367,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

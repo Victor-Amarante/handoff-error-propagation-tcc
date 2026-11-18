@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2022 total non-interest revenue of $42,967 million is reported as the value for gross-margin change drivers, although it is not a gross-margin metric.",
+    "reported_metric": "Gross margin change drivers",
+    "reported_value": 42967.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst consistently identify $42,967 million as total non-interest revenues. The writer's attached answer claim relabels that value as gross-margin change drivers without support. The prose conclusion that the answer is not derivable is otherwise consistent with the absence of costs or a gross-margin measure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1224,
+    "output_tokens": 483,
+    "total_tokens": 1707,
+    "cached_tokens": 0,
+    "reasoning_tokens": 328,
+    "cost_usd": 0.0008244000000000001,
+    "latency_ms": 4958.684624987654,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1224,
+      "output_tokens": 483,
+      "total_tokens": 1707,
+      "reasoning_tokens": 328,
+      "time_to_first_token": 4.957948708033655,
+      "duration": 4.958247083006427,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1224,
+            "output_tokens": 483,
+            "total_tokens": 1707,
+            "reasoning_tokens": 328,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1181,
+    "output_tokens": 182,
+    "total_tokens": 1363,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2438.0711929989047,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1181,
+      "output_tokens": 182,
+      "total_tokens": 1363,
+      "time_to_first_token": 2.4377716979943216,
+      "duration": 2.437884552986361,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1181,
+            "output_tokens": 182,
+            "total_tokens": 1363,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2412943490,
+              "load_duration": 611066,
+              "prompt_eval_duration": 301288000,
+              "eval_duration": 2062264000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst assigns gross-margin relevance a value of 3.762489 percent for JPMorgan in 2022, despite having no gross-margin or relevance data supporting that percentage.",
+    "reported_metric": "gross_margin_relevance",
+    "reported_value": 3.762489,
+    "confidence": 0.98,
+    "rationale": "The extractor provides only assets and stockholders' equity, neither of which supports a percentage measure of gross-margin relevance. A01 is therefore the first unsupported claim; A02 and A03 repeat the same value, while the writer's textual conclusion is directionally consistent with the question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1143,
+    "output_tokens": 440,
+    "total_tokens": 1583,
+    "cached_tokens": 0,
+    "reasoning_tokens": 286,
+    "cost_usd": 0.0007566000000000001,
+    "latency_ms": 4715.706541959662,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1143,
+      "output_tokens": 440,
+      "total_tokens": 1583,
+      "reasoning_tokens": 286,
+      "time_to_first_token": 4.714791250007693,
+      "duration": 4.715134540980216,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1143,
+            "output_tokens": 440,
+            "total_tokens": 1583,
+            "reasoning_tokens": 286,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1063,
+    "output_tokens": 218,
+    "total_tokens": 1281,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2807.9817250254564,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1063,
+      "output_tokens": 218,
+      "total_tokens": 1281,
+      "time_to_first_token": 2.8077244839514606,
+      "duration": 2.8077971969614737,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1063,
+            "output_tokens": 218,
+            "total_tokens": 1281,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2776729852,
+              "load_duration": 498415,
+              "prompt_eval_duration": 301922000,
+              "eval_duration": 2401822000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

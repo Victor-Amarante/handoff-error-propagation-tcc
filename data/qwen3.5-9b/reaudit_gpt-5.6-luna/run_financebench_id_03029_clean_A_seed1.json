@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03029_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the pipeline consistently reports FY2018 capital expenditure as $1,577 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer, and final answer all consistently state that 3M's FY2018 capital expenditure was $1,577 million, with no internal contradiction or provenance issue in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 623,
+    "output_tokens": 288,
+    "total_tokens": 911,
+    "cached_tokens": 0,
+    "reasoning_tokens": 171,
+    "cost_usd": 0.0004702,
+    "latency_ms": 3443.5400830116123,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 623,
+      "output_tokens": 288,
+      "total_tokens": 911,
+      "reasoning_tokens": 171,
+      "time_to_first_token": 3.442659125023056,
+      "duration": 3.4430133340065368,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 623,
+            "output_tokens": 288,
+            "total_tokens": 911,
+            "reasoning_tokens": 171,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 421,
+    "output_tokens": 121,
+    "total_tokens": 542,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1602.3809270118363,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 421,
+      "output_tokens": 121,
+      "total_tokens": 542,
+      "time_to_first_token": 1.6021527230041102,
+      "duration": 1.6022213409887627,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 421,
+            "output_tokens": 121,
+            "total_tokens": 542,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1573915646,
+              "load_duration": 644055,
+              "prompt_eval_duration": 149936000,
+              "eval_duration": 1376460000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00080_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported total current assets of $57,517 million as FY2022 data, even though that total reconciles with the separately reported FY2023 cash balance of $7,776 million rather than the FY2022 figures.",
+    "reported_metric": "Total current assets",
+    "reported_value": 57517.0,
+    "confidence": 0.92,
+    "rationale": "The listed non-cash current assets total $49,741 million; adding the reported $7,776 million cash balance produces $57,517 million. Because that cash figure is explicitly labeled FY2023, the $57,517 million total appears to be from the wrong fiscal year. The analyst's $12,416 million calculation is arithmetically correct but inherits this extraction/period error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1312,
+    "output_tokens": 1217,
+    "total_tokens": 2529,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0017228,
+    "latency_ms": 10468.818666995503,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1312,
+      "output_tokens": 1217,
+      "total_tokens": 2529,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.467850790999364,
+      "duration": 10.468165041005705,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1312,
+            "output_tokens": 1217,
+            "total_tokens": 2529,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1868,
+    "output_tokens": 164,
+    "total_tokens": 2032,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002688,
+    "latency_ms": 3441.5730829932727,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1868,
+      "output_tokens": 164,
+      "total_tokens": 2032,
+      "time_to_first_token": 3.440737667027861,
+      "duration": 3.441036417032592,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1868,
+            "output_tokens": 164,
+            "total_tokens": 2032,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

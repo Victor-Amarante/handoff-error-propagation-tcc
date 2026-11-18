@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Gross margins were reported with a numeric value of 0.0 even though the input contained no gross-margin data and marked the metric as unavailable.",
+    "reported_metric": "Gross Margins",
+    "reported_value": 0.0,
+    "confidence": 0.86,
+    "rationale": "The extractor provided only assets and stockholders' equity, so no gross-margin value was supported. Encoding the missing metric as 0.0 is an unsupported factual value; the writer then repeated the availability caveat. The final response is also incomplete because it does not explain that gross margin is generally not a relevant metric for a bank like JPM."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 692,
+    "output_tokens": 622,
+    "total_tokens": 1314,
+    "cached_tokens": 0,
+    "reasoning_tokens": 464,
+    "cost_usd": 0.0008847999999999999,
+    "latency_ms": 6602.172500046436,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 692,
+      "output_tokens": 622,
+      "total_tokens": 1314,
+      "reasoning_tokens": 464,
+      "time_to_first_token": 6.60170120903058,
+      "duration": 6.601872000028379,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 692,
+            "output_tokens": 622,
+            "total_tokens": 1314,
+            "reasoning_tokens": 464,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 504,
+    "output_tokens": 150,
+    "total_tokens": 654,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1990.367812977638,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 504,
+      "output_tokens": 150,
+      "total_tokens": 654,
+      "time_to_first_token": 1.9901204880443402,
+      "duration": 1.9901913900393993,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 504,
+            "output_tokens": 150,
+            "total_tokens": 654,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1959223898,
+              "load_duration": 431211,
+              "prompt_eval_duration": 161093000,
+              "eval_duration": 1730563000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

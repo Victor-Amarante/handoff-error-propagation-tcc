@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01981_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified from the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.8,
+    "rationale": "The retention-status claim is consistently propagated from extractor claim C03 through analyst claim A02 to writer claim W01. The trace provides no contradictory provenance or internal inconsistency establishing that the 0.0% status was incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1087,
+    "output_tokens": 440,
+    "total_tokens": 1527,
+    "cached_tokens": 0,
+    "reasoning_tokens": 332,
+    "cost_usd": 0.0007454,
+    "latency_ms": 5033.671874960419,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1087,
+      "output_tokens": 440,
+      "total_tokens": 1527,
+      "reasoning_tokens": 332,
+      "time_to_first_token": 5.0331683330005035,
+      "duration": 5.033254790992942,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1087,
+            "output_tokens": 440,
+            "total_tokens": 1527,
+            "reasoning_tokens": 332,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 996,
+    "output_tokens": 226,
+    "total_tokens": 1222,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2847.6814570021816,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 996,
+      "output_tokens": 226,
+      "total_tokens": 1222,
+      "time_to_first_token": 2.847444084996823,
+      "duration": 2.847522432974074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 996,
+            "output_tokens": 226,
+            "total_tokens": 1222,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2821958018,
+              "load_duration": 423186,
+              "prompt_eval_duration": 267995000,
+              "eval_duration": 2481682000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

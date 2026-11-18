@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00591_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly claimed that free cash flow conversion improved to approximately 102% in the most recent year and represented a strengthening trend.",
+    "reported_metric": "free cash flow conversion",
+    "reported_value": 102.0,
+    "confidence": 0.99,
+    "rationale": "The extractor supplies the underlying figures without an evident error. Using the analyst's own pairings, 7,838/7,456 is approximately 105%, not 102%, and the stated sequence is 119%, 138%, then approximately 105%, which declines in the latest year rather than showing continued improvement. The writer repeated this analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1818,
+    "output_tokens": 860,
+    "total_tokens": 2678,
+    "cached_tokens": 0,
+    "reasoning_tokens": 698,
+    "cost_usd": 0.0013955999999999999,
+    "latency_ms": 8199.759291950613,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1818,
+      "output_tokens": 860,
+      "total_tokens": 2678,
+      "reasoning_tokens": 698,
+      "time_to_first_token": 8.198232583003119,
+      "duration": 8.199501666007563,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1818,
+            "output_tokens": 860,
+            "total_tokens": 2678,
+            "reasoning_tokens": 698,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1711,
+    "output_tokens": 282,
+    "total_tokens": 1993,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3786.030059971381,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1711,
+      "output_tokens": 282,
+      "total_tokens": 1993,
+      "time_to_first_token": 3.785799524979666,
+      "duration": 3.785872706968803,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1711,
+            "output_tokens": 282,
+            "total_tokens": 1993,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3761043165,
+              "load_duration": 598749,
+              "prompt_eval_duration": 448221000,
+              "eval_duration": 3259743000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

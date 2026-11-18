@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; FY2022 working capital is consistently calculated as total current assets of 7,453 million minus total current liabilities of 5,175 million, equaling positive working capital of 2,278 million USD.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor values support the analyst's calculation: 7,453 - 5,175 = 2,278 USD million. The writer reports the same value as 2.278 billion USD, so the pipeline is internally consistent and answers that working capital was positive."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 976,
+    "output_tokens": 228,
+    "total_tokens": 1204,
+    "cached_tokens": 0,
+    "reasoning_tokens": 72,
+    "cost_usd": 0.00046879999999999996,
+    "latency_ms": 2795.0173749704845,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 976,
+      "output_tokens": 228,
+      "total_tokens": 1204,
+      "reasoning_tokens": 72,
+      "time_to_first_token": 2.7943204999901354,
+      "duration": 2.7944962499896064,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 976,
+            "output_tokens": 228,
+            "total_tokens": 1204,
+            "reasoning_tokens": 72,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 869,
+    "output_tokens": 142,
+    "total_tokens": 1011,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1769.3682099925354,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 869,
+      "output_tokens": 142,
+      "total_tokens": 1011,
+      "time_to_first_token": 1.7691383130149916,
+      "duration": 1.769210180034861,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 869,
+            "output_tokens": 142,
+            "total_tokens": 1011,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1743975412,
+              "load_duration": 462896,
+              "prompt_eval_duration": 62100000,
+              "eval_duration": 1611626000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

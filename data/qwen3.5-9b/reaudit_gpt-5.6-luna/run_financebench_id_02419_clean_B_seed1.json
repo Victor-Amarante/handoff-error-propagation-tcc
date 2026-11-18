@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Pfizer was in the process of spinning off Mylan as of Q2 2023.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst outputs mention only separation costs and costs incurred; neither identifies Mylan or establishes that Pfizer was spinning off that business. The writer introduced this unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 732,
+    "output_tokens": 502,
+    "total_tokens": 1234,
+    "cached_tokens": 0,
+    "reasoning_tokens": 394,
+    "cost_usd": 0.0007488,
+    "latency_ms": 5453.369666996878,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 732,
+      "output_tokens": 502,
+      "total_tokens": 1234,
+      "reasoning_tokens": 394,
+      "time_to_first_token": 5.4528147500241175,
+      "duration": 5.45305091701448,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 732,
+            "output_tokens": 502,
+            "total_tokens": 1234,
+            "reasoning_tokens": 394,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 572,
+    "output_tokens": 201,
+    "total_tokens": 773,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2559.7602230263874,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 572,
+      "output_tokens": 201,
+      "total_tokens": 773,
+      "time_to_first_token": 2.559470428037457,
+      "duration": 2.559560624998994,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 572,
+            "output_tokens": 201,
+            "total_tokens": 773,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2530482562,
+              "load_duration": 483940,
+              "prompt_eval_duration": 152961000,
+              "eval_duration": 2326714000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Consolidated earnings before provision for taxes on income for FY2022 was reported as USD 21.7 billion, but the associated year field is 2023, creating an internal fiscal-year inconsistency.",
+    "reported_metric": "consolidated earnings before provision for taxes on income (FY2022)",
+    "reported_value": 21.7,
+    "confidence": 0.93,
+    "rationale": "The extractor output contains a direct inconsistency: the claim is labeled FY2022 while its year field is 2023. No claim IDs are provided. The analyst's refusal to derive gross margin is not itself contradicted by the trace, although the final answer is incomplete because it does not explain why gross margin was not derived or discuss the drivers."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 900,
+    "output_tokens": 662,
+    "total_tokens": 1562,
+    "cached_tokens": 0,
+    "reasoning_tokens": 478,
+    "cost_usd": 0.0009743999999999999,
+    "latency_ms": 6080.337917024735,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 900,
+      "output_tokens": 662,
+      "total_tokens": 1562,
+      "reasoning_tokens": 478,
+      "time_to_first_token": 6.079868917004205,
+      "duration": 6.08004616695689,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 900,
+            "output_tokens": 662,
+            "total_tokens": 1562,
+            "reasoning_tokens": 478,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 759,
+    "output_tokens": 272,
+    "total_tokens": 1031,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3333.9604290085845,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 759,
+      "output_tokens": 272,
+      "total_tokens": 1031,
+      "time_to_first_token": 3.333714501000941,
+      "duration": 3.3337958760093898,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 759,
+            "output_tokens": 272,
+            "total_tokens": 1031,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3307071359,
+              "load_duration": 453719,
+              "prompt_eval_duration": 195843000,
+              "eval_duration": 3039970000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01928_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported $2.321 billion is consistent with the extractor's $2,321 million figure.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor reports Adjusted EBITDA of $2,321 million for the twelve months ended June 30, 2023. The analyst and writer correctly convert this to $2.321 billion and preserve the period and metric without introducing an internally detectable error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 668,
+    "output_tokens": 183,
+    "total_tokens": 851,
+    "cached_tokens": 0,
+    "reasoning_tokens": 52,
+    "cost_usd": 0.00035319999999999997,
+    "latency_ms": 2296.374041994568,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 668,
+      "output_tokens": 183,
+      "total_tokens": 851,
+      "reasoning_tokens": 52,
+      "time_to_first_token": 2.2956307500135154,
+      "duration": 2.2959552090032957,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 668,
+            "output_tokens": 183,
+            "total_tokens": 851,
+            "reasoning_tokens": 52,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 486,
+    "output_tokens": 175,
+    "total_tokens": 661,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2193.8949610339478,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 486,
+      "output_tokens": 175,
+      "total_tokens": 661,
+      "time_to_first_token": 2.193598600977566,
+      "duration": 2.1936901419539936,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 486,
+            "output_tokens": 175,
+            "total_tokens": 661,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2161707302,
+              "load_duration": 439183,
+              "prompt_eval_duration": 159637000,
+              "eval_duration": 1966320000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

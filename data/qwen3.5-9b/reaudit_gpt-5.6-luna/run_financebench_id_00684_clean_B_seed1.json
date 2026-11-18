@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00684_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor's figures support the analyst's calculations: gross margin was 2,820/14,544 = 19.39% in FY2022 and 2,725/14,694 = 18.55% in FY2023. The writer correctly rounded these to 19.4% and 18.5% and correctly concluded that gross margin decreased."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1021,
+    "output_tokens": 232,
+    "total_tokens": 1253,
+    "cached_tokens": 0,
+    "reasoning_tokens": 101,
+    "cost_usd": 0.0004826,
+    "latency_ms": 2852.4934169836342,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1021,
+      "output_tokens": 232,
+      "total_tokens": 1253,
+      "reasoning_tokens": 101,
+      "time_to_first_token": 2.851903458999004,
+      "duration": 2.852058542019222,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1021,
+            "output_tokens": 232,
+            "total_tokens": 1253,
+            "reasoning_tokens": 101,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 941,
+    "output_tokens": 2063,
+    "total_tokens": 3004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 22459.35515599558,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 941,
+      "output_tokens": 2063,
+      "total_tokens": 3004,
+      "time_to_first_token": 22.459105251007713,
+      "duration": 22.459190759982448,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 941,
+            "output_tokens": 2063,
+            "total_tokens": 3004,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 22430939700,
+              "load_duration": 426886,
+              "prompt_eval_duration": 241686000,
+              "eval_duration": 22138869000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

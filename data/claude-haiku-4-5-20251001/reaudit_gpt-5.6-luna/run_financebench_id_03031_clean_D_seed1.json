@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03031_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 1.0,
+    "rationale": "No error detected. The extractor reports total current assets of $19,815 million and total current liabilities of $13,997 million; the analyst and writer correctly calculate net working capital as $19,815 million minus $13,997 million = $5,818 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1041,
+    "output_tokens": 164,
+    "total_tokens": 1205,
+    "cached_tokens": 0,
+    "reasoning_tokens": 54,
+    "cost_usd": 0.000405,
+    "latency_ms": 2171.31712497212,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1041,
+      "output_tokens": 164,
+      "total_tokens": 1205,
+      "reasoning_tokens": 54,
+      "time_to_first_token": 2.1707657500519417,
+      "duration": 2.1709148330264725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1041,
+            "output_tokens": 164,
+            "total_tokens": 1205,
+            "reasoning_tokens": 54,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1607,
+    "output_tokens": 139,
+    "total_tokens": 1746,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002302,
+    "latency_ms": 2869.3920000223443,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1607,
+      "output_tokens": 139,
+      "total_tokens": 1746,
+      "time_to_first_token": 2.8685779999941587,
+      "duration": 2.868874042003881,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1607,
+            "output_tokens": 139,
+            "total_tokens": 1746,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

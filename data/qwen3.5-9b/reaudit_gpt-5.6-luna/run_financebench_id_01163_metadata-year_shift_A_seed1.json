@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01163_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Operating activities provided $5,841 million in cash for Nike in FY2024.",
+    "reported_metric": "cash provided by operating activities",
+    "reported_value": 5841.0,
+    "confidence": 0.86,
+    "rationale": "The question concerns FY2023, but the extractor supplied the operating-cash figure for FY2024, unlike the investing and financing figures, which are labeled FY2023. This year misattribution caused the downstream stages to treat the FY2023 operating figure as unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 813,
+    "output_tokens": 645,
+    "total_tokens": 1458,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009366,
+    "latency_ms": 6339.240791043267,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 813,
+      "output_tokens": 645,
+      "total_tokens": 1458,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.33868662500754,
+      "duration": 6.33881616598228,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 813,
+            "output_tokens": 645,
+            "total_tokens": 1458,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 626,
+    "output_tokens": 187,
+    "total_tokens": 813,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2412.7952880226076,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 626,
+      "output_tokens": 187,
+      "total_tokens": 813,
+      "time_to_first_token": 2.4125641679856926,
+      "duration": 2.4126359859947115,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 626,
+            "output_tokens": 187,
+            "total_tokens": 813,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2387827600,
+              "load_duration": 472960,
+              "prompt_eval_duration": 180567000,
+              "eval_duration": 2157041000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04254_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported operating income for FY2022 ($1,196 million) instead of providing the FY2021 operating income required for the calculation.",
+    "reported_metric": "FY2021 operating income",
+    "reported_value": 1196.0,
+    "confidence": 0.86,
+    "rationale": "The trace supplies FY2021 depreciation and amortization but substitutes FY2022 operating income, so the analyst and writer correctly identify the calculation as unavailable from the extracted inputs. The extraction's fiscal-year mismatch is the first problem in the chain."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 789,
+    "output_tokens": 650,
+    "total_tokens": 1439,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009377999999999999,
+    "latency_ms": 6598.472041019704,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 789,
+      "output_tokens": 650,
+      "total_tokens": 1439,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.597755125025287,
+      "duration": 6.597997708013281,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 789,
+            "output_tokens": 650,
+            "total_tokens": 1439,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1326,
+    "output_tokens": 174,
+    "total_tokens": 1500,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002196,
+    "latency_ms": 2971.540874976199,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1326,
+      "output_tokens": 174,
+      "total_tokens": 1500,
+      "time_to_first_token": 2.9705270410049707,
+      "duration": 2.970824750023894,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1326,
+            "output_tokens": 174,
+            "total_tokens": 1500,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

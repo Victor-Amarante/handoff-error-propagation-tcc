@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10136_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the retention ratio calculation is consistent with the provided figures: (2,707.3 − 1,244.5) ÷ 2,707.3 = 0.54.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst and writer correctly calculate the retention ratio as net income retained after dividends divided by net income. Using the extracted values gives approximately 0.5402, which rounds to 0.54."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1089,
+    "output_tokens": 220,
+    "total_tokens": 1309,
+    "cached_tokens": 0,
+    "reasoning_tokens": 81,
+    "cost_usd": 0.0004818,
+    "latency_ms": 2657.859333034139,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1089,
+      "output_tokens": 220,
+      "total_tokens": 1309,
+      "reasoning_tokens": 81,
+      "time_to_first_token": 2.6572605420369655,
+      "duration": 2.657405292033218,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1089,
+            "output_tokens": 220,
+            "total_tokens": 1309,
+            "reasoning_tokens": 81,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1645,
+    "output_tokens": 238,
+    "total_tokens": 1883,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002835,
+    "latency_ms": 2987.631959025748,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1645,
+      "output_tokens": 238,
+      "total_tokens": 1883,
+      "time_to_first_token": 2.986706957977731,
+      "duration": 2.98701645800611,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1645,
+            "output_tokens": 238,
+            "total_tokens": 1883,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

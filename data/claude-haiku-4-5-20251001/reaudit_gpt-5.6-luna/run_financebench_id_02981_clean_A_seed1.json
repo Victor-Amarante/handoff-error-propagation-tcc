@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02981_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the extracted figures and the 10.3% three-year average margin calculation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The annual margins are approximately 11.35%, 4.50%, and 15.0%; their arithmetic average is approximately 10.28%, which correctly rounds to 10.3%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 889,
+    "output_tokens": 280,
+    "total_tokens": 1169,
+    "cached_tokens": 0,
+    "reasoning_tokens": 161,
+    "cost_usd": 0.0005137999999999999,
+    "latency_ms": 3021.7793750343844,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 889,
+      "output_tokens": 280,
+      "total_tokens": 1169,
+      "reasoning_tokens": 161,
+      "time_to_first_token": 3.0211060409783386,
+      "duration": 3.021337374986615,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 889,
+            "output_tokens": 280,
+            "total_tokens": 1169,
+            "reasoning_tokens": 161,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1434,
+    "output_tokens": 149,
+    "total_tokens": 1583,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002179,
+    "latency_ms": 3070.0187499751337,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1434,
+      "output_tokens": 149,
+      "total_tokens": 1583,
+      "time_to_first_token": 3.0696820419980213,
+      "duration": 3.0697853330057114,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1434,
+            "output_tokens": 149,
+            "total_tokens": 1583,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

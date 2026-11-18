@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00601_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident in the trace; the response correctly notes that FY2023 data is unavailable and accurately describes the FY2021–FY2022 trend.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extracted figures support the stated comparisons: net sales grew from $8.6B to $10.2B (about 18.6%), while SG&A grew from $2.1B to $2.4B (about 14.3%), and SG&A as a percentage of sales fell from 23.9% to 23.5%. The trace contains no FY2023 figures, so declining to answer the FY2023-specific question is internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1174,
+    "output_tokens": 291,
+    "total_tokens": 1465,
+    "cached_tokens": 0,
+    "reasoning_tokens": 106,
+    "cost_usd": 0.000584,
+    "latency_ms": 3326.392917020712,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1174,
+      "output_tokens": 291,
+      "total_tokens": 1465,
+      "reasoning_tokens": 106,
+      "time_to_first_token": 3.3259003330022097,
+      "duration": 3.326023667003028,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1174,
+            "output_tokens": 291,
+            "total_tokens": 1465,
+            "reasoning_tokens": 106,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1723,
+    "output_tokens": 175,
+    "total_tokens": 1898,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002598,
+    "latency_ms": 2363.6343749822117,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1723,
+      "output_tokens": 175,
+      "total_tokens": 1898,
+      "time_to_first_token": 2.362650415976532,
+      "duration": 2.3629358329926617,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1723,
+            "output_tokens": 175,
+            "total_tokens": 1898,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

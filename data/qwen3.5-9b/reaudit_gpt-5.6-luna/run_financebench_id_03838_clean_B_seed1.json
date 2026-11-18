@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03838_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2020 total revenue growth rate was reported as 102.0 percent, whereas the extracted revenues imply growth of approximately 101.5 percent.",
+    "reported_metric": "FY2020 total revenue growth rate",
+    "reported_value": 102.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's revenue figures are internally consistent. Calculating (9,497,578 - 4,713,500) / 4,713,500 × 100 gives approximately 101.5%, not 102.0%. The writer then compounded this analyst error by reporting 2.0%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 773,
+    "output_tokens": 385,
+    "total_tokens": 1158,
+    "cached_tokens": 0,
+    "reasoning_tokens": 227,
+    "cost_usd": 0.0006166,
+    "latency_ms": 4253.467625007033,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 773,
+      "output_tokens": 385,
+      "total_tokens": 1158,
+      "reasoning_tokens": 227,
+      "time_to_first_token": 4.252836333005689,
+      "duration": 4.25305916700745,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 773,
+            "output_tokens": 385,
+            "total_tokens": 1158,
+            "reasoning_tokens": 227,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 627,
+    "output_tokens": 254,
+    "total_tokens": 881,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3098.8916780333966,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 627,
+      "output_tokens": 254,
+      "total_tokens": 881,
+      "time_to_first_token": 3.098594850045629,
+      "duration": 3.0986684419913217,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 627,
+            "output_tokens": 254,
+            "total_tokens": 881,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3069533020,
+              "load_duration": 448960,
+              "prompt_eval_duration": 182383000,
+              "eval_duration": 2817206000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

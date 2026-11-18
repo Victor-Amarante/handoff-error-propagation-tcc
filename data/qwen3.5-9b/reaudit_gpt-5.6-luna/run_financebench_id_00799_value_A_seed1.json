@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00799_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly claimed that AMCOR's FY2023 quick ratio could not be calculated because the inventory figures were split across multiple line items.",
+    "reported_metric": "FY2023 quick ratio",
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor supplied two inventory components that can be summed: $992M + $1,221M = $2,213M. Thus, using the supplied FY2023 totals, the quick ratio can be estimated as ($5,308M - $2,213M) / $4,476M, or approximately 0.69. The analyst's stated blocker is therefore incorrect, although the FY2022 comparison still cannot be completed because FY2022 current liabilities were not provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1675,
+    "output_tokens": 699,
+    "total_tokens": 2374,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011738,
+    "latency_ms": 6840.431208023801,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1675,
+      "output_tokens": 699,
+      "total_tokens": 2374,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.839785082964227,
+      "duration": 6.840037417015992,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1675,
+            "output_tokens": 699,
+            "total_tokens": 2374,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1641,
+    "output_tokens": 241,
+    "total_tokens": 1882,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3080.1279290462844,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1641,
+      "output_tokens": 241,
+      "total_tokens": 1882,
+      "time_to_first_token": 3.079826854984276,
+      "duration": 3.079920046031475,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1641,
+            "output_tokens": 241,
+            "total_tokens": 1882,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3050586155,
+              "load_duration": 458153,
+              "prompt_eval_duration": 391466000,
+              "eval_duration": 2601313000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

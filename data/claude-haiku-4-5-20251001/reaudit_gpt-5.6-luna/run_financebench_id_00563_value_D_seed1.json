@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported FY22 Data Center revenue as $6,949 million, while its evidence states $6,043 million.",
+    "reported_metric": "revenue",
+    "reported_value": 6949.0,
+    "confidence": 0.99,
+    "rationale": "C01 is internally inconsistent: its reported value is 6,949, but the attached evidence says 6,043. The analyst and writer use 6,043, so the first discrepancy appears in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1822,
+    "output_tokens": 289,
+    "total_tokens": 2111,
+    "cached_tokens": 0,
+    "reasoning_tokens": 158,
+    "cost_usd": 0.0007112,
+    "latency_ms": 4314.5890409941785,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1822,
+      "output_tokens": 289,
+      "total_tokens": 2111,
+      "reasoning_tokens": 158,
+      "time_to_first_token": 4.314157125016209,
+      "duration": 4.31427720899228,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1822,
+            "output_tokens": 289,
+            "total_tokens": 2111,
+            "reasoning_tokens": 158,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2499,
+    "output_tokens": 179,
+    "total_tokens": 2678,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003394,
+    "latency_ms": 2800.3206659923308,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2499,
+      "output_tokens": 179,
+      "total_tokens": 2678,
+      "time_to_first_token": 2.7995128330076113,
+      "duration": 2.799742541043088,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2499,
+            "output_tokens": 179,
+            "total_tokens": 2678,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

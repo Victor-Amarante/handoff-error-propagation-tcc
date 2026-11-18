@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "A01 asserts that 3,142,308 USD_K is the highest regional EBITDAR contribution, although the extractor records no region labels linking the values to regions.",
+    "reported_metric": "Highest EBITDAR Contribution by Region (FY2022)",
+    "reported_value": 3142308.0,
+    "confidence": 0.96,
+    "rationale": "The extractor supplies numeric EBITDAR contributions but no region identities. The analyst therefore introduces an unsupported regional claim, which the writer repeats without naming a region."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1918,
+    "output_tokens": 458,
+    "total_tokens": 2376,
+    "cached_tokens": 0,
+    "reasoning_tokens": 324,
+    "cost_usd": 0.0009332,
+    "latency_ms": 5199.683999991976,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1918,
+      "output_tokens": 458,
+      "total_tokens": 2376,
+      "reasoning_tokens": 324,
+      "time_to_first_token": 5.198714958038181,
+      "duration": 5.198982541041914,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1918,
+            "output_tokens": 458,
+            "total_tokens": 2376,
+            "reasoning_tokens": 324,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2065,
+    "output_tokens": 320,
+    "total_tokens": 2385,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4077.0709909847938,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2065,
+      "output_tokens": 320,
+      "total_tokens": 2385,
+      "time_to_first_token": 4.076830115984194,
+      "duration": 4.076904874993488,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2065,
+            "output_tokens": 320,
+            "total_tokens": 2385,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4051328102,
+              "load_duration": 496390,
+              "prompt_eval_duration": 518933000,
+              "eval_duration": 3470727000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

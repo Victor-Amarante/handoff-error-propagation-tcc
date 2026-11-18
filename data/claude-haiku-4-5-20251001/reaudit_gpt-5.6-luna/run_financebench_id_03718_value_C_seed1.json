@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03718_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported 2-year revenue CAGR is consistent with the extracted FY2020 and FY2022 revenues.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the extracted revenues, (65,984 / 56,398)^(1/2) - 1 = approximately 8.2%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 944,
+    "output_tokens": 191,
+    "total_tokens": 1135,
+    "cached_tokens": 0,
+    "reasoning_tokens": 73,
+    "cost_usd": 0.000418,
+    "latency_ms": 2273.126417014282,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 944,
+      "output_tokens": 191,
+      "total_tokens": 1135,
+      "reasoning_tokens": 73,
+      "time_to_first_token": 2.272414083010517,
+      "duration": 2.2727155829779804,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 944,
+            "output_tokens": 191,
+            "total_tokens": 1135,
+            "reasoning_tokens": 73,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1503,
+    "output_tokens": 213,
+    "total_tokens": 1716,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002568,
+    "latency_ms": 3475.0524169648997,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1503,
+      "output_tokens": 213,
+      "total_tokens": 1716,
+      "time_to_first_token": 3.474569624988362,
+      "duration": 3.474637791980058,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1503,
+            "output_tokens": 213,
+            "total_tokens": 1716,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

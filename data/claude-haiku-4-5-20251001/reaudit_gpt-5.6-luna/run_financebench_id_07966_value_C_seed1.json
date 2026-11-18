@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07966_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2017 revenue was incorrectly extracted as USD 8,070 million.",
+    "reported_metric": "revenue",
+    "reported_value": 8070.0,
+    "confidence": 0.98,
+    "rationale": "The FY2017 revenue input is incorrect, so the derived FY2017 capex percentage and the three-year average are understated. The analyst and writer consistently propagate the extractor's erroneous input."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1626,
+    "output_tokens": 885,
+    "total_tokens": 2511,
+    "cached_tokens": 0,
+    "reasoning_tokens": 765,
+    "cost_usd": 0.0013872,
+    "latency_ms": 9249.864833022002,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1626,
+      "output_tokens": 885,
+      "total_tokens": 2511,
+      "reasoning_tokens": 765,
+      "time_to_first_token": 9.248757541005034,
+      "duration": 9.24927149998257,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1626,
+            "output_tokens": 885,
+            "total_tokens": 2511,
+            "reasoning_tokens": 765,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2307,
+    "output_tokens": 254,
+    "total_tokens": 2561,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003577,
+    "latency_ms": 3380.40008302778,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2307,
+      "output_tokens": 254,
+      "total_tokens": 2561,
+      "time_to_first_token": 3.3793633339810185,
+      "duration": 3.379665666958317,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2307,
+            "output_tokens": 254,
+            "total_tokens": 2561,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

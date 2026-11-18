@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extracted FY21/FY22 revenue pairs yield growth rates of approximately 63.5%, -9.9%, and 21.3%, matching the analyst output. The first segment therefore has the largest proportional increase, and no internally supported error appears in the writer's conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 971,
+    "output_tokens": 271,
+    "total_tokens": 1242,
+    "cached_tokens": 0,
+    "reasoning_tokens": 159,
+    "cost_usd": 0.0005193999999999999,
+    "latency_ms": 3524.322082987055,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 971,
+      "output_tokens": 271,
+      "total_tokens": 1242,
+      "reasoning_tokens": 159,
+      "time_to_first_token": 3.5235470829647966,
+      "duration": 3.5237689999630675,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 971,
+            "output_tokens": 271,
+            "total_tokens": 1242,
+            "reasoning_tokens": 159,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1514,
+    "output_tokens": 216,
+    "total_tokens": 1730,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002594,
+    "latency_ms": 3965.8176659722812,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1514,
+      "output_tokens": 216,
+      "total_tokens": 1730,
+      "time_to_first_token": 3.9650113750249147,
+      "duration": 3.965306582977064,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1514,
+            "output_tokens": 216,
+            "total_tokens": 1730,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

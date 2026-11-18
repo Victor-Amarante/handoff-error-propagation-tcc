@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03849_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor mislabeled the $5,162,080K revenue figure as being in FY2021 while calling it 2020 revenue; it should be treated as FY2020 revenue for the requested calculation.",
+    "reported_metric": "FY2020 revenue",
+    "reported_value": 5162080.0,
+    "confidence": 0.84,
+    "rationale": "The extractor output is internally inconsistent in assigning the 2020 revenue figure to FY2021. The analyst and writer use the figure as FY2020 revenue, yielding a mathematically consistent 7.8% average, so the numerical calculation itself is not erroneous."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 902,
+    "output_tokens": 668,
+    "total_tokens": 1570,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000982,
+    "latency_ms": 6211.916208034381,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 902,
+      "output_tokens": 668,
+      "total_tokens": 1570,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.2114250829909,
+      "duration": 6.211488624976482,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 902,
+            "output_tokens": 668,
+            "total_tokens": 1570,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 765,
+    "output_tokens": 652,
+    "total_tokens": 1417,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7418.301080993842,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 765,
+      "output_tokens": 652,
+      "total_tokens": 1417,
+      "time_to_first_token": 7.417990584974177,
+      "duration": 7.418068744998891,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 765,
+            "output_tokens": 652,
+            "total_tokens": 1417,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7392438168,
+              "load_duration": 460657,
+              "prompt_eval_duration": 195871000,
+              "eval_duration": 7125201000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

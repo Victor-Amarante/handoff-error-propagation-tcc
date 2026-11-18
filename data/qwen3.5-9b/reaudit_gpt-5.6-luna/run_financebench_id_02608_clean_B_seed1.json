@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the extracted figures, calculated margins, and reported three-year average are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The individual margins calculate to approximately 3.06%, 2.27%, and 3.12%; their average is about 2.81%, which rounds to 2.8%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 984,
+    "output_tokens": 241,
+    "total_tokens": 1225,
+    "cached_tokens": 0,
+    "reasoning_tokens": 126,
+    "cost_usd": 0.000486,
+    "latency_ms": 2859.431582968682,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 984,
+      "output_tokens": 241,
+      "total_tokens": 1225,
+      "reasoning_tokens": 126,
+      "time_to_first_token": 2.8587023749714717,
+      "duration": 2.8588714170036837,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 984,
+            "output_tokens": 241,
+            "total_tokens": 1225,
+            "reasoning_tokens": 126,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 893,
+    "output_tokens": 722,
+    "total_tokens": 1615,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8014.264032011852,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 893,
+      "output_tokens": 722,
+      "total_tokens": 1615,
+      "time_to_first_token": 8.01397749001626,
+      "duration": 8.014079292013776,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 893,
+            "output_tokens": 722,
+            "total_tokens": 1615,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7989091858,
+              "load_duration": 502301,
+              "prompt_eval_duration": 216389000,
+              "eval_duration": 7719828000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

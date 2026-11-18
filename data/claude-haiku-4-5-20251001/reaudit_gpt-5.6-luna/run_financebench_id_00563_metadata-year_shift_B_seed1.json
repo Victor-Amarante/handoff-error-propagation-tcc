@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly reported that segment 1 revenue grew 67.8% from FY21 to FY22, apparently by pairing FY21 revenue of 3,694 with FY22 revenue of 6,201 from a different segment.",
+    "reported_metric": "revenue_growth_rate_fy21_to_fy22_segment_1",
+    "reported_value": 67.8,
+    "confidence": 0.98,
+    "rationale": "The extracted values support segment pairings of 3,694 to 6,043, 6,887 to 6,201, and 5,607 to 6,805, yielding approximately 63.6%, -10.0%, and 21.3%, respectively. The analyst's 67.8% combines values from different segments, causing the incorrect final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 964,
+    "output_tokens": 709,
+    "total_tokens": 1673,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010436,
+    "latency_ms": 7357.116083032452,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 964,
+      "output_tokens": 709,
+      "total_tokens": 1673,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.356604166037869,
+      "duration": 7.356763083022088,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 964,
+            "output_tokens": 709,
+            "total_tokens": 1673,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1509,
+    "output_tokens": 215,
+    "total_tokens": 1724,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002584,
+    "latency_ms": 3646.671750000678,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1509,
+      "output_tokens": 215,
+      "total_tokens": 1724,
+      "time_to_first_token": 3.645738249993883,
+      "duration": 3.646027665992733,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1509,
+            "output_tokens": 215,
+            "total_tokens": 1724,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

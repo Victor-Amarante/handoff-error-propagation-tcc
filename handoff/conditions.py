@@ -7,6 +7,13 @@ A unica variavel manipulada no experimento e o contrato de handoff:
     C - typed + lineage    (estrutura + provenance, SEM acesso a fonte)
     D - typed + lineage + evidence
 
+Condicoes complementares, pedidas no parecer do orientador e rodadas a parte
+(logs em data/<modelo>/logs_parecer/), nunca misturadas as quatro principais:
+
+    E - typed + evidence, SEM lineage  (fecha o fatorial lineage x evidencia)
+    R - B com um campo `reasoning` no schema do Analista (so controle)
+    V - D com instrucao explicita de conferir o valor contra a evidencia
+
 Controle de validade interna (secao 8.4 da proposta): em C, `source_id` e
 `page` sao apenas metadados -- o downstream nao pode dereferenciar a fonte.
 Isso e garantido por construcao: nenhum estagio downstream recebe o documento
@@ -24,6 +31,13 @@ class Condition(StrEnum):
     B = "B"
     C = "C"
     D = "D"
+    E = "E"
+    R = "R"
+    V = "V"
+
+
+#: As quatro condicoes do desenho principal (RQ1-RQ3).
+MAIN_CONDITIONS: tuple["Condition", ...] = (Condition.A, Condition.B, Condition.C, Condition.D)
 
 
 class Stage(StrEnum):
@@ -66,6 +80,9 @@ CAPS: dict[Condition, Capabilities] = {
     Condition.B: Capabilities(structure=True, lineage=False, evidence=False),
     Condition.C: Capabilities(structure=True, lineage=True, evidence=False),
     Condition.D: Capabilities(structure=True, lineage=True, evidence=True),
+    Condition.E: Capabilities(structure=True, lineage=False, evidence=True),
+    Condition.R: Capabilities(structure=True, lineage=False, evidence=False),
+    Condition.V: Capabilities(structure=True, lineage=True, evidence=True),
 }
 
 

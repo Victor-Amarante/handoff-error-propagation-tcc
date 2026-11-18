@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00605_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor attributed the $328.1 million Q4 stock-repurchase cost to FY2023, although the evidence explicitly says it occurred in Q4 of fiscal 2022.",
+    "reported_metric": "share_repurchases_cost",
+    "reported_value": 328.1,
+    "confidence": 0.99,
+    "rationale": "The first error appears in extractor claim C01: its year is labeled 2023 while its evidence states fiscal 2022. The analyst then incorrectly computes 328.1/900.0 = 36.5% using two FY2022 figures, and the writer carries that error forward as a FY2023 answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1129,
+    "output_tokens": 271,
+    "total_tokens": 1400,
+    "cached_tokens": 0,
+    "reasoning_tokens": 107,
+    "cost_usd": 0.000551,
+    "latency_ms": 3240.260957973078,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1129,
+      "output_tokens": 271,
+      "total_tokens": 1400,
+      "reasoning_tokens": 107,
+      "time_to_first_token": 3.239539334026631,
+      "duration": 3.2398066670284607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1129,
+            "output_tokens": 271,
+            "total_tokens": 1400,
+            "reasoning_tokens": 107,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1702,
+    "output_tokens": 201,
+    "total_tokens": 1903,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002707,
+    "latency_ms": 3370.922249974683,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1702,
+      "output_tokens": 201,
+      "total_tokens": 1903,
+      "time_to_first_token": 3.370397332997527,
+      "duration": 3.370529042033013,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1702,
+            "output_tokens": 201,
+            "total_tokens": 1903,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

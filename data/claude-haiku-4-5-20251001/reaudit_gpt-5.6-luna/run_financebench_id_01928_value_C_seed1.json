@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01928_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, and writer consistently report Adjusted EBITDA of $2,321 million for FY 2023.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages preserve the same metric, value, unit, year, and source provenance, with no internal inconsistency or evidence of a factual error in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 784,
+    "output_tokens": 160,
+    "total_tokens": 944,
+    "cached_tokens": 0,
+    "reasoning_tokens": 43,
+    "cost_usd": 0.0003488,
+    "latency_ms": 2260.824542026967,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 784,
+      "output_tokens": 160,
+      "total_tokens": 944,
+      "reasoning_tokens": 43,
+      "time_to_first_token": 2.2601802910212427,
+      "duration": 2.2603939580149017,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 784,
+            "output_tokens": 160,
+            "total_tokens": 944,
+            "reasoning_tokens": 43,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1340,
+    "output_tokens": 169,
+    "total_tokens": 1509,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002185,
+    "latency_ms": 3345.626041991636,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1340,
+      "output_tokens": 169,
+      "total_tokens": 1509,
+      "time_to_first_token": 3.3447149579878896,
+      "duration": 3.345013916026801,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1340,
+            "output_tokens": 169,
+            "total_tokens": 1509,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

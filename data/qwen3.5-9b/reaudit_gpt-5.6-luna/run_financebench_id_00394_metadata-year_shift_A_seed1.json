@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Corporate & Investment Bank net income for the three months ended June 30 as negative $45 million.",
+    "reported_metric": "Corporate & Investment Bank net income",
+    "reported_value": -45.0,
+    "confidence": 0.93,
+    "rationale": "The extracted segment figures are internally inconsistent with the reported total: using -$45 million for Corporate & Investment Bank, the listed segment net incomes sum to $4,879 million, not the reported $8,649 million. The analyst's later claim that the data covers only 2023 is also unsupported, but the numerical extraction error appears first."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 838,
+    "output_tokens": 1392,
+    "total_tokens": 2230,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1223,
+    "cost_usd": 0.001838,
+    "latency_ms": 13619.089291023556,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 838,
+      "output_tokens": 1392,
+      "total_tokens": 2230,
+      "reasoning_tokens": 1223,
+      "time_to_first_token": 13.618590332975145,
+      "duration": 13.618761833000463,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 838,
+            "output_tokens": 1392,
+            "total_tokens": 2230,
+            "reasoning_tokens": 1223,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 660,
+    "output_tokens": 187,
+    "total_tokens": 847,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2441.2563979858533,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 660,
+      "output_tokens": 187,
+      "total_tokens": 847,
+      "time_to_first_token": 2.440987170964945,
+      "duration": 2.44107406999683,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 660,
+            "output_tokens": 187,
+            "total_tokens": 847,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2415748512,
+              "load_duration": 438796,
+              "prompt_eval_duration": 201000000,
+              "eval_duration": 2165917000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

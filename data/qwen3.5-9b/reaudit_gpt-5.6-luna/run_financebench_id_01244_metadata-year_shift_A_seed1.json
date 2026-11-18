@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01244_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor claimed that CVS Health's FY2022 Q2 quarterly cash dividend was $0.55 million and associated it with 2023.",
+    "reported_metric": "Quarterly cash dividend to common shareholders (USD millions)",
+    "reported_value": 0.55,
+    "confidence": 0.95,
+    "rationale": "The extractor is the first stage introducing the questionable claim. It conflates FY2022 Q2 with a 2023 payment and reports $0.55 million; the analyst and writer merely repeat and rationalize that unsupported amount and timing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 720,
+    "output_tokens": 577,
+    "total_tokens": 1297,
+    "cached_tokens": 0,
+    "reasoning_tokens": 432,
+    "cost_usd": 0.0008364,
+    "latency_ms": 5701.870999997482,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 720,
+      "output_tokens": 577,
+      "total_tokens": 1297,
+      "reasoning_tokens": 432,
+      "time_to_first_token": 5.701455875008833,
+      "duration": 5.7015626660431735,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 720,
+            "output_tokens": 577,
+            "total_tokens": 1297,
+            "reasoning_tokens": 432,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 534,
+    "output_tokens": 281,
+    "total_tokens": 815,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3289.349853002932,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 534,
+      "output_tokens": 281,
+      "total_tokens": 815,
+      "time_to_first_token": 3.289082036993932,
+      "duration": 3.2891547000035644,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 534,
+            "output_tokens": 281,
+            "total_tokens": 815,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3264174236,
+              "load_duration": 483422,
+              "prompt_eval_duration": 143271000,
+              "eval_duration": 3071214000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

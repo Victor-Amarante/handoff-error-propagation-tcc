@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00678_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst claimed that Boeing's product gross margin improved significantly in FY2022 despite having no FY2021 product-cost figure needed to compare margin percentages.",
+    "reported_metric": "product gross margin improvement",
+    "reported_value": null,
+    "confidence": 0.88,
+    "rationale": "The trace provides FY2021 product sales but no FY2021 product costs, so an improvement in gross-margin percentage cannot be established. The analyst nevertheless initially asserted significant improvement. The later writer output correctly qualified the conclusion. The analyst also incorrectly described FY2022 total revenue as the sum of product and service sales: $64,277M + $10,715M = $74,992M, not the reported $66,608M."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1833,
+    "output_tokens": 1209,
+    "total_tokens": 3042,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0018174,
+    "latency_ms": 11702.196915983222,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1833,
+      "output_tokens": 1209,
+      "total_tokens": 3042,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.70173212501686,
+      "duration": 11.701866917021107,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1833,
+            "output_tokens": 1209,
+            "total_tokens": 3042,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1831,
+    "output_tokens": 236,
+    "total_tokens": 2067,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3177.3843419505283,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1831,
+      "output_tokens": 236,
+      "total_tokens": 2067,
+      "time_to_first_token": 3.177095527003985,
+      "duration": 3.177167861023918,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1831,
+            "output_tokens": 236,
+            "total_tokens": 2067,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3149505704,
+              "load_duration": 529240,
+              "prompt_eval_duration": 468328000,
+              "eval_duration": 2567730000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

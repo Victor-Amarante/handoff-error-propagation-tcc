@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03620_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2022 PepsiCo operating profit was reported as USD 15,112 million, although the cited evidence shows 11,512 million.",
+    "reported_metric": "Operating Profit",
+    "reported_value": 15112.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value conflicts directly with its evidence. The analyst then propagated C01 and also failed to incorporate depreciation and amortization and capex, but the first error appeared in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1003,
+    "output_tokens": 301,
+    "total_tokens": 1304,
+    "cached_tokens": 0,
+    "reasoning_tokens": 172,
+    "cost_usd": 0.0005618,
+    "latency_ms": 3238.094665983226,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1003,
+      "output_tokens": 301,
+      "total_tokens": 1304,
+      "reasoning_tokens": 172,
+      "time_to_first_token": 3.23749016597867,
+      "duration": 3.237710874993354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1003,
+            "output_tokens": 301,
+            "total_tokens": 1304,
+            "reasoning_tokens": 172,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 913,
+    "output_tokens": 265,
+    "total_tokens": 1178,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3295.3094210242853,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 913,
+      "output_tokens": 265,
+      "total_tokens": 1178,
+      "time_to_first_token": 3.295076132984832,
+      "duration": 3.2951496290042996,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 913,
+            "output_tokens": 265,
+            "total_tokens": 1178,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3270292020,
+              "load_duration": 608515,
+              "prompt_eval_duration": 240384000,
+              "eval_duration": 2956140000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

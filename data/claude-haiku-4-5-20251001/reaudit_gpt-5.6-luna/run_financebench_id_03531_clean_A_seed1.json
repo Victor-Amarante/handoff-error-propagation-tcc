@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03531_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; all pipeline stages consistently report Nike's FY2019 total current assets as $16,525 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer all state the same value of $16,525 million, and the trace provides no contradictory provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 577,
+    "output_tokens": 152,
+    "total_tokens": 729,
+    "cached_tokens": 0,
+    "reasoning_tokens": 38,
+    "cost_usd": 0.00029780000000000003,
+    "latency_ms": 2373.5834170365706,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 577,
+      "output_tokens": 152,
+      "total_tokens": 729,
+      "reasoning_tokens": 38,
+      "time_to_first_token": 2.373105124977883,
+      "duration": 2.3732039169990458,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 577,
+            "output_tokens": 152,
+            "total_tokens": 729,
+            "reasoning_tokens": 38,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1041,
+    "output_tokens": 143,
+    "total_tokens": 1184,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001756,
+    "latency_ms": 2354.3590410263278,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1041,
+      "output_tokens": 143,
+      "total_tokens": 1184,
+      "time_to_first_token": 2.3533587920246646,
+      "duration": 2.3536511250422336,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1041,
+            "output_tokens": 143,
+            "total_tokens": 1184,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

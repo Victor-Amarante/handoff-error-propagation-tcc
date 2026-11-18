@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05718_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "American Water Works paid approximately $10.4 billion in cash dividends for fiscal year 2020.",
+    "reported_metric": "FY2020 cash dividends paid (USD billions)",
+    "reported_value": 10.4,
+    "confidence": 0.98,
+    "rationale": "The extractor provides only a FY2021 dividend figure of $389 million and no FY2020 amount. The analyst introduces the unsupported $10.4 billion figure, making it the first incorrect claim; the writer's subsequent $0 answer is also unsupported but occurs later."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 865,
+    "output_tokens": 502,
+    "total_tokens": 1367,
+    "cached_tokens": 0,
+    "reasoning_tokens": 361,
+    "cost_usd": 0.0007754,
+    "latency_ms": 5262.38062500488,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 865,
+      "output_tokens": 502,
+      "total_tokens": 1367,
+      "reasoning_tokens": 361,
+      "time_to_first_token": 5.261019208992366,
+      "duration": 5.2613874589442275,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 865,
+            "output_tokens": 502,
+            "total_tokens": 1367,
+            "reasoning_tokens": 361,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 695,
+    "output_tokens": 202,
+    "total_tokens": 897,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2516.040141985286,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 695,
+      "output_tokens": 202,
+      "total_tokens": 897,
+      "time_to_first_token": 2.5158036000211723,
+      "duration": 2.51587694499176,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 695,
+            "output_tokens": 202,
+            "total_tokens": 897,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2490125336,
+              "load_duration": 459466,
+              "prompt_eval_duration": 213547000,
+              "eval_duration": 2224638000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

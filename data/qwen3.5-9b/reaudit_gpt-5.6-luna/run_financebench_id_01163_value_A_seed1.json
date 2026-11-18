@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01163_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Investing activities brought in the most cash flow in FY2023 at $564 million.",
+    "reported_metric": "highest net cash flow among operations, investing, and financing activities",
+    "reported_value": 564.0,
+    "confidence": 0.99,
+    "rationale": "The analyst initially identified investing as the top category, despite the extracted figures showing operations at $8,541 million, investing at $564 million, and financing at -$7,447 million. The analyst later corrected itself, and the writer's final answer is consistent with the corrected comparison."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2338,
+    "output_tokens": 559,
+    "total_tokens": 2897,
+    "cached_tokens": 0,
+    "reasoning_tokens": 416,
+    "cost_usd": 0.0011384000000000001,
+    "latency_ms": 5840.308792016003,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2338,
+      "output_tokens": 559,
+      "total_tokens": 2897,
+      "reasoning_tokens": 416,
+      "time_to_first_token": 5.8395517080207355,
+      "duration": 5.839808750024531,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2338,
+            "output_tokens": 559,
+            "total_tokens": 2897,
+            "reasoning_tokens": 416,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2305,
+    "output_tokens": 264,
+    "total_tokens": 2569,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3652.311374025885,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2305,
+      "output_tokens": 264,
+      "total_tokens": 2569,
+      "time_to_first_token": 3.6520796670229174,
+      "duration": 3.652152945054695,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2305,
+            "output_tokens": 264,
+            "total_tokens": 2569,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3627284586,
+              "load_duration": 1223839,
+              "prompt_eval_duration": 553193000,
+              "eval_duration": 2976056000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

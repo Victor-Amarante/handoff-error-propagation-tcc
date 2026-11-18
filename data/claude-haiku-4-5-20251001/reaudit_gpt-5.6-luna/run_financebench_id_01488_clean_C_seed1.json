@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01488_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Johnson & Johnson's Consumer Health segment will be treated as a discontinued operation from August 30, 2023 onward.",
+    "reported_metric": "discontinued_operation_business_segment",
+    "reported_value": 1.0,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst only carry an opaque ratio value for the business-segment metric; neither identifies Consumer Health. The writer introduces the unsupported segment name and separation explanation, making W01 the first incorrect claim in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1055,
+    "output_tokens": 342,
+    "total_tokens": 1397,
+    "cached_tokens": 0,
+    "reasoning_tokens": 212,
+    "cost_usd": 0.0006213999999999999,
+    "latency_ms": 3502.881707972847,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1055,
+      "output_tokens": 342,
+      "total_tokens": 1397,
+      "reasoning_tokens": 212,
+      "time_to_first_token": 3.5023545830044895,
+      "duration": 3.50253745802911,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1055,
+            "output_tokens": 342,
+            "total_tokens": 1397,
+            "reasoning_tokens": 212,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1602,
+    "output_tokens": 191,
+    "total_tokens": 1793,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002557,
+    "latency_ms": 3554.236750002019,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1602,
+      "output_tokens": 191,
+      "total_tokens": 1793,
+      "time_to_first_token": 3.5534524170216173,
+      "duration": 3.5537291250075214,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1602,
+            "output_tokens": 191,
+            "total_tokens": 1793,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

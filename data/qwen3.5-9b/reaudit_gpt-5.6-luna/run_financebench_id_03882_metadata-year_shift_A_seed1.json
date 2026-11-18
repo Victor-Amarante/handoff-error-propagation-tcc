@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03882_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.86,
+    "rationale": "The trace provides a FY2021 net AR value of $1,615.9 million but no FY2020 net AR value. The analyst and writer correctly conclude that FY2020 net AR cannot be determined from the supplied balance-sheet details. Although the unit-scale notation is unusual, the trace does not establish a factual error from it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 769,
+    "output_tokens": 488,
+    "total_tokens": 1257,
+    "cached_tokens": 0,
+    "reasoning_tokens": 357,
+    "cost_usd": 0.0007394000000000001,
+    "latency_ms": 5260.390500014182,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 769,
+      "output_tokens": 488,
+      "total_tokens": 1257,
+      "reasoning_tokens": 357,
+      "time_to_first_token": 5.260075542028062,
+      "duration": 5.2601939589949325,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 769,
+            "output_tokens": 488,
+            "total_tokens": 1257,
+            "reasoning_tokens": 357,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 586,
+    "output_tokens": 196,
+    "total_tokens": 782,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2489.0400510048494,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 586,
+      "output_tokens": 196,
+      "total_tokens": 782,
+      "time_to_first_token": 2.4888056299532764,
+      "duration": 2.488877934985794,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 586,
+            "output_tokens": 196,
+            "total_tokens": 782,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2463266301,
+              "load_duration": 437055,
+              "prompt_eval_duration": 156320000,
+              "eval_duration": 2235809000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

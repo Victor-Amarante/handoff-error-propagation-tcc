@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05915_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "CVS Health FY2019 revenue was $194,579 million.",
+    "reported_metric": "FY2019 revenue",
+    "reported_value": 194579.0,
+    "confidence": 0.96,
+    "rationale": "The $194,579 million revenue figure is the FY2018 revenue needed by the question, but the extractor mislabeled it as FY2019. This caused the analyst and writer to conclude that FY2018 revenue was unavailable, preventing the ratio calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 918,
+    "output_tokens": 454,
+    "total_tokens": 1372,
+    "cached_tokens": 0,
+    "reasoning_tokens": 329,
+    "cost_usd": 0.0007283999999999999,
+    "latency_ms": 5035.710958007257,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 918,
+      "output_tokens": 454,
+      "total_tokens": 1372,
+      "reasoning_tokens": 329,
+      "time_to_first_token": 5.034920500009321,
+      "duration": 5.0352209999691695,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 918,
+            "output_tokens": 454,
+            "total_tokens": 1372,
+            "reasoning_tokens": 329,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1450,
+    "output_tokens": 163,
+    "total_tokens": 1613,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002265,
+    "latency_ms": 3032.8760420088656,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1450,
+      "output_tokens": 163,
+      "total_tokens": 1613,
+      "time_to_first_token": 3.0322134580346756,
+      "duration": 3.032352375041228,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1450,
+            "output_tokens": 163,
+            "total_tokens": 1613,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

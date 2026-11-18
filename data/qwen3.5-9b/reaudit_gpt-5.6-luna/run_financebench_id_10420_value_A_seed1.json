@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10420_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: average total assets are ($33,863M + $32,963M)/2 = $33,413M, and -$546M/$33,413M = -1.63% when rounded to two decimals."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 753,
+    "output_tokens": 185,
+    "total_tokens": 938,
+    "cached_tokens": 0,
+    "reasoning_tokens": 78,
+    "cost_usd": 0.0003726,
+    "latency_ms": 2550.790584005881,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 753,
+      "output_tokens": 185,
+      "total_tokens": 938,
+      "reasoning_tokens": 78,
+      "time_to_first_token": 2.550178166013211,
+      "duration": 2.550334833038505,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 753,
+            "output_tokens": 185,
+            "total_tokens": 938,
+            "reasoning_tokens": 78,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 587,
+    "output_tokens": 271,
+    "total_tokens": 858,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3227.4287290056236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 587,
+      "output_tokens": 271,
+      "total_tokens": 858,
+      "time_to_first_token": 3.2271827430231497,
+      "duration": 3.227266520028934,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 587,
+            "output_tokens": 271,
+            "total_tokens": 858,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3201741575,
+              "load_duration": 489716,
+              "prompt_eval_duration": 155495000,
+              "eval_duration": 2996907000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

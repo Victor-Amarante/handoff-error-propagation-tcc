@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00685_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Best Buy's 2023 revenue was reported as $64,298 million, although the cited evidence states $46,298 million and the cost of sales plus gross profit also equals $46,298 million.",
+    "reported_metric": "revenue",
+    "reported_value": 64298.0,
+    "confidence": 0.99,
+    "rationale": "C01 conflicts directly with its evidence and with the internally consistent calculation 36,386 + 9,912 = 46,298. This erroneous revenue value propagates into the 2023 gross-margin calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2245,
+    "output_tokens": 272,
+    "total_tokens": 2517,
+    "cached_tokens": 0,
+    "reasoning_tokens": 128,
+    "cost_usd": 0.0007754,
+    "latency_ms": 3167.2708750120364,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2245,
+      "output_tokens": 272,
+      "total_tokens": 2517,
+      "reasoning_tokens": 128,
+      "time_to_first_token": 3.166563834005501,
+      "duration": 3.166817708988674,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2245,
+            "output_tokens": 272,
+            "total_tokens": 2517,
+            "reasoning_tokens": 128,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3009,
+    "output_tokens": 200,
+    "total_tokens": 3209,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004009,
+    "latency_ms": 3587.188499979675,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3009,
+      "output_tokens": 200,
+      "total_tokens": 3209,
+      "time_to_first_token": 3.5861897920258343,
+      "duration": 3.5864861250156537,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3009,
+            "output_tokens": 200,
+            "total_tokens": 3209,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10420_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the FY2022 ROA calculation is internally consistent: -546 / ((38,363 + 32,963) / 2) × 100 = -1.53%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures yield average total assets of 35,663 USD million, and net income divided by that average rounds to -1.53%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1106,
+    "output_tokens": 219,
+    "total_tokens": 1325,
+    "cached_tokens": 0,
+    "reasoning_tokens": 85,
+    "cost_usd": 0.000484,
+    "latency_ms": 2659.3025000183843,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1106,
+      "output_tokens": 219,
+      "total_tokens": 1325,
+      "reasoning_tokens": 85,
+      "time_to_first_token": 2.659019000013359,
+      "duration": 2.6590767910238355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1106,
+            "output_tokens": 219,
+            "total_tokens": 1325,
+            "reasoning_tokens": 85,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1063,
+    "output_tokens": 147,
+    "total_tokens": 1210,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2119.47108595632,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1063,
+      "output_tokens": 147,
+      "total_tokens": 1210,
+      "time_to_first_token": 2.119178243970964,
+      "duration": 2.1192666519782506,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1063,
+            "output_tokens": 147,
+            "total_tokens": 1210,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2087908666,
+              "load_duration": 477861,
+              "prompt_eval_duration": 300548000,
+              "eval_duration": 1707283000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

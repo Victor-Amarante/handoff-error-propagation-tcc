@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00080_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PayPal's FY2022 working capital was reported as 12,416 USD billions, although the calculation supports 12,416 USD millions, or approximately 12.4 USD billions.",
+    "reported_metric": "working_capital",
+    "reported_value": 12416.0,
+    "confidence": 0.99,
+    "rationale": "The analyst's figures are internally consistent: 57,517 minus 45,101 equals 12,416 USD millions. The writer's structured claim labels 12,416 as USD billions, creating a unit error; the prose correctly converts it to approximately $12.4 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1210,
+    "output_tokens": 567,
+    "total_tokens": 1777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 412,
+    "cost_usd": 0.0009224,
+    "latency_ms": 5971.284375002142,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1210,
+      "output_tokens": 567,
+      "total_tokens": 1777,
+      "reasoning_tokens": 412,
+      "time_to_first_token": 5.970737583003938,
+      "duration": 5.970910583040677,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1210,
+            "output_tokens": 567,
+            "total_tokens": 1777,
+            "reasoning_tokens": 412,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1168,
+    "output_tokens": 2767,
+    "total_tokens": 3935,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 28974.201541976072,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1168,
+      "output_tokens": 2767,
+      "total_tokens": 3935,
+      "time_to_first_token": 28.973956161004025,
+      "duration": 28.97404090705095,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1168,
+            "output_tokens": 2767,
+            "total_tokens": 3935,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 28948623727,
+              "load_duration": 413386,
+              "prompt_eval_duration": 321456000,
+              "eval_duration": 28575185000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

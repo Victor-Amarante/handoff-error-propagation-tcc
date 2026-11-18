@@ -105,6 +105,33 @@ atribuicao de estagio. O slug vem do `model_id` (ex: `gpt-5.6-luna`,
 `claude-haiku-4-5-20251001`, `qwen3.5-9b-mlx`), entao os tres experimentos
 nunca escrevem no mesmo lugar nem por acidente.
 
+## Revisao do parecer do orientador (nov. 2026)
+
+Rodadas complementares, sempre reaproveitando o cache do Extrator (o estado
+corrompido e o mesmo da rodada principal) e gravando em pastas proprias:
+
+```bash
+# condicoes E (tipado + evidencia, sem lineage), V (D + instrucao de conferencia)
+# e R (B com campo `reasoning`, so controle) -> data/<modelo>/logs_parecer/
+HANDOFF_LOG_SUBDIR=logs_parecer uv run python scripts/run_experiment.py --conditions E,V --include-clean --cache-only
+HANDOFF_LOG_SUBDIR=logs_parecer uv run python scripts/run_experiment.py --conditions R --error-types "" --include-clean --cache-only
+# teste A/A: replica dos controles de 50 perguntas -> data/<modelo>/logs_aa/
+HANDOFF_LOG_SUBDIR=logs_aa uv run python scripts/run_experiment.py --conditions A,B,C,D --error-types "" --include-clean --cache-only --questions 50
+# auditor GPT relendo os traces de outro pipeline -> data/<pipeline>/reaudit_gpt-5.6-luna/
+HANDOFF_PROVIDER=openai HANDOFF_MODEL=gpt-5.6-luna uv run python scripts/reaudit.py --pipeline qwen3.5-9b
+# Qwen (A5 e B7), na maquina com GPU: refaz o cache a partir dos logs e roda tudo
+bash scripts/qwen_parecer.sh
+
+# analises (sem API)
+uv run python scripts/parecer_reanalise.py     # A1, A4, A6, B1, B3, B5, B6, Holm, custo por ganho
+uv run python scripts/build_tables.py          # tabelas do artigo (RCCA por conteudo, placebo, retencao)
+uv run python scripts/build_complementares.py  # E, V, R, A/A e auditoria cruzada
+uv run python scripts/build_apendice.py        # apendice com os prompts literais
+uv run python scripts/concordancia_rotulagem.py  # depois de rotular analysis/rotulagem_manual.csv
+```
+
+`--shard k/n` divide as celulas pendentes entre processos paralelos.
+
 ## Os dois estudos (secao 7 da proposta)
 
 | | injecao em | roda por condicao | classes de erro | mede |

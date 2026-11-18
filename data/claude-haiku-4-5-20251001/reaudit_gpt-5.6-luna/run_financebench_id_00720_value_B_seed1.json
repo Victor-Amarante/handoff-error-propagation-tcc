@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The trace consistently treats gross margin as not applicable to American Express, a financial-services company without a traditional cost of goods sold. The writer’s explanation aligns with the analyst output, and no claim IDs or internally contradictory values indicate an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 868,
+    "output_tokens": 244,
+    "total_tokens": 1112,
+    "cached_tokens": 0,
+    "reasoning_tokens": 137,
+    "cost_usd": 0.00046640000000000006,
+    "latency_ms": 3222.81041595852,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 868,
+      "output_tokens": 244,
+      "total_tokens": 1112,
+      "reasoning_tokens": 137,
+      "time_to_first_token": 3.222165708022658,
+      "duration": 3.222313500009477,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 868,
+            "output_tokens": 244,
+            "total_tokens": 1112,
+            "reasoning_tokens": 137,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1371,
+    "output_tokens": 149,
+    "total_tokens": 1520,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002116,
+    "latency_ms": 2859.2697079875506,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1371,
+      "output_tokens": 149,
+      "total_tokens": 1520,
+      "time_to_first_token": 2.8584345830022357,
+      "duration": 2.8587232920108363,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1371,
+            "output_tokens": 149,
+            "total_tokens": 1520,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

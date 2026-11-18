@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01858_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "3M had a 65-year consecutive dividend-increase streak, incorrectly attributed to 2025 despite the evidence source being a 2023 Q2 filing.",
+    "reported_metric": "dividend increase streak",
+    "reported_value": 65.0,
+    "confidence": 0.97,
+    "rationale": "The extractor is the first stage introducing the inconsistency: source_id 3M_2023Q2_10Q conflicts with the claim's year 2025. The analyst and writer merely propagate claim C01 without adding a new factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 857,
+    "output_tokens": 582,
+    "total_tokens": 1439,
+    "cached_tokens": 0,
+    "reasoning_tokens": 438,
+    "cost_usd": 0.0008698,
+    "latency_ms": 6012.633208010811,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 582,
+      "total_tokens": 1439,
+      "reasoning_tokens": 438,
+      "time_to_first_token": 6.011862665996887,
+      "duration": 6.011991790961474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 582,
+            "total_tokens": 1439,
+            "reasoning_tokens": 438,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 708,
+    "output_tokens": 154,
+    "total_tokens": 862,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2077.7609910001047,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 708,
+      "output_tokens": 154,
+      "total_tokens": 862,
+      "time_to_first_token": 2.0775105729699135,
+      "duration": 2.0775821449933574,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 708,
+            "output_tokens": 154,
+            "total_tokens": 862,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2048230683,
+              "load_duration": 456730,
+              "prompt_eval_duration": 216517000,
+              "eval_duration": 1762517000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

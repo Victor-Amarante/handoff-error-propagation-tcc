@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01254_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extractor and analyst report the same FY2022 dividend-per-share value, and the writer reproduces it consistently. The trace provides no source evidence or claim IDs establishing that $0.01 is factually incorrect; the RATIO unit is ambiguous but does not by itself prove an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 637,
+    "output_tokens": 433,
+    "total_tokens": 1070,
+    "cached_tokens": 0,
+    "reasoning_tokens": 320,
+    "cost_usd": 0.000647,
+    "latency_ms": 4801.78545799572,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 637,
+      "output_tokens": 433,
+      "total_tokens": 1070,
+      "reasoning_tokens": 320,
+      "time_to_first_token": 4.801389542000834,
+      "duration": 4.801495667023119,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 637,
+            "output_tokens": 433,
+            "total_tokens": 1070,
+            "reasoning_tokens": 320,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1131,
+    "output_tokens": 175,
+    "total_tokens": 1306,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002006,
+    "latency_ms": 3169.926291971933,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1131,
+      "output_tokens": 175,
+      "total_tokens": 1306,
+      "time_to_first_token": 3.1694396669627167,
+      "duration": 3.169561916962266,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1131,
+            "output_tokens": 175,
+            "total_tokens": 1306,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

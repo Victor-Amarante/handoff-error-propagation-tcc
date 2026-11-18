@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04672_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Gross property, plant and equipment of $24,873 million was assigned to FY2019 despite being labeled as the FY2018 gross PP&E metric and supporting the FY2018 net balance.",
+    "reported_metric": "property_plant_and_equipment_gross_2018",
+    "reported_value": 24873.0,
+    "confidence": 0.88,
+    "rationale": "The extractor output contains an internal year inconsistency: C01 is labeled as the 2018 gross PP&E metric but has year 2019. The $24,873 million amount reconciles with C02 and C03 ($24,873m − $16,135m = $8,738m), indicating the year attribution is the first error. The analyst’s FY2018 net PP&E calculation is otherwise supported by C03, and the writer’s $8.7 billion is a rounded presentation of $8.738 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1207,
+    "output_tokens": 730,
+    "total_tokens": 1937,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011174000000000002,
+    "latency_ms": 6984.611332998611,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1207,
+      "output_tokens": 730,
+      "total_tokens": 1937,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.983686166990083,
+      "duration": 6.984081333968788,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1207,
+            "output_tokens": 730,
+            "total_tokens": 1937,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1153,
+    "output_tokens": 1788,
+    "total_tokens": 2941,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 19644.629568967503,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1153,
+      "output_tokens": 1788,
+      "total_tokens": 2941,
+      "time_to_first_token": 19.64439334900817,
+      "duration": 19.64446655201027,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1153,
+            "output_tokens": 1788,
+            "total_tokens": 2941,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 19618939874,
+              "load_duration": 460278,
+              "prompt_eval_duration": 328719000,
+              "eval_duration": 19209350000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

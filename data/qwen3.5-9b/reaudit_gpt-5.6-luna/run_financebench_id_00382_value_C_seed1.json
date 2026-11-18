@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer reported the highest contribution value, 1,342,308 USD_K, as though it were the name of the region.",
+    "reported_metric": "Highest EBITDAR Contribution by Region in FY2022 for MGM",
+    "reported_value": 1342308.0,
+    "confidence": 0.98,
+    "rationale": "The numeric maximum is internally consistent with the extracted values, but no region labels appear anywhere in the trace. The writer therefore failed to answer which region and rendered the value itself as the region; the first such error appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2032,
+    "output_tokens": 657,
+    "total_tokens": 2689,
+    "cached_tokens": 0,
+    "reasoning_tokens": 511,
+    "cost_usd": 0.0011948,
+    "latency_ms": 6715.50633397419,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2032,
+      "output_tokens": 657,
+      "total_tokens": 2689,
+      "reasoning_tokens": 511,
+      "time_to_first_token": 6.71497625001939,
+      "duration": 6.7151421250309795,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2032,
+            "output_tokens": 657,
+            "total_tokens": 2689,
+            "reasoning_tokens": 511,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2196,
+    "output_tokens": 235,
+    "total_tokens": 2431,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3309.0968900360167,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2196,
+      "output_tokens": 235,
+      "total_tokens": 2431,
+      "time_to_first_token": 3.308808703965042,
+      "duration": 3.3088961360044777,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2196,
+            "output_tokens": 235,
+            "total_tokens": 2431,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3276683127,
+              "load_duration": 481912,
+              "prompt_eval_duration": 548379000,
+              "eval_duration": 2626755000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

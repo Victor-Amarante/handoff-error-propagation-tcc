@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02049_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer concluded that JPM's VaR did not decrease even though the prior-year VaR was unavailable for comparison.",
+    "reported_metric": "Average total VaR for JPM in Q2 2023",
+    "reported_value": 7.0,
+    "confidence": 0.97,
+    "rationale": "The extractor and analyst only report a 2023 VaR of 7.0 and make no comparison claim. The writer improperly leads with “No,” which asserts a conclusion that cannot be determined from the available data, while simultaneously acknowledging that the prior-year figure is missing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 856,
+    "output_tokens": 486,
+    "total_tokens": 1342,
+    "cached_tokens": 0,
+    "reasoning_tokens": 339,
+    "cost_usd": 0.0007544,
+    "latency_ms": 5052.610167011153,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 856,
+      "output_tokens": 486,
+      "total_tokens": 1342,
+      "reasoning_tokens": 339,
+      "time_to_first_token": 5.05190333299106,
+      "duration": 5.052064207964577,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 856,
+            "output_tokens": 486,
+            "total_tokens": 1342,
+            "reasoning_tokens": 339,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 711,
+    "output_tokens": 375,
+    "total_tokens": 1086,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4518.603459990118,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 711,
+      "output_tokens": 375,
+      "total_tokens": 1086,
+      "time_to_first_token": 4.518342355964705,
+      "duration": 4.518414635967929,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 711,
+            "output_tokens": 375,
+            "total_tokens": 1086,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4487699744,
+              "load_duration": 477348,
+              "prompt_eval_duration": 216563000,
+              "eval_duration": 4201540000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

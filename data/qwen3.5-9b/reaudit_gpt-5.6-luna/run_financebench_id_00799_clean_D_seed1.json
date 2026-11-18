@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00799_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported AMCOR's FY2022 quick ratio as negative 0.329 times.",
+    "reported_metric": "Quick ratio 2022",
+    "reported_value": -0.329,
+    "confidence": 0.99,
+    "rationale": "The extracted cash and trade receivables are positive, as are current liabilities, so the quick ratio cannot be negative. Using the standard calculation (cash plus trade receivables divided by current liabilities) gives a positive FY2022 ratio of approximately 0.606, not -0.329. The writer merely repeated the analyst's erroneous figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3759,
+    "output_tokens": 781,
+    "total_tokens": 4540,
+    "cached_tokens": 0,
+    "reasoning_tokens": 621,
+    "cost_usd": 0.001689,
+    "latency_ms": 9009.745500050485,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3759,
+      "output_tokens": 781,
+      "total_tokens": 4540,
+      "reasoning_tokens": 621,
+      "time_to_first_token": 9.0090780419996,
+      "duration": 9.009311166999396,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3759,
+            "output_tokens": 781,
+            "total_tokens": 4540,
+            "reasoning_tokens": 621,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4401,
+    "output_tokens": 2133,
+    "total_tokens": 6534,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 23892.228897020686,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4401,
+      "output_tokens": 2133,
+      "total_tokens": 6534,
+      "time_to_first_token": 23.891924525029026,
+      "duration": 23.892027562018484,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4401,
+            "output_tokens": 2133,
+            "total_tokens": 6534,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 23864714098,
+              "load_duration": 581694,
+              "prompt_eval_duration": 1027951000,
+              "eval_duration": 22773732000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

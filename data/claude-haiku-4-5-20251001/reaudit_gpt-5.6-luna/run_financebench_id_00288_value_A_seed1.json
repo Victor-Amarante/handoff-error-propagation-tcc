@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00288_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported figures consistently show an increase of $29 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports $1,874M for FY2023 and $1,903M for Q2 FY2024. The analyst and writer correctly calculate the difference as a $29M increase and answer that there was no drop."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 749,
+    "output_tokens": 186,
+    "total_tokens": 935,
+    "cached_tokens": 0,
+    "reasoning_tokens": 67,
+    "cost_usd": 0.000373,
+    "latency_ms": 2592.537542048376,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 749,
+      "output_tokens": 186,
+      "total_tokens": 935,
+      "reasoning_tokens": 67,
+      "time_to_first_token": 2.5921367090195417,
+      "duration": 2.592207292036619,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 749,
+            "output_tokens": 186,
+            "total_tokens": 935,
+            "reasoning_tokens": 67,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1253,
+    "output_tokens": 203,
+    "total_tokens": 1456,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002268,
+    "latency_ms": 3402.0444590132684,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1253,
+      "output_tokens": 203,
+      "total_tokens": 1456,
+      "time_to_first_token": 3.4011429580277763,
+      "duration": 3.401436707994435,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1253,
+            "output_tokens": 203,
+            "total_tokens": 1456,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

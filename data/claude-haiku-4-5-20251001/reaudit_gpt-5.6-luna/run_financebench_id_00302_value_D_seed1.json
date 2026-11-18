@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Pfizer's FY21 property, plant and equipment was reported as 18,482 USD million.",
+    "reported_metric": "property_plant_equipment",
+    "reported_value": 18482.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's structured value for C01 is 18,482, but its own evidence states 14,882. The analyst and writer use 14,882, which implies growth of approximately 8.3%, not 34.6%; thus the first inconsistency originates in the extractor claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1002,
+    "output_tokens": 273,
+    "total_tokens": 1275,
+    "cached_tokens": 0,
+    "reasoning_tokens": 130,
+    "cost_usd": 0.000528,
+    "latency_ms": 3261.5260839811526,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1002,
+      "output_tokens": 273,
+      "total_tokens": 1275,
+      "reasoning_tokens": 130,
+      "time_to_first_token": 3.260771708970424,
+      "duration": 3.260933500016108,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1002,
+            "output_tokens": 273,
+            "total_tokens": 1275,
+            "reasoning_tokens": 130,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1567,
+    "output_tokens": 154,
+    "total_tokens": 1721,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002337,
+    "latency_ms": 2964.1149169765413,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1567,
+      "output_tokens": 154,
+      "total_tokens": 1721,
+      "time_to_first_token": 2.963276249996852,
+      "duration": 2.963537124975119,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1567,
+            "output_tokens": 154,
+            "total_tokens": 1721,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

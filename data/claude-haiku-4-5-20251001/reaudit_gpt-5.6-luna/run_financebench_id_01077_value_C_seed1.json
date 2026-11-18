@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01077_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly represented the two separate FY2022 acquisition prices as a single acquisition_price claim totaling $918 million, and inferred that no significant acquisitions occurred in FY2023 or FY2021 from data covering only FY2022.",
+    "reported_metric": "acquisition_price",
+    "reported_value": 918.0,
+    "confidence": 0.86,
+    "rationale": "The extractor and analyst consistently provide two distinct FY2022 acquisition-price claims ($839 million and $79 million). The writer's $918 million claim is an unsupported aggregation for the requested acquisition-by-year answer, and the trace contains no FY2023 or FY2021 evidence that would justify the claimed absence of acquisitions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1165,
+    "output_tokens": 1199,
+    "total_tokens": 2364,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016718,
+    "latency_ms": 11508.07124999119,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1165,
+      "output_tokens": 1199,
+      "total_tokens": 2364,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.50729587499518,
+      "duration": 11.507567208027467,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1165,
+            "output_tokens": 1199,
+            "total_tokens": 2364,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1782,
+    "output_tokens": 205,
+    "total_tokens": 1987,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002807,
+    "latency_ms": 3888.5143339866772,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1782,
+      "output_tokens": 205,
+      "total_tokens": 1987,
+      "time_to_first_token": 3.887853082967922,
+      "duration": 3.8879923329805024,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1782,
+            "output_tokens": 205,
+            "total_tokens": 1987,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

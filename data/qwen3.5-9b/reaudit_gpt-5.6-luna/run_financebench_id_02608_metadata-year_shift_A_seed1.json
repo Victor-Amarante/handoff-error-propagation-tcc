@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Best Buy's FY2015–FY2017 three-year average net profit margin is 4.4%.",
+    "reported_metric": "FY2015–FY2017 3-year average net profit margin",
+    "reported_value": 4.4,
+    "confidence": 0.99,
+    "rationale": "The extracted figures imply yearly margins of approximately 3.1%, 2.3%, and 3.1%, whose average is 2.8%, not 4.4%. The analyst also contains a FY2015 revenue typo ($12,330M instead of the extracted $40,339M), but the 4.4% claim is the first clearly incorrect result claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1016,
+    "output_tokens": 602,
+    "total_tokens": 1618,
+    "cached_tokens": 0,
+    "reasoning_tokens": 429,
+    "cost_usd": 0.0009256000000000001,
+    "latency_ms": 5511.254541983362,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1016,
+      "output_tokens": 602,
+      "total_tokens": 1618,
+      "reasoning_tokens": 429,
+      "time_to_first_token": 5.510462041012943,
+      "duration": 5.510703290987294,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1016,
+            "output_tokens": 602,
+            "total_tokens": 1618,
+            "reasoning_tokens": 429,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 865,
+    "output_tokens": 861,
+    "total_tokens": 1726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9699.28591500502,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 865,
+      "output_tokens": 861,
+      "total_tokens": 1726,
+      "time_to_first_token": 9.69898910599295,
+      "duration": 9.699085080996156,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 865,
+            "output_tokens": 861,
+            "total_tokens": 1726,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9669762257,
+              "load_duration": 461849,
+              "prompt_eval_duration": 213768000,
+              "eval_duration": 9404392000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "The analyst reported a 2019 Consumer Healthcare JV transaction gain of 0, while deriving it from the 2020 source claim showing 8,107 million USD.",
+    "reported_metric": "(Gain) on completion of Consumer Healthcare JV transaction (2019)",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "A03 is internally inconsistent: it labels the claim as 2019, derives it from C20, which is explicitly 2020 and has a value of -8,107, and reports 0 despite evidence showing (8,107)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 5265,
+    "output_tokens": 667,
+    "total_tokens": 5932,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0018534,
+    "latency_ms": 7061.68212502962,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5265,
+      "output_tokens": 667,
+      "total_tokens": 5932,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.061195874994155,
+      "duration": 7.061299749999307,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5265,
+            "output_tokens": 667,
+            "total_tokens": 5932,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 6163,
+    "output_tokens": 394,
+    "total_tokens": 6557,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5903.336054994725,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 6163,
+      "output_tokens": 394,
+      "total_tokens": 6557,
+      "time_to_first_token": 5.903026657004375,
+      "duration": 5.903098212031182,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 6163,
+            "output_tokens": 394,
+            "total_tokens": 6557,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5873852055,
+              "load_duration": 940236,
+              "prompt_eval_duration": 1416400000,
+              "eval_duration": 4393296000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

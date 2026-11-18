@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A06",
+    "root_cause_claim_text": "Customer deposits were $110,239 million in 2022.",
+    "reported_metric": "customer deposits",
+    "reported_value": 110239.0,
+    "confidence": 0.99,
+    "rationale": "The extractor labels the $110,239 million customer-deposits figure as year 2023 (C01), but the analyst relabels it as 2022 in A06 without supporting evidence. The writer then uses that misdated claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2312,
+    "output_tokens": 295,
+    "total_tokens": 2607,
+    "cached_tokens": 0,
+    "reasoning_tokens": 171,
+    "cost_usd": 0.0008164000000000001,
+    "latency_ms": 3388.086207967717,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2312,
+      "output_tokens": 295,
+      "total_tokens": 2607,
+      "reasoning_tokens": 171,
+      "time_to_first_token": 3.3877069579903036,
+      "duration": 3.387806124985218,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2312,
+            "output_tokens": 295,
+            "total_tokens": 2607,
+            "reasoning_tokens": 171,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2577,
+    "output_tokens": 247,
+    "total_tokens": 2824,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3494.8205280234106,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2577,
+      "output_tokens": 247,
+      "total_tokens": 2824,
+      "time_to_first_token": 3.4945760669652373,
+      "duration": 3.494650195003487,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2577,
+            "output_tokens": 247,
+            "total_tokens": 2824,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3468811273,
+              "load_duration": 515665,
+              "prompt_eval_duration": 625311000,
+              "eval_duration": 2736759000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

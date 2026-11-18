@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Consolidated earnings before provision for taxes on income for FY2022 was reported as $27.1 billion, although the cited evidence states $21.7 billion.",
+    "reported_metric": "consolidated earnings before provision for taxes on income (FY2022)",
+    "reported_value": 27.1,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value directly contradicts its own cited evidence, which states $21.7 billion for FY2022. This is the earliest identifiable error; later analyst and writer claims inherit unsupported calculations and do not establish a valid gross-margin analysis."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1879,
+    "output_tokens": 249,
+    "total_tokens": 2128,
+    "cached_tokens": 0,
+    "reasoning_tokens": 91,
+    "cost_usd": 0.0006746,
+    "latency_ms": 2947.4507499835454,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1879,
+      "output_tokens": 249,
+      "total_tokens": 2128,
+      "reasoning_tokens": 91,
+      "time_to_first_token": 2.9462734169792384,
+      "duration": 2.9466376670170575,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1879,
+            "output_tokens": 249,
+            "total_tokens": 2128,
+            "reasoning_tokens": 91,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1934,
+    "output_tokens": 267,
+    "total_tokens": 2201,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3550.504767044913,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1934,
+      "output_tokens": 267,
+      "total_tokens": 2201,
+      "time_to_first_token": 3.550265792000573,
+      "duration": 3.550340764981229,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1934,
+            "output_tokens": 267,
+            "total_tokens": 2201,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3524709015,
+              "load_duration": 493205,
+              "prompt_eval_duration": 494758000,
+              "eval_duration": 2972331000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

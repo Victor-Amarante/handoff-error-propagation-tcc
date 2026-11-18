@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06272_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Net income attributable to shareholders for FY2023 was $9,542 million.",
+    "reported_metric": "Net income attributable to shareholders for FY2023",
+    "reported_value": 9542.0,
+    "confidence": 0.98,
+    "rationale": "The extracted $9,542 million figure is the FY2022 net income attributable to shareholders, not FY2023. This incorrect fiscal-year attribution caused the analyst and writer to conclude that the FY2022 denominator was unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 802,
+    "output_tokens": 419,
+    "total_tokens": 1221,
+    "cached_tokens": 0,
+    "reasoning_tokens": 293,
+    "cost_usd": 0.0006632,
+    "latency_ms": 4650.402375031263,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 802,
+      "output_tokens": 419,
+      "total_tokens": 1221,
+      "reasoning_tokens": 293,
+      "time_to_first_token": 4.64992712502135,
+      "duration": 4.650031958008185,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 802,
+            "output_tokens": 419,
+            "total_tokens": 1221,
+            "reasoning_tokens": 293,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1320,
+    "output_tokens": 175,
+    "total_tokens": 1495,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002195,
+    "latency_ms": 5306.232167000417,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1320,
+      "output_tokens": 175,
+      "total_tokens": 1495,
+      "time_to_first_token": 5.3052172909956425,
+      "duration": 5.305520125024486,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1320,
+            "output_tokens": 175,
+            "total_tokens": 1495,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

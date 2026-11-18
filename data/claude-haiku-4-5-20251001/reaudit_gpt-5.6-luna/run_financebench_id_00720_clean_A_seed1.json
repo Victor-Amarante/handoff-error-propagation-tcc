@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "American Express revenue grew 24.8% from FY2021 to FY2022.",
+    "reported_metric": "Revenue growth from FY2021 to FY2022",
+    "reported_value": 24.8,
+    "confidence": 0.98,
+    "rationale": "Using the extracted figures, revenue growth is (52,862 - 42,380) / 42,380 = 24.73%, which rounds to 24.7%, not 24.8%. The subsequent operating-margin calculations and expense-growth figure are internally consistent, so this is the first incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1038,
+    "output_tokens": 564,
+    "total_tokens": 1602,
+    "cached_tokens": 0,
+    "reasoning_tokens": 415,
+    "cost_usd": 0.0008844,
+    "latency_ms": 5379.490249964874,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1038,
+      "output_tokens": 564,
+      "total_tokens": 1602,
+      "reasoning_tokens": 415,
+      "time_to_first_token": 5.378656667016912,
+      "duration": 5.37888562498847,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1038,
+            "output_tokens": 564,
+            "total_tokens": 1602,
+            "reasoning_tokens": 415,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1533,
+    "output_tokens": 176,
+    "total_tokens": 1709,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002413,
+    "latency_ms": 3023.181124997791,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1533,
+      "output_tokens": 176,
+      "total_tokens": 1709,
+      "time_to_first_token": 3.022298750001937,
+      "duration": 3.02258766599698,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1533,
+            "output_tokens": 176,
+            "total_tokens": 1709,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04481_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled PepsiCo operating income of 11,512 USD_M as FY2023 instead of FY2022.",
+    "reported_metric": "unadjusted_operating_income",
+    "reported_value": 11512.0,
+    "confidence": 0.98,
+    "rationale": "C01 is the earliest inconsistent claim: it reports FY2023 operating income in a FY2022 10-K trace, while the requested calculation requires FY2022 data. The analyst propagated this mismatch, and the writer consequently claimed the margin could not be calculated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1057,
+    "output_tokens": 652,
+    "total_tokens": 1709,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009938,
+    "latency_ms": 6059.948792040814,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1057,
+      "output_tokens": 652,
+      "total_tokens": 1709,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.059166999999434,
+      "duration": 6.059488209022675,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1057,
+            "output_tokens": 652,
+            "total_tokens": 1709,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 969,
+    "output_tokens": 157,
+    "total_tokens": 1126,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2107.589774997905,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 969,
+      "output_tokens": 157,
+      "total_tokens": 1126,
+      "time_to_first_token": 2.107308953010943,
+      "duration": 2.1074060350074433,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 969,
+            "output_tokens": 157,
+            "total_tokens": 1126,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2082779285,
+              "load_duration": 500664,
+              "prompt_eval_duration": 244236000,
+              "eval_duration": 1778641000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

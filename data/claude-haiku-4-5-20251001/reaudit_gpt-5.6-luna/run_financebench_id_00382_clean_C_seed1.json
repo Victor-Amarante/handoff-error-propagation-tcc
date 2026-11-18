@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00382_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The Las Vegas Strip was the region with the highest FY2022 EBITDAR contribution at 3,142,308 thousand.",
+    "reported_metric": "Highest EBITDAR Contribution Region",
+    "reported_value": 3142308.0,
+    "confidence": 0.93,
+    "rationale": "The extractor provides three unlabeled EBITDAR contribution values, and the analyst correctly identifies 3,142,308 as the maximum numeric value. However, no trace claim maps that value to the Las Vegas Strip; that regional attribution first appears unsupported in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1106,
+    "output_tokens": 654,
+    "total_tokens": 1760,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001006,
+    "latency_ms": 6933.505541994236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1106,
+      "output_tokens": 654,
+      "total_tokens": 1760,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.9331311249989085,
+      "duration": 6.933271375019103,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1106,
+            "output_tokens": 654,
+            "total_tokens": 1760,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1702,
+    "output_tokens": 208,
+    "total_tokens": 1910,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002742,
+    "latency_ms": 3294.2730829818174,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1702,
+      "output_tokens": 208,
+      "total_tokens": 1910,
+      "time_to_first_token": 3.293885125021916,
+      "duration": 3.2940044160350226,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1702,
+            "output_tokens": 208,
+            "total_tokens": 1910,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

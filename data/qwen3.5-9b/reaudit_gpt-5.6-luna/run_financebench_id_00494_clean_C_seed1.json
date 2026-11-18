@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00494_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly combined the separate 737 and 787 production rates into a single aggregate production-rate claim.",
+    "reported_metric": "Boeing production rate forecast FY2023",
+    "reported_value": 36.0,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst preserve separate model-specific rates, but the writer introduces an unsupported combined value of 31 + 5 = 36. Production rates for different aircraft models should not be aggregated into one rate, and this combined claim is not supported by the derived claims."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 990,
+    "output_tokens": 1171,
+    "total_tokens": 2161,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016032,
+    "latency_ms": 12697.870791016612,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 990,
+      "output_tokens": 1171,
+      "total_tokens": 2161,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 12.69698316603899,
+      "duration": 12.69724941602908,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 990,
+            "output_tokens": 1171,
+            "total_tokens": 2161,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 896,
+    "output_tokens": 259,
+    "total_tokens": 1155,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3214.535679027904,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 896,
+      "output_tokens": 259,
+      "total_tokens": 1155,
+      "time_to_first_token": 3.214301889005583,
+      "duration": 3.214372993039433,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 896,
+            "output_tokens": 259,
+            "total_tokens": 1155,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3186508418,
+              "load_duration": 945584,
+              "prompt_eval_duration": 242059000,
+              "eval_duration": 2872835000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

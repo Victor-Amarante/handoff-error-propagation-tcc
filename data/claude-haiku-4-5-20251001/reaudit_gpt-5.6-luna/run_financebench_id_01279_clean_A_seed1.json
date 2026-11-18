@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01279_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports operating cash flow of $3,565M, investing cash flow of $1,999M, and financing cash flow of -$3,264M. The analyst and writer correctly conclude that operating activities brought in the most cash, with no internal inconsistency or unsupported transformation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 813,
+    "output_tokens": 185,
+    "total_tokens": 998,
+    "cached_tokens": 0,
+    "reasoning_tokens": 71,
+    "cost_usd": 0.0003846,
+    "latency_ms": 2516.1172910011373,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 813,
+      "output_tokens": 185,
+      "total_tokens": 998,
+      "reasoning_tokens": 71,
+      "time_to_first_token": 2.5155173749662936,
+      "duration": 2.5156779579701833,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 813,
+            "output_tokens": 185,
+            "total_tokens": 998,
+            "reasoning_tokens": 71,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1288,
+    "output_tokens": 173,
+    "total_tokens": 1461,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002153,
+    "latency_ms": 2544.0111660282128,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1288,
+      "output_tokens": 173,
+      "total_tokens": 1461,
+      "time_to_first_token": 2.5430697500123642,
+      "duration": 2.5434055000077933,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1288,
+            "output_tokens": 173,
+            "total_tokens": 1461,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

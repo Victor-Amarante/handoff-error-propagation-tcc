@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10136_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The retention ratio is calculated as (net income attributable to shareholders minus total cash dividends paid) divided by net income: (2707.3 - 1244.5) / 2707.3 = 0.5402, which rounds to 0.54. The pipeline is internally consistent and contains no error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 710,
+    "output_tokens": 207,
+    "total_tokens": 917,
+    "cached_tokens": 0,
+    "reasoning_tokens": 86,
+    "cost_usd": 0.0003904,
+    "latency_ms": 2655.846667010337,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 710,
+      "output_tokens": 207,
+      "total_tokens": 917,
+      "reasoning_tokens": 86,
+      "time_to_first_token": 2.6555435420013964,
+      "duration": 2.6556103339535184,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 710,
+            "output_tokens": 207,
+            "total_tokens": 917,
+            "reasoning_tokens": 86,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 535,
+    "output_tokens": 1157,
+    "total_tokens": 1692,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12665.20547698019,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 535,
+      "output_tokens": 1157,
+      "total_tokens": 1692,
+      "time_to_first_token": 12.66495596099412,
+      "duration": 12.665042218985036,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 535,
+            "output_tokens": 1157,
+            "total_tokens": 1692,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12636504499,
+              "load_duration": 435820,
+              "prompt_eval_duration": 167562000,
+              "eval_duration": 12399783000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

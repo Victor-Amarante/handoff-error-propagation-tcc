@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01491_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident in the trace; the extractor, analyst, and writer consistently report $31.2 billion.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages agree that the cash proceeds from the Kenvue debt offering and initial public offering were $31.2 billion as of 2023, and the trace provides no conflicting provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 733,
+    "output_tokens": 567,
+    "total_tokens": 1300,
+    "cached_tokens": 0,
+    "reasoning_tokens": 445,
+    "cost_usd": 0.000827,
+    "latency_ms": 5465.871916967444,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 733,
+      "output_tokens": 567,
+      "total_tokens": 1300,
+      "reasoning_tokens": 445,
+      "time_to_first_token": 5.465309709019493,
+      "duration": 5.46544299996458,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 733,
+            "output_tokens": 567,
+            "total_tokens": 1300,
+            "reasoning_tokens": 445,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 560,
+    "output_tokens": 217,
+    "total_tokens": 777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2709.7176379757,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 560,
+      "output_tokens": 217,
+      "total_tokens": 777,
+      "time_to_first_token": 2.709463389997836,
+      "duration": 2.7095352049800567,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 560,
+            "output_tokens": 217,
+            "total_tokens": 777,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2680661660,
+              "load_duration": 444186,
+              "prompt_eval_duration": 146211000,
+              "eval_duration": 2467185000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

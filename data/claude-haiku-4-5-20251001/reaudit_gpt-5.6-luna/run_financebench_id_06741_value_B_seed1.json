@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06741_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2018 unadjusted EBITDA margin was reported as 5.3%, but using operating income plus depreciation and amortization divided by net sales gives approximately 6.2%.",
+    "reported_metric": "unadjusted_ebitda_margin",
+    "reported_value": 5.3,
+    "confidence": 0.99,
+    "rationale": "The extracted FY2018 figures imply EBITDA of 20,437 + 10,529 = 30,966 and a margin of 30,966 / 495,761 = approximately 6.2%, not 5.3%. The FY2019 and FY2020 calculations are approximately 6.4% and 5.3%, respectively, making the three-year average approximately 6.0%, not 5.6%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1238,
+    "output_tokens": 360,
+    "total_tokens": 1598,
+    "cached_tokens": 0,
+    "reasoning_tokens": 166,
+    "cost_usd": 0.0006796,
+    "latency_ms": 3976.6716670128517,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1238,
+      "output_tokens": 360,
+      "total_tokens": 1598,
+      "reasoning_tokens": 166,
+      "time_to_first_token": 3.976100125000812,
+      "duration": 3.9762505409889854,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1238,
+            "output_tokens": 360,
+            "total_tokens": 1598,
+            "reasoning_tokens": 166,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1831,
+    "output_tokens": 305,
+    "total_tokens": 2136,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003356,
+    "latency_ms": 3375.596249999944,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1831,
+      "output_tokens": 305,
+      "total_tokens": 2136,
+      "time_to_first_token": 3.3750534999999218,
+      "duration": 3.375198209017981,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1831,
+            "output_tokens": 305,
+            "total_tokens": 2136,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

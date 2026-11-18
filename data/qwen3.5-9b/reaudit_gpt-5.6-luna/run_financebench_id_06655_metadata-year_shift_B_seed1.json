@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06655_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly calculated FY2017 DPO as 93.43 days; using the provided inputs, 365 × 29,962.5 / 116,520 rounds to 93.86 days.",
+    "reported_metric": "FY2017 Days Payable Outstanding (DPO)",
+    "reported_value": 93.43,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs and intermediate denominator are internally consistent, but the final arithmetic is not: 365 × 29,962.5 ÷ 116,520 = 93.858..., which rounds to 93.86. The writer merely repeated the analyst's incorrect result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1158,
+    "output_tokens": 407,
+    "total_tokens": 1565,
+    "cached_tokens": 0,
+    "reasoning_tokens": 240,
+    "cost_usd": 0.00072,
+    "latency_ms": 4154.281915980391,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1158,
+      "output_tokens": 407,
+      "total_tokens": 1565,
+      "reasoning_tokens": 240,
+      "time_to_first_token": 4.154024290968664,
+      "duration": 4.154086416005157,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1158,
+            "output_tokens": 407,
+            "total_tokens": 1565,
+            "reasoning_tokens": 240,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1125,
+    "output_tokens": 1956,
+    "total_tokens": 3081,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21338.918010005727,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1125,
+      "output_tokens": 1956,
+      "total_tokens": 3081,
+      "time_to_first_token": 21.33866653300356,
+      "duration": 21.33875109499786,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1125,
+            "output_tokens": 1956,
+            "total_tokens": 3081,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21313684954,
+              "load_duration": 578110,
+              "prompt_eval_duration": 289215000,
+              "eval_duration": 20968437000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

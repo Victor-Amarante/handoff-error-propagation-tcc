@@ -80,7 +80,10 @@ def _build_model(seed: int) -> Model:
             thinking=config.CLAUDE_THINKING,
         )
     if config.PROVIDER == "ollama":
-        options = {"temperature": config.TEMPERATURE}
+        options = {
+            "temperature": config.TEMPERATURE,
+            "presence_penalty": config.OLLAMA_PRESENCE_PENALTY,
+        }
         if config.SEND_SEED:
             options["seed"] = seed
         return Ollama(

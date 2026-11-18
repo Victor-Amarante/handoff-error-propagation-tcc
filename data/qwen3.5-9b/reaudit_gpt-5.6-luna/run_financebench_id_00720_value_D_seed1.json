@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2022 discount revenue was reported as $37,039 million, although the cited evidence states $30,739 million and $30,739 million is the amount that reconciles to total non-interest revenues.",
+    "reported_metric": "Discount revenue",
+    "reported_value": 37039.0,
+    "confidence": 0.99,
+    "rationale": "C01 is internally inconsistent: its structured value is 37,039 while its evidence says 30,739. Moreover, 30,739 + 6,070 + 4,521 + 1,637 = 42,967, exactly matching the extracted FY2022 total non-interest revenues, whereas 37,039 does not. Later claims also incorrectly treat this as interchange revenue and derive an unsupported gross-margin figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2519,
+    "output_tokens": 397,
+    "total_tokens": 2916,
+    "cached_tokens": 0,
+    "reasoning_tokens": 207,
+    "cost_usd": 0.0009802,
+    "latency_ms": 4300.951167009771,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2519,
+      "output_tokens": 397,
+      "total_tokens": 2916,
+      "reasoning_tokens": 207,
+      "time_to_first_token": 4.300182666978799,
+      "duration": 4.300443666987121,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2519,
+            "output_tokens": 397,
+            "total_tokens": 2916,
+            "reasoning_tokens": 207,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2791,
+    "output_tokens": 1774,
+    "total_tokens": 4565,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 19293.67906198604,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2791,
+      "output_tokens": 1774,
+      "total_tokens": 4565,
+      "time_to_first_token": 19.293431310972665,
+      "duration": 19.293513873999473,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2791,
+            "output_tokens": 1774,
+            "total_tokens": 4565,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 19267718489,
+              "load_duration": 514032,
+              "prompt_eval_duration": 671872000,
+              "eval_duration": 18535510000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

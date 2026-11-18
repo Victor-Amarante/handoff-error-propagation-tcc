@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04103_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A05",
+    "root_cause_claim_text": "FY2019 DIO was reported as 52.59 days, but 365 × (1,600.75 / 11,108.4) rounds to 52.60 days.",
+    "reported_metric": "DIO",
+    "reported_value": 52.59,
+    "confidence": 0.99,
+    "rationale": "The extractor inputs and preceding averages are internally consistent, but the analyst's DIO arithmetic is incorrect. This propagates to the CCC; using the stated formulas yields approximately -3.70 days, not -3.62."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2759,
+    "output_tokens": 868,
+    "total_tokens": 3627,
+    "cached_tokens": 0,
+    "reasoning_tokens": 717,
+    "cost_usd": 0.0015934,
+    "latency_ms": 7863.2261250168085,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2759,
+      "output_tokens": 868,
+      "total_tokens": 3627,
+      "reasoning_tokens": 717,
+      "time_to_first_token": 7.862491415988188,
+      "duration": 7.862757041002624,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2759,
+            "output_tokens": 868,
+            "total_tokens": 3627,
+            "reasoning_tokens": 717,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3679,
+    "output_tokens": 238,
+    "total_tokens": 3917,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004869,
+    "latency_ms": 3971.003042010125,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3679,
+      "output_tokens": 238,
+      "total_tokens": 3917,
+      "time_to_first_token": 3.969963333045598,
+      "duration": 3.9702621250180528,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3679,
+            "output_tokens": 238,
+            "total_tokens": 3917,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

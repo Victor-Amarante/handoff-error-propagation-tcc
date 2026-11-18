@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04672_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident in the trace. The extractor reports net PP&E of $8,738 million, which reconciles exactly to gross PP&E of $24,873 million less accumulated depreciation of $16,135 million. The analyst and writer correctly round this to $8.7 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 775,
+    "output_tokens": 197,
+    "total_tokens": 972,
+    "cached_tokens": 0,
+    "reasoning_tokens": 83,
+    "cost_usd": 0.00039139999999999997,
+    "latency_ms": 2682.969499961473,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 775,
+      "output_tokens": 197,
+      "total_tokens": 972,
+      "reasoning_tokens": 83,
+      "time_to_first_token": 2.682436749979388,
+      "duration": 2.6826133750146255,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 775,
+            "output_tokens": 197,
+            "total_tokens": 972,
+            "reasoning_tokens": 83,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 590,
+    "output_tokens": 301,
+    "total_tokens": 891,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3622.568004007917,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 590,
+      "output_tokens": 301,
+      "total_tokens": 891,
+      "time_to_first_token": 3.622333533014171,
+      "duration": 3.622405645030085,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 590,
+            "output_tokens": 301,
+            "total_tokens": 891,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3597116475,
+              "load_duration": 432319,
+              "prompt_eval_duration": 153865000,
+              "eval_duration": 3394574000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

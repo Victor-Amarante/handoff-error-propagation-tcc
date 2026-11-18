@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "There was insufficient data to analyze the FY2022 operating-margin change, despite extracted data showing a 1.0 ratio-point change in SG&A as a percentage of sales for FY2022.",
+    "reported_metric": "insufficient_data_for_operating_margin_analysis",
+    "reported_value": 0.0,
+    "confidence": 0.92,
+    "rationale": "The extractor provided a FY2022 SG&A-percentage-of-sales change, which is directly relevant to explaining operating-margin movement. The analyst incorrectly characterized the data as insufficient, and the writer propagated that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 762,
+    "output_tokens": 365,
+    "total_tokens": 1127,
+    "cached_tokens": 0,
+    "reasoning_tokens": 220,
+    "cost_usd": 0.0005903999999999999,
+    "latency_ms": 3955.1115829963237,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 762,
+      "output_tokens": 365,
+      "total_tokens": 1127,
+      "reasoning_tokens": 220,
+      "time_to_first_token": 3.954477332998067,
+      "duration": 3.9547064579674043,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 762,
+            "output_tokens": 365,
+            "total_tokens": 1127,
+            "reasoning_tokens": 220,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1262,
+    "output_tokens": 223,
+    "total_tokens": 1485,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002377,
+    "latency_ms": 2744.2454590345733,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1262,
+      "output_tokens": 223,
+      "total_tokens": 1485,
+      "time_to_first_token": 2.7435667910031043,
+      "duration": 2.7437841249629855,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1262,
+            "output_tokens": 223,
+            "total_tokens": 1485,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

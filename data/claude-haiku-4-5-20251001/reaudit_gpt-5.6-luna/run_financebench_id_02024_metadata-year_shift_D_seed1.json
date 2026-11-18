@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02024_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled the $1,097 million pension-benefit amount as occurring in 2022, even though the accompanying evidence identifies it as a 2024 amount.",
+    "reported_metric": "pension_benefits",
+    "reported_value": 1097.0,
+    "confidence": 0.97,
+    "rationale": "C01 is the first claim with an internally inconsistent year: its structured year is 2022, while its evidence says “2024 1,097.” The analyst later corrected the year to 2024, so the final total is internally supported, but the first erroneous claim appeared in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1225,
+    "output_tokens": 672,
+    "total_tokens": 1897,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010514,
+    "latency_ms": 6323.140749998856,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1225,
+      "output_tokens": 672,
+      "total_tokens": 1897,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.322846125054639,
+      "duration": 6.3229197500040755,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1225,
+            "output_tokens": 672,
+            "total_tokens": 1897,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1820,
+    "output_tokens": 197,
+    "total_tokens": 2017,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002805,
+    "latency_ms": 3690.0548330158927,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1820,
+      "output_tokens": 197,
+      "total_tokens": 2017,
+      "time_to_first_token": 3.689294959011022,
+      "duration": 3.689592667040415,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1820,
+            "output_tokens": 197,
+            "total_tokens": 2017,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

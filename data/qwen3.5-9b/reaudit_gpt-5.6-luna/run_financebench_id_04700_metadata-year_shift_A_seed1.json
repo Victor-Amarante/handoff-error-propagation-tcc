@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04700_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly labeled COGS of $32,780 million as Microsoft's FY2017 COGS; the FY2016 component figures sum to that amount.",
+    "reported_metric": "COGS",
+    "reported_value": 32780.0,
+    "confidence": 0.94,
+    "rationale": "The extractor's FY2017 label conflicts with the FY2016 Product COGS ($17,880M) plus Service and other COGS ($14,900M), which totals $32,780M. The analyst and writer correctly used the FY2016 components, so the final answer is numerically correct despite the extractor's year-label error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 679,
+    "output_tokens": 573,
+    "total_tokens": 1252,
+    "cached_tokens": 0,
+    "reasoning_tokens": 410,
+    "cost_usd": 0.0008234000000000001,
+    "latency_ms": 5555.343291023746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 679,
+      "output_tokens": 573,
+      "total_tokens": 1252,
+      "reasoning_tokens": 410,
+      "time_to_first_token": 5.554810417001136,
+      "duration": 5.554941832961049,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 679,
+            "output_tokens": 573,
+            "total_tokens": 1252,
+            "reasoning_tokens": 410,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 491,
+    "output_tokens": 307,
+    "total_tokens": 798,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3669.3123659933917,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 491,
+      "output_tokens": 307,
+      "total_tokens": 798,
+      "time_to_first_token": 3.669035058002919,
+      "duration": 3.669105460983701,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 491,
+            "output_tokens": 307,
+            "total_tokens": 798,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3644300741,
+              "load_duration": 611922,
+              "prompt_eval_duration": 158730000,
+              "eval_duration": 3437909000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

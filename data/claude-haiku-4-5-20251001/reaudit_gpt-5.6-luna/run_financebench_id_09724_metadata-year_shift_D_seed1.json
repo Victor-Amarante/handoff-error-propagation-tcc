@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_09724_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Net operating revenues were $38,655 million in FY2022.",
+    "reported_metric": "net operating revenues",
+    "reported_value": 38655.0,
+    "confidence": 0.96,
+    "rationale": "The extractor labels $38,655 million as FY2022 revenue while the source is Coca-Cola's 2021 10-K and the COGS input is explicitly FY2021. The analyst's 39.73% calculation implicitly uses this revenue figure as the FY2021 denominator, so the incorrect year attribution begins in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 965,
+    "output_tokens": 657,
+    "total_tokens": 1622,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009814,
+    "latency_ms": 6549.156708002556,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 965,
+      "output_tokens": 657,
+      "total_tokens": 1622,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.548259125032928,
+      "duration": 6.548594833002426,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 965,
+            "output_tokens": 657,
+            "total_tokens": 1622,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1509,
+    "output_tokens": 209,
+    "total_tokens": 1718,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002554,
+    "latency_ms": 3654.4135410222225,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1509,
+      "output_tokens": 209,
+      "total_tokens": 1718,
+      "time_to_first_token": 3.6533912500017323,
+      "duration": 3.6536882500513457,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1509,
+            "output_tokens": 209,
+            "total_tokens": 1718,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

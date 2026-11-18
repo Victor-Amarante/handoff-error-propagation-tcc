@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08135_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Amazon's FY2017 revenue year-over-year growth rate was 15.4%.",
+    "reported_metric": "revenue_yoy_growth_rate",
+    "reported_value": 15.4,
+    "confidence": 0.99,
+    "rationale": "The extracted net sales values are internally consistent: (177866 - 153987) / 153987 × 100 = 15.507...%, which rounds to 15.5%, not 15.4%. The first incorrect claim therefore appeared in the analyst stage; the writer propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 915,
+    "output_tokens": 286,
+    "total_tokens": 1201,
+    "cached_tokens": 0,
+    "reasoning_tokens": 143,
+    "cost_usd": 0.0005262,
+    "latency_ms": 3330.1092910114676,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 915,
+      "output_tokens": 286,
+      "total_tokens": 1201,
+      "reasoning_tokens": 143,
+      "time_to_first_token": 3.3296069590141997,
+      "duration": 3.3296657920000143,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 915,
+            "output_tokens": 286,
+            "total_tokens": 1201,
+            "reasoning_tokens": 143,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 808,
+    "output_tokens": 233,
+    "total_tokens": 1041,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2839.056900993455,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 808,
+      "output_tokens": 233,
+      "total_tokens": 1041,
+      "time_to_first_token": 2.8387610399513505,
+      "duration": 2.83889689296484,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 808,
+            "output_tokens": 233,
+            "total_tokens": 1041,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2813198520,
+              "load_duration": 509738,
+              "prompt_eval_duration": 235739000,
+              "eval_duration": 2506883000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00585_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The FY2022 loss before income taxes was extracted as -$5,775 million, although the associated evidence states $5,022 million loss.",
+    "reported_metric": "Loss before income taxes",
+    "reported_value": -5775.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 conflicts directly with its own evidence, which reports (5,022). The analyst then used the incorrect -5,775 value to derive the FY2022 effective tax rate, propagating the error into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1306,
+    "output_tokens": 473,
+    "total_tokens": 1779,
+    "cached_tokens": 0,
+    "reasoning_tokens": 334,
+    "cost_usd": 0.0008288,
+    "latency_ms": 4940.863083989825,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1306,
+      "output_tokens": 473,
+      "total_tokens": 1779,
+      "reasoning_tokens": 334,
+      "time_to_first_token": 4.940182916994672,
+      "duration": 4.940354791993741,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1306,
+            "output_tokens": 473,
+            "total_tokens": 1779,
+            "reasoning_tokens": 334,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1276,
+    "output_tokens": 308,
+    "total_tokens": 1584,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3863.8844799716026,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1276,
+      "output_tokens": 308,
+      "total_tokens": 1584,
+      "time_to_first_token": 3.86363902798621,
+      "duration": 3.8637089639669284,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1276,
+            "output_tokens": 308,
+            "total_tokens": 1584,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3834570192,
+              "load_duration": 913862,
+              "prompt_eval_duration": 319145000,
+              "eval_duration": 3459878000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

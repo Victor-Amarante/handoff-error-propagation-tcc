@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00563_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported growth rates are internally consistent with the extracted FY21 and FY22 revenues.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculations check out: 6949 versus 3694 implies approximately 88.0% growth, 6201 versus 6887 implies approximately -9.95%, and 6805 versus 5607 implies approximately 21.36%. Thus Data Center is correctly identified as the largest proportional increase."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1443,
+    "output_tokens": 273,
+    "total_tokens": 1716,
+    "cached_tokens": 0,
+    "reasoning_tokens": 134,
+    "cost_usd": 0.0006162,
+    "latency_ms": 2975.6320840097032,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1443,
+      "output_tokens": 273,
+      "total_tokens": 1716,
+      "reasoning_tokens": 134,
+      "time_to_first_token": 2.975067624996882,
+      "duration": 2.975183582981117,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1443,
+            "output_tokens": 273,
+            "total_tokens": 1716,
+            "reasoning_tokens": 134,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2076,
+    "output_tokens": 199,
+    "total_tokens": 2275,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003071,
+    "latency_ms": 3325.113000057172,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2076,
+      "output_tokens": 199,
+      "total_tokens": 2275,
+      "time_to_first_token": 3.3241380829713307,
+      "duration": 3.3244535829871893,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2076,
+            "output_tokens": 199,
+            "total_tokens": 2275,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

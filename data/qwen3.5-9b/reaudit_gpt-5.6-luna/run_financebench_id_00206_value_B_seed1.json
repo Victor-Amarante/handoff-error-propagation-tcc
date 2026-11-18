@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JPM's gross margins were historically consistent, represented by a value of 1.0.",
+    "reported_metric": "historically_consistent_gross_margins",
+    "reported_value": 1.0,
+    "confidence": 0.93,
+    "rationale": "The extractor provided only assets and stockholders' equity, with no gross-margin data. The analyst nevertheless asserted a gross-margin consistency result of 1.0 without evidentiary support. The writer's qualitative explanation that traditional gross margin is generally not relevant for banks is reasonable, but it carries forward the unsupported analyst claim in the structured output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 716,
+    "output_tokens": 665,
+    "total_tokens": 1381,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009412,
+    "latency_ms": 7403.903624974191,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 716,
+      "output_tokens": 665,
+      "total_tokens": 1381,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.403621541976463,
+      "duration": 7.403717582987156,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 716,
+            "output_tokens": 665,
+            "total_tokens": 1381,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 532,
+    "output_tokens": 117,
+    "total_tokens": 649,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1623.5724599682726,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 532,
+      "output_tokens": 117,
+      "total_tokens": 649,
+      "time_to_first_token": 1.623277197999414,
+      "duration": 1.6233657920383848,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 532,
+            "output_tokens": 117,
+            "total_tokens": 649,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1594068196,
+              "load_duration": 461722,
+              "prompt_eval_duration": 167455000,
+              "eval_duration": 1360400000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

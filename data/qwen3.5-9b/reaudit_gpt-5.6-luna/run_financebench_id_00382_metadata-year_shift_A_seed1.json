@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00382_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst treated the Las Vegas Strip Resorts EBITDAR contribution reported for 2023 as evidence for FY2022 and also misread the value expressed in thousands as approximately $3.14 million.",
+    "reported_metric": "EBITDAR Contribution for Las Vegas Strip Resorts",
+    "reported_value": 3142310.0,
+    "confidence": 0.97,
+    "rationale": "The extractor explicitly labels the Las Vegas figure as 2023, while the question asks for FY2022. The analyst acknowledged this mismatch but still used the 2023 figure to answer the FY2022 question. It also converted 3.14231e+06K inconsistently, describing it as approximately $3.14 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1168,
+    "output_tokens": 685,
+    "total_tokens": 1853,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010555999999999999,
+    "latency_ms": 6757.524040993303,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1168,
+      "output_tokens": 685,
+      "total_tokens": 1853,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.756894999998622,
+      "duration": 6.757037250034045,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1168,
+            "output_tokens": 685,
+            "total_tokens": 1853,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1038,
+    "output_tokens": 212,
+    "total_tokens": 1250,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2674.5804009842686,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1038,
+      "output_tokens": 212,
+      "total_tokens": 1250,
+      "time_to_first_token": 2.6743003120063804,
+      "duration": 2.674372747016605,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1038,
+            "output_tokens": 212,
+            "total_tokens": 1250,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2650028950,
+              "load_duration": 547634,
+              "prompt_eval_duration": 271103000,
+              "eval_duration": 2323513000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

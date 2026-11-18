@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04980_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported PepsiCo's FY2021 capital expenditure as a negative amount of $4.625 billion instead of reporting the expenditure magnitude as $4.625 billion.",
+    "reported_metric": "FY2021 capital expenditure",
+    "reported_value": -4.625,
+    "confidence": 0.82,
+    "rationale": "The trace itself identifies $4.625 billion as the magnitude of the capital expenditure and explains that the negative sign reflects a cash outflow convention. Treating that outflow sign as part of the expenditure amount introduced the error in the extractor output; the analyst recognized the issue but the writer retained the negative value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 723,
+    "output_tokens": 671,
+    "total_tokens": 1394,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009498,
+    "latency_ms": 6489.103416039143,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 723,
+      "output_tokens": 671,
+      "total_tokens": 1394,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.488551416958217,
+      "duration": 6.488707125012297,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 723,
+            "output_tokens": 671,
+            "total_tokens": 1394,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 517,
+    "output_tokens": 210,
+    "total_tokens": 727,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2672.4166669882834,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 517,
+      "output_tokens": 210,
+      "total_tokens": 727,
+      "time_to_first_token": 2.672178151027765,
+      "duration": 2.6722511870320886,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 517,
+            "output_tokens": 210,
+            "total_tokens": 727,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2647206083,
+              "load_duration": 499344,
+              "prompt_eval_duration": 142160000,
+              "eval_duration": 2454585000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

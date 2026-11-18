@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01981_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No erroneous claim identified in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer, and final answer consistently report a 2022 card-member retention ratio of 1.0. The trace provides no contradictory provenance or ground truth indicating that this claim is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 695,
+    "output_tokens": 221,
+    "total_tokens": 916,
+    "cached_tokens": 0,
+    "reasoning_tokens": 116,
+    "cost_usd": 0.0004042,
+    "latency_ms": 2850.0956250354648,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 695,
+      "output_tokens": 221,
+      "total_tokens": 916,
+      "reasoning_tokens": 116,
+      "time_to_first_token": 2.8494508750154637,
+      "duration": 2.8496974580339156,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 695,
+            "output_tokens": 221,
+            "total_tokens": 916,
+            "reasoning_tokens": 116,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1180,
+    "output_tokens": 165,
+    "total_tokens": 1345,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002005,
+    "latency_ms": 3276.9936670083553,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1180,
+      "output_tokens": 165,
+      "total_tokens": 1345,
+      "time_to_first_token": 3.2759572499780916,
+      "duration": 3.276261874998454,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1180,
+            "output_tokens": 165,
+            "total_tokens": 1345,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

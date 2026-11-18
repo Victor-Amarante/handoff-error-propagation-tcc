@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00563_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the Data Center segment correctly has the largest proportional increase among the non-Embedded segments.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures support the final answer: Data Center increased from $3,694M to $6,043M, a growth of approximately 63.6%, exceeding Gaming's approximately 21.4% growth, while Client declined."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1163,
+    "output_tokens": 215,
+    "total_tokens": 1378,
+    "cached_tokens": 0,
+    "reasoning_tokens": 90,
+    "cost_usd": 0.0004906,
+    "latency_ms": 2668.348250037525,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1163,
+      "output_tokens": 215,
+      "total_tokens": 1378,
+      "reasoning_tokens": 90,
+      "time_to_first_token": 2.667854792030994,
+      "duration": 2.66798662499059,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1163,
+            "output_tokens": 215,
+            "total_tokens": 1378,
+            "reasoning_tokens": 90,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1041,
+    "output_tokens": 185,
+    "total_tokens": 1226,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2501.9116530311294,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1041,
+      "output_tokens": 185,
+      "total_tokens": 1226,
+      "time_to_first_token": 2.501611996034626,
+      "duration": 2.501704258029349,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1041,
+            "output_tokens": 185,
+            "total_tokens": 1226,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2472258522,
+              "load_duration": 463089,
+              "prompt_eval_duration": 297087000,
+              "eval_duration": 2113007000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00705_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "PepsiCo increased its unsecured five-year revolving credit agreement by $400 million on May 26, 2023.",
+    "reported_metric": "unsecured_five_year_revolving_credit_agreement_increase",
+    "reported_value": 400000000.0,
+    "confidence": 0.82,
+    "rationale": "The arithmetic from the two extractor values is correct, but the provenance labels the analyst result as USD_K. Therefore, 400,000,000 USD_K does not equal $400 million; the writer introduced the first clear unit interpretation error by rendering that value as dollars in millions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 961,
+    "output_tokens": 1181,
+    "total_tokens": 2142,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016094000000000002,
+    "latency_ms": 11301.796166982967,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 961,
+      "output_tokens": 1181,
+      "total_tokens": 2142,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.300920790992677,
+      "duration": 11.301120666030329,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 961,
+            "output_tokens": 1181,
+            "total_tokens": 2142,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1528,
+    "output_tokens": 227,
+    "total_tokens": 1755,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002663,
+    "latency_ms": 3684.441124962177,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1528,
+      "output_tokens": 227,
+      "total_tokens": 1755,
+      "time_to_first_token": 3.6835075829876587,
+      "duration": 3.6838060419540852,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1528,
+            "output_tokens": 227,
+            "total_tokens": 1755,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

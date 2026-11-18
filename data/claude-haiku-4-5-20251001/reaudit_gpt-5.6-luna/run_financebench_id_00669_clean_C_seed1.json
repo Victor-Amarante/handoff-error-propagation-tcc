@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00669_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Gross margin was not reported for FY2022.",
+    "reported_metric": "gross_margin_not_reported",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "The extractor provided earnings-before-tax, profitability percentages, and amortization data, but none of those claims establishes that gross margin was not reported. The analyst therefore made an unsupported inference; the writer propagated it and added further unsupported rationale."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1404,
+    "output_tokens": 366,
+    "total_tokens": 1770,
+    "cached_tokens": 0,
+    "reasoning_tokens": 247,
+    "cost_usd": 0.00072,
+    "latency_ms": 4570.306833018549,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1404,
+      "output_tokens": 366,
+      "total_tokens": 1770,
+      "reasoning_tokens": 247,
+      "time_to_first_token": 4.568033542018384,
+      "duration": 4.569103625020944,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1404,
+            "output_tokens": 366,
+            "total_tokens": 1770,
+            "reasoning_tokens": 247,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2015,
+    "output_tokens": 180,
+    "total_tokens": 2195,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002915,
+    "latency_ms": 2661.0129580367357,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2015,
+      "output_tokens": 180,
+      "total_tokens": 2195,
+      "time_to_first_token": 2.6601086250157095,
+      "duration": 2.6604062090045772,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2015,
+            "output_tokens": 180,
+            "total_tokens": 2195,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00299_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly attributed the lowest net revenue value of -473.0 million USD to Asset Management; the trace provides no segment mapping supporting that attribution.",
+    "reported_metric": "net_revenue_lowest_segment",
+    "reported_value": -473.0,
+    "confidence": 0.98,
+    "rationale": "The extractor lists five values and the analyst correctly selects -473.0 as the minimum. However, the extractor provides no segment labels, so the writer's Asset Management attribution is unsupported and is the first identifiable error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 823,
+    "output_tokens": 374,
+    "total_tokens": 1197,
+    "cached_tokens": 0,
+    "reasoning_tokens": 238,
+    "cost_usd": 0.0006134000000000001,
+    "latency_ms": 4184.544667019509,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 823,
+      "output_tokens": 374,
+      "total_tokens": 1197,
+      "reasoning_tokens": 238,
+      "time_to_first_token": 4.184258624969516,
+      "duration": 4.18432458397001,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 823,
+            "output_tokens": 374,
+            "total_tokens": 1197,
+            "reasoning_tokens": 238,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1336,
+    "output_tokens": 140,
+    "total_tokens": 1476,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002036,
+    "latency_ms": 2261.948166997172,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1336,
+      "output_tokens": 140,
+      "total_tokens": 1476,
+      "time_to_first_token": 2.2610476660192944,
+      "duration": 2.261348166037351,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1336,
+            "output_tokens": 140,
+            "total_tokens": 1476,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

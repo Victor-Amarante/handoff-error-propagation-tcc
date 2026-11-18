@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labels consolidated earnings before taxes of $21.7 billion as FY2022 but assigns it year 2023, creating an internal fiscal-year inconsistency.",
+    "reported_metric": "consolidated earnings before provision for taxes on income (FY2022)",
+    "reported_value": 21.7,
+    "confidence": 0.9,
+    "rationale": "C01 explicitly identifies the metric as FY2022 while its year field is 2023. The later analyst also incorrectly characterizes earnings before taxes as EBIT, but that occurs after the extractor's inconsistent year assignment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1680,
+    "output_tokens": 661,
+    "total_tokens": 2341,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011292,
+    "latency_ms": 6376.54233397916,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1680,
+      "output_tokens": 661,
+      "total_tokens": 2341,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.375816916988697,
+      "duration": 6.376154292025603,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1680,
+            "output_tokens": 661,
+            "total_tokens": 2341,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1691,
+    "output_tokens": 203,
+    "total_tokens": 1894,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2850.061242992524,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1691,
+      "output_tokens": 203,
+      "total_tokens": 1894,
+      "time_to_first_token": 2.8497873529559,
+      "duration": 2.849875002983026,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1691,
+            "output_tokens": 203,
+            "total_tokens": 1894,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2823299018,
+              "load_duration": 595030,
+              "prompt_eval_duration": 437679000,
+              "eval_duration": 2306652000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

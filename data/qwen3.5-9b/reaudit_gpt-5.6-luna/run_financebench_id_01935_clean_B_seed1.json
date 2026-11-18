@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01935_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the writer appropriately states that the agenda is not specified in the available analyst output.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor and analyst outputs only contain filing-year values for 2019 and 2022. The final answer accurately notes that these outputs do not identify the agenda of the July 1, 2022 filing, and the trace provides no contrary provenance or ground truth."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 740,
+    "output_tokens": 399,
+    "total_tokens": 1139,
+    "cached_tokens": 0,
+    "reasoning_tokens": 265,
+    "cost_usd": 0.0006268,
+    "latency_ms": 4858.417582989205,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 740,
+      "output_tokens": 399,
+      "total_tokens": 1139,
+      "reasoning_tokens": 265,
+      "time_to_first_token": 4.857673958002124,
+      "duration": 4.857917957997415,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 740,
+            "output_tokens": 399,
+            "total_tokens": 1139,
+            "reasoning_tokens": 265,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 584,
+    "output_tokens": 234,
+    "total_tokens": 818,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2844.1789770149626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 584,
+      "output_tokens": 234,
+      "total_tokens": 818,
+      "time_to_first_token": 2.8438776670373045,
+      "duration": 2.8439763330388814,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 584,
+            "output_tokens": 234,
+            "total_tokens": 818,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2819059487,
+              "load_duration": 663389,
+              "prompt_eval_duration": 178767000,
+              "eval_duration": 2573381000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

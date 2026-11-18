@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00859_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The $19,779 million FY 2021 notional value was specifically attributable to interest rate swaps and was the highest among the derivative instruments.",
+    "reported_metric": "notional_value",
+    "reported_value": 19779.0,
+    "confidence": 0.9,
+    "rationale": "The extractor and analyst outputs contain only notional values and do not identify which instrument corresponds to $19,779 million. The writer introduced the unsupported attribution to interest rate swaps. The numerical comparison among the listed FY 2021 values is internally consistent, but the instrument identification is not supported by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1276,
+    "output_tokens": 480,
+    "total_tokens": 1756,
+    "cached_tokens": 0,
+    "reasoning_tokens": 329,
+    "cost_usd": 0.0008312,
+    "latency_ms": 5419.6561250137165,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1276,
+      "output_tokens": 480,
+      "total_tokens": 1756,
+      "reasoning_tokens": 329,
+      "time_to_first_token": 5.419183791032992,
+      "duration": 5.419318915985059,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1276,
+            "output_tokens": 480,
+            "total_tokens": 1756,
+            "reasoning_tokens": 329,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1906,
+    "output_tokens": 169,
+    "total_tokens": 2075,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002751,
+    "latency_ms": 2970.6542079802603,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1906,
+      "output_tokens": 169,
+      "total_tokens": 2075,
+      "time_to_first_token": 2.9698177080135792,
+      "duration": 2.9701208749902435,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1906,
+            "output_tokens": 169,
+            "total_tokens": 2075,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Pfizer's 2019 non-operating gains totaled $8,815 million, consisting of $3,497 million in other income and $5,318 million from discontinued operations.",
+    "reported_metric": "non-operating gains",
+    "reported_value": 8815.0,
+    "confidence": 0.98,
+    "rationale": "The extractor correctly labels the 2019 amount as 'Other (income)/deductions net' with a positive $3,497 million, which represents deductions rather than other income and therefore does not increase net income. The writer incorrectly reclassified and added it to the $5,318 million discontinued-operations amount. The first incorrect claim therefore appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2601,
+    "output_tokens": 456,
+    "total_tokens": 3057,
+    "cached_tokens": 0,
+    "reasoning_tokens": 284,
+    "cost_usd": 0.0010674,
+    "latency_ms": 5380.250624963082,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2601,
+      "output_tokens": 456,
+      "total_tokens": 3057,
+      "reasoning_tokens": 284,
+      "time_to_first_token": 5.379835833038669,
+      "duration": 5.379979792051017,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2601,
+            "output_tokens": 456,
+            "total_tokens": 3057,
+            "reasoning_tokens": 284,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2842,
+    "output_tokens": 494,
+    "total_tokens": 3336,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6266.281382006127,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2842,
+      "output_tokens": 494,
+      "total_tokens": 3336,
+      "time_to_first_token": 6.266022434050683,
+      "duration": 6.266098405001685,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2842,
+            "output_tokens": 494,
+            "total_tokens": 3336,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6238615842,
+              "load_duration": 688802,
+              "prompt_eval_duration": 690007000,
+              "eval_duration": 5495086000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

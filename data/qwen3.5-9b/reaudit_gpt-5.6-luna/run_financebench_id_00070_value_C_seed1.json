@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00070_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst claimed FY2022 working capital was negative $1,560 million, but total current assets of $1,250 million minus total current liabilities of $2,811 million equals negative $1,561 million.",
+    "reported_metric": "Working capital for American Water Works in FY2022",
+    "reported_value": -1560.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports total current assets of 1,250 and total current liabilities of 2,811, whose difference is -1,561, not -1,560. The analyst's A01 is the first claim introducing the arithmetic error; the writer propagates it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2329,
+    "output_tokens": 434,
+    "total_tokens": 2763,
+    "cached_tokens": 0,
+    "reasoning_tokens": 265,
+    "cost_usd": 0.0009865999999999998,
+    "latency_ms": 4485.710082983132,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2329,
+      "output_tokens": 434,
+      "total_tokens": 2763,
+      "reasoning_tokens": 265,
+      "time_to_first_token": 4.485344334039837,
+      "duration": 4.485471291991416,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2329,
+            "output_tokens": 434,
+            "total_tokens": 2763,
+            "reasoning_tokens": 265,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2502,
+    "output_tokens": 255,
+    "total_tokens": 2757,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2957.9254949931055,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2502,
+      "output_tokens": 255,
+      "total_tokens": 2757,
+      "time_to_first_token": 2.95769426896004,
+      "duration": 2.957765507977456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2502,
+            "output_tokens": 255,
+            "total_tokens": 2757,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2932280858,
+              "load_duration": 528290,
+              "prompt_eval_duration": 40255000,
+              "eval_duration": 2803778000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

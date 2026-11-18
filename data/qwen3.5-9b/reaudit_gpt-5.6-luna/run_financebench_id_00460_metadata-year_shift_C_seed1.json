@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00460_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The endpoint store counts are internally consistent: 908 + 0 - 1 = 907 for Q2 FY2024, and 931 + 1 - 2 = 930 for Q2 FY2023. Comparing 907 with 930 yields a decrease of 23 stores, matching the analyst and writer outputs. Although C07 has a year-field inconsistency (its metric says FY2023 while its year is 2024), it is not used in the derived claim and does not make the reported comparison incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1490,
+    "output_tokens": 674,
+    "total_tokens": 2164,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011068,
+    "latency_ms": 6867.341667006258,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1490,
+      "output_tokens": 674,
+      "total_tokens": 2164,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.866849791025743,
+      "duration": 6.866976666031405,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1490,
+            "output_tokens": 674,
+            "total_tokens": 2164,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1499,
+    "output_tokens": 972,
+    "total_tokens": 2471,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10880.418110988103,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1499,
+      "output_tokens": 972,
+      "total_tokens": 2471,
+      "time_to_first_token": 10.880169250012841,
+      "duration": 10.880259825033136,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1499,
+            "output_tokens": 972,
+            "total_tokens": 2471,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10853037863,
+              "load_duration": 560309,
+              "prompt_eval_duration": 297968000,
+              "eval_duration": 10475545000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

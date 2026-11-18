@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00540_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AES Corporation sold its inventory roughly once every ten months during FY2022.",
+    "reported_metric": "Inventory turnover frequency (times per year)",
+    "reported_value": 1.2,
+    "confidence": 0.98,
+    "rationale": "The extractor reports a negative Cost of Sales, so a conventional inventory turnover ratio is not meaningfully calculable. The analyst nevertheless introduces the unsupported and contradictory claim of one turnover every ten months, then correctly states that no specific turnover frequency can be derived. The writer repeats that first incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 852,
+    "output_tokens": 506,
+    "total_tokens": 1358,
+    "cached_tokens": 0,
+    "reasoning_tokens": 368,
+    "cost_usd": 0.0007775999999999999,
+    "latency_ms": 5070.183749950957,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 852,
+      "output_tokens": 506,
+      "total_tokens": 1358,
+      "reasoning_tokens": 368,
+      "time_to_first_token": 5.0694129160256125,
+      "duration": 5.069670458033215,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 852,
+            "output_tokens": 506,
+            "total_tokens": 1358,
+            "reasoning_tokens": 368,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 665,
+    "output_tokens": 203,
+    "total_tokens": 868,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2662.515260046348,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 665,
+      "output_tokens": 203,
+      "total_tokens": 868,
+      "time_to_first_token": 2.662233255978208,
+      "duration": 2.6623485069721937,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 665,
+            "output_tokens": 203,
+            "total_tokens": 868,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2637275751,
+              "load_duration": 614025,
+              "prompt_eval_duration": 200010000,
+              "eval_duration": 2386232000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

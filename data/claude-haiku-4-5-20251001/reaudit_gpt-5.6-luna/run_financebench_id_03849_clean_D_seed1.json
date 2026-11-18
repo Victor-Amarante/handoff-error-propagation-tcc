@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03849_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The analyst calculated the three-year average using the already rounded annual percentages (12.6%, 5.7%, and 5.2%), yielding 7.8% instead of averaging the underlying unrounded ratios.",
+    "reported_metric": "capex_pct_revenue_3yr_avg",
+    "reported_value": 7.8,
+    "confidence": 0.99,
+    "rationale": "The extracted figures produce annual ratios of approximately 12.64%, 5.73%, and 5.24%; averaging these unrounded values gives approximately 7.9% when rounded to one decimal. The first error is therefore the analyst's A04 calculation, which prematurely rounded the annual percentages."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1891,
+    "output_tokens": 450,
+    "total_tokens": 2341,
+    "cached_tokens": 0,
+    "reasoning_tokens": 278,
+    "cost_usd": 0.0009182000000000001,
+    "latency_ms": 5426.836749946233,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1891,
+      "output_tokens": 450,
+      "total_tokens": 2341,
+      "reasoning_tokens": 278,
+      "time_to_first_token": 5.426257167011499,
+      "duration": 5.426474709005561,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1891,
+            "output_tokens": 450,
+            "total_tokens": 2341,
+            "reasoning_tokens": 278,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2603,
+    "output_tokens": 273,
+    "total_tokens": 2876,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003968,
+    "latency_ms": 4216.636041004676,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2603,
+      "output_tokens": 273,
+      "total_tokens": 2876,
+      "time_to_first_token": 4.216143542027567,
+      "duration": 4.216291917022318,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2603,
+            "output_tokens": 273,
+            "total_tokens": 2876,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

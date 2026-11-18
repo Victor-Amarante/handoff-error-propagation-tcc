@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01930_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "The extractor reported USD 3,673 million as AMCOR's FY 2023 Total Packaging sales, although the trace also reports USD 14,694 million for the same FY 2023 total, indicating that USD 3,673 million is a quarterly rather than full-year figure.",
+    "reported_metric": "Net sales fiscal year 2023 Total Packaging",
+    "reported_value": 3673.0,
+    "confidence": 0.94,
+    "rationale": "The extractor contains duplicate FY2023 Total Packaging figures: 3,673 and 14,694 USD_M. The smaller figure equals the apparent quarterly segment sum, while 14,694 is the full-year total. The analyst then used C03 and the analogous FY2022 quarterly figure C09 to calculate -236, so the error began with the extractor's period labeling/selection."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2323,
+    "output_tokens": 1719,
+    "total_tokens": 4042,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1503,
+    "cost_usd": 0.0025273999999999995,
+    "latency_ms": 18033.027917030267,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2323,
+      "output_tokens": 1719,
+      "total_tokens": 4042,
+      "reasoning_tokens": 1503,
+      "time_to_first_token": 18.031834082969,
+      "duration": 18.032411624968518,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2323,
+            "output_tokens": 1719,
+            "total_tokens": 4042,
+            "reasoning_tokens": 1503,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2491,
+    "output_tokens": 361,
+    "total_tokens": 2852,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4592.174244986381,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2491,
+      "output_tokens": 361,
+      "total_tokens": 2852,
+      "time_to_first_token": 4.591940903046634,
+      "duration": 4.592014032998122,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2491,
+            "output_tokens": 361,
+            "total_tokens": 2852,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4565836445,
+              "load_duration": 643265,
+              "prompt_eval_duration": 606317000,
+              "eval_duration": 3914424000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

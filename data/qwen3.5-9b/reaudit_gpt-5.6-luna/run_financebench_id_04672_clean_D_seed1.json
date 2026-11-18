@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04672_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports net PP&E of 8,738 USD millions for FY2018, and the analyst correctly converts this to 8.738 USD billions. The writer reproduces the same value consistently."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1205,
+    "output_tokens": 151,
+    "total_tokens": 1356,
+    "cached_tokens": 0,
+    "reasoning_tokens": 55,
+    "cost_usd": 0.00042219999999999996,
+    "latency_ms": 2341.559624997899,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1205,
+      "output_tokens": 151,
+      "total_tokens": 1356,
+      "reasoning_tokens": 55,
+      "time_to_first_token": 2.340833875001408,
+      "duration": 2.341043833992444,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1205,
+            "output_tokens": 151,
+            "total_tokens": 1356,
+            "reasoning_tokens": 55,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1157,
+    "output_tokens": 1566,
+    "total_tokens": 2723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 17181.884001998696,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1157,
+      "output_tokens": 1566,
+      "total_tokens": 2723,
+      "time_to_first_token": 17.181633794039954,
+      "duration": 17.181717275001574,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1157,
+            "output_tokens": 1566,
+            "total_tokens": 2723,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 17154593282,
+              "load_duration": 427339,
+              "prompt_eval_duration": 304239000,
+              "eval_duration": 16776265000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

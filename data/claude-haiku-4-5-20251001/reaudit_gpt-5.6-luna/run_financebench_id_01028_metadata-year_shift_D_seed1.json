@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported total revenues net of interest expense of $41,396 million for 2023, although its evidence identifies the figure under the 2022 data and does not support the 2023 attribution.",
+    "reported_metric": "total_revenues_net_of_interest_expense",
+    "reported_value": 41396.0,
+    "confidence": 0.93,
+    "rationale": "C01 is internally inconsistent: its year is 2023, while the accompanying evidence explicitly shows 2022. The downstream analyst and writer then inherit the extracted geographic evidence and produce a region list, but the first factual inconsistency appears in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1378,
+    "output_tokens": 673,
+    "total_tokens": 2051,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010832,
+    "latency_ms": 6287.183291977271,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1378,
+      "output_tokens": 673,
+      "total_tokens": 2051,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.286574667028617,
+      "duration": 6.286733791988809,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1378,
+            "output_tokens": 673,
+            "total_tokens": 2051,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2064,
+    "output_tokens": 191,
+    "total_tokens": 2255,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003019,
+    "latency_ms": 3392.5275829969905,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2064,
+      "output_tokens": 191,
+      "total_tokens": 2255,
+      "time_to_first_token": 3.3917031249729916,
+      "duration": 3.3919991250149906,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2064,
+            "output_tokens": 191,
+            "total_tokens": 2255,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

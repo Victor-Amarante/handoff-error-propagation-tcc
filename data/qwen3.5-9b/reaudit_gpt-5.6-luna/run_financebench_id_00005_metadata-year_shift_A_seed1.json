@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Corning does not have positive working capital based on FY2022 data.",
+    "reported_metric": "working capital",
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The analyst's initial conclusion is incorrect and appears before its own correction: $7,453M in current assets minus $5,175M in current liabilities equals positive working capital of $2,278M. The extractor's figures are internally consistent, and the writer uses the corrected conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1126,
+    "output_tokens": 377,
+    "total_tokens": 1503,
+    "cached_tokens": 0,
+    "reasoning_tokens": 247,
+    "cost_usd": 0.0006776,
+    "latency_ms": 4171.1699169827625,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1126,
+      "output_tokens": 377,
+      "total_tokens": 1503,
+      "reasoning_tokens": 247,
+      "time_to_first_token": 4.1703557500150055,
+      "duration": 4.17066804098431,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1126,
+            "output_tokens": 377,
+            "total_tokens": 1503,
+            "reasoning_tokens": 247,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 980,
+    "output_tokens": 206,
+    "total_tokens": 1186,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2697.1339540323243,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 980,
+      "output_tokens": 206,
+      "total_tokens": 1186,
+      "time_to_first_token": 2.6969078189576976,
+      "duration": 2.6969790579751134,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 980,
+            "output_tokens": 206,
+            "total_tokens": 1186,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2672105131,
+              "load_duration": 741460,
+              "prompt_eval_duration": 265786999,
+              "eval_duration": 2330784000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

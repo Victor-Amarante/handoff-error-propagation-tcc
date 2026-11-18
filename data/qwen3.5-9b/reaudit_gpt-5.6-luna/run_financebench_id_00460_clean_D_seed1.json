@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00460_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The total number of stores at the end of Q2 decreased by 1 from FY2023 to FY2024.",
+    "reported_metric": "total_stores_change_fy2024_to_fy2023",
+    "reported_value": -1.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 907 stores for Q2 FY2024 and 930 for Q2 FY2023, so the change is 907 - 930 = -23 stores, not -1. The analyst's A01 claim is the first incorrect claim; the writer then repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1877,
+    "output_tokens": 321,
+    "total_tokens": 2198,
+    "cached_tokens": 0,
+    "reasoning_tokens": 167,
+    "cost_usd": 0.0007606000000000001,
+    "latency_ms": 3177.8230000054464,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1877,
+      "output_tokens": 321,
+      "total_tokens": 2198,
+      "reasoning_tokens": 167,
+      "time_to_first_token": 3.1773541669826955,
+      "duration": 3.1775623339926824,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1877,
+            "output_tokens": 321,
+            "total_tokens": 2198,
+            "reasoning_tokens": 167,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1950,
+    "output_tokens": 940,
+    "total_tokens": 2890,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10660.332099010702,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1950,
+      "output_tokens": 940,
+      "total_tokens": 2890,
+      "time_to_first_token": 10.660072173981462,
+      "duration": 10.660148666996974,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1950,
+            "output_tokens": 940,
+            "total_tokens": 2890,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10635378131,
+              "load_duration": 568725,
+              "prompt_eval_duration": 474710000,
+              "eval_duration": 10116383000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

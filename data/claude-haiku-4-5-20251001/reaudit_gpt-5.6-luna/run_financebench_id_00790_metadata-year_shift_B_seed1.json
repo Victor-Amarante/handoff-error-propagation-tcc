@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Property and equipment plus operating lease right-of-use assets equal 13.44% of total assets in FY2022.",
+    "reported_metric": "property_and_equipment_and_lease_assets_to_total_assets",
+    "reported_value": 13.44,
+    "confidence": 0.99,
+    "rationale": "Using the extractor values, (12,873 + 17,872) / 228,275 × 100 = approximately 13.47%, not 13.44%. The 5.64% property-and-equipment ratio is internally consistent, so the first error appears in the analyst's combined-assets calculation and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 940,
+    "output_tokens": 392,
+    "total_tokens": 1332,
+    "cached_tokens": 0,
+    "reasoning_tokens": 230,
+    "cost_usd": 0.0006584,
+    "latency_ms": 4082.139583013486,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 940,
+      "output_tokens": 392,
+      "total_tokens": 1332,
+      "reasoning_tokens": 230,
+      "time_to_first_token": 4.081702291965485,
+      "duration": 4.081894833012484,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 940,
+            "output_tokens": 392,
+            "total_tokens": 1332,
+            "reasoning_tokens": 230,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1481,
+    "output_tokens": 196,
+    "total_tokens": 1677,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002461,
+    "latency_ms": 3444.4628339842893,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1481,
+      "output_tokens": 196,
+      "total_tokens": 1677,
+      "time_to_first_token": 3.443645083985757,
+      "duration": 3.443970917025581,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1481,
+            "output_tokens": 196,
+            "total_tokens": 1677,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00669_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Consolidated earnings before tax was $21.7 billion in FY2023.",
+    "reported_metric": "earnings_before_tax",
+    "reported_value": 21.7,
+    "confidence": 0.99,
+    "rationale": "Claim C01 labels the $21.7 billion earnings-before-tax figure as FY2023, but its attached evidence explicitly states that $21.7 billion relates to FY2022 and $22.8 billion to FY2021. This provenance mismatch is the first error and propagates into the later analysis."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2012,
+    "output_tokens": 240,
+    "total_tokens": 2252,
+    "cached_tokens": 0,
+    "reasoning_tokens": 99,
+    "cost_usd": 0.0006904000000000001,
+    "latency_ms": 2958.069542015437,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2012,
+      "output_tokens": 240,
+      "total_tokens": 2252,
+      "reasoning_tokens": 99,
+      "time_to_first_token": 2.957520709023811,
+      "duration": 2.9576762089855038,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2012,
+            "output_tokens": 240,
+            "total_tokens": 2252,
+            "reasoning_tokens": 99,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2673,
+    "output_tokens": 226,
+    "total_tokens": 2899,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003803,
+    "latency_ms": 3443.7966250116006,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2673,
+      "output_tokens": 226,
+      "total_tokens": 2899,
+      "time_to_first_token": 3.4428744159522466,
+      "duration": 3.4431772909592837,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2673,
+            "output_tokens": 226,
+            "total_tokens": 2899,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

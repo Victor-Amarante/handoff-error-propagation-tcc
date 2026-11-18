@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00807_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Q2 FY2023 quick ratio is 4.8.",
+    "reported_metric": "quick_ratio_q2_2023",
+    "reported_value": 4.8,
+    "confidence": 0.99,
+    "rationale": "The extracted figures imply a quick ratio of approximately (cash 4,258 + current marketable securities 56 + accounts receivable 4,947) / current liabilities 10,936 = 0.85, not 4.8. The incorrect ratio first appears in the analyst output and is then repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1934,
+    "output_tokens": 302,
+    "total_tokens": 2236,
+    "cached_tokens": 0,
+    "reasoning_tokens": 157,
+    "cost_usd": 0.0007492,
+    "latency_ms": 3635.8735830290243,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1934,
+      "output_tokens": 302,
+      "total_tokens": 2236,
+      "reasoning_tokens": 157,
+      "time_to_first_token": 3.6350463749840856,
+      "duration": 3.6353351669968106,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1934,
+            "output_tokens": 302,
+            "total_tokens": 2236,
+            "reasoning_tokens": 157,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2064,
+    "output_tokens": 394,
+    "total_tokens": 2458,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4890.467948978767,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2064,
+      "output_tokens": 394,
+      "total_tokens": 2458,
+      "time_to_first_token": 4.890202250040602,
+      "duration": 4.890275290003046,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2064,
+            "output_tokens": 394,
+            "total_tokens": 2458,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4864977354,
+              "load_duration": 526552,
+              "prompt_eval_duration": 517727999,
+              "eval_duration": 4294182000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

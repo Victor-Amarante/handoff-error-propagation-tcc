@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04171_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident: $347,965 thousand converts to $347.965 million, which rounds to $348 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor's amount and the analyst's conversion are internally consistent, and the writer accurately repeats the rounded value in USD millions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 569,
+    "output_tokens": 224,
+    "total_tokens": 793,
+    "cached_tokens": 0,
+    "reasoning_tokens": 118,
+    "cost_usd": 0.00038260000000000003,
+    "latency_ms": 3213.8543329783715,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 569,
+      "output_tokens": 224,
+      "total_tokens": 793,
+      "reasoning_tokens": 118,
+      "time_to_first_token": 3.213071374979336,
+      "duration": 3.2133056669845246,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 569,
+            "output_tokens": 224,
+            "total_tokens": 793,
+            "reasoning_tokens": 118,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1054,
+    "output_tokens": 146,
+    "total_tokens": 1200,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001784,
+    "latency_ms": 2967.7292080014013,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1054,
+      "output_tokens": 146,
+      "total_tokens": 1200,
+      "time_to_first_token": 2.9668992910301313,
+      "duration": 2.967130500008352,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1054,
+            "output_tokens": 146,
+            "total_tokens": 1200,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

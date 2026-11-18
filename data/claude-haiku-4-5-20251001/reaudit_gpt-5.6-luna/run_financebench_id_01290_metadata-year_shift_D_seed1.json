@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01290_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The U.S. government is Boeing's primary customer based on its accounting for 40% of 2022 revenue through government contracts.",
+    "reported_metric": "revenue_from_us_government_contracts",
+    "reported_value": 40.0,
+    "confidence": 0.89,
+    "rationale": "The extracted and analyzed claim supports only that U.S. government contracts represented 40% of 2022 revenue. It does not establish that the U.S. government was Boeing's primary customer, nor does it identify Boeing's primary customers plural. The unsupported customer-ranking inference first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 893,
+    "output_tokens": 665,
+    "total_tokens": 1558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009766,
+    "latency_ms": 7054.491666029207,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 893,
+      "output_tokens": 665,
+      "total_tokens": 1558,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.053712833032478,
+      "duration": 7.053999333002139,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 893,
+            "output_tokens": 665,
+            "total_tokens": 1558,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1411,
+    "output_tokens": 221,
+    "total_tokens": 1632,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002516,
+    "latency_ms": 2968.5951659921557,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1411,
+      "output_tokens": 221,
+      "total_tokens": 1632,
+      "time_to_first_token": 2.9680260000168346,
+      "duration": 2.968187457998283,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1411,
+            "output_tokens": 221,
+            "total_tokens": 1632,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

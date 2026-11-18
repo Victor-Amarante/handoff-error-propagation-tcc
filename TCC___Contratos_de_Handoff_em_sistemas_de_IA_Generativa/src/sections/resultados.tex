@@ -1,99 +1,129 @@
 % !TEX root = ../tcc.tex
 \section{Resultados}\label{sec:resultados}
 
-% As tabelas em tables/ sao geradas a partir dos logs por scripts/build_tables.py,
-% e a Fig. 2 por scripts/build_figures.py. Nao edite os numeros a mao.
+% As tabelas em tables/ sao geradas a partir dos logs por scripts/build_tables.py
+% e scripts/build_complementares.py, e a Fig. 2 por scripts/build_figures.py.
+% Numeros do texto que nao estao nas tabelas: scripts/parecer_reanalise.py.
+% Nao edite os numeros a mao.
 
 A Tabela~\ref{tab:principal} reúne as métricas do estudo principal por modelo e condição, e a Tabela~\ref{tab:deltas} traz as diferenças pareadas entre condições vizinhas, que respondem às três perguntas de pesquisa.
 Todos os intervalos são de 95\%, obtidos por bootstrap sobre as perguntas, e uma diferença é chamada de significativa quando seu intervalo não inclui zero (Seção~\ref{sec:estatistica}).
+As condições complementares e as verificações do instrumento estão na Seção~\ref{sec:res-complementares}.
 
 \input{tables/resultados-principal}
 \input{tables/resultados-deltas}
 
 \subsection{Execuções de controle e confiabilidade do auditor}\label{sec:res-controle}
 
-Duas linhas da Tabela~\ref{tab:principal} precisam ser lidas antes das perguntas de pesquisa.
+Três linhas de base precisam ser lidas antes das perguntas de pesquisa.
 A primeira é a acurácia das execuções de controle, sem erro injetado.
 No GPT-5.6 Luna, ela fica entre 0,66 e 0,71 nas quatro condições.
 No Haiku e no Qwen, porém, o formato estruturado custa acurácia mesmo sem erro nenhum: o Haiku cai de 0,72 em A para 0,59 em B, e o Qwen, de 0,63 para 0,44, e nenhum dos dois recupera o nível de A na condição C.
 Em D, o Haiku volta a 0,74, enquanto o Qwen fica em 0,45.
 É o mesmo tipo de perda que Ray e Tam et al. observaram com saídas estruturadas \cite{ray2026constraint, tam2024speak}, e parte da diferença entre A e B nas execuções injetadas já está presente aqui.
+Nos dois modelos sem raciocínio, a saída de B também é bem mais curta que a de A, com 157 contra 291 tokens no Haiku e 170 contra 267 no Qwen, o que sugere que o JSON imposto tira do modelo o espaço onde ele faria o cálculo por extenso. A Seção~\ref{sec:res-complementares} testa essa hipótese.
 A comparação com o controle também mostra que a injeção é material: com o erro, a acurácia final cai para algo entre 0,28 e 0,53, conforme o modelo e a condição.
 
-A segunda é a taxa de falso positivo do auditor.
-No GPT, ele aponta um culpado em 14\% a 16\% das execuções limpas, uma linha de base baixa e estável entre condições.
+A segunda linha de base é o auditor.
+No GPT, ele aponta um culpado em 14\% a 16\% das execuções limpas, uma taxa baixa e estável entre condições.
 No Haiku, a taxa vai de 30\% em A a 65\% em B e C, e no Qwen fica entre 51\% e 74\%.
-Com tantos falsos positivos, a FESA desses dois modelos não pode ser lida diretamente, porque um auditor que culpa algum estágio na maioria das execuções acerta o estágio com frequência por acaso.
-A RCCA é bem menos sensível a esse viés, já que exige apontar o claim corrompido ou o seu valor exato.
-Por isso, as análises de atribuição a seguir se apoiam na RCCA nos três modelos e na FESA apenas no GPT.
+O falso positivo, porém, não diz quanto do acerto viria por acaso, e o placebo responde a isso.
+No GPT, o auditor das execuções limpas aponta o claim que seria corrompido em no máximo 7\% dos casos, e o Extrator em no máximo 5\%.
+No Haiku, esses placebos ficam entre 12\% e 16\% para o claim e entre 14\% e 26\% para o estágio, e no Qwen, entre 11\% e 26\% e entre 26\% e 35\%.
+A RCCA do Qwen em C e D, de 0,45, fica só cerca de 0,2 acima do que o auditor acertaria sem erro nenhum, e a FESA do Haiku e do Qwen só pode ser lida descontado o placebo. As comparações de FESA a seguir usam essa FESA líquida.
+
+A terceira é a fração de execuções sem efeito.
+O estado corrompido é o mesmo nas quatro condições, então, se essa categoria indicasse um claim fora do caminho da resposta, ela teria o mesmo tamanho em A, B, C e D.
+Não é o que acontece: no GPT, ela vai de 27\% em A a 2\% em C e 9\% em D.
+Só 0,4\% das execuções ficam sem efeito nas quatro condições ao mesmo tempo, nos três modelos, e quase todo o restante é erro neutralizado no Analista (Tabela~\ref{tab:destino}).
+A injeção quase sempre caiu no caminho da resposta, e a fração sem efeito mede um comportamento do contrato. Ela não serve como indicador da qualidade da amostra, como o protocolo previa.
 
 \subsection{RQ1: efeito da estruturação (A $\times$ B)}\label{sec:rq1}
 
 Estruturar o handoff não melhorou nenhuma métrica de correção ou de contenção.
-A acurácia final caiu nos três modelos, com diferença significativa no GPT ($-0{,}06$) e no Qwen ($-0{,}07$), e a ESR e a taxa de correção não mudaram de forma significativa.
-A única mudança consistente foi a profundidade de propagação, que aumentou nos três modelos (+0,43, +0,26 e +0,31): com claims tipados, o erro passou a alterar mais estágios.
-A atribuição ficou praticamente no mesmo lugar, com RCCA abaixo de 0,09 em A e em B nos três modelos.
-O Haiku foi o único com redução significativa da amplificação ($-0{,}66$).
+A acurácia final caiu nos três modelos, com diferença significativa no GPT ($-0{,}06$) e no Qwen ($-0{,}07$), embora nenhuma das duas resista à correção de Holm, e a retenção caiu no GPT ($-0{,}09$). A ESR e a taxa de correção não mudaram de forma significativa.
+A mudança consistente foi a profundidade de propagação, que aumentou nos três modelos (+0,43, +0,26 e +0,31), mas a decomposição mostra que ela vem sobretudo da repetição literal do valor corrompido.
+O número de estágios alterados só porque repetem esse valor subiu 0,33 no GPT, 0,29 no Haiku e 0,17 no Qwen, enquanto o de estágios com valores novos variou +0,10, $-0{,}03$ e +0,14, com intervalo significativo só no Qwen.
+A repetição se concentra no erro de metadado. O schema de B obriga o Analista a reemitir o ano de cada claim, e no GPT a repetição literal nesse braço vai de 0,30 estágio em A para 0,84 em B, contra 0,44 e 0,52 no erro de valor.
+Com claims tipados, o erro passa a ser repetido em mais estágios, sem que isso altere a sobrevivência na resposta final.
+
+A atribuição quase não mudou no GPT e no Haiku (RCCA de 0,23 para 0,24 e de 0,38 para 0,35).
+No Qwen, ela subiu de 0,14 para 0,36, mas o placebo também subiu, de 0,11 para 0,19, e cerca de um terço do ganho é acerto que viria sem erro nenhum.
+A redução de amplificação no Haiku ($-0{,}66$) acompanha o encurtamento da saída. Em B, o Haiku emite 5,3 números por execução, contra 8,1 em A, e a amplificação por valor emitido fica praticamente igual (0,20 em A e 0,24 em B).
 
 \input{tables/resultados-destino}
 
-A distribuição do destino do erro (Tabela~\ref{tab:destino}) ajuda a entender a menor profundidade em A.
-Na condição A, uma fração maior das execuções termina sem efeito, com 27\% no GPT, 16\% no Haiku e 13\% no Qwen, contra 3\% a 6\% em B. Em prosa, o claim corrompido mais vezes deixa de alterar qualquer estágio seguinte.
-Em B, esses casos passam a se dividir entre correção e contenção, e a fração de erros corrigidos sobe de 0\%--4\% para 10\%--18\%.
+A distribuição do destino do erro (Tabela~\ref{tab:destino}) mostra o que acontece em A.
+Na condição A, o erro é neutralizado no Analista em 27\% das execuções no GPT, 15\% no Haiku e 12\% no Qwen, contra 2\% a 6\% em B, e esses casos estão quase todos no erro de metadado.
+A prosa do Analista não reescreve o ano de cada figura, e o ano trocado some do caminho sem que nada precise ser corrigido.
+Em B, o mesmo erro passa a aparecer na saída do Analista e é classificado como corrigido ou contido, o que explica por que a fração de erros corrigidos sobe de 0\%--4\% para 10\%--18\%. É uma reclassificação produzida pelo formato, e não uma melhora de comportamento: somando correção e neutralização, a fração vai de 27\% para 14\% no GPT, fica em 16\% no Haiku e vai de 16\% para 24\% no Qwen.
 
 \subsection{RQ2: efeito do lineage (B $\times$ C)}\label{sec:rq2}
 
-O lineage teve o efeito mais estável entre os modelos. A RCCA subiu cerca de 0,34 nos três, de 0,04 para 0,38 no GPT, de 0,06 para 0,41 no Haiku e de 0,09 para 0,44 no Qwen.
+O lineage elevou a RCCA nos três modelos, de 0,24 para 0,38 no GPT, de 0,35 para 0,43 no Haiku e de 0,36 para 0,45 no Qwen, com intervalos que excluem zero, embora os ganhos do Haiku e do Qwen não resistam à correção de Holm.
 Esse ganho de atribuição não veio acompanhado de contenção.
 A ESR não caiu em nenhum modelo e, no Haiku, chegou a subir (+0,07), assim como a profundidade de propagação, que aumentou no GPT e no Haiku.
-A acurácia final e a taxa de correção subiram no GPT (+0,11 e +0,15) e no Haiku (+0,11 e +0,18), mas não no Qwen.
+A acurácia final e a retenção subiram no GPT (+0,11 e +0,17) e no Haiku (+0,11 e +0,19), mas não no Qwen.
+
+O critério de acerto muda bastante o tamanho desse efeito.
+Pelo critério original, que aceita o identificador do claim, a RCCA sobe cerca de 0,34 nos três modelos, de menos de 0,1 em B para cerca de 0,4 em C.
+A diferença vem de dois lugares.
+Em A e B, o critério original exigia que, no erro de metadado, o auditor informasse o ano corrompido como valor do claim, o que quase nunca acontece. O auditor aponta o claim certo e informa o número dele, e o critério original contava isso como erro.
+Em C, a maior parte dos acertos pelo critério original vem do identificador, que o auditor pode apontar seguindo o \texttt{derived\_from} sem dizer o que está errado. O placebo desse caminho é de 2\% no GPT, mas de 11\% no Haiku e de 22\% no Qwen.
+Com o critério de conteúdo, igual nas quatro condições, o ganho de B para C cai para +0,15, +0,07 e +0,08.
 
 \begin{figure*}[t]
 \centering
 \includegraphics[width=\textwidth]{images/fig2_tipo_erro.pdf}
-\caption{ESR e RCCA por tipo de erro no estudo principal, para cada modelo e condição. As faixas indicam o IC95\% bootstrap sobre as perguntas.}
+\caption{ESR e RCCA (critério de conteúdo) por tipo de erro no estudo principal, para cada modelo e condição. As faixas indicam o IC95\% bootstrap sobre as perguntas.}
 \label{fig:tipo}
 \end{figure*}
 
-Separar os resultados por tipo de erro muda a leitura desse efeito (Fig.~\ref{fig:tipo}).
-Quase todo o ganho de RCCA de B para C está no braço de metadado, em que ela sobe de perto de zero para valores entre 0,56 e 0,61 nos três modelos.
-No braço de valor, o lineage sozinho quase não ajuda, e a RCCA em C fica entre 0,13 e 0,25.
-O mesmo vale para a acurácia: os ganhos do GPT e do Haiku em C vêm do erro de metadado (+0,21 e +0,19), enquanto no erro de valor a diferença é praticamente nula.
+Separar os resultados por tipo de erro mostra de onde vem o que resta (Fig.~\ref{fig:tipo}).
+No braço de valor, o lineage quase não ajuda, e a RCCA vai de 0,08 para 0,14 no GPT, de 0,14 para 0,13 no Haiku e de 0,16 para 0,24 no Qwen.
+No braço de metadado, ela sobe de 0,35 para 0,57 no GPT, de 0,50 para 0,65 no Haiku e de 0,50 para 0,61 no Qwen.
+O mesmo vale para a retenção: no GPT e no Haiku, ela fica parada no erro de valor (0,17 e 0,16; 0,24 e 0,24) e sobe no de metadado (de 0,48 para 0,81 e de 0,50 para 0,80).
 A explicação está no próprio identificador da fonte.
-Em 128 das 142 perguntas do braço de metadado no GPT, o \texttt{source\_id} traz o ano fiscal original no nome do documento, como em \texttt{AMERICANWATERWORKS\_2022\_10K}, e contradiz o ano corrompido.
+O \texttt{source\_id} traz o ano fiscal original no nome do documento, como em \texttt{AMERICANWATERWORKS\_2022\_10K}, em 128 das 142 perguntas do braço de metadado no GPT, 121 de 134 no Haiku e 113 de 137 no Qwen, e contradiz o ano corrompido.
 Nesse braço, a condição C carrega, sem que o desenho previsse, um pedaço de evidência junto com a proveniência.
 
-O ganho de RCCA também depende de como o acerto é contado.
-O instrumento aceita como acerto o identificador do claim corrompido ou, na falta dele, a métrica e o valor corrompido informados pelo auditor (Seção~\ref{sec:auditor}).
-Em A e B só existe o segundo caminho, e na condição C a maior parte dos acertos vem do primeiro: o auditor aponta o identificador certo sem informar qual valor está errado.
-Com o critério de métrica e valor aplicado igualmente às quatro condições, a RCCA quase não muda de B para C (+0,03, 0,00 e +0,04), enquanto de C para D sobe 0,33 no GPT e 0,31 no Haiku, com intervalos longe de zero, e 0,06 no Qwen.
-As implicações dos dois pontos são discutidas nas Seções~\ref{sec:discussao} e~\ref{sec:ameacas}.
+O erro de ano tem ainda outro vazamento, que vale para as quatro condições.
+A própria pergunta traz o ano original em 126 de 142 perguntas no GPT, 123 de 134 no Haiku e 123 de 137 no Qwen, o que explica por que o auditor já identifica o claim de ano em A e B com frequência bem acima do placebo.
+A colisão do ano deslocado com outro claim da mesma métrica, que tornaria o erro autoevidente, é rara (3, 3 e 2 perguntas).
+As implicações desses vazamentos são discutidas nas Seções~\ref{sec:discussao} e~\ref{sec:ameacas}.
 
 \subsection{RQ3: efeito da evidência (C $\times$ D)}\label{sec:rq3}
 
-Nos dois modelos de API, a evidência foi o único mecanismo que reduziu a sobrevivência do erro.
-De C para D, a ESR caiu 0,10 no GPT e 0,14 no Haiku, a profundidade de propagação também caiu, e a acurácia final subiu 0,15 e 0,10, chegando a 0,53 e 0,49, os maiores valores entre as condições.
-A atribuição deu o maior salto do experimento. A RCCA subiu 0,43 e 0,38 e chegou a 0,80 no GPT e a 0,78 no Haiku, e a FESA do GPT, cujo auditor tem falso positivo baixo, foi a 0,82.
+Nos dois modelos de API, a evidência foi o único mecanismo do desenho principal que melhorou o destino do erro.
+De C para D, a acurácia final subiu 0,15 no GPT e 0,10 no Haiku, chegando a 0,53 e 0,49, os maiores valores entre as condições, e a ESR caiu 0,10 e 0,14, assim como a profundidade de propagação. As quedas de ESR e de profundidade, porém, não se distinguem do piso de ruído medido na Seção~\ref{sec:res-complementares}, e o efeito da evidência se apoia sobretudo nas medidas a seguir.
+A retenção subiu 0,17 e 0,14, e a acurácia estrita, que não aceita o valor corrompido na resposta, subiu 0,14 e 0,09.
+A atribuição deu o maior salto do experimento. A RCCA subiu 0,43 e 0,35 e chegou a 0,81 no GPT e a 0,78 no Haiku, com placebos de 0,04 e 0,12, e a FESA líquida subiu 0,45 e 0,31.
 No Haiku, a amplificação também caiu ($-0{,}41$).
-A condição D teve a maior fração de erros corrigidos nos três modelos (23\%, 17\% e 22\%) e, no Haiku e no Qwen, a menor fração de erros preservados.
+A condição D teve a maior fração de erros corrigidos nos três modelos (23\%, 17\% e 22\%), e no GPT e no Haiku foi também a condição com mais erros de valor neutralizados no Analista (23 de 118 e 23 de 115 execuções, contra 3 e 5 em C). Nesses casos, o Analista leu a evidência, usou o valor certo e produziu a mesma saída do controle, uma correção silenciosa que a categoria de correção não captava.
 
 O efeito aparece sobretudo no erro de valor, o caso em que só a fonte permite perceber o problema (Fig.~\ref{fig:tipo}).
-Nesse braço, a ESR caiu 0,25 no GPT e 0,20 no Haiku, e a RCCA chegou a 0,97 e 0,88.
-No erro de metadado, que a condição C já cobria em parte pelo \texttt{source\_id}, os ganhos de C para D foram pequenos e, na maioria das métricas, não significativos.
+Sem a evidência, esse erro é praticamente indetectável: nas condições A, B e C, a ESR do braço de valor fica entre 0,86 e 0,96 nos dois modelos de API, e a retenção, entre 0,16 e 0,24.
+Com ela, a ESR caiu 0,25 no GPT e 0,20 no Haiku, a retenção passou a 0,50 e 0,52, mais que o dobro, e a RCCA chegou a 0,96 e 0,87.
+No erro de metadado, a ESR praticamente não muda de A a D nos três modelos, e a evidência quase não ajuda. O trecho de evidência do claim corrompido contém o ano original em apenas 26 de 142 perguntas no GPT, 24 de 134 no Haiku e 27 de 137 no Qwen, de modo que, na maior parte dos casos, a evidência de D não contradiz o ano trocado.
+
+Há um descompasso entre o que o modelo detecta e o que ele corrige.
+No erro de valor, o auditor de D aponta o claim corrompido em 96\% das execuções no GPT e 87\% no Haiku, mas a ESR desse braço continua em 0,69 e 0,71.
+O mesmo modelo, com a mesma evidência, encontra o erro quando é perguntado e o deixa passar quando não é. A Seção~\ref{sec:res-complementares} testa se uma instrução explícita de conferência fecha essa diferença.
 
 No Qwen, o quadro foi outro.
-A evidência melhorou a acurácia final (+0,10) e a taxa de correção (+0,10), mas a ESR ($-0{,}05$) e a RCCA (+0,03) não mudaram de forma significativa, e a RCCA em D ficou em 0,47, contra cerca de 0,8 nos modelos de API.
-Separando por tipo de erro, a evidência elevou a RCCA do Qwen no braço de valor, de 0,25 para 0,42, mas a reduziu no de metadado ($-0{,}09$).
+A evidência melhorou a acurácia final (+0,10), a acurácia estrita (+0,09) e a retenção (+0,11), mas a ESR ($-0{,}05$) e a RCCA (+0,01) não mudaram de forma significativa, e a RCCA em D ficou em 0,45, contra cerca de 0,8 nos modelos de API.
+Como a acurácia estrita também subiu, o ganho do Qwen não se explica por respostas que passam a citar o número da evidência sem abandonar o erro.
+No braço de valor, a evidência elevou a RCCA do Qwen de 0,24 para 0,38, mas no de metadado ela caiu de 0,61 para 0,50.
 
 \subsection{Subestudo de atribuição de estágio}\label{sec:res-subestudo}
 
 \input{tables/resultados-subestudo}
 
 No subestudo, o erro percentual é injetado na saída do Analista e só o Redator roda por condição (Tabela~\ref{tab:subestudo}).
-No GPT, o auditor localizou o estágio da injeção quase sempre, com FESA entre 0,96 e 0,98 em todas as condições, inclusive em A.
-Com um único estágio entre a injeção e a resposta, localizar a origem foi fácil mesmo sem proveniência, e o contrato não fez diferença para a atribuição.
+No GPT, o auditor localizou o estágio e o claim da injeção quase sempre, com RCCA e FESA entre 0,96 e 0,98 em todas as condições, inclusive em A, e placebos de no máximo 0,11.
+Com um único estágio entre a injeção e a resposta, e com um percentual que pode ser recalculado a partir dos claims do trace, a atribuição não dependeu de proveniência.
 A evidência, por outro lado, reduziu a sobrevivência do erro de 0,93 para 0,71 de C para D, uma diferença de $-0{,}21$ (IC $[-0{,}34; -0{,}09]$).
-No Haiku, a única diferença significativa entre condições vizinhas foi a queda da ESR de A para B ($-0{,}07$), e a FESA, entre 0,70 e 0,82, convive com um falso positivo de 58\% a 67\% nas execuções de controle.
+No Haiku, a única diferença significativa entre condições vizinhas foi a queda da ESR de A para B ($-0{,}07$). A FESA, entre 0,70 e 0,81, convive com um placebo de 0,43 a 0,54, e a RCCA, entre 0,57 e 0,65, com um placebo de 0,31 a 0,43.
 No Qwen, com apenas 19 perguntas, os intervalos são largos. As únicas diferenças significativas entre condições vizinhas foram os aumentos de RCCA e FESA de A para B (+0,21 e +0,26), e o braço deve ser lido como indicativo.
 
 \subsection{Validade estrutural}\label{sec:res-validade}
@@ -103,19 +133,57 @@ A validade de contrato separou os modelos.
 GPT e Haiku praticamente não violaram o contrato, enquanto o Qwen violou cerca de metade dos handoffs nas três condições estruturadas.
 Das 2.448 saídas estruturadas do Qwen no estudo principal, 1.210 usaram uma unidade fora da lista permitida, na maior parte das vezes variações como ``\%'', ``percent'' e ``ratio'' no lugar dos rótulos previstos, ou o campo vazio.
 Identificadores duplicados apareceram em 54 saídas, e \texttt{derived\_from} apontando para um claim inexistente, em apenas 2.
-Como o schema aceita qualquer texto no campo de unidade, todas essas saídas passaram na validação estrutural.
-A concordância de lineage ficou entre 0,74 e 0,83 nas condições C e D. Na maior parte das execuções, portanto, a cadeia declarada pelo modelo aponta para o claim corrompido, o que é coerente com as alterações que o instrumento textual detecta nos estágios seguintes.
+Todas essas saídas passaram na validação estrutural porque o schema declara a unidade como texto livre e traz a lista permitida só na descrição do campo.
+Com a unidade declarada como enumeração, a decodificação restrita impediria essas violações, então a validade de contrato de 0,51 do Qwen mede em boa parte essa omissão do schema, e não só uma limitação do modelo.
+A concordância de lineage ficou entre 0,74 e 0,83 nas condições C e D. Na maior parte das execuções, a cadeia declarada pelo modelo aponta para o claim corrompido, o que é coerente com as alterações que o instrumento textual detecta nos estágios seguintes.
 
 \subsection{Custo operacional}\label{sec:custo}
 
 Todas as condições fazem o mesmo número de chamadas, uma ao Analista e outra ao Redator, então as diferenças de custo vêm apenas do tamanho das mensagens.
-Da condição A para a D, os tokens por execução aumentaram 3,9 vezes no GPT (de 691 para 2.666), 3,7 vezes no Haiku (de 907 para 3.322) e 2,2 vezes no Qwen (de 974 para 2.171).
+Da condição A para a D, os tokens por execução chegaram a 3,9 vezes os de A no GPT (de 691 para 2.666), 3,7 vezes no Haiku (de 907 para 3.322) e 2,2 vezes no Qwen (de 974 para 2.171).
 O maior acréscimo veio do lineage, de B para C, com cerca de mil tokens a mais por execução (+972, +1.375 e +966), porque os campos de proveniência se repetem em cada claim. A evidência acrescentou bem menos (+357, +293 e +259).
+Por mil tokens adicionais, o lineage rendeu um ganho de RCCA de 0,15 no GPT, 0,05 no Haiku e 0,08 no Qwen, enquanto a evidência rendeu 1,20 e 1,19 nos modelos de API, e acrescentou ainda uma queda de ESR de 0,27 e 0,48 por mil tokens, que o lineage não trouxe.
 Em dinheiro, a condição D custou US\$ 1,44 por mil execuções no GPT e US\$ 5,12 no Haiku, contra US\$ 0,39 e US\$ 2,07 em A.
-A latência cresceu no mesmo sentido no Haiku (de 4,3~s para 5,4~s) e no Qwen (de 3,2~s para 6,4~s). No GPT, ela foi maior em C (13,2~s) do que em D (11,3~s).
+A latência cresceu no mesmo sentido no Haiku (de 4,3~s para 5,4~s) e no Qwen (de 3,2~s para 6,4~s). No GPT, ela foi maior em C (13,2~s) do que em D (11,3~s). Como as condições rodaram intercaladas dentro de cada pergunta, essa diferença não reflete o horário da execução, e a contagem de tokens de raciocínio, parecida em C e D, também não a explica.
+
+\subsection{Condições complementares e verificações do instrumento}\label{sec:res-complementares}
+
+\input{tables/resultados-fatorial}
+
+A Tabela~\ref{tab:fatorial} traz o fatorial entre lineage e evidência nos dois modelos de API, sobre as mesmas perguntas e o mesmo erro injetado da rodada principal.
+Acrescentar a evidência a um handoff tipado sem lineage, de B para E, teve um efeito do mesmo tamanho que o de acrescentá-la sobre o lineage, de C para D, e às vezes maior.
+A retenção subiu 0,25 no GPT e 0,24 no Haiku, a acurácia final subiu 0,21 e 0,16, a RCCA subiu 0,44 e 0,32, e a presença literal do valor corrompido na resposta do erro de valor caiu 0,13 e 0,20, com um acréscimo de cerca de 360 tokens por execução.
+Já acrescentar o lineage a um handoff que já tinha a evidência, de E para D, não reduziu a ESR nem a presença literal do erro, aumentou a profundidade de propagação (+0,14 e +0,16) e custou de 950 a 1.320 tokens a mais por execução.
+O ganho que restou foi de atribuição, com RCCA 0,13 e 0,10 maior, e ele está todo no erro de metadado, em que o \texttt{source\_id} revela o ano. No erro de valor, a RCCA de E e a de D são praticamente iguais (0,96 e 0,96 no GPT; 0,84 e 0,87 no Haiku), e a acurácia final de E é até maior (0,43 contra 0,37 no GPT; 0,41 contra 0,32 no Haiku).
+
+A instrução de conferência da condição D$'$ fechou boa parte da diferença entre detectar e corrigir apontada na Seção~\ref{sec:rq3}.
+De D para D$'$, a retenção subiu 0,17 no GPT e 0,14 no Haiku, a acurácia final subiu 0,10 nos dois, e a presença literal do valor corrompido no erro de valor caiu de 0,19 para 0,02 no GPT e de 0,25 para 0,04 no Haiku, com apenas 53 e 83 tokens a mais.
+No GPT, a ESR do braço de valor caiu de 0,69 para 0,25 e a acurácia final desse braço quase dobrou, de 0,37 para 0,67. No Haiku, a ESR agregada não mudou de forma significativa ($-0{,}05$), embora a do braço de valor tenha caído de 0,71 para 0,53.
+A RCCA ficou no mesmo nível de D, o que é esperado, já que o auditor não recebe a instrução.
+
+A condição B$'$, com espaço para o raciocínio no schema do Analista, testou a perda de acurácia do controle de A para B.
+No Haiku, a acurácia do controle foi de 0,59 em B para 0,73 em B$'$, uma diferença de +0,14 (IC $[+0{,}06; +0{,}21]$), e voltou ao nível de A (0,72).
+No GPT, que já raciocina em tokens ocultos, ela não mudou (0,68 em B e 0,65 em B$'$).
+A perda de acurácia do Haiku com o formato estruturado vem do modo de saída, que tira do modelo o espaço para calcular por extenso. O contrato de handoff, que B$'$ mantém igual ao de B, não explica a queda.
+
+\input{tables/resultados-verificacoes}
+
+O teste A/A mostra que a ESR e a profundidade têm um piso de ruído alto (Tabela~\ref{tab:verificacoes}).
+Comparando duas execuções limpas da mesma pergunta e condição pelo mesmo instrumento, a ESR nula ficou entre 0,23 e 0,40 no GPT e entre 0,40 e 0,56 no Haiku, e a profundidade nula, entre 0,49 e 1,09 estágio.
+A causa é o segundo termo da Eq.~\ref{eq:esr}: duas respostas corretas da mesma pergunta costumam diferir em algum número incidental, como uma parcela do cálculo citada numa e omitida na outra.
+A acurácia, que não depende do controle, é bem mais estável, e a réplica teve o mesmo acerto do controle em 81\% a 98\% das perguntas.
+O piso também varia entre condições, sem uma ordem comum aos dois modelos.
+Descontada a diferença dos pisos, o aumento de profundidade de A para B continua fora de zero (+0,49 no GPT e +0,37 no Haiku), mas as diferenças de ESR entre condições vizinhas deixam de se distinguir de zero, em parte porque o piso foi medido em apenas 47 e 43 perguntas. No Haiku, a queda de ESR de C para D ($-0{,}14$) é igual à diferença dos pisos.
+Os efeitos da evidência sobre o destino do erro ficam sustentados pelas medidas que não comparam a execução com o controle: a acurácia final, a acurácia estrita, a retenção e, nas condições E e D$'$, a presença literal do valor corrompido.
+
+Na auditoria cruzada, o auditor do GPT leu os traces de Haiku e Qwen sem que o pipeline rodasse de novo.
+Nos traces do Haiku, a RCCA do auditor do GPT ficou perto da do próprio Haiku em C e D (0,42 e 0,82, contra 0,43 e 0,78), com metade do placebo, e o ganho de B para C ficou maior (+0,19, contra +0,07).
+Nos traces do Qwen, a diferença foi grande. Lida pelo auditor do GPT, a condição D teve RCCA de 0,73, contra 0,45 com o auditor do próprio Qwen, e o ganho de C para D passou de +0,01 para +0,42.
+A atribuição baixa do Qwen em D vinha do auditor. O handoff do Qwen carrega a evidência que permite localizar o erro, mas o próprio Qwen não a usa para isso.
+O falso positivo do auditor do GPT nos controles do Qwen, entre 0,42 e 0,64, é mais alto que nos do próprio GPT, o que é coerente com a acurácia mais baixa do controle do Qwen: parte desses culpados pode ser erro nativo do pipeline, e não alarme falso.
 
 \subsection{Replicação entre modelos}\label{sec:replicacao}
 
-Dois resultados se repetiram nos três modelos: a estrutura sozinha não melhorou a correção e aumentou a profundidade de propagação, e o lineage elevou a RCCA em cerca de 0,34 sem reduzir a sobrevivência do erro, com o ganho concentrado no erro de metadado e no acerto pelo identificador do claim.
-O efeito da evidência se replicou entre os dois modelos de API, com reduções significativas de ESR e de profundidade e RCCA perto de 0,8, mas não no Qwen, em que a evidência melhorou a acurácia final sem melhorar a contenção nem a atribuição.
+Dois resultados se repetiram nos três modelos: a estrutura sozinha não melhorou a correção e aumentou a profundidade de propagação, quase toda por repetição literal do valor corrompido, e o lineage elevou a RCCA sem reduzir a sobrevivência do erro, com um ganho que se concentra no erro de metadado e que encolhe de cerca de 0,34 para 0,07 a 0,15 quando o acerto é contado pelo conteúdo.
+O efeito da evidência se replicou entre os dois modelos de API, com aumento de retenção e de acurácia estrita e RCCA perto de 0,8, e, no fatorial, ele aparece com ou sem lineage. No Qwen, a evidência melhorou a acurácia final, mas a atribuição só melhorou quando os traces foram lidos pelo auditor do GPT.
 O Qwen também foi o único modelo a violar o contrato com frequência e o que mais perdeu acurácia com o formato estruturado nas execuções de controle.

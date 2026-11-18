@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02608_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Best Buy's FY2017 net profit margin was reported as 3.0%.",
+    "reported_metric": "net_profit_margin",
+    "reported_value": 3.0,
+    "confidence": 0.98,
+    "rationale": "The extractor provides FY2017 net earnings of 1,228 but no FY2017 revenue; it provides FY2018 revenue instead. Using the available FY2018 revenue gives 1,228/39,403 = 3.1%, not 3.0%. The analyst therefore introduced the first identifiable incorrect claim, which the writer repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1077,
+    "output_tokens": 661,
+    "total_tokens": 1738,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010086,
+    "latency_ms": 6801.916583033744,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1077,
+      "output_tokens": 661,
+      "total_tokens": 1738,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.801414916000795,
+      "duration": 6.801613165996969,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1077,
+            "output_tokens": 661,
+            "total_tokens": 1738,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1622,
+    "output_tokens": 227,
+    "total_tokens": 1849,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002757,
+    "latency_ms": 3651.2750000110827,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1622,
+      "output_tokens": 227,
+      "total_tokens": 1849,
+      "time_to_first_token": 3.6505038329632953,
+      "duration": 3.650803791009821,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1622,
+            "output_tokens": 227,
+            "total_tokens": 1849,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00603_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst relabeled a Q4 2022-versus-Q4 2021 inventory increase of 104.2 USD_M as a FY2023 driver claim, without evidence identifying what drove the increase.",
+    "reported_metric": "merchandise_inventories_net_q4_2022_vs_q4_2021_increase_drivers",
+    "reported_value": 104.2,
+    "confidence": 0.95,
+    "rationale": "The extractor claims concern Q4 2022 and Q4 2021 balances, while the analyst changes the claim year to 2023 and labels the amount as an explanation of drivers. The cited inputs support, at most, an inventory balance change—not its causes or a FY2023 claim. The writer then repeats this unsupported reframing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1145,
+    "output_tokens": 703,
+    "total_tokens": 1848,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010726,
+    "latency_ms": 7439.972041000146,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1145,
+      "output_tokens": 703,
+      "total_tokens": 1848,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.439543290995061,
+      "duration": 7.439621250028722,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1145,
+            "output_tokens": 703,
+            "total_tokens": 1848,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1072,
+    "output_tokens": 386,
+    "total_tokens": 1458,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4637.1302520274185,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1072,
+      "output_tokens": 386,
+      "total_tokens": 1458,
+      "time_to_first_token": 4.636883747007232,
+      "duration": 4.63695664901752,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1072,
+            "output_tokens": 386,
+            "total_tokens": 1458,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4606001744,
+              "load_duration": 478247,
+              "prompt_eval_duration": 277557000,
+              "eval_duration": 4255652000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

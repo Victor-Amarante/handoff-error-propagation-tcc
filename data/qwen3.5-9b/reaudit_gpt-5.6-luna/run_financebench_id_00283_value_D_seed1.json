@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00283_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Pfizer expects to incur approximately $805 million in costs to separate Upjohn.",
+    "reported_metric": "expected_cost",
+    "reported_value": 805.0,
+    "confidence": 0.99,
+    "rationale": "The extractor’s structured value of 805.0 USD million contradicts its own evidence, which explicitly states approximately $700 million. The analyst and writer correctly use the evidenced $700 million figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 854,
+    "output_tokens": 187,
+    "total_tokens": 1041,
+    "cached_tokens": 0,
+    "reasoning_tokens": 72,
+    "cost_usd": 0.00039520000000000007,
+    "latency_ms": 2264.500749995932,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 854,
+      "output_tokens": 187,
+      "total_tokens": 1041,
+      "reasoning_tokens": 72,
+      "time_to_first_token": 2.263656249968335,
+      "duration": 2.2638997500180267,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 854,
+            "output_tokens": 187,
+            "total_tokens": 1041,
+            "reasoning_tokens": 72,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 713,
+    "output_tokens": 201,
+    "total_tokens": 914,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2542.189176019747,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 713,
+      "output_tokens": 201,
+      "total_tokens": 914,
+      "time_to_first_token": 2.5418996399967,
+      "duration": 2.5419889099430293,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 713,
+            "output_tokens": 201,
+            "total_tokens": 914,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2512586801,
+              "load_duration": 479182,
+              "prompt_eval_duration": 193236000,
+              "eval_duration": 2250621000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

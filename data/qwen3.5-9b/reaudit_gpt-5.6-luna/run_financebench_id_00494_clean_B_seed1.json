@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00494_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported the 787 production rate as 5.0 USD_M for FY2023, treating a production-rate figure as a monetary amount rather than establishing the requested rate change.",
+    "reported_metric": "787 production rate",
+    "reported_value": 5.0,
+    "confidence": 0.93,
+    "rationale": "The extractor is the first stage containing the incompatible claim: production rate is expressed in USD_M, and the extracted values are rates rather than changes. The analyst and writer merely relabel and restate those values without evidence of a valid change calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 737,
+    "output_tokens": 554,
+    "total_tokens": 1291,
+    "cached_tokens": 0,
+    "reasoning_tokens": 408,
+    "cost_usd": 0.0008121999999999999,
+    "latency_ms": 5552.073250000831,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 737,
+      "output_tokens": 554,
+      "total_tokens": 1291,
+      "reasoning_tokens": 408,
+      "time_to_first_token": 5.551864084030967,
+      "duration": 5.551934833987616,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 737,
+            "output_tokens": 554,
+            "total_tokens": 1291,
+            "reasoning_tokens": 408,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 579,
+    "output_tokens": 228,
+    "total_tokens": 807,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2864.339280000422,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 579,
+      "output_tokens": 228,
+      "total_tokens": 807,
+      "time_to_first_token": 2.8640649570152164,
+      "duration": 2.864156390016433,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 579,
+            "output_tokens": 228,
+            "total_tokens": 807,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2836916746,
+              "load_duration": 537900,
+              "prompt_eval_duration": 155796000,
+              "eval_duration": 2613811000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

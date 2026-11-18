@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly claimed that the input contained no information about Pfizer's 2019 net income or business events, overlooking the extracted non-operating gain from the Consumer Healthcare JV transaction and other income-related figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.92,
+    "rationale": "The extractor output includes a substantial $(8,107) million gain on completion of the Consumer Healthcare JV transaction, along with net-income components for multiple years. Although the years are not clearly labeled, the analyst's categorical claim that no relevant information was present is unsupported by the extracted data. The writer then repeated that omission."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1921,
+    "output_tokens": 673,
+    "total_tokens": 2594,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011918000000000002,
+    "latency_ms": 6580.12591698207,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1921,
+      "output_tokens": 673,
+      "total_tokens": 2594,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.579361374955624,
+      "duration": 6.5796175839495845,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1921,
+            "output_tokens": 673,
+            "total_tokens": 2594,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1826,
+    "output_tokens": 218,
+    "total_tokens": 2044,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2884.0018839691766,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1826,
+      "output_tokens": 218,
+      "total_tokens": 2044,
+      "time_to_first_token": 2.8837464640382677,
+      "duration": 2.883840067021083,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1826,
+            "output_tokens": 218,
+            "total_tokens": 2044,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2858991546,
+              "load_duration": 638002,
+              "prompt_eval_duration": 443073000,
+              "eval_duration": 2372221000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

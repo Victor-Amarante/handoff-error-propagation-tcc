@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00724_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is present; the extracted year-over-year changes show that -74% is the largest decline.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The four extracted percentage changes are -45%, -56%, -74%, and -53%, so the analyst correctly selected -74% as the biggest drop. The response is incomplete because it does not name the geographic region, but no incorrect metric value appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1758,
+    "output_tokens": 545,
+    "total_tokens": 2303,
+    "cached_tokens": 0,
+    "reasoning_tokens": 413,
+    "cost_usd": 0.0010056,
+    "latency_ms": 6015.249916992616,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1758,
+      "output_tokens": 545,
+      "total_tokens": 2303,
+      "reasoning_tokens": 413,
+      "time_to_first_token": 6.014794959046412,
+      "duration": 6.014938417007215,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1758,
+            "output_tokens": 545,
+            "total_tokens": 2303,
+            "reasoning_tokens": 413,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2459,
+    "output_tokens": 170,
+    "total_tokens": 2629,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003309,
+    "latency_ms": 2763.06037500035,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2459,
+      "output_tokens": 170,
+      "total_tokens": 2629,
+      "time_to_first_token": 2.762314084044192,
+      "duration": 2.762549167033285,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2459,
+            "output_tokens": 170,
+            "total_tokens": 2629,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

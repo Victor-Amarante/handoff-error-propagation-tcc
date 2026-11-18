@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "FY 2022 net property, plant, and equipment was reported as $107,434 million, but gross PPE of $370,689 million less accumulated depreciation of $200,255 million equals $170,434 million.",
+    "reported_metric": "property_plant_equipment_net",
+    "reported_value": 107434.0,
+    "confidence": 0.99,
+    "rationale": "The extractor outputs are internally inconsistent: net PPE must equal gross PPE minus accumulated depreciation, which yields $170,434 million rather than $107,434 million. The analyst ratios and writer conclusion inherit this incorrect net PPE value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1519,
+    "output_tokens": 314,
+    "total_tokens": 1833,
+    "cached_tokens": 0,
+    "reasoning_tokens": 161,
+    "cost_usd": 0.0006806000000000001,
+    "latency_ms": 3328.2060410128906,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1519,
+      "output_tokens": 314,
+      "total_tokens": 1833,
+      "reasoning_tokens": 161,
+      "time_to_first_token": 3.327654458989855,
+      "duration": 3.3278517089784145,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1519,
+            "output_tokens": 314,
+            "total_tokens": 1833,
+            "reasoning_tokens": 161,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2198,
+    "output_tokens": 240,
+    "total_tokens": 2438,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003398,
+    "latency_ms": 3994.960083044134,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2198,
+      "output_tokens": 240,
+      "total_tokens": 2438,
+      "time_to_first_token": 3.993847250007093,
+      "duration": 3.9941524579771794,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2198,
+            "output_tokens": 240,
+            "total_tokens": 2438,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

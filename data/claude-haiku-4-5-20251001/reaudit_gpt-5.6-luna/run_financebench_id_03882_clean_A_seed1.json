@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03882_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be established from the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports FY2020 net trade receivables of $1,615.9 million, and the analyst and writer consistently repeat that figure. The trace contains no contradictory provenance or internal inconsistency, and no claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 757,
+    "output_tokens": 226,
+    "total_tokens": 983,
+    "cached_tokens": 0,
+    "reasoning_tokens": 113,
+    "cost_usd": 0.0004226,
+    "latency_ms": 2976.440333004575,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 757,
+      "output_tokens": 226,
+      "total_tokens": 983,
+      "reasoning_tokens": 113,
+      "time_to_first_token": 2.975460791029036,
+      "duration": 2.975789625023026,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 757,
+            "output_tokens": 226,
+            "total_tokens": 983,
+            "reasoning_tokens": 113,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1269,
+    "output_tokens": 142,
+    "total_tokens": 1411,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001979,
+    "latency_ms": 2237.5342919840477,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1269,
+      "output_tokens": 142,
+      "total_tokens": 1411,
+      "time_to_first_token": 2.2371494160033762,
+      "duration": 2.2372889579855837,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1269,
+            "output_tokens": 142,
+            "total_tokens": 1411,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

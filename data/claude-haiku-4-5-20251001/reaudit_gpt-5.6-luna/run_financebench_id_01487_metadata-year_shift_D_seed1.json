@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01487_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "JnJ's net earnings as a percent of sales were 20.1% in FY2024, based on the extracted 2023 Q2 evidence.",
+    "reported_metric": "net_earnings_percent_to_sales",
+    "reported_value": 20.1,
+    "confidence": 0.99,
+    "rationale": "The extractor labels the 20.1% figure as year 2024, while the evidence and surrounding claims concern Q2 FY2023. The analyst then incorrectly uses C02 as the Q2 2023 value, propagating the year-label error into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1319,
+    "output_tokens": 371,
+    "total_tokens": 1690,
+    "cached_tokens": 0,
+    "reasoning_tokens": 218,
+    "cost_usd": 0.000709,
+    "latency_ms": 4297.579917008989,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1319,
+      "output_tokens": 371,
+      "total_tokens": 1690,
+      "reasoning_tokens": 218,
+      "time_to_first_token": 4.297088957973756,
+      "duration": 4.2972220000228845,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1319,
+            "output_tokens": 371,
+            "total_tokens": 1690,
+            "reasoning_tokens": 218,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1893,
+    "output_tokens": 196,
+    "total_tokens": 2089,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002873,
+    "latency_ms": 3628.6632080445997,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1893,
+      "output_tokens": 196,
+      "total_tokens": 2089,
+      "time_to_first_token": 3.627854499965906,
+      "duration": 3.6281465409556404,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1893,
+            "output_tokens": 196,
+            "total_tokens": 2089,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

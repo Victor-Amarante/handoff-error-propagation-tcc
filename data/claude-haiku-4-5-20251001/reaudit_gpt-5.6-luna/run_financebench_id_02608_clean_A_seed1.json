@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02608_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted figures and the 2.8% calculation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The yearly margins are approximately 3.06%, 2.27%, and 3.12%; their average is approximately 2.81%, which rounds to 2.8%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 880,
+    "output_tokens": 261,
+    "total_tokens": 1141,
+    "cached_tokens": 0,
+    "reasoning_tokens": 147,
+    "cost_usd": 0.0004892,
+    "latency_ms": 3003.26224998571,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 880,
+      "output_tokens": 261,
+      "total_tokens": 1141,
+      "reasoning_tokens": 147,
+      "time_to_first_token": 3.002834708953742,
+      "duration": 3.0029208339983597,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 880,
+            "output_tokens": 261,
+            "total_tokens": 1141,
+            "reasoning_tokens": 147,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1400,
+    "output_tokens": 183,
+    "total_tokens": 1583,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002315,
+    "latency_ms": 3178.9251250447705,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1400,
+      "output_tokens": 183,
+      "total_tokens": 1583,
+      "time_to_first_token": 3.1781278339913115,
+      "duration": 3.1784397499868646,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1400,
+            "output_tokens": 183,
+            "total_tokens": 1583,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

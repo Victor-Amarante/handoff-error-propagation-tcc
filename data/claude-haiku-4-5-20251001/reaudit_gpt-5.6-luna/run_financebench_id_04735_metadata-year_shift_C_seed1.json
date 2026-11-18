@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04735_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Cash from operations of 1,469,502 (USD thousands) was labeled as FY2016, making it inconsistent with the FY2015 question and the FY2015 source filing.",
+    "reported_metric": "operating_cash_flow",
+    "reported_value": 1469502.0,
+    "confidence": 0.93,
+    "rationale": "The numerator claim is the first provenance inconsistency: it is tagged year 2016, while the requested period and the liabilities claim are FY2015. The analyst then uses this mismatched-year claim to compute the ratio, and the writer repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 947,
+    "output_tokens": 665,
+    "total_tokens": 1612,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009874,
+    "latency_ms": 6786.200250033289,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 947,
+      "output_tokens": 665,
+      "total_tokens": 1612,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.785673332982697,
+      "duration": 6.78585899999598,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 947,
+            "output_tokens": 665,
+            "total_tokens": 1612,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1488,
+    "output_tokens": 196,
+    "total_tokens": 1684,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002468,
+    "latency_ms": 2593.9677500282414,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1488,
+      "output_tokens": 196,
+      "total_tokens": 1684,
+      "time_to_first_token": 2.5931810830370523,
+      "duration": 2.5934847500175238,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1488,
+            "output_tokens": 196,
+            "total_tokens": 1684,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

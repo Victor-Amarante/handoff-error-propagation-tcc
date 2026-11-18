@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01009_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor provided evidence that PepsiCo served customers in more than 200 countries and territories, while the analyst output was empty. The writer's statement that no analyst data was provided is consistent with the trace. The response is incomplete for the question, but no factual error can be established using only the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 727,
+    "output_tokens": 575,
+    "total_tokens": 1302,
+    "cached_tokens": 0,
+    "reasoning_tokens": 450,
+    "cost_usd": 0.0008354,
+    "latency_ms": 6041.68333299458,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 727,
+      "output_tokens": 575,
+      "total_tokens": 1302,
+      "reasoning_tokens": 450,
+      "time_to_first_token": 6.040667749999557,
+      "duration": 6.04090887500206,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 727,
+            "output_tokens": 575,
+            "total_tokens": 1302,
+            "reasoning_tokens": 450,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1228,
+    "output_tokens": 154,
+    "total_tokens": 1382,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001998,
+    "latency_ms": 3379.5832080068067,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1228,
+      "output_tokens": 154,
+      "total_tokens": 1382,
+      "time_to_first_token": 3.378599582996685,
+      "duration": 3.378937916015275,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1228,
+            "output_tokens": 154,
+            "total_tokens": 1382,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

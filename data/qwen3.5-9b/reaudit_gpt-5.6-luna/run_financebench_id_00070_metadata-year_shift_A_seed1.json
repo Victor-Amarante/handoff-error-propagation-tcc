@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00070_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.78,
+    "rationale": "The analyst correctly applies working capital = total current assets minus total current liabilities: $1,250M - $2,811M = -$1,561M. The writer preserves that calculation and conclusion. Although some extracted component figures appear internally inconsistent with the reported asset total, the explicit FY2022 totals used by the answer support the result, and the trace does not establish which component, if any, is erroneous."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1256,
+    "output_tokens": 1170,
+    "total_tokens": 2426,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016552000000000001,
+    "latency_ms": 10910.414915997535,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1256,
+      "output_tokens": 1170,
+      "total_tokens": 2426,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.909314749995247,
+      "duration": 10.909454915963579,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1256,
+            "output_tokens": 1170,
+            "total_tokens": 2426,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1131,
+    "output_tokens": 237,
+    "total_tokens": 1368,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3038.3154720184393,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1131,
+      "output_tokens": 237,
+      "total_tokens": 1368,
+      "time_to_first_token": 3.038041352003347,
+      "duration": 3.0381307270145044,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1131,
+            "output_tokens": 237,
+            "total_tokens": 1368,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3010863575,
+              "load_duration": 484513,
+              "prompt_eval_duration": 290725000,
+              "eval_duration": 2668177000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

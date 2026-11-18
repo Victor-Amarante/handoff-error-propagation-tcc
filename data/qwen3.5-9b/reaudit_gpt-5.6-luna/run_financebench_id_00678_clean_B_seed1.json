@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00678_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's FY2022 gross margin is approximately 5.46%.",
+    "reported_metric": "Gross Margin Profile FY2022",
+    "reported_value": 5.46,
+    "confidence": 0.99,
+    "rationale": "The analyst correctly inferred COGS of $63,078M from $53,969M product costs plus $9,109M service costs. Using revenue of $66,608M, gross margin is ($66,608M - $63,078M) / $66,608M = approximately 5.30%, not 5.46%. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 978,
+    "output_tokens": 359,
+    "total_tokens": 1337,
+    "cached_tokens": 0,
+    "reasoning_tokens": 198,
+    "cost_usd": 0.0006264,
+    "latency_ms": 3907.627916953061,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 978,
+      "output_tokens": 359,
+      "total_tokens": 1337,
+      "reasoning_tokens": 198,
+      "time_to_first_token": 3.907240832981188,
+      "duration": 3.9073493750183843,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 978,
+            "output_tokens": 359,
+            "total_tokens": 1337,
+            "reasoning_tokens": 198,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 890,
+    "output_tokens": 1255,
+    "total_tokens": 2145,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13868.890331999864,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 890,
+      "output_tokens": 1255,
+      "total_tokens": 2145,
+      "time_to_first_token": 13.8686479239841,
+      "duration": 13.868725332024042,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 890,
+            "output_tokens": 1255,
+            "total_tokens": 2145,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13843094714,
+              "load_duration": 456985,
+              "prompt_eval_duration": 240181000,
+              "eval_duration": 13552192000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

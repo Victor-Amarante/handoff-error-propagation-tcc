@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00563_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor labeled Data Center FY22 net revenue of USD 6,043 million with year 2023 instead of 2022, causing Data Center to be omitted from the FY21–FY22 comparison.",
+    "reported_metric": "Net revenue Data Center FY22",
+    "reported_value": 6043.0,
+    "confidence": 0.97,
+    "rationale": "The extractor output contains an internal year inconsistency: the claim is explicitly for FY22 but has year 2023. This likely caused the analyst to compare only Gaming and Client. Using the extracted values, Data Center increased from 3,694 to 6,043 (about 63.6%), exceeding Gaming's increase from 5,607 to 6,805 (about 21.4%)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 965,
+    "output_tokens": 700,
+    "total_tokens": 1665,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001033,
+    "latency_ms": 6561.167583044153,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 965,
+      "output_tokens": 700,
+      "total_tokens": 1665,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.560256084019784,
+      "duration": 6.560615042049903,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 965,
+            "output_tokens": 700,
+            "total_tokens": 1665,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 867,
+    "output_tokens": 456,
+    "total_tokens": 1323,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5249.084746988956,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 867,
+      "output_tokens": 456,
+      "total_tokens": 1323,
+      "time_to_first_token": 5.248852504009847,
+      "duration": 5.248926232976373,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 867,
+            "output_tokens": 456,
+            "total_tokens": 1323,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5224538853,
+              "load_duration": 506211,
+              "prompt_eval_duration": 238013000,
+              "eval_duration": 4935456000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

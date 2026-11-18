@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01163_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted values are internally consistent: operations provided USD_M 8,541, investing provided USD_M 564, and financing used USD_M 7,447. Operations therefore brought in the most cash and lost the least, so the final answer contains no error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1619,
+    "output_tokens": 193,
+    "total_tokens": 1812,
+    "cached_tokens": 0,
+    "reasoning_tokens": 85,
+    "cost_usd": 0.0005554,
+    "latency_ms": 2362.7235420281067,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1619,
+      "output_tokens": 193,
+      "total_tokens": 1812,
+      "reasoning_tokens": 85,
+      "time_to_first_token": 2.362404500017874,
+      "duration": 2.3624946249765344,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1619,
+            "output_tokens": 193,
+            "total_tokens": 1812,
+            "reasoning_tokens": 85,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1663,
+    "output_tokens": 1668,
+    "total_tokens": 3331,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 18556.554484996013,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1663,
+      "output_tokens": 1668,
+      "total_tokens": 3331,
+      "time_to_first_token": 18.55627604498295,
+      "duration": 18.556356913002674,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1663,
+            "output_tokens": 1668,
+            "total_tokens": 3331,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 18531098390,
+              "load_duration": 685065,
+              "prompt_eval_duration": 417216000,
+              "eval_duration": 18008120000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

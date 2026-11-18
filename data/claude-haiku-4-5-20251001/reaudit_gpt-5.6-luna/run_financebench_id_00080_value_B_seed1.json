@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00080_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The reported working capital is internally consistent: $57,517 million in current assets minus $45,101 million in current liabilities equals $12,416 million. The writer accurately reports that calculation. Although PayPal's customer-funds balances may make conventional working capital less informative, the trace provides no definitive basis to classify the stated positive amount as incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1178,
+    "output_tokens": 637,
+    "total_tokens": 1815,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001,
+    "latency_ms": 7403.942000004463,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1178,
+      "output_tokens": 637,
+      "total_tokens": 1815,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.403168292017654,
+      "duration": 7.403490166994743,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1178,
+            "output_tokens": 637,
+            "total_tokens": 1815,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1765,
+    "output_tokens": 239,
+    "total_tokens": 2004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00296,
+    "latency_ms": 4198.603541008197,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1765,
+      "output_tokens": 239,
+      "total_tokens": 2004,
+      "time_to_first_token": 4.197583083005156,
+      "duration": 4.19788316701306,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1765,
+            "output_tokens": 239,
+            "total_tokens": 2004,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

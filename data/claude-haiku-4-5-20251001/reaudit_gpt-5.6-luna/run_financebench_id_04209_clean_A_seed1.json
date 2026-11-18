@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04209_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; all pipeline stages consistently report total assets of $59,268 million for FY2021.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer agree on the same metric and value, and the trace provides no contradictory provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 568,
+    "output_tokens": 160,
+    "total_tokens": 728,
+    "cached_tokens": 0,
+    "reasoning_tokens": 52,
+    "cost_usd": 0.0003056,
+    "latency_ms": 2900.547874975018,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 568,
+      "output_tokens": 160,
+      "total_tokens": 728,
+      "reasoning_tokens": 52,
+      "time_to_first_token": 2.8998316249926575,
+      "duration": 2.900084832974244,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 568,
+            "output_tokens": 160,
+            "total_tokens": 728,
+            "reasoning_tokens": 52,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1046,
+    "output_tokens": 137,
+    "total_tokens": 1183,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001731,
+    "latency_ms": 2878.8052919553593,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1046,
+      "output_tokens": 137,
+      "total_tokens": 1183,
+      "time_to_first_token": 2.8778356249677017,
+      "duration": 2.878132915997412,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1046,
+            "output_tokens": 137,
+            "total_tokens": 1183,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

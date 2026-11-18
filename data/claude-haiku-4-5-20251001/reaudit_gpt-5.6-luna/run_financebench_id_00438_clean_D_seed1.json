@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00438_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported operating margins and the 2021-to-2022 change are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculated margins match the extracted figures: 6,098/17,606 = 34.6% and 5,802/15,785 = 36.8%, so the change is -2.2 percentage points. The writer's conclusion that the margin did not improve from FY2021 to FY2022 is supported by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1807,
+    "output_tokens": 287,
+    "total_tokens": 2094,
+    "cached_tokens": 0,
+    "reasoning_tokens": 137,
+    "cost_usd": 0.0007057999999999999,
+    "latency_ms": 2793.5369170154445,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1807,
+      "output_tokens": 287,
+      "total_tokens": 2094,
+      "reasoning_tokens": 137,
+      "time_to_first_token": 2.793242082989309,
+      "duration": 2.793300041987095,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1807,
+            "output_tokens": 287,
+            "total_tokens": 2094,
+            "reasoning_tokens": 137,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2471,
+    "output_tokens": 171,
+    "total_tokens": 2642,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003326,
+    "latency_ms": 2760.2449580444954,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2471,
+      "output_tokens": 171,
+      "total_tokens": 2642,
+      "time_to_first_token": 2.7594124589813873,
+      "duration": 2.7596376669825986,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2471,
+            "output_tokens": 171,
+            "total_tokens": 2642,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

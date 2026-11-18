@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00822_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Richard A. Johnson received roughly 27 times as many votes against as Virginia C. Drosos.",
+    "reported_metric": "Ratio of Richard A. Johnson's votes against to Virginia C. Drosos's votes against",
+    "reported_value": 27.0,
+    "confidence": 0.99,
+    "rationale": "The extracted figures imply 16,105,000 / 294,935 ≈ 54.6, not roughly 27. The analyst introduced this incorrect comparison, which the writer repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1070,
+    "output_tokens": 445,
+    "total_tokens": 1515,
+    "cached_tokens": 0,
+    "reasoning_tokens": 311,
+    "cost_usd": 0.000748,
+    "latency_ms": 4869.452624989208,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1070,
+      "output_tokens": 445,
+      "total_tokens": 1515,
+      "reasoning_tokens": 311,
+      "time_to_first_token": 4.868756874988321,
+      "duration": 4.868933707999531,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1070,
+            "output_tokens": 445,
+            "total_tokens": 1515,
+            "reasoning_tokens": 311,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1575,
+    "output_tokens": 151,
+    "total_tokens": 1726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00233,
+    "latency_ms": 2995.7122910418548,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1575,
+      "output_tokens": 151,
+      "total_tokens": 1726,
+      "time_to_first_token": 2.995068165997509,
+      "duration": 2.9953009580494836,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1575,
+            "output_tokens": 151,
+            "total_tokens": 1726,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

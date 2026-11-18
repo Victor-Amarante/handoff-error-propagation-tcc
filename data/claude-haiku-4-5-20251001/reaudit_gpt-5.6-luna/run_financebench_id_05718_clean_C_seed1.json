@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05718_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the conversion from $389.0 million to $0.389 billion is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 389.0 USD million, and the analyst correctly converts this to 0.389 USD billion. The writer preserves the same metric, value, year, and provenance."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 830,
+    "output_tokens": 174,
+    "total_tokens": 1004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 58,
+    "cost_usd": 0.00037479999999999995,
+    "latency_ms": 3487.859417044092,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 830,
+      "output_tokens": 174,
+      "total_tokens": 1004,
+      "reasoning_tokens": 58,
+      "time_to_first_token": 3.4870269169914536,
+      "duration": 3.48727429198334,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 830,
+            "output_tokens": 174,
+            "total_tokens": 1004,
+            "reasoning_tokens": 58,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1351,
+    "output_tokens": 185,
+    "total_tokens": 1536,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002276,
+    "latency_ms": 2871.5118329855613,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1351,
+      "output_tokens": 185,
+      "total_tokens": 1536,
+      "time_to_first_token": 2.8707229159772396,
+      "duration": 2.8710222499794327,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1351,
+            "output_tokens": 185,
+            "total_tokens": 1536,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

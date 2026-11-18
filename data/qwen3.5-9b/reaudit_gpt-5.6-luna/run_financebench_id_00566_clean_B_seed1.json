@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00566_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The 2021 debt balance of 150,868 USD_K was reported as $150.87 billion, but USD_K denotes thousands of dollars, so it equals approximately $150.87 million.",
+    "reported_metric": "Verizon debt balance sheet 2021, converted to billions",
+    "reported_value": 150.87,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst consistently report 150,868 USD_K for 2021 and 150,489 USD_K for 2022, supporting a decrease. The writer introduces the first error by converting values in thousands of dollars to billions instead of millions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 871,
+    "output_tokens": 671,
+    "total_tokens": 1542,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009794,
+    "latency_ms": 6694.90008399589,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 671,
+      "total_tokens": 1542,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.694164125015959,
+      "duration": 6.694504250015598,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 671,
+            "total_tokens": 1542,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 769,
+    "output_tokens": 998,
+    "total_tokens": 1767,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 11080.082779983059,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 769,
+      "output_tokens": 998,
+      "total_tokens": 1767,
+      "time_to_first_token": 11.07984836702235,
+      "duration": 11.079922850010917,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 769,
+            "output_tokens": 998,
+            "total_tokens": 1767,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11054658434,
+              "load_duration": 468249,
+              "prompt_eval_duration": 218627000,
+              "eval_duration": 10782773000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

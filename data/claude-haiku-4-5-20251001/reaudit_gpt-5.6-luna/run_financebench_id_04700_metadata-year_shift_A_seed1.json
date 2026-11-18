@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04700_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Microsoft's cost of revenue (COGS) for FY2017 was $32,780 million, rather than providing the requested FY2016 figure.",
+    "reported_metric": "FY2017 cost of revenue (COGS)",
+    "reported_value": 32780.0,
+    "confidence": 0.94,
+    "rationale": "The extractor supplied a FY2017 figure when the question asks for FY2016. The analyst and writer consistently propagated the resulting absence of the requested FY2016 value; no claim IDs were provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 715,
+    "output_tokens": 316,
+    "total_tokens": 1031,
+    "cached_tokens": 0,
+    "reasoning_tokens": 180,
+    "cost_usd": 0.0005222,
+    "latency_ms": 3599.840165989008,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 715,
+      "output_tokens": 316,
+      "total_tokens": 1031,
+      "reasoning_tokens": 180,
+      "time_to_first_token": 3.5995472919894382,
+      "duration": 3.5996123339864425,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 715,
+            "output_tokens": 316,
+            "total_tokens": 1031,
+            "reasoning_tokens": 180,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1204,
+    "output_tokens": 137,
+    "total_tokens": 1341,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001889,
+    "latency_ms": 2045.5936250509694,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1204,
+      "output_tokens": 137,
+      "total_tokens": 1341,
+      "time_to_first_token": 2.045303791994229,
+      "duration": 2.0453765419661067,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1204,
+            "output_tokens": 137,
+            "total_tokens": 1341,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

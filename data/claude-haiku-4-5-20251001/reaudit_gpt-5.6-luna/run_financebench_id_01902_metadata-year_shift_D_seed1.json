@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01902_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Services was the best-performing domestic category in Q2 FY2024 based on 7.6% comparable sales growth.",
+    "reported_metric": "best_performing_category_q2_fy2024_usa",
+    "reported_value": 1.0,
+    "confidence": 0.99,
+    "rationale": "The question asks for the category performing best by top line, but the analyst inferred the answer from comparable-sales growth rates. No top-line sales values are present in the trace, so A01 is unsupported and initiates the error; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1411,
+    "output_tokens": 460,
+    "total_tokens": 1871,
+    "cached_tokens": 0,
+    "reasoning_tokens": 314,
+    "cost_usd": 0.0008342,
+    "latency_ms": 5056.408459029626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1411,
+      "output_tokens": 460,
+      "total_tokens": 1871,
+      "reasoning_tokens": 314,
+      "time_to_first_token": 5.055586542002857,
+      "duration": 5.0559112500050105,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1411,
+            "output_tokens": 460,
+            "total_tokens": 1871,
+            "reasoning_tokens": 314,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2024,
+    "output_tokens": 220,
+    "total_tokens": 2244,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003124,
+    "latency_ms": 3291.074957989622,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2024,
+      "output_tokens": 220,
+      "total_tokens": 2244,
+      "time_to_first_token": 3.290156457980629,
+      "duration": 3.2904572499683127,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2024,
+            "output_tokens": 220,
+            "total_tokens": 2244,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

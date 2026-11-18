@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01928_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMCOR's Adjusted Non-GAAP EBITDA for FY 2023 was 0.0 USD millions.",
+    "reported_metric": "adjusted_non_gaap_ebitda",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor only reported Adjusted EBITDA of 2,018 USD millions for FY 2024 and the analyst produced no claims. The writer introduced an unsupported FY 2023 value of 0.0 in its structured answer claim, despite stating that the value could not be found."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 633,
+    "output_tokens": 335,
+    "total_tokens": 968,
+    "cached_tokens": 0,
+    "reasoning_tokens": 191,
+    "cost_usd": 0.0005286000000000001,
+    "latency_ms": 3812.9961660015397,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 633,
+      "output_tokens": 335,
+      "total_tokens": 968,
+      "reasoning_tokens": 191,
+      "time_to_first_token": 3.8124745420063846,
+      "duration": 3.812633958994411,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 633,
+            "output_tokens": 335,
+            "total_tokens": 968,
+            "reasoning_tokens": 191,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1134,
+    "output_tokens": 163,
+    "total_tokens": 1297,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001949,
+    "latency_ms": 3184.8008329980075,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1134,
+      "output_tokens": 163,
+      "total_tokens": 1297,
+      "time_to_first_token": 3.1838684160029516,
+      "duration": 3.1841700000222772,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1134,
+            "output_tokens": 163,
+            "total_tokens": 1297,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

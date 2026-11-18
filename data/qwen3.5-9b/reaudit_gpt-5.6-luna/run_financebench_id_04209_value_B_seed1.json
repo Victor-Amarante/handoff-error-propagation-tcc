@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04209_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer consistently report total assets of 52,968 USD millions for FY2021, with no internal contradiction or provenance indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 638,
+    "output_tokens": 146,
+    "total_tokens": 784,
+    "cached_tokens": 0,
+    "reasoning_tokens": 50,
+    "cost_usd": 0.0003028,
+    "latency_ms": 2201.1610830086283,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 638,
+      "output_tokens": 146,
+      "total_tokens": 784,
+      "reasoning_tokens": 50,
+      "time_to_first_token": 2.200421624991577,
+      "duration": 2.200672166014556,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 638,
+            "output_tokens": 146,
+            "total_tokens": 784,
+            "reasoning_tokens": 50,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 463,
+    "output_tokens": 176,
+    "total_tokens": 639,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2245.0271350098774,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 463,
+      "output_tokens": 176,
+      "total_tokens": 639,
+      "time_to_first_token": 2.244758298038505,
+      "duration": 2.244846621004399,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 463,
+            "output_tokens": 176,
+            "total_tokens": 639,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2219793360,
+              "load_duration": 644505,
+              "prompt_eval_duration": 160280000,
+              "eval_duration": 1994370000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

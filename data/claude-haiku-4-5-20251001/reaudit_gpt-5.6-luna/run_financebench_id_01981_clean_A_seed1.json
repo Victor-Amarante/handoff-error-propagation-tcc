@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01981_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst claimed that a reported card-member retention value of 1 represents 100% retention, although the trace provides no unit or basis for that interpretation.",
+    "reported_metric": "card member retention",
+    "reported_value": 1.0,
+    "confidence": 0.86,
+    "rationale": "The extractor reported only an unqualified value of 1. The analyst first converted it into a 100% retention rate and treated the unrelated 17% net card-fee growth as corroboration. The writer then repeated that unsupported interpretation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 729,
+    "output_tokens": 594,
+    "total_tokens": 1323,
+    "cached_tokens": 0,
+    "reasoning_tokens": 457,
+    "cost_usd": 0.0008585999999999999,
+    "latency_ms": 6148.87841703603,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 729,
+      "output_tokens": 594,
+      "total_tokens": 1323,
+      "reasoning_tokens": 457,
+      "time_to_first_token": 6.148590541037265,
+      "duration": 6.1486702500260435,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 729,
+            "output_tokens": 594,
+            "total_tokens": 1323,
+            "reasoning_tokens": 457,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1196,
+    "output_tokens": 165,
+    "total_tokens": 1361,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002021,
+    "latency_ms": 3278.1379999942146,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1196,
+      "output_tokens": 165,
+      "total_tokens": 1361,
+      "time_to_first_token": 3.2773692090413533,
+      "duration": 3.2776650840532966,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1196,
+            "output_tokens": 165,
+            "total_tokens": 1361,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

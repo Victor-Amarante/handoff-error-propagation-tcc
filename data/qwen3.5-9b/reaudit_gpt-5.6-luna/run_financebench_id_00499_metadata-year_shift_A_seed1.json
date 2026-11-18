@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported net property, plant, and equipment as $27,213 million; that figure was subsequently used to calculate the 79% fixed-assets-to-sales ratio.",
+    "reported_metric": "Net property, plant, and equipment",
+    "reported_value": 27213.0,
+    "confidence": 0.98,
+    "rationale": "The trace lists $27,213 million as net PP&E and $9,178 million as another PP&E figure, while the analyst and writer use $27,213 million as FY2022 net PP&E. This indicates the extraction or classification of the PP&E figure was the first error; the analyst then compounded it by pairing that figure with sales labeled $34,229 million and treating the result as FY2022 data."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 929,
+    "output_tokens": 696,
+    "total_tokens": 1625,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001021,
+    "latency_ms": 6960.136291978415,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 929,
+      "output_tokens": 696,
+      "total_tokens": 1625,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.959593541978393,
+      "duration": 6.959689625015017,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 929,
+            "output_tokens": 696,
+            "total_tokens": 1625,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 767,
+    "output_tokens": 437,
+    "total_tokens": 1204,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5011.155246000271,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 767,
+      "output_tokens": 437,
+      "total_tokens": 1204,
+      "time_to_first_token": 5.010928201023489,
+      "duration": 5.010999233985785,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 767,
+            "output_tokens": 437,
+            "total_tokens": 1204,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4986266935,
+              "load_duration": 548371,
+              "prompt_eval_duration": 218758000,
+              "eval_duration": 4717896000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00705_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo increased the agreement by $1,120,000 million, reported as 1,120,000 USD_M.",
+    "reported_metric": "unsecured_five_year_revolving_credit_agreement_increase",
+    "reported_value": 1120000.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values are 3,080,000 and 4,200,000 USD_K, whose difference is 1,120,000 USD_K, equal to $1.12 billion. The analyst preserved that value and unit, but the writer changed the unit to USD_M and stated $1,120,000 million, which is $1.12 trillion and contradicts the parenthetical $1.12 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 748,
+    "output_tokens": 443,
+    "total_tokens": 1191,
+    "cached_tokens": 0,
+    "reasoning_tokens": 263,
+    "cost_usd": 0.0006812000000000001,
+    "latency_ms": 4508.374333032407,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 748,
+      "output_tokens": 443,
+      "total_tokens": 1191,
+      "reasoning_tokens": 263,
+      "time_to_first_token": 4.50790045800386,
+      "duration": 4.508036540995818,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 748,
+            "output_tokens": 443,
+            "total_tokens": 1191,
+            "reasoning_tokens": 263,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1269,
+    "output_tokens": 200,
+    "total_tokens": 1469,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002269,
+    "latency_ms": 2458.0475839902647,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1269,
+      "output_tokens": 200,
+      "total_tokens": 1469,
+      "time_to_first_token": 2.4571668750140816,
+      "duration": 2.457466625026427,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1269,
+            "output_tokens": 200,
+            "total_tokens": 1469,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00476_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported that American Express's trading symbol was $640K, treating a trading-symbol field as a monetary value.",
+    "reported_metric": "Trading Symbol",
+    "reported_value": 640000.0,
+    "confidence": 0.98,
+    "rationale": "The extractor output contains malformed and contradictory claims: it labels dollar amounts of $640K and $20K as a trading symbol, while providing no debt-security names, ticker symbols, or exchange-registration details. The analyst and writer appropriately declined to infer an answer from this defective extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 777,
+    "output_tokens": 313,
+    "total_tokens": 1090,
+    "cached_tokens": 0,
+    "reasoning_tokens": 174,
+    "cost_usd": 0.000531,
+    "latency_ms": 4267.5114160520025,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 777,
+      "output_tokens": 313,
+      "total_tokens": 1090,
+      "reasoning_tokens": 174,
+      "time_to_first_token": 4.266985833004583,
+      "duration": 4.2671822080155835,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 777,
+            "output_tokens": 313,
+            "total_tokens": 1090,
+            "reasoning_tokens": 174,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 582,
+    "output_tokens": 163,
+    "total_tokens": 745,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2087.7849709941074,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 582,
+      "output_tokens": 163,
+      "total_tokens": 745,
+      "time_to_first_token": 2.087550967989955,
+      "duration": 2.08762404602021,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 582,
+            "output_tokens": 163,
+            "total_tokens": 745,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2062240720,
+              "load_duration": 420637,
+              "prompt_eval_duration": 177465000,
+              "eval_duration": 1835591000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

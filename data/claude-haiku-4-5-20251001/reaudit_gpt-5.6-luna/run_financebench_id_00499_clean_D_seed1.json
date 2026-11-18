@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00499_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "3M's capital intensity ratio was reported as 0.268, calculated using net PP&E of $9,178 million divided by net sales of $34,229 million.",
+    "reported_metric": "capital_intensity_ratio",
+    "reported_value": 0.268,
+    "confidence": 0.78,
+    "rationale": "The analyst used net PP&E (C03) to assess capital intensity despite the trace providing gross PP&E (C02). Using gross PP&E relative to sales would yield approximately 0.76, materially changing the conclusion from relatively asset-light to substantially more capital-intensive. The writer propagated this analyst claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1716,
+    "output_tokens": 671,
+    "total_tokens": 2387,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011484000000000002,
+    "latency_ms": 7279.443707957398,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1716,
+      "output_tokens": 671,
+      "total_tokens": 2387,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.278799124993384,
+      "duration": 7.278949707979336,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1716,
+            "output_tokens": 671,
+            "total_tokens": 2387,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2386,
+    "output_tokens": 243,
+    "total_tokens": 2629,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003601,
+    "latency_ms": 3436.24449998606,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2386,
+      "output_tokens": 243,
+      "total_tokens": 2629,
+      "time_to_first_token": 3.435730750032235,
+      "duration": 3.4358193750376813,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2386,
+            "output_tokens": 243,
+            "total_tokens": 2629,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

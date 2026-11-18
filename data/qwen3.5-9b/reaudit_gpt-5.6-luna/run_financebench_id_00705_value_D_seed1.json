@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00705_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The original five-year unsecured revolving credit agreement was reported as $3.08 billion, although the evidence states $3.8 billion.",
+    "reported_metric": "original_credit_agreement_amount",
+    "reported_value": 3080000000.0,
+    "confidence": 0.99,
+    "rationale": "Extractor claim C01 conflicts with its own evidence, which says \"$3,800,000,000.\" This incorrect starting amount caused the analyst to calculate $4.2B - $3.08B = $1.12B instead of the evidence-supported $400M increase."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1041,
+    "output_tokens": 258,
+    "total_tokens": 1299,
+    "cached_tokens": 0,
+    "reasoning_tokens": 108,
+    "cost_usd": 0.0005177999999999999,
+    "latency_ms": 3268.8414999865927,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1041,
+      "output_tokens": 258,
+      "total_tokens": 1299,
+      "reasoning_tokens": 108,
+      "time_to_first_token": 3.2684535830048844,
+      "duration": 3.2685454579768702,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1041,
+            "output_tokens": 258,
+            "total_tokens": 1299,
+            "reasoning_tokens": 108,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 990,
+    "output_tokens": 411,
+    "total_tokens": 1401,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4936.655970988795,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 990,
+      "output_tokens": 411,
+      "total_tokens": 1401,
+      "time_to_first_token": 4.93636182800401,
+      "duration": 4.936453366011847,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 990,
+            "output_tokens": 411,
+            "total_tokens": 1401,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4907423397,
+              "load_duration": 811073,
+              "prompt_eval_duration": 247398000,
+              "eval_duration": 4594934000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

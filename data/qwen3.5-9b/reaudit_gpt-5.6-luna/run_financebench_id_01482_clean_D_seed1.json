@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01482_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace explicitly states that the proposal was defeated.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor evidence directly says the proposal was defeated, with 19,718,780 votes for and 977,228,788 against. The final answer accurately reports that outcome. Although the analyst's intermediate metrics are awkwardly labeled, they do not change the correct conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1284,
+    "output_tokens": 399,
+    "total_tokens": 1683,
+    "cached_tokens": 0,
+    "reasoning_tokens": 274,
+    "cost_usd": 0.0007355999999999999,
+    "latency_ms": 4321.091833990067,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1284,
+      "output_tokens": 399,
+      "total_tokens": 1683,
+      "reasoning_tokens": 274,
+      "time_to_first_token": 4.320553958998062,
+      "duration": 4.320698041992728,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1284,
+            "output_tokens": 399,
+            "total_tokens": 1683,
+            "reasoning_tokens": 274,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1260,
+    "output_tokens": 208,
+    "total_tokens": 1468,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2797.73385100998,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1260,
+      "output_tokens": 208,
+      "total_tokens": 1468,
+      "time_to_first_token": 2.7974347969866358,
+      "duration": 2.7975024239858612,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1260,
+            "output_tokens": 208,
+            "total_tokens": 1468,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2770805873,
+              "load_duration": 620646,
+              "prompt_eval_duration": 318128000,
+              "eval_duration": 2396616000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

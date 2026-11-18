@@ -70,6 +70,12 @@ ANALYST_CANONICAL_FORMAT = (
     "Set `answer_claim_id` to the id of the claim that answers the question."
 )
 
+#: Instrucao de conferencia da condicao V (insight 1 do parecer).
+VERIFY_SENTENCE = (
+    "Before using any input value, check it against its `evidence` snippet; "
+    "if they disagree, trust the evidence."
+)
+
 ANALYST_FORMAT: dict[Condition, str] = {
     Condition.A: "Write your analysis as plain prose.",
     Condition.B: (
@@ -87,6 +93,24 @@ ANALYST_FORMAT: dict[Condition, str] = {
         "A01, A02, ... and set `generated_by` to 'analyst'. In `derived_from`, "
         "list the ids of the input claims that this claim came from. Carry over "
         "`source_id`, `page` and the `evidence` snippet of the input claim you used."
+    ),
+    # Condicoes complementares (parecer). E = B + evidencia; R = B com campo de
+    # raciocinio; V = D + uma frase de conferencia, a unica que mexe no que o
+    # estagio e instruido a FAZER, e por isso fica fora do desenho principal.
+    Condition.E: (
+        "Return typed claims. Each claim has metric, value, unit and year. "
+        "Carry over the `evidence` snippet of the input claim you used."
+    ),
+    Condition.R: (
+        "Return typed claims. Each claim has metric, value, unit and year. "
+        "Use `reasoning` to work through the computation before writing the claims."
+    ),
+    Condition.V: (
+        "Return typed claims. Assign each claim you produce an id of the form "
+        "A01, A02, ... and set `generated_by` to 'analyst'. In `derived_from`, "
+        "list the ids of the input claims that this claim came from. Carry over "
+        "`source_id`, `page` and the `evidence` snippet of the input claim you used. "
+        + VERIFY_SENTENCE
     ),
 }
 
@@ -119,6 +143,21 @@ WRITER_FORMAT: dict[Condition, str] = {
         "typed claim that the answer asserts. Give it an id of the form W01, set "
         "`generated_by` to 'writer', list in `derived_from` the ids of the analyst "
         "claims it came from, and carry over the `evidence` snippet."
+    ),
+    Condition.E: (
+        "Return `answer_text` with the final answer, plus `answer_claim`: the "
+        "typed claim that the answer asserts. Carry over the `evidence` snippet."
+    ),
+    Condition.R: (
+        "Return `answer_text` with the final answer, plus `answer_claim`: the "
+        "typed claim that the answer asserts."
+    ),
+    Condition.V: (
+        "Return `answer_text` with the final answer, plus `answer_claim`: the "
+        "typed claim that the answer asserts. Give it an id of the form W01, set "
+        "`generated_by` to 'writer', list in `derived_from` the ids of the analyst "
+        "claims it came from, and carry over the `evidence` snippet. "
+        + VERIFY_SENTENCE
     ),
 }
 

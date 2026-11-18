@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00839_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently supports that Foot Locker's new CEO had prior CEO experience at a similar retailer.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extractor records previous CEO experience in a company scored as similar, and the analyst and writer consistently carry that conclusion forward. No internal contradiction or provenance issue indicates an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 721,
+    "output_tokens": 236,
+    "total_tokens": 957,
+    "cached_tokens": 0,
+    "reasoning_tokens": 123,
+    "cost_usd": 0.0004274,
+    "latency_ms": 3068.759499990847,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 721,
+      "output_tokens": 236,
+      "total_tokens": 957,
+      "reasoning_tokens": 123,
+      "time_to_first_token": 3.0682087920140475,
+      "duration": 3.0683734589838423,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 721,
+            "output_tokens": 236,
+            "total_tokens": 957,
+            "reasoning_tokens": 123,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1228,
+    "output_tokens": 205,
+    "total_tokens": 1433,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002253,
+    "latency_ms": 3456.5224169637077,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1228,
+      "output_tokens": 205,
+      "total_tokens": 1433,
+      "time_to_first_token": 3.455491875007283,
+      "duration": 3.4557894169702195,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1228,
+            "output_tokens": 205,
+            "total_tokens": 1433,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

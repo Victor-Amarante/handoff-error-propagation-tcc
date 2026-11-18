@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08135_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amazon's revenue grew by approximately 30.9% from FY2016 net sales of $135,987 million to FY2017 net sales of $177,866 million.",
+    "reported_metric": "year-over-year revenue growth",
+    "reported_value": 30.9,
+    "confidence": 0.99,
+    "rationale": "The extracted sales figures are internally consistent, but the calculation is incorrect: (177,866 - 135,987) / 135,987 × 100 = 30.796%, which rounds to 30.8%, not 30.9%. The writer merely repeats the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 703,
+    "output_tokens": 274,
+    "total_tokens": 977,
+    "cached_tokens": 0,
+    "reasoning_tokens": 115,
+    "cost_usd": 0.00046939999999999997,
+    "latency_ms": 3157.535000005737,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 703,
+      "output_tokens": 274,
+      "total_tokens": 977,
+      "reasoning_tokens": 115,
+      "time_to_first_token": 3.156849000020884,
+      "duration": 3.1571195410215296,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 703,
+            "output_tokens": 274,
+            "total_tokens": 977,
+            "reasoning_tokens": 115,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 530,
+    "output_tokens": 299,
+    "total_tokens": 829,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3569.2659879568964,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 530,
+      "output_tokens": 299,
+      "total_tokens": 829,
+      "time_to_first_token": 3.5689818380051292,
+      "duration": 3.569071817037184,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 530,
+            "output_tokens": 299,
+            "total_tokens": 829,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3535619868,
+              "load_duration": 423529,
+              "prompt_eval_duration": 142599000,
+              "eval_duration": 3344242000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00822_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Richard A. Johnson's 16,105,000 votes against were approximately 3.6 times the median votes against for the other 2022 nominees.",
+    "reported_metric": "Multiple of the median votes against for other 2022 nominees",
+    "reported_value": 3.6,
+    "confidence": 0.99,
+    "rationale": "The extractor values imply a median of approximately 4.93 million votes against among the other 2022 nominees, making Johnson's 16.105 million about 3.27 times the median, not 3.6 times. The incorrect ratio first appears in the analyst output and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1087,
+    "output_tokens": 521,
+    "total_tokens": 1608,
+    "cached_tokens": 0,
+    "reasoning_tokens": 357,
+    "cost_usd": 0.0008425999999999999,
+    "latency_ms": 5166.571750014555,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1087,
+      "output_tokens": 521,
+      "total_tokens": 1608,
+      "reasoning_tokens": 357,
+      "time_to_first_token": 5.165951082948595,
+      "duration": 5.166141749999952,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1087,
+            "output_tokens": 521,
+            "total_tokens": 1608,
+            "reasoning_tokens": 357,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1597,
+    "output_tokens": 196,
+    "total_tokens": 1793,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002577,
+    "latency_ms": 3633.647542039398,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1597,
+      "output_tokens": 196,
+      "total_tokens": 1793,
+      "time_to_first_token": 3.6328517090296373,
+      "duration": 3.6331441670190543,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1597,
+            "output_tokens": 196,
+            "total_tokens": 1793,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

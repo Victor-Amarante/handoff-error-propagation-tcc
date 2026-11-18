@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00382_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "MGM's total FY2022 EBITDAR Contribution was $3,142,308 thousand.",
+    "reported_metric": "EBITDAR Contribution",
+    "reported_value": 3142308.0,
+    "confidence": 0.93,
+    "rationale": "The extractor lists three FY2022 EBITDAR Contribution values, indicating separate contributions, but no total. The writer incorrectly presents the largest value as MGM's overall contribution; the region itself is also unavailable because the extractor output contains no region labels."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 781,
+    "output_tokens": 504,
+    "total_tokens": 1285,
+    "cached_tokens": 0,
+    "reasoning_tokens": 375,
+    "cost_usd": 0.000761,
+    "latency_ms": 5076.6225409461185,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 781,
+      "output_tokens": 504,
+      "total_tokens": 1285,
+      "reasoning_tokens": 375,
+      "time_to_first_token": 5.0761551660252735,
+      "duration": 5.076228957972489,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 781,
+            "output_tokens": 504,
+            "total_tokens": 1285,
+            "reasoning_tokens": 375,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1304,
+    "output_tokens": 208,
+    "total_tokens": 1512,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002344,
+    "latency_ms": 2685.0072919623926,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1304,
+      "output_tokens": 208,
+      "total_tokens": 1512,
+      "time_to_first_token": 2.6840834999457,
+      "duration": 2.6843934999778867,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1304,
+            "output_tokens": 208,
+            "total_tokens": 1512,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

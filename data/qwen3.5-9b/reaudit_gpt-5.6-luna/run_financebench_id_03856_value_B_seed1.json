@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03856_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported ratio is consistent with the provided inputs.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the extracted values, 2,192,853 / 3,527,457 = approximately 0.6218, which rounds to 0.62. The analyst and writer outputs are internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 696,
+    "output_tokens": 208,
+    "total_tokens": 904,
+    "cached_tokens": 0,
+    "reasoning_tokens": 95,
+    "cost_usd": 0.0003888,
+    "latency_ms": 2425.958583015017,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 696,
+      "output_tokens": 208,
+      "total_tokens": 904,
+      "reasoning_tokens": 95,
+      "time_to_first_token": 2.4256228750455193,
+      "duration": 2.4256948330439627,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 696,
+            "output_tokens": 208,
+            "total_tokens": 904,
+            "reasoning_tokens": 95,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 525,
+    "output_tokens": 178,
+    "total_tokens": 703,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2275.9461650275625,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 525,
+      "output_tokens": 178,
+      "total_tokens": 703,
+      "time_to_first_token": 2.2756871660239995,
+      "duration": 2.2757623189827427,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 525,
+            "output_tokens": 178,
+            "total_tokens": 703,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2246221093,
+              "load_duration": 480806,
+              "prompt_eval_duration": 144226000,
+              "eval_duration": 2032591000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

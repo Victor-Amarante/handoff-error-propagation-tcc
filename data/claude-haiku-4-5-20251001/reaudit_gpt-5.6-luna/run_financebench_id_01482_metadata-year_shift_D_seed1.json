@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01482_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor attributed 19,718,780 votes for the congruency-report proposal to 2024, although the AGM and source document concern 2023.",
+    "reported_metric": "shareholder_vote_for_congruency_report_net_zero_emissions",
+    "reported_value": 19718780.0,
+    "confidence": 0.94,
+    "rationale": "C01 is the first internally inconsistent claim: its year is 2024 despite the 2023 AGM, 2023-dated source, and matching 2023 evidence. The vote count itself is supported, but the claim's temporal attribution is incorrect; later stages propagate the extracted claims."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1211,
+    "output_tokens": 676,
+    "total_tokens": 1887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010534,
+    "latency_ms": 6667.604374990333,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1211,
+      "output_tokens": 676,
+      "total_tokens": 1887,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.667157916002907,
+      "duration": 6.667299124994315,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1211,
+            "output_tokens": 676,
+            "total_tokens": 1887,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1809,
+    "output_tokens": 192,
+    "total_tokens": 2001,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002769,
+    "latency_ms": 2760.299291985575,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1809,
+      "output_tokens": 192,
+      "total_tokens": 2001,
+      "time_to_first_token": 2.75935137498891,
+      "duration": 2.7596529999864288,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1809,
+            "output_tokens": 192,
+            "total_tokens": 2001,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

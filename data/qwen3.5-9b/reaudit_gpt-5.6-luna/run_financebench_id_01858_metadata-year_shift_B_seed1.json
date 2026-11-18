@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01858_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No erroneous claim identified; the 65-year dividend increase streak is consistent across all pipeline stages.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer, and final answer all report the same metric and value: a 65-year dividend increase streak in 2025. The trace contains no contradictory evidence or provenance indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 623,
+    "output_tokens": 203,
+    "total_tokens": 826,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.0003682,
+    "latency_ms": 3092.7650830126368,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 623,
+      "output_tokens": 203,
+      "total_tokens": 826,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 3.0921879169763997,
+      "duration": 3.092388041957747,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 623,
+            "output_tokens": 203,
+            "total_tokens": 826,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 432,
+    "output_tokens": 143,
+    "total_tokens": 575,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1883.270950987935,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 432,
+      "output_tokens": 143,
+      "total_tokens": 575,
+      "time_to_first_token": 1.8830407239729539,
+      "duration": 1.8831107569858432,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 432,
+            "output_tokens": 143,
+            "total_tokens": 575,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1857614237,
+              "load_duration": 583391,
+              "prompt_eval_duration": 150458000,
+              "eval_duration": 1640191000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

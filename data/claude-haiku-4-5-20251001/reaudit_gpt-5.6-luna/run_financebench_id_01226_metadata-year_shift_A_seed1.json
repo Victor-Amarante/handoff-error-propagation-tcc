@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "SG&A expense increased by 1 percentage point of sales in FY2022.",
+    "reported_metric": "SG&A percent of sales change",
+    "reported_value": 1.0,
+    "confidence": 0.75,
+    "rationale": "The extractor only reported that the SG&A percent-of-sales change was 1; it did not explicitly establish that this was an increase or that the unit was a percentage point. The analyst introduced that interpretation and the writer repeated it. The trace contains no claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1065,
+    "output_tokens": 504,
+    "total_tokens": 1569,
+    "cached_tokens": 0,
+    "reasoning_tokens": 374,
+    "cost_usd": 0.0008177999999999999,
+    "latency_ms": 4748.05249995552,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1065,
+      "output_tokens": 504,
+      "total_tokens": 1569,
+      "reasoning_tokens": 374,
+      "time_to_first_token": 4.747551874956116,
+      "duration": 4.747687082970515,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1065,
+            "output_tokens": 504,
+            "total_tokens": 1569,
+            "reasoning_tokens": 374,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1580,
+    "output_tokens": 185,
+    "total_tokens": 1765,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002505,
+    "latency_ms": 3102.1358750294894,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1580,
+      "output_tokens": 185,
+      "total_tokens": 1765,
+      "time_to_first_token": 3.1013737079920247,
+      "duration": 3.101626916031819,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1580,
+            "output_tokens": 185,
+            "total_tokens": 1765,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

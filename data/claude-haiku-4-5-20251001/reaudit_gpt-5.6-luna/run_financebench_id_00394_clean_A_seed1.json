@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00394_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim was identified; the extracted values consistently show Corporate & Investment Bank had the highest Q2 2022 net income at $3,725 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor lists Corporate & Investment Bank at $3,725 million, higher than every other segment, and both the analyst and writer preserve that conclusion accurately."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 721,
+    "output_tokens": 164,
+    "total_tokens": 885,
+    "cached_tokens": 0,
+    "reasoning_tokens": 46,
+    "cost_usd": 0.000341,
+    "latency_ms": 2320.3044590190984,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 721,
+      "output_tokens": 164,
+      "total_tokens": 885,
+      "reasoning_tokens": 46,
+      "time_to_first_token": 2.319759707956109,
+      "duration": 2.319930665951688,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 721,
+            "output_tokens": 164,
+            "total_tokens": 885,
+            "reasoning_tokens": 46,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1200,
+    "output_tokens": 161,
+    "total_tokens": 1361,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002005,
+    "latency_ms": 3178.176249959506,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1200,
+      "output_tokens": 161,
+      "total_tokens": 1361,
+      "time_to_first_token": 3.1773914579534903,
+      "duration": 3.177688041992951,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1200,
+            "output_tokens": 161,
+            "total_tokens": 1361,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

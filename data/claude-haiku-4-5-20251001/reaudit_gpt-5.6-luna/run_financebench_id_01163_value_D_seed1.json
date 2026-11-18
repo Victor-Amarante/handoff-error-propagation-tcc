@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Nike's operating activities provided $8,541 million in cash flow in FY2023.",
+    "reported_metric": "cash_provided_used_by_operations",
+    "reported_value": 8541.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's numeric value of 8,541 conflicts with its own evidence, which states 5,841. The analyst and writer propagated the extractor's incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1506,
+    "output_tokens": 228,
+    "total_tokens": 1734,
+    "cached_tokens": 0,
+    "reasoning_tokens": 111,
+    "cost_usd": 0.0005748,
+    "latency_ms": 2852.4730839999393,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1506,
+      "output_tokens": 228,
+      "total_tokens": 1734,
+      "reasoning_tokens": 111,
+      "time_to_first_token": 2.8521740830037743,
+      "duration": 2.8522502499981783,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1506,
+            "output_tokens": 228,
+            "total_tokens": 1734,
+            "reasoning_tokens": 111,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2140,
+    "output_tokens": 177,
+    "total_tokens": 2317,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003025,
+    "latency_ms": 3448.9905410446227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2140,
+      "output_tokens": 177,
+      "total_tokens": 2317,
+      "time_to_first_token": 3.44829504203517,
+      "duration": 3.44852112501394,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2140,
+            "output_tokens": 177,
+            "total_tokens": 2317,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

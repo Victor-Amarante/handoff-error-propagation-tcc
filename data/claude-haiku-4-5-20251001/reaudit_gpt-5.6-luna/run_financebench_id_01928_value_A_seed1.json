@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01928_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be identified from the trace; all stages consistently report Amcor's FY 2023 Adjusted EBITDA as $2,321 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor, analyst, writer, and final answer consistently state $2,321 million, and the trace provides no contradictory provenance or internal inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 643,
+    "output_tokens": 198,
+    "total_tokens": 841,
+    "cached_tokens": 0,
+    "reasoning_tokens": 82,
+    "cost_usd": 0.0003662,
+    "latency_ms": 2604.4102500309236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 643,
+      "output_tokens": 198,
+      "total_tokens": 841,
+      "reasoning_tokens": 82,
+      "time_to_first_token": 2.6036835410050116,
+      "duration": 2.6039242499973625,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 643,
+            "output_tokens": 198,
+            "total_tokens": 841,
+            "reasoning_tokens": 82,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1152,
+    "output_tokens": 152,
+    "total_tokens": 1304,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001912,
+    "latency_ms": 2205.312750011217,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1152,
+      "output_tokens": 152,
+      "total_tokens": 1304,
+      "time_to_first_token": 2.204674416978378,
+      "duration": 2.2048147919704206,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1152,
+            "output_tokens": 152,
+            "total_tokens": 1304,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02416_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer claimed that Pfizer acquired three companies, although the trace provides no company names or support for that count.",
+    "reported_metric": "acquired companies",
+    "reported_value": 3.0,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst outputs contain only financial amounts and do not identify or count acquired companies. The writer introduced the unsupported count of three and derived it from only two financial claims."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2483,
+    "output_tokens": 250,
+    "total_tokens": 2733,
+    "cached_tokens": 0,
+    "reasoning_tokens": 133,
+    "cost_usd": 0.0007966000000000001,
+    "latency_ms": 3050.7603749865666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2483,
+      "output_tokens": 250,
+      "total_tokens": 2733,
+      "reasoning_tokens": 133,
+      "time_to_first_token": 3.050093083002139,
+      "duration": 3.0502927909838036,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2483,
+            "output_tokens": 250,
+            "total_tokens": 2733,
+            "reasoning_tokens": 133,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2767,
+    "output_tokens": 222,
+    "total_tokens": 2989,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3245.460487960372,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2767,
+      "output_tokens": 222,
+      "total_tokens": 2989,
+      "time_to_first_token": 3.245152593997773,
+      "duration": 3.245248583960347,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2767,
+            "output_tokens": 222,
+            "total_tokens": 2989,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3213850432,
+              "load_duration": 508324,
+              "prompt_eval_duration": 668877000,
+              "eval_duration": 2486463000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

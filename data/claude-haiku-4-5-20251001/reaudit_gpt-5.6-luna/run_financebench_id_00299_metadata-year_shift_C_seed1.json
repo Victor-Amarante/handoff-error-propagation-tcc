@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00299_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently selects Corporate as the segment with the lowest 2021 Q1 net revenue, at -$473 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "Among the 2021 net-revenue values extracted, -473 is the minimum. The analyst correctly selects it, and the writer preserves the value and identifies the corresponding segment as Corporate."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1147,
+    "output_tokens": 634,
+    "total_tokens": 1781,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009901999999999999,
+    "latency_ms": 5922.03741701087,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1147,
+      "output_tokens": 634,
+      "total_tokens": 1781,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 5.921522332995664,
+      "duration": 5.921664082969073,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1147,
+            "output_tokens": 634,
+            "total_tokens": 1781,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1733,
+    "output_tokens": 195,
+    "total_tokens": 1928,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002708,
+    "latency_ms": 3700.059416994918,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1733,
+      "output_tokens": 195,
+      "total_tokens": 1928,
+      "time_to_first_token": 3.6992113330052234,
+      "duration": 3.6995154159958474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1733,
+            "output_tokens": 195,
+            "total_tokens": 1928,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

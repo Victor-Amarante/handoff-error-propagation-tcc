@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01163_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; operations had the highest cash flow at USD_M 5841.0.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports operations at 5841.0, investing at 564.0, and financing at -7447.0 USD_M. The analyst and writer correctly conclude that operations brought in the most cash flow."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 13647,
+    "output_tokens": 215,
+    "total_tokens": 13862,
+    "cached_tokens": 0,
+    "reasoning_tokens": 96,
+    "cost_usd": 0.0029874000000000003,
+    "latency_ms": 2828.954834025353,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 13647,
+      "output_tokens": 215,
+      "total_tokens": 13862,
+      "reasoning_tokens": 96,
+      "time_to_first_token": 2.8282506249961443,
+      "duration": 2.8284509999793954,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 13647,
+            "output_tokens": 215,
+            "total_tokens": 13862,
+            "reasoning_tokens": 96,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 16512,
+    "output_tokens": 1345,
+    "total_tokens": 17857,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 19660.621441958938,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 16512,
+      "output_tokens": 1345,
+      "total_tokens": 17857,
+      "time_to_first_token": 19.66033066000091,
+      "duration": 19.660431500989944,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 16512,
+            "output_tokens": 1345,
+            "total_tokens": 17857,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 19634405924,
+              "load_duration": 981635,
+              "prompt_eval_duration": 3863152000,
+              "eval_duration": 15448848000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

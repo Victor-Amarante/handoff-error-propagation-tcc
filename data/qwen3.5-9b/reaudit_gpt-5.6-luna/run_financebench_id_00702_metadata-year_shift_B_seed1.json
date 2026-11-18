@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00702_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The 2019 Other (income)/deductions net amount of $3,497 million substantially increased net income and should be added to the $5,318 million discontinued-operations amount.",
+    "reported_metric": "net_income_increase",
+    "reported_value": 8815.0,
+    "confidence": 0.98,
+    "rationale": "The trace labels the $3,497 million amount as positive Other (income)/deductions net; under that presentation it represents deductions, which reduce rather than increase income. The analyst only carried forward extracted values, while the writer incorrectly treated both amounts as increases and summed them to $8,815 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2566,
+    "output_tokens": 581,
+    "total_tokens": 3147,
+    "cached_tokens": 0,
+    "reasoning_tokens": 421,
+    "cost_usd": 0.0012104000000000001,
+    "latency_ms": 6504.292458004784,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2566,
+      "output_tokens": 581,
+      "total_tokens": 3147,
+      "reasoning_tokens": 421,
+      "time_to_first_token": 6.503783709020354,
+      "duration": 6.503941625007428,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2566,
+            "output_tokens": 581,
+            "total_tokens": 3147,
+            "reasoning_tokens": 421,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2805,
+    "output_tokens": 846,
+    "total_tokens": 3651,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9996.734279964585,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2805,
+      "output_tokens": 846,
+      "total_tokens": 3651,
+      "time_to_first_token": 9.99641217495082,
+      "duration": 9.996494949969929,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2805,
+            "output_tokens": 846,
+            "total_tokens": 3651,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9967115071,
+              "load_duration": 543740,
+              "prompt_eval_duration": 670927000,
+              "eval_duration": 9240093000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00956_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2022 volume growth rate of 6.9% represented a significant deceleration from FY2021 sales growth of 13.6%.",
+    "reported_metric": "FY2022 volume growth rate, incorrectly compared with FY2021 sales growth rate",
+    "reported_value": 6.9,
+    "confidence": 0.97,
+    "rationale": "The trace provides no claim IDs and the extractor's figures are not internally contradicted. The analyst first makes an invalid apples-to-oranges comparison between FY2022 volume growth and FY2021 sales growth, then uses it to infer deceleration; the writer repeats that conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1038,
+    "output_tokens": 477,
+    "total_tokens": 1515,
+    "cached_tokens": 0,
+    "reasoning_tokens": 318,
+    "cost_usd": 0.00078,
+    "latency_ms": 5658.7036669952795,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1038,
+      "output_tokens": 477,
+      "total_tokens": 1515,
+      "reasoning_tokens": 318,
+      "time_to_first_token": 5.658262333017774,
+      "duration": 5.658371625002474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1038,
+            "output_tokens": 477,
+            "total_tokens": 1515,
+            "reasoning_tokens": 318,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1555,
+    "output_tokens": 237,
+    "total_tokens": 1792,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00274,
+    "latency_ms": 3677.2828749963082,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1555,
+      "output_tokens": 237,
+      "total_tokens": 1792,
+      "time_to_first_token": 3.676507790980395,
+      "duration": 3.676764165982604,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1555,
+            "output_tokens": 237,
+            "total_tokens": 1792,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

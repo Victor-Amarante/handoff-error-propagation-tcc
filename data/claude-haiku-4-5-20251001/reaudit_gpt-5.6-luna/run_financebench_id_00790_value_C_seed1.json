@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "Total tangible assets represented 13.24% of FY2022 revenue.",
+    "reported_metric": "total_tangible_assets_to_revenue_ratio",
+    "reported_value": 13.24,
+    "confidence": 0.98,
+    "rationale": "Using the trace values, (12,873 + 17,872) / 232,467 × 100 = approximately 13.23%, not 13.24%. Thus A03 is the first incorrect claim; the later writer output repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1554,
+    "output_tokens": 645,
+    "total_tokens": 2199,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010848,
+    "latency_ms": 6934.1620419872925,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1554,
+      "output_tokens": 645,
+      "total_tokens": 2199,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.9335875830147415,
+      "duration": 6.933764124987647,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1554,
+            "output_tokens": 645,
+            "total_tokens": 2199,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2223,
+    "output_tokens": 206,
+    "total_tokens": 2429,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003253,
+    "latency_ms": 3894.1849579568952,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2223,
+      "output_tokens": 206,
+      "total_tokens": 2429,
+      "time_to_first_token": 3.89337412500754,
+      "duration": 3.893675416999031,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2223,
+            "output_tokens": 206,
+            "total_tokens": 2429,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

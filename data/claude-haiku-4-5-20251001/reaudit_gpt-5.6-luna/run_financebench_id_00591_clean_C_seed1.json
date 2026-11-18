@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00591_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2022 free cash flow conversion ratio is 1.649, calculated by dividing operating cash flow by net income.",
+    "reported_metric": "fcf_conversion_ratio",
+    "reported_value": 1.649,
+    "confidence": 0.96,
+    "rationale": "The analyst labels the result as free cash flow conversion but derives it from operating cash flow and net income. The trace contains no free cash flow or capital-expenditure figure, so this is an unsupported metric substitution; the writer then propagates it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1571,
+    "output_tokens": 628,
+    "total_tokens": 2199,
+    "cached_tokens": 0,
+    "reasoning_tokens": 492,
+    "cost_usd": 0.0010678000000000003,
+    "latency_ms": 6389.1040840535425,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1571,
+      "output_tokens": 628,
+      "total_tokens": 2199,
+      "reasoning_tokens": 492,
+      "time_to_first_token": 6.388700540992431,
+      "duration": 6.388857749989256,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1571,
+            "output_tokens": 628,
+            "total_tokens": 2199,
+            "reasoning_tokens": 492,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2231,
+    "output_tokens": 214,
+    "total_tokens": 2445,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003301,
+    "latency_ms": 3893.8428750261664,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2231,
+      "output_tokens": 214,
+      "total_tokens": 2445,
+      "time_to_first_token": 3.892893750045914,
+      "duration": 3.893190417031292,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2231,
+            "output_tokens": 214,
+            "total_tokens": 2445,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

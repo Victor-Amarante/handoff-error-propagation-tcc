@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01198_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Data Center segment was primarily responsible for FY22 revenue growth, inferred solely from its 64% growth rate.",
+    "reported_metric": "primary revenue driver",
+    "reported_value": 64.0,
+    "confidence": 0.78,
+    "rationale": "The reported revenue and 44% growth are internally consistent, and the segment growth figures are preserved across stages. However, segment revenue bases or dollar contributions are absent, so the writer cannot establish that Data Center was the primary driver merely because it had the highest percentage growth."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 944,
+    "output_tokens": 648,
+    "total_tokens": 1592,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009664000000000001,
+    "latency_ms": 7010.816709022038,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 944,
+      "output_tokens": 648,
+      "total_tokens": 1592,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.010265542019624,
+      "duration": 7.010429958987515,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 944,
+            "output_tokens": 648,
+            "total_tokens": 1592,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1473,
+    "output_tokens": 191,
+    "total_tokens": 1664,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002428,
+    "latency_ms": 2988.962374976836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1473,
+      "output_tokens": 191,
+      "total_tokens": 1664,
+      "time_to_first_token": 2.987987708009314,
+      "duration": 2.9882797499885783,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1473,
+            "output_tokens": 191,
+            "total_tokens": 1664,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

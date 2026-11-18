@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Property, plant and equipment gross was reported as $307,689 million for FY2023, although it reconciles exactly with the FY2022 accumulated depreciation and net PPE figures and is therefore mislabeled by year.",
+    "reported_metric": "property_plant_equipment_gross",
+    "reported_value": 307689.0,
+    "confidence": 0.98,
+    "rationale": "C01 is labeled 2023, while C01 minus C02 equals C03 exactly (307,689 - 200,255 = 107,434), and the source is the Verizon 2022 10-K. This indicates the gross PPE figure belongs to FY2022 and was misclassified at extraction. The downstream ratios use correctly labeled FY2022 claims, so the first error is the extractor's year attribution for C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1679,
+    "output_tokens": 710,
+    "total_tokens": 2389,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011878,
+    "latency_ms": 6847.865541989449,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1679,
+      "output_tokens": 710,
+      "total_tokens": 2389,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.84739237499889,
+      "duration": 6.847597207990475,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1679,
+            "output_tokens": 710,
+            "total_tokens": 2389,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2349,
+    "output_tokens": 193,
+    "total_tokens": 2542,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003314,
+    "latency_ms": 4035.2079999865964,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2349,
+      "output_tokens": 193,
+      "total_tokens": 2542,
+      "time_to_first_token": 4.03417470905697,
+      "duration": 4.03447341703577,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2349,
+            "output_tokens": 193,
+            "total_tokens": 2542,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

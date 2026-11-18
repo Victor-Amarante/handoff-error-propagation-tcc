@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01254_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "MGM Resorts' FY2022 annual dividend was 0.0 USD_M.",
+    "reported_metric": "annual dividend",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor only reports a 2023 dividend of 0.01 USD_M. The analyst introduces an unsupported FY2022 value of 0.0, changing both the year and amount without evidence in the trace; the writer then repeats that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 795,
+    "output_tokens": 283,
+    "total_tokens": 1078,
+    "cached_tokens": 0,
+    "reasoning_tokens": 155,
+    "cost_usd": 0.0004986,
+    "latency_ms": 3332.733208022546,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 795,
+      "output_tokens": 283,
+      "total_tokens": 1078,
+      "reasoning_tokens": 155,
+      "time_to_first_token": 3.3320233750273474,
+      "duration": 3.3322729160427116,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 795,
+            "output_tokens": 283,
+            "total_tokens": 1078,
+            "reasoning_tokens": 155,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 642,
+    "output_tokens": 1135,
+    "total_tokens": 1777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12487.745903024916,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 642,
+      "output_tokens": 1135,
+      "total_tokens": 1777,
+      "time_to_first_token": 12.487488957005553,
+      "duration": 12.487580953980796,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 642,
+            "output_tokens": 1135,
+            "total_tokens": 1777,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12462411111,
+              "load_duration": 594384,
+              "prompt_eval_duration": 160378000,
+              "eval_duration": 12232875000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00684_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amcor demonstrates an improving gross margin profile as of FY2023.",
+    "reported_metric": "gross margin",
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst incorrectly treats the figures as increasing in the relevant direction and even describes gross profit as rising from $2,820M to $2,732M. Using the reported figures in FY2021-to-FY2023 order, gross margins are approximately 21.2% ($2,732M/$12,861M), 19.4% ($2,820M/$14,544M), and 18.5% ($2,725M/$14,694M), indicating deterioration rather than improvement. The writer propagated this analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1026,
+    "output_tokens": 479,
+    "total_tokens": 1505,
+    "cached_tokens": 0,
+    "reasoning_tokens": 295,
+    "cost_usd": 0.00078,
+    "latency_ms": 5014.711999974679,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1026,
+      "output_tokens": 479,
+      "total_tokens": 1505,
+      "reasoning_tokens": 295,
+      "time_to_first_token": 5.014094291022047,
+      "duration": 5.0142829160322435,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1026,
+            "output_tokens": 479,
+            "total_tokens": 1505,
+            "reasoning_tokens": 295,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 878,
+    "output_tokens": 248,
+    "total_tokens": 1126,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3106.206035008654,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 878,
+      "output_tokens": 248,
+      "total_tokens": 1126,
+      "time_to_first_token": 3.1059688969980925,
+      "duration": 3.1060419940040447,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 878,
+            "output_tokens": 248,
+            "total_tokens": 1126,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3079163229,
+              "load_duration": 531080,
+              "prompt_eval_duration": 237662000,
+              "eval_duration": 2789231000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01328_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo reported $411 million in restructuring and impairment charges for FY2022 as a directly outlined income-statement item.",
+    "reported_metric": "restructuring_and_impairment_charges",
+    "reported_value": 411.0,
+    "confidence": 0.86,
+    "rationale": "The extractor is the first stage making the unsupported leap from a combined 'restructuring_and_impairment_charges' figure to the quantity of restructuring costs directly outlined in the income statements. No source provenance or evidence of explicit income-statement disclosure is provided, and the later stages merely propagate the extractor's claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 672,
+    "output_tokens": 396,
+    "total_tokens": 1068,
+    "cached_tokens": 0,
+    "reasoning_tokens": 242,
+    "cost_usd": 0.0006096000000000001,
+    "latency_ms": 4852.845459012315,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 672,
+      "output_tokens": 396,
+      "total_tokens": 1068,
+      "reasoning_tokens": 242,
+      "time_to_first_token": 4.852344207989518,
+      "duration": 4.852483999973629,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 672,
+            "output_tokens": 396,
+            "total_tokens": 1068,
+            "reasoning_tokens": 242,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1174,
+    "output_tokens": 141,
+    "total_tokens": 1315,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001879,
+    "latency_ms": 4912.0175410062075,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1174,
+      "output_tokens": 141,
+      "total_tokens": 1315,
+      "time_to_first_token": 4.911020750005264,
+      "duration": 4.911314417026006,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1174,
+            "output_tokens": 141,
+            "total_tokens": 1315,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

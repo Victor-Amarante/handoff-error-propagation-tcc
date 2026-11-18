@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00585_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's FY2022 effective tax rate was reported as -0.5%.",
+    "reported_metric": "FY2022 effective tax rate",
+    "reported_value": -0.5,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, FY2022 effective tax rate is (-$31M)/(-$5,775M) = approximately +0.5%, not -0.5%. The FY2021 calculation, $743M/(-$5,033M), correctly yields approximately -14.8%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 413,
+    "total_tokens": 1213,
+    "cached_tokens": 0,
+    "reasoning_tokens": 268,
+    "cost_usd": 0.0006555999999999999,
+    "latency_ms": 4235.156000009738,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 413,
+      "total_tokens": 1213,
+      "reasoning_tokens": 268,
+      "time_to_first_token": 4.2338467499939725,
+      "duration": 4.234402041009162,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 413,
+            "total_tokens": 1213,
+            "reasoning_tokens": 268,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 626,
+    "output_tokens": 1451,
+    "total_tokens": 2077,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 15498.219850007445,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 626,
+      "output_tokens": 1451,
+      "total_tokens": 2077,
+      "time_to_first_token": 15.497982272994705,
+      "duration": 15.498061814985704,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 626,
+            "output_tokens": 1451,
+            "total_tokens": 2077,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 15473196389,
+              "load_duration": 555524,
+              "prompt_eval_duration": 180805000,
+              "eval_duration": 15242497000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

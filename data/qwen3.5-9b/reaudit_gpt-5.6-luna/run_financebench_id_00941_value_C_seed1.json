@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "3M has 5.1 USD_K million in debt securities registered to trade on a national securities exchange as of Q2 2023.",
+    "reported_metric": "debt securities",
+    "reported_value": 5.1,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst preserve three securities—2026, 2030, and 2031—with values 5.1, 1.75, and 1.5. The writer incorrectly reduces them to only the 2026 security and misinterprets the USD_K unit as millions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1208,
+    "output_tokens": 661,
+    "total_tokens": 1869,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010348,
+    "latency_ms": 6645.395667001139,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1208,
+      "output_tokens": 661,
+      "total_tokens": 1869,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.644993124995381,
+      "duration": 6.645079042005818,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1208,
+            "output_tokens": 661,
+            "total_tokens": 1869,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1136,
+    "output_tokens": 270,
+    "total_tokens": 1406,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3426.0525380377658,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1136,
+      "output_tokens": 270,
+      "total_tokens": 1406,
+      "time_to_first_token": 3.4258180119795725,
+      "duration": 3.4258905890164897,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1136,
+            "output_tokens": 270,
+            "total_tokens": 1406,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3400037809,
+              "load_duration": 469666,
+              "prompt_eval_duration": 316216000,
+              "eval_duration": 3008299000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

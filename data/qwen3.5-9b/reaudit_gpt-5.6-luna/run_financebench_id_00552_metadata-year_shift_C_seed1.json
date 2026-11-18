@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00552_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled the FY2023 current portion of long-term debt ($5,247 million) with year 2024, conflicting with the FY2023 metric label and the FY2023 comparison used downstream.",
+    "reported_metric": "Current portion of long-term debt FY2023",
+    "reported_value": 5247.0,
+    "confidence": 0.96,
+    "rationale": "C01 is internally inconsistent: its metric identifies FY2023, but its year field is 2024. The downstream arithmetic and final conclusion are otherwise consistent, yielding a $2,544 million decrease."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1429,
+    "output_tokens": 663,
+    "total_tokens": 2092,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010814000000000002,
+    "latency_ms": 6438.067624985706,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1429,
+      "output_tokens": 663,
+      "total_tokens": 2092,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.437388416030444,
+      "duration": 6.437584791041445,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1429,
+            "output_tokens": 663,
+            "total_tokens": 2092,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1456,
+    "output_tokens": 354,
+    "total_tokens": 1810,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4299.567429989111,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1456,
+      "output_tokens": 354,
+      "total_tokens": 1810,
+      "time_to_first_token": 4.299333173956256,
+      "duration": 4.29940307297511,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1456,
+            "output_tokens": 354,
+            "total_tokens": 1810,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4273817258,
+              "load_duration": 448105,
+              "prompt_eval_duration": 386185000,
+              "eval_duration": 3825404000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

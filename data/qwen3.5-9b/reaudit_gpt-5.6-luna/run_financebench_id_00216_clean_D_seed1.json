@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00216_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported Verizon's FY 2022 quick ratio as 0.456 times.",
+    "reported_metric": "quick_ratio",
+    "reported_value": 0.456,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, the quick ratio is (cash and cash equivalents + accounts receivable) / total current liabilities = (2,605 + 24,506) / 50,171 ≈ 0.541. Equivalently, current assets less inventories and prepaid expenses gives the same result. Thus the analyst's 0.456 calculation is internally inconsistent; the writer then repeated the resulting error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2154,
+    "output_tokens": 535,
+    "total_tokens": 2689,
+    "cached_tokens": 0,
+    "reasoning_tokens": 374,
+    "cost_usd": 0.0010728,
+    "latency_ms": 5773.8607919891365,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2154,
+      "output_tokens": 535,
+      "total_tokens": 2689,
+      "reasoning_tokens": 374,
+      "time_to_first_token": 5.773448541993275,
+      "duration": 5.773586499970406,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2154,
+            "output_tokens": 535,
+            "total_tokens": 2689,
+            "reasoning_tokens": 374,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2302,
+    "output_tokens": 365,
+    "total_tokens": 2667,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4558.853171009105,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2302,
+      "output_tokens": 365,
+      "total_tokens": 2667,
+      "time_to_first_token": 4.55861891398672,
+      "duration": 4.5586908719851635,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2302,
+            "output_tokens": 365,
+            "total_tokens": 2667,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4533392462,
+              "load_duration": 805767,
+              "prompt_eval_duration": 566593000,
+              "eval_duration": 3920282000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

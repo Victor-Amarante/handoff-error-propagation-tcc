@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly stated that net revenue minus total operating expenses yields both operating income and net income; it yields operating income, not net income.",
+    "reported_metric": "net income",
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor's figures and percentage changes are arithmetically consistent. The first identifiable factual error appears in the analyst's description of the result of subtracting expenses from revenue. No claim IDs are provided, and this error has no numeric reported value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1056,
+    "output_tokens": 647,
+    "total_tokens": 1703,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009876,
+    "latency_ms": 6529.720459016971,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1056,
+      "output_tokens": 647,
+      "total_tokens": 1703,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.529245957965031,
+      "duration": 6.529383999994025,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1056,
+            "output_tokens": 647,
+            "total_tokens": 1703,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1570,
+    "output_tokens": 175,
+    "total_tokens": 1745,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002445,
+    "latency_ms": 3481.4822080079466,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1570,
+      "output_tokens": 175,
+      "total_tokens": 1745,
+      "time_to_first_token": 3.480668167001568,
+      "duration": 3.480894374952186,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1570,
+            "output_tokens": 175,
+            "total_tokens": 1745,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

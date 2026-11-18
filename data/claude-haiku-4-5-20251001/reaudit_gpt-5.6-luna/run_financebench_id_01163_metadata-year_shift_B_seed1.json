@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Nike's operating activities generated $5,841 million in FY2023.",
+    "reported_metric": "cash_provided_used_by_operations",
+    "reported_value": 5841.0,
+    "confidence": 0.93,
+    "rationale": "The extractor explicitly labels the $5,841 million operating cash-flow figure as year 2024. The analyst changes only its year to 2023 without supporting provenance, creating the first unsupported claim. The writer then repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 874,
+    "output_tokens": 637,
+    "total_tokens": 1511,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009392000000000001,
+    "latency_ms": 7333.69825000409,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 874,
+      "output_tokens": 637,
+      "total_tokens": 1511,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.332984125008807,
+      "duration": 7.33318254200276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 874,
+            "output_tokens": 637,
+            "total_tokens": 1511,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1403,
+    "output_tokens": 182,
+    "total_tokens": 1585,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002313,
+    "latency_ms": 3374.6831250027753,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1403,
+      "output_tokens": 182,
+      "total_tokens": 1585,
+      "time_to_first_token": 3.373757958004717,
+      "duration": 3.374051208025776,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1403,
+            "output_tokens": 182,
+            "total_tokens": 1585,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

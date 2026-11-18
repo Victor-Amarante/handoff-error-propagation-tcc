@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00799_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculations are internally consistent with the extracted figures: FY2023 quick ratio is 2,564/4,476 = 0.57, and FY2022 is 2,710/5,103 = 0.53. The conclusion that the ratio improved is correct, and the explanation that liabilities declined faster than quick assets is also supported by the figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1147,
+    "output_tokens": 273,
+    "total_tokens": 1420,
+    "cached_tokens": 0,
+    "reasoning_tokens": 143,
+    "cost_usd": 0.000557,
+    "latency_ms": 3300.3252500202507,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1147,
+      "output_tokens": 273,
+      "total_tokens": 1420,
+      "reasoning_tokens": 143,
+      "time_to_first_token": 3.2995065419818275,
+      "duration": 3.299647499981802,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1147,
+            "output_tokens": 273,
+            "total_tokens": 1420,
+            "reasoning_tokens": 143,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1707,
+    "output_tokens": 186,
+    "total_tokens": 1893,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002637,
+    "latency_ms": 3374.0898339892738,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1707,
+      "output_tokens": 186,
+      "total_tokens": 1893,
+      "time_to_first_token": 3.3730961669934914,
+      "duration": 3.373392000037711,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1707,
+            "output_tokens": 186,
+            "total_tokens": 1893,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

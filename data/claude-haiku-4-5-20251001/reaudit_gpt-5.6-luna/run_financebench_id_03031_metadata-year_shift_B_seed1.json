@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03031_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Lockheed Martin's FY2021 net working capital is represented as 0.0 USD millions.",
+    "reported_metric": "net_working_capital",
+    "reported_value": 0.0,
+    "confidence": 0.96,
+    "rationale": "The extractor provided total current assets for 2022 and total current liabilities for 2021, so FY2021 net working capital cannot be calculated from the trace. The analyst correctly produced no claim. The writer's structured answer nevertheless reports a value of 0.0, which is unsupported and inconsistent with its text saying the value cannot be determined."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 696,
+    "output_tokens": 437,
+    "total_tokens": 1133,
+    "cached_tokens": 0,
+    "reasoning_tokens": 286,
+    "cost_usd": 0.0006636,
+    "latency_ms": 4782.331000023987,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 696,
+      "output_tokens": 437,
+      "total_tokens": 1133,
+      "reasoning_tokens": 286,
+      "time_to_first_token": 4.7817592499777675,
+      "duration": 4.781929166987538,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 696,
+            "output_tokens": 437,
+            "total_tokens": 1133,
+            "reasoning_tokens": 286,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1194,
+    "output_tokens": 200,
+    "total_tokens": 1394,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002194,
+    "latency_ms": 3680.463291995693,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1194,
+      "output_tokens": 200,
+      "total_tokens": 1394,
+      "time_to_first_token": 3.6798937909770757,
+      "duration": 3.680002124980092,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1194,
+            "output_tokens": 200,
+            "total_tokens": 1394,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

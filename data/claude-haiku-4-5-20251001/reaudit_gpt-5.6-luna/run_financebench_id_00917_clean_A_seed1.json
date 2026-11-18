@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00917_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extracted operating income figures are internally consistent with the stated decline: $3,600M to $1,300M is a $2,300M decrease, or approximately 64%. The analyst and writer appropriately note that operating-margin drivers cannot be determined without revenue and expense details. No incorrect claim is evident from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1040,
+    "output_tokens": 213,
+    "total_tokens": 1253,
+    "cached_tokens": 0,
+    "reasoning_tokens": 92,
+    "cost_usd": 0.00046360000000000005,
+    "latency_ms": 3165.669375041034,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1040,
+      "output_tokens": 213,
+      "total_tokens": 1253,
+      "reasoning_tokens": 92,
+      "time_to_first_token": 3.164723167021293,
+      "duration": 3.165123458020389,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1040,
+            "output_tokens": 213,
+            "total_tokens": 1253,
+            "reasoning_tokens": 92,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1541,
+    "output_tokens": 173,
+    "total_tokens": 1714,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002406,
+    "latency_ms": 2694.803083955776,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1541,
+      "output_tokens": 173,
+      "total_tokens": 1714,
+      "time_to_first_token": 2.6941153749939986,
+      "duration": 2.694336457992904,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1541,
+            "output_tokens": 173,
+            "total_tokens": 1714,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

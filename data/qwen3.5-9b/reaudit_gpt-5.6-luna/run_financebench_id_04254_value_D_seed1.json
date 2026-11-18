@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04254_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2021 operating income was extracted as $1,916 million, although the cited income-statement evidence shows $1,196 million.",
+    "reported_metric": "operating_income",
+    "reported_value": 1916.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 is internally inconsistent: its value is 1,916 while its cited evidence states 1,196. This extraction error propagates downstream; moreover, the analyst's $1,552 sum matches neither 1,916 + 636 nor 1,196 + 636."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1321,
+    "output_tokens": 379,
+    "total_tokens": 1700,
+    "cached_tokens": 0,
+    "reasoning_tokens": 230,
+    "cost_usd": 0.000719,
+    "latency_ms": 4191.842458967585,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1321,
+      "output_tokens": 379,
+      "total_tokens": 1700,
+      "reasoning_tokens": 230,
+      "time_to_first_token": 4.190970708034001,
+      "duration": 4.191287708003074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1321,
+            "output_tokens": 379,
+            "total_tokens": 1700,
+            "reasoning_tokens": 230,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1279,
+    "output_tokens": 210,
+    "total_tokens": 1489,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2769.6484769694507,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1279,
+      "output_tokens": 210,
+      "total_tokens": 1489,
+      "time_to_first_token": 2.76935365999816,
+      "duration": 2.7694653699873015,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1279,
+            "output_tokens": 210,
+            "total_tokens": 1489,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2739227450,
+              "load_duration": 489398,
+              "prompt_eval_duration": 342680000,
+              "eval_duration": 2342986000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01254_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "MGM Resorts paid dividends of $0.01 per share to common shareholders in FY2022.",
+    "reported_metric": "dividend_paid",
+    "reported_value": 0.01,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst report an annual dividend of 0.01 in USD_M, meaning a monetary aggregate, while the writer changes the unit to USD_PER_SHARE and asserts payment to common shareholders without support or a derivation for that conversion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 779,
+    "output_tokens": 278,
+    "total_tokens": 1057,
+    "cached_tokens": 0,
+    "reasoning_tokens": 150,
+    "cost_usd": 0.0004894,
+    "latency_ms": 3343.3893749606796,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 278,
+      "total_tokens": 1057,
+      "reasoning_tokens": 150,
+      "time_to_first_token": 3.3427795409807004,
+      "duration": 3.342937457957305,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 278,
+            "total_tokens": 1057,
+            "reasoning_tokens": 150,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 630,
+    "output_tokens": 166,
+    "total_tokens": 796,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2159.4458750332706,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 630,
+      "output_tokens": 166,
+      "total_tokens": 796,
+      "time_to_first_token": 2.159192873048596,
+      "duration": 2.159265252004843,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 630,
+            "output_tokens": 166,
+            "total_tokens": 796,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2128534978,
+              "load_duration": 454914,
+              "prompt_eval_duration": 157911000,
+              "eval_duration": 1920014000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

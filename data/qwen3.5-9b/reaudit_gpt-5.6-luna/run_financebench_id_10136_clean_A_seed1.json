@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10136_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The figures and formula are internally consistent: (2707.3 - 1244.5) / 2707.3 = approximately 0.5403, which is 54.03% when expressed as a percentage. No factual error is evident from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 802,
+    "output_tokens": 272,
+    "total_tokens": 1074,
+    "cached_tokens": 0,
+    "reasoning_tokens": 161,
+    "cost_usd": 0.00048679999999999996,
+    "latency_ms": 3259.6316669951193,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 802,
+      "output_tokens": 272,
+      "total_tokens": 1074,
+      "reasoning_tokens": 161,
+      "time_to_first_token": 3.259221541986335,
+      "duration": 3.2592893749824725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 802,
+            "output_tokens": 272,
+            "total_tokens": 1074,
+            "reasoning_tokens": 161,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 632,
+    "output_tokens": 242,
+    "total_tokens": 874,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2991.755311959423,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 632,
+      "output_tokens": 242,
+      "total_tokens": 874,
+      "time_to_first_token": 2.991517396993004,
+      "duration": 2.9915932529838756,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 632,
+            "output_tokens": 242,
+            "total_tokens": 874,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2966769663,
+              "load_duration": 658196,
+              "prompt_eval_duration": 157177000,
+              "eval_duration": 2754709000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

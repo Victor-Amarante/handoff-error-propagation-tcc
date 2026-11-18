@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00678_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported a 2.66% FY2022 gross margin for products using FY2022 cost of products but FY2021 sales of products, and the calculation does not match those inputs.",
+    "reported_metric": "gross_margin_products",
+    "reported_value": 2.66,
+    "confidence": 0.99,
+    "rationale": "A01 derives from C03 (2022 cost of products: 53,969) and C05 (2021 sales of products: 51,386), despite labeling the result as 2022. Those inputs imply approximately -5.0%, not 2.66%; using the 55,893 sales figure listed for the latest period would also produce a different margin. The writer then repeated A01's incorrect figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3062,
+    "output_tokens": 1185,
+    "total_tokens": 4247,
+    "cached_tokens": 0,
+    "reasoning_tokens": 991,
+    "cost_usd": 0.0020344,
+    "latency_ms": 11042.726875049993,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3062,
+      "output_tokens": 1185,
+      "total_tokens": 4247,
+      "reasoning_tokens": 991,
+      "time_to_first_token": 11.04195579100633,
+      "duration": 11.042263749986887,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3062,
+            "output_tokens": 1185,
+            "total_tokens": 4247,
+            "reasoning_tokens": 991,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3887,
+    "output_tokens": 212,
+    "total_tokens": 4099,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004947,
+    "latency_ms": 3179.9645419814624,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3887,
+      "output_tokens": 212,
+      "total_tokens": 4099,
+      "time_to_first_token": 3.179224291990977,
+      "duration": 3.1794567499891855,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3887,
+            "output_tokens": 212,
+            "total_tokens": 4099,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

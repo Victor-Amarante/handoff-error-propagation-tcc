@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00941_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The 1.500% Notes due 2026 (ticker MMM26) were incorrectly tagged with year 2024, despite being listed in the Q2 2023 filing as a registered NYSE debt security.",
+    "reported_metric": "debt_securities_registered",
+    "reported_value": 1.0,
+    "confidence": 0.93,
+    "rationale": "C01's evidence identifies a registered security in the 3M 2023Q2 filing, but its year is incorrectly set to 2024. The analyst then omitted C01, causing the writer to report only two securities instead of the three supported by the extractor evidence."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1316,
+    "output_tokens": 675,
+    "total_tokens": 1991,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010732,
+    "latency_ms": 6664.193915959913,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1316,
+      "output_tokens": 675,
+      "total_tokens": 1991,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.663569708995055,
+      "duration": 6.663801999995485,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1316,
+            "output_tokens": 675,
+            "total_tokens": 1991,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1903,
+    "output_tokens": 226,
+    "total_tokens": 2129,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003033,
+    "latency_ms": 3377.613500051666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1903,
+      "output_tokens": 226,
+      "total_tokens": 2129,
+      "time_to_first_token": 3.376607457990758,
+      "duration": 3.3769050000119023,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1903,
+            "output_tokens": 226,
+            "total_tokens": 2129,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The largest liability in 2022 was long-term debt of $42,573 million.",
+    "reported_metric": "largest_liability_2022",
+    "reported_value": 42573.0,
+    "confidence": 0.72,
+    "rationale": "The analyst asserted a largest-liability result using only the extracted 2022 liabilities C02–C05, while the trace also contains customer-deposits data that is not aligned to 2022. The extractor claims themselves are not demonstrably false from the trace, but A01 is unsupported as an exhaustive 2022 comparison; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1160,
+    "output_tokens": 1186,
+    "total_tokens": 2346,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016552000000000001,
+    "latency_ms": 11555.560666020028,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1160,
+      "output_tokens": 1186,
+      "total_tokens": 2346,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.555038958031218,
+      "duration": 11.555194583022967,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1160,
+            "output_tokens": 1186,
+            "total_tokens": 2346,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1755,
+    "output_tokens": 210,
+    "total_tokens": 1965,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002805,
+    "latency_ms": 3785.477541037835,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1755,
+      "output_tokens": 210,
+      "total_tokens": 1965,
+      "time_to_first_token": 3.7845713330316357,
+      "duration": 3.784840250038542,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1755,
+            "output_tokens": 210,
+            "total_tokens": 1965,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

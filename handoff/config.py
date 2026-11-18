@@ -56,7 +56,10 @@ MODEL_SLUG = os.getenv("HANDOFF_MODEL_SLUG") or _slugify(MODEL_ID)
 
 MODEL_DIR = DATA_DIR / MODEL_SLUG
 CACHE_DIR = MODEL_DIR / "cache"
-LOG_DIR = MODEL_DIR / "logs"
+#: Rodadas complementares (parecer do orientador) gravam numa subpasta propria,
+#: ex. HANDOFF_LOG_SUBDIR=logs_parecer, mas reaproveitam o MESMO cache do
+#: Extrator: o estado corrompido continua identico ao da rodada principal.
+LOG_DIR = MODEL_DIR / (os.getenv("HANDOFF_LOG_SUBDIR") or "logs")
 
 
 def ensure_dirs() -> None:
@@ -113,6 +116,15 @@ OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
 #: motivo do Claude acima -- constante e comparavel aos outros dois
 #: experimentos, sem introduzir um eixo de "esforco" que eles nao tem.
 OLLAMA_THINK = os.getenv("HANDOFF_OLLAMA_THINK", "0") == "1"
+#: Penalidade de presenca enviada ao Ollama. Vazio = nao enviar, e vale o
+#: padrao da tag (1.5 em qwen3.5:9b, ver `ollama show --parameters`). A rodada
+#: principal nao enviou o parametro.
+_pp_raw = os.getenv("HANDOFF_OLLAMA_PRESENCE_PENALTY", "")
+OLLAMA_PRESENCE_PENALTY: float | None = float(_pp_raw) if _pp_raw.strip() else None
+
+#: 1 = campo `unit` como Literal no schema, e a decodificacao restrita passa a
+#: impedir unidade fora da lista. A rodada principal usou texto livre (0).
+STRICT_UNITS = os.getenv("HANDOFF_STRICT_UNITS", "0") == "1"
 
 
 def model_params() -> dict:
@@ -138,7 +150,9 @@ def model_params() -> dict:
     elif PROVIDER == "anthropic":
         base.update({"thinking": CLAUDE_THINKING, "max_tokens": CLAUDE_MAX_TOKENS})
     elif PROVIDER == "ollama":
-        base.update({"think": OLLAMA_THINK, "send_seed": SEND_SEED, "host": OLLAMA_HOST})
+        base.update({"think": OLLAMA_THINK, "send_seed": SEND_SEED, "host": OLLAMA_HOST,
+                     "presence_penalty": OLLAMA_PRESENCE_PENALTY})
+    base["strict_units"] = STRICT_UNITS
     return base
 
 

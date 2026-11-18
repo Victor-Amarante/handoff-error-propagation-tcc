@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01935_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor claimed that Amcor plc's filing date in 2020 was 2019, which is temporally inconsistent and indicates a misread or misattributed date.",
+    "reported_metric": "filing date",
+    "reported_value": 2019.0,
+    "confidence": 0.9,
+    "rationale": "The extractor is the first stage containing an internally inconsistent factual claim. The analyst and writer appropriately limited their conclusions to the information provided and did not introduce a new factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 701,
+    "output_tokens": 525,
+    "total_tokens": 1226,
+    "cached_tokens": 0,
+    "reasoning_tokens": 397,
+    "cost_usd": 0.0007702000000000001,
+    "latency_ms": 5365.549874957651,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 701,
+      "output_tokens": 525,
+      "total_tokens": 1226,
+      "reasoning_tokens": 397,
+      "time_to_first_token": 5.365054290974513,
+      "duration": 5.365174415986985,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 701,
+            "output_tokens": 525,
+            "total_tokens": 1226,
+            "reasoning_tokens": 397,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 496,
+    "output_tokens": 91,
+    "total_tokens": 587,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1326.631129020825,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 496,
+      "output_tokens": 91,
+      "total_tokens": 587,
+      "time_to_first_token": 1.3263439660076983,
+      "duration": 1.3264333080151118,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 496,
+            "output_tokens": 91,
+            "total_tokens": 587,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1294795373,
+              "load_duration": 445825,
+              "prompt_eval_duration": 136965000,
+              "eval_duration": 1106261000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

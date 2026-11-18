@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01487_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 20.1% for Q2 FY2023 and 20.0% for Q2 FY2022. The analyst correctly computes a 0.1 percentage-point increase, and the writer accurately carries this into the final answer. The trace is internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1321,
+    "output_tokens": 174,
+    "total_tokens": 1495,
+    "cached_tokens": 0,
+    "reasoning_tokens": 62,
+    "cost_usd": 0.000473,
+    "latency_ms": 2628.3868339960463,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1321,
+      "output_tokens": 174,
+      "total_tokens": 1495,
+      "reasoning_tokens": 62,
+      "time_to_first_token": 2.6278773749945685,
+      "duration": 2.627974459028337,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1321,
+            "output_tokens": 174,
+            "total_tokens": 1495,
+            "reasoning_tokens": 62,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1899,
+    "output_tokens": 154,
+    "total_tokens": 2053,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002669,
+    "latency_ms": 2559.7812089836225,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1899,
+      "output_tokens": 154,
+      "total_tokens": 2053,
+      "time_to_first_token": 2.5590913329506293,
+      "duration": 2.559304374968633,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1899,
+            "output_tokens": 154,
+            "total_tokens": 2053,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst claimed a FY2017–FY2019 three-year average net profit margin of 16.8%, despite using only FY2017 net earnings and revenue and no FY2018–FY2019 data.",
+    "reported_metric": "FY2017 - FY2019 3 year average net profit margin (as a %)",
+    "reported_value": 16.8,
+    "confidence": 0.99,
+    "rationale": "The extractor supplied FY2015–FY2017 earnings and revenue figures, but the analyst introduced an unsupported FY2017–FY2019 metric and a mathematically unsupported 16.8% value. The writer then derived the final answer from that erroneous analyst claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1578,
+    "output_tokens": 582,
+    "total_tokens": 2160,
+    "cached_tokens": 0,
+    "reasoning_tokens": 408,
+    "cost_usd": 0.001014,
+    "latency_ms": 5559.523082978558,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1578,
+      "output_tokens": 582,
+      "total_tokens": 2160,
+      "reasoning_tokens": 408,
+      "time_to_first_token": 5.559078207996208,
+      "duration": 5.559199874987826,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1578,
+            "output_tokens": 582,
+            "total_tokens": 2160,
+            "reasoning_tokens": 408,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1649,
+    "output_tokens": 1542,
+    "total_tokens": 3191,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 17104.184372990858,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1649,
+      "output_tokens": 1542,
+      "total_tokens": 3191,
+      "time_to_first_token": 17.103894897038117,
+      "duration": 17.103983686014544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1649,
+            "output_tokens": 1542,
+            "total_tokens": 3191,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 17073763286,
+              "load_duration": 481756,
+              "prompt_eval_duration": 390226000,
+              "eval_duration": 16638812000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

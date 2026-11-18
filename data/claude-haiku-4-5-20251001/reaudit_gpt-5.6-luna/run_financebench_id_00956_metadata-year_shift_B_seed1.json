@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00956_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "J&J's FY2022 overall sales growth rate was 6.9%.",
+    "reported_metric": "sales_growth_rate",
+    "reported_value": 6.9,
+    "confidence": 0.99,
+    "rationale": "The trace reports 6.9% as FY2022 volume growth, not sales growth. The extractor and analyst preserve that metric distinction; the writer's answer_claim relabels 6.9% as sales_growth_rate, creating the first evident error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1110,
+    "output_tokens": 326,
+    "total_tokens": 1436,
+    "cached_tokens": 0,
+    "reasoning_tokens": 197,
+    "cost_usd": 0.0006132,
+    "latency_ms": 3426.441832969431,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1110,
+      "output_tokens": 326,
+      "total_tokens": 1436,
+      "reasoning_tokens": 197,
+      "time_to_first_token": 3.425943583017215,
+      "duration": 3.4260996250086464,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1110,
+            "output_tokens": 326,
+            "total_tokens": 1436,
+            "reasoning_tokens": 197,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1661,
+    "output_tokens": 184,
+    "total_tokens": 1845,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002581,
+    "latency_ms": 2555.978165997658,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1661,
+      "output_tokens": 184,
+      "total_tokens": 1845,
+      "time_to_first_token": 2.555466666992288,
+      "duration": 2.5556042499956675,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1661,
+            "output_tokens": 184,
+            "total_tokens": 1845,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

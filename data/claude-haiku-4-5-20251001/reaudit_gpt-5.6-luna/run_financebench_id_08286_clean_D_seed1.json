@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08286_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports FY2019 net income of USD 11,588 million, the analyst preserves the same value, and the writer accurately restates it. The evidence lists 3,033, 10,073, and 11,588, consistent with the three fiscal years and with the stated FY2019 value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 883,
+    "output_tokens": 249,
+    "total_tokens": 1132,
+    "cached_tokens": 0,
+    "reasoning_tokens": 129,
+    "cost_usd": 0.0004754,
+    "latency_ms": 2759.921042015776,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 883,
+      "output_tokens": 249,
+      "total_tokens": 1132,
+      "reasoning_tokens": 129,
+      "time_to_first_token": 2.759366874990519,
+      "duration": 2.7594659160240553,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 883,
+            "output_tokens": 249,
+            "total_tokens": 1132,
+            "reasoning_tokens": 129,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1426,
+    "output_tokens": 142,
+    "total_tokens": 1568,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002136,
+    "latency_ms": 2068.8212079694495,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1426,
+      "output_tokens": 142,
+      "total_tokens": 1568,
+      "time_to_first_token": 2.06812616600655,
+      "duration": 2.0682930829934776,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1426,
+            "output_tokens": 142,
+            "total_tokens": 1568,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

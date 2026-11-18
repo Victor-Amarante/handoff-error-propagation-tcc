@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01858_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extractor reports 65 consecutive years of dividend increases in 2023, and the analyst and writer consistently use that same figure to answer the question. No internal contradiction or provenance-based error is evident, and no claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 777,
+    "output_tokens": 254,
+    "total_tokens": 1031,
+    "cached_tokens": 0,
+    "reasoning_tokens": 144,
+    "cost_usd": 0.0004602,
+    "latency_ms": 3229.9118749797344,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 777,
+      "output_tokens": 254,
+      "total_tokens": 1031,
+      "reasoning_tokens": 144,
+      "time_to_first_token": 3.2293916670023464,
+      "duration": 3.2295327089959756,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 777,
+            "output_tokens": 254,
+            "total_tokens": 1031,
+            "reasoning_tokens": 144,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1248,
+    "output_tokens": 192,
+    "total_tokens": 1440,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002208,
+    "latency_ms": 3580.023834016174,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1248,
+      "output_tokens": 192,
+      "total_tokens": 1440,
+      "time_to_first_token": 3.5794772499939427,
+      "duration": 3.5795820000348613,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1248,
+            "output_tokens": 192,
+            "total_tokens": 1440,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

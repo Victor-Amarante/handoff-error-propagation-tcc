@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01091_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer claimed that Boeing reported zero ongoing legal battles in FY2022, despite the analyst output retaining two FY2022 legal-action claims valued at USD 1 billion each.",
+    "reported_metric": "ongoing legal battles",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst both contain FY2022 legal-action entries with nonzero USD 1 billion values. The writer's zero-value conclusion contradicts those retained upstream claims, so the first apparent error occurs at the writer stage. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 732,
+    "output_tokens": 298,
+    "total_tokens": 1030,
+    "cached_tokens": 0,
+    "reasoning_tokens": 149,
+    "cost_usd": 0.000504,
+    "latency_ms": 3444.395791972056,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 732,
+      "output_tokens": 298,
+      "total_tokens": 1030,
+      "reasoning_tokens": 149,
+      "time_to_first_token": 3.4438285829965025,
+      "duration": 3.444038332963828,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 732,
+            "output_tokens": 298,
+            "total_tokens": 1030,
+            "reasoning_tokens": 149,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 561,
+    "output_tokens": 377,
+    "total_tokens": 938,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4580.4814790026285,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 561,
+      "output_tokens": 377,
+      "total_tokens": 938,
+      "time_to_first_token": 4.580227338010445,
+      "duration": 4.58030112501001,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 561,
+            "output_tokens": 377,
+            "total_tokens": 938,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4554920757,
+              "load_duration": 448657,
+              "prompt_eval_duration": 169522000,
+              "eval_duration": 4319428000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

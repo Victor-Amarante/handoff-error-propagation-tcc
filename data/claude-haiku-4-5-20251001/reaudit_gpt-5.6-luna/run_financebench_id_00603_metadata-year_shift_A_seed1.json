@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00603_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The addition of 47 new stores was the primary driver of the increase in merchandise inventories at the end of FY2023.",
+    "reported_metric": "Primary driver of FY2023 merchandise-inventory increase (number of new stores)",
+    "reported_value": 47.0,
+    "confidence": 0.96,
+    "rationale": "The extractor only reports inventory figures through Q4 FY2022 and separately reports 47 FY2023 store openings; it provides no FY2023 inventory balance or evidence that store openings caused the increase. The analyst introduced the unsupported causal claim, which the writer repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 864,
+    "output_tokens": 546,
+    "total_tokens": 1410,
+    "cached_tokens": 0,
+    "reasoning_tokens": 397,
+    "cost_usd": 0.000828,
+    "latency_ms": 6280.781917041168,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 864,
+      "output_tokens": 546,
+      "total_tokens": 1410,
+      "reasoning_tokens": 397,
+      "time_to_first_token": 6.280187541036867,
+      "duration": 6.280351666035131,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 864,
+            "output_tokens": 546,
+            "total_tokens": 1410,
+            "reasoning_tokens": 397,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1379,
+    "output_tokens": 223,
+    "total_tokens": 1602,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002494,
+    "latency_ms": 2955.328957992606,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1379,
+      "output_tokens": 223,
+      "total_tokens": 1602,
+      "time_to_first_token": 2.9547187500284053,
+      "duration": 2.9548524160054512,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1379,
+            "output_tokens": 223,
+            "total_tokens": 1602,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

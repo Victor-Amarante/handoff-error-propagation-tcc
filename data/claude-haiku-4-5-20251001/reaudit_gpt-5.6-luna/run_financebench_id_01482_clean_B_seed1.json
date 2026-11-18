@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01482_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported vote counts consistently show the proposal was rejected.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst agree on 19,718,780 votes for and 977,228,788 against, and the writer accurately concludes that the proposal was decisively rejected."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 861,
+    "output_tokens": 178,
+    "total_tokens": 1039,
+    "cached_tokens": 0,
+    "reasoning_tokens": 71,
+    "cost_usd": 0.0003858,
+    "latency_ms": 2715.010667045135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 861,
+      "output_tokens": 178,
+      "total_tokens": 1039,
+      "reasoning_tokens": 71,
+      "time_to_first_token": 2.7141325420234352,
+      "duration": 2.714347125031054,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 861,
+            "output_tokens": 178,
+            "total_tokens": 1039,
+            "reasoning_tokens": 71,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1396,
+    "output_tokens": 222,
+    "total_tokens": 1618,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002506,
+    "latency_ms": 3133.4519580123015,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1396,
+      "output_tokens": 222,
+      "total_tokens": 1618,
+      "time_to_first_token": 3.1324552089790814,
+      "duration": 3.13274824997643,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1396,
+            "output_tokens": 222,
+            "total_tokens": 1618,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

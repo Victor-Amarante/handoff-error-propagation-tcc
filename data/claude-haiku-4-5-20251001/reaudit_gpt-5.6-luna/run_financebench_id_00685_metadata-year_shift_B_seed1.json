@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00685_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Best Buy's 2021 gross margin was reported as 21.4%.",
+    "reported_metric": "gross_margin",
+    "reported_value": 21.4,
+    "confidence": 0.99,
+    "rationale": "The extractor data imply a 2021 gross margin of 10,573 / 47,262 = approximately 22.4%, not 21.4%. The analyst's 2023 figure is also inconsistent: 9,912 / 46,298 = approximately 21.4%, not 19.1%. Thus the first identifiable error appears in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1163,
+    "output_tokens": 430,
+    "total_tokens": 1593,
+    "cached_tokens": 0,
+    "reasoning_tokens": 277,
+    "cost_usd": 0.0007486,
+    "latency_ms": 4699.055333039723,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1163,
+      "output_tokens": 430,
+      "total_tokens": 1593,
+      "reasoning_tokens": 277,
+      "time_to_first_token": 4.698200874961913,
+      "duration": 4.698586417012848,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1163,
+            "output_tokens": 430,
+            "total_tokens": 1593,
+            "reasoning_tokens": 277,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1720,
+    "output_tokens": 194,
+    "total_tokens": 1914,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00269,
+    "latency_ms": 2892.0856249751523,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1720,
+      "output_tokens": 194,
+      "total_tokens": 1914,
+      "time_to_first_token": 2.89133579202462,
+      "duration": 2.8915736250346527,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1720,
+            "output_tokens": 194,
+            "total_tokens": 1914,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

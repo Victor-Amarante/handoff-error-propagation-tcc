@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01028_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported the number of geographies as 0, despite evidence listing five geography categories.",
+    "reported_metric": "geographies",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim is internally inconsistent with its own evidence, which explicitly lists United States, EMEA, APAC, LACC, and Other Unallocated. The analyst subsequently corrected this to a count of five, and the writer preserved that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 867,
+    "output_tokens": 287,
+    "total_tokens": 1154,
+    "cached_tokens": 0,
+    "reasoning_tokens": 159,
+    "cost_usd": 0.0005177999999999999,
+    "latency_ms": 3321.4298330130987,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 867,
+      "output_tokens": 287,
+      "total_tokens": 1154,
+      "reasoning_tokens": 159,
+      "time_to_first_token": 3.320953333983198,
+      "duration": 3.3210620419704355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 867,
+            "output_tokens": 287,
+            "total_tokens": 1154,
+            "reasoning_tokens": 159,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 719,
+    "output_tokens": 237,
+    "total_tokens": 956,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2976.957870996557,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 719,
+      "output_tokens": 237,
+      "total_tokens": 956,
+      "time_to_first_token": 2.976719322032295,
+      "duration": 2.976792083994951,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 719,
+            "output_tokens": 237,
+            "total_tokens": 956,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2949610193,
+              "load_duration": 705036,
+              "prompt_eval_duration": 217171000,
+              "eval_duration": 2662017000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

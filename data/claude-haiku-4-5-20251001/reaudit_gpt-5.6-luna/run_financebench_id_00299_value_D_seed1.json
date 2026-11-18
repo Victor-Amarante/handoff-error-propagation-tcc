@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00299_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Consumer & Community Banking net revenue was reported as $15,217 million, but the accompanying evidence states $12,517 million.",
+    "reported_metric": "net_revenue",
+    "reported_value": 15217.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts directly with its own evidence. The analyst and writer correctly identify Corporate at negative $473 million as the lowest value among the listed segments, but the first factual error appears in C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1310,
+    "output_tokens": 226,
+    "total_tokens": 1536,
+    "cached_tokens": 0,
+    "reasoning_tokens": 95,
+    "cost_usd": 0.0005332000000000001,
+    "latency_ms": 2940.22758299252,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1310,
+      "output_tokens": 226,
+      "total_tokens": 1536,
+      "reasoning_tokens": 95,
+      "time_to_first_token": 2.939628208987415,
+      "duration": 2.939756000007037,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1310,
+            "output_tokens": 226,
+            "total_tokens": 1536,
+            "reasoning_tokens": 95,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1915,
+    "output_tokens": 176,
+    "total_tokens": 2091,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002795,
+    "latency_ms": 3333.696666988544,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1915,
+      "output_tokens": 176,
+      "total_tokens": 2091,
+      "time_to_first_token": 3.3329259589663707,
+      "duration": 3.333165833959356,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1915,
+            "output_tokens": 176,
+            "total_tokens": 2091,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

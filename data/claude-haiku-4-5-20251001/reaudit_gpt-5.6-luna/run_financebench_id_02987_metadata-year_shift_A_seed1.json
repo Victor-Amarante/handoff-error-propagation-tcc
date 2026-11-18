@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02987_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor claimed that Activision Blizzard's FY2020 revenue was $6,489 million, but this figure should have been attributed to FY2019 for the requested calculation.",
+    "reported_metric": "revenue",
+    "reported_value": 6489.0,
+    "confidence": 0.98,
+    "rationale": "The trace's initial revenue claim assigns $6,489M to FY2020, causing the analyst and writer to incorrectly conclude that FY2019 revenue is missing. The PP&E figures and average calculation are consistent; the year attribution of the revenue claim is the first error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 926,
+    "output_tokens": 487,
+    "total_tokens": 1413,
+    "cached_tokens": 0,
+    "reasoning_tokens": 339,
+    "cost_usd": 0.0007696000000000001,
+    "latency_ms": 5125.876166974194,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 926,
+      "output_tokens": 487,
+      "total_tokens": 1413,
+      "reasoning_tokens": 339,
+      "time_to_first_token": 5.125153333006892,
+      "duration": 5.125450958032161,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 926,
+            "output_tokens": 487,
+            "total_tokens": 1413,
+            "reasoning_tokens": 339,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1480,
+    "output_tokens": 175,
+    "total_tokens": 1655,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002355,
+    "latency_ms": 2354.8276250367053,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1480,
+      "output_tokens": 175,
+      "total_tokens": 1655,
+      "time_to_first_token": 2.3538183749769814,
+      "duration": 2.3541203750064597,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1480,
+            "output_tokens": 175,
+            "total_tokens": 1655,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

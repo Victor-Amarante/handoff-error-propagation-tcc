@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00705_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported increase is consistent with $4.2 billion minus $3.8 billion equaling $400 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports original and new agreement amounts of $3.8 billion and $4.2 billion, respectively. The analyst correctly computes the difference as $400 million, which the writer preserves."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 943,
+    "output_tokens": 201,
+    "total_tokens": 1144,
+    "cached_tokens": 0,
+    "reasoning_tokens": 79,
+    "cost_usd": 0.0004298,
+    "latency_ms": 2499.1832500090823,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 943,
+      "output_tokens": 201,
+      "total_tokens": 1144,
+      "reasoning_tokens": 79,
+      "time_to_first_token": 2.498546874965541,
+      "duration": 2.4987101249862462,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 943,
+            "output_tokens": 201,
+            "total_tokens": 1144,
+            "reasoning_tokens": 79,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 854,
+    "output_tokens": 311,
+    "total_tokens": 1165,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3659.164971963037,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 854,
+      "output_tokens": 311,
+      "total_tokens": 1165,
+      "time_to_first_token": 3.658864261000417,
+      "duration": 3.658955889986828,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 854,
+            "output_tokens": 311,
+            "total_tokens": 1165,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3627778610,
+              "load_duration": 456225,
+              "prompt_eval_duration": 216456000,
+              "eval_duration": 3341101000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

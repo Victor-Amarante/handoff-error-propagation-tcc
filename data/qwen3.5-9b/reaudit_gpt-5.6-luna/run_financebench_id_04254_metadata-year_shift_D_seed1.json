@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04254_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2021 unadjusted operating income plus depreciation and amortization was calculated as 1,441 (net cash provided by operating activities) plus 636, yielding 1,832 USD millions.",
+    "reported_metric": "unadjusted_operating_income_depreciation_and_amortization",
+    "reported_value": 1832.0,
+    "confidence": 0.99,
+    "rationale": "A01 incorrectly treats net cash provided by operating activities (C03) as operating income. The trace labels 1,441 as operating cash flow, not operating income, so the analyst's calculation and the writer's answer do not support the requested metric."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1371,
+    "output_tokens": 407,
+    "total_tokens": 1778,
+    "cached_tokens": 0,
+    "reasoning_tokens": 243,
+    "cost_usd": 0.0007625999999999999,
+    "latency_ms": 4257.973207975738,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1371,
+      "output_tokens": 407,
+      "total_tokens": 1778,
+      "reasoning_tokens": 243,
+      "time_to_first_token": 4.257416457985528,
+      "duration": 4.257548832974862,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1371,
+            "output_tokens": 407,
+            "total_tokens": 1778,
+            "reasoning_tokens": 243,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1336,
+    "output_tokens": 1319,
+    "total_tokens": 2655,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14477.994974004105,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1336,
+      "output_tokens": 1319,
+      "total_tokens": 2655,
+      "time_to_first_token": 14.477710236038547,
+      "duration": 14.477806514012627,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1336,
+            "output_tokens": 1319,
+            "total_tokens": 2655,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14452419807,
+              "load_duration": 657417,
+              "prompt_eval_duration": 358218000,
+              "eval_duration": 14041081000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01226_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Operating margin is applicable and useful for analyzing 3M in FY2022, inferred solely from a $1.2 billion litigation charge.",
+    "reported_metric": "operating_margin_analysis_applicability",
+    "reported_value": 1.0,
+    "confidence": 0.93,
+    "rationale": "The extractor supplied a litigation charge, but that fact does not establish that operating margin is a useful metric. The analyst introduced the unsupported applicability claim first; the writer then repeated it and built the final conclusion on it. The trace also does not support calling litigation the primary driver or interpreting the 1.0 SG&A ratio as efficiency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1158,
+    "output_tokens": 513,
+    "total_tokens": 1671,
+    "cached_tokens": 0,
+    "reasoning_tokens": 353,
+    "cost_usd": 0.0008472,
+    "latency_ms": 5386.807541013695,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1158,
+      "output_tokens": 513,
+      "total_tokens": 1671,
+      "reasoning_tokens": 353,
+      "time_to_first_token": 5.386337083007675,
+      "duration": 5.386466124968138,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1158,
+            "output_tokens": 513,
+            "total_tokens": 1671,
+            "reasoning_tokens": 353,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1746,
+    "output_tokens": 186,
+    "total_tokens": 1932,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002676,
+    "latency_ms": 3483.330999966711,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1746,
+      "output_tokens": 186,
+      "total_tokens": 1932,
+      "time_to_first_token": 3.482680250017438,
+      "duration": 3.4829165000119247,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1746,
+            "output_tokens": 186,
+            "total_tokens": 1932,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

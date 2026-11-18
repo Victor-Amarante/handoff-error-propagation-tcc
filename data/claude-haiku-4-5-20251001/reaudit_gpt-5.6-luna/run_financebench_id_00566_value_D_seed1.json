@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00566_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Verizon's total debt in 2022 was $105,639 million.",
+    "reported_metric": "total_debt",
+    "reported_value": 105639.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value ($105,639M) conflicts with its own evidence, which states total debt was $150,639M. The analyst and writer consistently propagated the extracted value and calculated the resulting decrease."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1151,
+    "output_tokens": 223,
+    "total_tokens": 1374,
+    "cached_tokens": 0,
+    "reasoning_tokens": 101,
+    "cost_usd": 0.0004978,
+    "latency_ms": 2866.5289169875905,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1151,
+      "output_tokens": 223,
+      "total_tokens": 1374,
+      "reasoning_tokens": 101,
+      "time_to_first_token": 2.8659548750147223,
+      "duration": 2.866137167031411,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1151,
+            "output_tokens": 223,
+            "total_tokens": 1374,
+            "reasoning_tokens": 101,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1725,
+    "output_tokens": 164,
+    "total_tokens": 1889,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002545,
+    "latency_ms": 2369.5815000100993,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1725,
+      "output_tokens": 164,
+      "total_tokens": 1889,
+      "time_to_first_token": 2.368881792004686,
+      "duration": 2.3690998340025544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1725,
+            "output_tokens": 164,
+            "total_tokens": 1889,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

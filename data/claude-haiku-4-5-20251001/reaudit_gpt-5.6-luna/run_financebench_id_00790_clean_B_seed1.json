@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The capital intensity ratio was reported as 5.64%, although 5.64% equals property and equipment divided by total assets, while property and equipment divided by revenues is approximately 3.99%.",
+    "reported_metric": "capital_intensity_ratio",
+    "reported_value": 5.64,
+    "confidence": 0.98,
+    "rationale": "Using the extractor values, 12,873 / 228,275 = 5.64%, whereas 12,873 / 322,467 = 3.99%. The analyst therefore appears to have mislabeled the property-and-equipment-to-assets ratio as capital intensity, which the writer then interpreted as a revenue-based measure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 423,
+    "total_tokens": 1368,
+    "cached_tokens": 0,
+    "reasoning_tokens": 253,
+    "cost_usd": 0.0006965999999999999,
+    "latency_ms": 4951.790708990302,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 945,
+      "output_tokens": 423,
+      "total_tokens": 1368,
+      "reasoning_tokens": 253,
+      "time_to_first_token": 4.951480582996737,
+      "duration": 4.951547166972887,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 945,
+            "output_tokens": 423,
+            "total_tokens": 1368,
+            "reasoning_tokens": 253,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1481,
+    "output_tokens": 194,
+    "total_tokens": 1675,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002451,
+    "latency_ms": 2739.789874991402,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1481,
+      "output_tokens": 194,
+      "total_tokens": 1675,
+      "time_to_first_token": 2.7387869579833932,
+      "duration": 2.7390797499683686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1481,
+            "output_tokens": 194,
+            "total_tokens": 1675,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

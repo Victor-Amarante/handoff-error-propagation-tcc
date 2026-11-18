@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03856_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2017 operating cash flow ratio is 0.83, calculated using cash from operations reported for FY2018 rather than FY2017.",
+    "reported_metric": "operating_cash_flow_ratio",
+    "reported_value": 0.83,
+    "confidence": 0.98,
+    "rationale": "The numerator is explicitly labeled year 2018 while the denominator and requested ratio are FY2017; the analyst combines these different years and the writer repeats the resulting ratio."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 779,
+    "output_tokens": 527,
+    "total_tokens": 1306,
+    "cached_tokens": 0,
+    "reasoning_tokens": 401,
+    "cost_usd": 0.0007882000000000001,
+    "latency_ms": 5374.777499993797,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 527,
+      "total_tokens": 1306,
+      "reasoning_tokens": 401,
+      "time_to_first_token": 5.374363374954555,
+      "duration": 5.374502666993067,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 527,
+            "total_tokens": 1306,
+            "reasoning_tokens": 401,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 630,
+    "output_tokens": 257,
+    "total_tokens": 887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3196.5464359964244,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 630,
+      "output_tokens": 257,
+      "total_tokens": 887,
+      "time_to_first_token": 3.1962485130061395,
+      "duration": 3.1963412220356986,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 630,
+            "output_tokens": 257,
+            "total_tokens": 887,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3166995812,
+              "load_duration": 436310,
+              "prompt_eval_duration": 158896000,
+              "eval_duration": 2943677000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

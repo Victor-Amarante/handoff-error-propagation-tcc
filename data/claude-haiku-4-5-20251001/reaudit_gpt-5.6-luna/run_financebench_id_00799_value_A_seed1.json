@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00799_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The calculations are internally consistent: FY2023 is 2,744/4,476 = 0.61x, while FY2022 is 2,710/5,103 = 0.53x. The stated changes in cash (+$94M), liquid assets (+$34M), and current liabilities (-$627M) also reconcile. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1182,
+    "output_tokens": 320,
+    "total_tokens": 1502,
+    "cached_tokens": 0,
+    "reasoning_tokens": 186,
+    "cost_usd": 0.0006204,
+    "latency_ms": 3499.1975000011735,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1182,
+      "output_tokens": 320,
+      "total_tokens": 1502,
+      "reasoning_tokens": 186,
+      "time_to_first_token": 3.49858083401341,
+      "duration": 3.4986907090060413,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1182,
+            "output_tokens": 320,
+            "total_tokens": 1502,
+            "reasoning_tokens": 186,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1750,
+    "output_tokens": 167,
+    "total_tokens": 1917,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002585,
+    "latency_ms": 3187.8964999923483,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1750,
+      "output_tokens": 167,
+      "total_tokens": 1917,
+      "time_to_first_token": 3.1868902500136755,
+      "duration": 3.1871822089888155,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1750,
+            "output_tokens": 167,
+            "total_tokens": 1917,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

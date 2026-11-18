@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00651_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly claimed that FY2022 adjusted EPS declined 13.8%, confusing the reported EPS change with the adjusted EPS change.",
+    "reported_metric": "FY2022 adjusted EPS change",
+    "reported_value": -13.8,
+    "confidence": 0.99,
+    "rationale": "The extractor states FY2022 reported EPS change was -13.8% but adjusted EPS change was 3.6%; the analyst used -13.8% as adjusted EPS growth. The writer repeated this analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1010,
+    "output_tokens": 366,
+    "total_tokens": 1376,
+    "cached_tokens": 0,
+    "reasoning_tokens": 230,
+    "cost_usd": 0.0006412000000000001,
+    "latency_ms": 3736.474334029481,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1010,
+      "output_tokens": 366,
+      "total_tokens": 1376,
+      "reasoning_tokens": 230,
+      "time_to_first_token": 3.7357732909731567,
+      "duration": 3.736017457966227,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1010,
+            "output_tokens": 366,
+            "total_tokens": 1376,
+            "reasoning_tokens": 230,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 852,
+    "output_tokens": 257,
+    "total_tokens": 1109,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3252.216335036792,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 852,
+      "output_tokens": 257,
+      "total_tokens": 1109,
+      "time_to_first_token": 3.25198400800582,
+      "duration": 3.2520525429863483,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 852,
+            "output_tokens": 257,
+            "total_tokens": 1109,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3224101105,
+              "load_duration": 673357,
+              "prompt_eval_duration": 216087000,
+              "eval_duration": 2926700000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

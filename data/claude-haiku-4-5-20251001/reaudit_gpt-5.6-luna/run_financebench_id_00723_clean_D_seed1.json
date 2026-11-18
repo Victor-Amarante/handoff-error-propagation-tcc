@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00723_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst labels 22.2%—calculated as total revenues net of interest expense less total expenses, divided by revenues—as AMEX's operating margin, although the inputs support a pretax margin rather than a clearly defined operating margin.",
+    "reported_metric": "operating_margin",
+    "reported_value": 22.2,
+    "confidence": 0.87,
+    "rationale": "The extractor reports revenues net of interest expense and total expenses, but not operating income. The analyst converts these figures into an operating margin without establishing that this is an appropriate or disclosed operating-profit measure for AMEX. Subsequent trend claims inherit this metric-labeling error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2103,
+    "output_tokens": 674,
+    "total_tokens": 2777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012294,
+    "latency_ms": 7041.242750012316,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2103,
+      "output_tokens": 674,
+      "total_tokens": 2777,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.040563374990597,
+      "duration": 7.040861334011424,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2103,
+            "output_tokens": 674,
+            "total_tokens": 2777,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2800,
+    "output_tokens": 211,
+    "total_tokens": 3011,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003855,
+    "latency_ms": 2964.127750019543,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2800,
+      "output_tokens": 211,
+      "total_tokens": 3011,
+      "time_to_first_token": 2.9636492500430904,
+      "duration": 2.963770500035025,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2800,
+            "output_tokens": 211,
+            "total_tokens": 3011,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

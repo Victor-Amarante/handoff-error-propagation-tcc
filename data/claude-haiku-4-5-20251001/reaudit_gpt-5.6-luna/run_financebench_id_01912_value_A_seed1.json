@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01912_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently reports MGM China as having the lowest FY2022 revenue.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor lists MGM China at $764M, below Regional Operations at $3,800M and Las Vegas Strip Resorts at $8,400M. The analyst and writer correctly identify MGM China as the worst topline performer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 738,
+    "output_tokens": 196,
+    "total_tokens": 934,
+    "cached_tokens": 0,
+    "reasoning_tokens": 75,
+    "cost_usd": 0.0003828,
+    "latency_ms": 2570.5989580019377,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 738,
+      "output_tokens": 196,
+      "total_tokens": 934,
+      "reasoning_tokens": 75,
+      "time_to_first_token": 2.569990708027035,
+      "duration": 2.5701534160180017,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 738,
+            "output_tokens": 196,
+            "total_tokens": 934,
+            "reasoning_tokens": 75,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1230,
+    "output_tokens": 161,
+    "total_tokens": 1391,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002035,
+    "latency_ms": 2629.9625409883447,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1230,
+      "output_tokens": 161,
+      "total_tokens": 1391,
+      "time_to_first_token": 2.628953624982387,
+      "duration": 2.6292510419734754,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1230,
+            "output_tokens": 161,
+            "total_tokens": 1391,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01911_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported MGM's FY2022 interest coverage ratio as 0.0 even though the required Adjusted EBIT numerator was unavailable and the ratio could not be calculated.",
+    "reported_metric": "interest_coverage_ratio",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The analyst's evidence explicitly states that the ratio cannot be calculated because Adjusted EBIT was not provided, which is inconsistent with assigning a numeric ratio value of 0.0. The writer propagated this claim, although its narrative correctly says the ratio was unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 347,
+    "total_tokens": 1292,
+    "cached_tokens": 0,
+    "reasoning_tokens": 200,
+    "cost_usd": 0.0006054,
+    "latency_ms": 4137.443249986973,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 945,
+      "output_tokens": 347,
+      "total_tokens": 1292,
+      "reasoning_tokens": 200,
+      "time_to_first_token": 4.136689166014548,
+      "duration": 4.136926166014746,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 945,
+            "output_tokens": 347,
+            "total_tokens": 1292,
+            "reasoning_tokens": 200,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1493,
+    "output_tokens": 162,
+    "total_tokens": 1655,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002303,
+    "latency_ms": 2999.253874993883,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1493,
+      "output_tokens": 162,
+      "total_tokens": 1655,
+      "time_to_first_token": 2.9987317089689896,
+      "duration": 2.9988554589799605,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1493,
+            "output_tokens": 162,
+            "total_tokens": 1655,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00080_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "No factual error is evident from the trace. The extracted totals reconcile, and the analyst correctly calculates working capital as $57,517M minus $45,101M = $12,416M, or approximately $12.4B. The writer preserves that conclusion and appropriately notes the limited relevance of traditional working capital for PayPal."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2418,
+    "output_tokens": 482,
+    "total_tokens": 2900,
+    "cached_tokens": 0,
+    "reasoning_tokens": 360,
+    "cost_usd": 0.001062,
+    "latency_ms": 5427.551291999407,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2418,
+      "output_tokens": 482,
+      "total_tokens": 2900,
+      "reasoning_tokens": 360,
+      "time_to_first_token": 5.426911958958954,
+      "duration": 5.427136749960482,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2418,
+            "output_tokens": 482,
+            "total_tokens": 2900,
+            "reasoning_tokens": 360,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3229,
+    "output_tokens": 182,
+    "total_tokens": 3411,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004139,
+    "latency_ms": 3581.7438330268487,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3229,
+      "output_tokens": 182,
+      "total_tokens": 3411,
+      "time_to_first_token": 3.5807231250219047,
+      "duration": 3.5810155830113217,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3229,
+            "output_tokens": 182,
+            "total_tokens": 3411,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

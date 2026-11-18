@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported operating cash flow is greater than investing cash flow and financing cash flow.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted and analyzed values are internally consistent: operating activities generated $3,565 million, investing activities generated $1,999 million, and financing activities used $3,264 million. Therefore, operating activities brought in the most cash."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3803,
+    "output_tokens": 243,
+    "total_tokens": 4046,
+    "cached_tokens": 0,
+    "reasoning_tokens": 120,
+    "cost_usd": 0.0010522,
+    "latency_ms": 2816.7962500010617,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3803,
+      "output_tokens": 243,
+      "total_tokens": 4046,
+      "reasoning_tokens": 120,
+      "time_to_first_token": 2.81637304200558,
+      "duration": 2.8165082919877023,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3803,
+            "output_tokens": 243,
+            "total_tokens": 4046,
+            "reasoning_tokens": 120,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4299,
+    "output_tokens": 535,
+    "total_tokens": 4834,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6965.618198970333,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4299,
+      "output_tokens": 535,
+      "total_tokens": 4834,
+      "time_to_first_token": 6.965321627969388,
+      "duration": 6.965416043007281,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4299,
+            "output_tokens": 535,
+            "total_tokens": 4834,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6936051442,
+              "load_duration": 585619,
+              "prompt_eval_duration": 1004170000,
+              "eval_duration": 5871403000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

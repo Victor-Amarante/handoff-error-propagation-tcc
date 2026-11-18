@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00941_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor represented the requested debt securities only as duplicate ratio claims indicating that registered debt securities exist, without identifying which securities they are.",
+    "reported_metric": "debt_securities_registered",
+    "reported_value": 1.0,
+    "confidence": 0.88,
+    "rationale": "The extractor produced three identical aggregate ratio claims rather than claims naming individual debt securities. The analyst merely deduplicated this incomplete extraction, and the writer added unsupported generalities about senior notes and bonds instead of supplying the requested securities."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 810,
+    "output_tokens": 645,
+    "total_tokens": 1455,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000936,
+    "latency_ms": 6756.142000027467,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 810,
+      "output_tokens": 645,
+      "total_tokens": 1455,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.755524249980226,
+      "duration": 6.755665207980201,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 810,
+            "output_tokens": 645,
+            "total_tokens": 1455,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1301,
+    "output_tokens": 178,
+    "total_tokens": 1479,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002191,
+    "latency_ms": 3275.9464170085266,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1301,
+      "output_tokens": 178,
+      "total_tokens": 1479,
+      "time_to_first_token": 3.275027166993823,
+      "duration": 3.275321167020593,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1301,
+            "output_tokens": 178,
+            "total_tokens": 1479,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

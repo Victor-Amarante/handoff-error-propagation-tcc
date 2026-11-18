@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Nike's investing activities were reported as a positive cash flow of $564 million, although the pipeline's wording indicates this amount was cash used rather than cash provided.",
+    "reported_metric": "cash_provided_used_by_investing_activities",
+    "reported_value": 564.0,
+    "confidence": 0.86,
+    "rationale": "The trace uses signed values: financing cash used is reported as -$7,447 million, while investing is described as cash used but reported as +$564 million. The sign inconsistency first appears in the extractor output and is propagated by the analyst; the writer correctly conveys the intended investing-activities interpretation, and the ranking remains operations as the largest inflow."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 874,
+    "output_tokens": 683,
+    "total_tokens": 1557,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009944,
+    "latency_ms": 9841.570459015202,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 874,
+      "output_tokens": 683,
+      "total_tokens": 1557,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 9.840950500045437,
+      "duration": 9.841090333007742,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 874,
+            "output_tokens": 683,
+            "total_tokens": 1557,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1403,
+    "output_tokens": 156,
+    "total_tokens": 1559,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002183,
+    "latency_ms": 3046.4827090036124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1403,
+      "output_tokens": 156,
+      "total_tokens": 1559,
+      "time_to_first_token": 3.045739750028588,
+      "duration": 3.0459797920193523,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1403,
+            "output_tokens": 156,
+            "total_tokens": 1559,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

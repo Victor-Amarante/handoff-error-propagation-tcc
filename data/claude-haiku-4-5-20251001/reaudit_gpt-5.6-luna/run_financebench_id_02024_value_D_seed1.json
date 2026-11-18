@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02024_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Verizon's expected 2024 pension benefits were reported as $1,907 million, but the accompanying evidence shows $1,097 million.",
+    "reported_metric": "pension_benefits",
+    "reported_value": 1907.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 conflicts with its own evidence, which states 2024 pension benefits of 1,097. The analyst's total of 1,959 uses 1,097 plus 862, indicating the extractor value 1,907 is the originating error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 973,
+    "output_tokens": 280,
+    "total_tokens": 1253,
+    "cached_tokens": 0,
+    "reasoning_tokens": 134,
+    "cost_usd": 0.0005306,
+    "latency_ms": 3127.662417013198,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 973,
+      "output_tokens": 280,
+      "total_tokens": 1253,
+      "reasoning_tokens": 134,
+      "time_to_first_token": 3.1270203749882057,
+      "duration": 3.1272716670064256,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 973,
+            "output_tokens": 280,
+            "total_tokens": 1253,
+            "reasoning_tokens": 134,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1531,
+    "output_tokens": 212,
+    "total_tokens": 1743,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002591,
+    "latency_ms": 2867.0363330165856,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1531,
+      "output_tokens": 212,
+      "total_tokens": 1743,
+      "time_to_first_token": 2.8659986660350114,
+      "duration": 2.8663105409941636,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1531,
+            "output_tokens": 212,
+            "total_tokens": 1743,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00591_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "The free cashflow conversion trend from FY2021 to FY2022 was reported as an improvement of 0.001, although conversion declined from 0.848 to 0.847.",
+    "reported_metric": "Free cashflow conversion trend",
+    "reported_value": 0.001,
+    "confidence": 0.99,
+    "rationale": "The analyst's own values show FY2022 conversion of 0.847 versus 0.848 in FY2021, so the change is -0.001, not +0.001. The writer propagated this incorrect trend claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 5243,
+    "output_tokens": 662,
+    "total_tokens": 5905,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001843,
+    "latency_ms": 6408.951083023567,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5243,
+      "output_tokens": 662,
+      "total_tokens": 5905,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.407970208034385,
+      "duration": 6.408314625034109,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5243,
+            "output_tokens": 662,
+            "total_tokens": 5905,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 6034,
+    "output_tokens": 463,
+    "total_tokens": 6497,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6597.842707997188,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 6034,
+      "output_tokens": 463,
+      "total_tokens": 6497,
+      "time_to_first_token": 6.597561948001385,
+      "duration": 6.597654249984771,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 6034,
+            "output_tokens": 463,
+            "total_tokens": 6497,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6572021071,
+              "load_duration": 730037,
+              "prompt_eval_duration": 1374061000,
+              "eval_duration": 5133415000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

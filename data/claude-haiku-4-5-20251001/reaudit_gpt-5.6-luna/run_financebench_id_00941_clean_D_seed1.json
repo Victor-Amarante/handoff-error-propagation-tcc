@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00941_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor identifies three distinct debt securities, the analyst preserves each claim with matching evidence, and the writer accurately lists and counts those same three securities. No internal inconsistency or unsupported transformation is evident."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1452,
+    "output_tokens": 161,
+    "total_tokens": 1613,
+    "cached_tokens": 0,
+    "reasoning_tokens": 67,
+    "cost_usd": 0.00048360000000000005,
+    "latency_ms": 2766.4140409906395,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1452,
+      "output_tokens": 161,
+      "total_tokens": 1613,
+      "reasoning_tokens": 67,
+      "time_to_first_token": 2.765813165984582,
+      "duration": 2.7659265830297954,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1452,
+            "output_tokens": 161,
+            "total_tokens": 1613,
+            "reasoning_tokens": 67,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2055,
+    "output_tokens": 245,
+    "total_tokens": 2300,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00328,
+    "latency_ms": 4301.492875034455,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2055,
+      "output_tokens": 245,
+      "total_tokens": 2300,
+      "time_to_first_token": 4.300687958020717,
+      "duration": 4.300984792003874,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2055,
+            "output_tokens": 245,
+            "total_tokens": 2300,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

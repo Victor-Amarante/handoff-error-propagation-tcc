@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04080_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is present in the trace. The average inventory is (6,854 + 7,367) / 2 = 7,110.5, and 42,576 / 7,110.5 = 5.9878, which correctly rounds to 5.99."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1163,
+    "output_tokens": 197,
+    "total_tokens": 1360,
+    "cached_tokens": 0,
+    "reasoning_tokens": 81,
+    "cost_usd": 0.000469,
+    "latency_ms": 2552.4321669945493,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1163,
+      "output_tokens": 197,
+      "total_tokens": 1360,
+      "reasoning_tokens": 81,
+      "time_to_first_token": 2.5520153749966994,
+      "duration": 2.552153875003569,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1163,
+            "output_tokens": 197,
+            "total_tokens": 1360,
+            "reasoning_tokens": 81,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1762,
+    "output_tokens": 196,
+    "total_tokens": 1958,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002742,
+    "latency_ms": 2366.687958012335,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1762,
+      "output_tokens": 196,
+      "total_tokens": 1958,
+      "time_to_first_token": 2.365830791008193,
+      "duration": 2.3660655000130646,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1762,
+            "output_tokens": 196,
+            "total_tokens": 1958,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

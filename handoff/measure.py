@@ -299,6 +299,14 @@ def esr(injected: Cell, control: Cell) -> bool:
     return bool(difference(final, extract_numbers(control.final_answer)))
 
 
+def esr_literal(injected: Cell) -> bool | None:
+    """O valor corrompido aparece literalmente na resposta final?"""
+    corrupted = _corrupted_value(injected)
+    if corrupted is None:
+        return None
+    return contains_number(extract_numbers(injected.final_answer), corrupted)
+
+
 def propagation_depth(injected: Cell, control: Cell) -> int:
     """Quantos estagios downstream o erro afetou."""
     return sum(
@@ -450,11 +458,101 @@ def rcca(cell: Cell) -> bool | None:
     return bool(tokens & set(re.findall(r"[a-z]+", reported_metric)))
 
 
+def _metric_match(reported: str | None, target: str | None) -> bool:
+    reported, target = (reported or "").lower(), (target or "").lower()
+    if not reported or not target:
+        return True
+    return bool(set(re.findall(r"[a-z]+", target)) & set(re.findall(r"[a-z]+", reported)))
+
+
+def _reports_claim(audit: dict | None, value, metric: str | None) -> bool:
+    """O auditor informou esta metrica com este valor?"""
+    if not audit or audit.get("reported_value") is None or not isinstance(value, (int, float)):
+        return False
+    if not same_number(Number(float(audit["reported_value"]), False), Number(float(value), False)):
+        return False
+    return _metric_match(audit.get("reported_metric"), metric)
+
+
+def trace_value(injection: dict, injected: bool = True):
+    """Valor do claim-alvo TAL COMO APARECE no trace.
+
+    No erro de valor, e o valor corrompido (ou o original, no controle). No de
+    metadado, o numero do claim continua intacto -- o errado e o ano --, entao
+    o auditor que aponta o claim certo informa esse numero, e nao o ano.
+    """
+    claim = injection.get("original_claim") or {}
+    if injection.get("field") == "value":
+        return injection.get("corrupted_value") if injected else injection.get("original_value")
+    return claim.get("value")
+
+
+def rcca_conteudo(cell: Cell) -> bool | None:
+    """RCCA pelo criterio de CONTEUDO, igual nas quatro condicoes e nos dois
+    tipos de erro: o auditor aponta a metrica e o valor do claim-alvo como ele
+    aparece no trace (parecer, itens A6 e A4).
+
+    Difere de `rcca` em dois pontos. Nao aceita o `claim_id`, que so existe em
+    C/D. E, no erro de metadado, compara com o numero do claim, e nao com o ano
+    corrompido: o auditor quase nunca informa o ano como `reported_value`, o que
+    zerava a RCCA desse braco em A e B por construcao.
+    """
+    if not (cell.audit and cell.injection):
+        return None
+    metric = (cell.injection.get("original_claim") or {}).get("metric")
+    return _reports_claim(cell.audit, trace_value(cell.injection), metric)
+
+
+def placebo_attribution(control: Cell, injection: dict) -> dict:
+    """Atribuicao 'por acaso': o auditor de uma execucao LIMPA aponta o claim
+    que o injetor (deterministico) teria corrompido? Linha de base de RCCA/FESA.
+    """
+    audit = control.audit or {}
+    metric = (injection.get("original_claim") or {}).get("metric")
+    return {
+        "rcca": float(_reports_claim(audit, trace_value(injection, injected=False), metric)),
+        "rcca_id": float(bool(audit) and audit.get("root_cause_claim_id") == injection.get("target_claim_id")),
+        "fesa": float(audit.get("first_error_stage") == injection.get("stage_injected")),
+    }
+
+
+def depth_parts(injected: Cell, control: Cell) -> tuple[int, int]:
+    """Profundidade decomposta (parecer, B1): (estagios alterados SO pela
+    repeticao literal do valor corrompido, estagios com numeros novos)."""
+    corrupted = _corrupted_value(injected)
+    literal = derived = 0
+    for stage in DOWNSTREAM:
+        got = extract_numbers(injected.stage_text.get(stage.value, ""))
+        want = extract_numbers(control.stage_text.get(stage.value, ""))
+        rest = [n for n in got if corrupted is None or not same_number(n, Number(corrupted, False))]
+        novos = bool(difference(rest, want))
+        if novos:
+            derived += 1
+        elif corrupted is not None and contains_number(got, corrupted):
+            literal += 1
+    return literal, derived
+
+
+def emitted_numbers(cell: Cell) -> int:
+    return sum(len(extract_numbers(cell.stage_text.get(s.value, ""))) for s in DOWNSTREAM)
+
+
 # ==========================================================================
 # Correctness, Schema Validity e custo
 # ==========================================================================
 def final_correct(cell: Cell) -> bool | None:
     return answer_matches_gold(cell.final_answer, cell.gold.get("answer", ""))
+
+
+def final_correct_strict(cell: Cell) -> bool | None:
+    """Acuracia estrita (parecer, B3): traz o numero do benchmark E nao traz o
+    valor corrompido. A permissiva aceita uma resposta com os dois."""
+    ok = final_correct(cell)
+    if ok is None:
+        return None
+    corrupted = _corrupted_value(cell)
+    leaked = corrupted is not None and contains_number(extract_numbers(cell.final_answer), corrupted)
+    return ok and not leaked
 
 
 def schema_validity(cell: Cell) -> float | None:
@@ -513,6 +611,10 @@ def to_records(cells: Iterable[Cell]) -> list[dict]:
             # Root-cause observability
             "fesa": fesa(injected),
             "rcca": rcca(injected),
+            "rcca_conteudo": rcca_conteudo(injected),
+            "final_correct_strict": final_correct_strict(injected),
+            "pipeline_output_tokens_only": injected.pipeline_output_tokens,
+            "n_emitted": emitted_numbers(injected),
             "lineage_agreement": lineage_agreement(injected),
             # Schema
             "schema_validity": schema_validity(injected),
@@ -531,9 +633,14 @@ def to_records(cells: Iterable[Cell]) -> list[dict]:
         row.update(
             {
                 "esr": esr(injected, control) if control else None,
+                # So a via literal da ESR: nao depende da comparacao com o
+                # controle, entao nao herda o ruido de amostragem (teste A/A).
+                "esr_literal": esr_literal(injected),
                 "propagation_depth": propagation_depth(injected, control) if control else None,
                 "amplification": amplification(injected, control) if control else None,
                 "fate": fate(injected, control) if control else None,
+                "depth_literal": depth_parts(injected, control)[0] if control else None,
+                "depth_derived": depth_parts(injected, control)[1] if control else None,
                 # Correction Rate. None = nao mensuravel; ver `correction`.
                 "corrected": correction(injected, control) if control else None,
             }

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00563_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Net revenue Data Center FY22 was reported as $6,949 million, conflicting with the extractor's cited evidence of $6,043 million.",
+    "reported_metric": "Net revenue Data Center FY22",
+    "reported_value": 6949.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 is internally inconsistent: its value is 6,949 while its evidence states 6,043. The analyst then calculates 89.695% growth from 6,949, and the writer repeats that result. Using the cited 6,043 figure would yield approximately 63.6% growth, although Data Center would still rank first excluding Embedded."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1848,
+    "output_tokens": 405,
+    "total_tokens": 2253,
+    "cached_tokens": 0,
+    "reasoning_tokens": 235,
+    "cost_usd": 0.0008556,
+    "latency_ms": 4440.418709011283,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1848,
+      "output_tokens": 405,
+      "total_tokens": 2253,
+      "reasoning_tokens": 235,
+      "time_to_first_token": 4.440083542023785,
+      "duration": 4.440154209034517,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1848,
+            "output_tokens": 405,
+            "total_tokens": 2253,
+            "reasoning_tokens": 235,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1972,
+    "output_tokens": 1473,
+    "total_tokens": 3445,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 16364.159887016285,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1972,
+      "output_tokens": 1473,
+      "total_tokens": 3445,
+      "time_to_first_token": 16.363906593993306,
+      "duration": 16.36398589401506,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1972,
+            "output_tokens": 1473,
+            "total_tokens": 3445,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 16338146929,
+              "load_duration": 486587,
+              "prompt_eval_duration": 501716000,
+              "eval_duration": 15773948000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

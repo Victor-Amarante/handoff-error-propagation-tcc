@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported CVS Health total revenue of $322,467M for FY2023, although the trace associates that figure with FY2022 and provides no support for the FY2023 label.",
+    "reported_metric": "Total revenues for CVS Health in FY2023",
+    "reported_value": 322467.0,
+    "confidence": 0.86,
+    "rationale": "The extracted revenue claim has a fiscal-year mismatch: $322,467M is presented alongside FY2022 data but labeled FY2023. The analyst and writer did not use this metric, and their percentage calculations are internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1002,
+    "output_tokens": 1180,
+    "total_tokens": 2182,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016164,
+    "latency_ms": 10643.93616700545,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1002,
+      "output_tokens": 1180,
+      "total_tokens": 2182,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.643073167011607,
+      "duration": 10.64337299996987,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1002,
+            "output_tokens": 1180,
+            "total_tokens": 2182,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1533,
+    "output_tokens": 162,
+    "total_tokens": 1695,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002343,
+    "latency_ms": 2280.4496249882504,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1533,
+      "output_tokens": 162,
+      "total_tokens": 1695,
+      "time_to_first_token": 2.2795954999746755,
+      "duration": 2.279887125012465,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1533,
+            "output_tokens": 162,
+            "total_tokens": 1695,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

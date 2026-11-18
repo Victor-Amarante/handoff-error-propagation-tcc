@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Gross margins are relevant for JPM.",
+    "reported_metric": "Gross Margins Relevance",
+    "reported_value": 1.0,
+    "confidence": 0.9,
+    "rationale": "The analyst marks gross-margin relevance as Boolean 1, but the writer reverses this to 0 and explains that gross margins are not applicable to banks. The analyst output is therefore the first internally inconsistent claim; no claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 778,
+    "output_tokens": 415,
+    "total_tokens": 1193,
+    "cached_tokens": 0,
+    "reasoning_tokens": 300,
+    "cost_usd": 0.0006536000000000001,
+    "latency_ms": 4423.132625001017,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 778,
+      "output_tokens": 415,
+      "total_tokens": 1193,
+      "reasoning_tokens": 300,
+      "time_to_first_token": 4.42259324999759,
+      "duration": 4.422714167041704,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 778,
+            "output_tokens": 415,
+            "total_tokens": 1193,
+            "reasoning_tokens": 300,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 604,
+    "output_tokens": 214,
+    "total_tokens": 818,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2679.673702979926,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 604,
+      "output_tokens": 214,
+      "total_tokens": 818,
+      "time_to_first_token": 2.679400603985414,
+      "duration": 2.679491838964168,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 604,
+            "output_tokens": 214,
+            "total_tokens": 818,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2655124042,
+              "load_duration": 566053,
+              "prompt_eval_duration": 180737000,
+              "eval_duration": 2404189000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

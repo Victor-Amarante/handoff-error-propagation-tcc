@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00757_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD reported customer concentration of 16.0% in fiscal year 2023, although the cited source is AMD's 2022 10-K and the question asks about FY2022.",
+    "reported_metric": "customer_concentration",
+    "reported_value": 16.0,
+    "confidence": 0.96,
+    "rationale": "The year mismatch appears first in extractor claim C01 and is propagated unchanged through the analyst and writer stages. The writer correctly flags that the supplied data is FY2023 rather than the requested FY2022."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 825,
+    "output_tokens": 331,
+    "total_tokens": 1156,
+    "cached_tokens": 0,
+    "reasoning_tokens": 190,
+    "cost_usd": 0.0005622,
+    "latency_ms": 3558.3694169763476,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 825,
+      "output_tokens": 331,
+      "total_tokens": 1156,
+      "reasoning_tokens": 190,
+      "time_to_first_token": 3.557792540988885,
+      "duration": 3.5579858329729177,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 825,
+            "output_tokens": 331,
+            "total_tokens": 1156,
+            "reasoning_tokens": 190,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1338,
+    "output_tokens": 175,
+    "total_tokens": 1513,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002213,
+    "latency_ms": 2282.817500003148,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1338,
+      "output_tokens": 175,
+      "total_tokens": 1513,
+      "time_to_first_token": 2.2819134580204263,
+      "duration": 2.2822066670050845,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1338,
+            "output_tokens": 175,
+            "total_tokens": 1513,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00494_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor assigned the forecast of 787 production at 5 aircraft per month to 2024, although the cited evidence explicitly says the increase is expected in 2023.",
+    "reported_metric": "787_production_rate",
+    "reported_value": 5.0,
+    "confidence": 0.98,
+    "rationale": "C01 is internally inconsistent: its year is 2024, while its evidence states '5 per month in 2023.' The analyst subsequently changes the year to 2023, indicating the error originated in extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1434,
+    "output_tokens": 623,
+    "total_tokens": 2057,
+    "cached_tokens": 0,
+    "reasoning_tokens": 482,
+    "cost_usd": 0.0010344,
+    "latency_ms": 6303.296666999813,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1434,
+      "output_tokens": 623,
+      "total_tokens": 2057,
+      "reasoning_tokens": 482,
+      "time_to_first_token": 6.3025324160116725,
+      "duration": 6.30284970800858,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1434,
+            "output_tokens": 623,
+            "total_tokens": 2057,
+            "reasoning_tokens": 482,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2040,
+    "output_tokens": 174,
+    "total_tokens": 2214,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00291,
+    "latency_ms": 2732.466125045903,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2040,
+      "output_tokens": 174,
+      "total_tokens": 2214,
+      "time_to_first_token": 2.7315294590080157,
+      "duration": 2.7318270839750767,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2040,
+            "output_tokens": 174,
+            "total_tokens": 2214,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

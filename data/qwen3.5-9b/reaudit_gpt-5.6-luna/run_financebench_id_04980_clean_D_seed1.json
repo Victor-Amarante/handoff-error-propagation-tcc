@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04980_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2021 capital expenditure was reported as negative USD 4,625 million instead of USD 4,625 million (USD 4.625 billion) with the cash-flow outflow sign normalized for an expenditure amount.",
+    "reported_metric": "capital_expenditure",
+    "reported_value": -4625.0,
+    "confidence": 0.97,
+    "rationale": "The source evidence shows capital spending of (4,625), where parentheses denote a cash outflow. The extractor treated the cash-flow sign as the expenditure amount's sign, and the analyst and writer propagated that error into -USD 4.63 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 860,
+    "output_tokens": 306,
+    "total_tokens": 1166,
+    "cached_tokens": 0,
+    "reasoning_tokens": 148,
+    "cost_usd": 0.0005392000000000001,
+    "latency_ms": 3744.603500002995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 860,
+      "output_tokens": 306,
+      "total_tokens": 1166,
+      "reasoning_tokens": 148,
+      "time_to_first_token": 3.743896250030957,
+      "duration": 3.7441245000227354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 860,
+            "output_tokens": 306,
+            "total_tokens": 1166,
+            "reasoning_tokens": 148,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 727,
+    "output_tokens": 277,
+    "total_tokens": 1004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3436.254561005626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 727,
+      "output_tokens": 277,
+      "total_tokens": 1004,
+      "time_to_first_token": 3.4360195890185423,
+      "duration": 3.436092671996448,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 727,
+            "output_tokens": 277,
+            "total_tokens": 1004,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3409197671,
+              "load_duration": 612534,
+              "prompt_eval_duration": 193895000,
+              "eval_duration": 3139957000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

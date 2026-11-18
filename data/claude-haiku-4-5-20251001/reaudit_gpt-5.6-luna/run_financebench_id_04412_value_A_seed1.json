@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04412_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted figures, average-assets calculation, division, and rounding are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The average total assets are (47,528 + 50,710) / 2 = 49,119 million, and 56,398 / 49,119 ≈ 1.148, which correctly rounds to 1.15."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 949,
+    "output_tokens": 258,
+    "total_tokens": 1207,
+    "cached_tokens": 0,
+    "reasoning_tokens": 131,
+    "cost_usd": 0.0004994,
+    "latency_ms": 2944.566958991345,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 949,
+      "output_tokens": 258,
+      "total_tokens": 1207,
+      "reasoning_tokens": 131,
+      "time_to_first_token": 2.9438807500409894,
+      "duration": 2.9440625000279397,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 949,
+            "output_tokens": 258,
+            "total_tokens": 1207,
+            "reasoning_tokens": 131,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1490,
+    "output_tokens": 214,
+    "total_tokens": 1704,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00256,
+    "latency_ms": 2664.1383329988457,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1490,
+      "output_tokens": 214,
+      "total_tokens": 1704,
+      "time_to_first_token": 2.6634809160022996,
+      "duration": 2.663724083045963,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1490,
+            "output_tokens": 214,
+            "total_tokens": 1704,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

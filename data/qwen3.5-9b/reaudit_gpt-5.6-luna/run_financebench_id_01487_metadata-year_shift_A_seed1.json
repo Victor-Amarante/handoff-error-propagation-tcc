@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01487_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor attributed the 20.1% Q2 net earnings margin to FY2023 while simultaneously placing it in 2024, creating a fiscal-period mismatch.",
+    "reported_metric": "Q2 net earnings margin",
+    "reported_value": 20.1,
+    "confidence": 0.89,
+    "rationale": "The extractor output is internally inconsistent: the 20.1% margin is labeled FY2023 Q2 but also described as occurring in 2024. The analyst then rationalizes this mismatch as FY2024 being FY2023, and the writer repeats the relabeled figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 811,
+    "output_tokens": 663,
+    "total_tokens": 1474,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009578000000000001,
+    "latency_ms": 6989.146375039127,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 811,
+      "output_tokens": 663,
+      "total_tokens": 1474,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.988239665981382,
+      "duration": 6.9885494579793885,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 811,
+            "output_tokens": 663,
+            "total_tokens": 1474,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 632,
+    "output_tokens": 260,
+    "total_tokens": 892,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3173.9757630275562,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 632,
+      "output_tokens": 260,
+      "total_tokens": 892,
+      "time_to_first_token": 3.17371711198939,
+      "duration": 3.1737903070170432,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 632,
+            "output_tokens": 260,
+            "total_tokens": 892,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3144529039,
+              "load_duration": 437884,
+              "prompt_eval_duration": 159362000,
+              "eval_duration": 2915261000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01487_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: the extracted margins are 20.1% for Q2 FY2023 and 20.0% for Q2 FY2022, yielding a 0.1 percentage-point increase. The analyst and writer correctly conclude that the margin increased."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1312,
+    "output_tokens": 174,
+    "total_tokens": 1486,
+    "cached_tokens": 0,
+    "reasoning_tokens": 64,
+    "cost_usd": 0.00047120000000000007,
+    "latency_ms": 2283.3459999528714,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1312,
+      "output_tokens": 174,
+      "total_tokens": 1486,
+      "reasoning_tokens": 64,
+      "time_to_first_token": 2.282774666964542,
+      "duration": 2.2828889999655075,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1312,
+            "output_tokens": 174,
+            "total_tokens": 1486,
+            "reasoning_tokens": 64,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1265,
+    "output_tokens": 256,
+    "total_tokens": 1521,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3261.146634002216,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1265,
+      "output_tokens": 256,
+      "total_tokens": 1521,
+      "time_to_first_token": 3.26089903304819,
+      "duration": 3.2609708410454914,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1265,
+            "output_tokens": 256,
+            "total_tokens": 1521,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3231657520,
+              "load_duration": 492369,
+              "prompt_eval_duration": 342715000,
+              "eval_duration": 2814860000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

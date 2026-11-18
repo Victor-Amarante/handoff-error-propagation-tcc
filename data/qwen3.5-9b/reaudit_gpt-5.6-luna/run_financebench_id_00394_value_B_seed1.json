@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Asset & Wealth Management segment had the highest net income at $1,004 million.",
+    "reported_metric": "Net income Asset & Wealth Management",
+    "reported_value": 1004.0,
+    "confidence": 0.99,
+    "rationale": "The extractor lists Consumer & Community Banking at $1,300 million, which exceeds Asset & Wealth Management at $1,004 million. The analyst incorrectly selected Asset & Wealth Management as the maximum, and the writer propagated that error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 847,
+    "output_tokens": 304,
+    "total_tokens": 1151,
+    "cached_tokens": 0,
+    "reasoning_tokens": 176,
+    "cost_usd": 0.0005342000000000001,
+    "latency_ms": 3107.455959019717,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 847,
+      "output_tokens": 304,
+      "total_tokens": 1151,
+      "reasoning_tokens": 176,
+      "time_to_first_token": 3.106714125024155,
+      "duration": 3.1070114159956574,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 847,
+            "output_tokens": 304,
+            "total_tokens": 1151,
+            "reasoning_tokens": 176,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 712,
+    "output_tokens": 1706,
+    "total_tokens": 2418,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 18838.09090597788,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 712,
+      "output_tokens": 1706,
+      "total_tokens": 2418,
+      "time_to_first_token": 18.83780816802755,
+      "duration": 18.837906964006834,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 712,
+            "output_tokens": 1706,
+            "total_tokens": 2418,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 18813251042,
+              "load_duration": 665248,
+              "prompt_eval_duration": 192640000,
+              "eval_duration": 18553236000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

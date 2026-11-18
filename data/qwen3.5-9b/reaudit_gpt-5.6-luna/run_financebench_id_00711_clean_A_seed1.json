@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00711_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst treated FY2022 sales divided by average inventory as the conventional inventory turnover ratio, even though conventional turnover uses cost of goods sold.",
+    "reported_metric": "Inventory turnover ratio",
+    "reported_value": 8.3,
+    "confidence": 0.88,
+    "rationale": "The arithmetic is internally correct: $94,943M divided by average inventory of $11,435M equals approximately 8.3. However, the trace does not provide COGS, which is the conventional numerator for inventory turnover. Thus 8.3 is a sales-to-inventory proxy, not the conventional inventory turnover ratio, and the writer repeats that mischaracterization."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1024,
+    "output_tokens": 677,
+    "total_tokens": 1701,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010172,
+    "latency_ms": 6984.003958001267,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1024,
+      "output_tokens": 677,
+      "total_tokens": 1701,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.983226666983683,
+      "duration": 6.9834687919938006,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1024,
+            "output_tokens": 677,
+            "total_tokens": 1701,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 868,
+    "output_tokens": 172,
+    "total_tokens": 1040,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2216.653796029277,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 868,
+      "output_tokens": 172,
+      "total_tokens": 1040,
+      "time_to_first_token": 2.216381784004625,
+      "duration": 2.216470191022381,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 868,
+            "output_tokens": 172,
+            "total_tokens": 1040,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2191846623,
+              "load_duration": 605973,
+              "prompt_eval_duration": 237480000,
+              "eval_duration": 1900351000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

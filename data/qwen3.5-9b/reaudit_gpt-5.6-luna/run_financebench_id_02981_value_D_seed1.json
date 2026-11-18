@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02981_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Corning's FY2021 net sales were reported as $10,482 million, although the accompanying evidence states $14,082 million.",
+    "reported_metric": "Netsales_2021",
+    "reported_value": 10482.0,
+    "confidence": 0.99,
+    "rationale": "The extractor value for C01 conflicts directly with its evidence. The analyst then used the incorrect value in the FY2021 margin calculation, producing 20.2% instead of the approximately 15.0% implied by the cited $14,082 million net sales; the resulting average and final answer therefore inherit this error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1807,
+    "output_tokens": 395,
+    "total_tokens": 2202,
+    "cached_tokens": 0,
+    "reasoning_tokens": 237,
+    "cost_usd": 0.0008354000000000001,
+    "latency_ms": 4326.889083022252,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1807,
+      "output_tokens": 395,
+      "total_tokens": 2202,
+      "reasoning_tokens": 237,
+      "time_to_first_token": 4.3263390000211075,
+      "duration": 4.3265303340158425,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1807,
+            "output_tokens": 395,
+            "total_tokens": 2202,
+            "reasoning_tokens": 237,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1960,
+    "output_tokens": 1006,
+    "total_tokens": 2966,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 11312.003653962165,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1960,
+      "output_tokens": 1006,
+      "total_tokens": 2966,
+      "time_to_first_token": 11.311760644020978,
+      "duration": 11.31184142199345,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1960,
+            "output_tokens": 1006,
+            "total_tokens": 2966,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11286111893,
+              "load_duration": 699567,
+              "prompt_eval_duration": 473043000,
+              "eval_duration": 10750709000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

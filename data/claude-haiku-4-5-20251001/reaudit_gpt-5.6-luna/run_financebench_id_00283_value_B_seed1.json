@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00283_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; all pipeline stages consistently report expected total separation costs of USD 805 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer claim, and final answer all agree on the same metric, value, unit, and year. No provenance or contradictory information indicates an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 639,
+    "output_tokens": 189,
+    "total_tokens": 828,
+    "cached_tokens": 0,
+    "reasoning_tokens": 76,
+    "cost_usd": 0.0003546,
+    "latency_ms": 2624.105666007381,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 639,
+      "output_tokens": 189,
+      "total_tokens": 828,
+      "reasoning_tokens": 76,
+      "time_to_first_token": 2.623655167000834,
+      "duration": 2.6238105000229552,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 639,
+            "output_tokens": 189,
+            "total_tokens": 828,
+            "reasoning_tokens": 76,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1133,
+    "output_tokens": 149,
+    "total_tokens": 1282,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001878,
+    "latency_ms": 3003.4955000155605,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1133,
+      "output_tokens": 149,
+      "total_tokens": 1282,
+      "time_to_first_token": 3.0025826250202954,
+      "duration": 3.002875750011299,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1133,
+            "output_tokens": 149,
+            "total_tokens": 1282,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2015 net earnings attributable to Best Buy Co., Inc. shareholders were reported as 2,133 million, while the attached evidence shows $1,233 million.",
+    "reported_metric": "FY2015 Net earnings attributable to Best Buy Co., Inc. shareholders",
+    "reported_value": 2133.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 directly conflicts with its own provenance evidence ($1,233). This is the earliest identifiable error; later analyst and writer outputs derive from the extractor claims and also contain inconsistent year labeling and calculations."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1688,
+    "output_tokens": 281,
+    "total_tokens": 1969,
+    "cached_tokens": 0,
+    "reasoning_tokens": 131,
+    "cost_usd": 0.0006747999999999999,
+    "latency_ms": 3199.8634160263464,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1688,
+      "output_tokens": 281,
+      "total_tokens": 1969,
+      "reasoning_tokens": 131,
+      "time_to_first_token": 3.199464874982368,
+      "duration": 3.1995511659770273,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1688,
+            "output_tokens": 281,
+            "total_tokens": 1969,
+            "reasoning_tokens": 131,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1785,
+    "output_tokens": 251,
+    "total_tokens": 2036,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3350.2628169953823,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1785,
+      "output_tokens": 251,
+      "total_tokens": 2036,
+      "time_to_first_token": 3.3500264399917796,
+      "duration": 3.3500995810027234,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1785,
+            "output_tokens": 251,
+            "total_tokens": 2036,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3322608573,
+              "load_duration": 593527,
+              "prompt_eval_duration": 448381000,
+              "eval_duration": 2824311000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

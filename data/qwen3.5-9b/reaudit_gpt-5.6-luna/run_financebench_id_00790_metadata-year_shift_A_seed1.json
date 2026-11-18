@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00790_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst reported CVS Health's operating costs as $31,472 million, although the extractor reported $314,721 million.",
+    "reported_metric": "Operating costs",
+    "reported_value": 31472.0,
+    "confidence": 0.98,
+    "rationale": "The analyst's operating-cost figure drops a digit relative to the extractor output. The property, lease-asset, total-asset, and 13.5% calculations are internally consistent; no claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1072,
+    "output_tokens": 960,
+    "total_tokens": 2032,
+    "cached_tokens": 0,
+    "reasoning_tokens": 828,
+    "cost_usd": 0.0013664,
+    "latency_ms": 9042.030416952912,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1072,
+      "output_tokens": 960,
+      "total_tokens": 2032,
+      "reasoning_tokens": 828,
+      "time_to_first_token": 9.041235374985263,
+      "duration": 9.041500332998112,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1072,
+            "output_tokens": 960,
+            "total_tokens": 2032,
+            "reasoning_tokens": 828,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 939,
+    "output_tokens": 196,
+    "total_tokens": 1135,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2627.385837957263,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 939,
+      "output_tokens": 196,
+      "total_tokens": 1135,
+      "time_to_first_token": 2.6271447429899126,
+      "duration": 2.6272202800028026,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 939,
+            "output_tokens": 196,
+            "total_tokens": 1135,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2602117517,
+              "load_duration": 581801,
+              "prompt_eval_duration": 265829999,
+              "eval_duration": 2283999000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

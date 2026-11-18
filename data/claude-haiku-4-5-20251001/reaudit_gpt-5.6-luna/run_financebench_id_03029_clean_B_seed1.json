@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03029_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident from the trace; all stages consistently report FY2018 capital expenditure of $1,577 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer agree on the same metric, value, unit, and year, and the trace provides no contradictory provenance or claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 654,
+    "output_tokens": 151,
+    "total_tokens": 805,
+    "cached_tokens": 0,
+    "reasoning_tokens": 37,
+    "cost_usd": 0.000312,
+    "latency_ms": 2094.0769169828855,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 654,
+      "output_tokens": 151,
+      "total_tokens": 805,
+      "reasoning_tokens": 37,
+      "time_to_first_token": 2.093249916972127,
+      "duration": 2.09358083299594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 654,
+            "output_tokens": 151,
+            "total_tokens": 805,
+            "reasoning_tokens": 37,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1148,
+    "output_tokens": 132,
+    "total_tokens": 1280,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001808,
+    "latency_ms": 1950.7643330143765,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1148,
+      "output_tokens": 132,
+      "total_tokens": 1280,
+      "time_to_first_token": 1.9497531249653548,
+      "duration": 1.9500487499753945,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1148,
+            "output_tokens": 132,
+            "total_tokens": 1280,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

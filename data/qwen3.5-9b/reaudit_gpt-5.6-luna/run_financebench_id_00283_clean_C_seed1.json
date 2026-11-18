@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00283_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The spinoff entity is reported as having a value of USD 700 million.",
+    "reported_metric": "spinoff_entity",
+    "reported_value": 700.0,
+    "confidence": 0.98,
+    "rationale": "A02 incorrectly assigns the numeric expected-cost value to the spinoff_entity metric. C01 and A01 consistently report USD 700 million as the expected cost; the analyst's A02 is the first semantically invalid claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 869,
+    "output_tokens": 537,
+    "total_tokens": 1406,
+    "cached_tokens": 0,
+    "reasoning_tokens": 412,
+    "cost_usd": 0.0008182,
+    "latency_ms": 5409.659208962694,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 869,
+      "output_tokens": 537,
+      "total_tokens": 1406,
+      "reasoning_tokens": 412,
+      "time_to_first_token": 5.409308791975491,
+      "duration": 5.409389583976008,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 869,
+            "output_tokens": 537,
+            "total_tokens": 1406,
+            "reasoning_tokens": 412,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 742,
+    "output_tokens": 228,
+    "total_tokens": 970,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2862.038619001396,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 742,
+      "output_tokens": 228,
+      "total_tokens": 970,
+      "time_to_first_token": 2.8617749069817364,
+      "duration": 2.861861699959263,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 742,
+            "output_tokens": 228,
+            "total_tokens": 970,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2830512030,
+              "load_duration": 440488,
+              "prompt_eval_duration": 195504000,
+              "eval_duration": 2563596000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

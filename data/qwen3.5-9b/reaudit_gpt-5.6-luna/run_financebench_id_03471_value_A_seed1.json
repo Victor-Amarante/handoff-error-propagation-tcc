@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03471_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "General Mills's FY2020 working capital ratio is 2.03, based on total current assets of $15,213 million divided by total current liabilities of $7,492 million.",
+    "reported_metric": "working capital ratio",
+    "reported_value": 2.03,
+    "confidence": 0.99,
+    "rationale": "The extractor reported $1,521.3 million and $7,491.5 million, and the analyst correctly calculated 1,521.3 ÷ 7,491.5 ≈ 0.20. The writer introduced inconsistent figures of $15,213 million and $7,492 million and consequently reported the incorrect ratio 2.03."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 740,
+    "output_tokens": 399,
+    "total_tokens": 1139,
+    "cached_tokens": 0,
+    "reasoning_tokens": 229,
+    "cost_usd": 0.0006268,
+    "latency_ms": 4267.793749982957,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 740,
+      "output_tokens": 399,
+      "total_tokens": 1139,
+      "reasoning_tokens": 229,
+      "time_to_first_token": 4.26724141597515,
+      "duration": 4.267510999983642,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 740,
+            "output_tokens": 399,
+            "total_tokens": 1139,
+            "reasoning_tokens": 229,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 552,
+    "output_tokens": 1114,
+    "total_tokens": 1666,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 11820.996205962729,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 552,
+      "output_tokens": 1114,
+      "total_tokens": 1666,
+      "time_to_first_token": 11.82075947400881,
+      "duration": 11.820837492996361,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 552,
+            "output_tokens": 1114,
+            "total_tokens": 1666,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11796051741,
+              "load_duration": 781929,
+              "prompt_eval_duration": 144098000,
+              "eval_duration": 11602998000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00651_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The trace is internally consistent: FY2022 adjusted EPS growth is 3.6%, while FY2023 guidance for adjusted operational EPS growth is 3.5%. Therefore, the conclusion that growth is expected to decelerate is supported. The extractor's year metadata of 2023 for the FY2022 adjusted EPS change appears inconsistent, but the metric label and downstream analyst interpretation correctly identify it as FY2022 and do not produce an erroneous final claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1306,
+    "output_tokens": 310,
+    "total_tokens": 1616,
+    "cached_tokens": 0,
+    "reasoning_tokens": 162,
+    "cost_usd": 0.0006332,
+    "latency_ms": 3489.742874982767,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1306,
+      "output_tokens": 310,
+      "total_tokens": 1616,
+      "reasoning_tokens": 162,
+      "time_to_first_token": 3.4895244169747457,
+      "duration": 3.4895859999815,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1306,
+            "output_tokens": 310,
+            "total_tokens": 1616,
+            "reasoning_tokens": 162,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1272,
+    "output_tokens": 228,
+    "total_tokens": 1500,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2992.79241199838,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1272,
+      "output_tokens": 228,
+      "total_tokens": 1500,
+      "time_to_first_token": 2.9925038309884258,
+      "duration": 2.9925784199731424,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1272,
+            "output_tokens": 228,
+            "total_tokens": 1500,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2963764048,
+              "load_duration": 457193,
+              "prompt_eval_duration": 320433000,
+              "eval_duration": 2569667000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

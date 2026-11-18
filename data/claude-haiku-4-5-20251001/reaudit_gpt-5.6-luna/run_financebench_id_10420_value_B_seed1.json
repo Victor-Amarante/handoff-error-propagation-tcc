@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10420_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported ROA is internally consistent with the extracted figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Average total assets are (38,363 + 32,963) / 2 = 35,663 USD million. Net income of -581 USD million divided by 35,663 equals approximately -1.629%, which rounds to -1.63%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 791,
+    "output_tokens": 213,
+    "total_tokens": 1004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.00041380000000000003,
+    "latency_ms": 2677.057084045373,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 791,
+      "output_tokens": 213,
+      "total_tokens": 1004,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.676292334042955,
+      "duration": 2.6764835840440355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 791,
+            "output_tokens": 213,
+            "total_tokens": 1004,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1310,
+    "output_tokens": 303,
+    "total_tokens": 1613,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002825,
+    "latency_ms": 3327.453209029045,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1310,
+      "output_tokens": 303,
+      "total_tokens": 1613,
+      "time_to_first_token": 3.326444417005405,
+      "duration": 3.3267434999579564,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1310,
+            "output_tokens": 303,
+            "total_tokens": 1613,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

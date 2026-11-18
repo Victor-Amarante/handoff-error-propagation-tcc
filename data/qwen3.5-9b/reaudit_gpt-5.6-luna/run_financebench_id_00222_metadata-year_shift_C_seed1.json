@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00222_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY22 quick ratio was reported as 1.23.",
+    "reported_metric": "quick_ratio_2022",
+    "reported_value": 1.23,
+    "confidence": 0.98,
+    "rationale": "The analyst's 1.23 ratio is not reproducible from its cited inputs: C02+C03+C05+C06 equals 6,413, which divided by C13 (6,369) is about 1.01. Moreover, the cited inputs omit cash (C01), while including prepaid expenses (C06), which are generally excluded from quick assets. Thus the first unsupported claim appears in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2178,
+    "output_tokens": 1162,
+    "total_tokens": 3340,
+    "cached_tokens": 0,
+    "reasoning_tokens": 994,
+    "cost_usd": 0.00183,
+    "latency_ms": 10386.440000031143,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2178,
+      "output_tokens": 1162,
+      "total_tokens": 3340,
+      "reasoning_tokens": 994,
+      "time_to_first_token": 10.38616087497212,
+      "duration": 10.386258833983447,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2178,
+            "output_tokens": 1162,
+            "total_tokens": 3340,
+            "reasoning_tokens": 994,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2355,
+    "output_tokens": 371,
+    "total_tokens": 2726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4735.507866018452,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2355,
+      "output_tokens": 371,
+      "total_tokens": 2726,
+      "time_to_first_token": 4.735234473017044,
+      "duration": 4.7353113170247525,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2355,
+            "output_tokens": 371,
+            "total_tokens": 2726,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4710408055,
+              "load_duration": 718534,
+              "prompt_eval_duration": 582811000,
+              "eval_duration": 4070651000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

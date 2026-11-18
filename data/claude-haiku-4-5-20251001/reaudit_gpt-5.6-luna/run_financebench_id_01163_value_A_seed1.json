@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the trace consistently identifies operating activities as the largest cash inflow at $8,541 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports operating cash flow of $8,541M, investing cash flow of $564M, and financing cash flow of -$7,447M. The analyst and writer preserve these values and correctly conclude that operating activities brought in the most cash."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 777,
+    "output_tokens": 234,
+    "total_tokens": 1011,
+    "cached_tokens": 0,
+    "reasoning_tokens": 102,
+    "cost_usd": 0.00043620000000000003,
+    "latency_ms": 3068.551792006474,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 777,
+      "output_tokens": 234,
+      "total_tokens": 1011,
+      "reasoning_tokens": 102,
+      "time_to_first_token": 3.0658626669901423,
+      "duration": 3.0661469170008786,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 777,
+            "output_tokens": 234,
+            "total_tokens": 1011,
+            "reasoning_tokens": 102,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1256,
+    "output_tokens": 171,
+    "total_tokens": 1427,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002111,
+    "latency_ms": 3195.499458000995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1256,
+      "output_tokens": 171,
+      "total_tokens": 1427,
+      "time_to_first_token": 3.194589915976394,
+      "duration": 3.1948826250154525,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1256,
+            "output_tokens": 171,
+            "total_tokens": 1427,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02419_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Pfizer has a planned business separation, represented by a separation-planned ratio of 1.0.",
+    "reported_metric": "separation_planned",
+    "reported_value": 1.0,
+    "confidence": 0.98,
+    "rationale": "The extractor only reports expected separation costs of $700 million and that 90% had been incurred, which supports the analyst's $630 million calculation. It does not establish that Pfizer was spinning off a major business segment. A02 introduces that unsupported conclusion, which the writer then expands into the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1035,
+    "output_tokens": 355,
+    "total_tokens": 1390,
+    "cached_tokens": 0,
+    "reasoning_tokens": 211,
+    "cost_usd": 0.000633,
+    "latency_ms": 4137.019624991808,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1035,
+      "output_tokens": 355,
+      "total_tokens": 1390,
+      "reasoning_tokens": 211,
+      "time_to_first_token": 4.136557999998331,
+      "duration": 4.136703583004419,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1035,
+            "output_tokens": 355,
+            "total_tokens": 1390,
+            "reasoning_tokens": 211,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1595,
+    "output_tokens": 180,
+    "total_tokens": 1775,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002495,
+    "latency_ms": 3377.574249985628,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1595,
+      "output_tokens": 180,
+      "total_tokens": 1775,
+      "time_to_first_token": 3.376826541032642,
+      "duration": 3.377074583026115,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1595,
+            "output_tokens": 180,
+            "total_tokens": 1775,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

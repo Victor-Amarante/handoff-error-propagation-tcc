@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_09724_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; cost of goods sold divided by net operating revenues equals 15,357 / 83,655 × 100 = 18.36%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst correctly calculated the COGS margin from the extractor’s line items, and the writer accurately reported the result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 904,
+    "output_tokens": 235,
+    "total_tokens": 1139,
+    "cached_tokens": 0,
+    "reasoning_tokens": 122,
+    "cost_usd": 0.00046280000000000003,
+    "latency_ms": 2891.1621249862947,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 904,
+      "output_tokens": 235,
+      "total_tokens": 1139,
+      "reasoning_tokens": 122,
+      "time_to_first_token": 2.8904365000198595,
+      "duration": 2.8906307499855757,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 904,
+            "output_tokens": 235,
+            "total_tokens": 1139,
+            "reasoning_tokens": 122,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1444,
+    "output_tokens": 239,
+    "total_tokens": 1683,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002639,
+    "latency_ms": 3316.889000008814,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1444,
+      "output_tokens": 239,
+      "total_tokens": 1683,
+      "time_to_first_token": 3.3160877500195056,
+      "duration": 3.3163007920375094,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1444,
+            "output_tokens": 239,
+            "total_tokens": 1683,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

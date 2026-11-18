@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00822_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported votes and conclusion are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.95,
+    "rationale": "Richard A. Johnson is reported with 16,105,005 votes against, substantially above the next-highest nominee at 6,074,467. The analyst and writer preserve the extractor's values, and the conclusion is supported by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1453,
+    "output_tokens": 459,
+    "total_tokens": 1912,
+    "cached_tokens": 0,
+    "reasoning_tokens": 340,
+    "cost_usd": 0.0008414,
+    "latency_ms": 5074.566041002981,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1453,
+      "output_tokens": 459,
+      "total_tokens": 1912,
+      "reasoning_tokens": 340,
+      "time_to_first_token": 5.073942999995779,
+      "duration": 5.07412129198201,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1453,
+            "output_tokens": 459,
+            "total_tokens": 1912,
+            "reasoning_tokens": 340,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1478,
+    "output_tokens": 212,
+    "total_tokens": 1690,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2953.5685010487214,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1478,
+      "output_tokens": 212,
+      "total_tokens": 1690,
+      "time_to_first_token": 2.953320699976757,
+      "duration": 2.9533911580219865,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1478,
+            "output_tokens": 212,
+            "total_tokens": 1690,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2922320470,
+              "load_duration": 468338,
+              "prompt_eval_duration": 392727000,
+              "eval_duration": 2473798000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

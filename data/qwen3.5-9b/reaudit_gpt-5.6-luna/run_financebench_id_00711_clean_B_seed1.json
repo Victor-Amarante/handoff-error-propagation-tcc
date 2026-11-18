@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00711_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JnJ sold its inventory 7.59 times in FY2022, calculated as sales divided by ending inventory.",
+    "reported_metric": "inventory_turnover_ratio",
+    "reported_value": 7.59,
+    "confidence": 0.99,
+    "rationale": "The trace supports sales of $94,943M and ending inventory of $12,483M, whose quotient is 7.61 (approximately 7.6), but conventional inventory turnover uses cost of goods sold divided by average inventory, requiring FY2021 and FY2022 inventory. The writer therefore presented a nonstandard sales-to-ending-inventory ratio as the inventory turnover ratio."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 821,
+    "output_tokens": 330,
+    "total_tokens": 1151,
+    "cached_tokens": 0,
+    "reasoning_tokens": 170,
+    "cost_usd": 0.0005602000000000001,
+    "latency_ms": 3795.121834031306,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 821,
+      "output_tokens": 330,
+      "total_tokens": 1151,
+      "reasoning_tokens": 170,
+      "time_to_first_token": 3.7945979579817504,
+      "duration": 3.7947629159898497,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 821,
+            "output_tokens": 330,
+            "total_tokens": 1151,
+            "reasoning_tokens": 170,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 684,
+    "output_tokens": 313,
+    "total_tokens": 997,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3692.72601098055,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 684,
+      "output_tokens": 313,
+      "total_tokens": 997,
+      "time_to_first_token": 3.6924860260332935,
+      "duration": 3.692563450022135,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 684,
+            "output_tokens": 313,
+            "total_tokens": 997,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3667257620,
+              "load_duration": 426296,
+              "prompt_eval_duration": 213186000,
+              "eval_duration": 3403479000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

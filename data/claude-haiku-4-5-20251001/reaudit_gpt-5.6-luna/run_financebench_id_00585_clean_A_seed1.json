@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00585_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the effective tax rates and 15.4-percentage-point comparison are arithmetically consistent with the extracted figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "Using tax expense (benefit) divided by loss before income taxes gives FY2022: (-31)/(-5022) ≈ 0.6% and FY2021: 743/(-5033) ≈ -14.8%, an increase of approximately 15.4 percentage points. The trace contains no claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 987,
+    "output_tokens": 666,
+    "total_tokens": 1653,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009965999999999998,
+    "latency_ms": 6293.460207991302,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 987,
+      "output_tokens": 666,
+      "total_tokens": 1653,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.292824541975278,
+      "duration": 6.293097957968712,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 987,
+            "output_tokens": 666,
+            "total_tokens": 1653,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1498,
+    "output_tokens": 258,
+    "total_tokens": 1756,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002788,
+    "latency_ms": 3413.718040974345,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1498,
+      "output_tokens": 258,
+      "total_tokens": 1756,
+      "time_to_first_token": 3.4129795000189915,
+      "duration": 3.4132234579883516,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1498,
+            "output_tokens": 258,
+            "total_tokens": 1756,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

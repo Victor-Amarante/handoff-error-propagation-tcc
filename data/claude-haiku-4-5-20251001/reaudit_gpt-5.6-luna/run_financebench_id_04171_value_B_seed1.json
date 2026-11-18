@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04171_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports accounts payable of 347,965 USD_K, which correctly converts to 347.965 USD_M. The analyst and writer preserve that value and unit consistently, so no error is evident in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 640,
+    "output_tokens": 176,
+    "total_tokens": 816,
+    "cached_tokens": 0,
+    "reasoning_tokens": 77,
+    "cost_usd": 0.0003392,
+    "latency_ms": 2469.3871249910444,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 640,
+      "output_tokens": 176,
+      "total_tokens": 816,
+      "reasoning_tokens": 77,
+      "time_to_first_token": 2.4688723330036737,
+      "duration": 2.469019624986686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 640,
+            "output_tokens": 176,
+            "total_tokens": 816,
+            "reasoning_tokens": 77,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1140,
+    "output_tokens": 204,
+    "total_tokens": 1344,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00216,
+    "latency_ms": 2865.0607080198824,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1140,
+      "output_tokens": 204,
+      "total_tokens": 1344,
+      "time_to_first_token": 2.8645752090378664,
+      "duration": 2.864696250006091,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1140,
+            "output_tokens": 204,
+            "total_tokens": 1344,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04302_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Nike's FY2018 cost of sales was reported as 56.1% of revenue.",
+    "reported_metric": "cost_of_sales_as_pct_of_revenue",
+    "reported_value": 56.1,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, 20,441 / 36,397 × 100 = 56.16%, which rounds to 56.2%, not 56.1%. The extractor inputs are internally consistent; the first error appears in the analyst's percentage calculation. FY2016 is also misrounded, though the final three-year average coincidentally still rounds to 55.1%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2015,
+    "output_tokens": 475,
+    "total_tokens": 2490,
+    "cached_tokens": 0,
+    "reasoning_tokens": 309,
+    "cost_usd": 0.000973,
+    "latency_ms": 5232.777750003152,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2015,
+      "output_tokens": 475,
+      "total_tokens": 2490,
+      "reasoning_tokens": 309,
+      "time_to_first_token": 5.232155374949798,
+      "duration": 5.232388916949276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2015,
+            "output_tokens": 475,
+            "total_tokens": 2490,
+            "reasoning_tokens": 309,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2740,
+    "output_tokens": 227,
+    "total_tokens": 2967,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003875,
+    "latency_ms": 3789.029625011608,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2740,
+      "output_tokens": 227,
+      "total_tokens": 2967,
+      "time_to_first_token": 3.7881172499619424,
+      "duration": 3.7884184169815853,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2740,
+            "output_tokens": 227,
+            "total_tokens": 2967,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

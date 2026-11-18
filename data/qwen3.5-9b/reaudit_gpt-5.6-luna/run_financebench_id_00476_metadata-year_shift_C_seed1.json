@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00476_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer claimed that zero debt securities were registered to trade on a national securities exchange under American Express' name in 2022.",
+    "reported_metric": "Trading Symbol",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst outputs contain three 2022 claims with nonzero values (640, 640, and 20), while the writer changed these to a zero-count conclusion without supporting derivation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1329,
+    "output_tokens": 354,
+    "total_tokens": 1683,
+    "cached_tokens": 0,
+    "reasoning_tokens": 229,
+    "cost_usd": 0.0006906,
+    "latency_ms": 4468.942084000446,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1329,
+      "output_tokens": 354,
+      "total_tokens": 1683,
+      "reasoning_tokens": 229,
+      "time_to_first_token": 4.468180208990816,
+      "duration": 4.468393708986696,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1329,
+            "output_tokens": 354,
+            "total_tokens": 1683,
+            "reasoning_tokens": 229,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1300,
+    "output_tokens": 353,
+    "total_tokens": 1653,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4317.284926015418,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1300,
+      "output_tokens": 353,
+      "total_tokens": 1653,
+      "time_to_first_token": 4.31700792897027,
+      "duration": 4.31709674699232,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1300,
+            "output_tokens": 353,
+            "total_tokens": 1653,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4291730632,
+              "load_duration": 616551,
+              "prompt_eval_duration": 353100000,
+              "eval_duration": 3865262000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

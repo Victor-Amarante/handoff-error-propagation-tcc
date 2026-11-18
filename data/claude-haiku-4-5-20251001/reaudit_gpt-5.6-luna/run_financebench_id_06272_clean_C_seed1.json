@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06272_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2022 dividend payout ratio was calculated as 79.74 using total cash dividends paid of 7,616 divided by net income attributable to shareholders of 9,542.",
+    "reported_metric": "dividend_payout_ratio",
+    "reported_value": 79.74,
+    "confidence": 0.99,
+    "rationale": "The extractor inputs are internally consistent, but 7,616 ÷ 9,542 × 100 = 79.82% when rounded to two decimals, not 79.74. The writer merely propagated the analyst's incorrect calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 942,
+    "output_tokens": 459,
+    "total_tokens": 1401,
+    "cached_tokens": 0,
+    "reasoning_tokens": 310,
+    "cost_usd": 0.0007392,
+    "latency_ms": 4986.399249988608,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 942,
+      "output_tokens": 459,
+      "total_tokens": 1401,
+      "reasoning_tokens": 310,
+      "time_to_first_token": 4.985843541973736,
+      "duration": 4.9860028339899145,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 942,
+            "output_tokens": 459,
+            "total_tokens": 1401,
+            "reasoning_tokens": 310,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1496,
+    "output_tokens": 236,
+    "total_tokens": 1732,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002676,
+    "latency_ms": 3058.7045830325224,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1496,
+      "output_tokens": 236,
+      "total_tokens": 1732,
+      "time_to_first_token": 3.057898791041225,
+      "duration": 3.0581202500034124,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1496,
+            "output_tokens": 236,
+            "total_tokens": 1732,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

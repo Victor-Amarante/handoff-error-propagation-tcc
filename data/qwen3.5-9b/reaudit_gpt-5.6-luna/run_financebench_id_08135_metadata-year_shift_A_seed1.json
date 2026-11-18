@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08135_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported revenue growth is internally consistent with the stated FY2016 and FY2017 net sales figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the provided figures, (177866 - 135987) / 135987 × 100 = approximately 30.8%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 754,
+    "output_tokens": 236,
+    "total_tokens": 990,
+    "cached_tokens": 0,
+    "reasoning_tokens": 121,
+    "cost_usd": 0.000434,
+    "latency_ms": 2941.8121660128236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 754,
+      "output_tokens": 236,
+      "total_tokens": 990,
+      "reasoning_tokens": 121,
+      "time_to_first_token": 2.9409433329710737,
+      "duration": 2.9412325830198824,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 754,
+            "output_tokens": 236,
+            "total_tokens": 990,
+            "reasoning_tokens": 121,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 611,
+    "output_tokens": 345,
+    "total_tokens": 956,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4039.0299760038033,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 611,
+      "output_tokens": 345,
+      "total_tokens": 956,
+      "time_to_first_token": 4.038788736972492,
+      "duration": 4.0388641089666635,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 611,
+            "output_tokens": 345,
+            "total_tokens": 956,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4013307136,
+              "load_duration": 435014,
+              "prompt_eval_duration": 155818000,
+              "eval_duration": 3807028000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

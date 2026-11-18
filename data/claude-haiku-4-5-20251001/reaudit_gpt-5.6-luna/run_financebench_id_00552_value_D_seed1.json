@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00552_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Microsoft's current portion of long-term debt in FY2023 was reported as 2,547 USD_M.",
+    "reported_metric": "current_portion_long_term_debt",
+    "reported_value": 2547.0,
+    "confidence": 0.99,
+    "rationale": "C01's numeric value conflicts with its attached evidence, which states 5,247. This extraction error propagated into A01, A03, and the writer's reported total debt change."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1566,
+    "output_tokens": 326,
+    "total_tokens": 1892,
+    "cached_tokens": 0,
+    "reasoning_tokens": 202,
+    "cost_usd": 0.0007044000000000001,
+    "latency_ms": 3792.5597919966094,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1566,
+      "output_tokens": 326,
+      "total_tokens": 1892,
+      "reasoning_tokens": 202,
+      "time_to_first_token": 3.7917738329852,
+      "duration": 3.7920170000288635,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1566,
+            "output_tokens": 326,
+            "total_tokens": 1892,
+            "reasoning_tokens": 202,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2217,
+    "output_tokens": 201,
+    "total_tokens": 2418,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003222,
+    "latency_ms": 2813.2245000451803,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2217,
+      "output_tokens": 201,
+      "total_tokens": 2418,
+      "time_to_first_token": 2.812716291984543,
+      "duration": 2.812846874992829,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2217,
+            "output_tokens": 201,
+            "total_tokens": 2418,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

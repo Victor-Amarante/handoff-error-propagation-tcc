@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Discount revenue was reported as $30,739 million for FY2023, but the value is the FY2022 component of the $42,967 million FY2022 total non-interest revenue.",
+    "reported_metric": "Discount revenue",
+    "reported_value": 30739.0,
+    "confidence": 0.99,
+    "rationale": "C01 is internally inconsistent: $30,739 million plus the other FY2022 revenue components ($6,070 million, $4,521 million, and $1,637 million) equals the FY2022 total of $42,967 million. Thus the first error is the extractor's FY2023 year label, which the analyst propagated. The writer's qualitative conclusion is not contradicted by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3705,
+    "output_tokens": 575,
+    "total_tokens": 4280,
+    "cached_tokens": 0,
+    "reasoning_tokens": 392,
+    "cost_usd": 0.001431,
+    "latency_ms": 5663.679541961756,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3705,
+      "output_tokens": 575,
+      "total_tokens": 4280,
+      "reasoning_tokens": 392,
+      "time_to_first_token": 5.663005625014193,
+      "duration": 5.663286250026431,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3705,
+            "output_tokens": 575,
+            "total_tokens": 4280,
+            "reasoning_tokens": 392,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4244,
+    "output_tokens": 269,
+    "total_tokens": 4513,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4129.857901018113,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4244,
+      "output_tokens": 269,
+      "total_tokens": 4513,
+      "time_to_first_token": 4.1296265800483525,
+      "duration": 4.129698649048805,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4244,
+            "output_tokens": 269,
+            "total_tokens": 4513,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4104418491,
+              "load_duration": 573736,
+              "prompt_eval_duration": 993514000,
+              "eval_duration": 3016935000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

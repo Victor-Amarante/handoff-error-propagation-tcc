@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00222_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "AMD's FY22 quick ratio is 2.04.",
+    "reported_metric": "quick_ratio_2022",
+    "reported_value": 2.04,
+    "confidence": 0.96,
+    "rationale": "The analyst's 2.04 ratio is not supported by its cited inputs: total current assets of 15,019 divided by total current liabilities of 6,369 equals approximately 2.36, while a conventional quick ratio using cash, short-term investments, and receivables is approximately 2.13. The writer then propagated A01's unsupported value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1981,
+    "output_tokens": 661,
+    "total_tokens": 2642,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011894000000000002,
+    "latency_ms": 6223.5775829758495,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1981,
+      "output_tokens": 661,
+      "total_tokens": 2642,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.223068291961681,
+      "duration": 6.223182791960426,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1981,
+            "output_tokens": 661,
+            "total_tokens": 2642,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2112,
+    "output_tokens": 564,
+    "total_tokens": 2676,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6706.348343985155,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2112,
+      "output_tokens": 564,
+      "total_tokens": 2676,
+      "time_to_first_token": 6.706115574983414,
+      "duration": 6.706186038965825,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2112,
+            "output_tokens": 564,
+            "total_tokens": 2676,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6680519583,
+              "load_duration": 498831,
+              "prompt_eval_duration": 528313000,
+              "eval_duration": 6096947000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

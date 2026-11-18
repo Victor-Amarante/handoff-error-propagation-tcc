@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00685_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported gross-margin calculations are internally consistent with the extracted revenue and gross-profit figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures yield gross margins of approximately 21.4% (FY2023), 22.5% (FY2022), and 22.4% (FY2021). The maximum year-to-year change is about 1.1 percentage points, supporting the analyst's and writer's conclusion that margins stayed within roughly 2%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1164,
+    "output_tokens": 315,
+    "total_tokens": 1479,
+    "cached_tokens": 0,
+    "reasoning_tokens": 167,
+    "cost_usd": 0.0006108,
+    "latency_ms": 3285.782916005701,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1164,
+      "output_tokens": 315,
+      "total_tokens": 1479,
+      "reasoning_tokens": 167,
+      "time_to_first_token": 3.285076707950793,
+      "duration": 3.2853025419753976,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1164,
+            "output_tokens": 315,
+            "total_tokens": 1479,
+            "reasoning_tokens": 167,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1061,
+    "output_tokens": 31707,
+    "total_tokens": 32768,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 335055.22275698604,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1061,
+      "output_tokens": 31707,
+      "total_tokens": 32768,
+      "time_to_first_token": 335.0400174529641,
+      "duration": 335.05502813495696,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1061,
+            "output_tokens": 31707,
+            "total_tokens": 32768,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 335006810046,
+              "load_duration": 453805,
+              "prompt_eval_duration": 299025000,
+              "eval_duration": 334652578000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

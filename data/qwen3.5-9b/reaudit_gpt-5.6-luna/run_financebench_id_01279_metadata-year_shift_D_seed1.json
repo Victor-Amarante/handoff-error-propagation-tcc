@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. The reported operating cash flow of $3,565 million exceeds investing cash flow of $1,999 million and financing cash flow of negative $3,264 million, so operating activities brought in the most cash."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 4144,
+    "output_tokens": 186,
+    "total_tokens": 4330,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.001052,
+    "latency_ms": 2566.968708008062,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4144,
+      "output_tokens": 186,
+      "total_tokens": 4330,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.5662869589868933,
+      "duration": 2.566471124999225,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4144,
+            "output_tokens": 186,
+            "total_tokens": 4330,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4739,
+    "output_tokens": 347,
+    "total_tokens": 5086,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5070.889475988224,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4739,
+      "output_tokens": 347,
+      "total_tokens": 5086,
+      "time_to_first_token": 5.0706149660400115,
+      "duration": 5.070704003039282,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4739,
+            "output_tokens": 347,
+            "total_tokens": 5086,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5045659093,
+              "load_duration": 593691,
+              "prompt_eval_duration": 1103490000,
+              "eval_duration": 3880108000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

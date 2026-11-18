@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor values are internally consistent: $14,882M − $13,745M = $1,137M. The corresponding growth rate is approximately 8.28% (1,137 ÷ 13,745 × 100), so the analyst and writer outputs correctly follow from the extracted claims."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1032,
+    "output_tokens": 238,
+    "total_tokens": 1270,
+    "cached_tokens": 0,
+    "reasoning_tokens": 120,
+    "cost_usd": 0.000492,
+    "latency_ms": 2743.122291052714,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1032,
+      "output_tokens": 238,
+      "total_tokens": 1270,
+      "reasoning_tokens": 120,
+      "time_to_first_token": 2.7425440419465303,
+      "duration": 2.7427201249520294,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1032,
+            "output_tokens": 238,
+            "total_tokens": 1270,
+            "reasoning_tokens": 120,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1616,
+    "output_tokens": 161,
+    "total_tokens": 1777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002421,
+    "latency_ms": 3167.701500002295,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1616,
+      "output_tokens": 161,
+      "total_tokens": 1777,
+      "time_to_first_token": 3.1672279170015827,
+      "duration": 3.167287916992791,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1616,
+            "output_tokens": 161,
+            "total_tokens": 1777,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

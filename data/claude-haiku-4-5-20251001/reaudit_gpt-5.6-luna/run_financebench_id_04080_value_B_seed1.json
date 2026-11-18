@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04080_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2021 inventory turnover ratio is 5.77 based on FY2021 cost of sales of 42,576 and average FY2020–FY2021 inventories of 7,110.5.",
+    "reported_metric": "inventory_turnover_ratio",
+    "reported_value": 5.77,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs imply 42,576 / ((7,367 + 6,854) / 2) = 5.9878, which rounds to 5.99, not 5.77. The first incorrect claim appears in the analyst output; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 785,
+    "output_tokens": 343,
+    "total_tokens": 1128,
+    "cached_tokens": 0,
+    "reasoning_tokens": 179,
+    "cost_usd": 0.0005685999999999999,
+    "latency_ms": 3578.5782919847406,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 785,
+      "output_tokens": 343,
+      "total_tokens": 1128,
+      "reasoning_tokens": 179,
+      "time_to_first_token": 3.577761417021975,
+      "duration": 3.578073959040921,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 785,
+            "output_tokens": 343,
+            "total_tokens": 1128,
+            "reasoning_tokens": 179,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1307,
+    "output_tokens": 185,
+    "total_tokens": 1492,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002232,
+    "latency_ms": 2300.077041028999,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1307,
+      "output_tokens": 185,
+      "total_tokens": 1492,
+      "time_to_first_token": 2.2991512499866076,
+      "duration": 2.2994502499932423,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1307,
+            "output_tokens": 185,
+            "total_tokens": 1492,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

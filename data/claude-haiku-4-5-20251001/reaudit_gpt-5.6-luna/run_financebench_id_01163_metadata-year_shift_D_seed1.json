@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01163_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled $5,841 million of operating cash flow as FY2024, although the comparable investing and financing figures and the question concern FY2023.",
+    "reported_metric": "cash_provided_used_by_operations",
+    "reported_value": 5841.0,
+    "confidence": 0.98,
+    "rationale": "C01 is the first internally inconsistent claim: it reports 5,841 with year 2024, while the analyst silently changes that year to 2023. The numerical comparison and final conclusion are otherwise consistent with the three stated cash-flow values."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1511,
+    "output_tokens": 566,
+    "total_tokens": 2077,
+    "cached_tokens": 0,
+    "reasoning_tokens": 419,
+    "cost_usd": 0.0009814,
+    "latency_ms": 5987.992957991082,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1511,
+      "output_tokens": 566,
+      "total_tokens": 2077,
+      "reasoning_tokens": 419,
+      "time_to_first_token": 5.987326042028144,
+      "duration": 5.987623750057537,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1511,
+            "output_tokens": 566,
+            "total_tokens": 2077,
+            "reasoning_tokens": 419,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2146,
+    "output_tokens": 173,
+    "total_tokens": 2319,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003011,
+    "latency_ms": 3178.9018330164254,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2146,
+      "output_tokens": 173,
+      "total_tokens": 2319,
+      "time_to_first_token": 3.178090917004738,
+      "duration": 3.178387250052765,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2146,
+            "output_tokens": 173,
+            "total_tokens": 2319,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

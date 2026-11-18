@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_07966_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "The FY2019 capex-to-revenue ratio was reported as 1.7%, but 116/6489 × 100 rounds to 1.8%.",
+    "reported_metric": "Capex as a % of revenue FY2019",
+    "reported_value": 1.7,
+    "confidence": 0.99,
+    "rationale": "The extracted FY2019 inputs are 116 million of capex and 6,489 million of revenue, yielding approximately 1.787%, which rounds to 1.8%, not 1.7%. This is the first incorrect claim; the final 1.9% average happens to remain unchanged."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2031,
+    "output_tokens": 838,
+    "total_tokens": 2869,
+    "cached_tokens": 0,
+    "reasoning_tokens": 666,
+    "cost_usd": 0.0014118,
+    "latency_ms": 7594.143417023588,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2031,
+      "output_tokens": 838,
+      "total_tokens": 2869,
+      "reasoning_tokens": 666,
+      "time_to_first_token": 7.593763832992408,
+      "duration": 7.593892332981341,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2031,
+            "output_tokens": 838,
+            "total_tokens": 2869,
+            "reasoning_tokens": 666,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2194,
+    "output_tokens": 1963,
+    "total_tokens": 4157,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21785.163419961464,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2194,
+      "output_tokens": 1963,
+      "total_tokens": 4157,
+      "time_to_first_token": 21.784912325034384,
+      "duration": 21.7849959449959,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2194,
+            "output_tokens": 1963,
+            "total_tokens": 4157,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21759727856,
+              "load_duration": 526235,
+              "prompt_eval_duration": 547417000,
+              "eval_duration": 21149263000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

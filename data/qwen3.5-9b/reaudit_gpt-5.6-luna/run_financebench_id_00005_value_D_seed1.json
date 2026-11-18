@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Corning's FY2022 cash and cash equivalents were reported as $6,171 million, although the evidence states $1,671 million.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 6171.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's C01 value conflicts directly with its evidence ($1,671) and with the total-current-assets reconciliation: 1,671 + 1,721 + 2,904 + 1,157 = 7,453. The working-capital calculation itself is internally correct at 7,453 − 5,175 = 2,278, so this extraction error does not affect the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1720,
+    "output_tokens": 444,
+    "total_tokens": 2164,
+    "cached_tokens": 0,
+    "reasoning_tokens": 265,
+    "cost_usd": 0.0008768,
+    "latency_ms": 4882.905917009339,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1720,
+      "output_tokens": 444,
+      "total_tokens": 2164,
+      "reasoning_tokens": 265,
+      "time_to_first_token": 4.882241041981615,
+      "duration": 4.882540666963905,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1720,
+            "output_tokens": 444,
+            "total_tokens": 2164,
+            "reasoning_tokens": 265,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1789,
+    "output_tokens": 189,
+    "total_tokens": 1978,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2286.4795660134405,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1789,
+      "output_tokens": 189,
+      "total_tokens": 1978,
+      "time_to_first_token": 2.286191590013914,
+      "duration": 2.2862625690177083,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1789,
+            "output_tokens": 189,
+            "total_tokens": 1978,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2260641848,
+              "load_duration": 527170,
+              "prompt_eval_duration": 62894000,
+              "eval_duration": 2115467000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

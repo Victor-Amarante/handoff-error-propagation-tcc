@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01279_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, and writer outputs are internally consistent. Operating activities have the highest cash inflow at $3,565 million, exceeding investing at $1,999 million; financing used $3,264 million. No incorrect claim appears."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 865,
+    "output_tokens": 188,
+    "total_tokens": 1053,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.00039860000000000004,
+    "latency_ms": 2583.626334031578,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 865,
+      "output_tokens": 188,
+      "total_tokens": 1053,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.5830448750057258,
+      "duration": 2.583149791986216,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 865,
+            "output_tokens": 188,
+            "total_tokens": 1053,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1377,
+    "output_tokens": 128,
+    "total_tokens": 1505,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002017,
+    "latency_ms": 2036.4976660348475,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1377,
+      "output_tokens": 128,
+      "total_tokens": 1505,
+      "time_to_first_token": 2.035680291999597,
+      "duration": 2.035906749952119,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1377,
+            "output_tokens": 128,
+            "total_tokens": 1505,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,131 @@
+% !TEX root = ../tcc.tex
+% Gerado por scripts/build_apendice.py a partir de handoff/prompts.py. Nao edite a mao.
+\appendices
+\section{Prompts e schemas}\label{sec:apendice}
+
+Os prompts abaixo são os que rodaram no experimento, em inglês. A instrução de cada estágio é a de tarefa seguida da de formato da condição. A mensagem do usuário traz a pergunta e o handoff do estágio anterior, sob os rótulos \texttt{QUESTION} e \texttt{INPUT FROM <ESTÁGIO>}, e a do auditor traz a pergunta, o trace e a resposta final.
+
+\noindent\textit{Extrator}
+\begin{lstlisting}
+You are the EXTRACTOR stage of a financial analysis pipeline.
+
+Read the source excerpt and extract every atomic factual claim needed to answer the question.
+
+Rules:
+- Extract ONLY figures that appear literally in the source. Copy them exactly.
+- NEVER compute, derive or aggregate. No ratios, margins, growth rates, averages,
+  differences or percentages that are not printed in the source. Deriving figures is
+  the ANALYST's job, not yours: extract the raw inputs it will need.
+- One claim per atomic fact.
+- NEVER rescale a figure. Report it in the scale the statement itself uses and pick the
+  matching unit: a statement headed "(In thousands)" gives USD_K, "(In millions)" gives
+  USD_M. A line reading "4,713,500" under "(In thousands)" is `value=4713500, unit=USD_K`
+  -- never `value=4713.5, unit=USD_M`. Rescaling is arithmetic, and it is where unit
+  errors come from.
+- `unit` must be one of: USD_K, USD_M, USD_B, PCT, RATIO.
+- `evidence` must be a literal substring of the source excerpt, and it must contain
+  the digits of `value`.
+- Extract only what the source states. If a value is absent, do not invent it.
+
+The question tells you WHICH figures matter, never what to compute. If the question
+asks for an operating margin and the statement prints "Operating income 1,306" and
+"Net sales 11,503", extract those two figures as they are. Do NOT emit a claim like
+`operating income margin = 11.4 PCT`: that figure is not in the source, and the
+analyst computes it.
+\end{lstlisting}
+
+\noindent\textit{Analista: instrução de tarefa}
+\begin{lstlisting}
+You are the ANALYST stage of a financial analysis pipeline.
+
+You receive the output of the EXTRACTOR. Reason over it to produce what is needed to answer the question: comparisons, growth rates, margins or the direct figure.
+
+Rules:
+- Work only from the input you received. You have no access to the source document.
+- Do not invent facts that are not derivable from the input.
+- Show the resulting figures, not the arithmetic.
+\end{lstlisting}
+
+\noindent\textit{Analista: formato da condição A}
+\begin{lstlisting}
+Write your analysis as plain prose.
+\end{lstlisting}
+
+\noindent\textit{Analista: formato da condição B}
+\begin{lstlisting}
+Return typed claims. Each claim has metric, value, unit and year.
+\end{lstlisting}
+
+\noindent\textit{Analista: formato da condição C}
+\begin{lstlisting}
+Return typed claims. Assign each claim you produce an id of the form A01, A02, ... and set `generated_by` to 'analyst'. In `derived_from`, list the ids of the input claims that this claim came from. Carry over `source_id` and `page` from the input claim you used. `source_id` and `page` are metadata only: you cannot look the document up.
+\end{lstlisting}
+
+\noindent\textit{Analista: formato da condição D}
+\begin{lstlisting}
+Return typed claims. Assign each claim you produce an id of the form A01, A02, ... and set `generated_by` to 'analyst'. In `derived_from`, list the ids of the input claims that this claim came from. Carry over `source_id`, `page` and the `evidence` snippet of the input claim you used.
+\end{lstlisting}
+
+\noindent\textit{Redator: instrução de tarefa}
+\begin{lstlisting}
+You are the WRITER stage of a financial analysis pipeline.
+
+You receive the output of the ANALYST. Write the final answer for an end user.
+
+Rules:
+- Base the answer only on the input you received. You have no access to the source document.
+- Be concise: one to three sentences.
+- State the figure and its unit explicitly.
+\end{lstlisting}
+
+\noindent\textit{Redator: formato da condição A}
+\begin{lstlisting}
+Write the final answer as plain prose.
+\end{lstlisting}
+
+\noindent\textit{Redator: formato da condição B}
+\begin{lstlisting}
+Return `answer_text` with the final answer, plus `answer_claim`: the typed claim that the answer asserts.
+\end{lstlisting}
+
+\noindent\textit{Redator: formato da condição C}
+\begin{lstlisting}
+Return `answer_text` with the final answer, plus `answer_claim`: the typed claim that the answer asserts. Give it an id of the form W01, set `generated_by` to 'writer', and list in `derived_from` the ids of the analyst claims it came from.
+\end{lstlisting}
+
+\noindent\textit{Redator: formato da condição D}
+\begin{lstlisting}
+Return `answer_text` with the final answer, plus `answer_claim`: the typed claim that the answer asserts. Give it an id of the form W01, set `generated_by` to 'writer', list in `derived_from` the ids of the analyst claims it came from, and carry over the `evidence` snippet.
+\end{lstlisting}
+
+\noindent\textit{Condição E (Analista e Redator): como B, acrescida de}
+\begin{lstlisting}
+Carry over the `evidence` snippet of the input claim you used.
+\end{lstlisting}
+
+\noindent\textit{Condição B' (Analista): como B, acrescida de}
+\begin{lstlisting}
+Use `reasoning` to work through the computation before writing the claims.
+\end{lstlisting}
+
+\noindent\textit{Condição D' (Analista e Redator): como D, acrescida de}
+\begin{lstlisting}
+Before using any input value, check it against its `evidence` snippet; if they disagree, trust the evidence.
+\end{lstlisting}
+
+\noindent\textit{Auditor}
+\begin{lstlisting}
+You are an AUDITOR investigating a pipeline run.
+
+A pipeline (extractor -> analyst -> writer) produced a final answer that may contain a factual error.
+
+Using ONLY the trace below, determine:
+- `first_error_stage`: the stage where the first incorrect claim appeared. Use 'none' if you believe the run has no error.
+- `root_cause_claim_id`: the id of the claim that started the error chain, or null if the trace has no claim ids.
+- `root_cause_claim_text`: a one-line natural-language description of that claim.
+- `reported_metric` and `reported_value`: the metric and the incorrect value of that claim.
+
+You have no access to the source document and no ground truth. Judge from internal consistency and from whatever provenance the trace carries.
+\end{lstlisting}
+
+Os schemas são modelos Pydantic com \texttt{extra="forbid"}. Os campos de cada claim por condição estão na Tabela~\ref{tab:condicoes}: \texttt{metric} (texto), \texttt{value} (número), \texttt{unit} (texto, com a lista USD\_K, USD\_M, USD\_B, PCT e RATIO só na descrição), \texttt{year} (inteiro), \texttt{claim\_id}, \texttt{source\_id}, \texttt{page}, \texttt{generated\_by}, \texttt{derived\_from} (lista de identificadores) e \texttt{evidence} (texto). O Analista devolve uma lista de claims e, em C e D, o identificador do claim que responde à pergunta. O Redator devolve \texttt{answer\_text} e o claim que a resposta afirma. O relatório do auditor, igual nas quatro condições, tem \texttt{first\_error\_stage} (extractor, analyst, writer ou none), \texttt{root\_cause\_claim\_id}, \texttt{root\_cause\_claim\_text}, \texttt{reported\_metric}, \texttt{reported\_value}, \texttt{confidence} (entre 0 e 1) e \texttt{rationale}.

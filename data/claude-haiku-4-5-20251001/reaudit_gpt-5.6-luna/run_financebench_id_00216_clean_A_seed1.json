@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00216_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated cash plus accounts receivable ($27,111M) as the complete set of quick assets, despite current assets of $37,857M and inventory of only $2,388M implying additional current-asset components were omitted.",
+    "reported_metric": "quick ratio",
+    "reported_value": 0.54,
+    "confidence": 0.86,
+    "rationale": "The arithmetic is correct for the selected inputs, but the selected inputs are not internally supported as the complete quick-asset base: current assets less inventory equals $35,469M, not $27,111M. The analyst therefore presents 0.54 as a definitive quick ratio without accounting for the $8,358M difference or explaining whether those assets are non-quick. The extractor only reports figures and does not make the erroneous ratio claim; the writer repeats the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1065,
+    "output_tokens": 719,
+    "total_tokens": 1784,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010758,
+    "latency_ms": 7747.98516696319,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1065,
+      "output_tokens": 719,
+      "total_tokens": 1784,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.74739358300576,
+      "duration": 7.747573791013565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1065,
+            "output_tokens": 719,
+            "total_tokens": 1784,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1619,
+    "output_tokens": 185,
+    "total_tokens": 1804,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002544,
+    "latency_ms": 2538.7780409655534,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1619,
+      "output_tokens": 185,
+      "total_tokens": 1804,
+      "time_to_first_token": 2.5383221250376664,
+      "duration": 2.538431250024587,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1619,
+            "output_tokens": 185,
+            "total_tokens": 1804,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

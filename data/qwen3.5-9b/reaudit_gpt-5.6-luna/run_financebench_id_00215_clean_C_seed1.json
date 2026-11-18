@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00215_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported Verizon's FY 2022 capital intensity as 28.34, despite deriving it only from gross property, plant, and equipment of $307,689 million with no stated denominator or calculation.",
+    "reported_metric": "capital_intensity_verizon_2022",
+    "reported_value": 28.34,
+    "confidence": 0.98,
+    "rationale": "The extractor claims are internally consistent, including gross PP&E less accumulated depreciation equaling net PP&E. The first unsupported and dimensionally inconsistent claim appears in the analyst output. Later, A03 is also arithmetically inconsistent: $307,689 million divided by total assets of $379,680 million equals approximately 81.04%, not 7.465%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2417,
+    "output_tokens": 601,
+    "total_tokens": 3018,
+    "cached_tokens": 0,
+    "reasoning_tokens": 418,
+    "cost_usd": 0.0012046,
+    "latency_ms": 5832.964416011237,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2417,
+      "output_tokens": 601,
+      "total_tokens": 3018,
+      "reasoning_tokens": 418,
+      "time_to_first_token": 5.832190832996275,
+      "duration": 5.832553040992934,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2417,
+            "output_tokens": 601,
+            "total_tokens": 3018,
+            "reasoning_tokens": 418,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2672,
+    "output_tokens": 430,
+    "total_tokens": 3102,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5490.385484998114,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2672,
+      "output_tokens": 430,
+      "total_tokens": 3102,
+      "time_to_first_token": 5.490133689017966,
+      "duration": 5.490204647008795,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2672,
+            "output_tokens": 430,
+            "total_tokens": 3102,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5461103486,
+              "load_duration": 512358,
+              "prompt_eval_duration": 638360000,
+              "eval_duration": 4763607000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

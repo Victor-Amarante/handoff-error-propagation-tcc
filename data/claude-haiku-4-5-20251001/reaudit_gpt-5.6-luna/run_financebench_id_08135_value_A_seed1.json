@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08135_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim detected; the reported 15.5% increase is internally consistent with the stated revenues.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the provided figures, (177,866 - 153,987) / 153,987 × 100 = approximately 15.5%, matching the analyst, writer, and final answer. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 749,
+    "output_tokens": 174,
+    "total_tokens": 923,
+    "cached_tokens": 0,
+    "reasoning_tokens": 52,
+    "cost_usd": 0.00035860000000000004,
+    "latency_ms": 2433.8945419876836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 749,
+      "output_tokens": 174,
+      "total_tokens": 923,
+      "reasoning_tokens": 52,
+      "time_to_first_token": 2.4331959999981336,
+      "duration": 2.433371375023853,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 749,
+            "output_tokens": 174,
+            "total_tokens": 923,
+            "reasoning_tokens": 52,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1253,
+    "output_tokens": 152,
+    "total_tokens": 1405,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002013,
+    "latency_ms": 2148.933374963235,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1253,
+      "output_tokens": 152,
+      "total_tokens": 1405,
+      "time_to_first_token": 2.148121124948375,
+      "duration": 2.1483467919752,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1253,
+            "output_tokens": 152,
+            "total_tokens": 1405,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

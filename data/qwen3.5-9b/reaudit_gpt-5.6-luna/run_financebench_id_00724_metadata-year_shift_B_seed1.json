@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00724_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor labeled United States Q2 2023 revenue as year 2024, despite identifying it as Q2 2023 revenue.",
+    "reported_metric": "United States Q2 2023 Revenue",
+    "reported_value": 6185.0,
+    "confidence": 0.98,
+    "rationale": "The extractor output contains an internal year inconsistency: the metric is explicitly Q2 2023 revenue but its year field is 2024. The percentage comparisons and final answer are otherwise internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1294,
+    "output_tokens": 646,
+    "total_tokens": 1940,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001034,
+    "latency_ms": 7086.809208034538,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1294,
+      "output_tokens": 646,
+      "total_tokens": 1940,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.086314290994778,
+      "duration": 7.086491333029699,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1294,
+            "output_tokens": 646,
+            "total_tokens": 1940,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1255,
+    "output_tokens": 646,
+    "total_tokens": 1901,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7548.5751570085995,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1255,
+      "output_tokens": 646,
+      "total_tokens": 1901,
+      "time_to_first_token": 7.548335597966798,
+      "duration": 7.548411183001008,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1255,
+            "output_tokens": 646,
+            "total_tokens": 1901,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7523254039,
+              "load_duration": 634064,
+              "prompt_eval_duration": 342275000,
+              "eval_duration": 7127749000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

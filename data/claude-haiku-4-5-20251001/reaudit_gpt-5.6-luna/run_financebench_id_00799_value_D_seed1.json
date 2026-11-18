@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00799_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMCOR's cash and cash equivalents were $869 million in FY2023.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 869.0,
+    "confidence": 0.99,
+    "rationale": "Extractor claim C01 reports $869 million, but its own evidence states cash and cash equivalents of $689 million. This is the first internal inconsistency; downstream analyst calculations use $689 million and therefore do not propagate the reported C01 value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2550,
+    "output_tokens": 313,
+    "total_tokens": 2863,
+    "cached_tokens": 0,
+    "reasoning_tokens": 186,
+    "cost_usd": 0.0008856,
+    "latency_ms": 3844.7907080408186,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2550,
+      "output_tokens": 313,
+      "total_tokens": 2863,
+      "reasoning_tokens": 186,
+      "time_to_first_token": 3.844330166990403,
+      "duration": 3.8444747499888763,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2550,
+            "output_tokens": 313,
+            "total_tokens": 2863,
+            "reasoning_tokens": 186,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3422,
+    "output_tokens": 198,
+    "total_tokens": 3620,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004412,
+    "latency_ms": 3787.4907919904217,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3422,
+      "output_tokens": 198,
+      "total_tokens": 3620,
+      "time_to_first_token": 3.7867310409783386,
+      "duration": 3.786998666008003,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3422,
+            "output_tokens": 198,
+            "total_tokens": 3620,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

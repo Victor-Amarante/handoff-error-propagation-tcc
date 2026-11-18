@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00790_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "CVS Health's FY2022 capital employed was USD 31,930 million.",
+    "reported_metric": "Capital Employed",
+    "reported_value": 31930.0,
+    "confidence": 0.88,
+    "rationale": "The extractor provides no Capital Employed figure or liabilities needed to calculate it, and the analyst introduces an unsupported USD 31,930 million value. The writer then repeats that value; the approximately 10% revenue ratio is arithmetically consistent with it but inherits the unsupported premise."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1251,
+    "output_tokens": 647,
+    "total_tokens": 1898,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010266,
+    "latency_ms": 6480.216624971945,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1251,
+      "output_tokens": 647,
+      "total_tokens": 1898,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.479524374997709,
+      "duration": 6.479658708034549,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1251,
+            "output_tokens": 647,
+            "total_tokens": 1898,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1228,
+    "output_tokens": 469,
+    "total_tokens": 1697,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5389.034160005394,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1228,
+      "output_tokens": 469,
+      "total_tokens": 1697,
+      "time_to_first_token": 5.388796997023746,
+      "duration": 5.388870196999051,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1228,
+            "output_tokens": 469,
+            "total_tokens": 1697,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5362032610,
+              "load_duration": 477741,
+              "prompt_eval_duration": 335243000,
+              "eval_duration": 4976312000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

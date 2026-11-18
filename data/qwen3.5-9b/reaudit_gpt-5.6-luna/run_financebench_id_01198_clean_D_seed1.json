@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01198_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "A 64% increase in Data Center segment revenue drove AMD's overall revenue change in FY22.",
+    "reported_metric": "net_revenue_change_driver",
+    "reported_value": 64.0,
+    "confidence": 0.88,
+    "rationale": "The extractor established only that Data Center revenue increased 64%; it did not establish that this segment drove the company's total revenue change. The analyst elevated that growth statistic into an unsupported driver claim, which the writer then repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1239,
+    "output_tokens": 472,
+    "total_tokens": 1711,
+    "cached_tokens": 0,
+    "reasoning_tokens": 345,
+    "cost_usd": 0.0008142000000000001,
+    "latency_ms": 5139.022957999259,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1239,
+      "output_tokens": 472,
+      "total_tokens": 1711,
+      "reasoning_tokens": 345,
+      "time_to_first_token": 5.1386421250062995,
+      "duration": 5.138781708024908,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1239,
+            "output_tokens": 472,
+            "total_tokens": 1711,
+            "reasoning_tokens": 345,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1192,
+    "output_tokens": 1336,
+    "total_tokens": 2528,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14352.979993040208,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1192,
+      "output_tokens": 1336,
+      "total_tokens": 2528,
+      "time_to_first_token": 14.352723644988146,
+      "duration": 14.352804172958713,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1192,
+            "output_tokens": 1336,
+            "total_tokens": 2528,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14321615888,
+              "load_duration": 449791,
+              "prompt_eval_duration": 328338000,
+              "eval_duration": 13937814000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

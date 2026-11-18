@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01484_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the final answer consistently reports international operational growth of 9.1% versus U.S. growth of 3.0%, a 6.1-percentage-point advantage.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The stated comparison matches analyst claims A05 and A06, and the 6.1-point difference is arithmetically correct. The -6.1 value in A07/W01 represents the U.S.-versus-international subtraction (3.0% - 9.1%), while the prose correctly describes international growth as higher by 6.1 points."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2095,
+    "output_tokens": 1718,
+    "total_tokens": 3813,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1535,
+    "cost_usd": 0.0024806,
+    "latency_ms": 16064.433374966029,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2095,
+      "output_tokens": 1718,
+      "total_tokens": 3813,
+      "reasoning_tokens": 1535,
+      "time_to_first_token": 16.064131249964703,
+      "duration": 16.064190791978035,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2095,
+            "output_tokens": 1718,
+            "total_tokens": 3813,
+            "reasoning_tokens": 1535,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2800,
+    "output_tokens": 193,
+    "total_tokens": 2993,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003765,
+    "latency_ms": 3690.1034580077976,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2800,
+      "output_tokens": 193,
+      "total_tokens": 2993,
+      "time_to_first_token": 3.6893097090069205,
+      "duration": 3.689606542000547,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2800,
+            "output_tokens": 193,
+            "total_tokens": 2993,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

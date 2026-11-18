@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01911_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the trace consistently states that Adjusted EBIT was not provided, only Adjusted EBITDAR and Interest Expense.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports Adjusted EBITDAR ($957,307K), not Adjusted EBIT, and Interest Expense ($594,954K). The analyst correctly explains that the requested ratio cannot be calculated from those inputs, and the writer preserves that conclusion. The optional EBITDAR calculation of approximately 1.61x is also internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 772,
+    "output_tokens": 297,
+    "total_tokens": 1069,
+    "cached_tokens": 0,
+    "reasoning_tokens": 149,
+    "cost_usd": 0.0005108,
+    "latency_ms": 3580.1232919911854,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 772,
+      "output_tokens": 297,
+      "total_tokens": 1069,
+      "reasoning_tokens": 149,
+      "time_to_first_token": 3.579300624958705,
+      "duration": 3.5796321249799803,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 772,
+            "output_tokens": 297,
+            "total_tokens": 1069,
+            "reasoning_tokens": 149,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 617,
+    "output_tokens": 166,
+    "total_tokens": 783,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2260.865378950257,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 617,
+      "output_tokens": 166,
+      "total_tokens": 783,
+      "time_to_first_token": 2.2605900250491686,
+      "duration": 2.2606808459968306,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 617,
+            "output_tokens": 166,
+            "total_tokens": 783,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2231746789,
+              "load_duration": 812374,
+              "prompt_eval_duration": 179647000,
+              "eval_duration": 1998223000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

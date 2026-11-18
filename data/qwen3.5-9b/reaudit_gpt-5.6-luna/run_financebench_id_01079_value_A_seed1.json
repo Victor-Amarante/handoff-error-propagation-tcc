@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01079_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Czech Republic acquisition was classified as a FY2023 acquisition, although the extractor output associates its transaction figures with 2022 and does not establish an August 2023 acquisition date.",
+    "reported_metric": "acquisition fiscal year",
+    "reported_value": 2023.0,
+    "confidence": 0.86,
+    "rationale": "The extractor output contains Czech Republic acquisition figures explicitly labeled 2022, while its acquisition-date field is malformed as 'August was 1%' and does not support the analyst's assertion that the deal occurred in FY2023. The writer then repeats this unsupported classification."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1776,
+    "output_tokens": 662,
+    "total_tokens": 2438,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011496,
+    "latency_ms": 6458.412333042361,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1776,
+      "output_tokens": 662,
+      "total_tokens": 2438,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.4578949580318294,
+      "duration": 6.458071083005052,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1776,
+            "output_tokens": 662,
+            "total_tokens": 2438,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1726,
+    "output_tokens": 246,
+    "total_tokens": 1972,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3340.195198019501,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1726,
+      "output_tokens": 246,
+      "total_tokens": 1972,
+      "time_to_first_token": 3.339941504993476,
+      "duration": 3.340014166024048,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1726,
+            "output_tokens": 246,
+            "total_tokens": 1972,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3309910096,
+              "load_duration": 526412,
+              "prompt_eval_duration": 422700000,
+              "eval_duration": 2826603000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -11,6 +11,9 @@ O Project Sid propôs a arquitetura PIANO para simular sociedades com mais de mi
 Nos dois casos, o que um agente escreve é lido como premissa, seja por ele mesmo mais tarde, seja por outro agente.
 Cemri et al. analisaram 1.642 execuções de sete frameworks multiagente e chegaram a uma taxonomia de 14 modos de falha, agrupados em problemas de desenho do sistema, desalinhamento entre agentes e verificação da tarefa \cite{cemri2025why}.
 O desalinhamento entre agentes inclui, por exemplo, casos em que um agente retém informação ou ignora a entrada de outro, ou seja, falhas na passagem de informação de um estágio para o seguinte.
+O MetaGPT parte do mesmo diagnóstico. Os autores atribuem a inconsistência lógica de cadeias ingênuas de LLMs a alucinações em cascata e argumentam que, como num telefone sem fio, a informação se distorce depois de algumas rodadas de conversa em linguagem natural \cite{hong2023metagpt}.
+A resposta deles é fazer os papéis trocarem documentos estruturados, como especificações de requisitos e de projeto, no lugar de diálogo \cite{hong2023metagpt}.
+A tese de que artefatos estruturados entre papéis reduzem a propagação de erros vem daí, mas no MetaGPT ela chega junto com procedimentos padronizados e verificação de resultados intermediários, sem ser testada de forma isolada.
 
 O trabalho mais próximo deste é o de Singh e Pawar \cite{singh2026snowball}.
 Os autores injetaram 346 alucinações numéricas em 140 perguntas do FinanceBench, logo após o primeiro estágio de um pipeline de quatro agentes (Researcher, Analyst, Writer e Reviewer), e modelaram a sobrevivência do erro como um processo de Markov com quatro estados.
@@ -46,6 +49,9 @@ Ray mediu esse descompasso em modelos com menos de 3B parâmetros: em comparaç�
 Tam et al. observaram efeito na mesma direção em tarefas de raciocínio, com quedas maiores quanto mais rígida a restrição de formato \cite{tam2024speak}.
 Os três trabalhos avaliam uma única chamada ao modelo.
 O que a estrutura faz com um erro que já chega errado de um estágio anterior é uma pergunta diferente, e é a que a RQ1 investiga.
+Entre os trabalhos que manipulam o formato do handoff em si, Banerjee e Chadha compararam a delegação entre agentes em linguagem natural com a delegação por um grafo tipado de dependências \cite{banerjee2026routed}.
+O grafo sozinho reduziu o custo, mas a taxa de sucesso no AppWorld caiu 14,6 pontos percentuais em relação à linguagem natural, o que os autores atribuem a planos rígidos que impedem o executor de se adaptar quando um passo falha. Nos outros benchmarks, o grafo empatou ou ganhou \cite{banerjee2026routed}.
+Ali, porém, a variável de saída é o sucesso da tarefa, e não o destino de um erro conhecido.
 
 \subsection{Proveniência e evidência}\label{sec:rel-evidencia}
 
@@ -57,6 +63,8 @@ Na condição D deste estudo, a evidência tem outra função: ela acompanha o c
 O CaveAgent aborda a perda de informação por outro caminho.
 Em vez de serializar o estado em texto a cada turno, o modelo opera um runtime Python persistente que guarda objetos vivos, o que, segundo os autores, reduz o desvio de contexto e preserva os dados processados sem perda \cite{ran2026caveagent}.
 Singh e Pawar citam essa abordagem como alternativa aos handoffs em texto \cite{singh2026snowball}.
+Uma terceira forma de ancoragem é a verificação explícita. No Chain-of-Verification, o modelo rascunha a resposta, planeja perguntas de checagem, responde a cada uma de forma independente e só então escreve a versão final, o que reduziu alucinações em listas de entidades, em perguntas fechadas e em texto longo \cite{dhuliawala2023cove}.
+A evidência carregada pela condição D dá ao estágio seguinte o material de uma checagem desse tipo, mas não a instrução de fazê-la.
 Em outro domínio, Park et al. observaram um efeito parecido de ancoragem: agentes construídos a partir de entrevistas de duas horas reproduziram 83\% da consistência dos próprios participantes em itens do General Social Survey, contra 74\% de agentes construídos só com dados demográficos \cite{park2024selfreports}.
 
 \subsection{Lacuna}\label{sec:rel-lacuna}

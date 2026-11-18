@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00005_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Corning's current assets were $7,453 million in FY2023.",
+    "reported_metric": "current assets for FY2023",
+    "reported_value": 7453.0,
+    "confidence": 0.98,
+    "rationale": "The extractor mismatched the fiscal year: the $7,453M current-assets figure aligns with the FY2022 context alongside the reported FY2022 current liabilities of $5,175M. This year error led the analyst and writer to incorrectly conclude that FY2022 current assets were missing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 633,
+    "total_tokens": 1433,
+    "cached_tokens": 0,
+    "reasoning_tokens": 496,
+    "cost_usd": 0.0009196,
+    "latency_ms": 6601.497625000775,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 633,
+      "total_tokens": 1433,
+      "reasoning_tokens": 496,
+      "time_to_first_token": 6.600786458991934,
+      "duration": 6.601019166992046,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 633,
+            "total_tokens": 1433,
+            "reasoning_tokens": 496,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1306,
+    "output_tokens": 166,
+    "total_tokens": 1472,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002136,
+    "latency_ms": 2396.132124995347,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1306,
+      "output_tokens": 166,
+      "total_tokens": 1472,
+      "time_to_first_token": 2.3952882919693366,
+      "duration": 2.3955850419588387,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1306,
+            "output_tokens": 166,
+            "total_tokens": 1472,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

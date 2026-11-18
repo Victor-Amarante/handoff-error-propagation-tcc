@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03856_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the reported ratio is consistent with the provided inputs.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using the extractor values, 2,912,853 / 3,527,457 = approximately 0.8258, which rounds to 0.83. The analyst and writer outputs are internally consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 928,
+    "output_tokens": 257,
+    "total_tokens": 1185,
+    "cached_tokens": 0,
+    "reasoning_tokens": 145,
+    "cost_usd": 0.000494,
+    "latency_ms": 2983.9169159531593,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 928,
+      "output_tokens": 257,
+      "total_tokens": 1185,
+      "reasoning_tokens": 145,
+      "time_to_first_token": 2.9832749579800293,
+      "duration": 2.9834400409599766,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 928,
+            "output_tokens": 257,
+            "total_tokens": 1185,
+            "reasoning_tokens": 145,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1468,
+    "output_tokens": 173,
+    "total_tokens": 1641,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002333,
+    "latency_ms": 3068.7113750027493,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1468,
+      "output_tokens": 173,
+      "total_tokens": 1641,
+      "time_to_first_token": 3.067744208034128,
+      "duration": 3.06804350001039,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1468,
+            "output_tokens": 173,
+            "total_tokens": 1641,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

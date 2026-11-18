@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00566_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported debt change is consistent with the extracted values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst correctly calculated 150,639 minus 150,868 as -229 USD million, and the writer accurately restated that Verizon's total debt decreased from 2021 to 2022."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 809,
+    "output_tokens": 177,
+    "total_tokens": 986,
+    "cached_tokens": 0,
+    "reasoning_tokens": 66,
+    "cost_usd": 0.00037420000000000004,
+    "latency_ms": 2632.367708021775,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 809,
+      "output_tokens": 177,
+      "total_tokens": 986,
+      "reasoning_tokens": 66,
+      "time_to_first_token": 2.6319509169552475,
+      "duration": 2.63206266699126,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 809,
+            "output_tokens": 177,
+            "total_tokens": 986,
+            "reasoning_tokens": 66,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1329,
+    "output_tokens": 165,
+    "total_tokens": 1494,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002154,
+    "latency_ms": 2429.887584003154,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1329,
+      "output_tokens": 165,
+      "total_tokens": 1494,
+      "time_to_first_token": 2.429136417049449,
+      "duration": 2.429377000022214,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1329,
+            "output_tokens": 165,
+            "total_tokens": 1494,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

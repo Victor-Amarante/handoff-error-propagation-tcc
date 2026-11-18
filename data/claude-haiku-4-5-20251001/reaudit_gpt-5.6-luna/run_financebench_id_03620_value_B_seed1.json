@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03620_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the calculation is internally consistent: 15,112 + 2,763 - 5,207 = 12,668 USD million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 1.0,
+    "rationale": "The extractor values support the analyst and writer calculation exactly, and the final answer correctly reports $12,668 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 827,
+    "output_tokens": 164,
+    "total_tokens": 991,
+    "cached_tokens": 0,
+    "reasoning_tokens": 53,
+    "cost_usd": 0.00036219999999999997,
+    "latency_ms": 2519.221708003897,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 827,
+      "output_tokens": 164,
+      "total_tokens": 991,
+      "reasoning_tokens": 53,
+      "time_to_first_token": 2.5185713749960996,
+      "duration": 2.518731584015768,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 827,
+            "output_tokens": 164,
+            "total_tokens": 991,
+            "reasoning_tokens": 53,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1380,
+    "output_tokens": 230,
+    "total_tokens": 1610,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00253,
+    "latency_ms": 2864.15754200425,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1380,
+      "output_tokens": 230,
+      "total_tokens": 1610,
+      "time_to_first_token": 2.863127374963369,
+      "duration": 2.863432040961925,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1380,
+            "output_tokens": 230,
+            "total_tokens": 1610,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03031_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident from the trace. The analyst and writer correctly calculate $19,815 million in current assets minus $13,997 million in current liabilities as $5,818 million, consistently with the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 873,
+    "output_tokens": 184,
+    "total_tokens": 1057,
+    "cached_tokens": 0,
+    "reasoning_tokens": 85,
+    "cost_usd": 0.00039539999999999996,
+    "latency_ms": 2496.8355000019073,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 873,
+      "output_tokens": 184,
+      "total_tokens": 1057,
+      "reasoning_tokens": 85,
+      "time_to_first_token": 2.4962337919860147,
+      "duration": 2.4964179170201533,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 873,
+            "output_tokens": 184,
+            "total_tokens": 1057,
+            "reasoning_tokens": 85,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1397,
+    "output_tokens": 188,
+    "total_tokens": 1585,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002337,
+    "latency_ms": 3377.165750018321,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1397,
+      "output_tokens": 188,
+      "total_tokens": 1585,
+      "time_to_first_token": 3.3765721669769846,
+      "duration": 3.3766944999806583,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1397,
+            "output_tokens": 188,
+            "total_tokens": 1585,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

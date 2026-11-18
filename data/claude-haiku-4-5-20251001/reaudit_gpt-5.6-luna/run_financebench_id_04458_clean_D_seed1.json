@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04458_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FY2015 unadjusted EBITDA margin is internally consistent with the provided operating income, depreciation and amortization, and revenue.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculation is correct: (305,826 + 62,283) / 6,779,511 × 100 = approximately 5.43%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1362,
+    "output_tokens": 174,
+    "total_tokens": 1536,
+    "cached_tokens": 0,
+    "reasoning_tokens": 54,
+    "cost_usd": 0.00048120000000000004,
+    "latency_ms": 2254.382208979223,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1362,
+      "output_tokens": 174,
+      "total_tokens": 1536,
+      "reasoning_tokens": 54,
+      "time_to_first_token": 2.2539140000008047,
+      "duration": 2.254009083029814,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1362,
+            "output_tokens": 174,
+            "total_tokens": 1536,
+            "reasoning_tokens": 54,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1998,
+    "output_tokens": 213,
+    "total_tokens": 2211,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003063,
+    "latency_ms": 3171.759708027821,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1998,
+      "output_tokens": 213,
+      "total_tokens": 2211,
+      "time_to_first_token": 3.1708239159779623,
+      "duration": 3.1711160829872824,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1998,
+            "output_tokens": 213,
+            "total_tokens": 2211,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

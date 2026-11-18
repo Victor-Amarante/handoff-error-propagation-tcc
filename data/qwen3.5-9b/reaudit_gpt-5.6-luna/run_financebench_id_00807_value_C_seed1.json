@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00807_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported a Q2 FY2023 quick ratio of 1.44x for 3M.",
+    "reported_metric": "quick_ratio_q2_2023",
+    "reported_value": 1.44,
+    "confidence": 0.99,
+    "rationale": "Using the extracted Q2 inputs, the standard quick ratio is (cash 2,458 + marketable securities 56 + accounts receivable 4,947) / current liabilities 10,936 = approximately 0.68x, not 1.44x. The writer propagated this analyst error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3634,
+    "output_tokens": 907,
+    "total_tokens": 4541,
+    "cached_tokens": 0,
+    "reasoning_tokens": 752,
+    "cost_usd": 0.0018151999999999999,
+    "latency_ms": 9335.467249969952,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3634,
+      "output_tokens": 907,
+      "total_tokens": 4541,
+      "reasoning_tokens": 752,
+      "time_to_first_token": 9.334855875000358,
+      "duration": 9.334995416982565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3634,
+            "output_tokens": 907,
+            "total_tokens": 4541,
+            "reasoning_tokens": 752,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4157,
+    "output_tokens": 399,
+    "total_tokens": 4556,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5343.956601980608,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4157,
+      "output_tokens": 399,
+      "total_tokens": 4556,
+      "time_to_first_token": 5.343695952033158,
+      "duration": 5.34377554000821,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4157,
+            "output_tokens": 399,
+            "total_tokens": 4556,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5314757551,
+              "load_duration": 581094,
+              "prompt_eval_duration": 970984000,
+              "eval_duration": 4279216000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

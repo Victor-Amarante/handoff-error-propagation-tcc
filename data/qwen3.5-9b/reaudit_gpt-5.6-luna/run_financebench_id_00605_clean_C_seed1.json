@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00605_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst incorrectly reported that Q4 FY2023 stock repurchases were 0.0% of FY2023 total repurchase spending, using FY2022 inputs.",
+    "reported_metric": "share_repurchase_cost_Q4_FY2023_percent_of_FY_total",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor claims are explicitly labeled FY2022, while the analyst relabeled the result as FY2023 and derived 0.0% from those inputs. The writer merely repeated the analyst's incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 964,
+    "output_tokens": 347,
+    "total_tokens": 1311,
+    "cached_tokens": 0,
+    "reasoning_tokens": 198,
+    "cost_usd": 0.0006092000000000001,
+    "latency_ms": 3684.3192080268636,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 964,
+      "output_tokens": 347,
+      "total_tokens": 1311,
+      "reasoning_tokens": 198,
+      "time_to_first_token": 3.683290874992963,
+      "duration": 3.6835877500125207,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 964,
+            "output_tokens": 347,
+            "total_tokens": 1311,
+            "reasoning_tokens": 198,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 843,
+    "output_tokens": 301,
+    "total_tokens": 1144,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3670.6807910231873,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 843,
+      "output_tokens": 301,
+      "total_tokens": 1144,
+      "time_to_first_token": 3.6703745009726845,
+      "duration": 3.67051755200373,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 843,
+            "output_tokens": 301,
+            "total_tokens": 1144,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3643847517,
+              "load_duration": 582314,
+              "prompt_eval_duration": 238630000,
+              "eval_duration": 3332523000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04254_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY2021 unadjusted EBITDA equals $1,832 million, calculated by combining operating income of $1,196 million from 2022 with FY2021 depreciation and amortization of $636 million.",
+    "reported_metric": "unadjusted_ebitda",
+    "reported_value": 1832.0,
+    "confidence": 0.99,
+    "rationale": "The extractor identifies the $1,196 million operating income as 2022, while the analyst incorrectly combines it with FY2021 depreciation and amortization and labels the result as FY2021 EBITDA. The writer merely repeats that analyst claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 739,
+    "output_tokens": 330,
+    "total_tokens": 1069,
+    "cached_tokens": 0,
+    "reasoning_tokens": 177,
+    "cost_usd": 0.0005438,
+    "latency_ms": 3684.4972080434673,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 739,
+      "output_tokens": 330,
+      "total_tokens": 1069,
+      "reasoning_tokens": 177,
+      "time_to_first_token": 3.6840435420162976,
+      "duration": 3.6841923749889247,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 739,
+            "output_tokens": 330,
+            "total_tokens": 1069,
+            "reasoning_tokens": 177,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1260,
+    "output_tokens": 187,
+    "total_tokens": 1447,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002195,
+    "latency_ms": 3481.3486670027487,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1260,
+      "output_tokens": 187,
+      "total_tokens": 1447,
+      "time_to_first_token": 3.480618959001731,
+      "duration": 3.480856250040233,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1260,
+            "output_tokens": 187,
+            "total_tokens": 1447,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

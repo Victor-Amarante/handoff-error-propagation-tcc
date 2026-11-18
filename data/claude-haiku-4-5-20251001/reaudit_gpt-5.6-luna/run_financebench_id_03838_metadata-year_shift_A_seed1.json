@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03838_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported Square's FY2020 total net revenue of $9.49758e+06K as FY2021 total net revenue.",
+    "reported_metric": "FY2021 total net revenue",
+    "reported_value": 9497580.0,
+    "confidence": 0.98,
+    "rationale": "The reported $9.49758e+06K figure corresponds to FY2020 revenue, while FY2019 revenue is separately given as $4.7135e+06K. The analyst and writer then incorrectly treated FY2020 as unavailable, propagating the extractor's year-labeling error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 906,
+    "output_tokens": 613,
+    "total_tokens": 1519,
+    "cached_tokens": 0,
+    "reasoning_tokens": 459,
+    "cost_usd": 0.0009168000000000001,
+    "latency_ms": 6249.679707980249,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 906,
+      "output_tokens": 613,
+      "total_tokens": 1519,
+      "reasoning_tokens": 459,
+      "time_to_first_token": 6.249174624972511,
+      "duration": 6.249310792016331,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 906,
+            "output_tokens": 613,
+            "total_tokens": 1519,
+            "reasoning_tokens": 459,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1433,
+    "output_tokens": 188,
+    "total_tokens": 1621,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002373,
+    "latency_ms": 2559.3007499701343,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1433,
+      "output_tokens": 188,
+      "total_tokens": 1621,
+      "time_to_first_token": 2.5582781660486944,
+      "duration": 2.558578916010447,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1433,
+            "output_tokens": 188,
+            "total_tokens": 1621,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00517_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst initially claimed that none of Boeing's product or service categories represented more than 20% of FY2022 revenue, despite calculating Commercial Airplanes at approximately 38.8%.",
+    "reported_metric": "Number of categories representing more than 20% of revenue",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The analyst's initial conclusion directly contradicts the extracted figures and its own calculation: Commercial Airplanes alone is $25,867M / $66,608M ≈ 38.8%, which exceeds 20%. The extractor provides the underlying figures but does not make the threshold conclusion; the writer repeats the contradiction but appears later in the chain."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1621,
+    "output_tokens": 402,
+    "total_tokens": 2023,
+    "cached_tokens": 0,
+    "reasoning_tokens": 228,
+    "cost_usd": 0.0008066,
+    "latency_ms": 4608.184708980843,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1621,
+      "output_tokens": 402,
+      "total_tokens": 2023,
+      "reasoning_tokens": 228,
+      "time_to_first_token": 4.6074499579845,
+      "duration": 4.60771620797459,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1621,
+            "output_tokens": 402,
+            "total_tokens": 2023,
+            "reasoning_tokens": 228,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1641,
+    "output_tokens": 174,
+    "total_tokens": 1815,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2552.0135780097917,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1641,
+      "output_tokens": 174,
+      "total_tokens": 1815,
+      "time_to_first_token": 2.551781946036499,
+      "duration": 2.551853773999028,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1641,
+            "output_tokens": 174,
+            "total_tokens": 1815,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2526540569,
+              "load_duration": 690414,
+              "prompt_eval_duration": 417351000,
+              "eval_duration": 2029096000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01912_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Las Vegas Strip Resorts FY2022 net revenues as 8,400,000 while labeling the value as USD_M, creating a scale inconsistency with the intended million-USD reporting.",
+    "reported_metric": "Las Vegas Strip Resorts net revenues FY2022",
+    "reported_value": 8400000.0,
+    "confidence": 0.86,
+    "rationale": "The extractor is the first stage containing a scale inconsistency: values labeled USD_M are inflated by a factor of 1,000. This causes the analyst/writer comparison to be unreliable, even though the writer's $674 million figure reflects the likely normalized MGM China value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 824,
+    "output_tokens": 675,
+    "total_tokens": 1499,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009748,
+    "latency_ms": 6398.286667012144,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 824,
+      "output_tokens": 675,
+      "total_tokens": 1499,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.397651375038549,
+      "duration": 6.3978202500147745,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 824,
+            "output_tokens": 675,
+            "total_tokens": 1499,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 708,
+    "output_tokens": 310,
+    "total_tokens": 1018,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3875.7410729886033,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 708,
+      "output_tokens": 310,
+      "total_tokens": 1018,
+      "time_to_first_token": 3.875466138997581,
+      "duration": 3.8755640430026688,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 708,
+            "output_tokens": 310,
+            "total_tokens": 1018,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3844427347,
+              "load_duration": 470218,
+              "prompt_eval_duration": 190005000,
+              "eval_duration": 3603955000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

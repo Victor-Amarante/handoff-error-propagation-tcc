@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10420_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No erroneous claim; the extracted figures and ROA calculation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The average total assets are correctly calculated as ($38,363M + $32,963M) / 2 = $35,663M, and -$505M / $35,663M = -1.4159%, which rounds to -1.42%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 866,
+    "output_tokens": 215,
+    "total_tokens": 1081,
+    "cached_tokens": 0,
+    "reasoning_tokens": 88,
+    "cost_usd": 0.0004312,
+    "latency_ms": 2557.3438749997877,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 866,
+      "output_tokens": 215,
+      "total_tokens": 1081,
+      "reasoning_tokens": 88,
+      "time_to_first_token": 2.5566018329700455,
+      "duration": 2.5568693749955855,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 866,
+            "output_tokens": 215,
+            "total_tokens": 1081,
+            "reasoning_tokens": 88,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1381,
+    "output_tokens": 190,
+    "total_tokens": 1571,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002331,
+    "latency_ms": 2507.87891598884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1381,
+      "output_tokens": 190,
+      "total_tokens": 1571,
+      "time_to_first_token": 2.507112499966752,
+      "duration": 2.5073684999952093,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1381,
+            "output_tokens": 190,
+            "total_tokens": 1571,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

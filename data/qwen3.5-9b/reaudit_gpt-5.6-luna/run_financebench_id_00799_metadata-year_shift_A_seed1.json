@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00799_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly attributed $192M of assets held for sale to FY2023; the figures reconcile it to FY2022 instead.",
+    "reported_metric": "Assets held for sale, net",
+    "reported_value": 192.0,
+    "confidence": 0.96,
+    "rationale": "The FY2023 current-asset total of $5,308M reconciles exactly without the $192M held-for-sale amount, while the FY2022 total of $5,853M reconciles when $192M is included. This misattribution initiated the later inconsistent handling of the quick-assets calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3203,
+    "output_tokens": 1370,
+    "total_tokens": 4573,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1207,
+    "cost_usd": 0.0022846,
+    "latency_ms": 12732.452124997508,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3203,
+      "output_tokens": 1370,
+      "total_tokens": 4573,
+      "reasoning_tokens": 1207,
+      "time_to_first_token": 12.7314508749987,
+      "duration": 12.73195216601016,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3203,
+            "output_tokens": 1370,
+            "total_tokens": 4573,
+            "reasoning_tokens": 1207,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3477,
+    "output_tokens": 158,
+    "total_tokens": 3635,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2758.5124589968473,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3477,
+      "output_tokens": 158,
+      "total_tokens": 3635,
+      "time_to_first_token": 2.7582150459638797,
+      "duration": 2.758286762982607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3477,
+            "output_tokens": 158,
+            "total_tokens": 3635,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2733236651,
+              "load_duration": 560389,
+              "prompt_eval_duration": 806649000,
+              "eval_duration": 1820662000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

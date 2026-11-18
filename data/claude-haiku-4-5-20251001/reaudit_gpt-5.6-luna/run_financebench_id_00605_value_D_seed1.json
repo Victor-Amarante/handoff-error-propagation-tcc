@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00605_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported Q4 share repurchase cost as $382.1 million, although the cited evidence states $328.1 million for Q4 fiscal 2022.",
+    "reported_metric": "share_repurchases_cost",
+    "reported_value": 382.1,
+    "confidence": 0.99,
+    "rationale": "C01 directly contradicts its own evidence: the claim value is 382.1, while the evidence says 328.1. The later analyst calculation also uses the evidence amount and incorrectly labels FY2022 data as FY2023."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1161,
+    "output_tokens": 372,
+    "total_tokens": 1533,
+    "cached_tokens": 0,
+    "reasoning_tokens": 228,
+    "cost_usd": 0.0006786,
+    "latency_ms": 4148.291833989788,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1161,
+      "output_tokens": 372,
+      "total_tokens": 1533,
+      "reasoning_tokens": 228,
+      "time_to_first_token": 4.14763291599229,
+      "duration": 4.147919750015717,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1161,
+            "output_tokens": 372,
+            "total_tokens": 1533,
+            "reasoning_tokens": 228,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1746,
+    "output_tokens": 168,
+    "total_tokens": 1914,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002586,
+    "latency_ms": 2424.879250000231,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1746,
+      "output_tokens": 168,
+      "total_tokens": 1914,
+      "time_to_first_token": 2.4239623339963146,
+      "duration": 2.424251375021413,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1746,
+            "output_tokens": 168,
+            "total_tokens": 1914,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00005_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Working capital is not a useful or relevant metric for Corning because the calculation is incomplete.",
+    "reported_metric": "working_capital_calculation_incomplete",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "The trace supports only that the available figures are not aligned to the same year: current assets are labeled 2023 while current liabilities are labeled 2022. That prevents a FY2022 calculation, but it does not establish that working capital is generally not useful or relevant for Corning. The unsupported relevance conclusion first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 750,
+    "output_tokens": 1180,
+    "total_tokens": 1930,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.001566,
+    "latency_ms": 11279.214459005743,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 750,
+      "output_tokens": 1180,
+      "total_tokens": 1930,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.278491500008386,
+      "duration": 11.278755375009496,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 750,
+            "output_tokens": 1180,
+            "total_tokens": 1930,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1246,
+    "output_tokens": 192,
+    "total_tokens": 1438,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002206,
+    "latency_ms": 3314.5040840026923,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1246,
+      "output_tokens": 192,
+      "total_tokens": 1438,
+      "time_to_first_token": 3.3136337909963913,
+      "duration": 3.3139540830161422,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1246,
+            "output_tokens": 192,
+            "total_tokens": 1438,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

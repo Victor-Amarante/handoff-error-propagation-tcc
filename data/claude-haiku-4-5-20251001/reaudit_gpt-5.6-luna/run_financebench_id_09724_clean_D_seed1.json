@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_09724_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "FY2021 COGS as a percentage of net operating revenues was reported as 39.72%.",
+    "reported_metric": "cogs_percentage_of_revenue",
+    "reported_value": 39.72,
+    "confidence": 0.99,
+    "rationale": "The extracted line items are internally consistent, but 15,357 ÷ 38,655 × 100 = approximately 39.728%, which rounds to 39.73%, not 39.72%. The analyst first introduced the incorrect calculated value; the writer propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1026,
+    "output_tokens": 285,
+    "total_tokens": 1311,
+    "cached_tokens": 0,
+    "reasoning_tokens": 142,
+    "cost_usd": 0.0005472000000000001,
+    "latency_ms": 3323.1014169869013,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1026,
+      "output_tokens": 285,
+      "total_tokens": 1311,
+      "reasoning_tokens": 142,
+      "time_to_first_token": 3.322547207993921,
+      "duration": 3.3227349579683505,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1026,
+            "output_tokens": 285,
+            "total_tokens": 1311,
+            "reasoning_tokens": 142,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1583,
+    "output_tokens": 153,
+    "total_tokens": 1736,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002348,
+    "latency_ms": 2966.1676249816082,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1583,
+      "output_tokens": 153,
+      "total_tokens": 1736,
+      "time_to_first_token": 2.965240250050556,
+      "duration": 2.9655372090055607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1583,
+            "output_tokens": 153,
+            "total_tokens": 1736,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

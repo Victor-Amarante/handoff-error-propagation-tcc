@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02024_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported $1,097 million in estimated pension benefits for retirees in 2024 but tagged the claim with year 2025, creating an internal year inconsistency.",
+    "reported_metric": "estimated pension benefits for retirees in 2024",
+    "reported_value": 1097.0,
+    "confidence": 0.97,
+    "rationale": "The extractor is the first stage containing the inconsistency: the pension claim refers to 2024 in its metric but specifies year 2025. The analyst repeats it, while the writer's $1,959 million total is arithmetically consistent with $1,097 million plus $862 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 762,
+    "output_tokens": 562,
+    "total_tokens": 1324,
+    "cached_tokens": 0,
+    "reasoning_tokens": 399,
+    "cost_usd": 0.0008267999999999999,
+    "latency_ms": 5662.181542022154,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 762,
+      "output_tokens": 562,
+      "total_tokens": 1324,
+      "reasoning_tokens": 399,
+      "time_to_first_token": 5.661553708021529,
+      "duration": 5.661765166034456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 762,
+            "output_tokens": 562,
+            "total_tokens": 1324,
+            "reasoning_tokens": 399,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 614,
+    "output_tokens": 235,
+    "total_tokens": 849,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2909.9573509884067,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 614,
+      "output_tokens": 235,
+      "total_tokens": 849,
+      "time_to_first_token": 2.9096653920132667,
+      "duration": 2.9097543230163865,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 614,
+            "output_tokens": 235,
+            "total_tokens": 849,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2880314746,
+              "load_duration": 432378,
+              "prompt_eval_duration": 157630000,
+              "eval_duration": 2654917000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

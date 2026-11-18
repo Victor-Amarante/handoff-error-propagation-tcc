@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03849_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The FY2018-FY2020 average capex as a percentage of revenue was reported as 7.8%, but averaging the underlying unrounded ratios gives 7.9%.",
+    "reported_metric": "FY2018-FY2020 3 year average Capex as % of revenue",
+    "reported_value": 7.8,
+    "confidence": 0.95,
+    "rationale": "The annual ratios derive from the extracted figures, but A04 averages the already rounded values 12.6%, 5.7%, and 5.2%, producing 7.8%. Using the underlying figures gives approximately (12.6% + 5.7% + 5.2% based on unrounded ratios) / 3 = 7.9% when rounded only at the end. C01 also has a year-field inconsistency, but its metric and value identify it as FY2020 revenue and the first numerical error in the result is A04."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1654,
+    "output_tokens": 1261,
+    "total_tokens": 2915,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.001844,
+    "latency_ms": 11193.707374972291,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1654,
+      "output_tokens": 1261,
+      "total_tokens": 2915,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.193056375021115,
+      "duration": 11.19321341702016,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1654,
+            "output_tokens": 1261,
+            "total_tokens": 2915,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1736,
+    "output_tokens": 700,
+    "total_tokens": 2436,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8036.490416969173,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1736,
+      "output_tokens": 700,
+      "total_tokens": 2436,
+      "time_to_first_token": 8.036240711982828,
+      "duration": 8.036315936013125,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1736,
+            "output_tokens": 700,
+            "total_tokens": 2436,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8007278480,
+              "load_duration": 495058,
+              "prompt_eval_duration": 448057000,
+              "eval_duration": 7471978000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

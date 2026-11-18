@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04302_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Nike's FY2016 cost of sales as a percentage of revenue is 56.3%.",
+    "reported_metric": "avg_cost_of_sales_percentage_revenue",
+    "reported_value": 56.3,
+    "confidence": 0.99,
+    "rationale": "The extractor values support ratios of approximately 53.8% (2016), 55.4% (2017), and 56.2% (2018), whose three-year average is about 55.1%, not 56.3%. The analyst first introduces the incorrect 56.3% value in A01, and repeats it in subsequent claims and the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1748,
+    "output_tokens": 276,
+    "total_tokens": 2024,
+    "cached_tokens": 0,
+    "reasoning_tokens": 112,
+    "cost_usd": 0.0006808,
+    "latency_ms": 2705.5984580074437,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1748,
+      "output_tokens": 276,
+      "total_tokens": 2024,
+      "reasoning_tokens": 112,
+      "time_to_first_token": 2.7050729590118863,
+      "duration": 2.7052756670163944,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1748,
+            "output_tokens": 276,
+            "total_tokens": 2024,
+            "reasoning_tokens": 112,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1852,
+    "output_tokens": 347,
+    "total_tokens": 2199,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4323.992850026116,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1852,
+      "output_tokens": 347,
+      "total_tokens": 2199,
+      "time_to_first_token": 4.323667471006047,
+      "duration": 4.323765593988355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1852,
+            "output_tokens": 347,
+            "total_tokens": 2199,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4295683618,
+              "load_duration": 521729,
+              "prompt_eval_duration": 445453000,
+              "eval_duration": 3791495000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

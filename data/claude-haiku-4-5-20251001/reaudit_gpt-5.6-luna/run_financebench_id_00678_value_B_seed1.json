@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00678_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's FY2022 products gross margin was 15.9%.",
+    "reported_metric": "gross_margin_products",
+    "reported_value": 15.9,
+    "confidence": 0.97,
+    "rationale": "Using the extractor's product figures, FY2022 product gross margin is (64,277 - 53,969) / 64,277 = approximately 16.0%, not 15.9%. The 15.9% figure corresponds approximately to Boeing's combined products-and-services gross margin, so the analyst misattributed the value to products; the writer then repeated that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1364,
+    "output_tokens": 668,
+    "total_tokens": 2032,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010744,
+    "latency_ms": 6592.4959579715505,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1364,
+      "output_tokens": 668,
+      "total_tokens": 2032,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.591784165997524,
+      "duration": 6.5920101659721695,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1364,
+            "output_tokens": 668,
+            "total_tokens": 2032,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1950,
+    "output_tokens": 168,
+    "total_tokens": 2118,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00279,
+    "latency_ms": 2560.3936669649556,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1950,
+      "output_tokens": 168,
+      "total_tokens": 2118,
+      "time_to_first_token": 2.559471458022017,
+      "duration": 2.559765707992483,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1950,
+            "output_tokens": 168,
+            "total_tokens": 2118,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

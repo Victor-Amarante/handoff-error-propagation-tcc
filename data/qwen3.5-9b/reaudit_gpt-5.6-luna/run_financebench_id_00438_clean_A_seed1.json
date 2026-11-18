@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00438_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported operating margins are internally consistent with the provided revenue and operating income figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace supports FY2021 operating margin of 5,802/15,785 ≈ 36.8% and FY2022 margin of 6,098/17,606 ≈ 34.6%. The conclusion that Adobe's operating margin declined is arithmetically consistent, and no provenance or internal contradiction indicates an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1594,
+    "output_tokens": 328,
+    "total_tokens": 1922,
+    "cached_tokens": 0,
+    "reasoning_tokens": 182,
+    "cost_usd": 0.0007124,
+    "latency_ms": 3652.1835000021383,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1594,
+      "output_tokens": 328,
+      "total_tokens": 1922,
+      "reasoning_tokens": 182,
+      "time_to_first_token": 3.651992291037459,
+      "duration": 3.6520487080560997,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1594,
+            "output_tokens": 328,
+            "total_tokens": 1922,
+            "reasoning_tokens": 182,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1609,
+    "output_tokens": 232,
+    "total_tokens": 1841,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3077.488731010817,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1609,
+      "output_tokens": 232,
+      "total_tokens": 1841,
+      "time_to_first_token": 3.077239608974196,
+      "duration": 3.0773104549734853,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1609,
+            "output_tokens": 232,
+            "total_tokens": 1841,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3047903570,
+              "load_duration": 488985,
+              "prompt_eval_duration": 390623000,
+              "eval_duration": 2596848000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

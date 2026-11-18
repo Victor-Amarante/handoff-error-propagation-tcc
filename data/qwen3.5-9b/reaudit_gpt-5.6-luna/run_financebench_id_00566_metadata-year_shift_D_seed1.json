@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00566_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Verizon decreased total debt by $230 million between 2021 and 2022.",
+    "reported_metric": "Verizon decreased total debt",
+    "reported_value": -230.0,
+    "confidence": 0.9,
+    "rationale": "The extractor and analyst consistently report a decrease of 230 in USD_K, i.e. $230 thousand under the trace's stated unit. The writer incorrectly describes that value as $230 million. The calculation itself is consistent: 150,639 - 150,868 = -229, rounded to -230."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1382,
+    "output_tokens": 656,
+    "total_tokens": 2038,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010635999999999998,
+    "latency_ms": 6884.461042005569,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1382,
+      "output_tokens": 656,
+      "total_tokens": 2038,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.883898457977921,
+      "duration": 6.884120167000219,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1382,
+            "output_tokens": 656,
+            "total_tokens": 2038,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1408,
+    "output_tokens": 1419,
+    "total_tokens": 2827,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 15534.692789020482,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1408,
+      "output_tokens": 1419,
+      "total_tokens": 2827,
+      "time_to_first_token": 15.534426169993822,
+      "duration": 15.534512321988586,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1408,
+            "output_tokens": 1419,
+            "total_tokens": 2827,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 15505163539,
+              "load_duration": 490095,
+              "prompt_eval_duration": 368652000,
+              "eval_duration": 15079218000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

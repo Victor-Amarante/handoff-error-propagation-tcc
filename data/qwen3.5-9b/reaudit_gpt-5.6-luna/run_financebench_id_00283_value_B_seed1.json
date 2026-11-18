@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00283_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No erroneous claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages report the same metric, value, unit, and year, and the trace contains no contradictory provenance or claim-level evidence indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 615,
+    "output_tokens": 252,
+    "total_tokens": 867,
+    "cached_tokens": 0,
+    "reasoning_tokens": 162,
+    "cost_usd": 0.0004254,
+    "latency_ms": 2984.417208004743,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 615,
+      "output_tokens": 252,
+      "total_tokens": 867,
+      "reasoning_tokens": 162,
+      "time_to_first_token": 2.9838874579872936,
+      "duration": 2.9840094160172157,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 615,
+            "output_tokens": 252,
+            "total_tokens": 867,
+            "reasoning_tokens": 162,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 429,
+    "output_tokens": 129,
+    "total_tokens": 558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1738.5061400127597,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 429,
+      "output_tokens": 129,
+      "total_tokens": 558,
+      "time_to_first_token": 1.7382170659839176,
+      "duration": 1.7383056199760176,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 429,
+            "output_tokens": 129,
+            "total_tokens": 558,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1709040394,
+              "load_duration": 456881,
+              "prompt_eval_duration": 127606000,
+              "eval_duration": 1514591000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00956_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2022 worldwide sales were reported as USD 49.9 billion, while the accompanying evidence states sales were USD 94.9 billion.",
+    "reported_metric": "sales",
+    "reported_value": 49.9,
+    "confidence": 0.99,
+    "rationale": "Claim C01 is internally inconsistent: its value is 49.9 USD_B, but its cited evidence explicitly says worldwide sales were $94.9 billion. The downstream claims do not depend on C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1796,
+    "output_tokens": 292,
+    "total_tokens": 2088,
+    "cached_tokens": 0,
+    "reasoning_tokens": 162,
+    "cost_usd": 0.0007096,
+    "latency_ms": 3254.359582962934,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1796,
+      "output_tokens": 292,
+      "total_tokens": 2088,
+      "reasoning_tokens": 162,
+      "time_to_first_token": 3.253553999995347,
+      "duration": 3.2537908339872956,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1796,
+            "output_tokens": 292,
+            "total_tokens": 2088,
+            "reasoning_tokens": 162,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2425,
+    "output_tokens": 192,
+    "total_tokens": 2617,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003385,
+    "latency_ms": 3600.1061249990016,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2425,
+      "output_tokens": 192,
+      "total_tokens": 2617,
+      "time_to_first_token": 3.5993975829915144,
+      "duration": 3.59961979201762,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2425,
+            "output_tokens": 192,
+            "total_tokens": 2617,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

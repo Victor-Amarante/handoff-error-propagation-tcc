@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00746_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly represented Ulta Beauty's common stock exchange name as a numeric value of 0.0 USD_K, which does not establish the number of debt securities registered on a national exchange.",
+    "reported_metric": "common_stock_exchange_name",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor output contains mislabeled, numerically encoded stock-identification fields rather than evidence about debt securities. The analyst then unsupportedly converted that value into a debt-securities count, and the writer repeated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 705,
+    "output_tokens": 398,
+    "total_tokens": 1103,
+    "cached_tokens": 0,
+    "reasoning_tokens": 256,
+    "cost_usd": 0.0006185999999999999,
+    "latency_ms": 4297.262334031984,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 705,
+      "output_tokens": 398,
+      "total_tokens": 1103,
+      "reasoning_tokens": 256,
+      "time_to_first_token": 4.296691832947545,
+      "duration": 4.2968549999641255,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 705,
+            "output_tokens": 398,
+            "total_tokens": 1103,
+            "reasoning_tokens": 256,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 527,
+    "output_tokens": 267,
+    "total_tokens": 794,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3287.1270829928108,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 527,
+      "output_tokens": 267,
+      "total_tokens": 794,
+      "time_to_first_token": 3.2868753609945998,
+      "duration": 3.2869467079872265,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 527,
+            "output_tokens": 267,
+            "total_tokens": 794,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3259087751,
+              "load_duration": 591099,
+              "prompt_eval_duration": 168812000,
+              "eval_duration": 3021090000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor selected AMD FY23 cash-flow figures, including net cash provided by investing activities of $1,999 million, instead of the FY22 figures requested.",
+    "reported_metric": "net cash provided by (used in) investing activities",
+    "reported_value": 1999.0,
+    "confidence": 0.97,
+    "rationale": "The extractor explicitly identifies 2023 net income and supplies figures that the analyst and writer consistently label FY23, while the question asks for FY22. The downstream conclusion is therefore based on the wrong fiscal year."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1855,
+    "output_tokens": 474,
+    "total_tokens": 2329,
+    "cached_tokens": 0,
+    "reasoning_tokens": 334,
+    "cost_usd": 0.0009398,
+    "latency_ms": 4747.893500025384,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1855,
+      "output_tokens": 474,
+      "total_tokens": 2329,
+      "reasoning_tokens": 334,
+      "time_to_first_token": 4.747354458027985,
+      "duration": 4.747517208044883,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1855,
+            "output_tokens": 474,
+            "total_tokens": 2329,
+            "reasoning_tokens": 334,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1721,
+    "output_tokens": 237,
+    "total_tokens": 1958,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3222.899960994255,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1721,
+      "output_tokens": 237,
+      "total_tokens": 1958,
+      "time_to_first_token": 3.222603841975797,
+      "duration": 3.222696407989133,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1721,
+            "output_tokens": 237,
+            "total_tokens": 1958,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3193660130,
+              "load_duration": 551450,
+              "prompt_eval_duration": 447408000,
+              "eval_duration": 2689063000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

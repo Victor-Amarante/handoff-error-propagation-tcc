@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00552_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Microsoft's current portion of long-term debt was reported as $5,247 million for FY2024, although the analyst uses it as the FY2023 amount.",
+    "reported_metric": "current_portion_long_term_debt",
+    "reported_value": 5247.0,
+    "confidence": 0.98,
+    "rationale": "C01 is labeled year 2024 but is used to calculate the FY2023 total debt in A01. This year mismatch is the first provenance error; the analyst and writer propagate it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1324,
+    "output_tokens": 650,
+    "total_tokens": 1974,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010448,
+    "latency_ms": 6519.3852499942295,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1324,
+      "output_tokens": 650,
+      "total_tokens": 1974,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.518738040991593,
+      "duration": 6.518961958005093,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1324,
+            "output_tokens": 650,
+            "total_tokens": 1974,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1935,
+    "output_tokens": 204,
+    "total_tokens": 2139,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002955,
+    "latency_ms": 3842.5460000289604,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1935,
+      "output_tokens": 204,
+      "total_tokens": 2139,
+      "time_to_first_token": 3.841435124981217,
+      "duration": 3.841787417011801,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1935,
+            "output_tokens": 204,
+            "total_tokens": 2139,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

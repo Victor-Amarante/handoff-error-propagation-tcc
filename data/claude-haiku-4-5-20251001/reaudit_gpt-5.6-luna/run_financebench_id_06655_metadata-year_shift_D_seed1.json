@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06655_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Cost of sales was reported as $111,934 million for FY2018, although the evidence sequence corresponds to the FY2015–FY2017 figures and FY2017 cost of sales is $111,934 million.",
+    "reported_metric": "cost_of_sales",
+    "reported_value": 111934.0,
+    "confidence": 0.98,
+    "rationale": "The extractor mislabeled the $111,934 million cost-of-sales figure as FY2018. The evidence lists three values consistent with FY2015, FY2016, and FY2017, while the analyst later correctly uses $88,265 million for FY2017. This creates inconsistent provenance, though the final DPO arithmetic itself is correct."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1811,
+    "output_tokens": 689,
+    "total_tokens": 2500,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001189,
+    "latency_ms": 6899.02745897416,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1811,
+      "output_tokens": 689,
+      "total_tokens": 2500,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.897973750019446,
+      "duration": 6.898210334009491,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1811,
+            "output_tokens": 689,
+            "total_tokens": 2500,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2521,
+    "output_tokens": 212,
+    "total_tokens": 2733,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003581,
+    "latency_ms": 3036.411874985788,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2521,
+      "output_tokens": 212,
+      "total_tokens": 2733,
+      "time_to_first_token": 3.035348334000446,
+      "duration": 3.035651166981552,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2521,
+            "output_tokens": 212,
+            "total_tokens": 2733,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

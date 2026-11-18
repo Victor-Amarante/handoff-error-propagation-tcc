@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01290_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Commercial airlines accounted for 40% of Boeing's revenue in FY2023, which is inconsistent with the FY2022 question and the cited FY2022 source.",
+    "reported_metric": "portion_of_revenue_from_commercial_airlines",
+    "reported_value": 40.0,
+    "confidence": 0.97,
+    "rationale": "C01 is the first problematic claim: it is dated 2023, while the question asks about FY2022 and the source is Boeing's 2022 10-K. The analyst copied the mismatch, and the writer incorrectly presented it as a FY2022 figure."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 985,
+    "output_tokens": 575,
+    "total_tokens": 1560,
+    "cached_tokens": 0,
+    "reasoning_tokens": 420,
+    "cost_usd": 0.000887,
+    "latency_ms": 5911.913208023179,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 985,
+      "output_tokens": 575,
+      "total_tokens": 1560,
+      "reasoning_tokens": 420,
+      "time_to_first_token": 5.911425667000003,
+      "duration": 5.911544375005178,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 985,
+            "output_tokens": 575,
+            "total_tokens": 1560,
+            "reasoning_tokens": 420,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 874,
+    "output_tokens": 261,
+    "total_tokens": 1135,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3198.1109909829684,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 874,
+      "output_tokens": 261,
+      "total_tokens": 1135,
+      "time_to_first_token": 3.1978245429927483,
+      "duration": 3.1979216120089404,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 874,
+            "output_tokens": 261,
+            "total_tokens": 1135,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3172194359,
+              "load_duration": 424130,
+              "prompt_eval_duration": 217238000,
+              "eval_duration": 2883117000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

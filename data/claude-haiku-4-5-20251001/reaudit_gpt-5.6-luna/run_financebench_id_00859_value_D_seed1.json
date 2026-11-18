@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00859_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Cross currency swaps had a FY 2021 notional value of $23,502 million.",
+    "reported_metric": "notional_value",
+    "reported_value": 23502.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C02 reports $23,502 million, but its own evidence states “Cross currency swaps 32,502.” The analyst and writer propagated the incorrect extracted value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1407,
+    "output_tokens": 210,
+    "total_tokens": 1617,
+    "cached_tokens": 0,
+    "reasoning_tokens": 93,
+    "cost_usd": 0.0005334000000000001,
+    "latency_ms": 2911.311041971203,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1407,
+      "output_tokens": 210,
+      "total_tokens": 1617,
+      "reasoning_tokens": 93,
+      "time_to_first_token": 2.910738625039812,
+      "duration": 2.9109620000235736,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1407,
+            "output_tokens": 210,
+            "total_tokens": 1617,
+            "reasoning_tokens": 93,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2044,
+    "output_tokens": 178,
+    "total_tokens": 2222,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002934,
+    "latency_ms": 4566.850541974418,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2044,
+      "output_tokens": 178,
+      "total_tokens": 2222,
+      "time_to_first_token": 4.566055000002962,
+      "duration": 4.566345750004984,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2044,
+            "output_tokens": 178,
+            "total_tokens": 2222,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

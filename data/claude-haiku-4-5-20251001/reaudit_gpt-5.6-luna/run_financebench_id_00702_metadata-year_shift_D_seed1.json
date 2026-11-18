@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00702_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor incorrectly assigns net income attributable to Pfizer common shareholders of $16,026 million to 2020; the evidence ordering indicates that amount is for 2019.",
+    "reported_metric": "net income attributable to Pfizer Inc. common shareholders",
+    "reported_value": 16026.0,
+    "confidence": 0.95,
+    "rationale": "The evidence lists $21,979, $9,159, and $16,026 in sequence, while C01 labels the final amount as 2020. The $8,107 million 2019 Consumer Healthcare JV gain is consistently carried through the analyst and writer stages, so it is not the source of the error in the final claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1055,
+    "output_tokens": 966,
+    "total_tokens": 2021,
+    "cached_tokens": 0,
+    "reasoning_tokens": 788,
+    "cost_usd": 0.0013702,
+    "latency_ms": 9663.460541050881,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1055,
+      "output_tokens": 966,
+      "total_tokens": 2021,
+      "reasoning_tokens": 788,
+      "time_to_first_token": 9.662696708983276,
+      "duration": 9.662993083999027,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1055,
+            "output_tokens": 966,
+            "total_tokens": 2021,
+            "reasoning_tokens": 788,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1623,
+    "output_tokens": 163,
+    "total_tokens": 1786,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002438,
+    "latency_ms": 3303.129666019231,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1623,
+      "output_tokens": 163,
+      "total_tokens": 1786,
+      "time_to_first_token": 3.302199792000465,
+      "duration": 3.3024907920043916,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1623,
+            "output_tokens": 163,
+            "total_tokens": 1786,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

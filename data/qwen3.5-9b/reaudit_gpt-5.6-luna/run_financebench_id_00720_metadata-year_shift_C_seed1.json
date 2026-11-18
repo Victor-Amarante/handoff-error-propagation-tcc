@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Discount revenue was reported as $30,739 million for 2023 in the FY2022 10-K extraction.",
+    "reported_metric": "Discount revenue",
+    "reported_value": 30739.0,
+    "confidence": 0.94,
+    "rationale": "C01 is tagged as 2023 even though the source is the FY2022 10-K and the analyst subsequently treats it as FY2022. This year misattribution propagates into the analyst's contribution and growth calculations. The analyst also incorrectly states that the 24% total revenue growth was the discount revenue contribution; based on the extracted figures, discount revenue growth would not equal 24% of total non-interest revenue growth."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2873,
+    "output_tokens": 685,
+    "total_tokens": 3558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0013966,
+    "latency_ms": 7335.106583952438,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2873,
+      "output_tokens": 685,
+      "total_tokens": 3558,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.33451008296106,
+      "duration": 7.334685957990587,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2873,
+            "output_tokens": 685,
+            "total_tokens": 3558,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3200,
+    "output_tokens": 380,
+    "total_tokens": 3580,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5061.938871978782,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3200,
+      "output_tokens": 380,
+      "total_tokens": 3580,
+      "time_to_first_token": 5.06170513399411,
+      "duration": 5.061781408963725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3200,
+            "output_tokens": 380,
+            "total_tokens": 3580,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5036606034,
+              "load_duration": 709099,
+              "prompt_eval_duration": 764377000,
+              "eval_duration": 4184911000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

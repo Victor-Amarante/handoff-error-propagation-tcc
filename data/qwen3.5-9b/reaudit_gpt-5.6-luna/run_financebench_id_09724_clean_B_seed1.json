@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_09724_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2021 COGS margin was reported as 4%, but using Cost of goods sold of $15,357 million divided by Net Operating Revenues of $38,655 million gives approximately 39.7%.",
+    "reported_metric": "Coca Cola FY2021 COGS % margin",
+    "reported_value": 4.0,
+    "confidence": 0.99,
+    "rationale": "The extractor supplied the necessary line items. The analyst's calculation is incorrect: 15,357 / 38,655 × 100 ≈ 39.7%, not 4%; the writer repeated the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 686,
+    "output_tokens": 245,
+    "total_tokens": 931,
+    "cached_tokens": 0,
+    "reasoning_tokens": 85,
+    "cost_usd": 0.0004312,
+    "latency_ms": 2753.2033330062404,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 686,
+      "output_tokens": 245,
+      "total_tokens": 931,
+      "reasoning_tokens": 85,
+      "time_to_first_token": 2.7527389579918236,
+      "duration": 2.752931290946435,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 686,
+            "output_tokens": 245,
+            "total_tokens": 931,
+            "reasoning_tokens": 85,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 510,
+    "output_tokens": 240,
+    "total_tokens": 750,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2944.130423013121,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 510,
+      "output_tokens": 240,
+      "total_tokens": 750,
+      "time_to_first_token": 2.9438886429998092,
+      "duration": 2.9439650190179236,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 510,
+            "output_tokens": 240,
+            "total_tokens": 750,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2915460478,
+              "load_duration": 666141,
+              "prompt_eval_duration": 140139000,
+              "eval_duration": 2707701000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

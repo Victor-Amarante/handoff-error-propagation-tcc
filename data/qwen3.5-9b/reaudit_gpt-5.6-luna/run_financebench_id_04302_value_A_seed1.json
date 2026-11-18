@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04302_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Nike's revenue for the year ended May 31 was reported as $63,397 million.",
+    "reported_metric": "revenue",
+    "reported_value": 63397.0,
+    "confidence": 0.98,
+    "rationale": "The extractor's $63,397M revenue is inconsistent with the otherwise sequential FY2016–FY2018 revenue figures and creates the analyst's anomalous 32.2% COGS ratio for FY2018. The analyst and writer then propagated that extracted value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1334,
+    "output_tokens": 617,
+    "total_tokens": 1951,
+    "cached_tokens": 0,
+    "reasoning_tokens": 485,
+    "cost_usd": 0.0010072,
+    "latency_ms": 6350.036250019912,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1334,
+      "output_tokens": 617,
+      "total_tokens": 1951,
+      "reasoning_tokens": 485,
+      "time_to_first_token": 6.349231833999511,
+      "duration": 6.349562541989144,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1334,
+            "output_tokens": 617,
+            "total_tokens": 1951,
+            "reasoning_tokens": 485,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1275,
+    "output_tokens": 342,
+    "total_tokens": 1617,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4203.225634002592,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1275,
+      "output_tokens": 342,
+      "total_tokens": 1617,
+      "time_to_first_token": 4.202991044032387,
+      "duration": 4.203062696033157,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1275,
+            "output_tokens": 342,
+            "total_tokens": 1617,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4178891354,
+              "load_duration": 509869,
+              "prompt_eval_duration": 340277000,
+              "eval_duration": 3779353000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01198_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMD's FY22 net revenue was reported as $2.36e+10M, which is inconsistent with the downstream interpretation of approximately $23.6 billion.",
+    "reported_metric": "FY22 net revenue",
+    "reported_value": 23600000000.0,
+    "confidence": 0.98,
+    "rationale": "The extractor appended 'M' to 2.36e+10, implying $23.6 trillion if M denotes millions, while the analyst and writer treated it as $23.6 billion. This unit inconsistency originated in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 814,
+    "output_tokens": 656,
+    "total_tokens": 1470,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.00095,
+    "latency_ms": 6348.378333030269,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 814,
+      "output_tokens": 656,
+      "total_tokens": 1470,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.347910290991422,
+      "duration": 6.348007666005287,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 814,
+            "output_tokens": 656,
+            "total_tokens": 1470,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 634,
+    "output_tokens": 378,
+    "total_tokens": 1012,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4434.288583986927,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 634,
+      "output_tokens": 378,
+      "total_tokens": 1012,
+      "time_to_first_token": 4.4340544730075635,
+      "duration": 4.434127625019755,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 634,
+            "output_tokens": 378,
+            "total_tokens": 1012,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4408786317,
+              "load_duration": 394358,
+              "prompt_eval_duration": 189678000,
+              "eval_duration": 4160729999
+            }
+          }
+        ]
+      }
+    }
+  }
+}

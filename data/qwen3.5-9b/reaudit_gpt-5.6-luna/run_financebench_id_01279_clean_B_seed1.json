@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, and writer consistently report operating cash flow of $3,565 million, investing cash flow of $1,999 million, and financing cash flow of negative $3,264 million. Operating activities therefore brought in the most cash, so no factual error is evident."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2099,
+    "output_tokens": 192,
+    "total_tokens": 2291,
+    "cached_tokens": 0,
+    "reasoning_tokens": 80,
+    "cost_usd": 0.0006502000000000001,
+    "latency_ms": 2289.5302499528043,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2099,
+      "output_tokens": 192,
+      "total_tokens": 2291,
+      "reasoning_tokens": 80,
+      "time_to_first_token": 2.288836917025037,
+      "duration": 2.289117750013247,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2099,
+            "output_tokens": 192,
+            "total_tokens": 2291,
+            "reasoning_tokens": 80,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2213,
+    "output_tokens": 175,
+    "total_tokens": 2388,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2965.030105027836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2213,
+      "output_tokens": 175,
+      "total_tokens": 2388,
+      "time_to_first_token": 2.9647953920066357,
+      "duration": 2.964867620030418,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2213,
+            "output_tokens": 175,
+            "total_tokens": 2388,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2937288110,
+              "load_duration": 529557,
+              "prompt_eval_duration": 529677000,
+              "eval_duration": 2351587000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

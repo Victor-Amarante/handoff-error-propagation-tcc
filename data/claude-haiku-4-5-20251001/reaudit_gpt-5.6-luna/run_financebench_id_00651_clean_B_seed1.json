@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00651_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer inferred that 3.5% adjusted EPS growth represents a decelerating pace and therefore concluded that growth would not accelerate, although no prior-year growth rate is provided for comparison.",
+    "reported_metric": "adjusted_eps_growth",
+    "reported_value": 3.5,
+    "confidence": 0.91,
+    "rationale": "The extracted and analyzed figures are internally consistent: growth from 10.15 to 10.5 is approximately 3.5%. However, those figures alone do not establish acceleration or deceleration, which requires a comparison with an earlier growth rate. The unsupported conclusion first appears in the writer output; no claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 879,
+    "output_tokens": 676,
+    "total_tokens": 1555,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000987,
+    "latency_ms": 6941.403292003088,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 879,
+      "output_tokens": 676,
+      "total_tokens": 1555,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.9409148750128224,
+      "duration": 6.941042167018168,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 879,
+            "output_tokens": 676,
+            "total_tokens": 1555,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1390,
+    "output_tokens": 198,
+    "total_tokens": 1588,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00238,
+    "latency_ms": 3347.121333004907,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1390,
+      "output_tokens": 198,
+      "total_tokens": 1588,
+      "time_to_first_token": 3.3461042499984615,
+      "duration": 3.346395374974236,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1390,
+            "output_tokens": 198,
+            "total_tokens": 1588,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

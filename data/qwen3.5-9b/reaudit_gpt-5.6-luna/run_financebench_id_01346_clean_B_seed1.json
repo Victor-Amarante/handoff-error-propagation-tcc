@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01346_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the effective tax rate increased from 20.0% in FY2021 to 23.0% in FY2022, a change of 3.0 percentage points.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst correctly computed 23.0% − 20.0% = 3.0 percentage points, and the writer accurately reported that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 692,
+    "output_tokens": 171,
+    "total_tokens": 863,
+    "cached_tokens": 0,
+    "reasoning_tokens": 44,
+    "cost_usd": 0.0003436,
+    "latency_ms": 2226.6606249613687,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 692,
+      "output_tokens": 171,
+      "total_tokens": 863,
+      "reasoning_tokens": 44,
+      "time_to_first_token": 2.2260203330079094,
+      "duration": 2.226273374981247,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 692,
+            "output_tokens": 171,
+            "total_tokens": 863,
+            "reasoning_tokens": 44,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 525,
+    "output_tokens": 139,
+    "total_tokens": 664,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1843.797100998927,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 525,
+      "output_tokens": 139,
+      "total_tokens": 664,
+      "time_to_first_token": 1.8435330339707434,
+      "duration": 1.8435998209752142,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 525,
+            "output_tokens": 139,
+            "total_tokens": 664,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1813082686,
+              "load_duration": 829503,
+              "prompt_eval_duration": 145349000,
+              "eval_duration": 1601216000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

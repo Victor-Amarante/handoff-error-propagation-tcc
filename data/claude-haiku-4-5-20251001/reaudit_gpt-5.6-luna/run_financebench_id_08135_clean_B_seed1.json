@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08135_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amazon's revenue year-over-year change from FY2016 to FY2017 is 31.1%.",
+    "reported_metric": "revenue_yoy_change",
+    "reported_value": 31.1,
+    "confidence": 0.99,
+    "rationale": "Using the extracted revenues, (177866 - 135987) / 135987 × 100 = 30.8% when rounded to one decimal place, not 31.1%. The extractor values are internally sufficient and the arithmetic error first appears in the analyst output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 705,
+    "output_tokens": 255,
+    "total_tokens": 960,
+    "cached_tokens": 0,
+    "reasoning_tokens": 115,
+    "cost_usd": 0.000447,
+    "latency_ms": 3013.97149998229,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 705,
+      "output_tokens": 255,
+      "total_tokens": 960,
+      "reasoning_tokens": 115,
+      "time_to_first_token": 3.0132892500259914,
+      "duration": 3.0135500420001335,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 705,
+            "output_tokens": 255,
+            "total_tokens": 960,
+            "reasoning_tokens": 115,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1203,
+    "output_tokens": 176,
+    "total_tokens": 1379,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002083,
+    "latency_ms": 3045.6247499678284,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1203,
+      "output_tokens": 176,
+      "total_tokens": 1379,
+      "time_to_first_token": 3.0447087910142727,
+      "duration": 3.0449694160488434,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1203,
+            "output_tokens": 176,
+            "total_tokens": 1379,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

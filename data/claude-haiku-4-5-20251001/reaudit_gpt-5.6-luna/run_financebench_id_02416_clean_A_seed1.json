@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02416_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim can be identified from the trace; the analyst and writer outputs consistently restate the three extracted acquisitions and their reported values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The trace provides no source excerpt or contradictory provenance. All stages consistently report Array at $11.2B, Trillium at $2B, and Therachon at $0.322B, and the ranking by value follows those figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 805,
+    "output_tokens": 491,
+    "total_tokens": 1296,
+    "cached_tokens": 0,
+    "reasoning_tokens": 359,
+    "cost_usd": 0.0007501999999999999,
+    "latency_ms": 5484.061083057895,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 805,
+      "output_tokens": 491,
+      "total_tokens": 1296,
+      "reasoning_tokens": 359,
+      "time_to_first_token": 5.483485499978997,
+      "duration": 5.4836728340014815,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 805,
+            "output_tokens": 491,
+            "total_tokens": 1296,
+            "reasoning_tokens": 359,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1302,
+    "output_tokens": 141,
+    "total_tokens": 1443,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002007,
+    "latency_ms": 2354.432624997571,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1302,
+      "output_tokens": 141,
+      "total_tokens": 1443,
+      "time_to_first_token": 2.3534753330168314,
+      "duration": 2.3537748329690658,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1302,
+            "output_tokens": 141,
+            "total_tokens": 1443,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

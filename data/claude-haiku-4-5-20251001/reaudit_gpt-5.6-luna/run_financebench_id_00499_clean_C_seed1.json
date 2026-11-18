@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00499_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported a property, plant, and equipment-to-sales ratio of 26.78% using gross PPE as its stated input.",
+    "reported_metric": "ppe_to_sales_ratio",
+    "reported_value": 26.78,
+    "confidence": 0.98,
+    "rationale": "A01 cites C02 (gross PPE of 25,998) and C01 (net sales of 34,229), but 25,998 / 34,229 equals approximately 75.96%, not 26.78%. The 26.78% figure is consistent with net PPE (9,178) divided by sales, indicating a mismatch between the stated source claim and the calculation. The writer then propagated A01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1485,
+    "output_tokens": 360,
+    "total_tokens": 1845,
+    "cached_tokens": 0,
+    "reasoning_tokens": 182,
+    "cost_usd": 0.000729,
+    "latency_ms": 3762.849874969106,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1485,
+      "output_tokens": 360,
+      "total_tokens": 1845,
+      "reasoning_tokens": 182,
+      "time_to_first_token": 3.7626552080037072,
+      "duration": 3.7627237910055555,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1485,
+            "output_tokens": 360,
+            "total_tokens": 1845,
+            "reasoning_tokens": 182,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2135,
+    "output_tokens": 176,
+    "total_tokens": 2311,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003015,
+    "latency_ms": 2449.544875009451,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2135,
+      "output_tokens": 176,
+      "total_tokens": 2311,
+      "time_to_first_token": 2.4485403330181725,
+      "duration": 2.448837874981109,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2135,
+            "output_tokens": 176,
+            "total_tokens": 2311,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

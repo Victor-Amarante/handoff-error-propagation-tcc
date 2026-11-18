@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01346_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Corning's effective tax rate changed by 3.0 percentage points in FY2022.",
+    "reported_metric": "effective_tax_rate",
+    "reported_value": 3.0,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst consistently reported FY2021 at 20.0% and FY2023 at 23.0%. The writer correctly described that comparison and noted FY2022 was unavailable, but its structured answer_claim incorrectly labels the 3.0-point change as a FY2022 value, creating the first unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 779,
+    "output_tokens": 453,
+    "total_tokens": 1232,
+    "cached_tokens": 0,
+    "reasoning_tokens": 309,
+    "cost_usd": 0.0006994000000000001,
+    "latency_ms": 4722.890249977354,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 453,
+      "total_tokens": 1232,
+      "reasoning_tokens": 309,
+      "time_to_first_token": 4.722219374962151,
+      "duration": 4.722379665996414,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 453,
+            "total_tokens": 1232,
+            "reasoning_tokens": 309,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1288,
+    "output_tokens": 197,
+    "total_tokens": 1485,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002273,
+    "latency_ms": 3276.903083024081,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1288,
+      "output_tokens": 197,
+      "total_tokens": 1485,
+      "time_to_first_token": 3.2758856669533998,
+      "duration": 3.276176499959547,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1288,
+            "output_tokens": 197,
+            "total_tokens": 1485,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04672_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 8,738 USD millions, which is correctly converted by the analyst and writer to 8.738 USD billions. The trace is internally consistent and contains no claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 678,
+    "output_tokens": 153,
+    "total_tokens": 831,
+    "cached_tokens": 0,
+    "reasoning_tokens": 60,
+    "cost_usd": 0.0003192,
+    "latency_ms": 2162.485499982722,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 678,
+      "output_tokens": 153,
+      "total_tokens": 831,
+      "reasoning_tokens": 60,
+      "time_to_first_token": 2.1619748339871876,
+      "duration": 2.1621192090096883,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 678,
+            "output_tokens": 153,
+            "total_tokens": 831,
+            "reasoning_tokens": 60,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1170,
+    "output_tokens": 134,
+    "total_tokens": 1304,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00184,
+    "latency_ms": 2148.976250027772,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1170,
+      "output_tokens": 134,
+      "total_tokens": 1304,
+      "time_to_first_token": 2.1479555839905515,
+      "duration": 2.148256084008608,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1170,
+            "output_tokens": 134,
+            "total_tokens": 1304,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

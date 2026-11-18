@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00678_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's FY2022 blended gross margin was 4.9%.",
+    "reported_metric": "gross_margin_blended",
+    "reported_value": 4.9,
+    "confidence": 0.99,
+    "rationale": "Using the extractor figures, FY2022 blended gross margin is (66,608 - 63,078) / 66,608 = approximately 5.3%, not 4.9%. The product and service margins are broadly consistent, but the blended-margin calculations are incorrect; therefore the first error appears in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1504,
+    "output_tokens": 517,
+    "total_tokens": 2021,
+    "cached_tokens": 0,
+    "reasoning_tokens": 372,
+    "cost_usd": 0.0009212000000000001,
+    "latency_ms": 5011.975500034168,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1504,
+      "output_tokens": 517,
+      "total_tokens": 2021,
+      "reasoning_tokens": 372,
+      "time_to_first_token": 5.0115485829883255,
+      "duration": 5.011636542039923,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1504,
+            "output_tokens": 517,
+            "total_tokens": 2021,
+            "reasoning_tokens": 372,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2108,
+    "output_tokens": 214,
+    "total_tokens": 2322,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003178,
+    "latency_ms": 3787.685416988097,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2108,
+      "output_tokens": 214,
+      "total_tokens": 2322,
+      "time_to_first_token": 3.786851625016425,
+      "duration": 3.7871512499987148,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2108,
+            "output_tokens": 214,
+            "total_tokens": 2322,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

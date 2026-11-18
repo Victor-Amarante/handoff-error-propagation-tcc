@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00215_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported PP&E net and revenue figures are supported by the extractor output, and 107,434 divided by 136,835 is approximately 78%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The writer's numerical statement is internally consistent with the extracted data and the percentage calculation is accurate. The conclusion that Verizon is capital-intensive is a reasonable interpretation of the large PP&E-to-revenue ratio, with no trace evidence of an earlier factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1358,
+    "output_tokens": 264,
+    "total_tokens": 1622,
+    "cached_tokens": 0,
+    "reasoning_tokens": 122,
+    "cost_usd": 0.0005884000000000001,
+    "latency_ms": 3463.856999995187,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1358,
+      "output_tokens": 264,
+      "total_tokens": 1622,
+      "reasoning_tokens": 122,
+      "time_to_first_token": 3.4634009579895064,
+      "duration": 3.463548166968394,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1358,
+            "output_tokens": 264,
+            "total_tokens": 1622,
+            "reasoning_tokens": 122,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1380,
+    "output_tokens": 872,
+    "total_tokens": 2252,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9849.942999018822,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1380,
+      "output_tokens": 872,
+      "total_tokens": 2252,
+      "time_to_first_token": 9.849665415997151,
+      "duration": 9.849740973033477,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1380,
+            "output_tokens": 872,
+            "total_tokens": 2252,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9824888749,
+              "load_duration": 617342,
+              "prompt_eval_duration": 368375000,
+              "eval_duration": 9406048000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

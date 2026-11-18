@@ -31,6 +31,7 @@ from handoff.injector import ERROR_TYPES, InjectionError  # noqa: E402
 from handoff.logger import is_complete, log_path  # noqa: E402
 from handoff.run import (  # noqa: E402
     PipelineError,
+    _cache_path,
     analyze_state,
     extract_state,
     run_cell,
@@ -136,6 +137,20 @@ def main() -> int:
     parser.add_argument("--include-clean", action="store_true",
                         help="tambem roda o braco de controle, sem injecao")
     parser.add_argument("--force", action="store_true", help="refaz celulas completas")
+    parser.add_argument(
+        "--cache-only",
+        action="store_true",
+        help=(
+            "so roda perguntas com estado do Extrator ja em cache. Usado nas "
+            "rodadas complementares: reextrair criaria um estado que a rodada "
+            "principal nunca viu"
+        ),
+    )
+    parser.add_argument(
+        "--shard",
+        default="0/1",
+        help="k/n: roda so a k-esima de n fatias das celulas pendentes (paralelismo)",
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -165,7 +180,11 @@ def main() -> int:
             variant=args.metadata_subtype if arm == "metadata" else None,
         )
 
+    if args.cache_only:
+        cells = [c for c in cells if _cache_path(c[0]["question_id"], c[1]).exists()]
     pending = [c for c in cells if args.force or not is_complete(cell_path(c))]
+    k, n = (int(x) for x in args.shard.split("/"))
+    pending = pending[k::n]
 
     print(
         f"modelo={config.MODEL_ID} injecao_em={stage}\n"

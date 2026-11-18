@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The trace consistently identifies corporate bonds as the largest H1 FY2023 short-term investment: $416,420K versus $29,049K for US agency securities and $4,561K for commercial paper and certificates of deposit. The extractor's US government securities entry is for H1 FY2024 and was appropriately excluded."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 741,
+    "output_tokens": 253,
+    "total_tokens": 994,
+    "cached_tokens": 0,
+    "reasoning_tokens": 132,
+    "cost_usd": 0.0004518,
+    "latency_ms": 2938.36241599638,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 741,
+      "output_tokens": 253,
+      "total_tokens": 994,
+      "reasoning_tokens": 132,
+      "time_to_first_token": 2.937721499998588,
+      "duration": 2.937943124969024,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 741,
+            "output_tokens": 253,
+            "total_tokens": 994,
+            "reasoning_tokens": 132,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1241,
+    "output_tokens": 178,
+    "total_tokens": 1419,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002131,
+    "latency_ms": 2711.723415995948,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1241,
+      "output_tokens": 178,
+      "total_tokens": 1419,
+      "time_to_first_token": 2.711055874999147,
+      "duration": 2.7112905829562806,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1241,
+            "output_tokens": 178,
+            "total_tokens": 1419,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

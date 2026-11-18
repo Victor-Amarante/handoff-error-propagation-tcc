@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00790_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FY2022 asset figures and the USD 30.7 billion sum are internally consistent with the extracted data.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The writer’s Total Assets figure matches the extractor and analyst outputs (USD 228,275 million). Property and Equipment of USD 12,873 million plus Operating Lease Right-of-Use Assets of USD 17,872 million equals USD 30,745 million, correctly rounded to USD 30.7 billion. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1267,
+    "output_tokens": 332,
+    "total_tokens": 1599,
+    "cached_tokens": 0,
+    "reasoning_tokens": 179,
+    "cost_usd": 0.0006517999999999999,
+    "latency_ms": 3672.836332989391,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1267,
+      "output_tokens": 332,
+      "total_tokens": 1599,
+      "reasoning_tokens": 179,
+      "time_to_first_token": 3.672208917036187,
+      "duration": 3.6724058340187185,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1267,
+            "output_tokens": 332,
+            "total_tokens": 1599,
+            "reasoning_tokens": 179,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1245,
+    "output_tokens": 302,
+    "total_tokens": 1547,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3698.1690009706654,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1245,
+      "output_tokens": 302,
+      "total_tokens": 1547,
+      "time_to_first_token": 3.6978872689651325,
+      "duration": 3.697958676959388,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1245,
+            "output_tokens": 302,
+            "total_tokens": 1547,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3668577395,
+              "load_duration": 480938,
+              "prompt_eval_duration": 336518000,
+              "eval_duration": 3286052000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

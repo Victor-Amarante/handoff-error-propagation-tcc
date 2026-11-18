@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor identified a debt security maturing in 2026 as having a value of USD 1.5 thousand, rather than preserving the security's identity and likely coupon/maturity details.",
+    "reported_metric": "debt securities",
+    "reported_value": 1.5,
+    "confidence": 0.86,
+    "rationale": "The extractor output is internally inconsistent with the question: it supplies numeric values labeled USD_K and years 2026, 2030, and 2031, which appear to represent separate debt securities and likely coupon/maturity attributes rather than USD amounts. The analyst propagates these fields, and the writer further omits the 2030 and 2031 securities."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1221,
+    "output_tokens": 684,
+    "total_tokens": 1905,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001065,
+    "latency_ms": 7246.983958000783,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1221,
+      "output_tokens": 684,
+      "total_tokens": 1905,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.246589375019539,
+      "duration": 7.246758334047627,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1221,
+            "output_tokens": 684,
+            "total_tokens": 1905,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1143,
+    "output_tokens": 280,
+    "total_tokens": 1423,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3497.5005100131966,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1143,
+      "output_tokens": 280,
+      "total_tokens": 1423,
+      "time_to_first_token": 3.4972229169798084,
+      "duration": 3.4973207629518583,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1143,
+            "output_tokens": 280,
+            "total_tokens": 1423,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3470083990,
+              "load_duration": 463663,
+              "prompt_eval_duration": 318721000,
+              "eval_duration": 3075772000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

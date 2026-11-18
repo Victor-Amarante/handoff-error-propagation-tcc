@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the H1 FY2023 figures show corporate bonds as the largest short-term investment.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "For year 2023, corporate bonds were reported at 416,420 USD_K, exceeding U.S. agency securities at 29,049 USD_K and commercial paper/certificates of deposit at 4,561 USD_K. The U.S. government securities entry is labeled 2024 and does not alter the FY2023 comparison."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1127,
+    "output_tokens": 286,
+    "total_tokens": 1413,
+    "cached_tokens": 0,
+    "reasoning_tokens": 140,
+    "cost_usd": 0.0005686,
+    "latency_ms": 3199.1256669862196,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1127,
+      "output_tokens": 286,
+      "total_tokens": 1413,
+      "reasoning_tokens": 140,
+      "time_to_first_token": 3.198525541985873,
+      "duration": 3.198617791989818,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1127,
+            "output_tokens": 286,
+            "total_tokens": 1413,
+            "reasoning_tokens": 140,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1703,
+    "output_tokens": 190,
+    "total_tokens": 1893,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002653,
+    "latency_ms": 2720.900124986656,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1703,
+      "output_tokens": 190,
+      "total_tokens": 1893,
+      "time_to_first_token": 2.7198662919690832,
+      "duration": 2.7201732919784263,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1703,
+            "output_tokens": 190,
+            "total_tokens": 1893,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

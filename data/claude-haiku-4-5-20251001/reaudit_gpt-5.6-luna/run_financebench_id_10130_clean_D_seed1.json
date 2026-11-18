@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10130_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "FY2020 days payable outstanding was calculated as 63.78 days.",
+    "reported_metric": "days_payable_outstanding",
+    "reported_value": 63.78,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs and intermediate calculations are internally consistent, but 365 × (1,380.5 / 7,890.0) equals approximately 63.86, not 63.78. The writer propagated the analyst's incorrect arithmetic."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1801,
+    "output_tokens": 312,
+    "total_tokens": 2113,
+    "cached_tokens": 0,
+    "reasoning_tokens": 184,
+    "cost_usd": 0.0007346000000000001,
+    "latency_ms": 3417.0446670032106,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1801,
+      "output_tokens": 312,
+      "total_tokens": 2113,
+      "reasoning_tokens": 184,
+      "time_to_first_token": 3.4160902079893276,
+      "duration": 3.4164231659960933,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1801,
+            "output_tokens": 312,
+            "total_tokens": 2113,
+            "reasoning_tokens": 184,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2536,
+    "output_tokens": 345,
+    "total_tokens": 2881,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004261,
+    "latency_ms": 4402.47512498172,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2536,
+      "output_tokens": 345,
+      "total_tokens": 2881,
+      "time_to_first_token": 4.401503042026889,
+      "duration": 4.401838542020414,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2536,
+            "output_tokens": 345,
+            "total_tokens": 2881,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

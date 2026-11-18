@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04784_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Walmart's FY2020 net sales were $510,329 million.",
+    "reported_metric": "FY2020 net sales",
+    "reported_value": 510329.0,
+    "confidence": 0.99,
+    "rationale": "The $510,329 million net-sales figure corresponds to FY2019, not FY2020. The analyst then relabeled it as FY2019 and computed the margin change from the misattributed extractor claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 860,
+    "output_tokens": 535,
+    "total_tokens": 1395,
+    "cached_tokens": 0,
+    "reasoning_tokens": 416,
+    "cost_usd": 0.000814,
+    "latency_ms": 5405.728041019756,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 860,
+      "output_tokens": 535,
+      "total_tokens": 1395,
+      "reasoning_tokens": 416,
+      "time_to_first_token": 5.404934958030935,
+      "duration": 5.405264958040789,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 860,
+            "output_tokens": 535,
+            "total_tokens": 1395,
+            "reasoning_tokens": 416,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1385,
+    "output_tokens": 195,
+    "total_tokens": 1580,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00236,
+    "latency_ms": 2880.6363330222666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1385,
+      "output_tokens": 195,
+      "total_tokens": 1580,
+      "time_to_first_token": 2.8797389170504175,
+      "duration": 2.8800533339963295,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1385,
+            "output_tokens": 195,
+            "total_tokens": 1580,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

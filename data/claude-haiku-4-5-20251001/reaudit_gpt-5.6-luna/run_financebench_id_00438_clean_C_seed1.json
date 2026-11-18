@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00438_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident: the operating-margin calculations and the stated year-over-year and 2020-to-2022 comparisons are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The margins calculate correctly from the extracted figures: 34.6% in 2022, 36.8% in 2021, and 32.9% in 2020. The final answer accurately notes both the 2022 year-over-year decline and the fact that 2022 remains above 2020. Its explanation that operating margin is useful for a subscription software business is also consistent with the question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1681,
+    "output_tokens": 472,
+    "total_tokens": 2153,
+    "cached_tokens": 0,
+    "reasoning_tokens": 302,
+    "cost_usd": 0.0009026,
+    "latency_ms": 4816.051165980753,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1681,
+      "output_tokens": 472,
+      "total_tokens": 2153,
+      "reasoning_tokens": 302,
+      "time_to_first_token": 4.814300458005164,
+      "duration": 4.815665417001583,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1681,
+            "output_tokens": 472,
+            "total_tokens": 2153,
+            "reasoning_tokens": 302,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2321,
+    "output_tokens": 151,
+    "total_tokens": 2472,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003076,
+    "latency_ms": 2650.812667037826,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2321,
+      "output_tokens": 151,
+      "total_tokens": 2472,
+      "time_to_first_token": 2.6498989170067944,
+      "duration": 2.6501977079897188,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2321,
+            "output_tokens": 151,
+            "total_tokens": 2472,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

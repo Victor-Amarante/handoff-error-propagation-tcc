@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Customer deposits were reported as $110,239 million for 2023 instead of providing the 2022 customer-deposit liability needed for the question.",
+    "reported_metric": "customer deposits",
+    "reported_value": 110239.0,
+    "confidence": 0.9,
+    "rationale": "The extractor supplied customer deposits for 2023 while the question asks for 2022. Because customer deposits are omitted from the analyst's 2022 comparison, the analyst and writer incorrectly conclude that long-term debt was the largest liability."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 758,
+    "output_tokens": 567,
+    "total_tokens": 1325,
+    "cached_tokens": 0,
+    "reasoning_tokens": 432,
+    "cost_usd": 0.000832,
+    "latency_ms": 5836.7208749987185,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 758,
+      "output_tokens": 567,
+      "total_tokens": 1325,
+      "reasoning_tokens": 432,
+      "time_to_first_token": 5.836184790998232,
+      "duration": 5.836340582987759,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 758,
+            "output_tokens": 567,
+            "total_tokens": 1325,
+            "reasoning_tokens": 432,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1242,
+    "output_tokens": 137,
+    "total_tokens": 1379,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001927,
+    "latency_ms": 2140.1148340082727,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1242,
+      "output_tokens": 137,
+      "total_tokens": 1379,
+      "time_to_first_token": 2.1398623749846593,
+      "duration": 2.1399238749872893,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1242,
+            "output_tokens": 137,
+            "total_tokens": 1379,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

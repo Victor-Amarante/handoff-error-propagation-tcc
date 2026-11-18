@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01487_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "JnJ's Q2 FY2023 net earnings margin was 20.1% of sales.",
+    "reported_metric": "net_earnings_margin_FY2023_Q2",
+    "reported_value": 20.1,
+    "confidence": 0.96,
+    "rationale": "C03 is labeled as FY2023 Q2 but its year field is 2024, creating the first provenance inconsistency. The analyst and writer then propagate that claim. The 20.1 versus 20.0 comparison supports an increase of 0.1 percentage points, though the final wording calls it 0.1%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1265,
+    "output_tokens": 670,
+    "total_tokens": 1935,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001057,
+    "latency_ms": 6854.07787503209,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1265,
+      "output_tokens": 670,
+      "total_tokens": 1935,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.853219416982029,
+      "duration": 6.853542166994885,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1265,
+            "output_tokens": 670,
+            "total_tokens": 1935,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1207,
+    "output_tokens": 1040,
+    "total_tokens": 2247,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 11644.652384973597,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1207,
+      "output_tokens": 1040,
+      "total_tokens": 2247,
+      "time_to_first_token": 11.644368876994122,
+      "duration": 11.644450192980003,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1207,
+            "output_tokens": 1040,
+            "total_tokens": 2247,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11619265547,
+              "load_duration": 595681,
+              "prompt_eval_duration": 331276000,
+              "eval_duration": 11225471000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

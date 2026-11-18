@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Pfizer's property, plant and equipment growth from FY20 to FY21 was reported as 8.28%.",
+    "reported_metric": "property_plant_equipment_growth",
+    "reported_value": 8.28,
+    "confidence": 0.99,
+    "rationale": "Using the extracted values, growth is (14,882 - 13,745) / 13,745 × 100 = approximately 8.27%, not 8.28%. The underlying increase and the writer's repetition of it are otherwise supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1002,
+    "output_tokens": 301,
+    "total_tokens": 1303,
+    "cached_tokens": 0,
+    "reasoning_tokens": 160,
+    "cost_usd": 0.0005616,
+    "latency_ms": 3518.7608340056613,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1002,
+      "output_tokens": 301,
+      "total_tokens": 1303,
+      "reasoning_tokens": 160,
+      "time_to_first_token": 3.518296666967217,
+      "duration": 3.5184637079946697,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1002,
+            "output_tokens": 301,
+            "total_tokens": 1303,
+            "reasoning_tokens": 160,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1567,
+    "output_tokens": 167,
+    "total_tokens": 1734,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002402,
+    "latency_ms": 2490.3937919880264,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1567,
+      "output_tokens": 167,
+      "total_tokens": 1734,
+      "time_to_first_token": 2.4897547499858774,
+      "duration": 2.48989204200916,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1567,
+            "output_tokens": 167,
+            "total_tokens": 1734,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A11",
+    "root_cause_claim_text": "The analyst incorrectly characterizes Discount revenue as American Express's primary profitability metric and as interchange revenue, rather than explaining that gross margin is generally not meaningful for a financial-services company.",
+    "reported_metric": "Gross margin applicability / Discount revenue as primary profitability metric",
+    "reported_value": 0.0,
+    "confidence": 0.94,
+    "rationale": "The extracted figures are internally consistent, but analyst claim A11 introduces an unsupported and conceptually incorrect characterization: revenue is not a profitability metric, and the trace does not establish that Discount revenue is interchange revenue. The writer repeats this claim from A11."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3109,
+    "output_tokens": 665,
+    "total_tokens": 3774,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0014198000000000001,
+    "latency_ms": 7267.634459014516,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3109,
+      "output_tokens": 665,
+      "total_tokens": 3774,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.266683207999449,
+      "duration": 7.267036667035427,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3109,
+            "output_tokens": 665,
+            "total_tokens": 3774,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3471,
+    "output_tokens": 192,
+    "total_tokens": 3663,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3033.786559011787,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3471,
+      "output_tokens": 192,
+      "total_tokens": 3663,
+      "time_to_first_token": 3.033557777001988,
+      "duration": 3.033629067009315,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3471,
+            "output_tokens": 192,
+            "total_tokens": 3663,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3008894098,
+              "load_duration": 1338441,
+              "prompt_eval_duration": 826117000,
+              "eval_duration": 2088034000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

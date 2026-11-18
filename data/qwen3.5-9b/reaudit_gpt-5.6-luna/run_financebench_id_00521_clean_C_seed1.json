@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00521_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Ulta Beauty reported acquisitions of -$1.22 billion in FY2023.",
+    "reported_metric": "acquisitions",
+    "reported_value": -1220.0,
+    "confidence": 0.99,
+    "rationale": "The trace records -1220 in USD_K, which equals -$1.22 million, not -$1.22 billion. The writer also adds an unsupported FY2022 conclusion; no FY2022 claim appears in the extractor or analyst outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 809,
+    "output_tokens": 642,
+    "total_tokens": 1451,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009322,
+    "latency_ms": 7001.136083970778,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 809,
+      "output_tokens": 642,
+      "total_tokens": 1451,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.000820166955236,
+      "duration": 7.000942291982938,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 809,
+            "output_tokens": 642,
+            "total_tokens": 1451,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 664,
+    "output_tokens": 210,
+    "total_tokens": 874,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2591.778314032126,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 664,
+      "output_tokens": 210,
+      "total_tokens": 874,
+      "time_to_first_token": 2.591502064024098,
+      "duration": 2.5915927829919383,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 664,
+            "output_tokens": 210,
+            "total_tokens": 874,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2565290713,
+              "load_duration": 594004,
+              "prompt_eval_duration": 179076000,
+              "eval_duration": 2316057000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "3M's FY2021 net property, plant and equipment was reported as $27,213 million.",
+    "reported_metric": "Property, plant and equipment net",
+    "reported_value": 27213.0,
+    "confidence": 0.86,
+    "rationale": "The FY2021 PPE figure is a clear outlier relative to the FY2022 value of $9,178 million and appears inconsistent with the otherwise coherent FY2022 inputs. The writer's FY2022 ratio is arithmetically correct: 9,178 / 34,229 ≈ 0.27."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1084,
+    "output_tokens": 661,
+    "total_tokens": 1745,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.00101,
+    "latency_ms": 6834.373167017475,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1084,
+      "output_tokens": 661,
+      "total_tokens": 1745,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.833284124964848,
+      "duration": 6.833632249967195,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1084,
+            "output_tokens": 661,
+            "total_tokens": 1745,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 990,
+    "output_tokens": 548,
+    "total_tokens": 1538,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6440.745138970669,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 990,
+      "output_tokens": 548,
+      "total_tokens": 1538,
+      "time_to_first_token": 6.440474335977342,
+      "duration": 6.440561424999032,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 990,
+            "output_tokens": 548,
+            "total_tokens": 1538,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6412599278,
+              "load_duration": 654138,
+              "prompt_eval_duration": 244305000,
+              "eval_duration": 6117500000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

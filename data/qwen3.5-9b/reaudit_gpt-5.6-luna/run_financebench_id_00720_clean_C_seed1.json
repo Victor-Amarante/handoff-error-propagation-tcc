@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "American Express's FY2022 gross margin increased by $8.4 billion, from $34.6 billion to $43.0 billion.",
+    "reported_metric": "Gross margin",
+    "reported_value": 8.4,
+    "confidence": 0.99,
+    "rationale": "The analyst correctly reported total non-interest revenue, but the writer relabeled it as gross margin. The trace provides no gross-profit or cost-of-revenue figures, and the $34.6B-to-$43.0B figures are explicitly total non-interest revenues, not gross margin; therefore the metric is not supported. Gross margin is also generally not a useful measure for a financial-services company without defining comparable revenue and cost bases."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2982,
+    "output_tokens": 434,
+    "total_tokens": 3416,
+    "cached_tokens": 0,
+    "reasoning_tokens": 260,
+    "cost_usd": 0.0011171999999999998,
+    "latency_ms": 4855.715874989983,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2982,
+      "output_tokens": 434,
+      "total_tokens": 3416,
+      "reasoning_tokens": 260,
+      "time_to_first_token": 4.855284332996234,
+      "duration": 4.855400666012429,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2982,
+            "output_tokens": 434,
+            "total_tokens": 3416,
+            "reasoning_tokens": 260,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3347,
+    "output_tokens": 267,
+    "total_tokens": 3614,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3849.19673204422,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3347,
+      "output_tokens": 267,
+      "total_tokens": 3614,
+      "time_to_first_token": 3.8488851040019654,
+      "duration": 3.8489755379850976,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3347,
+            "output_tokens": 267,
+            "total_tokens": 3614,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3823033099,
+              "load_duration": 668486,
+              "prompt_eval_duration": 798539000,
+              "eval_duration": 2939049000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

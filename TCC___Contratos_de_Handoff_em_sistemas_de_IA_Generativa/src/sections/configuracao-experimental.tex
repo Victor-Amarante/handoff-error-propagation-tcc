@@ -39,7 +39,7 @@ Duração da rodada & 7h46 & 4h32 & 7h08 \\
 Custo total (US\$)$^{b}$ & 3,32 & 13,50 & 0 \\
 Data (2026) & 30/9 & 1--2/10 & 19--20/10 \\
 \hline
-\multicolumn{4}{l}{\scriptsize $^{a}$Inclui as execuções de controle.} \\
+\multicolumn{4}{p{0.92\columnwidth}}{\scriptsize $^{a}$Quatro execuções de controle por pergunta com estado em cada braço (estudo principal e subestudo), mais as injetadas, incluindo as de perguntas que não completaram as quatro condições e por isso ficam fora das análises pareadas.} \\
 \multicolumn{4}{l}{\scriptsize $^{b}$Inclui o auditor; o Qwen rodou localmente.} \\
 \end{tabular}
 \end{table}
@@ -67,6 +67,7 @@ Claude Haiku 4.5 & API Anthropic & desligado & 1,00 / 5,00 \\
 Qwen3.5 9B & local (Ollama) & desligado & -- \\
 \hline
 \multicolumn{4}{l}{\scriptsize $^{a}$Entrada / saída, preços de tabela \cite{openai2026pricing, anthropic2026pricing}.} \\
+\multicolumn{4}{p{0.92\columnwidth}}{\scriptsize Identificadores: \texttt{gpt-5.6-luna}, \texttt{claude-haiku-4-5-20251001} e \texttt{qwen3.5:9b} (Q4\_K\_M).} \\
 \end{tabular}
 \end{table}
 
@@ -80,13 +81,20 @@ A temperatura não foi enviada a nenhum dos provedores, e cada um usou seu valor
 Cada execução rodou com uma única seed.
 No piloto com o GPT-5.6 Luna, duas seeds diferentes produziram respostas finais numericamente idênticas em 16 de 16 execuções, e tratar réplicas assim como observações independentes estreitaria o intervalo de confiança de forma artificial.
 A seed foi enviada à OpenAI e ao Ollama. A API da Anthropic não aceita esse parâmetro.
+Como o piloto cobriu só o GPT e só a resposta final, o ruído entre execuções foi medido de novo, nos dois modelos de API, pela réplica dos controles descrita na Seção~\ref{sec:controle}.
 
 A orquestração usa o Agno \cite{agno}, sem ferramentas, memória ou histórico em nenhum agente, e sem novas tentativas automáticas: um handoff inválido fica registrado como inválido.
 Nas condições B, C e D, a saída de cada estágio é definida por schemas Pydantic \cite{pydantic} e gerada com o suporte nativo de cada provedor a saída estruturada.
 No GPT, o modo estrito garante que a resposta siga o JSON Schema fornecido \cite{openai2026structured}, e no Qwen o Ollama restringe a saída ao schema pelo parâmetro \texttt{format} \cite{ollama2024structured}.
-Para o Qwen, foi usada a versão padrão do modelo no Ollama, porque no piloto a variante otimizada para MLX ignorava o schema sem emitir erro.
+Para o Qwen, foi usada a tag padrão do modelo no Ollama, \texttt{qwen3.5:9b}, com quantização Q4\_K\_M, porque no piloto a variante otimizada para MLX ignorava o schema sem emitir erro.
+Os parâmetros de amostragem também ficaram no padrão da tag: temperatura 1, \emph{top-k} 20, \emph{top-p} 0,95 e penalidade de presença 1,5.
+Essa penalidade desestimula o modelo a repetir tokens que já emitiu e pode ter contribuído para a variação dos rótulos de unidade discutida na Seção~\ref{sec:res-validade}.
+O tamanho de contexto também não foi alterado. O maior prompt registrado nos logs do Qwen teve 31.985 tokens, e nenhuma contagem se acumula em um limite fixo, o que indica que nenhum prompt foi truncado.
 O Qwen rodou numa GPU NVIDIA GeForce RTX 3090 de 24 GB.
 A Tabela~\ref{tab:amostra} traz também a duração e o custo de cada rodada completa, incluindo as execuções de controle e o auditor.
+Dentro de cada pergunta, as quatro condições rodaram em sequência, intercaladas, de modo que diferenças de latência entre condições não refletem o horário da execução.
+As condições complementares, a réplica dos controles e a reauditoria rodaram depois, em 17/11/2026, reaproveitando o estado extraído guardado em cache. Somadas, custaram US\$ 12,10, dos quais US\$ 4,60 no GPT, incluída a reauditoria, e US\$ 7,50 no Haiku.
+O código, os prompts, os schemas e os logs estão disponíveis no repositório do trabalho \cite{repositorio}, e os prompts e schemas estão também no Apêndice~\ref{sec:apendice}.
 
 \subsection{Métricas}\label{sec:metricas}
 
@@ -101,21 +109,24 @@ Todas são calculadas depois da execução, a partir dos logs, pelo instrumento 
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\begin{tabular}{|l|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{6.2cm}|>{\raggedright\arraybackslash}p{5.0cm}|c|}
+\begin{tabular}{|l|>{\raggedright\arraybackslash}p{3.0cm}|>{\raggedright\arraybackslash}p{6.0cm}|>{\raggedright\arraybackslash}p{4.9cm}|c|}
 \hline
 \textbf{Dimensão} & \textbf{Métrica} & \textbf{Definição operacional} & \textbf{O que revela} & \textbf{Melhor} \\
 \hline
 Correção & Acurácia factual final & fração das respostas finais que contêm o número da resposta do benchmark & se o usuário recebe a resposta certa apesar do erro & $\uparrow$ \\
+ & Acurácia estrita & a mesma, exigindo também que a resposta não contenha o valor corrompido & se a resposta certa veio sem o erro ao lado & $\uparrow$ \\
  & Acurácia por tipo de erro & a mesma métrica, separada nos braços de valor e de metadado & se o efeito do contrato depende da natureza do erro & $\uparrow$ \\
  & Taxa de correção & entre as execuções com controle correto e erro com efeito, fração em que a resposta injetada também está correta & capacidade de desfazer o erro, sem crédito por acertos que não dependem do contrato & $\uparrow$ \\
+ & Retenção & nas perguntas cujo controle acerta nas quatro condições, fração em que a execução injetada também acerta & o mesmo, com denominador comum às condições & $\uparrow$ \\
 \hline
 Contenção & Taxa de sobrevivência do erro (ESR) & fração em que o valor corrompido aparece na resposta final ou a altera em relação ao controle (Eq.~\ref{eq:esr}) & com que frequência o erro chega ao usuário & $\downarrow$ \\
  & Profundidade de propagação & número de estágios posteriores à injeção com saída diferente da do controle & até onde o erro avança no pipeline & $\downarrow$ \\
  & Amplificação & número de valores novos e incorretos derivados do erro & se o erro gera erros novos, além de sobreviver & $\downarrow$ \\
- & Destino do erro & distribuição entre preservado, transformado, amplificado, corrigido, contido e sem efeito & como o erro termina; a fração sem efeito mede a qualidade da amostra & -- \\
+ & Destino do erro & distribuição entre preservado, transformado, amplificado, corrigido, neutralizado no Analista, contido e fora do caminho & como o erro termina, inclusive correções que não chegam a alterar nenhum estágio & -- \\
 \hline
-Observabilidade & RCCA & fração em que o auditor aponta o claim corrompido & se o trace permite chegar ao claim de origem & $\uparrow$ \\
+Observabilidade & RCCA & fração em que o auditor informa a métrica e o valor do claim corrompido como aparecem no trace & se o trace permite chegar ao claim de origem & $\uparrow$ \\
 de causa raiz & FESA & fração em que o auditor aponta o estágio da injeção & se o trace permite localizar o estágio de origem & $\uparrow$ \\
+ & Placebo de RCCA e FESA & as mesmas medidas nas execuções de controle, contra o claim e o estágio que o injetor corromperia & quanto do acerto viria por acaso & $\downarrow$ \\
  & Falso positivo do auditor & fração das execuções de controle em que o auditor aponta algum culpado & linha de base para interpretar RCCA e FESA & $\downarrow$ \\
  & Concordância de lineage & em C e D, fração em que o \texttt{derived\_from} dos estágios aponta para o claim corrompido & validação do instrumento textual (sinal secundário) & $\uparrow$ \\
 \hline
@@ -129,11 +140,15 @@ Custo & Tokens, latência, chamadas e US\$ & soma das chamadas de Analista e Red
 
 \emph{Correção.}
 A acurácia factual final é a fração de execuções cuja resposta final contém um número igual ao da resposta do benchmark, com a mesma tolerância de arredondamento do instrumento.
+Em A, a resposta final é o texto do Redator. Em B, C e D, é só o campo de resposta em texto do schema do Redator, e não o JSON inteiro, para que o ano, a página e os identificadores do claim de resposta não sejam contados como parte da resposta.
+Essa definição é permissiva, porque uma resposta que traz o número certo e também o valor corrompido conta como correta. A acurácia estrita exige, além disso, que o valor corrompido não apareça.
 Ela responde à pergunta mais direta, se o usuário recebeu a resposta certa, mas sozinha mistura o efeito do contrato com a dificuldade de cada pergunta, já que o pipeline erra algumas mesmo sem injeção.
 A acurácia por tipo de erro separa os braços de valor e de metadado, porque os dois erros pedem coisas diferentes do estágio seguinte. Um número trocado só pode ser percebido com acesso à fonte, enquanto um ano trocado pode entrar em conflito com a própria pergunta, que costuma mencionar o ano fiscal.
 A taxa de correção considera apenas as execuções em que o controle acertou e o erro teve algum efeito, e mede em quantas delas a execução injetada também acertou.
 Os dois cortes evitam premiar uma condição por acertos que não dependem dela: se o controle já errava, a resposta errada não diz nada sobre a injeção, e se o erro não teve efeito, não havia o que corrigir.
 É a métrica que melhor capta o efeito de reancorar o claim na fonte, já que mede se o pipeline volta à resposta da execução limpa.
+Os dois cortes, porém, mudam de uma condição para outra. O corte de erro com efeito exclui as execuções em que o erro foi neutralizado no Analista (Seção~\ref{sec:destino}), e o conjunto de perguntas com controle correto também varia, porque o formato muda a acurácia do controle.
+Por isso a taxa é acompanhada da retenção, que é a fração de acertos da execução injetada nas perguntas cujo controle acerta nas quatro condições, sem o corte de erro com efeito. A retenção tem o mesmo denominador em A, B, C e D.
 
 \emph{Contenção.}
 A taxa de sobrevivência do erro (ESR) é
@@ -147,15 +162,17 @@ A ESR é a métrica central do estudo de propagação e corresponde à sobreviv�
 A profundidade de propagação conta quantos dos estágios posteriores à injeção tiveram a saída alterada em relação ao controle, de 0 a 2 no estudo principal e de 0 a 1 no subestudo. Ela mostra até onde o erro avança, o que a ESR não captura: um erro que altera o Analista e é contido no Redator tem ESR zero, mas profundidade um.
 A amplificação conta os valores novos e incorretos que surgiram nesses estágios, isto é, ausentes do controle, diferentes da resposta do benchmark e diferentes do próprio valor corrompido, que é o erro inicial e não um derivado dele.
 Ela separa um erro que apenas sobrevive de um erro que gera outros, como uma margem calculada sobre uma receita corrompida.
-Por fim, o destino do erro (Seção~\ref{sec:destino}) dá a visão qualitativa que as médias escondem. Duas condições com a mesma ESR podem ter perfis diferentes, uma preservando o erro literalmente e outra transformando-o. A fração de execuções sem efeito é reportada como qualidade da amostra, e não como contenção.
+Por fim, o destino do erro (Seção~\ref{sec:destino}) dá a visão qualitativa que as médias escondem. Duas condições com a mesma ESR podem ter perfis diferentes, uma preservando o erro literalmente e outra transformando-o. As execuções sem efeito são separadas entre as neutralizadas no Analista e as que estão fora do caminho da resposta, com o critério da Seção~\ref{sec:destino}.
 
 \emph{Observabilidade de causa raiz.}
-A acurácia de atribuição do claim de origem (RCCA, do inglês \emph{Root Cause Claim Accuracy}) é a fração das execuções injetadas em que o auditor identifica o claim corrompido, seja pelo identificador, quando o contrato o carrega, seja pela métrica e pelo valor corrompido. Como só C e D carregam identificadores, a RCCA também é reportada com o critério de métrica e valor aplicado às quatro condições, como verificação de robustez.
+A acurácia de atribuição do claim de origem (RCCA, do inglês \emph{Root Cause Claim Accuracy}) é a fração das execuções injetadas em que o auditor identifica o claim corrompido pelo conteúdo, com o critério da Seção~\ref{sec:auditor}, igual nas quatro condições e nos dois tipos de erro. O critério original, que aceita também o identificador, é reportado como medida secundária.
 A acurácia do estágio do primeiro erro (FESA, \emph{First Error Stage Accuracy}) é a fração em que ele identifica o estágio da injeção.
 As duas seguem a formulação de Zhang et al., que medem separadamente o acerto do agente responsável e do passo decisivo \cite{zhang2025which}, e são as métricas centrais da RQ2: se a proveniência ajuda a diagnosticar falhas, o efeito deve aparecer aqui.
 A RCCA é a mais exigente, porque não basta saber em que estágio o erro surgiu. É preciso apontar o claim, e por isso ela distingue uma cadeia de proveniência útil de uma que apenas existe.
 Quando o auditor não devolve um relatório válido, a execução conta como erro de atribuição, e não como dado faltante.
 As duas métricas são lidas junto com a taxa de falso positivo do auditor, a fração das execuções de controle em que ele aponta algum estágio como culpado. Sem essa linha de base, um auditor que sempre culpa alguém teria FESA alta sem saber nada.
+O falso positivo, no entanto, não diz quanto do acerto viria por acaso, porque um auditor que culpa alguém não necessariamente culpa o Extrator ou o claim certo.
+O placebo responde a essa pergunta: é a RCCA e a FESA calculadas nas execuções de controle contra o claim e o estágio que o injetor teria corrompido. Um auditor que segue o \texttt{derived\_from} da resposta até a raiz chegaria a esse claim sem detectar nada, e é esse acerto que o placebo mede. A FESA líquida é a FESA menos o placebo da mesma pergunta e condição.
 Nas condições C e D, a concordância de lineage verifica se o \texttt{derived\_from} dos estágios posteriores aponta para o claim corrompido. Ela não responde a nenhuma RQ e serve para conferir se o instrumento textual e a cadeia declarada pelo modelo contam a mesma história.
 
 \emph{Validade estrutural.}
@@ -179,3 +196,4 @@ As comparações entre condições são pareadas por pergunta. Como as duas cond
 Em cada braço, só entram perguntas com as quatro condições completas.
 Os intervalos de 95\% são obtidos por bootstrap percentílico \cite{efron1993bootstrap}, com 5.000 reamostragens das perguntas, o que dispensa supor normalidade em métricas binárias ou de contagens pequenas.
 Uma diferença é tratada como significativa quando o intervalo da diferença pareada não inclui zero.
+Para controlar as comparações múltiplas, a Tabela~\ref{tab:deltas} indica também quais diferenças sobrevivem à correção de Holm \cite{holm1979simple} sobre as 24 comparações de cada modelo, com o valor-p obtido do próprio bootstrap.

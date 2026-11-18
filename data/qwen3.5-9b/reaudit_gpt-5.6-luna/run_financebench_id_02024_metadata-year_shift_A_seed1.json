@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02024_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Verizon's estimated pension benefits for retirees in 2024 were $1,097 million, but the extractor incorrectly associated this estimate with Verizon in 2025.",
+    "reported_metric": "estimated pension benefits for retirees in 2024",
+    "reported_value": 1097.0,
+    "confidence": 0.83,
+    "rationale": "The extractor is the first stage containing a year inconsistency: it labels the $1,097 million 2024 pension estimate as being for Verizon in 2025. The analyst and writer then use the figure as a 2024 payment estimate and sum it correctly with $862 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 674,
+    "output_tokens": 628,
+    "total_tokens": 1302,
+    "cached_tokens": 0,
+    "reasoning_tokens": 472,
+    "cost_usd": 0.0008884000000000001,
+    "latency_ms": 6364.459708041977,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 674,
+      "output_tokens": 628,
+      "total_tokens": 1302,
+      "reasoning_tokens": 472,
+      "time_to_first_token": 6.363120416994207,
+      "duration": 6.363875250041019,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 674,
+            "output_tokens": 628,
+            "total_tokens": 1302,
+            "reasoning_tokens": 472,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 490,
+    "output_tokens": 206,
+    "total_tokens": 696,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2608.025776979048,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 490,
+      "output_tokens": 206,
+      "total_tokens": 696,
+      "time_to_first_token": 2.6077898299554363,
+      "duration": 2.6078639939660206,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 490,
+            "output_tokens": 206,
+            "total_tokens": 696,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2582577503,
+              "load_duration": 541474,
+              "prompt_eval_duration": 160350000,
+              "eval_duration": 2374463000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

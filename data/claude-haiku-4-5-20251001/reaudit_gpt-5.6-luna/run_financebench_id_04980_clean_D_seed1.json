@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04980_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: the extractor reports capital spending of 4,625 USD millions, and the analyst correctly converts this to 4.625 USD billions. The writer preserves that value and answers the question accurately."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 860,
+    "output_tokens": 189,
+    "total_tokens": 1049,
+    "cached_tokens": 0,
+    "reasoning_tokens": 90,
+    "cost_usd": 0.00039879999999999994,
+    "latency_ms": 2577.313999994658,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 860,
+      "output_tokens": 189,
+      "total_tokens": 1049,
+      "reasoning_tokens": 90,
+      "time_to_first_token": 2.5766203330131248,
+      "duration": 2.5768958749831654,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 860,
+            "output_tokens": 189,
+            "total_tokens": 1049,
+            "reasoning_tokens": 90,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1404,
+    "output_tokens": 168,
+    "total_tokens": 1572,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002244,
+    "latency_ms": 2359.0347089921124,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1404,
+      "output_tokens": 168,
+      "total_tokens": 1572,
+      "time_to_first_token": 2.358007083996199,
+      "duration": 2.358305875037331,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1404,
+            "output_tokens": 168,
+            "total_tokens": 1572,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

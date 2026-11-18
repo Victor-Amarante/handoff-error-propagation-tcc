@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02981_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2019–FY2021 three-year average unadjusted operating income margin for Corning is 14.8%.",
+    "reported_metric": "Operating income margin FY2019-FY2021 (3 year average)",
+    "reported_value": 14.8,
+    "confidence": 0.99,
+    "rationale": "Using the extracted figures, the annual margins are approximately 11.4% (2019), 4.5% (2020), and 15.0% (2021), whose three-year average is approximately 10.3%, not 14.8%. The extractor values support the calculation; the first incorrect claim appears in the analyst output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1297,
+    "output_tokens": 684,
+    "total_tokens": 1981,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010802000000000001,
+    "latency_ms": 7182.074250013102,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1297,
+      "output_tokens": 684,
+      "total_tokens": 1981,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.181610582978465,
+      "duration": 7.181720583001152,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1297,
+            "output_tokens": 684,
+            "total_tokens": 1981,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1286,
+    "output_tokens": 2911,
+    "total_tokens": 4197,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 31466.890507028438,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1286,
+      "output_tokens": 2911,
+      "total_tokens": 4197,
+      "time_to_first_token": 31.466583391011227,
+      "duration": 31.466702878009528,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1286,
+            "output_tokens": 2911,
+            "total_tokens": 4197,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 31441078275,
+              "load_duration": 514391,
+              "prompt_eval_duration": 350195000,
+              "eval_duration": 31037920000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

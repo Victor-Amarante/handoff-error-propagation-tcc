@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08286_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The trace is internally consistent across all stages, and $11,588 million matches Amazon's FY2019 net income attributable to shareholders. No incorrect claim is evident."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 585,
+    "output_tokens": 177,
+    "total_tokens": 762,
+    "cached_tokens": 0,
+    "reasoning_tokens": 89,
+    "cost_usd": 0.0003294,
+    "latency_ms": 2617.027040978428,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 585,
+      "output_tokens": 177,
+      "total_tokens": 762,
+      "reasoning_tokens": 89,
+      "time_to_first_token": 2.6167009589844383,
+      "duration": 2.6168142090318725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 585,
+            "output_tokens": 177,
+            "total_tokens": 762,
+            "reasoning_tokens": 89,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 384,
+    "output_tokens": 172,
+    "total_tokens": 556,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2140.931504953187,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 384,
+      "output_tokens": 172,
+      "total_tokens": 556,
+      "time_to_first_token": 2.1406809050240554,
+      "duration": 2.1407530960277654,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 384,
+            "output_tokens": 172,
+            "total_tokens": 556,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2111509613,
+              "load_duration": 436564,
+              "prompt_eval_duration": 113048000,
+              "eval_duration": 1950734000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

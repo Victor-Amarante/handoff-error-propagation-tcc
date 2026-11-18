@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00757_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, and writer consistently report that one customer accounted for 16% of AMD's consolidated net revenue in FY22.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "All stages preserve the same FY22 customer-concentration claim and cite consistent evidence. The final answer directly answers the question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 865,
+    "output_tokens": 174,
+    "total_tokens": 1039,
+    "cached_tokens": 0,
+    "reasoning_tokens": 63,
+    "cost_usd": 0.00038179999999999996,
+    "latency_ms": 2649.9857080052607,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 865,
+      "output_tokens": 174,
+      "total_tokens": 1039,
+      "reasoning_tokens": 63,
+      "time_to_first_token": 2.6494710840051994,
+      "duration": 2.6496077500050887,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 865,
+            "output_tokens": 174,
+            "total_tokens": 1039,
+            "reasoning_tokens": 63,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1379,
+    "output_tokens": 137,
+    "total_tokens": 1516,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002064,
+    "latency_ms": 2641.584375000093,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1379,
+      "output_tokens": 137,
+      "total_tokens": 1516,
+      "time_to_first_token": 2.6407571250456385,
+      "duration": 2.6409897500416264,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1379,
+            "output_tokens": 137,
+            "total_tokens": 1516,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01328_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The FY2022 total restructuring and impairment charges were reported as $141 million, despite the supporting evidence stating $411 million.",
+    "reported_metric": "restructuring_and_impairment_charges",
+    "reported_value": 141.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's value of 141 conflicts directly with its evidence, which states 'Total restructuring and impairment charges $411.' The analyst and writer propagated this claim unchanged."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 873,
+    "output_tokens": 209,
+    "total_tokens": 1082,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.0004254,
+    "latency_ms": 2672.9492499725893,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 873,
+      "output_tokens": 209,
+      "total_tokens": 1082,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.672186416981276,
+      "duration": 2.672401749994606,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 873,
+            "output_tokens": 209,
+            "total_tokens": 1082,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1428,
+    "output_tokens": 157,
+    "total_tokens": 1585,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002213,
+    "latency_ms": 2968.0645000189543,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1428,
+      "output_tokens": 157,
+      "total_tokens": 1585,
+      "time_to_first_token": 2.9673022920032963,
+      "duration": 2.9675422919681296,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1428,
+            "output_tokens": 157,
+            "total_tokens": 1585,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

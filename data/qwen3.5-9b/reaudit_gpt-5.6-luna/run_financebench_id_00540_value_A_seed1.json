@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00540_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated the reported Cost of Sales of negative $10,069 million as an economically negative cost, concluding that inventory turnover could not be calculated.",
+    "reported_metric": "Cost of Sales",
+    "reported_value": -10069.0,
+    "confidence": 0.93,
+    "rationale": "The extracted figures support a conventional calculation using the absolute cost amount and average inventory: 10,069 / ((1,505 + 604) / 2) ≈ 9.6 times. The extractor merely reported the signed figure; the analyst introduced the error by interpreting the sign as evidence that inventory turnover was not meaningful."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 779,
+    "output_tokens": 582,
+    "total_tokens": 1361,
+    "cached_tokens": 0,
+    "reasoning_tokens": 424,
+    "cost_usd": 0.0008542000000000001,
+    "latency_ms": 5822.015541023575,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 582,
+      "total_tokens": 1361,
+      "reasoning_tokens": 424,
+      "time_to_first_token": 5.821495708019938,
+      "duration": 5.821659457986243,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 582,
+            "total_tokens": 1361,
+            "reasoning_tokens": 424,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 587,
+    "output_tokens": 143,
+    "total_tokens": 730,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1759.403123985976,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 587,
+      "output_tokens": 143,
+      "total_tokens": 730,
+      "time_to_first_token": 1.7591072989744134,
+      "duration": 1.7591988279600628,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 587,
+            "output_tokens": 143,
+            "total_tokens": 730,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1729911289,
+              "load_duration": 449221,
+              "prompt_eval_duration": 154717000,
+              "eval_duration": 1524719000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

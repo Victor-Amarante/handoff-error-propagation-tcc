@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00859_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "The extractor assigned the $32,502 million notional value for cross-currency swaps to FY 2022, even though it came from Verizon's 2021 10-K and should have been considered for FY 2021.",
+    "reported_metric": "notional_value",
+    "reported_value": 32502.0,
+    "confidence": 0.96,
+    "rationale": "C02 is internally inconsistent with the cited 2021 10-K and was excluded by the analyst solely because of its incorrect 2022 year label. If treated as FY 2021, cross-currency swaps exceed the reported $19,779 million for interest rate swaps."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1536,
+    "output_tokens": 498,
+    "total_tokens": 2034,
+    "cached_tokens": 0,
+    "reasoning_tokens": 333,
+    "cost_usd": 0.0009048000000000001,
+    "latency_ms": 4738.824667001609,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1536,
+      "output_tokens": 498,
+      "total_tokens": 2034,
+      "reasoning_tokens": 333,
+      "time_to_first_token": 4.73820495797554,
+      "duration": 4.7383902500150725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1536,
+            "output_tokens": 498,
+            "total_tokens": 2034,
+            "reasoning_tokens": 333,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2205,
+    "output_tokens": 182,
+    "total_tokens": 2387,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003115,
+    "latency_ms": 3480.7025410118513,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2205,
+      "output_tokens": 182,
+      "total_tokens": 2387,
+      "time_to_first_token": 3.479891916969791,
+      "duration": 3.4801486670039594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2205,
+            "output_tokens": 182,
+            "total_tokens": 2387,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

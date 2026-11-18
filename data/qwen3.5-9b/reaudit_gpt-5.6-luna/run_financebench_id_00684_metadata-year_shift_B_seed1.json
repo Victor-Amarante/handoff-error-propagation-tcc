@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00684_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMCOR net sales were reported as USD 14,694 million for FY2024, although that figure internally reconciles with FY2023 gross profit and cost of sales and therefore appears to be mislabeled.",
+    "reported_metric": "net_sales",
+    "reported_value": 14694.0,
+    "confidence": 0.94,
+    "rationale": "The FY2023 cost of sales of 11,969 plus gross profit of 2,725 equals 14,694, so the extracted sales figure is internally consistent with FY2023, not FY2024. The analyst's FY2023 gross margin of 18.56% is correctly derived from those components, and the writer's conclusion that margins declined from 2021 through 2023 is supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1066,
+    "output_tokens": 698,
+    "total_tokens": 1764,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010508,
+    "latency_ms": 7038.312582997605,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1066,
+      "output_tokens": 698,
+      "total_tokens": 1764,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.037613374995999,
+      "duration": 7.037873250024859,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1066,
+            "output_tokens": 698,
+            "total_tokens": 1764,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 992,
+    "output_tokens": 1507,
+    "total_tokens": 2499,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 16398.626733978745,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 992,
+      "output_tokens": 1507,
+      "total_tokens": 2499,
+      "time_to_first_token": 16.398345029971097,
+      "duration": 16.398441591998562,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 992,
+            "output_tokens": 1507,
+            "total_tokens": 2499,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 16372732863,
+              "load_duration": 467328,
+              "prompt_eval_duration": 268337000,
+              "eval_duration": 16053618000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

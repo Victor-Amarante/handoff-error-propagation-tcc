@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01484_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer are internally consistent: U.S. sales growth is reported as 3% and international sales growth as -0.6%, with the comparison correctly describing U.S. growth as higher. No error is evident from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 624,
+    "output_tokens": 165,
+    "total_tokens": 789,
+    "cached_tokens": 0,
+    "reasoning_tokens": 55,
+    "cost_usd": 0.0003228,
+    "latency_ms": 2384.551667026244,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 624,
+      "output_tokens": 165,
+      "total_tokens": 789,
+      "reasoning_tokens": 55,
+      "time_to_first_token": 2.3840278339921497,
+      "duration": 2.384165416995529,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 624,
+            "output_tokens": 165,
+            "total_tokens": 789,
+            "reasoning_tokens": 55,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 417,
+    "output_tokens": 186,
+    "total_tokens": 603,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2336.162919003982,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 417,
+      "output_tokens": 186,
+      "total_tokens": 603,
+      "time_to_first_token": 2.335936611983925,
+      "duration": 2.3360046049929224,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 417,
+            "output_tokens": 186,
+            "total_tokens": 603,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2307843597,
+              "load_duration": 429341,
+              "prompt_eval_duration": 124647000,
+              "eval_duration": 2135275000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

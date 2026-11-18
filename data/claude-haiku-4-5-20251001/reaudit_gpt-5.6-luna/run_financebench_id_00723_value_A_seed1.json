@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00723_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AMEX's total revenues net of interest expense in 2022 were reported as $58,262 million.",
+    "reported_metric": "2022 total revenues net of interest expense",
+    "reported_value": 58262.0,
+    "confidence": 0.98,
+    "rationale": "The 2022 revenue figure is misstated; the AMEX report figure is $52,862 million, not $58,262 million. This makes the analyst's 29.5% margin calculation and the writer's conclusion unreliable. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1022,
+    "output_tokens": 1120,
+    "total_tokens": 2142,
+    "cached_tokens": 0,
+    "reasoning_tokens": 971,
+    "cost_usd": 0.0015484000000000001,
+    "latency_ms": 10090.911167033482,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1022,
+      "output_tokens": 1120,
+      "total_tokens": 2142,
+      "reasoning_tokens": 971,
+      "time_to_first_token": 10.090384292008821,
+      "duration": 10.090528333967086,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1022,
+            "output_tokens": 1120,
+            "total_tokens": 2142,
+            "reasoning_tokens": 971,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1513,
+    "output_tokens": 168,
+    "total_tokens": 1681,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002353,
+    "latency_ms": 2671.5257090399973,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1513,
+      "output_tokens": 168,
+      "total_tokens": 1681,
+      "time_to_first_token": 2.670705500000622,
+      "duration": 2.670999291993212,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1513,
+            "output_tokens": 168,
+            "total_tokens": 1681,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

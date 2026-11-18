@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00591_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Adobe's net income was $4,756 million in FY2023.",
+    "reported_metric": "net_income",
+    "reported_value": 4756.0,
+    "confidence": 0.93,
+    "rationale": "The extracted $4,756 million net income is internally inconsistent with the later calculations: 2022 operating cash flow of $7,838 million divided by $4,756 million is about 1.65, not the analyst's 1.49. The 1.49 figure instead matches 2021 operating cash flow divided by 2021 net income, indicating that C01 was likely misdated as FY2023 and the FY2022 denominator was omitted. This propagated into the analyst's incorrect decline claim and the writer's conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1544,
+    "output_tokens": 807,
+    "total_tokens": 2351,
+    "cached_tokens": 0,
+    "reasoning_tokens": 617,
+    "cost_usd": 0.0012772,
+    "latency_ms": 8261.99958298821,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1544,
+      "output_tokens": 807,
+      "total_tokens": 2351,
+      "reasoning_tokens": 617,
+      "time_to_first_token": 8.261401208001189,
+      "duration": 8.261555292003322,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1544,
+            "output_tokens": 807,
+            "total_tokens": 2351,
+            "reasoning_tokens": 617,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2197,
+    "output_tokens": 247,
+    "total_tokens": 2444,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003432,
+    "latency_ms": 3378.20679100696,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2197,
+      "output_tokens": 247,
+      "total_tokens": 2444,
+      "time_to_first_token": 3.377296125050634,
+      "duration": 3.377597291022539,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2197,
+            "output_tokens": 247,
+            "total_tokens": 2444,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

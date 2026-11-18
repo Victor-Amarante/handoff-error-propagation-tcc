@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03531_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer consistently report total current assets of 16,525 USD millions for FY2019. No internal inconsistency or provenance-based error is evident."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 644,
+    "output_tokens": 133,
+    "total_tokens": 777,
+    "cached_tokens": 0,
+    "reasoning_tokens": 40,
+    "cost_usd": 0.00028839999999999996,
+    "latency_ms": 2064.565416018013,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 644,
+      "output_tokens": 133,
+      "total_tokens": 777,
+      "reasoning_tokens": 40,
+      "time_to_first_token": 2.0641266250167973,
+      "duration": 2.064220958040096,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 644,
+            "output_tokens": 133,
+            "total_tokens": 777,
+            "reasoning_tokens": 40,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 469,
+    "output_tokens": 167,
+    "total_tokens": 636,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2172.485431015957,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 469,
+      "output_tokens": 167,
+      "total_tokens": 636,
+      "time_to_first_token": 2.172245065041352,
+      "duration": 2.1723204260342754,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 469,
+            "output_tokens": 167,
+            "total_tokens": 636,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2146465565,
+              "load_duration": 569611,
+              "prompt_eval_duration": 137714000,
+              "eval_duration": 1941073000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

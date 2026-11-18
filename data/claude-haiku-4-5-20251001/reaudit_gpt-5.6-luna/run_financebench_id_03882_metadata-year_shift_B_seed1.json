@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03882_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Amcor's FY2020 net accounts receivable is reported as 0.0 USD million.",
+    "reported_metric": "accounts_receivable_net",
+    "reported_value": 0.0,
+    "confidence": 0.94,
+    "rationale": "The extractor supplied balance-sheet data, albeit for FY2021, while the analyst output was empty. The writer introduced an unsupported FY2020 value of 0.0; no claim id is present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 631,
+    "output_tokens": 480,
+    "total_tokens": 1111,
+    "cached_tokens": 0,
+    "reasoning_tokens": 356,
+    "cost_usd": 0.0007022,
+    "latency_ms": 4912.960708024912,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 631,
+      "output_tokens": 480,
+      "total_tokens": 1111,
+      "reasoning_tokens": 356,
+      "time_to_first_token": 4.912245791987516,
+      "duration": 4.912445749971084,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 631,
+            "output_tokens": 480,
+            "total_tokens": 1111,
+            "reasoning_tokens": 356,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1118,
+    "output_tokens": 174,
+    "total_tokens": 1292,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001988,
+    "latency_ms": 2689.5052500185557,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1118,
+      "output_tokens": 174,
+      "total_tokens": 1292,
+      "time_to_first_token": 2.6884811670170166,
+      "duration": 2.6887913750251755,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1118,
+            "output_tokens": 174,
+            "total_tokens": 1292,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

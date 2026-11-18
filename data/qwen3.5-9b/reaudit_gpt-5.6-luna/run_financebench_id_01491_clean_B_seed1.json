@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01491_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, writer, and final answer consistently report $13.2 billion for the cash proceeds from Kenvue's debt offering and initial public offering. The trace provides no contradictory provenance or internal inconsistency indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 733,
+    "output_tokens": 219,
+    "total_tokens": 952,
+    "cached_tokens": 0,
+    "reasoning_tokens": 117,
+    "cost_usd": 0.0004094,
+    "latency_ms": 3278.67208304815,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 733,
+      "output_tokens": 219,
+      "total_tokens": 952,
+      "reasoning_tokens": 117,
+      "time_to_first_token": 3.277912291989196,
+      "duration": 3.2781471249763854,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 733,
+            "output_tokens": 219,
+            "total_tokens": 952,
+            "reasoning_tokens": 117,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 560,
+    "output_tokens": 237,
+    "total_tokens": 797,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2969.317934010178,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 560,
+      "output_tokens": 237,
+      "total_tokens": 797,
+      "time_to_first_token": 2.969091669016052,
+      "duration": 2.9691586359986104,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 560,
+            "output_tokens": 237,
+            "total_tokens": 797,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2942744043,
+              "load_duration": 566361,
+              "prompt_eval_duration": 146498000,
+              "eval_duration": 2728977000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

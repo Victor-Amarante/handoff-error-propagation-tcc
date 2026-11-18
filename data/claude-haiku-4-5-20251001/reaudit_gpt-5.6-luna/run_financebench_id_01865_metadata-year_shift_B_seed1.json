@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01865_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated the -0.9% 2022 organic sales change as 3M's overall organic growth, even though the extracted 2022 figures include positive overall/segment values and the negative figure is the likely underperforming segment.",
+    "reported_metric": "organic_sales_change",
+    "reported_value": -0.9,
+    "confidence": 0.91,
+    "rationale": "The extractor reported multiple 2022 organic-sales changes (1.2%, 3.2%, and -0.9%) without labels. The analyst selected -0.9% as the overall result, and the writer repeated that misclassification; the question asks for the segment dragging down growth, not the overall company change."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 932,
+    "output_tokens": 534,
+    "total_tokens": 1466,
+    "cached_tokens": 0,
+    "reasoning_tokens": 356,
+    "cost_usd": 0.0008271999999999999,
+    "latency_ms": 5184.766000020318,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 932,
+      "output_tokens": 534,
+      "total_tokens": 1466,
+      "reasoning_tokens": 356,
+      "time_to_first_token": 5.183997915999498,
+      "duration": 5.184267541044392,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 932,
+            "output_tokens": 534,
+            "total_tokens": 1466,
+            "reasoning_tokens": 356,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1451,
+    "output_tokens": 224,
+    "total_tokens": 1675,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002571,
+    "latency_ms": 3956.5951670520008,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1451,
+      "output_tokens": 224,
+      "total_tokens": 1675,
+      "time_to_first_token": 3.955833124986384,
+      "duration": 3.9561392909963615,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1451,
+            "output_tokens": 224,
+            "total_tokens": 1675,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03069_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2015 D&A margin is 4.19%, calculated by dividing FY2015 D&A of $167 million by revenue of $3,991 million.",
+    "reported_metric": "depreciation_and_amortization_margin",
+    "reported_value": 4.19,
+    "confidence": 0.98,
+    "rationale": "The extractor reports revenue of $3,991 million for FY2016, not FY2015. The analyst nevertheless uses it to calculate and label a FY2015 margin: 167 / 3991 = 4.19%. The first incorrect claim therefore appears in the analyst stage; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 772,
+    "output_tokens": 675,
+    "total_tokens": 1447,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009644,
+    "latency_ms": 6394.7969999862835,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 772,
+      "output_tokens": 675,
+      "total_tokens": 1447,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.394329625007231,
+      "duration": 6.394465041987132,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 772,
+            "output_tokens": 675,
+            "total_tokens": 1447,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1275,
+    "output_tokens": 217,
+    "total_tokens": 1492,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00236,
+    "latency_ms": 2764.326207980048,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1275,
+      "output_tokens": 217,
+      "total_tokens": 1492,
+      "time_to_first_token": 2.7634205839713104,
+      "duration": 2.763722500007134,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1275,
+            "output_tokens": 217,
+            "total_tokens": 1492,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

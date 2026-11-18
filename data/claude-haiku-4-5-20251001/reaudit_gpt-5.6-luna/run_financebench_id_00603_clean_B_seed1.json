@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00603_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The merchandise inventories increase was $104.2 million in FY2023 and was primarily driven by 47 new store openings.",
+    "reported_metric": "merchandise_inventories_increase",
+    "reported_value": 104.2,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst consistently label the $104.2 million increase and 47 stores as year 2022, but the writer relabels them as FY2023 and adds an unsupported causal conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 894,
+    "output_tokens": 364,
+    "total_tokens": 1258,
+    "cached_tokens": 0,
+    "reasoning_tokens": 234,
+    "cost_usd": 0.0006156,
+    "latency_ms": 4265.260165964719,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 894,
+      "output_tokens": 364,
+      "total_tokens": 1258,
+      "reasoning_tokens": 234,
+      "time_to_first_token": 4.264766125008464,
+      "duration": 4.26486895798007,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 894,
+            "output_tokens": 364,
+            "total_tokens": 1258,
+            "reasoning_tokens": 234,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1407,
+    "output_tokens": 161,
+    "total_tokens": 1568,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002212,
+    "latency_ms": 2445.312916999683,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1407,
+      "output_tokens": 161,
+      "total_tokens": 1568,
+      "time_to_first_token": 2.4444727499503642,
+      "duration": 2.4447167499456555,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1407,
+            "output_tokens": 161,
+            "total_tokens": 1568,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

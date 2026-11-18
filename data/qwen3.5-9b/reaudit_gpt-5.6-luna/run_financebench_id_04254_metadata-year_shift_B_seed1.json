@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04254_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2021 operating income plus depreciation and amortization was calculated using $1,441 million labeled as operating income from cash flow, rather than operating income from the income statement.",
+    "reported_metric": "unadjusted_operating_income_plus_depreciation_and_amortization",
+    "reported_value": 2077.0,
+    "confidence": 0.86,
+    "rationale": "The analyst added $1,441 million, identified by the extractor as operating_income_cash_flow, to $636 million of depreciation and amortization. The question requires income-statement operating income plus cash-flow depreciation and amortization; the trace provides no FY2021 income-statement operating-income value supporting the $1,441 million input. The extractor's raw labels are internally consistent, so the first clear misuse occurs in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 850,
+    "output_tokens": 707,
+    "total_tokens": 1557,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010184,
+    "latency_ms": 7767.538790998515,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 850,
+      "output_tokens": 707,
+      "total_tokens": 1557,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.766456708020996,
+      "duration": 7.766913750034291,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 850,
+            "output_tokens": 707,
+            "total_tokens": 1557,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 705,
+    "output_tokens": 2771,
+    "total_tokens": 3476,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 30055.590597970877,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 705,
+      "output_tokens": 2771,
+      "total_tokens": 3476,
+      "time_to_first_token": 30.055336221994366,
+      "duration": 30.05542237003101,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 705,
+            "output_tokens": 2771,
+            "total_tokens": 3476,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 30030145294,
+              "load_duration": 667634,
+              "prompt_eval_duration": 210584000,
+              "eval_duration": 29770623000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

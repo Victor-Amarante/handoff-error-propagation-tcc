@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD's FY22 cash and cash equivalents were reported as $8,435 million, although the associated evidence states $4,835 million.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 8435.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim C01 conflicts directly with its own evidence. This incorrect cash value propagates into the analyst's quick-assets calculation; additionally, A01's stated total of 14,381 does not equal the extracted inputs (8,435 + 1,020 + 4,126 = 13,581)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1613,
+    "output_tokens": 342,
+    "total_tokens": 1955,
+    "cached_tokens": 0,
+    "reasoning_tokens": 185,
+    "cost_usd": 0.000733,
+    "latency_ms": 4333.077332994435,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1613,
+      "output_tokens": 342,
+      "total_tokens": 1955,
+      "reasoning_tokens": 185,
+      "time_to_first_token": 4.332479708013125,
+      "duration": 4.3326242080074735,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1613,
+            "output_tokens": 342,
+            "total_tokens": 1955,
+            "reasoning_tokens": 185,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2266,
+    "output_tokens": 173,
+    "total_tokens": 2439,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003131,
+    "latency_ms": 2744.2786659812555,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2266,
+      "output_tokens": 173,
+      "total_tokens": 2439,
+      "time_to_first_token": 2.7433662909897976,
+      "duration": 2.7436638749786653,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2266,
+            "output_tokens": 173,
+            "total_tokens": 2439,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

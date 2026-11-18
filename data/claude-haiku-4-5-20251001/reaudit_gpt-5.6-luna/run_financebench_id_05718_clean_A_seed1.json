@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05718_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the reported $389 million was consistently converted to $0.389 billion across all stages.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reported $389M, and the analyst and writer correctly converted and repeated this as $0.389 billion. No internal inconsistency or provenance issue appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 614,
+    "output_tokens": 161,
+    "total_tokens": 775,
+    "cached_tokens": 0,
+    "reasoning_tokens": 46,
+    "cost_usd": 0.000316,
+    "latency_ms": 2999.272832996212,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 614,
+      "output_tokens": 161,
+      "total_tokens": 775,
+      "reasoning_tokens": 46,
+      "time_to_first_token": 2.998661625024397,
+      "duration": 2.9988515420118347,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 614,
+            "output_tokens": 161,
+            "total_tokens": 775,
+            "reasoning_tokens": 46,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1089,
+    "output_tokens": 166,
+    "total_tokens": 1255,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001919,
+    "latency_ms": 3286.8889159872197,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1089,
+      "output_tokens": 166,
+      "total_tokens": 1255,
+      "time_to_first_token": 3.286069875000976,
+      "duration": 3.286372583010234,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1089,
+            "output_tokens": 166,
+            "total_tokens": 1255,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

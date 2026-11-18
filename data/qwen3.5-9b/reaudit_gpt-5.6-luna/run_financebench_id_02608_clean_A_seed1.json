@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The three-year average net profit margin for Best Buy is 3.1%.",
+    "reported_metric": "FY2015-FY2017 3-year average net profit margin",
+    "reported_value": 3.1,
+    "confidence": 0.99,
+    "rationale": "The extracted figures imply margins of approximately 3.1% (FY2015), 2.3% (FY2016), and 3.1% (FY2017), whose arithmetic average is about 2.8%, not 3.1%. The writer merely repeated the analyst's incorrect calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 871,
+    "output_tokens": 323,
+    "total_tokens": 1194,
+    "cached_tokens": 0,
+    "reasoning_tokens": 171,
+    "cost_usd": 0.0005618,
+    "latency_ms": 3899.242207990028,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 323,
+      "total_tokens": 1194,
+      "reasoning_tokens": 171,
+      "time_to_first_token": 3.8985272500431165,
+      "duration": 3.8988369170110673,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 323,
+            "total_tokens": 1194,
+            "reasoning_tokens": 171,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 732,
+    "output_tokens": 288,
+    "total_tokens": 1020,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3439.2847580020316,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 732,
+      "output_tokens": 288,
+      "total_tokens": 1020,
+      "time_to_first_token": 3.4390464819734916,
+      "duration": 3.4391222279518843,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 732,
+            "output_tokens": 288,
+            "total_tokens": 1020,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3414282801,
+              "load_duration": 651996,
+              "prompt_eval_duration": 213356000,
+              "eval_duration": 3152017000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

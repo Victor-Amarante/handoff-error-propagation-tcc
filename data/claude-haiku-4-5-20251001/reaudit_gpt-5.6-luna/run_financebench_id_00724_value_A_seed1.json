@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00724_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported that Pfizer United States Q2 2023 revenue declined 45% year over year.",
+    "reported_metric": "Pfizer United States Q2 2023 revenue yoy change",
+    "reported_value": -45.0,
+    "confidence": 0.98,
+    "rationale": "The reported U.S. revenues of $6,815M and $11,222M imply a year-over-year change of approximately -39.3%, not -45%. The other reported percentage changes are arithmetically consistent, and the later answer correctly identifies Developed Rest of World at -74%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 941,
+    "output_tokens": 446,
+    "total_tokens": 1387,
+    "cached_tokens": 0,
+    "reasoning_tokens": 295,
+    "cost_usd": 0.0007234,
+    "latency_ms": 4629.589416028466,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 941,
+      "output_tokens": 446,
+      "total_tokens": 1387,
+      "reasoning_tokens": 295,
+      "time_to_first_token": 4.628935625019949,
+      "duration": 4.629236459033564,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 941,
+            "output_tokens": 446,
+            "total_tokens": 1387,
+            "reasoning_tokens": 295,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1470,
+    "output_tokens": 143,
+    "total_tokens": 1613,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002185,
+    "latency_ms": 2252.2319589625113,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1470,
+      "output_tokens": 143,
+      "total_tokens": 1613,
+      "time_to_first_token": 2.2512445420143194,
+      "duration": 2.251540875004139,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1470,
+            "output_tokens": 143,
+            "total_tokens": 1613,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

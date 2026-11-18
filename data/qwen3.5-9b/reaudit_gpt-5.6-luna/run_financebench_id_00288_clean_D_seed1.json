@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00288_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly stated that the $781M drop occurred between July 29, 2023 and January 28, 2024, although the source data and analyst claim identify January 28, 2023.",
+    "reported_metric": "drop_in_cash_and_cash_equivalents_between_july_29_2023_and_january_28_2024",
+    "reported_value": 781.0,
+    "confidence": 0.99,
+    "rationale": "The extractor dates and values are internally consistent, and the analyst correctly describes the comparison as July 29, 2023 versus January 28, 2023 while noting that Q2 FY2024 data is unavailable. The writer introduced the incorrect January 28, 2024 date."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1418,
+    "output_tokens": 309,
+    "total_tokens": 1727,
+    "cached_tokens": 0,
+    "reasoning_tokens": 126,
+    "cost_usd": 0.0006544000000000001,
+    "latency_ms": 3628.8096249918453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1418,
+      "output_tokens": 309,
+      "total_tokens": 1727,
+      "reasoning_tokens": 126,
+      "time_to_first_token": 3.6286025419831276,
+      "duration": 3.62866024998948,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1418,
+            "output_tokens": 309,
+            "total_tokens": 1727,
+            "reasoning_tokens": 126,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1416,
+    "output_tokens": 771,
+    "total_tokens": 2187,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8831.582401995547,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1416,
+      "output_tokens": 771,
+      "total_tokens": 2187,
+      "time_to_first_token": 8.831351626955438,
+      "duration": 8.831423223949969,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1416,
+            "output_tokens": 771,
+            "total_tokens": 2187,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8805887901,
+              "load_duration": 490540,
+              "prompt_eval_duration": 358083000,
+              "eval_duration": 8390870999
+            }
+          }
+        ]
+      }
+    }
+  }
+}

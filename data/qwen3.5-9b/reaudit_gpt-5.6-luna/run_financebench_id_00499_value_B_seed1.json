@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported 2021 net property, plant and equipment of $27,213 million, which is inconsistent with the 2022 balance of $9,178 million and the roughly $1.7–$1.8 billion annual capex and depreciation figures.",
+    "reported_metric": "Property, plant and equipment net",
+    "reported_value": 27213.0,
+    "confidence": 0.88,
+    "rationale": "The 2021 PPE figure is the first anomalous claim in the trace. The FY2022 figures used by the analyst and writer are internally arithmetically consistent: $9,178 million divided by $43,229 million is approximately 21%. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1080,
+    "output_tokens": 896,
+    "total_tokens": 1976,
+    "cached_tokens": 0,
+    "reasoning_tokens": 714,
+    "cost_usd": 0.0012912,
+    "latency_ms": 9732.041624956764,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1080,
+      "output_tokens": 896,
+      "total_tokens": 1976,
+      "reasoning_tokens": 714,
+      "time_to_first_token": 9.731294333003461,
+      "duration": 9.731548250012565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1080,
+            "output_tokens": 896,
+            "total_tokens": 1976,
+            "reasoning_tokens": 714,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 992,
+    "output_tokens": 712,
+    "total_tokens": 1704,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8052.49420797918,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 992,
+      "output_tokens": 712,
+      "total_tokens": 1704,
+      "time_to_first_token": 8.052254639973398,
+      "duration": 8.05233086599037,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 992,
+            "output_tokens": 712,
+            "total_tokens": 1704,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8026777225,
+              "load_duration": 441667,
+              "prompt_eval_duration": 246857000,
+              "eval_duration": 7726118000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

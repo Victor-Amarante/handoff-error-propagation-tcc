@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01091_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing has no reported legal battles in FY2022, with the total value of such actions being $0.",
+    "reported_metric": "legal actions",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst outputs report legal actions totaling 2.0 USD_B, comprising two 1.0 USD_B actions. The writer incorrectly changes this to zero and concludes that no legal battles were reported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 778,
+    "output_tokens": 221,
+    "total_tokens": 999,
+    "cached_tokens": 0,
+    "reasoning_tokens": 97,
+    "cost_usd": 0.00042080000000000004,
+    "latency_ms": 2868.5162920155562,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 778,
+      "output_tokens": 221,
+      "total_tokens": 999,
+      "reasoning_tokens": 97,
+      "time_to_first_token": 2.867988082987722,
+      "duration": 2.868116582976654,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 778,
+            "output_tokens": 221,
+            "total_tokens": 999,
+            "reasoning_tokens": 97,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 614,
+    "output_tokens": 168,
+    "total_tokens": 782,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2234.7008669748902,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 614,
+      "output_tokens": 168,
+      "total_tokens": 782,
+      "time_to_first_token": 2.2344607419800013,
+      "duration": 2.234534573974088,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 614,
+            "output_tokens": 168,
+            "total_tokens": 782,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2209811473,
+              "load_duration": 445104,
+              "prompt_eval_duration": 180369000,
+              "eval_duration": 1961171000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

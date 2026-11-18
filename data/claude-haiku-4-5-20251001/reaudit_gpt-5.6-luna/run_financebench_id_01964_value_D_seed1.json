@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Customer deposits in 2022 were reported as $126,775 million, despite the extracted evidence showing $110,239 million.",
+    "reported_metric": "customer_deposits",
+    "reported_value": 126775.0,
+    "confidence": 0.99,
+    "rationale": "Claim C01 is internally inconsistent: its value is 126,775, while its source evidence states customer deposits of 110,239. The analyst and writer propagated this incorrect extracted value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1285,
+    "output_tokens": 295,
+    "total_tokens": 1580,
+    "cached_tokens": 0,
+    "reasoning_tokens": 168,
+    "cost_usd": 0.000611,
+    "latency_ms": 3511.314957984723,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1285,
+      "output_tokens": 295,
+      "total_tokens": 1580,
+      "reasoning_tokens": 168,
+      "time_to_first_token": 3.510840167000424,
+      "duration": 3.5110025420435704,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1285,
+            "output_tokens": 295,
+            "total_tokens": 1580,
+            "reasoning_tokens": 168,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1895,
+    "output_tokens": 144,
+    "total_tokens": 2039,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002615,
+    "latency_ms": 2351.07766604051,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1895,
+      "output_tokens": 144,
+      "total_tokens": 2039,
+      "time_to_first_token": 2.350223042012658,
+      "duration": 2.3504718330223113,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1895,
+            "output_tokens": 144,
+            "total_tokens": 2039,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

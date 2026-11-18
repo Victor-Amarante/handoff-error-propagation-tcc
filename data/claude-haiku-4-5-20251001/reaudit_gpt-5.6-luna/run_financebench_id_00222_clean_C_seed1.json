@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer mislabeled the quick-ratio result of 1.57 as a quick_ratio_assessment claim, although the analyst's assessment claim is valued at 1.0.",
+    "reported_metric": "quick_ratio_assessment",
+    "reported_value": 1.57,
+    "confidence": 0.97,
+    "rationale": "The extracted inputs correctly sum to quick assets of 9,981 and produce a quick ratio of 1.57 (9,981 / 6,369). The analyst's 1.0 assessment appears to represent the benchmark, but the writer's provenance metadata incorrectly assigns 1.57 to the assessment metric. The substantive final explanation is otherwise internally supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1388,
+    "output_tokens": 682,
+    "total_tokens": 2070,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001096,
+    "latency_ms": 6782.18687500339,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1388,
+      "output_tokens": 682,
+      "total_tokens": 2070,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.78149854100775,
+      "duration": 6.781677624967415,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1388,
+            "output_tokens": 682,
+            "total_tokens": 2070,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2028,
+    "output_tokens": 177,
+    "total_tokens": 2205,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002913,
+    "latency_ms": 3580.7190419873223,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2028,
+      "output_tokens": 177,
+      "total_tokens": 2205,
+      "time_to_first_token": 3.5796972920070402,
+      "duration": 3.5799975830013864,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2028,
+            "output_tokens": 177,
+            "total_tokens": 2205,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

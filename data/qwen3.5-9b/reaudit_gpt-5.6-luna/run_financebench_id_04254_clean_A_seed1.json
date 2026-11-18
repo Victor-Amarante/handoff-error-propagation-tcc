@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04254_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported unadjusted EBITDA of $1,832 million is consistent with operating income of $1,196 million plus depreciation and amortization of $636 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extractor provides operating income of $1,196 million and depreciation and amortization of $636 million. The analyst and writer correctly add these figures: 1,196 + 636 = 1,832. The separate $1,441 million operating-income-cash-flow figure does not establish an error because the requested calculation is explicitly operating income plus depreciation and amortization."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 842,
+    "output_tokens": 632,
+    "total_tokens": 1474,
+    "cached_tokens": 0,
+    "reasoning_tokens": 464,
+    "cost_usd": 0.0009268,
+    "latency_ms": 6193.482250033412,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 842,
+      "output_tokens": 632,
+      "total_tokens": 1474,
+      "reasoning_tokens": 464,
+      "time_to_first_token": 6.192732416035142,
+      "duration": 6.192988166003488,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 842,
+            "output_tokens": 632,
+            "total_tokens": 1474,
+            "reasoning_tokens": 464,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 677,
+    "output_tokens": 171,
+    "total_tokens": 848,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2237.8993049496785,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 677,
+      "output_tokens": 171,
+      "total_tokens": 848,
+      "time_to_first_token": 2.237663324980531,
+      "duration": 2.237736415991094,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 677,
+            "output_tokens": 171,
+            "total_tokens": 848,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2212142055,
+              "load_duration": 423885,
+              "prompt_eval_duration": 211194000,
+              "eval_duration": 1950479000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

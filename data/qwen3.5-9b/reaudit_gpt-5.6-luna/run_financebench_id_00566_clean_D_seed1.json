@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00566_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Verizon's total long-term debt decreased by 0.39% between 2021 and 2022.",
+    "reported_metric": "Verizon Communications total long-term debt increased or decreased between 2021 and 2022",
+    "reported_value": -0.39,
+    "confidence": 0.99,
+    "rationale": "Using the extractor values, (150489 - 150868) / 150868 × 100 is approximately -0.25%, not -0.39%. The subsequent A02 percentage is also arithmetically incorrect, and the writer propagates A02's incorrect value, although the qualitative conclusion that debt decreased is directionally supported."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1374,
+    "output_tokens": 436,
+    "total_tokens": 1810,
+    "cached_tokens": 0,
+    "reasoning_tokens": 267,
+    "cost_usd": 0.000798,
+    "latency_ms": 4876.531708985567,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1374,
+      "output_tokens": 436,
+      "total_tokens": 1810,
+      "reasoning_tokens": 267,
+      "time_to_first_token": 4.876141583023127,
+      "duration": 4.876241707999725,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1374,
+            "output_tokens": 436,
+            "total_tokens": 1810,
+            "reasoning_tokens": 267,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1400,
+    "output_tokens": 880,
+    "total_tokens": 2280,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9873.141076008324,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1400,
+      "output_tokens": 880,
+      "total_tokens": 2280,
+      "time_to_first_token": 9.872900574991945,
+      "duration": 9.872977384016849,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1400,
+            "output_tokens": 880,
+            "total_tokens": 2280,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9847534364,
+              "load_duration": 468669,
+              "prompt_eval_duration": 370483000,
+              "eval_duration": 9418813000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

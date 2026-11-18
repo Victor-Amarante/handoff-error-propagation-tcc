@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00757_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD reported customer concentration of 16.0% in FY23.",
+    "reported_metric": "customer_concentration_percentage",
+    "reported_value": 16.0,
+    "confidence": 0.98,
+    "rationale": "The extractor assigns the 16.0% concentration claim to year 2023 while its provenance is AMD's FY22 10-K and the question asks about FY22. The analyst and writer propagate this year mismatch, producing an FY23 answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 779,
+    "output_tokens": 376,
+    "total_tokens": 1155,
+    "cached_tokens": 0,
+    "reasoning_tokens": 250,
+    "cost_usd": 0.000607,
+    "latency_ms": 3698.0779159930535,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 376,
+      "total_tokens": 1155,
+      "reasoning_tokens": 250,
+      "time_to_first_token": 3.6975898750242777,
+      "duration": 3.6977622500271536,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 376,
+            "total_tokens": 1155,
+            "reasoning_tokens": 250,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 632,
+    "output_tokens": 218,
+    "total_tokens": 850,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2663.0656649940647,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 632,
+      "output_tokens": 218,
+      "total_tokens": 850,
+      "time_to_first_token": 2.6628029720159248,
+      "duration": 2.662874778965488,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 632,
+            "output_tokens": 218,
+            "total_tokens": 850,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2633541613,
+              "load_duration": 457569,
+              "prompt_eval_duration": 181894000,
+              "eval_duration": 2383467000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

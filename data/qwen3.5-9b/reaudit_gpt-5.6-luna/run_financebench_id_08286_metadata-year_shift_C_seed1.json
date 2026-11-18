@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_08286_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled Amazon's net income of USD 11,588 million as FY2020, although the cited FY2019 10-K income statement identifies it as FY2019 net income.",
+    "reported_metric": "net income",
+    "reported_value": 11588.0,
+    "confidence": 0.98,
+    "rationale": "The cited 2019 10-K page and the known income-statement sequence support USD 11,588 million as FY2019 net income. The extractor's incorrect year label caused the analyst to invent 2,134 for FY2019 and propagate the error to the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 894,
+    "output_tokens": 519,
+    "total_tokens": 1413,
+    "cached_tokens": 0,
+    "reasoning_tokens": 361,
+    "cost_usd": 0.0008015999999999999,
+    "latency_ms": 5204.611041990574,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 894,
+      "output_tokens": 519,
+      "total_tokens": 1413,
+      "reasoning_tokens": 361,
+      "time_to_first_token": 5.20393233402865,
+      "duration": 5.204144500021357,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 894,
+            "output_tokens": 519,
+            "total_tokens": 1413,
+            "reasoning_tokens": 361,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 778,
+    "output_tokens": 1828,
+    "total_tokens": 2606,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 19942.754696996417,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 778,
+      "output_tokens": 1828,
+      "total_tokens": 2606,
+      "time_to_first_token": 19.94250456104055,
+      "duration": 19.94258707104018,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 778,
+            "output_tokens": 1828,
+            "total_tokens": 2606,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 19916690411,
+              "load_duration": 421627,
+              "prompt_eval_duration": 223161000,
+              "eval_duration": 19620672000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

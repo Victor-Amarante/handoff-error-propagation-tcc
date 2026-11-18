@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01290_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the writer's FY2022 U.S. government revenue claim matches the extractor and analyst outputs.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.86,
+    "rationale": "The FY2022 U.S. government claim is internally consistent across the pipeline and is stated with the same 40.0% value. The commercial-airlines item is for FY2023, so it does not establish a conflicting FY2022 claim from this trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 741,
+    "output_tokens": 350,
+    "total_tokens": 1091,
+    "cached_tokens": 0,
+    "reasoning_tokens": 217,
+    "cost_usd": 0.0005682,
+    "latency_ms": 3883.738624979742,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 741,
+      "output_tokens": 350,
+      "total_tokens": 1091,
+      "reasoning_tokens": 217,
+      "time_to_first_token": 3.882924915989861,
+      "duration": 3.883162749989424,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 741,
+            "output_tokens": 350,
+            "total_tokens": 1091,
+            "reasoning_tokens": 217,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 572,
+    "output_tokens": 253,
+    "total_tokens": 825,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3156.4916279749013,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 572,
+      "output_tokens": 253,
+      "total_tokens": 825,
+      "time_to_first_token": 3.1562411549966782,
+      "duration": 3.1563150250003673,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 572,
+            "output_tokens": 253,
+            "total_tokens": 825,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3130689666,
+              "load_duration": 430940,
+              "prompt_eval_duration": 156283000,
+              "eval_duration": 2907103000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

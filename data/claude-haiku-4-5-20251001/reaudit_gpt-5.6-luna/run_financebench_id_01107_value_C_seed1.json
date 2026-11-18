@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01107_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "CVS Health had a materially important ongoing opioid litigation battle in 2022, represented as a binary value of 1.0.",
+    "reported_metric": "opioid_litigation_material_ongoing_battle",
+    "reported_value": 1.0,
+    "confidence": 0.86,
+    "rationale": "The extractor only reported a maximum remediation amount and attorneys’ fees/costs. Those figures do not, by themselves, establish that the matter was an ongoing legal battle or that it was materially important. The analyst introduced that unsupported binary conclusion, which the writer then repeated. The trace also contains no claims for 2021 or 2020."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1154,
+    "output_tokens": 536,
+    "total_tokens": 1690,
+    "cached_tokens": 0,
+    "reasoning_tokens": 371,
+    "cost_usd": 0.000874,
+    "latency_ms": 5675.62687501777,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1154,
+      "output_tokens": 536,
+      "total_tokens": 1690,
+      "reasoning_tokens": 371,
+      "time_to_first_token": 5.674876375007443,
+      "duration": 5.675129332987126,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1154,
+            "output_tokens": 536,
+            "total_tokens": 1690,
+            "reasoning_tokens": 371,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1748,
+    "output_tokens": 203,
+    "total_tokens": 1951,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002763,
+    "latency_ms": 3273.7812499981374,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1748,
+      "output_tokens": 203,
+      "total_tokens": 1951,
+      "time_to_first_token": 3.273033583012875,
+      "duration": 3.2732847920269705,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1748,
+            "output_tokens": 203,
+            "total_tokens": 1951,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

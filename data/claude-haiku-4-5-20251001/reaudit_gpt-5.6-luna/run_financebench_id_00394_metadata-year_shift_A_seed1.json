@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00394_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor attributed Corporate & Investment Bank's $3,725 million net income to Q2 2023 instead of reporting it for Q2 2022.",
+    "reported_metric": "net income",
+    "reported_value": 3725.0,
+    "confidence": 0.98,
+    "rationale": "The extractor lists Q2 2022 values for the other segments but gives Corporate & Investment Bank's $3,725M value for Q2 2023, causing the analyst and writer to omit that segment from the Q2 2022 comparison and incorrectly select Consumer & Community Banking."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 797,
+    "output_tokens": 519,
+    "total_tokens": 1316,
+    "cached_tokens": 0,
+    "reasoning_tokens": 371,
+    "cost_usd": 0.0007821999999999999,
+    "latency_ms": 5077.720207977109,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 797,
+      "output_tokens": 519,
+      "total_tokens": 1316,
+      "reasoning_tokens": 371,
+      "time_to_first_token": 5.077045333047863,
+      "duration": 5.077227291010786,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 797,
+            "output_tokens": 519,
+            "total_tokens": 1316,
+            "reasoning_tokens": 371,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1273,
+    "output_tokens": 157,
+    "total_tokens": 1430,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002058,
+    "latency_ms": 2560.731459001545,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1273,
+      "output_tokens": 157,
+      "total_tokens": 1430,
+      "time_to_first_token": 2.5598324590246193,
+      "duration": 2.560134749975987,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1273,
+            "output_tokens": 157,
+            "total_tokens": 1430,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

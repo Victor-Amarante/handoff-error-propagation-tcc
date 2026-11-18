@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The decline in intangible asset amortization expense drove JnJ's FY2022 gross-margin change by $0.4 billion.",
+    "reported_metric": "intangible asset amortization expense decline drove gross margin change (FY2022)",
+    "reported_value": 0.4,
+    "confidence": 0.97,
+    "rationale": "The extractor only established that amortization expense declined from $4.7B to $4.3B. It did not establish JnJ's gross margin, its change, or that this decline was the cause of the change. The analyst therefore introduced an unsupported causal gross-margin claim; the writer merely repeated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1703,
+    "output_tokens": 676,
+    "total_tokens": 2379,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011518,
+    "latency_ms": 6874.991083052009,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1703,
+      "output_tokens": 676,
+      "total_tokens": 2379,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.874659209046513,
+      "duration": 6.874725792033132,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1703,
+            "output_tokens": 676,
+            "total_tokens": 2379,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1725,
+    "output_tokens": 356,
+    "total_tokens": 2081,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4405.869185982738,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1725,
+      "output_tokens": 356,
+      "total_tokens": 2081,
+      "time_to_first_token": 4.405614364019129,
+      "duration": 4.405710008984897,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1725,
+            "output_tokens": 356,
+            "total_tokens": 2081,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4376602350,
+              "load_duration": 456204,
+              "prompt_eval_duration": 447961000,
+              "eval_duration": 3872817000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

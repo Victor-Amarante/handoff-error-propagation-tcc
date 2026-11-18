@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00757_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, and writer outputs consistently report customer concentration of 16.0% for FY22, with each downstream claim directly derived from the prior claim and no internal contradiction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 783,
+    "output_tokens": 221,
+    "total_tokens": 1004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 121,
+    "cost_usd": 0.0004218,
+    "latency_ms": 2668.095375003759,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 783,
+      "output_tokens": 221,
+      "total_tokens": 1004,
+      "reasoning_tokens": 121,
+      "time_to_first_token": 2.6671918330248445,
+      "duration": 2.667561082984321,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 783,
+            "output_tokens": 221,
+            "total_tokens": 1004,
+            "reasoning_tokens": 121,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1292,
+    "output_tokens": 146,
+    "total_tokens": 1438,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002022,
+    "latency_ms": 5141.295749985147,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1292,
+      "output_tokens": 146,
+      "total_tokens": 1438,
+      "time_to_first_token": 5.140518290980253,
+      "duration": 5.14076474995818,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1292,
+            "output_tokens": 146,
+            "total_tokens": 1438,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

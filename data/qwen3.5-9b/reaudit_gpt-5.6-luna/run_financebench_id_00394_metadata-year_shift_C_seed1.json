@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace supports Asset & Wealth Management as the highest 2022 Q2 segment at $1,004 million, although the final wording omits the segment name.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.95,
+    "rationale": "Among the 2022 Q2 segment claims, Asset & Wealth Management has $1,004 million, exceeding Commercial Banking at $994 million and the other listed segments. The analyst and writer preserve this value. The response is incomplete because it does not name the segment, but it contains no demonstrably incorrect factual claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1276,
+    "output_tokens": 426,
+    "total_tokens": 1702,
+    "cached_tokens": 0,
+    "reasoning_tokens": 269,
+    "cost_usd": 0.0007664,
+    "latency_ms": 4668.01562497858,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1276,
+      "output_tokens": 426,
+      "total_tokens": 1702,
+      "reasoning_tokens": 269,
+      "time_to_first_token": 4.667286749987397,
+      "duration": 4.667515209002886,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1276,
+            "output_tokens": 426,
+            "total_tokens": 1702,
+            "reasoning_tokens": 269,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1235,
+    "output_tokens": 320,
+    "total_tokens": 1555,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3899.930485000368,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1235,
+      "output_tokens": 320,
+      "total_tokens": 1555,
+      "time_to_first_token": 3.8997002079850063,
+      "duration": 3.8997713860007934,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1235,
+            "output_tokens": 320,
+            "total_tokens": 1555,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3874359037,
+              "load_duration": 449604,
+              "prompt_eval_duration": 336575000,
+              "eval_duration": 3486669000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

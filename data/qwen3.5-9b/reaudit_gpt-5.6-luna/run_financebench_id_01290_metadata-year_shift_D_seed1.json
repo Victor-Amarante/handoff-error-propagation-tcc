@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01290_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor incorrectly labeled 40% of Boeing’s revenue from U.S. government contracts as revenue from commercial airlines and assigned it to 2023.",
+    "reported_metric": "portion_of_revenue_from_commercial_airlines",
+    "reported_value": 40.0,
+    "confidence": 0.99,
+    "rationale": "C01’s metric and year conflict with its evidence, which explicitly states that 40% of revenue came from U.S. government contracts in 2022. The later analyst claim A01 propagates this error, although the writer’s final answer relies on the separately supported C02/A02 chain."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1117,
+    "output_tokens": 292,
+    "total_tokens": 1409,
+    "cached_tokens": 0,
+    "reasoning_tokens": 135,
+    "cost_usd": 0.0005738,
+    "latency_ms": 3666.0020829876885,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1117,
+      "output_tokens": 292,
+      "total_tokens": 1409,
+      "reasoning_tokens": 135,
+      "time_to_first_token": 3.6652320830035023,
+      "duration": 3.6654620420304127,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1117,
+            "output_tokens": 292,
+            "total_tokens": 1409,
+            "reasoning_tokens": 135,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1027,
+    "output_tokens": 431,
+    "total_tokens": 1458,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5099.9120470369235,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1027,
+      "output_tokens": 431,
+      "total_tokens": 1458,
+      "time_to_first_token": 5.099612148012966,
+      "duration": 5.099703207029961,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1027,
+            "output_tokens": 431,
+            "total_tokens": 1458,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5070627800,
+              "load_duration": 484390,
+              "prompt_eval_duration": 268850000,
+              "eval_duration": 4725365000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

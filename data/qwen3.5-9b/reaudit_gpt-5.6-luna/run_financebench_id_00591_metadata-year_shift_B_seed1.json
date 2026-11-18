@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00591_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Adobe's FY2021 free cash flow conversion rate was -1.63%.",
+    "reported_metric": "Free cashflow conversion rate 2021",
+    "reported_value": -1.63,
+    "confidence": 0.98,
+    "rationale": "The extractor provides operating cash flow and net income figures but no free cash flow conversion rates. The analyst introduced -1.63% without a supported calculation; the listed FY2021 operating cash flow of $7,230 million and net income of $4,822 million also do not produce that rate. The writer then propagated the unsupported analyst claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2435,
+    "output_tokens": 855,
+    "total_tokens": 3290,
+    "cached_tokens": 0,
+    "reasoning_tokens": 696,
+    "cost_usd": 0.001513,
+    "latency_ms": 8444.897209003102,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2435,
+      "output_tokens": 855,
+      "total_tokens": 3290,
+      "reasoning_tokens": 696,
+      "time_to_first_token": 8.44420204096241,
+      "duration": 8.444415541016497,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2435,
+            "output_tokens": 855,
+            "total_tokens": 3290,
+            "reasoning_tokens": 696,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2644,
+    "output_tokens": 2306,
+    "total_tokens": 4950,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 25681.28187797265,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2644,
+      "output_tokens": 2306,
+      "total_tokens": 4950,
+      "time_to_first_token": 25.68102432100568,
+      "duration": 25.681118442968,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2644,
+            "output_tokens": 2306,
+            "total_tokens": 4950,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 25656016323,
+              "load_duration": 625852,
+              "prompt_eval_duration": 636213000,
+              "eval_duration": 24964067000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

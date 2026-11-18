@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03069_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident in the trace. The analyst correctly calculates 167 / 9,391 × 100 = 1.7783%, which the writer appropriately rounds to 1.78%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 740,
+    "output_tokens": 147,
+    "total_tokens": 887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 51,
+    "cost_usd": 0.00032439999999999997,
+    "latency_ms": 2591.419875039719,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 740,
+      "output_tokens": 147,
+      "total_tokens": 887,
+      "reasoning_tokens": 51,
+      "time_to_first_token": 2.590819500037469,
+      "duration": 2.590975500002969,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 740,
+            "output_tokens": 147,
+            "total_tokens": 887,
+            "reasoning_tokens": 51,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 578,
+    "output_tokens": 660,
+    "total_tokens": 1238,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7451.602211978752,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 578,
+      "output_tokens": 660,
+      "total_tokens": 1238,
+      "time_to_first_token": 7.451362713007256,
+      "duration": 7.451440331002232,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 578,
+            "output_tokens": 660,
+            "total_tokens": 1238,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7425920845,
+              "load_duration": 444102,
+              "prompt_eval_duration": 179236000,
+              "eval_duration": 7175899000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

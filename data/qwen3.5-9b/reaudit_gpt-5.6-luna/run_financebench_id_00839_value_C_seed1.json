@@ -1,0 +1,80 @@
+{
+  "log": "run_financebench_id_00839_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Richard A. Johnson had a former CEO role, inferred from extractor claim C01 even though C01 reports his role value as 0.",
+    "reported_metric": "Richard A. Johnson former role",
+    "reported_value": 1.0,
+    "confidence": 0.9,
+    "rationale": "The analyst is the first stage to introduce the unsupported former-role claim. It contradicts the extractor's C01 value and also shifts attention from Mary N. Dillon, the apparent incoming CEO, to Richard A. Johnson. The writer then builds the final answer on A01 and A02 while adding the unsupported company identification."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1233,
+    "output_tokens": 668,
+    "total_tokens": 1901,
+    "cached_tokens": 1230,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0008268,
+    "latency_ms": 7340.476541023236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1233,
+      "output_tokens": 668,
+      "total_tokens": 1901,
+      "cache_read_tokens": 1230,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.340202499995939,
+      "duration": 7.340285749989562,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1233,
+            "output_tokens": 668,
+            "total_tokens": 1901,
+            "cache_read_tokens": 1230,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1166,
+    "output_tokens": 264,
+    "total_tokens": 1430,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3048.4577220049687,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1166,
+      "output_tokens": 264,
+      "total_tokens": 1430,
+      "time_to_first_token": 3.048223566962406,
+      "duration": 3.048295854998287,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1166,
+            "output_tokens": 264,
+            "total_tokens": 1430,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3020640856,
+              "load_duration": 581093,
+              "prompt_eval_duration": 41511000,
+              "eval_duration": 2902392000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00757_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, and writer consistently report customer concentration of 16.0% for FY22.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "All pipeline stages agree on the same metric, value, unit, and year, and the trace provides no contradictory provenance or evidence of an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 640,
+    "output_tokens": 190,
+    "total_tokens": 830,
+    "cached_tokens": 0,
+    "reasoning_tokens": 80,
+    "cost_usd": 0.000356,
+    "latency_ms": 2469.3095419788733,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 640,
+      "output_tokens": 190,
+      "total_tokens": 830,
+      "reasoning_tokens": 80,
+      "time_to_first_token": 2.468716208008118,
+      "duration": 2.4688242499832995,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 640,
+            "output_tokens": 190,
+            "total_tokens": 830,
+            "reasoning_tokens": 80,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1118,
+    "output_tokens": 142,
+    "total_tokens": 1260,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001828,
+    "latency_ms": 2286.4204170182347,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1118,
+      "output_tokens": 142,
+      "total_tokens": 1260,
+      "time_to_first_token": 2.2855157500016503,
+      "duration": 2.285805249994155,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1118,
+            "output_tokens": 142,
+            "total_tokens": 1260,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

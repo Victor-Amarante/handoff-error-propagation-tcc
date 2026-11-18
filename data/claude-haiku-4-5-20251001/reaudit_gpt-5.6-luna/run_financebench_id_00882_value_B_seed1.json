@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00882_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor recorded a $2.4 billion unsecured revolving credit commitment as 2,400,000,000 with the unit USD_B, which is inconsistent with the stated unit.",
+    "reported_metric": "unsecured_revolving_credit_commitment",
+    "reported_value": 2400000000.0,
+    "confidence": 0.86,
+    "rationale": "The two extracted amounts appear intended to be $2.4 billion and $4.2 billion, which correctly sum to $6.6 billion. However, the extractor labels the raw dollar figures 2,400,000,000 and 4,200,000,000 as USD_B. The analyst and writer implicitly correct this scaling, so the final answer is numerically right but the first inconsistent claim appears in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 716,
+    "output_tokens": 703,
+    "total_tokens": 1419,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009868000000000001,
+    "latency_ms": 6711.94754098542,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 716,
+      "output_tokens": 703,
+      "total_tokens": 1419,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.711327083990909,
+      "duration": 6.711471583985258,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 716,
+            "output_tokens": 703,
+            "total_tokens": 1419,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1234,
+    "output_tokens": 248,
+    "total_tokens": 1482,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002474,
+    "latency_ms": 4093.0204589967616,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1234,
+      "output_tokens": 248,
+      "total_tokens": 1482,
+      "time_to_first_token": 4.0923156249918975,
+      "duration": 4.09253045800142,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1234,
+            "output_tokens": 248,
+            "total_tokens": 1482,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

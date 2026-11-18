@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00585_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor assigned the FY2022 loss before income taxes of $5,022 million to year 2023, leaving no correctly labeled FY2022 denominator for the effective-tax-rate calculation.",
+    "reported_metric": "loss_before_income_taxes",
+    "reported_value": -5022.0,
+    "confidence": 0.86,
+    "rationale": "The $5,022 million figure is paired with FY2022 tax data but labeled 2023. This metadata error propagated to the analyst, whose FY2022 rate is unsupported and numerically inconsistent; the FY2021 calculation is internally valid."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1212,
+    "output_tokens": 665,
+    "total_tokens": 1877,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010404000000000001,
+    "latency_ms": 6902.635957987513,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1212,
+      "output_tokens": 665,
+      "total_tokens": 1877,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.901974457956385,
+      "duration": 6.90210849995492,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1212,
+            "output_tokens": 665,
+            "total_tokens": 1877,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1798,
+    "output_tokens": 215,
+    "total_tokens": 2013,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002873,
+    "latency_ms": 3171.9543340150267,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1798,
+      "output_tokens": 215,
+      "total_tokens": 2013,
+      "time_to_first_token": 3.1712037500110455,
+      "duration": 3.171442291990388,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1798,
+            "output_tokens": 215,
+            "total_tokens": 2013,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

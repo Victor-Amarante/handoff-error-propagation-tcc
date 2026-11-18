@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00678_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled Boeing's $55,893 million in sales of products as FY2023, although the trace's 2022 filing context and the surrounding figures indicate it belongs to FY2022.",
+    "reported_metric": "sales of products",
+    "reported_value": 55893.0,
+    "confidence": 0.99,
+    "rationale": "C01 is internally misdated: it is the product-sales figure needed for the FY2022 margin calculation, but is tagged 2023. This extraction error propagates into the analyst's product-margin calculations, which also omit C01 from their declared derivation and produce unsupported values."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2474,
+    "output_tokens": 941,
+    "total_tokens": 3415,
+    "cached_tokens": 0,
+    "reasoning_tokens": 776,
+    "cost_usd": 0.001624,
+    "latency_ms": 8860.375790973194,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2474,
+      "output_tokens": 941,
+      "total_tokens": 3415,
+      "reasoning_tokens": 776,
+      "time_to_first_token": 8.859733207966201,
+      "duration": 8.859937708009966,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2474,
+            "output_tokens": 941,
+            "total_tokens": 3415,
+            "reasoning_tokens": 776,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3250,
+    "output_tokens": 223,
+    "total_tokens": 3473,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004365,
+    "latency_ms": 3579.7572499723174,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3250,
+      "output_tokens": 223,
+      "total_tokens": 3473,
+      "time_to_first_token": 3.579045374994166,
+      "duration": 3.5792826659744605,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3250,
+            "output_tokens": 223,
+            "total_tokens": 3473,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

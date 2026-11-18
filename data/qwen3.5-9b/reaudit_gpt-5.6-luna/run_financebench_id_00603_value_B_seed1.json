@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00603_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The merchandise inventories balance of $1,600 million for Q4 2022 was incorrectly relabeled as the FY2023 balance.",
+    "reported_metric": "merchandise_inventories_balance",
+    "reported_value": 1600.0,
+    "confidence": 0.99,
+    "rationale": "The extractor identifies $1,600 million as merchandise inventories at Q4 2022, while the analyst changes the year to 2023 without supporting evidence. The writer then repeats that relabeled value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 797,
+    "output_tokens": 245,
+    "total_tokens": 1042,
+    "cached_tokens": 0,
+    "reasoning_tokens": 112,
+    "cost_usd": 0.00045339999999999996,
+    "latency_ms": 2878.7971250130795,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 797,
+      "output_tokens": 245,
+      "total_tokens": 1042,
+      "reasoning_tokens": 112,
+      "time_to_first_token": 2.8784108329564333,
+      "duration": 2.878516666009091,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 797,
+            "output_tokens": 245,
+            "total_tokens": 1042,
+            "reasoning_tokens": 112,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 652,
+    "output_tokens": 234,
+    "total_tokens": 886,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2893.1437300052494,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 652,
+      "output_tokens": 234,
+      "total_tokens": 886,
+      "time_to_first_token": 2.8928910570102744,
+      "duration": 2.892964282014873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 652,
+            "output_tokens": 234,
+            "total_tokens": 886,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2863784019,
+              "load_duration": 505426,
+              "prompt_eval_duration": 178171000,
+              "eval_duration": 2618920000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

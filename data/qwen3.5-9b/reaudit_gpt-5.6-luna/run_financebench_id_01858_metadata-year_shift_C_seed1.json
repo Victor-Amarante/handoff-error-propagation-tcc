@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01858_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "3M had a 65-year dividend increase streak in 2025, based on a 2023Q2 source.",
+    "reported_metric": "dividend increase streak",
+    "reported_value": 65.0,
+    "confidence": 0.9,
+    "rationale": "The first claim assigns a 2025 value while citing a 2023Q2 source. The analyst and writer merely propagate C01, so the temporal mismatch originates in extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 781,
+    "output_tokens": 311,
+    "total_tokens": 1092,
+    "cached_tokens": 0,
+    "reasoning_tokens": 188,
+    "cost_usd": 0.0005294,
+    "latency_ms": 3590.4072499834,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 781,
+      "output_tokens": 311,
+      "total_tokens": 1092,
+      "reasoning_tokens": 188,
+      "time_to_first_token": 3.5897116669802926,
+      "duration": 3.589937499957159,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 781,
+            "output_tokens": 311,
+            "total_tokens": 1092,
+            "reasoning_tokens": 188,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 626,
+    "output_tokens": 173,
+    "total_tokens": 799,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2277.0194449694827,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 626,
+      "output_tokens": 173,
+      "total_tokens": 799,
+      "time_to_first_token": 2.276782210043166,
+      "duration": 2.2768533340422437,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 626,
+            "output_tokens": 173,
+            "total_tokens": 799,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2250889979,
+              "load_duration": 682532,
+              "prompt_eval_duration": 182785000,
+              "eval_duration": 1998996000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

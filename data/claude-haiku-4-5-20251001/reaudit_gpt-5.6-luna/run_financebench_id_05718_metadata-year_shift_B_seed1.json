@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_05718_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "American Water Works paid 0.0 USD billions in cash dividends for FY2020.",
+    "reported_metric": "cash_dividends_paid",
+    "reported_value": 0.0,
+    "confidence": 0.96,
+    "rationale": "The extractor reported a 2021 figure, while the analyst produced no claims. The writer then introduced an unsupported FY2020 value of 0.0 USD billions, which is inconsistent with its own statement that the amount could not be provided; no claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 638,
+    "output_tokens": 439,
+    "total_tokens": 1077,
+    "cached_tokens": 0,
+    "reasoning_tokens": 305,
+    "cost_usd": 0.0006544,
+    "latency_ms": 4655.743999988772,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 638,
+      "output_tokens": 439,
+      "total_tokens": 1077,
+      "reasoning_tokens": 305,
+      "time_to_first_token": 4.655169208010193,
+      "duration": 4.655355208029505,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 638,
+            "output_tokens": 439,
+            "total_tokens": 1077,
+            "reasoning_tokens": 305,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1118,
+    "output_tokens": 170,
+    "total_tokens": 1288,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001968,
+    "latency_ms": 3279.623541980982,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1118,
+      "output_tokens": 170,
+      "total_tokens": 1288,
+      "time_to_first_token": 3.278805290989112,
+      "duration": 3.279104166023899,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1118,
+            "output_tokens": 170,
+            "total_tokens": 1288,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

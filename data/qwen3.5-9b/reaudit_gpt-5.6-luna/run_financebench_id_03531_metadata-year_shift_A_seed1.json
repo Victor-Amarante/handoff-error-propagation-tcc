@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03531_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Nike's total current assets were $16,525 million in FY2020.",
+    "reported_metric": "total current assets",
+    "reported_value": 16525.0,
+    "confidence": 0.98,
+    "rationale": "The question asks for FY2019, but the extractor's only claim reports a FY2020 figure. The analyst and writer consistently rely on that mismatched-year claim, so the first error appears in the extractor stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 651,
+    "output_tokens": 226,
+    "total_tokens": 877,
+    "cached_tokens": 0,
+    "reasoning_tokens": 107,
+    "cost_usd": 0.0004014,
+    "latency_ms": 2843.559750006534,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 651,
+      "output_tokens": 226,
+      "total_tokens": 877,
+      "reasoning_tokens": 107,
+      "time_to_first_token": 2.8429344999603927,
+      "duration": 2.843093458970543,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 651,
+            "output_tokens": 226,
+            "total_tokens": 877,
+            "reasoning_tokens": 107,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 460,
+    "output_tokens": 132,
+    "total_tokens": 592,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1782.2254369966686,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 460,
+      "output_tokens": 132,
+      "total_tokens": 592,
+      "time_to_first_token": 1.781989525014069,
+      "duration": 1.7820617870311253,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 460,
+            "output_tokens": 132,
+            "total_tokens": 592,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1756760380,
+              "load_duration": 453776,
+              "prompt_eval_duration": 134842000,
+              "eval_duration": 1571523000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

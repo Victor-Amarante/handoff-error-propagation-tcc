@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03471_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2020 working capital ratio is 0.68, calculated using total current assets explicitly identified as FY2021.",
+    "reported_metric": "working capital ratio",
+    "reported_value": 0.68,
+    "confidence": 0.99,
+    "rationale": "Extractor claim C01 explicitly labels total current assets of 5121.3 as year 2021, while C02 is labeled 2020. The analyst incorrectly presents the ratio derived from these mixed-year figures as FY2020; the writer merely repeats that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1062,
+    "output_tokens": 478,
+    "total_tokens": 1540,
+    "cached_tokens": 0,
+    "reasoning_tokens": 338,
+    "cost_usd": 0.000786,
+    "latency_ms": 4780.48045898322,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1062,
+      "output_tokens": 478,
+      "total_tokens": 1540,
+      "reasoning_tokens": 338,
+      "time_to_first_token": 4.779990374983754,
+      "duration": 4.780173582956195,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1062,
+            "output_tokens": 478,
+            "total_tokens": 1540,
+            "reasoning_tokens": 338,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 979,
+    "output_tokens": 251,
+    "total_tokens": 1230,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3144.35722399503,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 979,
+      "output_tokens": 251,
+      "total_tokens": 1230,
+      "time_to_first_token": 3.1440743469865993,
+      "duration": 3.144171686959453,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 979,
+            "output_tokens": 251,
+            "total_tokens": 1230,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3118726146,
+              "load_duration": 569470,
+              "prompt_eval_duration": 266985000,
+              "eval_duration": 2777917000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01981_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "American Express retained card members in 2022, despite the reported retention-status value being 0.0 PCT.",
+    "reported_metric": "card_member_retention_status_2022",
+    "reported_value": 0.0,
+    "confidence": 0.92,
+    "rationale": "The extractor and analyst consistently report a retention-status value of 0.0, but the writer converts that value into a definitive 'Yes' claim. With a status metric encoded as 0, that affirmative interpretation is internally inconsistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 774,
+    "output_tokens": 495,
+    "total_tokens": 1269,
+    "cached_tokens": 0,
+    "reasoning_tokens": 361,
+    "cost_usd": 0.0007488,
+    "latency_ms": 5207.767416955903,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 774,
+      "output_tokens": 495,
+      "total_tokens": 1269,
+      "reasoning_tokens": 361,
+      "time_to_first_token": 5.207240500021726,
+      "duration": 5.207414875039831,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 774,
+            "output_tokens": 495,
+            "total_tokens": 1269,
+            "reasoning_tokens": 361,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 614,
+    "output_tokens": 248,
+    "total_tokens": 862,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3091.576323029585,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 614,
+      "output_tokens": 248,
+      "total_tokens": 862,
+      "time_to_first_token": 3.091345774999354,
+      "duration": 3.091416114009917,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 614,
+            "output_tokens": 248,
+            "total_tokens": 862,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3066040487,
+              "load_duration": 444032,
+              "prompt_eval_duration": 180251000,
+              "eval_duration": 2817801000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

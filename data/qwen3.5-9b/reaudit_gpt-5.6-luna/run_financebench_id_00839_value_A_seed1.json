@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00839_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported that Mary N. Dillon's former role at Ulta Beauty in 2022 was $1K, confusing a role with a monetary value and omitting whether she was CEO.",
+    "reported_metric": "former role",
+    "reported_value": 1.0,
+    "confidence": 0.91,
+    "rationale": "The extractor output is semantically malformed: a former role should be a job title, not a dollar amount. This omission led the analyst and writer to conclude that no prior CEO experience was confirmed."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 798,
+    "output_tokens": 647,
+    "total_tokens": 1445,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000936,
+    "latency_ms": 6980.811582994647,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 798,
+      "output_tokens": 647,
+      "total_tokens": 1445,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.980271167005412,
+      "duration": 6.98046200000681,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 798,
+            "output_tokens": 647,
+            "total_tokens": 1445,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 591,
+    "output_tokens": 249,
+    "total_tokens": 840,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3001.4918209635653,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 591,
+      "output_tokens": 249,
+      "total_tokens": 840,
+      "time_to_first_token": 3.00125253101578,
+      "duration": 3.0013277630205266,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 591,
+            "output_tokens": 249,
+            "total_tokens": 840,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2974402695,
+              "load_duration": 629311,
+              "prompt_eval_duration": 40165000,
+              "eval_duration": 2864170000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

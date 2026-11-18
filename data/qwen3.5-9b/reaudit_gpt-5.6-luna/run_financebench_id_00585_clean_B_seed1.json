@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00585_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's FY2022 effective tax rate was reported as -0.62%, but the extracted figures imply approximately +0.62% (-31 divided by -5,022).",
+    "reported_metric": "Effective tax rate FY2022",
+    "reported_value": -0.62,
+    "confidence": 0.99,
+    "rationale": "The FY2022 inputs produce a positive effective tax rate of about 0.62%, so the analyst introduced a sign error. The writer propagated that incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 821,
+    "output_tokens": 256,
+    "total_tokens": 1077,
+    "cached_tokens": 0,
+    "reasoning_tokens": 120,
+    "cost_usd": 0.00047139999999999997,
+    "latency_ms": 3140.5119999544695,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 821,
+      "output_tokens": 256,
+      "total_tokens": 1077,
+      "reasoning_tokens": 120,
+      "time_to_first_token": 3.139910875004716,
+      "duration": 3.140068791981321,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 821,
+            "output_tokens": 256,
+            "total_tokens": 1077,
+            "reasoning_tokens": 120,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 687,
+    "output_tokens": 927,
+    "total_tokens": 1614,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10319.295916007832,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 687,
+      "output_tokens": 927,
+      "total_tokens": 1614,
+      "time_to_first_token": 10.318991506996099,
+      "duration": 10.319074309023563,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 687,
+            "output_tokens": 927,
+            "total_tokens": 1614,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10292696118,
+              "load_duration": 542480,
+              "prompt_eval_duration": 189548000,
+              "eval_duration": 10054213000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Cash and cash equivalents of $4,835 million were reported for FY2023 in the AMD 2022 10-K trace, leaving the FY2022 cash figure unavailable for the quick-ratio calculation.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 4835.0,
+    "confidence": 0.87,
+    "rationale": "The FY2022 quick ratio should include cash, short-term investments, and accounts receivable. The extractor supplied cash only for FY2023 from a FY2022 source, so the analyst omitted cash and calculated quick assets as only $1,020 million plus $4,126 million. The resulting 0.81 ratio is therefore understated. The analyst also produced an internally inconsistent liquidity_assessment value of 0.0, but that appeared after the extractor’s year mismatch."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1445,
+    "output_tokens": 1233,
+    "total_tokens": 2678,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0017686,
+    "latency_ms": 11129.651625000406,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1445,
+      "output_tokens": 1233,
+      "total_tokens": 2678,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.128961166949011,
+      "duration": 11.12926666700514,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1445,
+            "output_tokens": 1233,
+            "total_tokens": 2678,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2086,
+    "output_tokens": 275,
+    "total_tokens": 2361,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003461,
+    "latency_ms": 4293.065042002127,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2086,
+      "output_tokens": 275,
+      "total_tokens": 2361,
+      "time_to_first_token": 4.292039291991387,
+      "duration": 4.292337291990407,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2086,
+            "output_tokens": 275,
+            "total_tokens": 2361,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

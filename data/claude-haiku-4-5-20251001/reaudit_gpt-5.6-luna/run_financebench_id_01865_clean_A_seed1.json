@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01865_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.95,
+    "rationale": "The trace is internally consistent: Consumer is the only segment with negative organic sales change (-0.9%), while the other segments have positive organic growth. The analyst and writer correctly identify Consumer as the segment dragging down growth when excluding M&A."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 885,
+    "output_tokens": 358,
+    "total_tokens": 1243,
+    "cached_tokens": 0,
+    "reasoning_tokens": 255,
+    "cost_usd": 0.0006065999999999999,
+    "latency_ms": 3950.8222499862313,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 885,
+      "output_tokens": 358,
+      "total_tokens": 1243,
+      "reasoning_tokens": 255,
+      "time_to_first_token": 3.9500829169992357,
+      "duration": 3.950339292001445,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 885,
+            "output_tokens": 358,
+            "total_tokens": 1243,
+            "reasoning_tokens": 255,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1368,
+    "output_tokens": 135,
+    "total_tokens": 1503,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002043,
+    "latency_ms": 1971.4972500223666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1368,
+      "output_tokens": 135,
+      "total_tokens": 1503,
+      "time_to_first_token": 1.9704998749657534,
+      "duration": 1.9707934579928406,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1368,
+            "output_tokens": 135,
+            "total_tokens": 1503,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_07507_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "FY2015 unadjusted operating income was reported as 1,038,559 thousand USD, but the income-statement evidence shows 903,095 thousand USD for FY2015.",
+    "reported_metric": "unadjusted operating income",
+    "reported_value": 1038559.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's FY2015 value of 1,038,559 does not appear in the cited operating-income row, which lists 1,493,602, 903,095, and 412,685. The analyst's -72.0% calculation therefore originates from the incorrect C01 value; using the evident FY2015 and FY2016 values gives an increase, not a decrease."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1026,
+    "output_tokens": 353,
+    "total_tokens": 1379,
+    "cached_tokens": 0,
+    "reasoning_tokens": 169,
+    "cost_usd": 0.0006288,
+    "latency_ms": 3841.4458750048652,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1026,
+      "output_tokens": 353,
+      "total_tokens": 1379,
+      "reasoning_tokens": 169,
+      "time_to_first_token": 3.840657958004158,
+      "duration": 3.840960333007388,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1026,
+            "output_tokens": 353,
+            "total_tokens": 1379,
+            "reasoning_tokens": 169,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 966,
+    "output_tokens": 262,
+    "total_tokens": 1228,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3258.7437029578723,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 966,
+      "output_tokens": 262,
+      "total_tokens": 1228,
+      "time_to_first_token": 3.258512729953509,
+      "duration": 3.258584003953729,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 966,
+            "output_tokens": 262,
+            "total_tokens": 1228,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3231971554,
+              "load_duration": 558121,
+              "prompt_eval_duration": 269123000,
+              "eval_duration": 2886696000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

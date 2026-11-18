@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C06",
+    "root_cause_claim_text": "The reported total liabilities of $203,643 million is inconsistent with the listed liability components, which sum to $220,179 million.",
+    "reported_metric": "total liabilities",
+    "reported_value": 203643.0,
+    "confidence": 0.88,
+    "rationale": "The extractor's component liability claims sum to 220,179 USD million, exceeding the extracted total liabilities of 203,643 USD million. The analyst and writer correctly preserved the largest listed component, customer deposits at 126,775 USD million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1794,
+    "output_tokens": 649,
+    "total_tokens": 2443,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011376,
+    "latency_ms": 6278.993500047363,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1794,
+      "output_tokens": 649,
+      "total_tokens": 2443,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.278029416978825,
+      "duration": 6.2784761670045555,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1794,
+            "output_tokens": 649,
+            "total_tokens": 2443,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1909,
+    "output_tokens": 1920,
+    "total_tokens": 3829,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 20643.860982963815,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1909,
+      "output_tokens": 1920,
+      "total_tokens": 3829,
+      "time_to_first_token": 20.643612295971252,
+      "duration": 20.64369599497877,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1909,
+            "output_tokens": 1920,
+            "total_tokens": 3829,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 20618409641,
+              "load_duration": 607123,
+              "prompt_eval_duration": 470092000,
+              "eval_duration": 20087280000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

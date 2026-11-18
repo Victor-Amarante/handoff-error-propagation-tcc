@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02608_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "The FY2017 net profit margin was reported as 2.5% without a FY2017 revenue input in the claim's provenance.",
+    "reported_metric": "Net profit margin",
+    "reported_value": 2.5,
+    "confidence": 0.95,
+    "rationale": "A03 is the first unsupported claim: net profit margin requires both net earnings and revenue, but A03 derives only from C04, which contains earnings. The subsequent 3-year average and final answer inherit this error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1577,
+    "output_tokens": 1681,
+    "total_tokens": 3258,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1536,
+    "cost_usd": 0.0023325999999999998,
+    "latency_ms": 14680.233582970686,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1577,
+      "output_tokens": 1681,
+      "total_tokens": 3258,
+      "reasoning_tokens": 1536,
+      "time_to_first_token": 14.679482083010953,
+      "duration": 14.679787416011095,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1577,
+            "output_tokens": 1681,
+            "total_tokens": 3258,
+            "reasoning_tokens": 1536,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2258,
+    "output_tokens": 172,
+    "total_tokens": 2430,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003118,
+    "latency_ms": 2987.6665420015343,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2258,
+      "output_tokens": 172,
+      "total_tokens": 2430,
+      "time_to_first_token": 2.986649958009366,
+      "duration": 2.9869510830030777,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2258,
+            "output_tokens": 172,
+            "total_tokens": 2430,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

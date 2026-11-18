@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01936_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The restructuring liability at Q2 FY2023 close consists of employee costs totaling USD 97 million.",
+    "reported_metric": "Employee Costs",
+    "reported_value": 97.0,
+    "confidence": 0.97,
+    "rationale": "The extractor incorrectly carries USD 97 million forward as the Q2 FY2023 employee-cost liability. The trace's rollforward instead shows USD 97 million as an earlier balance, while the December 31, 2022 employee-cost balance is USD 81 million; the ending balances across categories total USD 186 million. The analyst and writer repeat this extraction error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1530,
+    "output_tokens": 1016,
+    "total_tokens": 2546,
+    "cached_tokens": 0,
+    "reasoning_tokens": 857,
+    "cost_usd": 0.0015252,
+    "latency_ms": 9489.168250001967,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1530,
+      "output_tokens": 1016,
+      "total_tokens": 2546,
+      "reasoning_tokens": 857,
+      "time_to_first_token": 9.487730833003297,
+      "duration": 9.488521832972765,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1530,
+            "output_tokens": 1016,
+            "total_tokens": 2546,
+            "reasoning_tokens": 857,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1520,
+    "output_tokens": 322,
+    "total_tokens": 1842,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4052.271105989348,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1520,
+      "output_tokens": 322,
+      "total_tokens": 1842,
+      "time_to_first_token": 4.052034189982805,
+      "duration": 4.052106772956904,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1520,
+            "output_tokens": 322,
+            "total_tokens": 1842,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4026529966,
+              "load_duration": 481788,
+              "prompt_eval_duration": 389777000,
+              "eval_duration": 3586527000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

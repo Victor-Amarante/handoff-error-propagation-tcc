@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02608_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted figures and calculated three-year average are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The margins compute to approximately 3.1% (1228/39403), 2.3% (897/39528), and 3.1% (1233/40339). Their average is approximately 2.8%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1984,
+    "output_tokens": 252,
+    "total_tokens": 2236,
+    "cached_tokens": 0,
+    "reasoning_tokens": 123,
+    "cost_usd": 0.0006992000000000001,
+    "latency_ms": 3054.32054202538,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1984,
+      "output_tokens": 252,
+      "total_tokens": 2236,
+      "reasoning_tokens": 123,
+      "time_to_first_token": 3.053726457990706,
+      "duration": 3.0539439580170438,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1984,
+            "output_tokens": 252,
+            "total_tokens": 2236,
+            "reasoning_tokens": 123,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2730,
+    "output_tokens": 277,
+    "total_tokens": 3007,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004115,
+    "latency_ms": 3679.109791992232,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2730,
+      "output_tokens": 277,
+      "total_tokens": 3007,
+      "time_to_first_token": 3.678210957965348,
+      "duration": 3.678506832977291,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2730,
+            "output_tokens": 277,
+            "total_tokens": 3007,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

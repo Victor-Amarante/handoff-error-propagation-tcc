@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00601_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "Net sales growth was reported as 18.6%, although the extractor's source evidence explicitly states net sales increased 18.3%.",
+    "reported_metric": "net_sales_growth",
+    "reported_value": 18.6,
+    "confidence": 0.99,
+    "rationale": "The analyst recalculated growth from rounded sales figures ($10.2B versus $8.6B), producing 18.6%, but this contradicts the explicit source claim of 18.3%. The writer then used this incorrect rate, along with the similarly miscalculated 14.3% SG&A growth, to explain the reduction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2837,
+    "output_tokens": 573,
+    "total_tokens": 3410,
+    "cached_tokens": 0,
+    "reasoning_tokens": 414,
+    "cost_usd": 0.001255,
+    "latency_ms": 5718.107583990786,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2837,
+      "output_tokens": 573,
+      "total_tokens": 3410,
+      "reasoning_tokens": 414,
+      "time_to_first_token": 5.717103832983412,
+      "duration": 5.717655832995661,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2837,
+            "output_tokens": 573,
+            "total_tokens": 3410,
+            "reasoning_tokens": 414,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3709,
+    "output_tokens": 173,
+    "total_tokens": 3882,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004574,
+    "latency_ms": 3476.0155839612707,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3709,
+      "output_tokens": 173,
+      "total_tokens": 3882,
+      "time_to_first_token": 3.4752301659900695,
+      "duration": 3.4755217080237344,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3709,
+            "output_tokens": 173,
+            "total_tokens": 3882,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

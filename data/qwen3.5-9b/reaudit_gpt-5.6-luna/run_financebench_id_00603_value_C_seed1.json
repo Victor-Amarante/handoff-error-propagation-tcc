@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00603_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Ulta Beauty's net merchandise inventories at Q4 2022 were reported as $1,600.0 million.",
+    "reported_metric": "merchandise_inventories_net_q4_2022",
+    "reported_value": 1600.0,
+    "confidence": 0.86,
+    "rationale": "The extracted balances imply an increase of $100.0 million ($1,600.0M minus $1,500.0M), which conflicts with the separately extracted $104.2 million increase in C04. The likely source of the inconsistency is the rounded or incorrect C02 balance; downstream analyst and writer claims propagate C04 without resolving it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1261,
+    "output_tokens": 679,
+    "total_tokens": 1940,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001067,
+    "latency_ms": 6727.549832954537,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1261,
+      "output_tokens": 679,
+      "total_tokens": 1940,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.71976370800985,
+      "duration": 6.724901083041914,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1261,
+            "output_tokens": 679,
+            "total_tokens": 1940,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1210,
+    "output_tokens": 1127,
+    "total_tokens": 2337,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12286.048694048077,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1210,
+      "output_tokens": 1127,
+      "total_tokens": 2337,
+      "time_to_first_token": 12.285768529050983,
+      "duration": 12.28586390404962,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1210,
+            "output_tokens": 1127,
+            "total_tokens": 2337,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 12260673856,
+              "load_duration": 598682,
+              "prompt_eval_duration": 331751000,
+              "eval_duration": 11854654000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

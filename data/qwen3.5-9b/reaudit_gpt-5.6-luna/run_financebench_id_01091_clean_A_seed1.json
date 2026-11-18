@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01091_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the conflicting $1 billion and $2 billion figures are explicitly presented as conflicting.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extractor contains inconsistent figures, but the analyst and writer accurately preserve that uncertainty and avoid claiming that the legal battles were materially important. Without source documentation, the trace does not establish which figure, if either, is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 786,
+    "output_tokens": 447,
+    "total_tokens": 1233,
+    "cached_tokens": 0,
+    "reasoning_tokens": 323,
+    "cost_usd": 0.0006936,
+    "latency_ms": 4925.530458043795,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 786,
+      "output_tokens": 447,
+      "total_tokens": 1233,
+      "reasoning_tokens": 323,
+      "time_to_first_token": 4.924738666974008,
+      "duration": 4.924954124959186,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 786,
+            "output_tokens": 447,
+            "total_tokens": 1233,
+            "reasoning_tokens": 323,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 581,
+    "output_tokens": 203,
+    "total_tokens": 784,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2590.0272440048866,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 581,
+      "output_tokens": 203,
+      "total_tokens": 784,
+      "time_to_first_token": 2.589797399006784,
+      "duration": 2.589869209972676,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 581,
+            "output_tokens": 203,
+            "total_tokens": 784,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2564823958,
+              "load_duration": 677334,
+              "prompt_eval_duration": 153967000,
+              "eval_duration": 2355315000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10499_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The analyst reported the FY2019 inventory turnover ratio as 6.24 using C01, which is explicitly identified as FY2020 cost of products sold.",
+    "reported_metric": "inventory_turnover_ratio",
+    "reported_value": 6.24,
+    "confidence": 0.98,
+    "rationale": "C01 is labeled year 2020, while A02 is labeled year 2019 and uses C01 as its numerator. A01 correctly averages the FY2018 and FY2019 inventories, but the turnover calculation therefore uses the wrong year's COGS. The extractor claim itself is not necessarily incorrect; the year mismatch is first introduced when the analyst uses it for FY2019."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1152,
+    "output_tokens": 535,
+    "total_tokens": 1687,
+    "cached_tokens": 0,
+    "reasoning_tokens": 363,
+    "cost_usd": 0.0008724,
+    "latency_ms": 5413.561875000596,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1152,
+      "output_tokens": 535,
+      "total_tokens": 1687,
+      "reasoning_tokens": 363,
+      "time_to_first_token": 5.413001250009984,
+      "duration": 5.413190124963876,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1152,
+            "output_tokens": 535,
+            "total_tokens": 1687,
+            "reasoning_tokens": 363,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1754,
+    "output_tokens": 184,
+    "total_tokens": 1938,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002674,
+    "latency_ms": 2657.7190829557367,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1754,
+      "output_tokens": 184,
+      "total_tokens": 1938,
+      "time_to_first_token": 2.6568978750146925,
+      "duration": 2.657124375051353,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1754,
+            "output_tokens": 184,
+            "total_tokens": 1938,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

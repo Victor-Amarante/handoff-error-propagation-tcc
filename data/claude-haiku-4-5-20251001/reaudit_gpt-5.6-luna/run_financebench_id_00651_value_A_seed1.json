@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00651_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JnJ's adjusted EPS in FY2022 was reported as $11.67K.",
+    "reported_metric": "FY2022 adjusted EPS",
+    "reported_value": 11.67,
+    "confidence": 0.86,
+    "rationale": "The extracted FY2022 value conflicts with the extracted FY2023 value and 3.5% growth rate: $10.5K is a decline from $11.67K, not 3.5% growth. The later analyst and writer conclusions inherit this inconsistent input."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 860,
+    "output_tokens": 837,
+    "total_tokens": 1697,
+    "cached_tokens": 0,
+    "reasoning_tokens": 693,
+    "cost_usd": 0.0011764000000000002,
+    "latency_ms": 8792.992041038815,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 860,
+      "output_tokens": 837,
+      "total_tokens": 1697,
+      "reasoning_tokens": 693,
+      "time_to_first_token": 8.790225374978036,
+      "duration": 8.791440999950282,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 860,
+            "output_tokens": 837,
+            "total_tokens": 1697,
+            "reasoning_tokens": 693,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1370,
+    "output_tokens": 189,
+    "total_tokens": 1559,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002315,
+    "latency_ms": 3254.1284170001745,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1370,
+      "output_tokens": 189,
+      "total_tokens": 1559,
+      "time_to_first_token": 3.2532107090228237,
+      "duration": 3.2535098750377074,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1370,
+            "output_tokens": 189,
+            "total_tokens": 1559,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

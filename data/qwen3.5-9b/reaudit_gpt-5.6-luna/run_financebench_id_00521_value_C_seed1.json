@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00521_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Ulta Beauty reported acquisitions of -2.12 billion USD in FY2023.",
+    "reported_metric": "acquisitions",
+    "reported_value": -2.12,
+    "confidence": 0.99,
+    "rationale": "The source and analyst claims report -2120 USD_K, which converts to -2.12 million USD, not -2.12 billion USD. The writer also adds an unsupported FY2022 claim of no acquisitions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 586,
+    "total_tokens": 1386,
+    "cached_tokens": 0,
+    "reasoning_tokens": 464,
+    "cost_usd": 0.0008632,
+    "latency_ms": 5984.447333030403,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 586,
+      "total_tokens": 1386,
+      "reasoning_tokens": 464,
+      "time_to_first_token": 5.983607625006698,
+      "duration": 5.983865000016522,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 586,
+            "total_tokens": 1386,
+            "reasoning_tokens": 464,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 656,
+    "output_tokens": 169,
+    "total_tokens": 825,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2216.664233012125,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 656,
+      "output_tokens": 169,
+      "total_tokens": 825,
+      "time_to_first_token": 2.2164231310016476,
+      "duration": 2.216495984001085,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 656,
+            "output_tokens": 169,
+            "total_tokens": 825,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2190802001,
+              "load_duration": 654100,
+              "prompt_eval_duration": 200159000,
+              "eval_duration": 1919686000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

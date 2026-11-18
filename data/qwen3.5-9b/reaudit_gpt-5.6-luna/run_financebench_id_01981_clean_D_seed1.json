@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01981_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C03",
+    "root_cause_claim_text": "The extractor reported card member retention status in 2022 as 0.0%, despite the accompanying evidence stating that retention remained high.",
+    "reported_metric": "card_member_retention_status_2022",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "Claim C03 is internally inconsistent: its numeric value of 0.0% conflicts with its evidence, 'Card Member retention remained high.' The analyst and writer correctly converted the evidence into a positive retention conclusion, but the first erroneous value appeared in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1046,
+    "output_tokens": 444,
+    "total_tokens": 1490,
+    "cached_tokens": 0,
+    "reasoning_tokens": 298,
+    "cost_usd": 0.000742,
+    "latency_ms": 5049.273166980129,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1046,
+      "output_tokens": 444,
+      "total_tokens": 1490,
+      "reasoning_tokens": 298,
+      "time_to_first_token": 5.048485208011698,
+      "duration": 5.048591000027955,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1046,
+            "output_tokens": 444,
+            "total_tokens": 1490,
+            "reasoning_tokens": 298,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 942,
+    "output_tokens": 222,
+    "total_tokens": 1164,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2870.749783993233,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 942,
+      "output_tokens": 222,
+      "total_tokens": 1164,
+      "time_to_first_token": 2.870521498960443,
+      "duration": 2.8705902399960905,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 942,
+            "output_tokens": 222,
+            "total_tokens": 1164,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2845137228,
+              "load_duration": 478179,
+              "prompt_eval_duration": 242090000,
+              "eval_duration": 2528555000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

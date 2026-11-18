@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; corporate bonds have the largest reported short-term investment value at 416,420 USD_K.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst consistently report corporate bonds at 416,420 USD_K, higher than U.S. government securities (75,696), U.S. agency securities (29,049), and commercial paper/certificates of deposit (4,561). The writer correctly converts 416,420 USD_K to $416.42 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1458,
+    "output_tokens": 209,
+    "total_tokens": 1667,
+    "cached_tokens": 0,
+    "reasoning_tokens": 63,
+    "cost_usd": 0.0005424,
+    "latency_ms": 2743.355792015791,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1458,
+      "output_tokens": 209,
+      "total_tokens": 1667,
+      "reasoning_tokens": 63,
+      "time_to_first_token": 2.7423943749745376,
+      "duration": 2.742801416956354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1458,
+            "output_tokens": 209,
+            "total_tokens": 1667,
+            "reasoning_tokens": 63,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2090,
+    "output_tokens": 163,
+    "total_tokens": 2253,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002905,
+    "latency_ms": 3276.6633750288747,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2090,
+      "output_tokens": 163,
+      "total_tokens": 2253,
+      "time_to_first_token": 3.275726250023581,
+      "duration": 3.2760261250077747,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2090,
+            "output_tokens": 163,
+            "total_tokens": 2253,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

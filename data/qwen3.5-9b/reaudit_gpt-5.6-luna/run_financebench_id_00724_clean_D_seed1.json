@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00724_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the reported ranking is internally consistent with the extracted year-over-year percentage changes.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted percentage changes are -45% for the United States, -56% for Developed Europe, -74% for Developed Rest of World, and -53% for Emerging Markets. Developed Rest of World is therefore the largest percentage decline, and the analyst and writer outputs preserve that result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2461,
+    "output_tokens": 250,
+    "total_tokens": 2711,
+    "cached_tokens": 0,
+    "reasoning_tokens": 118,
+    "cost_usd": 0.0007922000000000001,
+    "latency_ms": 2949.569916992914,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2461,
+      "output_tokens": 250,
+      "total_tokens": 2711,
+      "reasoning_tokens": 118,
+      "time_to_first_token": 2.949102916987613,
+      "duration": 2.9492044170037843,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2461,
+            "output_tokens": 250,
+            "total_tokens": 2711,
+            "reasoning_tokens": 118,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2680,
+    "output_tokens": 2569,
+    "total_tokens": 5249,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 28579.816918994766,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2680,
+      "output_tokens": 2569,
+      "total_tokens": 5249,
+      "time_to_first_token": 28.579548390000127,
+      "duration": 28.579635553993285,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2680,
+            "output_tokens": 2569,
+            "total_tokens": 5249,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 28548105327,
+              "load_duration": 529350,
+              "prompt_eval_duration": 639373000,
+              "eval_duration": 27836606000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

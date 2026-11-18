@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00438_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The subscription revenue value of $16,388 million is labeled as FY2023 even though it reconciles to Adobe's FY2022 total revenue and is identified as FY2022.",
+    "reported_metric": "subscription_revenue_fy2022",
+    "reported_value": 16388.0,
+    "confidence": 0.93,
+    "rationale": "C01 contains an internally inconsistent year label: $16,388 million plus the FY2022 product and services revenue ($532 million and $686 million) equals the reported FY2022 total revenue of $17,606 million. The operating-margin calculations and final answer are otherwise internally consistent and do not depend on C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 4210,
+    "output_tokens": 678,
+    "total_tokens": 4888,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0016556,
+    "latency_ms": 6779.235041991342,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4210,
+      "output_tokens": 678,
+      "total_tokens": 4888,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.7786770420498215,
+      "duration": 6.778840292012319,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4210,
+            "output_tokens": 678,
+            "total_tokens": 4888,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4831,
+    "output_tokens": 581,
+    "total_tokens": 5412,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7625.002900022082,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4831,
+      "output_tokens": 581,
+      "total_tokens": 5412,
+      "time_to_first_token": 7.624700824031606,
+      "duration": 7.6247920550522394,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4831,
+            "output_tokens": 581,
+            "total_tokens": 5412,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7595615036,
+              "load_duration": 598192,
+              "prompt_eval_duration": 1097947000,
+              "eval_duration": 6430555000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

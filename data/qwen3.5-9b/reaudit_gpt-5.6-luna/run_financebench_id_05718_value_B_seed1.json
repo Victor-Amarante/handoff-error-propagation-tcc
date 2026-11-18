@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05718_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. The extractor reports $839 million, which converts to $0.839 billion; the writer correctly rounds this to $0.84 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 688,
+    "output_tokens": 157,
+    "total_tokens": 845,
+    "cached_tokens": 0,
+    "reasoning_tokens": 69,
+    "cost_usd": 0.000326,
+    "latency_ms": 2307.0195830077864,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 688,
+      "output_tokens": 157,
+      "total_tokens": 845,
+      "reasoning_tokens": 69,
+      "time_to_first_token": 2.3064816250116564,
+      "duration": 2.3066380830132402,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 688,
+            "output_tokens": 157,
+            "total_tokens": 845,
+            "reasoning_tokens": 69,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 516,
+    "output_tokens": 162,
+    "total_tokens": 678,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2137.625516974367,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 516,
+      "output_tokens": 162,
+      "total_tokens": 678,
+      "time_to_first_token": 2.1373425989877433,
+      "duration": 2.1374336959561333,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 516,
+            "output_tokens": 162,
+            "total_tokens": 678,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2112465185,
+              "load_duration": 631049,
+              "prompt_eval_duration": 139418000,
+              "eval_duration": 1905635000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

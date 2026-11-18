@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04672_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2018 net property, plant, and equipment for 3M was $8,738 million.",
+    "reported_metric": "FY2018 net property, plant, and equipment (net PP&E)",
+    "reported_value": 8738.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's figures are internally inconsistent: gross PP&E of $28,473 million less accumulated depreciation of $16,135 million equals $12,338 million, not $8,738 million. The analyst and writer propagated the extractor's incorrect net PP&E value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 747,
+    "output_tokens": 318,
+    "total_tokens": 1065,
+    "cached_tokens": 0,
+    "reasoning_tokens": 171,
+    "cost_usd": 0.000531,
+    "latency_ms": 3653.1081660068594,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 747,
+      "output_tokens": 318,
+      "total_tokens": 1065,
+      "reasoning_tokens": 171,
+      "time_to_first_token": 3.6525145830237307,
+      "duration": 3.6526994580053724,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 747,
+            "output_tokens": 318,
+            "total_tokens": 1065,
+            "reasoning_tokens": 171,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 560,
+    "output_tokens": 122,
+    "total_tokens": 682,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1627.0503160194494,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 560,
+      "output_tokens": 122,
+      "total_tokens": 682,
+      "time_to_first_token": 1.6268184639629908,
+      "duration": 1.6268905489705503,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 560,
+            "output_tokens": 122,
+            "total_tokens": 682,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1602103226,
+              "load_duration": 712356,
+              "prompt_eval_duration": 144834000,
+              "eval_duration": 1409349000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

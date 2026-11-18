@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01275_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports operating cash flow of $1,824 million, compared with investing cash flow of -$962 million and financing cash flow of -$1,806 million. The analyst and writer correctly identify operating activities as bringing in the most cash."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1378,
+    "output_tokens": 182,
+    "total_tokens": 1560,
+    "cached_tokens": 0,
+    "reasoning_tokens": 77,
+    "cost_usd": 0.000494,
+    "latency_ms": 2340.948708006181,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1378,
+      "output_tokens": 182,
+      "total_tokens": 1560,
+      "reasoning_tokens": 77,
+      "time_to_first_token": 2.3403913330403157,
+      "duration": 2.3405269170179963,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1378,
+            "output_tokens": 182,
+            "total_tokens": 1560,
+            "reasoning_tokens": 77,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1366,
+    "output_tokens": 263,
+    "total_tokens": 1629,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3381.6419150098227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1366,
+      "output_tokens": 263,
+      "total_tokens": 1629,
+      "time_to_first_token": 3.381409960973542,
+      "duration": 3.3814822239801288,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1366,
+            "output_tokens": 263,
+            "total_tokens": 1629,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3355406849,
+              "load_duration": 566373,
+              "prompt_eval_duration": 345526000,
+              "eval_duration": 2932909000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

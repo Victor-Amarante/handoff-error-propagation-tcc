@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim; the pipeline is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor identifies customer deposits at 126,775 USD million, which exceeds every other listed liability. The analyst preserves this ranking, and the writer reports the same value as $126.775 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 973,
+    "output_tokens": 181,
+    "total_tokens": 1154,
+    "cached_tokens": 0,
+    "reasoning_tokens": 76,
+    "cost_usd": 0.00041180000000000003,
+    "latency_ms": 2789.5228340057656,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 973,
+      "output_tokens": 181,
+      "total_tokens": 1154,
+      "reasoning_tokens": 76,
+      "time_to_first_token": 2.788807542005088,
+      "duration": 2.7891160839935765,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 973,
+            "output_tokens": 181,
+            "total_tokens": 1154,
+            "reasoning_tokens": 76,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 893,
+    "output_tokens": 1015,
+    "total_tokens": 1908,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 11146.973599970806,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 893,
+      "output_tokens": 1015,
+      "total_tokens": 1908,
+      "time_to_first_token": 11.146726456994656,
+      "duration": 11.146809828002006,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 893,
+            "output_tokens": 1015,
+            "total_tokens": 1908,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11121191753,
+              "load_duration": 581216,
+              "prompt_eval_duration": 217276000,
+              "eval_duration": 10853287000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

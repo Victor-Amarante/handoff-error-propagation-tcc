@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00822_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Virginia C. Drosos was reported as having 294,935 votes against, but the extractor labeled this vote metric with the incompatible unit USD_K.",
+    "reported_metric": "Virginia C. Drosos - Votes Against",
+    "reported_value": 294935.0,
+    "confidence": 0.86,
+    "rationale": "The underlying figures support Richard A. Johnson as the maximum, but every extracted vote metric is labeled USD_K. The analyst then compounds this by presenting vote counts as dollar amounts (for example, 294,935 USD_K as $300K+ and 16,105,005 USD_K as $16.1M), which is internally inconsistent. The first such faulty provenance appears in extractor claim C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3280,
+    "output_tokens": 1709,
+    "total_tokens": 4989,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1516,
+    "cost_usd": 0.0027067999999999997,
+    "latency_ms": 16628.622165997513,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3280,
+      "output_tokens": 1709,
+      "total_tokens": 4989,
+      "reasoning_tokens": 1516,
+      "time_to_first_token": 16.628132042009383,
+      "duration": 16.628287166997325,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3280,
+            "output_tokens": 1709,
+            "total_tokens": 4989,
+            "reasoning_tokens": 1516,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3716,
+    "output_tokens": 294,
+    "total_tokens": 4010,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4299.567421025131,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3716,
+      "output_tokens": 294,
+      "total_tokens": 4010,
+      "time_to_first_token": 4.29931737302104,
+      "duration": 4.299405948026106,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3716,
+            "output_tokens": 294,
+            "total_tokens": 4010,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4272487610,
+              "load_duration": 617275,
+              "prompt_eval_duration": 879737000,
+              "eval_duration": 3292288000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

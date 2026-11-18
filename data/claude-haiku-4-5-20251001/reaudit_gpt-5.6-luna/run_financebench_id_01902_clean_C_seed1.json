@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01902_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst claimed that the best-performing USA product category was identified by a 9.0% comparable-sales change, although the question asks for performance by top-line sales and the extracted claims do not identify product categories.",
+    "reported_metric": "best_performing_product_category_comp_sales_change_q2_fy2024_usa",
+    "reported_value": 9.0,
+    "confidence": 0.96,
+    "rationale": "The analyst changed the requested metric from top-line performance to comparable-sales growth and selected the maximum percentage without category labels in the extractor output. The writer merely propagated this unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1212,
+    "output_tokens": 859,
+    "total_tokens": 2071,
+    "cached_tokens": 0,
+    "reasoning_tokens": 701,
+    "cost_usd": 0.0012732,
+    "latency_ms": 8780.716666020453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1212,
+      "output_tokens": 859,
+      "total_tokens": 2071,
+      "reasoning_tokens": 701,
+      "time_to_first_token": 8.779764750041068,
+      "duration": 8.780209291027859,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1212,
+            "output_tokens": 859,
+            "total_tokens": 2071,
+            "reasoning_tokens": 701,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1821,
+    "output_tokens": 189,
+    "total_tokens": 2010,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002766,
+    "latency_ms": 3069.035083055496,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1821,
+      "output_tokens": 189,
+      "total_tokens": 2010,
+      "time_to_first_token": 3.0680888749775477,
+      "duration": 3.0683943339972757,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1821,
+            "output_tokens": 189,
+            "total_tokens": 2010,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

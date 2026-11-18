@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01107_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst improperly generalized a December 2022 opioid settlement obligation, plus December 2023 fees, into evidence of a materially important ongoing legal battle covering 2020–2022; the trace provides no evidence for 2020 or 2021 or that the matter was still ongoing.",
+    "reported_metric": "coverage of materially important ongoing legal battle",
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor only reports a December 2022 remediation amount and December 2023 attorneys' fees. It does not establish a legal battle in 2020 or 2021, nor ongoing status. The unsupported temporal and legal-status inference first appears in the analyst output and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 891,
+    "output_tokens": 692,
+    "total_tokens": 1583,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010086000000000001,
+    "latency_ms": 6491.841999988537,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 891,
+      "output_tokens": 692,
+      "total_tokens": 1583,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.491420958016533,
+      "duration": 6.491512332984712,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 891,
+            "output_tokens": 692,
+            "total_tokens": 1583,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1412,
+    "output_tokens": 166,
+    "total_tokens": 1578,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002242,
+    "latency_ms": 2252.533584018238,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1412,
+      "output_tokens": 166,
+      "total_tokens": 1578,
+      "time_to_first_token": 2.2516032499843277,
+      "duration": 2.251902375021018,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1412,
+            "output_tokens": 166,
+            "total_tokens": 1578,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

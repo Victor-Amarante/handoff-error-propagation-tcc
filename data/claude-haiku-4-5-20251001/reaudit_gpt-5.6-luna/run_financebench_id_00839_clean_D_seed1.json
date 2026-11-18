@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00839_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Mary N. Dillon did not have prior CEO experience in retail.",
+    "reported_metric": "ceo_prior_retail_experience",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The extractor evidence states that Mary N. Dillon was formerly Executive Chair and CEO of Ulta Beauty, a retail company. The analyst incorrectly assigned a value of 0.0 despite deriving from claims C01 and C02, which establish her prior CEO experience. The writer later changed the value to 1.0 and produced an answer consistent with the evidence."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1114,
+    "output_tokens": 257,
+    "total_tokens": 1371,
+    "cached_tokens": 0,
+    "reasoning_tokens": 107,
+    "cost_usd": 0.0005312,
+    "latency_ms": 3189.305040985346,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1114,
+      "output_tokens": 257,
+      "total_tokens": 1371,
+      "reasoning_tokens": 107,
+      "time_to_first_token": 3.188882582995575,
+      "duration": 3.188960874977056,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1114,
+            "output_tokens": 257,
+            "total_tokens": 1371,
+            "reasoning_tokens": 107,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1677,
+    "output_tokens": 215,
+    "total_tokens": 1892,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002752,
+    "latency_ms": 2866.7233749874867,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1677,
+      "output_tokens": 215,
+      "total_tokens": 1892,
+      "time_to_first_token": 2.865874749957584,
+      "duration": 2.866165457991883,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1677,
+            "output_tokens": 215,
+            "total_tokens": 1892,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

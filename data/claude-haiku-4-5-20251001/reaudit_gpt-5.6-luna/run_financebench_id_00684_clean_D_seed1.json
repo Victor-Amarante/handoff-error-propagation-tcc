@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00684_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported gross margins and declining trend are internally consistent with the extracted sales and gross-profit figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The calculations check out: 2,725/14,694 = 18.55%, 2,820/14,544 = 19.39%, and 2,732/12,861 = 21.24%. Thus gross margin declined through FY2023, and the writer accurately reflects the analyst output. The response does not discuss whether gross margin is useful for Amcor, but that is an omission rather than an incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2241,
+    "output_tokens": 345,
+    "total_tokens": 2586,
+    "cached_tokens": 0,
+    "reasoning_tokens": 175,
+    "cost_usd": 0.0008622,
+    "latency_ms": 3848.1979580246843,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2241,
+      "output_tokens": 345,
+      "total_tokens": 2586,
+      "reasoning_tokens": 175,
+      "time_to_first_token": 3.8474635839811526,
+      "duration": 3.8477034169482067,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2241,
+            "output_tokens": 345,
+            "total_tokens": 2586,
+            "reasoning_tokens": 175,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3050,
+    "output_tokens": 156,
+    "total_tokens": 3206,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00383,
+    "latency_ms": 3276.85125003336,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3050,
+      "output_tokens": 156,
+      "total_tokens": 3206,
+      "time_to_first_token": 3.2759015840128995,
+      "duration": 3.276264959014952,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3050,
+            "output_tokens": 156,
+            "total_tokens": 3206,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

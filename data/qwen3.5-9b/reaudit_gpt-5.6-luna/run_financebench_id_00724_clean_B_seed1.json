@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00724_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "It is impossible to determine the region with the biggest Q2 2023 year-over-year revenue drop because Q2 2022 figures are not included.",
+    "reported_metric": "region with the biggest drop in revenues",
+    "reported_value": 3.0,
+    "confidence": 0.99,
+    "rationale": "The extractor includes Q2 2022 revenues and YoY changes for all four regions; Developed Rest of World has the largest decline at -74%. The analyst omitted those fields, but the first incorrect claim appears in the writer output, which falsely says the comparison is impossible."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1324,
+    "output_tokens": 373,
+    "total_tokens": 1697,
+    "cached_tokens": 0,
+    "reasoning_tokens": 224,
+    "cost_usd": 0.0007124,
+    "latency_ms": 4140.028625028208,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1324,
+      "output_tokens": 373,
+      "total_tokens": 1697,
+      "reasoning_tokens": 224,
+      "time_to_first_token": 4.139188457978889,
+      "duration": 4.139433957985602,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1324,
+            "output_tokens": 373,
+            "total_tokens": 1697,
+            "reasoning_tokens": 224,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1286,
+    "output_tokens": 969,
+    "total_tokens": 2255,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 11126.438144012354,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1286,
+      "output_tokens": 969,
+      "total_tokens": 2255,
+      "time_to_first_token": 11.126162178989034,
+      "duration": 11.126257536991034,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1286,
+            "output_tokens": 969,
+            "total_tokens": 2255,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11099792047,
+              "load_duration": 597059,
+              "prompt_eval_duration": 351962000,
+              "eval_duration": 10694053000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

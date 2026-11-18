@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02981_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly reported Corning's FY2021 unadjusted operating income margin as 45.2%; using operating income of 2,112 and net sales of 14,082 gives approximately 15.0%.",
+    "reported_metric": "Unadjusted Operating Income % Margin",
+    "reported_value": 45.2,
+    "confidence": 0.99,
+    "rationale": "The extracted FY2019-FY2021 income and sales figures imply margins of about 11.4%, 4.5%, and 15.0%, averaging 10.3%, not the analyst's 57.0%, 13.8%, and 45.2%. The writer correctly averaged the analyst's erroneous figures, so the first error is in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 973,
+    "output_tokens": 991,
+    "total_tokens": 1964,
+    "cached_tokens": 0,
+    "reasoning_tokens": 796,
+    "cost_usd": 0.0013838000000000001,
+    "latency_ms": 9395.69274999667,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 973,
+      "output_tokens": 991,
+      "total_tokens": 1964,
+      "reasoning_tokens": 796,
+      "time_to_first_token": 9.395227333996445,
+      "duration": 9.395378625020385,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 973,
+            "output_tokens": 991,
+            "total_tokens": 1964,
+            "reasoning_tokens": 796,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 872,
+    "output_tokens": 455,
+    "total_tokens": 1327,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5278.295869007707,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 872,
+      "output_tokens": 455,
+      "total_tokens": 1327,
+      "time_to_first_token": 5.2780613509821706,
+      "duration": 5.278136716980953,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 872,
+            "output_tokens": 455,
+            "total_tokens": 1327,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5253284049,
+              "load_duration": 486301,
+              "prompt_eval_duration": 238412000,
+              "eval_duration": 4963581000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00917_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY22 operating-margin change was driven by amortization of intangible assets associated with the Xilinx acquisition.",
+    "reported_metric": "operating_margin_change_drivers_fy22",
+    "reported_value": 0.0,
+    "confidence": 0.94,
+    "rationale": "The extractor evidence supports a driver of operating-income decline, not a quantified operating-margin change. The analyst incorrectly relabeled that claim as an operating-margin driver and assigned it a 0.0 value; the writer then propagated this unsupported mapping. Revenue and margin figures needed to assess operating-margin change are absent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1239,
+    "output_tokens": 661,
+    "total_tokens": 1900,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001041,
+    "latency_ms": 7228.818834002595,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1239,
+      "output_tokens": 661,
+      "total_tokens": 1900,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.228189832996577,
+      "duration": 7.2283882920164615,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1239,
+            "output_tokens": 661,
+            "total_tokens": 1900,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1163,
+    "output_tokens": 273,
+    "total_tokens": 1436,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3388.3761200122535,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1163,
+      "output_tokens": 273,
+      "total_tokens": 1436,
+      "time_to_first_token": 3.3880866859690286,
+      "duration": 3.388172756007407,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1163,
+            "output_tokens": 273,
+            "total_tokens": 1436,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3357188619,
+              "load_duration": 486549,
+              "prompt_eval_duration": 324764000,
+              "eval_duration": 2974777000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

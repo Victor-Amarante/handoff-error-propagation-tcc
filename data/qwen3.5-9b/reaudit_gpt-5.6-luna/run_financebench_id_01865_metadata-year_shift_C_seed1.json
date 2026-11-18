@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01865_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The Safety and Industrial segment dragged down 3M's overall growth by 1.0 percentage point when excluding M&A impacts.",
+    "reported_metric": "Safety and Industrial",
+    "reported_value": 1.0,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst consistently report Safety and Industrial's organic contribution as positive 1.0 PCT, not a drag. Among the listed segments, Consumer has the lowest contribution at 0.0 PCT, so the writer incorrectly interpreted the positive Safety and Industrial value as a decline."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2821,
+    "output_tokens": 361,
+    "total_tokens": 3182,
+    "cached_tokens": 0,
+    "reasoning_tokens": 217,
+    "cost_usd": 0.0009974,
+    "latency_ms": 4416.114167019259,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2821,
+      "output_tokens": 361,
+      "total_tokens": 3182,
+      "reasoning_tokens": 217,
+      "time_to_first_token": 4.41585104103433,
+      "duration": 4.415945000015199,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2821,
+            "output_tokens": 361,
+            "total_tokens": 3182,
+            "reasoning_tokens": 217,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3050,
+    "output_tokens": 2736,
+    "total_tokens": 5786,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 29402.172605972737,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3050,
+      "output_tokens": 2736,
+      "total_tokens": 5786,
+      "time_to_first_token": 29.40193252795143,
+      "duration": 29.40201242599869,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3050,
+            "output_tokens": 2736,
+            "total_tokens": 5786,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 29376713851,
+              "load_duration": 619394,
+              "prompt_eval_duration": 701219000,
+              "eval_duration": 28616526000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

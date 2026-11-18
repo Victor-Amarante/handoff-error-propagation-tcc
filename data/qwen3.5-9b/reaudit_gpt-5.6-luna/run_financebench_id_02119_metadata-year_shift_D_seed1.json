@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02119_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "JPM's liquidation value per share would be $66.56, based on its TBVPS.",
+    "reported_metric": "Liquidation Value Per Share",
+    "reported_value": 66.56,
+    "confidence": 0.97,
+    "rationale": "The extractor and analyst support TBVPS of $66.56, not liquidation proceeds per share. The writer incorrectly equates tangible book value per share with the amount shareholders would receive upon liquidation; liquidation proceeds could differ due to asset realizations, liabilities, and liquidation costs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 905,
+    "output_tokens": 600,
+    "total_tokens": 1505,
+    "cached_tokens": 0,
+    "reasoning_tokens": 462,
+    "cost_usd": 0.000901,
+    "latency_ms": 5708.058042044286,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 905,
+      "output_tokens": 600,
+      "total_tokens": 1505,
+      "reasoning_tokens": 462,
+      "time_to_first_token": 5.707442125014495,
+      "duration": 5.707707333029248,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 905,
+            "output_tokens": 600,
+            "total_tokens": 1505,
+            "reasoning_tokens": 462,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 779,
+    "output_tokens": 682,
+    "total_tokens": 1461,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7595.547566015739,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 779,
+      "output_tokens": 682,
+      "total_tokens": 1461,
+      "time_to_first_token": 7.5952955079847015,
+      "duration": 7.595370128983632,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 779,
+            "output_tokens": 682,
+            "total_tokens": 1461,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7565830263,
+              "load_duration": 471380,
+              "prompt_eval_duration": 199169000,
+              "eval_duration": 7292188000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

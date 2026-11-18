@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00724_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The United States Q2 2023 year-over-year revenue change was -45%.",
+    "reported_metric": "United States Q2 YoY revenue percentage change",
+    "reported_value": -45.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's United States revenues imply a decline of approximately 39% ((6815-11222)/11222), not -45%. The other regional percentages are internally consistent, and the final identified region remains correct."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 939,
+    "output_tokens": 366,
+    "total_tokens": 1305,
+    "cached_tokens": 0,
+    "reasoning_tokens": 239,
+    "cost_usd": 0.000627,
+    "latency_ms": 3859.929625003133,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 939,
+      "output_tokens": 366,
+      "total_tokens": 1305,
+      "reasoning_tokens": 239,
+      "time_to_first_token": 3.8594688330194913,
+      "duration": 3.8596061670104973,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 939,
+            "output_tokens": 366,
+            "total_tokens": 1305,
+            "reasoning_tokens": 239,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 758,
+    "output_tokens": 162,
+    "total_tokens": 920,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2197.3705050186254,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 758,
+      "output_tokens": 162,
+      "total_tokens": 920,
+      "time_to_first_token": 2.1970819130074233,
+      "duration": 2.1971524099935777,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 758,
+            "output_tokens": 162,
+            "total_tokens": 920,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2171794235,
+              "load_duration": 455636,
+              "prompt_eval_duration": 218749000,
+              "eval_duration": 1884879000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

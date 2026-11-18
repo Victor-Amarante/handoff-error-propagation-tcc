@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Accumulated depreciation of $200,255 million was labeled as a FY2022 figure even though it reconciles with gross PPE of $307,689 million and net PPE of $107,434 million labeled as FY2023-related data.",
+    "reported_metric": "property_plant_equipment_accumulated_depreciation",
+    "reported_value": 200255.0,
+    "confidence": 0.84,
+    "rationale": "The extracted PPE figures are internally inconsistent by year: $307,689 million minus $200,255 million equals $107,434 million, indicating these figures belong to the same period, while the trace labels them across FY2022 and FY2023. The analyst's ratios are arithmetically correct using the extracted net PPE, but they inherit this period-labeling error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 969,
+    "output_tokens": 1223,
+    "total_tokens": 2192,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0016614,
+    "latency_ms": 11412.443707988132,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 969,
+      "output_tokens": 1223,
+      "total_tokens": 2192,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.411915667005815,
+      "duration": 11.4121263329871,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 969,
+            "output_tokens": 1223,
+            "total_tokens": 2192,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1509,
+    "output_tokens": 214,
+    "total_tokens": 1723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002579,
+    "latency_ms": 3558.3845420042053,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1509,
+      "output_tokens": 214,
+      "total_tokens": 1723,
+      "time_to_first_token": 3.5575957089895383,
+      "duration": 3.5578109589987434,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1509,
+            "output_tokens": 214,
+            "total_tokens": 1723,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

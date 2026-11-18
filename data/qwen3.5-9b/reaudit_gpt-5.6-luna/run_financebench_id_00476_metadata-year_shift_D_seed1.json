@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00476_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "The extractor incorrectly claimed that American Express had a 2022 trading symbol valued at 640.0 USD_K, based on the phone number (212) 640-2000.",
+    "reported_metric": "Trading Symbol",
+    "reported_value": 640.0,
+    "confidence": 0.99,
+    "rationale": "The evidence is a telephone number, not a trading symbol or debt-securities listing. This erroneous extractor claim was propagated through C04 and used by the writer, which then unsupportedly concluded that the count of registered debt securities was zero."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1232,
+    "output_tokens": 512,
+    "total_tokens": 1744,
+    "cached_tokens": 0,
+    "reasoning_tokens": 368,
+    "cost_usd": 0.0008608,
+    "latency_ms": 6266.4931250037625,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1232,
+      "output_tokens": 512,
+      "total_tokens": 1744,
+      "reasoning_tokens": 368,
+      "time_to_first_token": 6.2662937919958495,
+      "duration": 6.266347708005924,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1232,
+            "output_tokens": 512,
+            "total_tokens": 1744,
+            "reasoning_tokens": 368,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1196,
+    "output_tokens": 297,
+    "total_tokens": 1493,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3645.1382510131225,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1196,
+      "output_tokens": 297,
+      "total_tokens": 1493,
+      "time_to_first_token": 3.644904800981749,
+      "duration": 3.644977737974841,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1196,
+            "output_tokens": 297,
+            "total_tokens": 1493,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3620366915,
+              "load_duration": 567655,
+              "prompt_eval_duration": 328549000,
+              "eval_duration": 3241384000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

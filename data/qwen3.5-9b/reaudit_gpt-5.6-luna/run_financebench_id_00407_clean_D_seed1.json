@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00407_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is apparent in the trace. Corporate bonds at USD 416,420 thousand are greater than the other listed short-term investment categories, and the writer correctly converts this to USD 416.4 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1587,
+    "output_tokens": 186,
+    "total_tokens": 1773,
+    "cached_tokens": 0,
+    "reasoning_tokens": 89,
+    "cost_usd": 0.0005406,
+    "latency_ms": 2526.870667003095,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1587,
+      "output_tokens": 186,
+      "total_tokens": 1773,
+      "reasoning_tokens": 89,
+      "time_to_first_token": 2.526088082988281,
+      "duration": 2.5262937920051627,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1587,
+            "output_tokens": 186,
+            "total_tokens": 1773,
+            "reasoning_tokens": 89,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1614,
+    "output_tokens": 515,
+    "total_tokens": 2129,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6244.484813010786,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1614,
+      "output_tokens": 515,
+      "total_tokens": 2129,
+      "time_to_first_token": 6.244194119994063,
+      "duration": 6.244285379012581,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1614,
+            "output_tokens": 515,
+            "total_tokens": 2129,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6213405672,
+              "load_duration": 479857,
+              "prompt_eval_duration": 414361000,
+              "eval_duration": 5743800000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

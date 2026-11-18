@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03620_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor omitted the depreciation-and-amortization and capital-expenditures figures needed to calculate unadjusted EBITDA less capex.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.78,
+    "rationale": "The analyst and writer correctly observed that the figures available in the extractor output are insufficient. The first pipeline failure is therefore the extractor's incomplete capture of the relevant cash-flow-statement data, although no explicit incorrect numeric claim or claim ID is present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 796,
+    "output_tokens": 646,
+    "total_tokens": 1442,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009343999999999999,
+    "latency_ms": 6459.764999977779,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 796,
+      "output_tokens": 646,
+      "total_tokens": 1442,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.459192416979931,
+      "duration": 6.459343124995939,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 796,
+            "output_tokens": 646,
+            "total_tokens": 1442,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 598,
+    "output_tokens": 122,
+    "total_tokens": 720,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1750.9593000286259,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 598,
+      "output_tokens": 122,
+      "total_tokens": 720,
+      "time_to_first_token": 1.750730473024305,
+      "duration": 1.750799569010269,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 598,
+            "output_tokens": 122,
+            "total_tokens": 720,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1722947473,
+              "load_duration": 457029,
+              "prompt_eval_duration": 177989000,
+              "eval_duration": 1494442000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

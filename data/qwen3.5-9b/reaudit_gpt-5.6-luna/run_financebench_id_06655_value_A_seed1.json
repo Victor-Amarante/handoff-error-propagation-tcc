@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06655_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim was identified; the extracted figures, calculation, and final reported DPO are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The average accounts payable is 29,962.5 million, the inventory change is 4,586 million, and 365 × 29,962.5 ÷ 116,520 = 93.86 days when rounded to two decimals."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1093,
+    "output_tokens": 372,
+    "total_tokens": 1465,
+    "cached_tokens": 0,
+    "reasoning_tokens": 245,
+    "cost_usd": 0.000665,
+    "latency_ms": 3937.43595801061,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1093,
+      "output_tokens": 372,
+      "total_tokens": 1465,
+      "reasoning_tokens": 245,
+      "time_to_first_token": 3.936737790994812,
+      "duration": 3.936983333027456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1093,
+            "output_tokens": 372,
+            "total_tokens": 1465,
+            "reasoning_tokens": 245,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1030,
+    "output_tokens": 250,
+    "total_tokens": 1280,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3124.5022019720636,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1030,
+      "output_tokens": 250,
+      "total_tokens": 1280,
+      "time_to_first_token": 3.1242457240005024,
+      "duration": 3.124319799011573,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1030,
+            "output_tokens": 250,
+            "total_tokens": 1280,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3094253315,
+              "load_duration": 949107,
+              "prompt_eval_duration": 270983000,
+              "eval_duration": 2766489000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

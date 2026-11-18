@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00684_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "AMCOR's FY2023 gross margin was reported as 18.76%, but the extracted FY2023 gross profit and cost of sales imply net sales of $14,694 million and a gross margin of approximately 18.55%.",
+    "reported_metric": "gross_margin",
+    "reported_value": 18.76,
+    "confidence": 0.96,
+    "rationale": "The FY2023 extracted figures imply net sales of 2,725 + 11,969 = 14,694, so gross margin is 2,725 / 14,694 = approximately 18.55%, not 18.76%. The writer accurately propagated the analyst's incorrect figure; the extractor's 2024 year label for $14,694 million is also inconsistent, but A01 is the first numerically incorrect derived claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1854,
+    "output_tokens": 1230,
+    "total_tokens": 3084,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0018468,
+    "latency_ms": 11532.079499971587,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1854,
+      "output_tokens": 1230,
+      "total_tokens": 3084,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.531776167044882,
+      "duration": 11.53187704202719,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1854,
+            "output_tokens": 1230,
+            "total_tokens": 3084,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2604,
+    "output_tokens": 204,
+    "total_tokens": 2808,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003624,
+    "latency_ms": 3347.5872080307454,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2604,
+      "output_tokens": 204,
+      "total_tokens": 2808,
+      "time_to_first_token": 3.3470826250268146,
+      "duration": 3.3472141249803826,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2604,
+            "output_tokens": 204,
+            "total_tokens": 2808,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The analyst reported gross property, plant, and equipment as 2.251 times consolidated operating revenue.",
+    "reported_metric": "ppe_gross_to_revenue_ratio",
+    "reported_value": 2.251,
+    "confidence": 0.98,
+    "rationale": "Using the extractor values, 307689 / 136835 = approximately 2.249, not 2.251. The extractor inputs are internally consistent, while A02 is the first numerically incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1531,
+    "output_tokens": 551,
+    "total_tokens": 2082,
+    "cached_tokens": 0,
+    "reasoning_tokens": 423,
+    "cost_usd": 0.0009673999999999999,
+    "latency_ms": 5886.515124992002,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1531,
+      "output_tokens": 551,
+      "total_tokens": 2082,
+      "reasoning_tokens": 423,
+      "time_to_first_token": 5.8857374580111355,
+      "duration": 5.886095958005171,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1531,
+            "output_tokens": 551,
+            "total_tokens": 2082,
+            "reasoning_tokens": 423,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2208,
+    "output_tokens": 207,
+    "total_tokens": 2415,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003243,
+    "latency_ms": 3814.1176250064746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2208,
+      "output_tokens": 207,
+      "total_tokens": 2415,
+      "time_to_first_token": 3.813265041972045,
+      "duration": 3.8135011249687523,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2208,
+            "output_tokens": 207,
+            "total_tokens": 2415,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

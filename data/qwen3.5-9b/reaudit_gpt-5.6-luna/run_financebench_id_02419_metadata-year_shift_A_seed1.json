@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly stated that approximately $700 million had already been incurred, even though the trace says $700 million was the expected 2024 separation cost and only 90% had been incurred by Q2 2023.",
+    "reported_metric": "Upjohn separation costs incurred by Q2 2023",
+    "reported_value": 700.0,
+    "confidence": 0.95,
+    "rationale": "The analyst correctly interpreted the trace as 90% of the $700 million expected cost being incurred. The writer changed that to $700 million incurred, conflating the expected total with the amount incurred."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 720,
+    "output_tokens": 662,
+    "total_tokens": 1382,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009383999999999999,
+    "latency_ms": 6980.269957974087,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 720,
+      "output_tokens": 662,
+      "total_tokens": 1382,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.979597166995518,
+      "duration": 6.97983608400682,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 720,
+            "output_tokens": 662,
+            "total_tokens": 1382,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 529,
+    "output_tokens": 197,
+    "total_tokens": 726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2430.1490299985744,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 529,
+      "output_tokens": 197,
+      "total_tokens": 726,
+      "time_to_first_token": 2.4299036670126952,
+      "duration": 2.4299721679999493,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 529,
+            "output_tokens": 197,
+            "total_tokens": 726,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2397824242,
+              "load_duration": 426747,
+              "prompt_eval_duration": 143207000,
+              "eval_duration": 2200979000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Customer deposits were reported as $110,239 million for 2023, although the question concerns the 2022 balance sheet and the source is the 2022 10-K.",
+    "reported_metric": "customer deposits",
+    "reported_value": 110239.0,
+    "confidence": 0.86,
+    "rationale": "The extractor assigned the largest liability-category value to 2023, causing the analyst to exclude it from the 2022 comparison. The analyst then incorrectly selected long-term debt ($42,573 million) as the largest liability."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1401,
+    "output_tokens": 1173,
+    "total_tokens": 2574,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1025,
+    "cost_usd": 0.0016878,
+    "latency_ms": 11319.923000002746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1401,
+      "output_tokens": 1173,
+      "total_tokens": 2574,
+      "reasoning_tokens": 1025,
+      "time_to_first_token": 11.319194375013467,
+      "duration": 11.319530708016828,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1401,
+            "output_tokens": 1173,
+            "total_tokens": 2574,
+            "reasoning_tokens": 1025,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1417,
+    "output_tokens": 263,
+    "total_tokens": 1680,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3377.0472580217756,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1417,
+      "output_tokens": 263,
+      "total_tokens": 1680,
+      "time_to_first_token": 3.376818915014155,
+      "duration": 3.376889333012514,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1417,
+            "output_tokens": 263,
+            "total_tokens": 1680,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3351296038,
+              "load_duration": 705681,
+              "prompt_eval_duration": 378660000,
+              "eval_duration": 2890234000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

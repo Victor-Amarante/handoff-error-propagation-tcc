@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01865_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Consumer segment's organic contribution to sales change in 2022 was reported as 0%.",
+    "reported_metric": "Consumer organic contribution to sales change",
+    "reported_value": 0.0,
+    "confidence": 0.84,
+    "rationale": "The question presupposes that a segment dragged down overall growth after excluding M&A. The extractor reports every segment's organic contribution as nonnegative, with Consumer at 0%, preventing identification of a drag. This indicates the likely first error is the Consumer organic contribution value; the analyst and writer merely propagate that faulty extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1863,
+    "output_tokens": 657,
+    "total_tokens": 2520,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001161,
+    "latency_ms": 6288.983499980532,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1863,
+      "output_tokens": 657,
+      "total_tokens": 2520,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.288123000005726,
+      "duration": 6.288450833002571,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1863,
+            "output_tokens": 657,
+            "total_tokens": 2520,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1643,
+    "output_tokens": 169,
+    "total_tokens": 1812,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2339.796922984533,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1643,
+      "output_tokens": 169,
+      "total_tokens": 1812,
+      "time_to_first_token": 2.3395178329665214,
+      "duration": 2.3396102149854414,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1643,
+            "output_tokens": 169,
+            "total_tokens": 1812,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2311455416,
+              "load_duration": 749442,
+              "prompt_eval_duration": 392919000,
+              "eval_duration": 1858668000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

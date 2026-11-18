@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Verizon's gross property, plant, and equipment was $307,689 million in FY2023.",
+    "reported_metric": "Gross property, plant, and equipment",
+    "reported_value": 307689.0,
+    "confidence": 0.87,
+    "rationale": "The trace internally implies that $307,689M corresponds to FY2022, because FY2022 net PP&E of $107,434M plus FY2022 accumulated depreciation of $200,255M equals exactly $307,689M. Labeling that gross PP&E figure as FY2023 is therefore the first apparent error. The final 68% calculation itself uses the stated FY2022 net PP&E, licenses, and total assets."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1023,
+    "output_tokens": 902,
+    "total_tokens": 1925,
+    "cached_tokens": 0,
+    "reasoning_tokens": 722,
+    "cost_usd": 0.001287,
+    "latency_ms": 8849.122209008783,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1023,
+      "output_tokens": 902,
+      "total_tokens": 1925,
+      "reasoning_tokens": 722,
+      "time_to_first_token": 8.848422707989812,
+      "duration": 8.848594207956921,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1023,
+            "output_tokens": 902,
+            "total_tokens": 1925,
+            "reasoning_tokens": 722,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1571,
+    "output_tokens": 198,
+    "total_tokens": 1769,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002561,
+    "latency_ms": 3522.5399999762885,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1571,
+      "output_tokens": 198,
+      "total_tokens": 1769,
+      "time_to_first_token": 3.521600916981697,
+      "duration": 3.5219017089693807,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1571,
+            "output_tokens": 198,
+            "total_tokens": 1769,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

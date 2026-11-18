@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05718_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports dividends paid of 389 USD millions for FY2020, and the analyst correctly converts this to 0.389 USD billions. The writer reproduces the same value and metric consistently."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 919,
+    "output_tokens": 160,
+    "total_tokens": 1079,
+    "cached_tokens": 0,
+    "reasoning_tokens": 65,
+    "cost_usd": 0.00037580000000000003,
+    "latency_ms": 2461.888624995481,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 919,
+      "output_tokens": 160,
+      "total_tokens": 1079,
+      "reasoning_tokens": 65,
+      "time_to_first_token": 2.461068833945319,
+      "duration": 2.4613099999842234,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 919,
+            "output_tokens": 160,
+            "total_tokens": 1079,
+            "reasoning_tokens": 65,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 802,
+    "output_tokens": 170,
+    "total_tokens": 972,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2211.7514690035023,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 802,
+      "output_tokens": 170,
+      "total_tokens": 972,
+      "time_to_first_token": 2.2114832819788717,
+      "duration": 2.211555278976448,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 802,
+            "output_tokens": 170,
+            "total_tokens": 972,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2184690265,
+              "load_duration": 522096,
+              "prompt_eval_duration": 212395000,
+              "eval_duration": 1900755000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

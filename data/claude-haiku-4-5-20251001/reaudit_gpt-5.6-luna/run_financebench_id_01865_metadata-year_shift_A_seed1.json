@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01865_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extraction reported Safety and Industrial's organic sales change for 2023 as 1%, rather than providing its organic sales change for the requested year, 2022.",
+    "reported_metric": "organic sales change",
+    "reported_value": 1.0,
+    "confidence": 0.86,
+    "rationale": "The extractor supplied a 2023 figure for Safety and Industrial while supplying 2022 figures for the other segments. This omitted the relevant 2022 comparison and led the analyst to incorrectly conclude that Consumer was the only negative-growth segment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 914,
+    "output_tokens": 1169,
+    "total_tokens": 2083,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015856,
+    "latency_ms": 10725.406708021183,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 914,
+      "output_tokens": 1169,
+      "total_tokens": 2083,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.72439933300484,
+      "duration": 10.724909207958262,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 914,
+            "output_tokens": 1169,
+            "total_tokens": 2083,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1397,
+    "output_tokens": 180,
+    "total_tokens": 1577,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002297,
+    "latency_ms": 2503.46554198768,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1397,
+      "output_tokens": 180,
+      "total_tokens": 1577,
+      "time_to_first_token": 2.502444999990985,
+      "duration": 2.5027437090175226,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1397,
+            "output_tokens": 180,
+            "total_tokens": 1577,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

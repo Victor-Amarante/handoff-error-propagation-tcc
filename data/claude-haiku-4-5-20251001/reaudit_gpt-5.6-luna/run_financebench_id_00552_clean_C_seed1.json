@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00552_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident from the trace. The analyst correctly sums current and long-term debt for each year: $47,237 million in FY2023 and $49,781 million in FY2022, yielding a decrease of $2,544 million. The writer accurately reports this result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1328,
+    "output_tokens": 230,
+    "total_tokens": 1558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 117,
+    "cost_usd": 0.0005416,
+    "latency_ms": 2914.60229200311,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1328,
+      "output_tokens": 230,
+      "total_tokens": 1558,
+      "reasoning_tokens": 117,
+      "time_to_first_token": 2.9143155830097385,
+      "duration": 2.9144167919876054,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1328,
+            "output_tokens": 230,
+            "total_tokens": 1558,
+            "reasoning_tokens": 117,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1941,
+    "output_tokens": 159,
+    "total_tokens": 2100,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002736,
+    "latency_ms": 2801.29766598111,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1941,
+      "output_tokens": 159,
+      "total_tokens": 2100,
+      "time_to_first_token": 2.8005006659659557,
+      "duration": 2.800793124944903,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1941,
+            "output_tokens": 159,
+            "total_tokens": 2100,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

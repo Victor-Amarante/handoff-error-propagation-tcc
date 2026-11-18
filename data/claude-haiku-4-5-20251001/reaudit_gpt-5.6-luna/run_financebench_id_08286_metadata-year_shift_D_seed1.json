@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08286_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor labeled net income of $11,588 million as FY2020, although the evidence lists it as the third and likely FY2019 value in the Amazon 2019 10-K.",
+    "reported_metric": "net_income",
+    "reported_value": 11588.0,
+    "confidence": 0.98,
+    "rationale": "The evidence shows net income values of $3,033 million, $10,073 million, and $11,588 million, corresponding to the three fiscal years in the 2019 10-K. The extractor incorrectly assigned $11,588 million to 2020; the analyst then changed the year to 2019."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 878,
+    "output_tokens": 415,
+    "total_tokens": 1293,
+    "cached_tokens": 0,
+    "reasoning_tokens": 248,
+    "cost_usd": 0.0006736,
+    "latency_ms": 4536.822084046435,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 878,
+      "output_tokens": 415,
+      "total_tokens": 1293,
+      "reasoning_tokens": 248,
+      "time_to_first_token": 4.536085250030737,
+      "duration": 4.536302042019088,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 878,
+            "output_tokens": 415,
+            "total_tokens": 1293,
+            "reasoning_tokens": 248,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1419,
+    "output_tokens": 223,
+    "total_tokens": 1642,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002534,
+    "latency_ms": 3684.36216696864,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1419,
+      "output_tokens": 223,
+      "total_tokens": 1642,
+      "time_to_first_token": 3.683823375031352,
+      "duration": 3.6839114170288667,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1419,
+            "output_tokens": 223,
+            "total_tokens": 1642,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

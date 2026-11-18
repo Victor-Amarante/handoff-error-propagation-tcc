@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00216_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Quick assets were calculated as all current assets less inventories, treating potentially non-quick items such as prepaid and other current assets as liquid assets.",
+    "reported_metric": "quick_assets",
+    "reported_value": 35469.0,
+    "confidence": 0.87,
+    "rationale": "A01 uses only current_assets (37,857) minus inventories (2,388), despite the trace separately providing accounts receivable and cash. A strict quick ratio generally uses cash, cash equivalents, marketable securities, and receivables, excluding inventory and other non-quick current assets. Therefore A02 and the writer's 0.71 assessment inherit the analyst-stage error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1487,
+    "output_tokens": 1194,
+    "total_tokens": 2681,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1023,
+    "cost_usd": 0.0017302,
+    "latency_ms": 11561.310167016927,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1487,
+      "output_tokens": 1194,
+      "total_tokens": 2681,
+      "reasoning_tokens": 1023,
+      "time_to_first_token": 11.560677749977913,
+      "duration": 11.560884875012562,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1487,
+            "output_tokens": 1194,
+            "total_tokens": 2681,
+            "reasoning_tokens": 1023,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2146,
+    "output_tokens": 225,
+    "total_tokens": 2371,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003271,
+    "latency_ms": 3481.353458017111,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2146,
+      "output_tokens": 225,
+      "total_tokens": 2371,
+      "time_to_first_token": 3.4803264159709215,
+      "duration": 3.480626874952577,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2146,
+            "output_tokens": 225,
+            "total_tokens": 2371,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

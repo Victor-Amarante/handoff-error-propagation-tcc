@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04481_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "PepsiCo's FY2022 net revenue was reported as $68,392 million.",
+    "reported_metric": "net_revenue",
+    "reported_value": 68392.0,
+    "confidence": 0.99,
+    "rationale": "C02 plus C03 correctly yields unadjusted EBITDA of $14,275 million, and A02 is arithmetically consistent with dividing that amount by C01. However, the FY2022 PepsiCo revenue figure should be $86,392 million; using it gives an EBITDA margin of approximately 16.52%, so the first error is the extractor's C01 denominator."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1172,
+    "output_tokens": 666,
+    "total_tokens": 1838,
+    "cached_tokens": 0,
+    "reasoning_tokens": 507,
+    "cost_usd": 0.0010336,
+    "latency_ms": 6306.362916016951,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1172,
+      "output_tokens": 666,
+      "total_tokens": 1838,
+      "reasoning_tokens": 507,
+      "time_to_first_token": 6.305505291034933,
+      "duration": 6.305780833004974,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1172,
+            "output_tokens": 666,
+            "total_tokens": 1838,
+            "reasoning_tokens": 507,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1801,
+    "output_tokens": 296,
+    "total_tokens": 2097,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003281,
+    "latency_ms": 4244.926375045907,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1801,
+      "output_tokens": 296,
+      "total_tokens": 2097,
+      "time_to_first_token": 4.244111709005665,
+      "duration": 4.24440887500532,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1801,
+            "output_tokens": 296,
+            "total_tokens": 2097,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

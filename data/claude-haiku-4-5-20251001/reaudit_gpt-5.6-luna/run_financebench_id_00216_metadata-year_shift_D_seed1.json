@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00216_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Quick assets for FY 2022 were calculated as accounts receivable plus inventory, excluding cash and incorrectly including inventory, yielding $27,111 million.",
+    "reported_metric": "quick_assets",
+    "reported_value": 27111.0,
+    "confidence": 0.99,
+    "rationale": "The quick-assets calculation is definitionally incorrect: quick assets generally include cash and receivables but exclude inventory. This erroneous analyst claim caused the subsequent 0.54 quick ratio and the writer's conclusion to rely on a flawed calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1927,
+    "output_tokens": 508,
+    "total_tokens": 2435,
+    "cached_tokens": 0,
+    "reasoning_tokens": 370,
+    "cost_usd": 0.000995,
+    "latency_ms": 5571.460749953985,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1927,
+      "output_tokens": 508,
+      "total_tokens": 2435,
+      "reasoning_tokens": 370,
+      "time_to_first_token": 5.570864583016373,
+      "duration": 5.571065458003432,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1927,
+            "output_tokens": 508,
+            "total_tokens": 2435,
+            "reasoning_tokens": 370,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2675,
+    "output_tokens": 191,
+    "total_tokens": 2866,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00363,
+    "latency_ms": 3111.3517910125665,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2675,
+      "output_tokens": 191,
+      "total_tokens": 2866,
+      "time_to_first_token": 3.1104499580105767,
+      "duration": 3.1107476669712923,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2675,
+            "output_tokens": 191,
+            "total_tokens": 2866,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

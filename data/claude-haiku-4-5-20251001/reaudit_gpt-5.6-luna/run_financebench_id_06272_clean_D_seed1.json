@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06272_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim was identified; the reported ratio is 7,616 ÷ 9,542 = 0.7982, which rounds to 0.80.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures are internally consistent, and the analyst correctly calculates total cash dividends paid divided by net income attributable to shareholders. The result rounds to 0.80 as requested."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1087,
+    "output_tokens": 214,
+    "total_tokens": 1301,
+    "cached_tokens": 0,
+    "reasoning_tokens": 89,
+    "cost_usd": 0.00047420000000000003,
+    "latency_ms": 3105.517666961532,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1087,
+      "output_tokens": 214,
+      "total_tokens": 1301,
+      "reasoning_tokens": 89,
+      "time_to_first_token": 3.1050724589731544,
+      "duration": 3.105197541997768,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1087,
+            "output_tokens": 214,
+            "total_tokens": 1301,
+            "reasoning_tokens": 89,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1659,
+    "output_tokens": 239,
+    "total_tokens": 1898,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002854,
+    "latency_ms": 2966.9463749742135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1659,
+      "output_tokens": 239,
+      "total_tokens": 1898,
+      "time_to_first_token": 2.9659148750361055,
+      "duration": 2.966216583037749,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1659,
+            "output_tokens": 239,
+            "total_tokens": 1898,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

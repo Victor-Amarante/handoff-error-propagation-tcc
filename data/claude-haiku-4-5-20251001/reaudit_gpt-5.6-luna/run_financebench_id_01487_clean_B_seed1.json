@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01487_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: the extractor reports 20.1% for FY2023 and 20.0% for FY2022, the analyst preserves those values, and the writer correctly concludes an increase of 0.1 percentage points. No claim IDs are provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 882,
+    "output_tokens": 161,
+    "total_tokens": 1043,
+    "cached_tokens": 0,
+    "reasoning_tokens": 50,
+    "cost_usd": 0.00036960000000000004,
+    "latency_ms": 2216.7880419874564,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 882,
+      "output_tokens": 161,
+      "total_tokens": 1043,
+      "reasoning_tokens": 50,
+      "time_to_first_token": 2.2161831660196185,
+      "duration": 2.216340500046499,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 882,
+            "output_tokens": 161,
+            "total_tokens": 1043,
+            "reasoning_tokens": 50,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1400,
+    "output_tokens": 163,
+    "total_tokens": 1563,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002215,
+    "latency_ms": 3476.472874986939,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1400,
+      "output_tokens": 163,
+      "total_tokens": 1563,
+      "time_to_first_token": 3.4757401670212857,
+      "duration": 3.475926084036473,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1400,
+            "output_tokens": 163,
+            "total_tokens": 1563,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01107_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "CVS Health reported $625 million in opioid-settlement attorneys’ fees and costs in 2023.",
+    "reported_metric": "opioid_settlement_attorneys_fees_and_costs",
+    "reported_value": 625.0,
+    "confidence": 0.86,
+    "rationale": "The claim is attributed to a 2022 10-K but is labeled as a 2023 value, creating a provenance/time inconsistency. The analyst propagated it unchanged, and the writer then combined it with the 2022 remediation figure without addressing the requested 2022, 2021, and 2020 periods."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1054,
+    "output_tokens": 668,
+    "total_tokens": 1722,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010124,
+    "latency_ms": 6467.498666956089,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1054,
+      "output_tokens": 668,
+      "total_tokens": 1722,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.467058500042185,
+      "duration": 6.46722570899874,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1054,
+            "output_tokens": 668,
+            "total_tokens": 1722,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1634,
+    "output_tokens": 205,
+    "total_tokens": 1839,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002659,
+    "latency_ms": 2761.3885829923674,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1634,
+      "output_tokens": 205,
+      "total_tokens": 1839,
+      "time_to_first_token": 2.7604087090003304,
+      "duration": 2.7607050419901498,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1634,
+            "output_tokens": 205,
+            "total_tokens": 1839,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04412_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident in the trace; the reported FY2020 revenue and asset figures are used consistently to calculate the ratio.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The calculation is internally consistent: average assets are (47,528 + 50,710) / 2 = 49,119 million, and 65,398 / 49,119 rounds to 1.33. The extractor's wording that the sales figure was reported 'in 2021' creates ambiguity but does not establish a factual error, since the analyst reasonably identifies it as FY2020 revenue."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1026,
+    "output_tokens": 320,
+    "total_tokens": 1346,
+    "cached_tokens": 0,
+    "reasoning_tokens": 155,
+    "cost_usd": 0.0005892,
+    "latency_ms": 3688.6005839915015,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1026,
+      "output_tokens": 320,
+      "total_tokens": 1346,
+      "reasoning_tokens": 155,
+      "time_to_first_token": 3.6879317500279285,
+      "duration": 3.6881102499901317,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1026,
+            "output_tokens": 320,
+            "total_tokens": 1346,
+            "reasoning_tokens": 155,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 930,
+    "output_tokens": 246,
+    "total_tokens": 1176,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3129.0960930055007,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 930,
+      "output_tokens": 246,
+      "total_tokens": 1176,
+      "time_to_first_token": 3.128837151976768,
+      "duration": 3.1289117879932746,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 930,
+            "output_tokens": 246,
+            "total_tokens": 1176,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3099631514,
+              "load_duration": 441592,
+              "prompt_eval_duration": 239590000,
+              "eval_duration": 2799770000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

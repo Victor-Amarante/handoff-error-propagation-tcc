@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01487_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Johnson & Johnson's Q2 FY2023 net earnings as a percent of sales was 20.1%.",
+    "reported_metric": "Q2 FY2023 net earnings as a percent of sales",
+    "reported_value": 20.1,
+    "confidence": 0.97,
+    "rationale": "The extractor attributes the 20.1% margin to Q2 FY2024, not Q2 FY2023. The analyst is the first stage to relabel that value as Q2 FY2023; the writer then repeats the unsupported comparison."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 793,
+    "output_tokens": 395,
+    "total_tokens": 1188,
+    "cached_tokens": 0,
+    "reasoning_tokens": 253,
+    "cost_usd": 0.0006326,
+    "latency_ms": 3956.356375012547,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 793,
+      "output_tokens": 395,
+      "total_tokens": 1188,
+      "reasoning_tokens": 253,
+      "time_to_first_token": 3.955920749984216,
+      "duration": 3.9560551660251804,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 793,
+            "output_tokens": 395,
+            "total_tokens": 1188,
+            "reasoning_tokens": 253,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1279,
+    "output_tokens": 201,
+    "total_tokens": 1480,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002284,
+    "latency_ms": 2561.9959160103463,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1279,
+      "output_tokens": 201,
+      "total_tokens": 1480,
+      "time_to_first_token": 2.561062499997206,
+      "duration": 2.561363041982986,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1279,
+            "output_tokens": 201,
+            "total_tokens": 1480,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

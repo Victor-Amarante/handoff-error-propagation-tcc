@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01484_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst claimed that US reported sales growth in FY2022 was 3%, although the extraction only identified 3% as US operational growth in FY2022 and reported US growth in FY2023.",
+    "reported_metric": "US reported sales growth in FY2022",
+    "reported_value": 3.0,
+    "confidence": 0.87,
+    "rationale": "The extracted FY2022 US sales figures do imply approximately 3% overall growth, but the trace explicitly labels the FY2022 US 3% figure as operational growth and labels reported US growth as FY2023. Therefore, the analyst's characterization of the FY2022 US figure as reported growth is the first provenance error; the writer then repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1062,
+    "output_tokens": 688,
+    "total_tokens": 1750,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001038,
+    "latency_ms": 7033.296458015684,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1062,
+      "output_tokens": 688,
+      "total_tokens": 1750,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.032825249945745,
+      "duration": 7.03294233296765,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1062,
+            "output_tokens": 688,
+            "total_tokens": 1750,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1568,
+    "output_tokens": 288,
+    "total_tokens": 1856,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003008,
+    "latency_ms": 4694.43416595459,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1568,
+      "output_tokens": 288,
+      "total_tokens": 1856,
+      "time_to_first_token": 4.69360170798609,
+      "duration": 4.693905249994714,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1568,
+            "output_tokens": 288,
+            "total_tokens": 1856,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

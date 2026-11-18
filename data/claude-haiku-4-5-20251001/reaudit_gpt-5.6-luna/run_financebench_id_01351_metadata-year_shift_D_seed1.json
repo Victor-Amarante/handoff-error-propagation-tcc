@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01351_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "American Express's effective tax rate was 21.6% in FY2023.",
+    "reported_metric": "effective_tax_rate",
+    "reported_value": 21.6,
+    "confidence": 0.98,
+    "rationale": "The cited source is American Express's 2022 10-K, and the evidence lists 21.6% alongside 24.6%, indicating comparative FY2022/FY2021 values. C01 incorrectly labels 21.6% as FY2023; the analyst then uses it as FY2022, propagating the error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 988,
+    "output_tokens": 400,
+    "total_tokens": 1388,
+    "cached_tokens": 0,
+    "reasoning_tokens": 253,
+    "cost_usd": 0.0006776,
+    "latency_ms": 4108.908499998506,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 988,
+      "output_tokens": 400,
+      "total_tokens": 1388,
+      "reasoning_tokens": 253,
+      "time_to_first_token": 4.108140167023521,
+      "duration": 4.108364249987062,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 988,
+            "output_tokens": 400,
+            "total_tokens": 1388,
+            "reasoning_tokens": 253,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1549,
+    "output_tokens": 209,
+    "total_tokens": 1758,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002594,
+    "latency_ms": 3481.83029104257,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1549,
+      "output_tokens": 209,
+      "total_tokens": 1758,
+      "time_to_first_token": 3.4811019169865176,
+      "duration": 3.481337708013598,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1549,
+            "output_tokens": 209,
+            "total_tokens": 1758,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

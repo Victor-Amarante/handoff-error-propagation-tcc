@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor assigned Consumer & Community Banking net income of $3,100 million to 2023 instead of the queried 2022 period, causing that segment to be excluded from the 2022 comparison.",
+    "reported_metric": "Net income Consumer & Community Banking",
+    "reported_value": 3100.0,
+    "confidence": 0.96,
+    "rationale": "The $3,100 million Consumer & Community Banking figure is listed under 2023, while the question asks about 2022. Excluding it led the analyst and writer to select Asset & Wealth Management at $1,004 million; the extracted 2022 figures also do not reconcile to the reported $8,649 million total."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 964,
+    "output_tokens": 1037,
+    "total_tokens": 2001,
+    "cached_tokens": 0,
+    "reasoning_tokens": 857,
+    "cost_usd": 0.0014371999999999998,
+    "latency_ms": 10090.608125028666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 964,
+      "output_tokens": 1037,
+      "total_tokens": 2001,
+      "reasoning_tokens": 857,
+      "time_to_first_token": 10.089714290981647,
+      "duration": 10.090130332973786,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 964,
+            "output_tokens": 1037,
+            "total_tokens": 2001,
+            "reasoning_tokens": 857,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 855,
+    "output_tokens": 241,
+    "total_tokens": 1096,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3083.240593026858,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 855,
+      "output_tokens": 241,
+      "total_tokens": 1096,
+      "time_to_first_token": 3.082988951995503,
+      "duration": 3.083060093980748,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 855,
+            "output_tokens": 241,
+            "total_tokens": 1096,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3052909585,
+              "load_duration": 453474,
+              "prompt_eval_duration": 238919000,
+              "eval_duration": 2744043000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

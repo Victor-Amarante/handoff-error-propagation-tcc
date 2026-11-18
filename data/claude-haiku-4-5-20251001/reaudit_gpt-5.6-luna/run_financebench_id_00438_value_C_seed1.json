@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00438_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Adobe FY2022 revenue was reported as $71,606 million.",
+    "reported_metric": "revenue",
+    "reported_value": 71606.0,
+    "confidence": 0.99,
+    "rationale": "C01 is internally inconsistent with the surrounding revenue series: FY2021 revenue is 15,785 million and FY2020 revenue is 12,868 million, while Adobe's FY2022 figure is evidently missing a digit placement and should be approximately 17,606 million. The analyst correctly computed 6,098 / 71,606 = 8.51%, so the incorrect margin and writer conclusion about a severe decline originated from the extractor's revenue claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1511,
+    "output_tokens": 349,
+    "total_tokens": 1860,
+    "cached_tokens": 0,
+    "reasoning_tokens": 182,
+    "cost_usd": 0.000721,
+    "latency_ms": 4337.53533300478,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1511,
+      "output_tokens": 349,
+      "total_tokens": 1860,
+      "reasoning_tokens": 182,
+      "time_to_first_token": 4.336935832980089,
+      "duration": 4.3371708749909885,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1511,
+            "output_tokens": 349,
+            "total_tokens": 1860,
+            "reasoning_tokens": 182,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2132,
+    "output_tokens": 257,
+    "total_tokens": 2389,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003417,
+    "latency_ms": 4299.583291984163,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2132,
+      "output_tokens": 257,
+      "total_tokens": 2389,
+      "time_to_first_token": 4.298660458996892,
+      "duration": 4.298972791992128,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2132,
+            "output_tokens": 257,
+            "total_tokens": 2389,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

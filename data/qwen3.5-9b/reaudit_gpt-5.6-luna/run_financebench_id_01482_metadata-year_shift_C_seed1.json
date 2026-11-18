@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01482_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The proposal received 78.9437% of votes against it (described as the losing-majority outcome).",
+    "reported_metric": "shareholder proposal_congruency_report_on_net_zero_emissions_policies_outcome_losing_majority",
+    "reported_value": 0.7894365465465465,
+    "confidence": 0.98,
+    "rationale": "The analyst's percentage is arithmetically inconsistent with the extracted vote counts: 977,228,788 against out of 996,947,568 total equals approximately 98.0%, not 78.9%. The writer propagated this incorrect percentage, although the rejection outcome itself is consistent with the counts."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1487,
+    "output_tokens": 682,
+    "total_tokens": 2169,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011158,
+    "latency_ms": 6548.762000049464,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1487,
+      "output_tokens": 682,
+      "total_tokens": 2169,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.548261083022226,
+      "duration": 6.548437624995131,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1487,
+            "output_tokens": 682,
+            "total_tokens": 2169,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1514,
+    "output_tokens": 1217,
+    "total_tokens": 2731,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13528.91631203238,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1514,
+      "output_tokens": 1217,
+      "total_tokens": 2731,
+      "time_to_first_token": 13.52859222900588,
+      "duration": 13.528710811981,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1514,
+            "output_tokens": 1217,
+            "total_tokens": 2731,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13499335134,
+              "load_duration": 506585,
+              "prompt_eval_duration": 372701000,
+              "eval_duration": 13043933000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

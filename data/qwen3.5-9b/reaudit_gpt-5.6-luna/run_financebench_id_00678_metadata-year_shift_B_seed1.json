@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00678_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst reported Boeing's FY2022 gross margin as -0.45%, although the extracted revenue and cost figures imply a positive gross margin of approximately 5.15%.",
+    "reported_metric": "Gross Margin FY2022",
+    "reported_value": -0.45,
+    "confidence": 0.98,
+    "rationale": "Using the extracted figures, gross profit is (55,893 - 53,969) + (10,715 - 9,109) = 3,430 USD million. Dividing by total revenue of 66,608 gives approximately 5.15%, not -0.45%. The writer merely repeated the analyst's incorrect calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 873,
+    "output_tokens": 1199,
+    "total_tokens": 2072,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1023,
+    "cost_usd": 0.0016134,
+    "latency_ms": 11008.668042020872,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 873,
+      "output_tokens": 1199,
+      "total_tokens": 2072,
+      "reasoning_tokens": 1023,
+      "time_to_first_token": 11.007862541009672,
+      "duration": 11.008124415995553,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 873,
+            "output_tokens": 1199,
+            "total_tokens": 2072,
+            "reasoning_tokens": 1023,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 755,
+    "output_tokens": 286,
+    "total_tokens": 1041,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3510.65444102278,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 755,
+      "output_tokens": 286,
+      "total_tokens": 1041,
+      "time_to_first_token": 3.5104132359847426,
+      "duration": 3.510490870976355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 755,
+            "output_tokens": 286,
+            "total_tokens": 1041,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3485398701,
+              "load_duration": 514887,
+              "prompt_eval_duration": 218476000,
+              "eval_duration": 3217797000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

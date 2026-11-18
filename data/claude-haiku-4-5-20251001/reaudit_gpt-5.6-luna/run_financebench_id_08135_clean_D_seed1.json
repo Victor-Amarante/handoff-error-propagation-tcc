@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_08135_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Amazon's revenue increased by 31.1% year-over-year from FY2016 revenue of $135.987 billion to FY2017 revenue of $177.866 billion.",
+    "reported_metric": "revenue_yoy_change",
+    "reported_value": 31.1,
+    "confidence": 0.99,
+    "rationale": "The extracted revenue values are internally consistent, but the calculation is incorrect: (177,866 - 135,987) / 135,987 × 100 = 30.8% when rounded to one decimal place, not 31.1%. The writer merely propagated the analyst's error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1035,
+    "output_tokens": 225,
+    "total_tokens": 1260,
+    "cached_tokens": 0,
+    "reasoning_tokens": 66,
+    "cost_usd": 0.000477,
+    "latency_ms": 2679.9595830379985,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1035,
+      "output_tokens": 225,
+      "total_tokens": 1260,
+      "reasoning_tokens": 66,
+      "time_to_first_token": 2.679201874998398,
+      "duration": 2.6794288749806583,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1035,
+            "output_tokens": 225,
+            "total_tokens": 1260,
+            "reasoning_tokens": 66,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1589,
+    "output_tokens": 133,
+    "total_tokens": 1722,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002254,
+    "latency_ms": 2099.6329589979723,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1589,
+      "output_tokens": 133,
+      "total_tokens": 1722,
+      "time_to_first_token": 2.0988767499802634,
+      "duration": 2.0991111249895766,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1589,
+            "output_tokens": 133,
+            "total_tokens": 1722,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

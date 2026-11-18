@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01244_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "CVS Health paid a dividend of $0.55 per share in 2023, rather than reporting the requested Q2 FY2022 period.",
+    "reported_metric": "dividend_per_share",
+    "reported_value": 0.55,
+    "confidence": 0.94,
+    "rationale": "The extractor is the first stage to associate the dividend claim with 2023, which is inconsistent with the question's Q2 FY2022 period and with the cited 2022 10-K provenance. The analyst and writer merely propagate that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 830,
+    "output_tokens": 590,
+    "total_tokens": 1420,
+    "cached_tokens": 0,
+    "reasoning_tokens": 448,
+    "cost_usd": 0.000874,
+    "latency_ms": 5436.693708994426,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 830,
+      "output_tokens": 590,
+      "total_tokens": 1420,
+      "reasoning_tokens": 448,
+      "time_to_first_token": 5.435912457993254,
+      "duration": 5.43616491695866,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 830,
+            "output_tokens": 590,
+            "total_tokens": 1420,
+            "reasoning_tokens": 448,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1359,
+    "output_tokens": 187,
+    "total_tokens": 1546,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002294,
+    "latency_ms": 3279.84637505142,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1359,
+      "output_tokens": 187,
+      "total_tokens": 1546,
+      "time_to_first_token": 3.27908008400118,
+      "duration": 3.2793313339934684,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1359,
+            "output_tokens": 187,
+            "total_tokens": 1546,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

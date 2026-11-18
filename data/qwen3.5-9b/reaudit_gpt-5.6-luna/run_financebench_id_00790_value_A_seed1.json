@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00790_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported CVS Health FY2022 revenues of $232,467 million, which is internally inconsistent with the reported operating-cost figures and appears to be a misreported revenue amount.",
+    "reported_metric": "Revenues",
+    "reported_value": 232467.0,
+    "confidence": 0.86,
+    "rationale": "The extractor's revenue figure is the first questionable claim. The later asset arithmetic ($12,873 million + $17,872 million = $30,745 million) is correct, and the analyst and writer repeat that calculation. However, reported operating costs of $314,721 million exceeding reported revenue of $232,467 million signals a likely extraction error in the revenue value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1045,
+    "output_tokens": 1142,
+    "total_tokens": 2187,
+    "cached_tokens": 0,
+    "reasoning_tokens": 967,
+    "cost_usd": 0.0015794,
+    "latency_ms": 11375.647457956802,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1045,
+      "output_tokens": 1142,
+      "total_tokens": 2187,
+      "reasoning_tokens": 967,
+      "time_to_first_token": 11.375146583013702,
+      "duration": 11.37531187501736,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1045,
+            "output_tokens": 1142,
+            "total_tokens": 2187,
+            "reasoning_tokens": 967,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 912,
+    "output_tokens": 375,
+    "total_tokens": 1287,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4365.1361430529505,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 912,
+      "output_tokens": 375,
+      "total_tokens": 1287,
+      "time_to_first_token": 4.364839273039252,
+      "duration": 4.364928786992095,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 912,
+            "output_tokens": 375,
+            "total_tokens": 1287,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4335980511,
+              "load_duration": 478041,
+              "prompt_eval_duration": 263635000,
+              "eval_duration": 4021664000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

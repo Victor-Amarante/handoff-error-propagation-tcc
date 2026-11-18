@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03718_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Lockheed Martin's FY2021 revenue was $65,398 million.",
+    "reported_metric": "FY2021 revenue",
+    "reported_value": 65398.0,
+    "confidence": 0.98,
+    "rationale": "The extractor misassigned the $65,398 million revenue figure to FY2021, causing FY2020 revenue to appear missing and preventing the requested CAGR calculation. The analyst and writer merely propagated that omission."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 936,
+    "output_tokens": 599,
+    "total_tokens": 1535,
+    "cached_tokens": 0,
+    "reasoning_tokens": 483,
+    "cost_usd": 0.000906,
+    "latency_ms": 5944.947124982718,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 936,
+      "output_tokens": 599,
+      "total_tokens": 1535,
+      "reasoning_tokens": 483,
+      "time_to_first_token": 5.9440164170227945,
+      "duration": 5.944331333041191,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 936,
+            "output_tokens": 599,
+            "total_tokens": 1535,
+            "reasoning_tokens": 483,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1503,
+    "output_tokens": 175,
+    "total_tokens": 1678,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002378,
+    "latency_ms": 3071.6353749739937,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1503,
+      "output_tokens": 175,
+      "total_tokens": 1678,
+      "time_to_first_token": 3.0708875409909524,
+      "duration": 3.071135082980618,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1503,
+            "output_tokens": 175,
+            "total_tokens": 1678,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

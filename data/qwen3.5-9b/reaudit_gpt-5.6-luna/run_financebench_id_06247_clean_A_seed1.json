@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06247_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly claimed that FY2018 Walmart DPO was approximately 44.71 days; using the stated inputs and formula yields approximately 42.69 days.",
+    "reported_metric": "FY2018 days payable outstanding (DPO)",
+    "reported_value": 44.71,
+    "confidence": 0.99,
+    "rationale": "The extracted figures are internally consistent: average accounts payable is (41,433 + 46,092) / 2 = 43,762.5, and the denominator is 373,396 + (43,783 - 43,046) = 374,133. Applying 365 × 43,762.5 / 374,133 gives about 42.69, so the first error appears in the analyst's calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 933,
+    "output_tokens": 478,
+    "total_tokens": 1411,
+    "cached_tokens": 0,
+    "reasoning_tokens": 288,
+    "cost_usd": 0.0007602,
+    "latency_ms": 4882.340874988586,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 933,
+      "output_tokens": 478,
+      "total_tokens": 1411,
+      "reasoning_tokens": 288,
+      "time_to_first_token": 4.882136415981222,
+      "duration": 4.88220845797332,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 933,
+            "output_tokens": 478,
+            "total_tokens": 1411,
+            "reasoning_tokens": 288,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 824,
+    "output_tokens": 864,
+    "total_tokens": 1688,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9527.986956003588,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 824,
+      "output_tokens": 864,
+      "total_tokens": 1688,
+      "time_to_first_token": 9.52770590299042,
+      "duration": 9.527806209982373,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 824,
+            "output_tokens": 864,
+            "total_tokens": 1688,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9502673916,
+              "load_duration": 526563,
+              "prompt_eval_duration": 234077000,
+              "eval_duration": 9217920000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

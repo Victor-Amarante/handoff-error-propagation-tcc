@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00540_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "FY2022 inventory turnover was 9.55 times, calculated as cost of sales divided by ending inventory.",
+    "reported_metric": "inventory_turnover_ratio",
+    "reported_value": 9.55,
+    "confidence": 0.96,
+    "rationale": "The analyst divides 10,069 by 1,055, but conventional inventory turnover uses average inventory, requiring beginning and ending balances. The trace provides only ending inventory, so 9.55 is not a properly supported FY2022 turnover ratio. The writer then compounds this by asserting efficient, typical inventory management without support."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 951,
+    "output_tokens": 414,
+    "total_tokens": 1365,
+    "cached_tokens": 0,
+    "reasoning_tokens": 265,
+    "cost_usd": 0.000687,
+    "latency_ms": 4733.822999987751,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 951,
+      "output_tokens": 414,
+      "total_tokens": 1365,
+      "reasoning_tokens": 265,
+      "time_to_first_token": 4.733313792035915,
+      "duration": 4.733468583028298,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 951,
+            "output_tokens": 414,
+            "total_tokens": 1365,
+            "reasoning_tokens": 265,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1503,
+    "output_tokens": 224,
+    "total_tokens": 1727,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002623,
+    "latency_ms": 3815.9443750046194,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1503,
+      "output_tokens": 224,
+      "total_tokens": 1727,
+      "time_to_first_token": 3.815488957974594,
+      "duration": 3.815643291978631,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1503,
+            "output_tokens": 224,
+            "total_tokens": 1727,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

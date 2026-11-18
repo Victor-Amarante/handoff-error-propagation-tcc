@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00720_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Total revenues net of interest expense were $52,862 million in FY2023.",
+    "reported_metric": "Total revenues net of interest expense",
+    "reported_value": 52862.0,
+    "confidence": 0.96,
+    "rationale": "The 2022 10-K source and the analyst's use of this figure for FY2022 indicate that $52,862 million is the FY2022 revenue figure, making C01's FY2023 year label incorrect. This propagates into the analyst's 2022 growth calculation; the 23.9% operating-margin proxy is also unsupported by the cited inputs, but it occurs later."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1334,
+    "output_tokens": 675,
+    "total_tokens": 2009,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010768,
+    "latency_ms": 6211.136166995857,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1334,
+      "output_tokens": 675,
+      "total_tokens": 2009,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.210616625030525,
+      "duration": 6.210765833035111,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1334,
+            "output_tokens": 675,
+            "total_tokens": 2009,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1949,
+    "output_tokens": 194,
+    "total_tokens": 2143,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002919,
+    "latency_ms": 3686.8869579629973,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1949,
+      "output_tokens": 194,
+      "total_tokens": 2143,
+      "time_to_first_token": 3.6859557920251973,
+      "duration": 3.686248667014297,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1949,
+            "output_tokens": 194,
+            "total_tokens": 2143,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

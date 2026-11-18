@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00651_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer changed the extracted and analyst-reported 3.5% adjusted EPS growth into a negative 3.5% decrease.",
+    "reported_metric": "adjusted_eps_growth",
+    "reported_value": -3.5,
+    "confidence": 0.9,
+    "rationale": "The extractor and analyst both report adjusted_eps_growth of +3.5% for 2023. The writer is the first stage to introduce -3.5%, without support from the upstream claim, and uses that sign reversal in the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 863,
+    "output_tokens": 650,
+    "total_tokens": 1513,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009526000000000001,
+    "latency_ms": 6490.836417011451,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 863,
+      "output_tokens": 650,
+      "total_tokens": 1513,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.490271458984353,
+      "duration": 6.4904419999802485,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 863,
+            "output_tokens": 650,
+            "total_tokens": 1513,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1376,
+    "output_tokens": 185,
+    "total_tokens": 1561,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002301,
+    "latency_ms": 3378.9442920242436,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1376,
+      "output_tokens": 185,
+      "total_tokens": 1561,
+      "time_to_first_token": 3.3781162499799393,
+      "duration": 3.3783560000010766,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1376,
+            "output_tokens": 185,
+            "total_tokens": 1561,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

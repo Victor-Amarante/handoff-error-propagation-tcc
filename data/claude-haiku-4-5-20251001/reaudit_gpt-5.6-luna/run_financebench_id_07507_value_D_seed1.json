@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07507_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Adobe's FY2016 operating income was reported as 1,943,602 thousand USD.",
+    "reported_metric": "operating_income",
+    "reported_value": 1943602.0,
+    "confidence": 0.99,
+    "rationale": "Extractor claim C01 conflicts with its own evidence, which states FY2016 operating income was 1,493,602 thousand USD. The analyst and writer used 1,493,602, yielding the internally consistent 65.4% increase."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1031,
+    "output_tokens": 244,
+    "total_tokens": 1275,
+    "cached_tokens": 0,
+    "reasoning_tokens": 112,
+    "cost_usd": 0.000499,
+    "latency_ms": 2789.218665973749,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1031,
+      "output_tokens": 244,
+      "total_tokens": 1275,
+      "reasoning_tokens": 112,
+      "time_to_first_token": 2.788453208981082,
+      "duration": 2.788692375004757,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1031,
+            "output_tokens": 244,
+            "total_tokens": 1275,
+            "reasoning_tokens": 112,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1587,
+    "output_tokens": 215,
+    "total_tokens": 1802,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002662,
+    "latency_ms": 2767.115583992563,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1587,
+      "output_tokens": 215,
+      "total_tokens": 1802,
+      "time_to_first_token": 2.7659843749715947,
+      "duration": 2.7663059170008637,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1587,
+            "output_tokens": 215,
+            "total_tokens": 1802,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00591_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst labeled operating cash flow divided by net income (7,838 / 4,756 = 1.65) as Adobe's free cash flow conversion ratio.",
+    "reported_metric": "fcf_conversion_ratio",
+    "reported_value": 1.65,
+    "confidence": 0.97,
+    "rationale": "The extractor supplied operating cash flow, not free cash flow. A01 therefore mislabels an operating-cash-flow conversion calculation as free-cash-flow conversion; the writer then propagates that mismatch."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1804,
+    "output_tokens": 436,
+    "total_tokens": 2240,
+    "cached_tokens": 0,
+    "reasoning_tokens": 301,
+    "cost_usd": 0.000884,
+    "latency_ms": 4718.261874979362,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1804,
+      "output_tokens": 436,
+      "total_tokens": 2240,
+      "reasoning_tokens": 301,
+      "time_to_first_token": 4.717538458993658,
+      "duration": 4.7178171669947915,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1804,
+            "output_tokens": 436,
+            "total_tokens": 2240,
+            "reasoning_tokens": 301,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2477,
+    "output_tokens": 179,
+    "total_tokens": 2656,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003372,
+    "latency_ms": 2726.3324160012417,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2477,
+      "output_tokens": 179,
+      "total_tokens": 2656,
+      "time_to_first_token": 2.7254788750433363,
+      "duration": 2.7257092500221916,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2477,
+            "output_tokens": 179,
+            "total_tokens": 2656,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03531_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst incorrectly reported Nike's FY2019 total current assets as $15,643 million instead of carrying forward the extracted $16,525 million figure.",
+    "reported_metric": "total current assets FY2019",
+    "reported_value": 15643.0,
+    "confidence": 0.98,
+    "rationale": "The extractor supplied $16,525 million, while the analyst introduced $15,643 million for FY2019 without any supporting derivation; the writer then repeated that unsupported value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 988,
+    "output_tokens": 644,
+    "total_tokens": 1632,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009704,
+    "latency_ms": 6709.100333042443,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 988,
+      "output_tokens": 644,
+      "total_tokens": 1632,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.708617000025697,
+      "duration": 6.708789458032697,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 988,
+            "output_tokens": 644,
+            "total_tokens": 1632,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 904,
+    "output_tokens": 514,
+    "total_tokens": 1418,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5928.201211965643,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 904,
+      "output_tokens": 514,
+      "total_tokens": 1418,
+      "time_to_first_token": 5.927974378049839,
+      "duration": 5.928045611013658,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 904,
+            "output_tokens": 514,
+            "total_tokens": 1418,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5903158535,
+              "load_duration": 625667,
+              "prompt_eval_duration": 239031000,
+              "eval_duration": 5591215000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

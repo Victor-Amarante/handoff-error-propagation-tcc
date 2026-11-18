@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01474_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly labeled PepsiCo's 8% organic revenue growth guidance as FY2024 guidance; it should have been the raised FY2023 guidance.",
+    "reported_metric": "FY2023 organic revenue growth guidance",
+    "reported_value": 8.0,
+    "confidence": 0.97,
+    "rationale": "The trace indicates the 8% figure was intended to be the raised FY2023 guidance, but the extractor mislabeled it as FY2024. The analyst then silently reinterpreted the figure as FY2023 guidance and concluded that the reasons for the increase were unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 870,
+    "output_tokens": 504,
+    "total_tokens": 1374,
+    "cached_tokens": 0,
+    "reasoning_tokens": 356,
+    "cost_usd": 0.0007788,
+    "latency_ms": 5016.878333000932,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 870,
+      "output_tokens": 504,
+      "total_tokens": 1374,
+      "reasoning_tokens": 356,
+      "time_to_first_token": 5.0160330409999005,
+      "duration": 5.016376250016037,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 870,
+            "output_tokens": 504,
+            "total_tokens": 1374,
+            "reasoning_tokens": 356,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1376,
+    "output_tokens": 180,
+    "total_tokens": 1556,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002276,
+    "latency_ms": 3078.7797500379384,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1376,
+      "output_tokens": 180,
+      "total_tokens": 1556,
+      "time_to_first_token": 3.0779639160027727,
+      "duration": 3.0781995829893276,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1376,
+            "output_tokens": 180,
+            "total_tokens": 1556,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

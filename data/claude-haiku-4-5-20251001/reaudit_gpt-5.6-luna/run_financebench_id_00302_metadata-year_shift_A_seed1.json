@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00302_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim was identified; the trace consistently states that FY21 PP&E is unavailable, so growth between FY20 and FY21 cannot be determined.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor provides FY20 and FY22 PP&E figures, not FY21. The analyst and writer correctly recognize that the requested FY20-to-FY21 comparison cannot be made from the supplied data."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 708,
+    "output_tokens": 214,
+    "total_tokens": 922,
+    "cached_tokens": 0,
+    "reasoning_tokens": 89,
+    "cost_usd": 0.0003984,
+    "latency_ms": 2890.65820799442,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 708,
+      "output_tokens": 214,
+      "total_tokens": 922,
+      "reasoning_tokens": 89,
+      "time_to_first_token": 2.8901434160070494,
+      "duration": 2.8902787910192274,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 708,
+            "output_tokens": 214,
+            "total_tokens": 922,
+            "reasoning_tokens": 89,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1229,
+    "output_tokens": 171,
+    "total_tokens": 1400,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002084,
+    "latency_ms": 2557.852375030052,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1229,
+      "output_tokens": 171,
+      "total_tokens": 1400,
+      "time_to_first_token": 2.5568416249589063,
+      "duration": 2.5571407919633202,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1229,
+            "output_tokens": 171,
+            "total_tokens": 1400,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

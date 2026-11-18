@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00685_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported Best Buy's FY2023 revenue as $64,298M; this is inconsistent with the reported cost of sales and gross profit, since $64,298M − $36,386M does not equal $9,912M.",
+    "reported_metric": "FY2023 revenue",
+    "reported_value": 64298.0,
+    "confidence": 0.98,
+    "rationale": "The FY2023 cost of sales and gross profit reconcile to revenue of $46,298M, not $64,298M. The analyst then used the erroneous revenue to calculate a 15.4% gross margin and conclude that margins declined by roughly 7 percentage points; using the internally reconciling revenue produces a margin near 21.4%, broadly consistent with FY2021–FY2022."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1119,
+    "output_tokens": 665,
+    "total_tokens": 1784,
+    "cached_tokens": 0,
+    "reasoning_tokens": 471,
+    "cost_usd": 0.0010218,
+    "latency_ms": 6696.205374959391,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1119,
+      "output_tokens": 665,
+      "total_tokens": 1784,
+      "reasoning_tokens": 471,
+      "time_to_first_token": 6.69566033303272,
+      "duration": 6.695773208048195,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1119,
+            "output_tokens": 665,
+            "total_tokens": 1784,
+            "reasoning_tokens": 471,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1631,
+    "output_tokens": 204,
+    "total_tokens": 1835,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002651,
+    "latency_ms": 2546.717749966774,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1631,
+      "output_tokens": 204,
+      "total_tokens": 1835,
+      "time_to_first_token": 2.54584249999607,
+      "duration": 2.546139082987793,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1631,
+            "output_tokens": 204,
+            "total_tokens": 1835,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

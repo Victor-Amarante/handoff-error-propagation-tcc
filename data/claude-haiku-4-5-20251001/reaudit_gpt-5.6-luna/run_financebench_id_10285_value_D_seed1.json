@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10285_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Boeing's FY2018 net property, plant, and equipment was reported as 16,245 USD millions.",
+    "reported_metric": "property_plant_equipment_net",
+    "reported_value": 16245.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's numeric value (16,245) conflicts with its attached evidence, which states 12,645. The analyst and writer propagated the extractor's incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 897,
+    "output_tokens": 206,
+    "total_tokens": 1103,
+    "cached_tokens": 0,
+    "reasoning_tokens": 83,
+    "cost_usd": 0.0004266,
+    "latency_ms": 2611.2957500154153,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 897,
+      "output_tokens": 206,
+      "total_tokens": 1103,
+      "reasoning_tokens": 83,
+      "time_to_first_token": 2.6105953750084154,
+      "duration": 2.610765084042214,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 897,
+            "output_tokens": 206,
+            "total_tokens": 1103,
+            "reasoning_tokens": 83,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1418,
+    "output_tokens": 165,
+    "total_tokens": 1583,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002243,
+    "latency_ms": 2249.9046250013635,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1418,
+      "output_tokens": 165,
+      "total_tokens": 1583,
+      "time_to_first_token": 2.248967959021684,
+      "duration": 2.2492652920191176,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1418,
+            "output_tokens": 165,
+            "total_tokens": 1583,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

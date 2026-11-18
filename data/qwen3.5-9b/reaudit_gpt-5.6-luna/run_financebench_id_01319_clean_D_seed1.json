@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01319_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; the trace supports reporting $0 million because restructuring costs are not explicitly listed.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, and writer consistently report zero, and the cited income-statement evidence lists goodwill impairment and asset impairment expenses but no restructuring costs. This matches the question's instruction to state 0 when restructuring costs are not explicitly outlined."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 873,
+    "output_tokens": 194,
+    "total_tokens": 1067,
+    "cached_tokens": 0,
+    "reasoning_tokens": 70,
+    "cost_usd": 0.0004074,
+    "latency_ms": 2704.4981669750996,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 873,
+      "output_tokens": 194,
+      "total_tokens": 1067,
+      "reasoning_tokens": 70,
+      "time_to_first_token": 2.7040085420012474,
+      "duration": 2.7041605000267737,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 873,
+            "output_tokens": 194,
+            "total_tokens": 1067,
+            "reasoning_tokens": 70,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 728,
+    "output_tokens": 259,
+    "total_tokens": 987,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3140.933816030156,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 728,
+      "output_tokens": 259,
+      "total_tokens": 987,
+      "time_to_first_token": 3.1406763269915245,
+      "duration": 3.1407500019995496,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 728,
+            "output_tokens": 259,
+            "total_tokens": 987,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3109048723,
+              "load_duration": 503020,
+              "prompt_eval_duration": 194435000,
+              "eval_duration": 2842895000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

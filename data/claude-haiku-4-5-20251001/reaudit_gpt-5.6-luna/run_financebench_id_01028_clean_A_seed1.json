@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The United States accounted for approximately 82% of the combined total revenues across the four listed regions.",
+    "reported_metric": "United States share of combined regional revenues",
+    "reported_value": 82.0,
+    "confidence": 0.99,
+    "rationale": "The extracted regional revenues sum to $53,019 million, making the United States share $41,396/$53,019, or approximately 78.1%, not 82%. The incorrect percentage first appears in the analyst output and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 925,
+    "output_tokens": 295,
+    "total_tokens": 1220,
+    "cached_tokens": 0,
+    "reasoning_tokens": 160,
+    "cost_usd": 0.000539,
+    "latency_ms": 3139.0634999843314,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 925,
+      "output_tokens": 295,
+      "total_tokens": 1220,
+      "reasoning_tokens": 160,
+      "time_to_first_token": 3.1383170839981176,
+      "duration": 3.1386120839742944,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 925,
+            "output_tokens": 295,
+            "total_tokens": 1220,
+            "reasoning_tokens": 160,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1419,
+    "output_tokens": 156,
+    "total_tokens": 1575,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002199,
+    "latency_ms": 2544.12883403711,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1419,
+      "output_tokens": 156,
+      "total_tokens": 1575,
+      "time_to_first_token": 2.5435916669666767,
+      "duration": 2.5437348329578526,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1419,
+            "output_tokens": 156,
+            "total_tokens": 1575,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

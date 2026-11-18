@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Gross margin is a standard metric for financial services companies like American Express to assess profitability on transaction volumes.",
+    "reported_metric": "gross margin",
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The trace contains only revenue figures and no cost-of-revenue data, so the limitation is valid; however, the analyst incorrectly characterizes gross margin as a standard/useful metric for American Express. For a financial-services company, gross margin is generally not a meaningful measure because there is no comparable conventional cost-of-goods-sold structure. The writer repeats the resulting incomplete conclusion but introduces no earlier distinct factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1204,
+    "output_tokens": 671,
+    "total_tokens": 1875,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001046,
+    "latency_ms": 7123.762250004802,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1204,
+      "output_tokens": 671,
+      "total_tokens": 1875,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.12336570903426,
+      "duration": 7.123489084013272,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1204,
+            "output_tokens": 671,
+            "total_tokens": 1875,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1041,
+    "output_tokens": 141,
+    "total_tokens": 1182,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1971.2432909873314,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1041,
+      "output_tokens": 141,
+      "total_tokens": 1182,
+      "time_to_first_token": 1.9710089219734073,
+      "duration": 1.971080786024686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1041,
+            "output_tokens": 141,
+            "total_tokens": 1182,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1946741293,
+              "load_duration": 1076198,
+              "prompt_eval_duration": 273330000,
+              "eval_duration": 1620076000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

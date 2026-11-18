@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03029_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The FY2018 capital expenditure (purchases of PP&E) was reported as 1,757 USD millions.",
+    "reported_metric": "Capital Expenditure",
+    "reported_value": 1757.0,
+    "confidence": 0.99,
+    "rationale": "The cited cash flow evidence lists PP&E purchases as (1,577), (1,373), and (1,420), so the FY2018 amount is internally indicated as 1,577 USD millions, not 1,757. The analyst and writer propagated the extractor's incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 924,
+    "output_tokens": 247,
+    "total_tokens": 1171,
+    "cached_tokens": 0,
+    "reasoning_tokens": 102,
+    "cost_usd": 0.0004812,
+    "latency_ms": 2848.254917014856,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 924,
+      "output_tokens": 247,
+      "total_tokens": 1171,
+      "reasoning_tokens": 102,
+      "time_to_first_token": 2.8475795419653878,
+      "duration": 2.847881666966714,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 924,
+            "output_tokens": 247,
+            "total_tokens": 1171,
+            "reasoning_tokens": 102,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 807,
+    "output_tokens": 916,
+    "total_tokens": 1723,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 10091.325615008827,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 807,
+      "output_tokens": 916,
+      "total_tokens": 1723,
+      "time_to_first_token": 10.09104218200082,
+      "duration": 10.091121579986066,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 807,
+            "output_tokens": 916,
+            "total_tokens": 1723,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 10065528179,
+              "load_duration": 552026,
+              "prompt_eval_duration": 212082000,
+              "eval_duration": 9781426000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

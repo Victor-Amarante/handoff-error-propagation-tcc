@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00711_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Johnson & Johnson inventory was reported as $12,483 million for FY2023 in the FY2022 10-K.",
+    "reported_metric": "inventory",
+    "reported_value": 12483.0,
+    "confidence": 0.97,
+    "rationale": "A FY2022 10-K cannot substantiate a FY2023 inventory figure. The $12,483 million amount is plausibly FY2022 inventory, but its extracted year is inconsistent with the stated source and causes the downstream turnover calculations to use the wrong period. The analyst outputs also lack sufficient derivation and do not reconcile to the provided sales and inventory figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1136,
+    "output_tokens": 669,
+    "total_tokens": 1805,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.00103,
+    "latency_ms": 6781.794958980754,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1136,
+      "output_tokens": 669,
+      "total_tokens": 1805,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.7809014589875005,
+      "duration": 6.781249541963916,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1136,
+            "output_tokens": 669,
+            "total_tokens": 1805,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1068,
+    "output_tokens": 396,
+    "total_tokens": 1464,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4701.859479013365,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1068,
+      "output_tokens": 396,
+      "total_tokens": 1464,
+      "time_to_first_token": 4.7016273839981295,
+      "duration": 4.701699411962181,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1068,
+            "output_tokens": 396,
+            "total_tokens": 1464,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4677149393,
+              "load_duration": 608396,
+              "prompt_eval_duration": 302003000,
+              "eval_duration": 4301284000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

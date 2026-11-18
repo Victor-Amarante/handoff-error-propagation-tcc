@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03282_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported Netflix's FY2017 total current liabilities as 4,566,312 USD thousands, conflicting with its own evidence showing 5,466,312.",
+    "reported_metric": "total_current_liabilities",
+    "reported_value": 4566312.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim's numeric value disagrees with the cited balance-sheet evidence. The analyst and writer correctly use 5,466.312 USD millions, equivalent to 5,466,312 USD thousands."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 862,
+    "output_tokens": 250,
+    "total_tokens": 1112,
+    "cached_tokens": 0,
+    "reasoning_tokens": 111,
+    "cost_usd": 0.0004724,
+    "latency_ms": 3174.278541991953,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 862,
+      "output_tokens": 250,
+      "total_tokens": 1112,
+      "reasoning_tokens": 111,
+      "time_to_first_token": 3.173792958026752,
+      "duration": 3.1739358329796232,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 862,
+            "output_tokens": 250,
+            "total_tokens": 1112,
+            "reasoning_tokens": 111,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1396,
+    "output_tokens": 162,
+    "total_tokens": 1558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002206,
+    "latency_ms": 2508.6216250201687,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1396,
+      "output_tokens": 162,
+      "total_tokens": 1558,
+      "time_to_first_token": 2.507721500005573,
+      "duration": 2.5080198750365525,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1396,
+            "output_tokens": 162,
+            "total_tokens": 1558,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

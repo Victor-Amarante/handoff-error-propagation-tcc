@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01198_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "Data center revenue growth was incorrectly characterized as a 64% contribution to total FY22 revenue growth.",
+    "reported_metric": "Data center revenue growth contribution to total growth",
+    "reported_value": 64.0,
+    "confidence": 0.97,
+    "rationale": "Extractor claim C04 reports 64% data center revenue growth, not a 64% contribution to total growth. The analyst introduced the unsupported contribution interpretation; A03 makes the same error for gaming, and the writer compounds it by summing the two percentages to 85%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1344,
+    "output_tokens": 654,
+    "total_tokens": 1998,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010535999999999998,
+    "latency_ms": 6401.713917031884,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1344,
+      "output_tokens": 654,
+      "total_tokens": 1998,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.401268250017893,
+      "duration": 6.401349499996286,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1344,
+            "output_tokens": 654,
+            "total_tokens": 1998,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1328,
+    "output_tokens": 466,
+    "total_tokens": 1794,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5562.782921013422,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1328,
+      "output_tokens": 466,
+      "total_tokens": 1794,
+      "time_to_first_token": 5.562529660004657,
+      "duration": 5.562610672030132,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1328,
+            "output_tokens": 466,
+            "total_tokens": 1794,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5537526357,
+              "load_duration": 665044,
+              "prompt_eval_duration": 359172000,
+              "eval_duration": 5124204000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

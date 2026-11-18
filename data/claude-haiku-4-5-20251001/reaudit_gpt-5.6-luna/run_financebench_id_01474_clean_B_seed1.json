@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01474_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo raised FY2023 guidance due to strong organic revenue growth momentum.",
+    "reported_metric": "organic_revenue_growth_guidance",
+    "reported_value": 8.0,
+    "confidence": 0.9,
+    "rationale": "The extractor and analyst outputs support only the guidance figures and their increases. The causal explanation—strong organic revenue growth momentum—first appears in the writer output and has no provenance in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 971,
+    "output_tokens": 291,
+    "total_tokens": 1262,
+    "cached_tokens": 0,
+    "reasoning_tokens": 175,
+    "cost_usd": 0.0005434,
+    "latency_ms": 3473.829500027932,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 971,
+      "output_tokens": 291,
+      "total_tokens": 1262,
+      "reasoning_tokens": 175,
+      "time_to_first_token": 3.4733208749676123,
+      "duration": 3.473510291951243,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 971,
+            "output_tokens": 291,
+            "total_tokens": 1262,
+            "reasoning_tokens": 175,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1508,
+    "output_tokens": 145,
+    "total_tokens": 1653,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002233,
+    "latency_ms": 3032.007750007324,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1508,
+      "output_tokens": 145,
+      "total_tokens": 1653,
+      "time_to_first_token": 3.0311101250117645,
+      "duration": 3.0314045830164105,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1508,
+            "output_tokens": 145,
+            "total_tokens": 1653,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

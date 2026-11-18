@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. The analyst correctly calculated FY2022 working capital as total current assets minus total current liabilities: 7,453 - 5,175 = 2,278 USD million, which is positive. The writer accurately reported this result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1802,
+    "output_tokens": 182,
+    "total_tokens": 1984,
+    "cached_tokens": 0,
+    "reasoning_tokens": 76,
+    "cost_usd": 0.0005788000000000001,
+    "latency_ms": 2702.9756249976344,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1802,
+      "output_tokens": 182,
+      "total_tokens": 1984,
+      "reasoning_tokens": 76,
+      "time_to_first_token": 2.702335999987554,
+      "duration": 2.7025039580184966,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1802,
+            "output_tokens": 182,
+            "total_tokens": 1984,
+            "reasoning_tokens": 76,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1889,
+    "output_tokens": 179,
+    "total_tokens": 2068,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2590.9545550239272,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1889,
+      "output_tokens": 179,
+      "total_tokens": 2068,
+      "time_to_first_token": 2.5907226880081,
+      "duration": 2.590793779992964,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1889,
+            "output_tokens": 179,
+            "total_tokens": 2068,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2565524908,
+              "load_duration": 482812,
+              "prompt_eval_duration": 467382000,
+              "eval_duration": 2053288000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

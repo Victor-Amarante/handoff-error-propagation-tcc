@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01009_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "PepsiCo primarily operates in three segments as of FY2022.",
+    "reported_metric": "geographies",
+    "reported_value": 3.0,
+    "confidence": 0.99,
+    "rationale": "The extractor and analyst consistently report 7 segments/segment names, while the writer changes the value to 3 and answers a geography question with an unsupported segment claim. W01 is therefore the first incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1108,
+    "output_tokens": 318,
+    "total_tokens": 1426,
+    "cached_tokens": 0,
+    "reasoning_tokens": 203,
+    "cost_usd": 0.0006032,
+    "latency_ms": 3541.915915964637,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1108,
+      "output_tokens": 318,
+      "total_tokens": 1426,
+      "reasoning_tokens": 203,
+      "time_to_first_token": 3.541142583999317,
+      "duration": 3.5414112500147894,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1108,
+            "output_tokens": 318,
+            "total_tokens": 1426,
+            "reasoning_tokens": 203,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1032,
+    "output_tokens": 341,
+    "total_tokens": 1373,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4252.620964951348,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1032,
+      "output_tokens": 341,
+      "total_tokens": 1373,
+      "time_to_first_token": 4.25234373298008,
+      "duration": 4.252435393980704,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1032,
+            "output_tokens": 341,
+            "total_tokens": 1373,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4225433247,
+              "load_duration": 610111,
+              "prompt_eval_duration": 299492000,
+              "eval_duration": 3853696000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

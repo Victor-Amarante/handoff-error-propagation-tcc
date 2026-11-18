@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01279_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "AMD's net cash provided by operating activities was reported as $3,565 million for FY23, although the value corresponds to the FY22 comparison being analyzed.",
+    "reported_metric": "net cash provided by operating activities",
+    "reported_value": 3565.0,
+    "confidence": 0.95,
+    "rationale": "C01 is the earliest inconsistency: it labels $3,565 million as 2023, while the source is AMD's 2022 10-K and the analyst later silently relabels it as 2022. The downstream answer inherits this corrected-but-unsupported year change."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1338,
+    "output_tokens": 632,
+    "total_tokens": 1970,
+    "cached_tokens": 0,
+    "reasoning_tokens": 477,
+    "cost_usd": 0.001026,
+    "latency_ms": 6277.739125012886,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1338,
+      "output_tokens": 632,
+      "total_tokens": 1970,
+      "reasoning_tokens": 477,
+      "time_to_first_token": 6.277198750001844,
+      "duration": 6.2773302079876885,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1338,
+            "output_tokens": 632,
+            "total_tokens": 1970,
+            "reasoning_tokens": 477,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1949,
+    "output_tokens": 197,
+    "total_tokens": 2146,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002934,
+    "latency_ms": 3013.040042016655,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1949,
+      "output_tokens": 197,
+      "total_tokens": 2146,
+      "time_to_first_token": 3.0122144170454703,
+      "duration": 3.0125104590551928,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1949,
+            "output_tokens": 197,
+            "total_tokens": 2146,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

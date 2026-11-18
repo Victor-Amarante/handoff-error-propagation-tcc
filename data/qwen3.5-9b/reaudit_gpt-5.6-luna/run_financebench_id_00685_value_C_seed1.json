@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00685_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Best Buy's FY2023 revenue was reported as $64,298 million, but the trace indicates FY2023 revenue was $46,298 million.",
+    "reported_metric": "FY2023 Revenue",
+    "reported_value": 64298.0,
+    "confidence": 0.99,
+    "rationale": "C01 conflicts with C10 and the other FY2023 figures: $46,298 million revenue minus $36,386 million cost of sales equals the reported $9,912 million gross profit. Using the erroneous $64,298 million denominator produced the analyst's incorrect 15.42% gross margin and the writer's 7.07-point fluctuation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1863,
+    "output_tokens": 653,
+    "total_tokens": 2516,
+    "cached_tokens": 0,
+    "reasoning_tokens": 486,
+    "cost_usd": 0.0011562,
+    "latency_ms": 6148.655457946006,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1863,
+      "output_tokens": 653,
+      "total_tokens": 2516,
+      "reasoning_tokens": 486,
+      "time_to_first_token": 6.147788500005845,
+      "duration": 6.148074250028003,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1863,
+            "output_tokens": 653,
+            "total_tokens": 2516,
+            "reasoning_tokens": 486,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1995,
+    "output_tokens": 2153,
+    "total_tokens": 4148,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 23500.98796497332,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1995,
+      "output_tokens": 2153,
+      "total_tokens": 4148,
+      "time_to_first_token": 23.50069838797208,
+      "duration": 23.500802620023023,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1995,
+            "output_tokens": 2153,
+            "total_tokens": 4148,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 23475748713,
+              "load_duration": 544877,
+              "prompt_eval_duration": 476498000,
+              "eval_duration": 22936975000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

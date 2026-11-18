@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03282_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Netflix's total current liabilities were 5,466,312 USD thousand in FY2018.",
+    "reported_metric": "total current liabilities",
+    "reported_value": 5466312.0,
+    "confidence": 0.92,
+    "rationale": "The extractor is the first stage to assign the reported figure to FY2018, causing the analyst and writer to omit the requested FY2017 figure. The value is internally consistent through the pipeline, but the year attribution is the originating error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 672,
+    "output_tokens": 474,
+    "total_tokens": 1146,
+    "cached_tokens": 0,
+    "reasoning_tokens": 345,
+    "cost_usd": 0.0007032,
+    "latency_ms": 5348.861042002682,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 672,
+      "output_tokens": 474,
+      "total_tokens": 1146,
+      "reasoning_tokens": 345,
+      "time_to_first_token": 5.348196708015166,
+      "duration": 5.348437874985393,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 672,
+            "output_tokens": 474,
+            "total_tokens": 1146,
+            "reasoning_tokens": 345,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 499,
+    "output_tokens": 190,
+    "total_tokens": 689,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2457.3577829869464,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 499,
+      "output_tokens": 190,
+      "total_tokens": 689,
+      "time_to_first_token": 2.4571116829756647,
+      "duration": 2.457183662976604,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 499,
+            "output_tokens": 190,
+            "total_tokens": 689,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2428102317,
+              "load_duration": 448060,
+              "prompt_eval_duration": 138746000,
+              "eval_duration": 2220671000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

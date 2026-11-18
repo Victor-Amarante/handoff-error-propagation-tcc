@@ -1,0 +1,80 @@
+{
+  "log": "run_financebench_id_01091_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor treated the statement that multiple legal actions were filed as a quantified value of 2.0 USD billion.",
+    "reported_metric": "legal actions",
+    "reported_value": 2.0,
+    "confidence": 0.97,
+    "rationale": "The cited evidence supports only that multiple legal actions were filed; it does not report a USD billion amount or establish materiality. The downstream claims inherit this unsupported metric and value, while the writer also adds the unsupported characterization 'ongoing'."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1388,
+    "output_tokens": 446,
+    "total_tokens": 1834,
+    "cached_tokens": 1385,
+    "reasoning_tokens": 315,
+    "cost_usd": 0.0005634999999999999,
+    "latency_ms": 4983.274959027767,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1388,
+      "output_tokens": 446,
+      "total_tokens": 1834,
+      "cache_read_tokens": 1385,
+      "reasoning_tokens": 315,
+      "time_to_first_token": 4.982560792006552,
+      "duration": 4.982790958019905,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1388,
+            "output_tokens": 446,
+            "total_tokens": 1834,
+            "cache_read_tokens": 1385,
+            "reasoning_tokens": 315,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1375,
+    "output_tokens": 397,
+    "total_tokens": 1772,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4817.481267964467,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1375,
+      "output_tokens": 397,
+      "total_tokens": 1772,
+      "time_to_first_token": 4.8172229250194505,
+      "duration": 4.817296735011041,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1375,
+            "output_tokens": 397,
+            "total_tokens": 1772,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4792499887,
+              "load_duration": 537263,
+              "prompt_eval_duration": 368350000,
+              "eval_duration": 4360863000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

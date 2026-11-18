@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00603_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Merchandise inventories, net totaled $1.6 billion at the end of fiscal 2023.",
+    "reported_metric": "merchandise_inventories_net",
+    "reported_value": 1600.0,
+    "confidence": 0.99,
+    "rationale": "The extractor evidence explicitly identifies the $1.6 billion balance as being at the end of fiscal 2022, not fiscal 2023. The analyst first introduced the incorrect fiscal-year relabeling in A01; A02 and the writer then propagated the same error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1453,
+    "output_tokens": 646,
+    "total_tokens": 2099,
+    "cached_tokens": 0,
+    "reasoning_tokens": 504,
+    "cost_usd": 0.0010658,
+    "latency_ms": 6481.386042025406,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1453,
+      "output_tokens": 646,
+      "total_tokens": 2099,
+      "reasoning_tokens": 504,
+      "time_to_first_token": 6.480616917018779,
+      "duration": 6.481066500011366,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1453,
+            "output_tokens": 646,
+            "total_tokens": 2099,
+            "reasoning_tokens": 504,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2057,
+    "output_tokens": 190,
+    "total_tokens": 2247,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003007,
+    "latency_ms": 3539.819917001296,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2057,
+      "output_tokens": 190,
+      "total_tokens": 2247,
+      "time_to_first_token": 3.539076749992091,
+      "duration": 3.5393164169508964,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2057,
+            "output_tokens": 190,
+            "total_tokens": 2247,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

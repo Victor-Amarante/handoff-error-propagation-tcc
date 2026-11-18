@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00494_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "The extractor claimed that Boeing's 737 production rate for FY2023 was 31.",
+    "reported_metric": "737 production rate",
+    "reported_value": 31.0,
+    "confidence": 0.93,
+    "rationale": "The answer is directly derived from C02 through A01 and W01. The trace indicates that 31 is a prior/current rate rather than the forecast FY2023 rate, and the production-rate unit is also incorrectly labeled USD_M."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 951,
+    "output_tokens": 638,
+    "total_tokens": 1589,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009558,
+    "latency_ms": 6420.588332985062,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 951,
+      "output_tokens": 638,
+      "total_tokens": 1589,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.419751207984518,
+      "duration": 6.420034500013571,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 951,
+            "output_tokens": 638,
+            "total_tokens": 1589,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 855,
+    "output_tokens": 732,
+    "total_tokens": 1587,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8317.478712007869,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 855,
+      "output_tokens": 732,
+      "total_tokens": 1587,
+      "time_to_first_token": 8.317220858007204,
+      "duration": 8.317296599969268,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 855,
+            "output_tokens": 732,
+            "total_tokens": 1587,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8288076698,
+              "load_duration": 439217,
+              "prompt_eval_duration": 215805000,
+              "eval_duration": 8001715000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

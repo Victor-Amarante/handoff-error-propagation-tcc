@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01474_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor assigned the 8.0% organic revenue growth guidance to FY2024, even though the surrounding FY2023 guidance claims indicate it should be the FY2023 raised guidance.",
+    "reported_metric": "organic_revenue_growth_guidance",
+    "reported_value": 8.0,
+    "confidence": 0.93,
+    "rationale": "C01 is internally inconsistent with the question and the other claims: C02 identifies 6.0% as the prior FY2023 guidance, while the 8.0% current guidance is incorrectly labeled FY2024. The analyst then computes a 2-point increase without properly deriving it from C01, and the writer adds an unsupported causal explanation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1250,
+    "output_tokens": 882,
+    "total_tokens": 2132,
+    "cached_tokens": 0,
+    "reasoning_tokens": 703,
+    "cost_usd": 0.0013084,
+    "latency_ms": 8689.287166984286,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1250,
+      "output_tokens": 882,
+      "total_tokens": 2132,
+      "reasoning_tokens": 703,
+      "time_to_first_token": 8.68879929202376,
+      "duration": 8.688919582986273,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1250,
+            "output_tokens": 882,
+            "total_tokens": 2132,
+            "reasoning_tokens": 703,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1861,
+    "output_tokens": 165,
+    "total_tokens": 2026,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002686,
+    "latency_ms": 2448.111917008646,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1861,
+      "output_tokens": 165,
+      "total_tokens": 2026,
+      "time_to_first_token": 2.4471554160118103,
+      "duration": 2.447447375045158,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1861,
+            "output_tokens": 165,
+            "total_tokens": 2026,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01488_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the pipeline consistently states that Johnson & Johnson's Consumer Health business became a discontinued operation after the August 30, 2023 exchange offer.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor evidence explicitly identifies Johnson & Johnson's Consumer Health business as the discontinued operation, and the analyst and writer preserve that conclusion without contradiction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1304,
+    "output_tokens": 186,
+    "total_tokens": 1490,
+    "cached_tokens": 0,
+    "reasoning_tokens": 70,
+    "cost_usd": 0.000484,
+    "latency_ms": 2372.9848329676315,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1304,
+      "output_tokens": 186,
+      "total_tokens": 1490,
+      "reasoning_tokens": 70,
+      "time_to_first_token": 2.372502915968653,
+      "duration": 2.372641082969494,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1304,
+            "output_tokens": 186,
+            "total_tokens": 1490,
+            "reasoning_tokens": 70,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1865,
+    "output_tokens": 134,
+    "total_tokens": 1999,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002535,
+    "latency_ms": 2457.3196659912355,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1865,
+      "output_tokens": 134,
+      "total_tokens": 1999,
+      "time_to_first_token": 2.45641024998622,
+      "duration": 2.4566842499771155,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1865,
+            "output_tokens": 134,
+            "total_tokens": 1999,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

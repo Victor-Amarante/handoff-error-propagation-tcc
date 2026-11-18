@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported CVS Health FY2022 total revenue as $232,467 million.",
+    "reported_metric": "FY2022 total revenues",
+    "reported_value": 232467.0,
+    "confidence": 0.95,
+    "rationale": "The FY2022 revenue figure is incorrect, and the analyst's 5.5% property-and-equipment-to-revenue ratio and the writer's conclusion rely on it. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1017,
+    "output_tokens": 1152,
+    "total_tokens": 2169,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015858,
+    "latency_ms": 11453.230332990643,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1017,
+      "output_tokens": 1152,
+      "total_tokens": 2169,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.452641291019972,
+      "duration": 11.45287204097258,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1017,
+            "output_tokens": 1152,
+            "total_tokens": 2169,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1538,
+    "output_tokens": 215,
+    "total_tokens": 1753,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002613,
+    "latency_ms": 3805.892583040986,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1538,
+      "output_tokens": 215,
+      "total_tokens": 1753,
+      "time_to_first_token": 3.8049805000191554,
+      "duration": 3.8052699170075357,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1538,
+            "output_tokens": 215,
+            "total_tokens": 1753,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

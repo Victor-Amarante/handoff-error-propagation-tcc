@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01936_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A08",
+    "root_cause_claim_text": "The analyst treated the USD 63 million difference between the reported total liability and three listed cost amounts as an unspecified restructuring portion.",
+    "reported_metric": "restructuring_liability_unspecified_portion",
+    "reported_value": 63.0,
+    "confidence": 0.72,
+    "rationale": "The listed amounts total only USD 30 million, while the reported liability total is USD 93 million. The trace provides no provenance establishing that the USD 63 million residual consists of unspecified restructuring charges; it could reflect a different balance, omitted categories, or a mismatch of measures. The writer then propagated this unsupported residual as 67.75% of the liability."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1902,
+    "output_tokens": 1195,
+    "total_tokens": 3097,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0018144,
+    "latency_ms": 11689.709917001892,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1902,
+      "output_tokens": 1195,
+      "total_tokens": 3097,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.689116500027012,
+      "duration": 11.68924237502506,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1902,
+            "output_tokens": 1195,
+            "total_tokens": 3097,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2656,
+    "output_tokens": 321,
+    "total_tokens": 2977,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.004261,
+    "latency_ms": 3819.9877500301227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2656,
+      "output_tokens": 321,
+      "total_tokens": 2977,
+      "time_to_first_token": 3.8189649999840185,
+      "duration": 3.819264249992557,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2656,
+            "output_tokens": 321,
+            "total_tokens": 2977,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00822_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst reported a median of 4,928,657.5 votes against for the ten nominees.",
+    "reported_metric": "votes_against_median",
+    "reported_value": 4928657.5,
+    "confidence": 0.99,
+    "rationale": "The extractor lists ten values; sorting them gives a median of (4,827,808 + 4,906,500) / 2 = 4,867,154, not 4,928,657.5. The writer propagated this incorrect median."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1131,
+    "output_tokens": 550,
+    "total_tokens": 1681,
+    "cached_tokens": 0,
+    "reasoning_tokens": 411,
+    "cost_usd": 0.0008862000000000001,
+    "latency_ms": 5150.232708023395,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1131,
+      "output_tokens": 550,
+      "total_tokens": 1681,
+      "reasoning_tokens": 411,
+      "time_to_first_token": 5.149787792004645,
+      "duration": 5.149921374977566,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1131,
+            "output_tokens": 550,
+            "total_tokens": 1681,
+            "reasoning_tokens": 411,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1670,
+    "output_tokens": 187,
+    "total_tokens": 1857,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002605,
+    "latency_ms": 2947.5612089736387,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1670,
+      "output_tokens": 187,
+      "total_tokens": 1857,
+      "time_to_first_token": 2.947097916970961,
+      "duration": 2.947199208952952,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1670,
+            "output_tokens": 187,
+            "total_tokens": 1857,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

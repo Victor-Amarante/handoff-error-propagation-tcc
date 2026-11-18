@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00669_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Gross margin is not applicable or useful for Johnson & Johnson in FY2022.",
+    "reported_metric": "gross_margin_not_applicable",
+    "reported_value": 1.0,
+    "confidence": 0.86,
+    "rationale": "The extractor provides no evidence that gross margin is inapplicable; it only reports earnings-before-tax figures and intangible-asset amortization in cost of goods sold. Johnson & Johnson's diversified business mix does not by itself make gross margin unusable, so the analyst's unsupported non-applicability claim is the first error. The writer repeats and elaborates on that claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 964,
+    "output_tokens": 383,
+    "total_tokens": 1347,
+    "cached_tokens": 0,
+    "reasoning_tokens": 231,
+    "cost_usd": 0.0006524,
+    "latency_ms": 4559.191875043325,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 964,
+      "output_tokens": 383,
+      "total_tokens": 1347,
+      "reasoning_tokens": 231,
+      "time_to_first_token": 4.55850345804356,
+      "duration": 4.558738666004501,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 964,
+            "output_tokens": 383,
+            "total_tokens": 1347,
+            "reasoning_tokens": 231,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1503,
+    "output_tokens": 238,
+    "total_tokens": 1741,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002693,
+    "latency_ms": 3025.708957982715,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1503,
+      "output_tokens": 238,
+      "total_tokens": 1741,
+      "time_to_first_token": 3.0248067919746973,
+      "duration": 3.0251054170075804,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1503,
+            "output_tokens": 238,
+            "total_tokens": 1741,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

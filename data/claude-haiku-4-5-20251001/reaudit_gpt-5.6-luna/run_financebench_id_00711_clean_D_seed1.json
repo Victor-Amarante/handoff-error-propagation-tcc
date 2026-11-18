@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00711_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the calculation is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "Average inventory is (12,483 + 10,387) / 2 = 11,435 USD millions, and cost of products sold of 31,089 divided by 11,435 equals approximately 2.72. The writer accurately carries forward the analyst's result and assessment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1596,
+    "output_tokens": 324,
+    "total_tokens": 1920,
+    "cached_tokens": 0,
+    "reasoning_tokens": 199,
+    "cost_usd": 0.000708,
+    "latency_ms": 3629.808542027604,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1596,
+      "output_tokens": 324,
+      "total_tokens": 1920,
+      "reasoning_tokens": 199,
+      "time_to_first_token": 3.629162500030361,
+      "duration": 3.629313459037803,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1596,
+            "output_tokens": 324,
+            "total_tokens": 1920,
+            "reasoning_tokens": 199,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2211,
+    "output_tokens": 183,
+    "total_tokens": 2394,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003126,
+    "latency_ms": 2866.102041967679,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2211,
+      "output_tokens": 183,
+      "total_tokens": 2394,
+      "time_to_first_token": 2.865193250006996,
+      "duration": 2.8654888750170358,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2211,
+            "output_tokens": 183,
+            "total_tokens": 2394,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04458_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C15",
+    "root_cause_claim_text": "The extracted FY2015 depreciation and amortization value is 7,023,970 USD_K, which is inconsistent with the subsequent EBITDA calculation and appears to contain a digit error.",
+    "reported_metric": "depreciation_and_amortization",
+    "reported_value": 7023970.0,
+    "confidence": 0.99,
+    "rationale": "Claim A01 does not equal operating income C06 plus D&A C15: 305,826 + 7,023,970 = 7,329,796, not 3,765,686. The likely source error is C15, and the analyst and writer propagate the resulting inconsistency."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2175,
+    "output_tokens": 611,
+    "total_tokens": 2786,
+    "cached_tokens": 0,
+    "reasoning_tokens": 448,
+    "cost_usd": 0.0011681999999999999,
+    "latency_ms": 6050.993375014514,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2175,
+      "output_tokens": 611,
+      "total_tokens": 2786,
+      "reasoning_tokens": 448,
+      "time_to_first_token": 6.05051370896399,
+      "duration": 6.050661624991335,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2175,
+            "output_tokens": 611,
+            "total_tokens": 2786,
+            "reasoning_tokens": 448,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2385,
+    "output_tokens": 1060,
+    "total_tokens": 3445,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 12008.05660901824,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2385,
+      "output_tokens": 1060,
+      "total_tokens": 3445,
+      "time_to_first_token": 12.007800258987118,
+      "duration": 12.007877161027864,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2385,
+            "output_tokens": 1060,
+            "total_tokens": 3445,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 11978762844,
+              "load_duration": 514614,
+              "prompt_eval_duration": 586995000,
+              "eval_duration": 11335351000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

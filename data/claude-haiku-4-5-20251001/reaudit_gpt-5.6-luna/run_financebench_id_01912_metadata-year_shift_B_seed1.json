@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01912_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "FY2022 revenue was $3,800 million, treated as the relevant topline figure despite another FY2022 revenue value of $8,400 million in the extracted data.",
+    "reported_metric": "revenue",
+    "reported_value": 3800.0,
+    "confidence": 0.82,
+    "rationale": "The extractor contains two FY2022 revenue values, $8,400 million and $3,800 million, but the analyst selects $3,800 million without provenance or regional labels. The writer then incorrectly characterizes that selected value as MGM's total revenue and cannot answer the regional comparison. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 751,
+    "output_tokens": 646,
+    "total_tokens": 1397,
+    "cached_tokens": 0,
+    "reasoning_tokens": 486,
+    "cost_usd": 0.0009253999999999999,
+    "latency_ms": 6815.042332978919,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 751,
+      "output_tokens": 646,
+      "total_tokens": 1397,
+      "reasoning_tokens": 486,
+      "time_to_first_token": 6.8145016669877805,
+      "duration": 6.814665334008168,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 751,
+            "output_tokens": 646,
+            "total_tokens": 1397,
+            "reasoning_tokens": 486,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1247,
+    "output_tokens": 179,
+    "total_tokens": 1426,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002142,
+    "latency_ms": 2555.4818749660626,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1247,
+      "output_tokens": 179,
+      "total_tokens": 1426,
+      "time_to_first_token": 2.5545693750027567,
+      "duration": 2.5548714169999585,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1247,
+            "output_tokens": 179,
+            "total_tokens": 1426,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01858_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified in the trace.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor, analyst, and writer preserve the same metric and value—65 consecutive years of dividend increases as of 2023—with consistent provenance and no detectable internal contradiction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 811,
+    "output_tokens": 249,
+    "total_tokens": 1060,
+    "cached_tokens": 0,
+    "reasoning_tokens": 152,
+    "cost_usd": 0.000461,
+    "latency_ms": 3014.8206669837236,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 811,
+      "output_tokens": 249,
+      "total_tokens": 1060,
+      "reasoning_tokens": 152,
+      "time_to_first_token": 3.0144843329908326,
+      "duration": 3.014559792005457,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 811,
+            "output_tokens": 249,
+            "total_tokens": 1060,
+            "reasoning_tokens": 152,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1322,
+    "output_tokens": 192,
+    "total_tokens": 1514,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002282,
+    "latency_ms": 2549.5880829985254,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1322,
+      "output_tokens": 192,
+      "total_tokens": 1514,
+      "time_to_first_token": 2.54854545899434,
+      "duration": 2.548841999960132,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1322,
+            "output_tokens": 192,
+            "total_tokens": 1514,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10136_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures are used consistently, and the calculation is correct: (2707.3 - 1244.5) / 2707.3 = 0.5403, which rounds to 0.54 (54%). No factual error is identifiable from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 899,
+    "output_tokens": 281,
+    "total_tokens": 1180,
+    "cached_tokens": 0,
+    "reasoning_tokens": 169,
+    "cost_usd": 0.000517,
+    "latency_ms": 3358.6330830003135,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 899,
+      "output_tokens": 281,
+      "total_tokens": 1180,
+      "reasoning_tokens": 169,
+      "time_to_first_token": 3.3578861249843612,
+      "duration": 3.3580908339936286,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 899,
+            "output_tokens": 281,
+            "total_tokens": 1180,
+            "reasoning_tokens": 169,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1406,
+    "output_tokens": 143,
+    "total_tokens": 1549,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002121,
+    "latency_ms": 2150.5253750365227,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1406,
+      "output_tokens": 143,
+      "total_tokens": 1549,
+      "time_to_first_token": 2.149764208996203,
+      "duration": 2.1500602499581873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1406,
+            "output_tokens": 143,
+            "total_tokens": 1549,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

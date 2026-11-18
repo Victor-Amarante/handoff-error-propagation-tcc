@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00552_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The increase in the current portion of long-term debt reflects a reclassification of debt obligations becoming due within one year.",
+    "reported_metric": "Cause of the increase in current debt",
+    "reported_value": null,
+    "confidence": 0.83,
+    "rationale": "The extracted figures support the arithmetic and the conclusion that combined debt decreased: $47,237M versus $49,781M. However, the trace provides no evidence that the change was specifically a reclassification; it could also reflect repayments, new borrowings, or other changes. This unsupported causal claim first appears in the analyst output and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 929,
+    "output_tokens": 670,
+    "total_tokens": 1599,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009897999999999999,
+    "latency_ms": 6822.455374989659,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 929,
+      "output_tokens": 670,
+      "total_tokens": 1599,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.822241874993779,
+      "duration": 6.822300166997593,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 929,
+            "output_tokens": 670,
+            "total_tokens": 1599,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1455,
+    "output_tokens": 170,
+    "total_tokens": 1625,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002305,
+    "latency_ms": 3093.249041994568,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1455,
+      "output_tokens": 170,
+      "total_tokens": 1625,
+      "time_to_first_token": 3.0924984579905868,
+      "duration": 3.092736833030358,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1455,
+            "output_tokens": 170,
+            "total_tokens": 1625,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04417_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extractor, analyst, and writer consistently report FY2019 merchandise inventories of $4,509 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The claim is consistently propagated from C01 through A01 to W01, with no internal contradiction or conflicting provenance in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 817,
+    "output_tokens": 470,
+    "total_tokens": 1287,
+    "cached_tokens": 0,
+    "reasoning_tokens": 363,
+    "cost_usd": 0.0007274,
+    "latency_ms": 4739.7258339915425,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 817,
+      "output_tokens": 470,
+      "total_tokens": 1287,
+      "reasoning_tokens": 363,
+      "time_to_first_token": 4.739030790980905,
+      "duration": 4.739295499981381,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 817,
+            "output_tokens": 470,
+            "total_tokens": 1287,
+            "reasoning_tokens": 363,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1341,
+    "output_tokens": 156,
+    "total_tokens": 1497,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002121,
+    "latency_ms": 2257.9566669883206,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1341,
+      "output_tokens": 156,
+      "total_tokens": 1497,
+      "time_to_first_token": 2.257355000008829,
+      "duration": 2.257573749986477,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1341,
+            "output_tokens": 156,
+            "total_tokens": 1497,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

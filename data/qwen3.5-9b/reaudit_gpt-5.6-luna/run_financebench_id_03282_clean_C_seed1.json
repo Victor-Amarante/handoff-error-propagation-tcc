@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03282_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the analyst correctly converted 5,466,312 USD thousands to 5,466.312 USD millions.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 5,466,312 USD thousands, and the analyst and writer consistently convert this to 5,466.312 USD millions by dividing by 1,000."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 797,
+    "output_tokens": 282,
+    "total_tokens": 1079,
+    "cached_tokens": 0,
+    "reasoning_tokens": 163,
+    "cost_usd": 0.0004978,
+    "latency_ms": 3182.7906669932418,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 797,
+      "output_tokens": 282,
+      "total_tokens": 1079,
+      "reasoning_tokens": 163,
+      "time_to_first_token": 3.1820437079877593,
+      "duration": 3.1822634160052985,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 797,
+            "output_tokens": 282,
+            "total_tokens": 1079,
+            "reasoning_tokens": 163,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 666,
+    "output_tokens": 237,
+    "total_tokens": 903,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2951.540424954146,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 666,
+      "output_tokens": 237,
+      "total_tokens": 903,
+      "time_to_first_token": 2.951245295989793,
+      "duration": 2.9513352959766053,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 666,
+            "output_tokens": 237,
+            "total_tokens": 903,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2922320723,
+              "load_duration": 479261,
+              "prompt_eval_duration": 177871000,
+              "eval_duration": 2675807000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

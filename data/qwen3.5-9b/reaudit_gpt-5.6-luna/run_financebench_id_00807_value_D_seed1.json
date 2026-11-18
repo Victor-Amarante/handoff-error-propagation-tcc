@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00807_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "3M's Q2 FY2023 cash and cash equivalents were reported as $2,458 million, despite the evidence showing $4,258 million and the component total matching $4,258 million.",
+    "reported_metric": "cash_and_cash_equivalents_q2_2023",
+    "reported_value": 2458.0,
+    "confidence": 0.99,
+    "rationale": "C01 is internally inconsistent: its numeric value is 2,458, while its evidence says 4,258. Moreover, 4,258 + 56 + 4,947 + 5,280 + 674 + 539 equals the reported total current assets of 15,754; using 2,458 does not. This is the earliest identified error and contaminates the downstream liquidity analysis."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3835,
+    "output_tokens": 571,
+    "total_tokens": 4406,
+    "cached_tokens": 0,
+    "reasoning_tokens": 377,
+    "cost_usd": 0.0014521999999999998,
+    "latency_ms": 5913.121542020235,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3835,
+      "output_tokens": 571,
+      "total_tokens": 4406,
+      "reasoning_tokens": 377,
+      "time_to_first_token": 5.912257916003,
+      "duration": 5.912536124989856,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3835,
+            "output_tokens": 571,
+            "total_tokens": 4406,
+            "reasoning_tokens": 377,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4459,
+    "output_tokens": 267,
+    "total_tokens": 4726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4121.079961012583,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4459,
+      "output_tokens": 267,
+      "total_tokens": 4726,
+      "time_to_first_token": 4.120802408957388,
+      "duration": 4.120893399987835,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4459,
+            "output_tokens": 267,
+            "total_tokens": 4726,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4095785540,
+              "load_duration": 746327,
+              "prompt_eval_duration": 1015478000,
+              "eval_duration": 3010822000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

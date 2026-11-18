@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "3M's net property, plant, and equipment represented 30.6% of the relevant capital-intensity denominator in FY2022.",
+    "reported_metric": "3M is a capital-intensive business",
+    "reported_value": 30.6,
+    "confidence": 0.99,
+    "rationale": "The analyst claim is unsupported by its cited inputs: 9,178 divided by 34,229 (PP&E divided by net sales) is approximately 26.8%, not 30.6%. It also treats net sales as the denominator, while the writer incorrectly describes the denominator as total assets; no total-assets claim appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1445,
+    "output_tokens": 438,
+    "total_tokens": 1883,
+    "cached_tokens": 0,
+    "reasoning_tokens": 275,
+    "cost_usd": 0.0008146000000000001,
+    "latency_ms": 4607.339791022241,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1445,
+      "output_tokens": 438,
+      "total_tokens": 1883,
+      "reasoning_tokens": 275,
+      "time_to_first_token": 4.606678458978422,
+      "duration": 4.6068376249750145,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1445,
+            "output_tokens": 438,
+            "total_tokens": 1883,
+            "reasoning_tokens": 275,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1454,
+    "output_tokens": 304,
+    "total_tokens": 1758,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3860.7111069723032,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1454,
+      "output_tokens": 304,
+      "total_tokens": 1758,
+      "time_to_first_token": 3.8604778660228476,
+      "duration": 3.860550769022666,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1454,
+            "output_tokens": 304,
+            "total_tokens": 1758,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3833352632,
+              "load_duration": 484358,
+              "prompt_eval_duration": 383471000,
+              "eval_duration": 3398650000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

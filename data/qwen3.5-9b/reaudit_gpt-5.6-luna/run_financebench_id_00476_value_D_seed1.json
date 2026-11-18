@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00476_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor incorrectly reported a trading symbol value of 460.0 USD_K for 2022, using the phone-number evidence “(212) 640-2000.”",
+    "reported_metric": "Trading Symbol",
+    "reported_value": 460.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's claims are internally mismatched: phone-number and per-share evidence are labeled as trading symbols and expressed in USD_K. The analyst merely propagated these claims, while the writer's conclusion that there were zero registered debt securities is unsupported by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1674,
+    "output_tokens": 250,
+    "total_tokens": 1924,
+    "cached_tokens": 0,
+    "reasoning_tokens": 103,
+    "cost_usd": 0.0006347999999999999,
+    "latency_ms": 3159.5960420090705,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1674,
+      "output_tokens": 250,
+      "total_tokens": 1924,
+      "reasoning_tokens": 103,
+      "time_to_first_token": 3.1593657080084085,
+      "duration": 3.1594205829896964,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1674,
+            "output_tokens": 250,
+            "total_tokens": 1924,
+            "reasoning_tokens": 103,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1749,
+    "output_tokens": 255,
+    "total_tokens": 2004,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3390.6164600048214,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1749,
+      "output_tokens": 255,
+      "total_tokens": 2004,
+      "time_to_first_token": 3.390366764040664,
+      "duration": 3.390437506022863,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1749,
+            "output_tokens": 255,
+            "total_tokens": 2004,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3361339371,
+              "load_duration": 483343,
+              "prompt_eval_duration": 448467000,
+              "eval_duration": 2842208000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

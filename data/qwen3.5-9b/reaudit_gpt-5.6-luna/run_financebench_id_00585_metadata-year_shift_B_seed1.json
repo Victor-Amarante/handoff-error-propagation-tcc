@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00585_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly characterized FY2021's 14.8% effective tax rate as a benefit and FY2022's 0.6% rate as an expense; the underlying tax amounts imply the opposite classifications.",
+    "reported_metric": "Effective Tax Rate Comparison",
+    "reported_value": 0.6,
+    "confidence": 0.95,
+    "rationale": "The analyst's figures yield approximately -14.8% for FY2021 (743 / -5033) and +0.6% for FY2022 (-31 / -5022). The numerical rates are consistent, but the writer reverses the expense/benefit interpretation. No claim IDs are present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 914,
+    "output_tokens": 1714,
+    "total_tokens": 2628,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1536,
+    "cost_usd": 0.0022396,
+    "latency_ms": 15863.846124964766,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 914,
+      "output_tokens": 1714,
+      "total_tokens": 2628,
+      "reasoning_tokens": 1536,
+      "time_to_first_token": 15.8631385419867,
+      "duration": 15.863362584030256,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 914,
+            "output_tokens": 1714,
+            "total_tokens": 2628,
+            "reasoning_tokens": 1536,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 786,
+    "output_tokens": 1233,
+    "total_tokens": 2019,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13555.83966296399,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 786,
+      "output_tokens": 1233,
+      "total_tokens": 2019,
+      "time_to_first_token": 13.555574138998054,
+      "duration": 13.555675271025393,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 786,
+            "output_tokens": 1233,
+            "total_tokens": 2019,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13530804823,
+              "load_duration": 592368,
+              "prompt_eval_duration": 198651000,
+              "eval_duration": 13281949000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

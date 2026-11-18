@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00080_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable: the reported working capital equals total current assets minus total current liabilities (57,517 − 45,101 = 12,416 USD million).",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The arithmetic and provenance are internally consistent. The trace does not establish that working capital is irrelevant for PayPal, although the response could have discussed that caveat."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2029,
+    "output_tokens": 635,
+    "total_tokens": 2664,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011677999999999999,
+    "latency_ms": 6370.5196249648,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2029,
+      "output_tokens": 635,
+      "total_tokens": 2664,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.369831458025146,
+      "duration": 6.370077375031542,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2029,
+            "output_tokens": 635,
+            "total_tokens": 2664,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2183,
+    "output_tokens": 185,
+    "total_tokens": 2368,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2688.407858950086,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2183,
+      "output_tokens": 185,
+      "total_tokens": 2368,
+      "time_to_first_token": 2.688122075982392,
+      "duration": 2.6882082619704306,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2183,
+            "output_tokens": 185,
+            "total_tokens": 2368,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2661703818,
+              "load_duration": 700651,
+              "prompt_eval_duration": 545742000,
+              "eval_duration": 2060260000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

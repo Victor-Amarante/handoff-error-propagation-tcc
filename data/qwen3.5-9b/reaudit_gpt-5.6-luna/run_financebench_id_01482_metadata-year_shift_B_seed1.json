@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01482_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The proposal was rejected with 977,228,780 votes against at the May 3, 2023 AGM.",
+    "reported_metric": "shareholder proposal_congruency_report_on_net_zero_emissions_policies_votes_against",
+    "reported_value": 977228780.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst both report 977,228,788 votes against, and the writer's structured answer_claim also contains 977,228,788. Only the writer's answer text changes the value to 977,228,780."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 844,
+    "output_tokens": 494,
+    "total_tokens": 1338,
+    "cached_tokens": 0,
+    "reasoning_tokens": 349,
+    "cost_usd": 0.0007615999999999999,
+    "latency_ms": 5147.237790981308,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 844,
+      "output_tokens": 494,
+      "total_tokens": 1338,
+      "reasoning_tokens": 349,
+      "time_to_first_token": 5.146667000022717,
+      "duration": 5.146815666987095,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 844,
+            "output_tokens": 494,
+            "total_tokens": 1338,
+            "reasoning_tokens": 349,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 716,
+    "output_tokens": 318,
+    "total_tokens": 1034,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3795.597386022564,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 716,
+      "output_tokens": 318,
+      "total_tokens": 1034,
+      "time_to_first_token": 3.7953448700136505,
+      "duration": 3.795417858986184,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 716,
+            "output_tokens": 318,
+            "total_tokens": 1034,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3765413302,
+              "load_duration": 480541,
+              "prompt_eval_duration": 192089000,
+              "eval_duration": 3522973000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

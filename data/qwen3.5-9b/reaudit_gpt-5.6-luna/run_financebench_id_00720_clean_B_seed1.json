@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The gross-margin change driver for American Express is unknown because the provided analysis contains no explanatory data.",
+    "reported_metric": "Gross margin change driver explanation",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "The extractor supplied detailed FY2022 and comparative revenue components, so the analyst's zero/unknown claim is unsupported and misses the key issue: gross margin is generally not a useful metric for a card-services and payments company because revenue and funding/credit costs do not map cleanly to a manufacturing-style gross margin. The writer merely repeated the analyst's erroneous conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1207,
+    "output_tokens": 294,
+    "total_tokens": 1501,
+    "cached_tokens": 0,
+    "reasoning_tokens": 141,
+    "cost_usd": 0.0005942,
+    "latency_ms": 3914.9321670411155,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1207,
+      "output_tokens": 294,
+      "total_tokens": 1501,
+      "reasoning_tokens": 141,
+      "time_to_first_token": 3.914233957999386,
+      "duration": 3.9144325829693116,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1207,
+            "output_tokens": 294,
+            "total_tokens": 1501,
+            "reasoning_tokens": 141,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1153,
+    "output_tokens": 163,
+    "total_tokens": 1316,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2254.812258994207,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1153,
+      "output_tokens": 163,
+      "total_tokens": 1316,
+      "time_to_first_token": 2.254578426014632,
+      "duration": 2.2546500239986926,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1153,
+            "output_tokens": 163,
+            "total_tokens": 1316,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2228044737,
+              "load_duration": 653767,
+              "prompt_eval_duration": 321580000,
+              "eval_duration": 1858048000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00080_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PayPal did not have positive working capital in FY2022 and instead had negative working capital.",
+    "reported_metric": "working capital",
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst initially made an incorrect negative-working-capital claim, contradicting the extracted figures and its own later calculation: $57,517M in current assets minus $45,101M in current liabilities equals positive working capital of $12,416M. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1103,
+    "output_tokens": 407,
+    "total_tokens": 1510,
+    "cached_tokens": 0,
+    "reasoning_tokens": 271,
+    "cost_usd": 0.000709,
+    "latency_ms": 4266.843791003339,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1103,
+      "output_tokens": 407,
+      "total_tokens": 1510,
+      "reasoning_tokens": 271,
+      "time_to_first_token": 4.265988624945749,
+      "duration": 4.2662984999478795,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1103,
+            "output_tokens": 407,
+            "total_tokens": 1510,
+            "reasoning_tokens": 271,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 974,
+    "output_tokens": 286,
+    "total_tokens": 1260,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3581.336082017515,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 974,
+      "output_tokens": 286,
+      "total_tokens": 1260,
+      "time_to_first_token": 3.581085162993986,
+      "duration": 3.5811789610306732,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 974,
+            "output_tokens": 286,
+            "total_tokens": 1260,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3555820358,
+              "load_duration": 469915,
+              "prompt_eval_duration": 266077000,
+              "eval_duration": 3232418000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

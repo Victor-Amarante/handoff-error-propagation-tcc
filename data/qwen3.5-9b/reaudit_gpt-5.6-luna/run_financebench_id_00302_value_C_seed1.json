@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00302_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A09",
+    "root_cause_claim_text": "The analyst incorrectly reported Pfizer's PPNE for FY20 as $35,674 million based on unrelated current-asset components.",
+    "reported_metric": "PPNE FY20",
+    "reported_value": 35674.0,
+    "confidence": 0.98,
+    "rationale": "A09 is the first unsupported/inconsistent PPNE claim: its value does not equal the sum of the six cited extractor claims ($40,466 million), and PPNE should instead track the property, plant and equipment figures already extracted. The writer merely propagated the analyst's erroneous PPNE figures."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3568,
+    "output_tokens": 1177,
+    "total_tokens": 4745,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1025,
+    "cost_usd": 0.002126,
+    "latency_ms": 11988.75970899826,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3568,
+      "output_tokens": 1177,
+      "total_tokens": 4745,
+      "reasoning_tokens": 1025,
+      "time_to_first_token": 11.988273290975485,
+      "duration": 11.98846608295571,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3568,
+            "output_tokens": 1177,
+            "total_tokens": 4745,
+            "reasoning_tokens": 1025,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4111,
+    "output_tokens": 798,
+    "total_tokens": 4909,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9793.805797991809,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4111,
+      "output_tokens": 798,
+      "total_tokens": 4909,
+      "time_to_first_token": 9.79357280296972,
+      "duration": 9.793644072953612,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4111,
+            "output_tokens": 798,
+            "total_tokens": 4909,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9768542697,
+              "load_duration": 559179,
+              "prompt_eval_duration": 963833000,
+              "eval_duration": 8714253000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

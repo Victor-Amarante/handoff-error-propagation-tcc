@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01474_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo did not raise its FY2023 guidance; instead, it supposedly provided two initial outlooks before settling on a final range.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The analyst's opening claim directly contradicts the extracted figures and its own later statement that guidance was revised upward from 6% to 8%. The trace provides no claim IDs, and the incorrect claim is interpretive rather than a specific numeric report."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 793,
+    "output_tokens": 1137,
+    "total_tokens": 1930,
+    "cached_tokens": 0,
+    "reasoning_tokens": 997,
+    "cost_usd": 0.001523,
+    "latency_ms": 10708.962625009008,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 793,
+      "output_tokens": 1137,
+      "total_tokens": 1930,
+      "reasoning_tokens": 997,
+      "time_to_first_token": 10.707721750019118,
+      "duration": 10.708178791042883,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 793,
+            "output_tokens": 1137,
+            "total_tokens": 1930,
+            "reasoning_tokens": 997,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 593,
+    "output_tokens": 207,
+    "total_tokens": 800,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2523.1334469863214,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 593,
+      "output_tokens": 207,
+      "total_tokens": 800,
+      "time_to_first_token": 2.5228997790254653,
+      "duration": 2.522970905993134,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 593,
+            "output_tokens": 207,
+            "total_tokens": 800,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2498017878,
+              "load_duration": 511946,
+              "prompt_eval_duration": 154337000,
+              "eval_duration": 2294802000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

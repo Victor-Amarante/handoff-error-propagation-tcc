@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03718_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst claimed that Lockheed Martin's FY2020–FY2022 total revenue CAGR was 6.4%.",
+    "reported_metric": "Lockheed Martin's 2 year total revenue CAGR from FY2020 to FY2022",
+    "reported_value": 6.4,
+    "confidence": 0.99,
+    "rationale": "Using the extractor's FY2020 and FY2022 values, the CAGR is (56984 / 65398)^(1/2) - 1, approximately -6.7%, not +6.4%. The writer merely repeated the analyst's incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1052,
+    "output_tokens": 547,
+    "total_tokens": 1599,
+    "cached_tokens": 0,
+    "reasoning_tokens": 391,
+    "cost_usd": 0.0008667999999999999,
+    "latency_ms": 5459.79458396323,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1052,
+      "output_tokens": 547,
+      "total_tokens": 1599,
+      "reasoning_tokens": 391,
+      "time_to_first_token": 5.459187958040275,
+      "duration": 5.459427541005425,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1052,
+            "output_tokens": 547,
+            "total_tokens": 1599,
+            "reasoning_tokens": 391,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 971,
+    "output_tokens": 356,
+    "total_tokens": 1327,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4264.116035017651,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 971,
+      "output_tokens": 356,
+      "total_tokens": 1327,
+      "time_to_first_token": 4.2638840249856,
+      "duration": 4.263955398986582,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 971,
+            "output_tokens": 356,
+            "total_tokens": 1327,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4238851877,
+              "load_duration": 697949,
+              "prompt_eval_duration": 241276000,
+              "eval_duration": 3944830000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

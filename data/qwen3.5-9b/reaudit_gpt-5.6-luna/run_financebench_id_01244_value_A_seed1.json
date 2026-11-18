@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01244_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The $5.05M quarterly cash dividend was paid to preferred shareholders rather than common shareholders.",
+    "reported_metric": "quarterly cash dividend paid to preferred shareholders",
+    "reported_value": 5.05,
+    "confidence": 0.93,
+    "rationale": "The extractor reports only a $5.05M quarterly cash dividend and does not identify preferred shareholders. The analyst first introduces the unsupported preferred-shareholder attribution, which the writer repeats."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 627,
+    "output_tokens": 321,
+    "total_tokens": 948,
+    "cached_tokens": 0,
+    "reasoning_tokens": 201,
+    "cost_usd": 0.0005106,
+    "latency_ms": 3275.648041977547,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 627,
+      "output_tokens": 321,
+      "total_tokens": 948,
+      "reasoning_tokens": 201,
+      "time_to_first_token": 3.275101375009399,
+      "duration": 3.27524300001096,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 627,
+            "output_tokens": 321,
+            "total_tokens": 948,
+            "reasoning_tokens": 201,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 420,
+    "output_tokens": 185,
+    "total_tokens": 605,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2357.9249319736846,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 420,
+      "output_tokens": 185,
+      "total_tokens": 605,
+      "time_to_first_token": 2.3576738049741834,
+      "duration": 2.3577625199686736,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 420,
+            "output_tokens": 185,
+            "total_tokens": 605,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2332803619,
+              "load_duration": 526852,
+              "prompt_eval_duration": 124911000,
+              "eval_duration": 2161119000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

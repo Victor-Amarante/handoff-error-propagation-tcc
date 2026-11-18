@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01912_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is demonstrable from the trace; $674 million is the lowest of the three reported FY2022 revenue figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.84,
+    "rationale": "The analyst correctly selects the minimum revenue value (674.0) from 8400.0, 3800.0, and 674.0, and the writer preserves that value. The trace omits region labels, so the answer is incomplete in identifying the region, but no factual error can be established from the available provenance."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1059,
+    "output_tokens": 661,
+    "total_tokens": 1720,
+    "cached_tokens": 0,
+    "reasoning_tokens": 510,
+    "cost_usd": 0.001005,
+    "latency_ms": 6184.9230420193635,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1059,
+      "output_tokens": 661,
+      "total_tokens": 1720,
+      "reasoning_tokens": 510,
+      "time_to_first_token": 6.184112957969774,
+      "duration": 6.184328583010938,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1059,
+            "output_tokens": 661,
+            "total_tokens": 1720,
+            "reasoning_tokens": 510,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1611,
+    "output_tokens": 206,
+    "total_tokens": 1817,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002641,
+    "latency_ms": 3503.0369999585673,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1611,
+      "output_tokens": 206,
+      "total_tokens": 1817,
+      "time_to_first_token": 3.502514415944461,
+      "duration": 3.5026382909854874,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1611,
+            "output_tokens": 206,
+            "total_tokens": 1817,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

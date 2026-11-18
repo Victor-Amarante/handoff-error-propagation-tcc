@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00080_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PayPal's FY2022 total current assets were $57,517 million.",
+    "reported_metric": "total current assets",
+    "reported_value": 57517.0,
+    "confidence": 0.98,
+    "rationale": "The extracted current-asset components sum to $58,683 million, not $57,517 million. Current liabilities do sum to the reported $45,101 million, so the analyst's $12,416 million working-capital figure—and the writer's conclusion—rests on the inconsistent current-assets total."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1285,
+    "output_tokens": 1071,
+    "total_tokens": 2356,
+    "cached_tokens": 0,
+    "reasoning_tokens": 929,
+    "cost_usd": 0.0015422,
+    "latency_ms": 9021.918624988757,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1285,
+      "output_tokens": 1071,
+      "total_tokens": 2356,
+      "reasoning_tokens": 929,
+      "time_to_first_token": 9.021061749954242,
+      "duration": 9.02142779098358,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1285,
+            "output_tokens": 1071,
+            "total_tokens": 2356,
+            "reasoning_tokens": 929,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1846,
+    "output_tokens": 171,
+    "total_tokens": 2017,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002701,
+    "latency_ms": 2852.1720000426285,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1846,
+      "output_tokens": 171,
+      "total_tokens": 2017,
+      "time_to_first_token": 2.851166792039294,
+      "duration": 2.85146545805037,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1846,
+            "output_tokens": 171,
+            "total_tokens": 2017,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

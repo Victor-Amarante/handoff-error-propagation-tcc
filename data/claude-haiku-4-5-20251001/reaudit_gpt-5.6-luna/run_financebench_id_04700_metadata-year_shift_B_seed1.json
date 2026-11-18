@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04700_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Microsoft's FY2016 COGS is reported as 0 USD millions because no data was retrieved.",
+    "reported_metric": "cogs",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor did retrieve a financial value, albeit for FY2017, so the writer's statement that no data was retrieved is contradicted by the trace. The writer then encoded the unsupported FY2016 COGS value as 0.0."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 636,
+    "output_tokens": 427,
+    "total_tokens": 1063,
+    "cached_tokens": 0,
+    "reasoning_tokens": 298,
+    "cost_usd": 0.0006396,
+    "latency_ms": 4431.025791971479,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 636,
+      "output_tokens": 427,
+      "total_tokens": 1063,
+      "reasoning_tokens": 298,
+      "time_to_first_token": 4.4307163339690305,
+      "duration": 4.43081233400153,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 636,
+            "output_tokens": 427,
+            "total_tokens": 1063,
+            "reasoning_tokens": 298,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1118,
+    "output_tokens": 153,
+    "total_tokens": 1271,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001883,
+    "latency_ms": 2358.2744160084985,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1118,
+      "output_tokens": 153,
+      "total_tokens": 1271,
+      "time_to_first_token": 2.3574767500394955,
+      "duration": 2.357778958044946,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1118,
+            "output_tokens": 153,
+            "total_tokens": 1271,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

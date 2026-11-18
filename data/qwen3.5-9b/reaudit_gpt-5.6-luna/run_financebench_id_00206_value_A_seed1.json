@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00206_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst claimed that the question could not be answered from the available data, without recognizing that gross margin is generally not a relevant operating metric for a bank such as JPMorgan.",
+    "reported_metric": "gross margin relevance",
+    "reported_value": null,
+    "confidence": 0.94,
+    "rationale": "The extractor did not introduce an incorrect claim; it only reported assets and stockholders' equity. The analyst’s conclusion improperly treated the absence of revenue and cost-of-revenue data as dispositive, even though the question explicitly permits explaining why gross margin is not meaningful for a financial institution. The writer repeated that conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 707,
+    "output_tokens": 516,
+    "total_tokens": 1223,
+    "cached_tokens": 0,
+    "reasoning_tokens": 360,
+    "cost_usd": 0.0007606,
+    "latency_ms": 5821.519042016007,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 707,
+      "output_tokens": 516,
+      "total_tokens": 1223,
+      "reasoning_tokens": 360,
+      "time_to_first_token": 5.821306957979687,
+      "duration": 5.821373249986209,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 707,
+            "output_tokens": 516,
+            "total_tokens": 1223,
+            "reasoning_tokens": 360,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 494,
+    "output_tokens": 124,
+    "total_tokens": 618,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1623.777066997718,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 494,
+      "output_tokens": 124,
+      "total_tokens": 618,
+      "time_to_first_token": 1.623526002978906,
+      "duration": 1.623598478967324,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 494,
+            "output_tokens": 124,
+            "total_tokens": 618,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1594399551,
+              "load_duration": 474257,
+              "prompt_eval_duration": 158841000,
+              "eval_duration": 1386612000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

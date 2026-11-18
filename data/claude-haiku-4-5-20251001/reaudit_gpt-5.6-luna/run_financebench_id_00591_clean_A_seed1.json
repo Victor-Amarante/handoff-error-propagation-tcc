@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00591_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly defined free cash flow conversion as operating cash flow divided by net income and reported a FY2022 conversion ratio of 1.65x.",
+    "reported_metric": "FY2022 free cash flow conversion ratio",
+    "reported_value": 1.65,
+    "confidence": 0.98,
+    "rationale": "The trace provides operating cash flow and net income, but no capital expenditures or free cash flow. Thus 1.65x is an operating-cash-flow-to-net-income ratio, not free cash flow conversion; the error first appears when the analyst labels that calculation as free cash flow conversion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 985,
+    "output_tokens": 381,
+    "total_tokens": 1366,
+    "cached_tokens": 0,
+    "reasoning_tokens": 227,
+    "cost_usd": 0.0006542000000000001,
+    "latency_ms": 4313.996332988609,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 985,
+      "output_tokens": 381,
+      "total_tokens": 1366,
+      "reasoning_tokens": 227,
+      "time_to_first_token": 4.313636709004641,
+      "duration": 4.313739584002178,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 985,
+            "output_tokens": 381,
+            "total_tokens": 1366,
+            "reasoning_tokens": 227,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1495,
+    "output_tokens": 167,
+    "total_tokens": 1662,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00233,
+    "latency_ms": 2284.4962920062244,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1495,
+      "output_tokens": 167,
+      "total_tokens": 1662,
+      "time_to_first_token": 2.283637333952356,
+      "duration": 2.2839407089632004,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1495,
+            "output_tokens": 167,
+            "total_tokens": 1662,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

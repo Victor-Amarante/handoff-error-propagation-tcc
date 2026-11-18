@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00566_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted debt values are internally consistent: $150,639 million in 2022 versus $150,868 million in 2021, a decrease of $229 million. The analyst correctly computed the change as -229 and the writer accurately reported the result."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 990,
+    "output_tokens": 172,
+    "total_tokens": 1162,
+    "cached_tokens": 0,
+    "reasoning_tokens": 65,
+    "cost_usd": 0.00040439999999999996,
+    "latency_ms": 2362.367291992996,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 990,
+      "output_tokens": 172,
+      "total_tokens": 1162,
+      "reasoning_tokens": 65,
+      "time_to_first_token": 2.361987999989651,
+      "duration": 2.362125624960754,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 990,
+            "output_tokens": 172,
+            "total_tokens": 1162,
+            "reasoning_tokens": 65,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1556,
+    "output_tokens": 162,
+    "total_tokens": 1718,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002366,
+    "latency_ms": 2456.5872909734026,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1556,
+      "output_tokens": 162,
+      "total_tokens": 1718,
+      "time_to_first_token": 2.4556648330180906,
+      "duration": 2.4559558749897406,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1556,
+            "output_tokens": 162,
+            "total_tokens": 1718,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

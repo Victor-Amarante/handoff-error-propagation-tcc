@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00790_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly states that the combined $30.745 billion of property, equipment, and operating lease assets represents revenue; the $30.745 billion is an asset amount, not revenue.",
+    "reported_metric": "Capital Intensity Analysis",
+    "reported_value": 30745.0,
+    "confidence": 0.97,
+    "rationale": "The extracted values support the $30,745 million sum (12,873 + 17,872) and the analyst's 13.46% calculation (30,745 / 228,275). However, the writer mischaracterizes that asset amount as revenue. No earlier extractor or analyst arithmetic error is evident."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2110,
+    "output_tokens": 676,
+    "total_tokens": 2786,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012331999999999998,
+    "latency_ms": 6962.73166697938,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2110,
+      "output_tokens": 676,
+      "total_tokens": 2786,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.961735207994934,
+      "duration": 6.96210595802404,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2110,
+            "output_tokens": 676,
+            "total_tokens": 2786,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2264,
+    "output_tokens": 867,
+    "total_tokens": 3131,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9965.799834986683,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2264,
+      "output_tokens": 867,
+      "total_tokens": 3131,
+      "time_to_first_token": 9.965500266000163,
+      "duration": 9.9655970929889,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2264,
+            "output_tokens": 867,
+            "total_tokens": 3131,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9936338508,
+              "load_duration": 940350,
+              "prompt_eval_duration": 560292000,
+              "eval_duration": 9320202000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

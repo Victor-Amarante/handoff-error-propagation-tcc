@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported ratios are internally consistent with the extracted FY2022 values.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.95,
+    "rationale": "The analyst's calculations check out: PPE/total assets is approximately 5.7%, PPE/revenue is approximately 4.0%, PPE plus operating lease assets/total assets is approximately 13.5%, and operating margin is approximately 2.4%. The writer accurately reports the relevant ratios, and the trace provides no contradictory provenance or benchmark establishing that the conclusion is incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1651,
+    "output_tokens": 336,
+    "total_tokens": 1987,
+    "cached_tokens": 0,
+    "reasoning_tokens": 185,
+    "cost_usd": 0.0007334,
+    "latency_ms": 3850.428167032078,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1651,
+      "output_tokens": 336,
+      "total_tokens": 1987,
+      "reasoning_tokens": 185,
+      "time_to_first_token": 3.8499295000219718,
+      "duration": 3.8500435830210336,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1651,
+            "output_tokens": 336,
+            "total_tokens": 1987,
+            "reasoning_tokens": 185,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2346,
+    "output_tokens": 234,
+    "total_tokens": 2580,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003516,
+    "latency_ms": 3198.3107500127517,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2346,
+      "output_tokens": 234,
+      "total_tokens": 2580,
+      "time_to_first_token": 3.197477000008803,
+      "duration": 3.1977742080343887,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2346,
+            "output_tokens": 234,
+            "total_tokens": 2580,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03849_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported three-year average is internally consistent with the extracted figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted figures yield approximate annual capex-to-revenue ratios of 12.6%, 5.7%, and 17.3%. Their arithmetic mean is approximately 11.9%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 835,
+    "output_tokens": 278,
+    "total_tokens": 1113,
+    "cached_tokens": 0,
+    "reasoning_tokens": 159,
+    "cost_usd": 0.0005005999999999999,
+    "latency_ms": 3018.88675004011,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 835,
+      "output_tokens": 278,
+      "total_tokens": 1113,
+      "reasoning_tokens": 159,
+      "time_to_first_token": 3.018404417030979,
+      "duration": 3.0185485840192996,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 835,
+            "output_tokens": 278,
+            "total_tokens": 1113,
+            "reasoning_tokens": 159,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 690,
+    "output_tokens": 395,
+    "total_tokens": 1085,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4563.141603022814,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 690,
+      "output_tokens": 395,
+      "total_tokens": 1085,
+      "time_to_first_token": 4.562900438031647,
+      "duration": 4.562976532033645,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 690,
+            "output_tokens": 395,
+            "total_tokens": 1085,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4537620611,
+              "load_duration": 447380,
+              "prompt_eval_duration": 211350000,
+              "eval_duration": 4277276000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

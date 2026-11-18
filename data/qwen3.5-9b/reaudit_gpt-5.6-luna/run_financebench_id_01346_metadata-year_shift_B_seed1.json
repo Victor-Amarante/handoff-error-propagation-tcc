@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01346_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported the FY2021 effective tax rate as 20.0% but assigned it to year 2022, creating an inconsistent year attribution.",
+    "reported_metric": "effective_tax_rate_FY2021",
+    "reported_value": 20.0,
+    "confidence": 0.93,
+    "rationale": "Both extracted records carry year 2022, despite one being labeled FY2021 and the other FY2022. The analyst’s arithmetic and the writer’s final statement are consistent with the metric labels, but the first provenance inconsistency appears in the extractor output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 692,
+    "output_tokens": 659,
+    "total_tokens": 1351,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009291999999999999,
+    "latency_ms": 6767.249583033845,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 692,
+      "output_tokens": 659,
+      "total_tokens": 1351,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.766782208986115,
+      "duration": 6.766926208976656,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 692,
+            "output_tokens": 659,
+            "total_tokens": 1351,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 525,
+    "output_tokens": 219,
+    "total_tokens": 744,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2664.6675349911675,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 525,
+      "output_tokens": 219,
+      "total_tokens": 744,
+      "time_to_first_token": 2.6644398380303755,
+      "duration": 2.6645095529966056,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 525,
+            "output_tokens": 219,
+            "total_tokens": 744,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2639997759,
+              "load_duration": 523876,
+              "prompt_eval_duration": 143368000,
+              "eval_duration": 2430779000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

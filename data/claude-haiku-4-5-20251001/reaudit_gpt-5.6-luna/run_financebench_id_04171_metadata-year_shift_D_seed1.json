@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04171_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Accounts payable was reported as $302,578 thousand for FY2019, although the cited 2018 10-K and question concern FY2018.",
+    "reported_metric": "accounts payable",
+    "reported_value": 302578.0,
+    "confidence": 0.91,
+    "rationale": "The extractor is the first stage with an inconsistent fiscal year: it labels the cited 2018 10-K balance-sheet amount as 2019. The analyst correctly converts $302,578 thousand to $302.578 million and aligns it to FY2018, which the writer preserves."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 857,
+    "output_tokens": 1180,
+    "total_tokens": 2037,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0015874,
+    "latency_ms": 10882.94700003462,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 1180,
+      "total_tokens": 2037,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 10.88225429103477,
+      "duration": 10.882567708031274,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 1180,
+            "total_tokens": 2037,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1402,
+    "output_tokens": 195,
+    "total_tokens": 1597,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002377,
+    "latency_ms": 3121.5137080289423,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1402,
+      "output_tokens": 195,
+      "total_tokens": 1597,
+      "time_to_first_token": 3.1206606249907054,
+      "duration": 3.1209755419986323,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1402,
+            "output_tokens": 195,
+            "total_tokens": 1597,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

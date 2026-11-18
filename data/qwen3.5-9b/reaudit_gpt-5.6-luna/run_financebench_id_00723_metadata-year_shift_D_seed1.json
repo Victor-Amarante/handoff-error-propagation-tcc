@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00723_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst reported AMEX's 2022 operating margin as 18.26% using $50,680 million of revenue net of interest expense after provisions and $41,095 million of expenses.",
+    "reported_metric": "Operating margin for American Express in 2022",
+    "reported_value": 18.26,
+    "confidence": 0.99,
+    "rationale": "The inputs imply (50,680 - 41,095) / 50,680 = 18.91%, not 18.26%. Thus A01 is the first demonstrably incorrect claim. A02 also misuses 2022 expenses for 2023 and calculates an inconsistent margin, but it occurs later."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1881,
+    "output_tokens": 541,
+    "total_tokens": 2422,
+    "cached_tokens": 0,
+    "reasoning_tokens": 369,
+    "cost_usd": 0.0010254,
+    "latency_ms": 4915.078833000734,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1881,
+      "output_tokens": 541,
+      "total_tokens": 2422,
+      "reasoning_tokens": 369,
+      "time_to_first_token": 4.914472999982536,
+      "duration": 4.914671125006862,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1881,
+            "output_tokens": 541,
+            "total_tokens": 2422,
+            "reasoning_tokens": 369,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1999,
+    "output_tokens": 1976,
+    "total_tokens": 3975,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 21045.8145919838,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1999,
+      "output_tokens": 1976,
+      "total_tokens": 3975,
+      "time_to_first_token": 21.045545872009825,
+      "duration": 21.04563643602887,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1999,
+            "output_tokens": 1976,
+            "total_tokens": 3975,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 21016243669,
+              "load_duration": 492230,
+              "prompt_eval_duration": 500111000,
+              "eval_duration": 20459253000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

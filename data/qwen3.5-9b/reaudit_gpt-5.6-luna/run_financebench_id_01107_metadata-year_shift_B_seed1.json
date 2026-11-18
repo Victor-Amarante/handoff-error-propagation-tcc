@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01107_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The answer claims that a $625 million 2022 attorneys-fees settlement establishes a materially important ongoing legal battle, without evidence that it was ongoing or addressing 2021 and 2020.",
+    "reported_metric": "attorneys_fees_settlement_2022",
+    "reported_value": 625.0,
+    "confidence": 0.93,
+    "rationale": "The extractor and analyst consistently report a $625 million 2022 amount, but neither establishes that it concerned an ongoing legal battle or covers all requested years. The writer is the first stage to present that amount as an answer to the broader legal-battles question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 689,
+    "output_tokens": 669,
+    "total_tokens": 1358,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009405999999999999,
+    "latency_ms": 6509.417290973943,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 689,
+      "output_tokens": 669,
+      "total_tokens": 1358,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.509060000011232,
+      "duration": 6.509114500018768,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 689,
+            "output_tokens": 669,
+            "total_tokens": 1358,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 524,
+    "output_tokens": 285,
+    "total_tokens": 809,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3330.695279990323,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 524,
+      "output_tokens": 285,
+      "total_tokens": 809,
+      "time_to_first_token": 3.3304603999713436,
+      "duration": 3.3305338159552775,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 524,
+            "output_tokens": 285,
+            "total_tokens": 809,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3305092134,
+              "load_duration": 456031,
+              "prompt_eval_duration": 143176000,
+              "eval_duration": 3113532000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

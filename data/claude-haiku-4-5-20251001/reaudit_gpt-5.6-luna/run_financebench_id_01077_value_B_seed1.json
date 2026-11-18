@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01077_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.82,
+    "rationale": "The trace contains two acquisition-price records for FY2022, and the analyst preserves both. The writer's summary is consistent with the available extracted data; there are no FY2023 or FY2021 records in the trace. No claim IDs are provided, and no internal contradiction establishes an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 819,
+    "output_tokens": 305,
+    "total_tokens": 1124,
+    "cached_tokens": 0,
+    "reasoning_tokens": 191,
+    "cost_usd": 0.0005298,
+    "latency_ms": 3709.4672909588553,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 819,
+      "output_tokens": 305,
+      "total_tokens": 1124,
+      "reasoning_tokens": 191,
+      "time_to_first_token": 3.7087187499855645,
+      "duration": 3.708964291960001,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 819,
+            "output_tokens": 305,
+            "total_tokens": 1124,
+            "reasoning_tokens": 191,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1343,
+    "output_tokens": 158,
+    "total_tokens": 1501,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002133,
+    "latency_ms": 3173.20129199652,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1343,
+      "output_tokens": 158,
+      "total_tokens": 1501,
+      "time_to_first_token": 3.172307875007391,
+      "duration": 3.1725997080211528,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1343,
+            "output_tokens": 158,
+            "total_tokens": 1501,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

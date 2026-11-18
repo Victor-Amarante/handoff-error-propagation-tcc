@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00702_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported gain and net income are consistent with the trace, and 8,107 divided by 10,626 is approximately 76%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst agree on both values, and the writer's percentage calculation is arithmetically correct. The transaction gain directly addresses a potential non-standard event substantially increasing Pfizer's 2019 income. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 836,
+    "output_tokens": 324,
+    "total_tokens": 1160,
+    "cached_tokens": 0,
+    "reasoning_tokens": 185,
+    "cost_usd": 0.000556,
+    "latency_ms": 3767.461084004026,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 836,
+      "output_tokens": 324,
+      "total_tokens": 1160,
+      "reasoning_tokens": 185,
+      "time_to_first_token": 3.7669504169607535,
+      "duration": 3.767108667001594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 836,
+            "output_tokens": 324,
+            "total_tokens": 1160,
+            "reasoning_tokens": 185,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1360,
+    "output_tokens": 198,
+    "total_tokens": 1558,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00235,
+    "latency_ms": 3482.167915964965,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1360,
+      "output_tokens": 198,
+      "total_tokens": 1558,
+      "time_to_first_token": 3.4812513340148143,
+      "duration": 3.481558584026061,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1360,
+            "output_tokens": 198,
+            "total_tokens": 1558,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

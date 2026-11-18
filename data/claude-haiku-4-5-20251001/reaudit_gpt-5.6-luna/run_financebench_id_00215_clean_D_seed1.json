@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The FY 2022 net property, plant and equipment-to-revenue ratio was reported as 0.784.",
+    "reported_metric": "property_plant_equipment_to_revenue_ratio",
+    "reported_value": 0.784,
+    "confidence": 0.98,
+    "rationale": "The extracted inputs are internally consistent, but 107,434 divided by 136,835 is approximately 0.785, not 0.784 when rounded to three decimals. Thus the first error appears in analyst claim A02; the writer subsequently repeats it. Analyst claim A03 is also arithmetically misstated: the ratio is approximately 0.677, not 0.679."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1786,
+    "output_tokens": 679,
+    "total_tokens": 2465,
+    "cached_tokens": 0,
+    "reasoning_tokens": 508,
+    "cost_usd": 0.001172,
+    "latency_ms": 6779.547917016316,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1786,
+      "output_tokens": 679,
+      "total_tokens": 2465,
+      "reasoning_tokens": 508,
+      "time_to_first_token": 6.778747833042871,
+      "duration": 6.779020750022028,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1786,
+            "output_tokens": 679,
+            "total_tokens": 2465,
+            "reasoning_tokens": 508,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2485,
+    "output_tokens": 210,
+    "total_tokens": 2695,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003535,
+    "latency_ms": 3912.976457970217,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2485,
+      "output_tokens": 210,
+      "total_tokens": 2695,
+      "time_to_first_token": 3.911941291007679,
+      "duration": 3.9122403750079684,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2485,
+            "output_tokens": 210,
+            "total_tokens": 2695,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

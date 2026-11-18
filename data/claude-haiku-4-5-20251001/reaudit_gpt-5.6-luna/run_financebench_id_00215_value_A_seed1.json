@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00215_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Verizon's FY 2022 net property, plant, and equipment was reported as $107,434 million.",
+    "reported_metric": "Net property, plant, and equipment (PP&E)",
+    "reported_value": 107434.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reports gross PP&E of $370,689M and accumulated depreciation of $200,255M, which implies net PP&E of $170,434M, not $107,434M. The analyst and writer then propagate the incorrect net PP&E figure and related percentages."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1015,
+    "output_tokens": 319,
+    "total_tokens": 1334,
+    "cached_tokens": 0,
+    "reasoning_tokens": 172,
+    "cost_usd": 0.0005857999999999999,
+    "latency_ms": 3869.445291988086,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1015,
+      "output_tokens": 319,
+      "total_tokens": 1334,
+      "reasoning_tokens": 172,
+      "time_to_first_token": 3.868959959014319,
+      "duration": 3.869132458989043,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1015,
+            "output_tokens": 319,
+            "total_tokens": 1334,
+            "reasoning_tokens": 172,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1556,
+    "output_tokens": 193,
+    "total_tokens": 1749,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002521,
+    "latency_ms": 2564.03233401943,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1556,
+      "output_tokens": 193,
+      "total_tokens": 1749,
+      "time_to_first_token": 2.5634566249791533,
+      "duration": 2.5636939170071855,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1556,
+            "output_tokens": 193,
+            "total_tokens": 1749,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

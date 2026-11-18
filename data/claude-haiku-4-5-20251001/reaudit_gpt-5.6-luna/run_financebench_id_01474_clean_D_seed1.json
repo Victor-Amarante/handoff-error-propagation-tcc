@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01474_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The guidance increase reflected strong Q1 performance.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.88,
+    "rationale": "The numerical guidance changes are internally consistent and supported by the extractor evidence: organic revenue rose from 6% to 8%, and EPS from 8% to 9%. However, the trace provides no evidence that the increases reflected strong Q1 performance. That causal explanation first appears in the writer output, so it is an unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1466,
+    "output_tokens": 589,
+    "total_tokens": 2055,
+    "cached_tokens": 0,
+    "reasoning_tokens": 456,
+    "cost_usd": 0.001,
+    "latency_ms": 5967.685124953277,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1466,
+      "output_tokens": 589,
+      "total_tokens": 2055,
+      "reasoning_tokens": 456,
+      "time_to_first_token": 5.966900832951069,
+      "duration": 5.967263707949314,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1466,
+            "output_tokens": 589,
+            "total_tokens": 2055,
+            "reasoning_tokens": 456,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2100,
+    "output_tokens": 150,
+    "total_tokens": 2250,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00285,
+    "latency_ms": 3151.671083003748,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2100,
+      "output_tokens": 150,
+      "total_tokens": 2250,
+      "time_to_first_token": 3.150724707986228,
+      "duration": 3.151037666015327,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2100,
+            "output_tokens": 150,
+            "total_tokens": 2250,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

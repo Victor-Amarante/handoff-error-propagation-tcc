@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01936_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C05",
+    "root_cause_claim_text": "The total restructuring costs liability balance at the FY2023 Q2 close was reported as USD 97 million.",
+    "reported_metric": "Total Restructuring Costs Liability balance",
+    "reported_value": 97.0,
+    "confidence": 0.97,
+    "rationale": "The reported total of USD 97 million is internally inconsistent with the explicitly listed December 31, 2022 liability components: employee costs of 81, fixed assets of 2, related costs of 10, and other costs of 93, which sum to USD 186 million. The analyst and writer propagated the erroneous total."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 3081,
+    "output_tokens": 666,
+    "total_tokens": 3747,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0014154,
+    "latency_ms": 6396.170417021494,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3081,
+      "output_tokens": 666,
+      "total_tokens": 3747,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.3956070829881355,
+      "duration": 6.395819625002332,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3081,
+            "output_tokens": 666,
+            "total_tokens": 3747,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3402,
+    "output_tokens": 320,
+    "total_tokens": 3722,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4390.523566980846,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3402,
+      "output_tokens": 320,
+      "total_tokens": 3722,
+      "time_to_first_token": 4.390270192001481,
+      "duration": 4.390341915015597,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3402,
+            "output_tokens": 320,
+            "total_tokens": 3722,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4361210612,
+              "load_duration": 549696,
+              "prompt_eval_duration": 801445000,
+              "eval_duration": 3496620000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

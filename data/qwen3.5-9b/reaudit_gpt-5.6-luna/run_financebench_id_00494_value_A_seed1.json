@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00494_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Boeing's 787 production rate was $6 million per month.",
+    "reported_metric": "787 production rate",
+    "reported_value": 6.0,
+    "confidence": 0.87,
+    "rationale": "The extractor is the first stage to state production rates as dollar amounts. Production rates for aircraft models are ordinarily unit-per-month measures, and the downstream stages propagate this malformed unit and also fail to provide actual rate changes. The trace contains no claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 686,
+    "output_tokens": 991,
+    "total_tokens": 1677,
+    "cached_tokens": 0,
+    "reasoning_tokens": 862,
+    "cost_usd": 0.0013264000000000001,
+    "latency_ms": 9602.883583982475,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 686,
+      "output_tokens": 991,
+      "total_tokens": 1677,
+      "reasoning_tokens": 862,
+      "time_to_first_token": 9.602396332949866,
+      "duration": 9.602531249984168,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 686,
+            "output_tokens": 991,
+            "total_tokens": 1677,
+            "reasoning_tokens": 862,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 493,
+    "output_tokens": 269,
+    "total_tokens": 762,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3285.248096974101,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 493,
+      "output_tokens": 269,
+      "total_tokens": 762,
+      "time_to_first_token": 3.2850187809672207,
+      "duration": 3.285091037978418,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 493,
+            "output_tokens": 269,
+            "total_tokens": 762,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3260418305,
+              "load_duration": 540236,
+              "prompt_eval_duration": 160293000,
+              "eval_duration": 3053393000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

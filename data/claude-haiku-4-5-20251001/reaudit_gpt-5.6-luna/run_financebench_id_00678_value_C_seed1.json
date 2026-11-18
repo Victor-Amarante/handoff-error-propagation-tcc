@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00678_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Boeing's FY2022 product gross margin was reported as 15.93%.",
+    "reported_metric": "gross_margin_products",
+    "reported_value": 15.93,
+    "confidence": 0.99,
+    "rationale": "Using the extractor's FY2022 product sales of 64,277 and product costs of 53,969, gross margin is (64,277 - 53,969) / 64,277 = approximately 16.04%, not 15.93%. The writer propagated this incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2530,
+    "output_tokens": 615,
+    "total_tokens": 3145,
+    "cached_tokens": 0,
+    "reasoning_tokens": 474,
+    "cost_usd": 0.001244,
+    "latency_ms": 6301.031666982453,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2530,
+      "output_tokens": 615,
+      "total_tokens": 3145,
+      "reasoning_tokens": 474,
+      "time_to_first_token": 6.300538458977826,
+      "duration": 6.300698124978226,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2530,
+            "output_tokens": 615,
+            "total_tokens": 3145,
+            "reasoning_tokens": 474,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3340,
+    "output_tokens": 210,
+    "total_tokens": 3550,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00439,
+    "latency_ms": 4093.9657079870813,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3340,
+      "output_tokens": 210,
+      "total_tokens": 3550,
+      "time_to_first_token": 4.093070500006434,
+      "duration": 4.093361833016388,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3340,
+            "output_tokens": 210,
+            "total_tokens": 3550,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01911_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The writer incorrectly claimed that Interest Expense had not been extracted, even though the extractor reported FY2022 Interest Expense of USD 594,954 thousand.",
+    "reported_metric": "interest_coverage_ratio",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor explicitly provided Interest Expense, while the analyst produced no claims. The first explicit false statement appears in the writer output; the structured writer claim also reports an unsupported ratio value of 0.0."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 628,
+    "output_tokens": 354,
+    "total_tokens": 982,
+    "cached_tokens": 0,
+    "reasoning_tokens": 223,
+    "cost_usd": 0.0005503999999999999,
+    "latency_ms": 4111.06312496122,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 628,
+      "output_tokens": 354,
+      "total_tokens": 982,
+      "reasoning_tokens": 223,
+      "time_to_first_token": 4.11034691601526,
+      "duration": 4.110525875003077,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 628,
+            "output_tokens": 354,
+            "total_tokens": 982,
+            "reasoning_tokens": 223,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1122,
+    "output_tokens": 162,
+    "total_tokens": 1284,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001932,
+    "latency_ms": 2659.189124999102,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1122,
+      "output_tokens": 162,
+      "total_tokens": 1284,
+      "time_to_first_token": 2.6586758330231532,
+      "duration": 2.658800582983531,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1122,
+            "output_tokens": 162,
+            "total_tokens": 1284,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

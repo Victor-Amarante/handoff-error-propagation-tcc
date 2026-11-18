@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01981_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst inferred from a 0% year-over-year change in card-member retention that American Express did not retain card members or had no retention growth.",
+    "reported_metric": "card member retention status year-over-year change",
+    "reported_value": 0.0,
+    "confidence": 0.9,
+    "rationale": "The extractor only reported a 0% retention-status change. The analyst first converted that neutral change into a conclusion that the company failed to retain members, conflating retention with member-base growth; the writer repeated and strengthened that inference."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 718,
+    "output_tokens": 448,
+    "total_tokens": 1166,
+    "cached_tokens": 0,
+    "reasoning_tokens": 309,
+    "cost_usd": 0.0006812000000000001,
+    "latency_ms": 4699.340749997646,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 718,
+      "output_tokens": 448,
+      "total_tokens": 1166,
+      "reasoning_tokens": 309,
+      "time_to_first_token": 4.698944083007518,
+      "duration": 4.699116125004366,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 718,
+            "output_tokens": 448,
+            "total_tokens": 1166,
+            "reasoning_tokens": 309,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 516,
+    "output_tokens": 243,
+    "total_tokens": 759,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3015.6997989979573,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 516,
+      "output_tokens": 243,
+      "total_tokens": 759,
+      "time_to_first_token": 3.015470811049454,
+      "duration": 3.015541500004474,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 516,
+            "output_tokens": 243,
+            "total_tokens": 759,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2990386905,
+              "load_duration": 487519,
+              "prompt_eval_duration": 138330000,
+              "eval_duration": 2798017000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

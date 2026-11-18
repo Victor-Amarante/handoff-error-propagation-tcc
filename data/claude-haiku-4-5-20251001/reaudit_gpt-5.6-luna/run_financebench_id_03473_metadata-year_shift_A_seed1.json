@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03473_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Coca-Cola's FY2018 net income was $1,248 million.",
+    "reported_metric": "net income",
+    "reported_value": 1248.0,
+    "confidence": 0.95,
+    "rationale": "The $1,248M figure is attributable to FY2017 for Coca-Cola, while FY2018 net income was not $1,248M. The extractor therefore introduced the year misattribution, causing the analyst and writer to incorrectly conclude that FY2017 net income was missing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 937,
+    "output_tokens": 497,
+    "total_tokens": 1434,
+    "cached_tokens": 0,
+    "reasoning_tokens": 365,
+    "cost_usd": 0.0007838,
+    "latency_ms": 5813.436708995141,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 937,
+      "output_tokens": 497,
+      "total_tokens": 1434,
+      "reasoning_tokens": 365,
+      "time_to_first_token": 5.812728999997489,
+      "duration": 5.813077124999836,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 937,
+            "output_tokens": 497,
+            "total_tokens": 1434,
+            "reasoning_tokens": 365,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1469,
+    "output_tokens": 153,
+    "total_tokens": 1622,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002234,
+    "latency_ms": 2764.5534169860184,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1469,
+      "output_tokens": 153,
+      "total_tokens": 1622,
+      "time_to_first_token": 2.7635275840293616,
+      "duration": 2.763828499999363,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1469,
+            "output_tokens": 153,
+            "total_tokens": 1622,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

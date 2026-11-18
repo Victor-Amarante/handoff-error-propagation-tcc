@@ -5,34 +5,39 @@ As ameaças estão organizadas segundo a classificação usual em experimentaç�
 
 \subsection{Validade interna}\label{sec:ameacas-interna}
 
-A ameaça mais séria à comparação entre condições é o vazamento de informação pelo identificador da fonte.
+A ameaça mais séria à comparação entre condições é o vazamento de informação sobre o erro de ano.
 Na condição C, o \texttt{source\_id} é o nome do documento no FinanceBench, e em 128 das 142 perguntas do braço de metadado no GPT esse nome contém o ano fiscal original, que contradiz o ano corrompido.
 A condição C deveria carregar apenas proveniência, mas nesse braço carregou também um pedaço de evidência.
 O efeito da RQ2 no erro de metadado está, por isso, inflado, e a estimativa mais limpa do efeito do lineage é a do braço de valor, em que o identificador não revela nada sobre o valor corrompido.
-A correção natural é repetir a condição C com identificadores opacos.
+O erro de ano tem ainda um vazamento comum às quatro condições: a própria pergunta traz o ano original em cerca de 90\% dos casos, o que torna esse erro mais fácil de perceber que o de valor em qualquer contrato.
+A correção natural é repetir a condição C com identificadores opacos e escolher, para o erro de metadado, perguntas que não citem o ano.
 
 Os modelos não rodaram com a mesma configuração de raciocínio. O GPT-5.6 Luna usou esforço \emph{medium}, enquanto Haiku e Qwen rodaram sem raciocínio.
 Como a configuração é constante dentro de cada modelo, isso não afeta as comparações entre condições, que são o objeto das RQs, mas limita as comparações entre modelos.
 Pelo mesmo motivo, cada execução rodou com uma única seed e com a temperatura padrão de cada provedor.
-A variação entre execuções repetidas foi medida no piloto apenas para o GPT, em que duas seeds deram respostas idênticas, e não foi medida para Haiku e Qwen.
-Essa variação aleatória afeta igualmente as quatro condições, então tende a alargar os intervalos, e não a criar diferenças entre elas.
+Essa variação aleatória não é pequena nem igual entre condições. No teste A/A, duas execuções limpas da mesma pergunta diferiram pela ESR em 23\% a 56\% dos casos, e o piso mudou de uma condição para outra. As diferenças de ESR entre condições vizinhas, descontado o piso, não se distinguem de zero, e as de profundidade, só a de A para B se mantém. Por isso, as conclusões sobre o destino do erro se apoiam nas medidas que não comparam a execução com o controle, como a acurácia, a retenção e a presença literal do valor corrompido. O piso foi medido em menos de 50 perguntas e só nos modelos de API, e uma réplica maior estreitaria os intervalos ajustados. Um critério de ESR mais robusto, que exija diferença em relação a mais de uma execução de controle, é a correção natural do instrumento.
 
-Por fim, as condições não diferem só na informação que carregam, mas também no tamanho das mensagens, já que um handoff de D tem quase quatro vezes mais tokens que um de A.
+De A para B mudam duas coisas ao mesmo tempo, o formato da entrada e o da saída, e no Haiku e no Qwen a saída em JSON ficou bem mais curta que a prosa.
+A condição B$'$ mostrou que, no Haiku, a perda de acurácia do controle de A para B desaparece quando o schema do Analista tem um campo para o raciocínio, então parte do efeito atribuído à estrutura na RQ1 é efeito do modo de saída. A mesma verificação não foi feita no Qwen, que é o modelo com a maior perda.
+
+Por fim, as condições não diferem só na informação que carregam, mas também no tamanho das mensagens, já que um handoff de D chega a quase quatro vezes os tokens de um de A.
 Essa diferença é inerente ao que se quer medir e não pode ser separada da informação adicional sem outro desenho, como condições de controle com texto de enchimento.
 
 \subsection{Validade de construto}\label{sec:ameacas-construto}
 
-A RCCA aceita dois caminhos de acerto, e só as condições C e D têm os dois.
-Em A e B, o auditor só acerta se informar a métrica e o valor corrompido. Em C e D, ele também acerta ao apontar o identificador do claim, e na condição C cerca de 0,3 dos aproximadamente 0,4 de RCCA vêm desse caminho.
-A Seção~\ref{sec:rq2} mostra a RCCA recalculada com o mesmo critério nas quatro condições, e nela o ganho de B para C quase desaparece.
-As duas medidas respondem a perguntas diferentes, a de qual claim originou o erro e a de qual valor está errado, e os resultados devem ser lidos com essa distinção em mente.
+O critério de acerto da RCCA mudou o tamanho de um dos efeitos.
+O critério original aceitava o identificador do claim, que só existe em C e D, e, no erro de metadado, exigia que o auditor informasse o ano corrompido, o que ele quase nunca faz. Com isso, a RCCA de A e B ficava perto de zero por construção, e o ganho de B para C aparecia como cerca de 0,34.
+O critério de conteúdo, adotado como principal, é igual nas quatro condições e nos dois tipos de erro, e reduz esse ganho para 0,07 a 0,15. Ele ainda pode dar crédito a um auditor que aponta o claim certo por um motivo errado, e por isso é lido junto com o placebo.
 
 O auditor usa o mesmo modelo do pipeline, e a sua confiabilidade varia com o modelo.
-No Haiku e no Qwen, ele apontou culpados em 30\% a 74\% das execuções sem erro injetado, o que torna a FESA desses modelos ininterpretável e limita também a RCCA.
-Um auditor fixo, mais forte e igual para os três experimentos separaria melhor a capacidade de atribuição do contrato da capacidade do modelo que audita.
+No Haiku e no Qwen, ele apontou culpados em 30\% a 74\% das execuções sem erro injetado, e os placebos de FESA chegam a 0,35.
+Instâncias do mesmo modelo tendem a falhar juntas: num handoff entre dois agentes, Bhardwaj et al. observaram que duas instâncias de um mesmo modelo falham juntas em 90\% das missões em que uma delas falha \cite{bhardwaj2026contracts}.
+A auditoria cruzada mostrou que essa dependência é real: lidos pelo auditor do GPT, os traces do Qwen em D tiveram RCCA de 0,73, contra 0,45 com o auditor do próprio Qwen. A RCCA de cada modelo mede o trace e o auditor juntos, e a comparação entre modelos é mais justa com o auditor fixo da Tabela~\ref{tab:verificacoes}. O auditor do GPT, por sua vez, também não é neutro, e um auditor de outra família, ou humano, permitiria separar melhor a qualidade do trace da de quem o lê.
 
 O instrumento de medida trabalha com os números presentes no texto de cada estágio.
 Erros expressos por extenso ou números que coincidem por acaso com o valor procurado podem escapar ou ser contados indevidamente, e o ano original pode reaparecer na resposta por estar na própria pergunta, o que motivou a regra mais estrita para distinguir correção de contenção (Seção~\ref{sec:destino}).
+Algumas métricas também dependem do formato da saída, embora o instrumento seja o mesmo nas quatro condições. A profundidade conta como alterado um estágio que só repete o valor corrompido, e o schema de B, C e D obriga essa repetição, o que levou à decomposição apresentada na Seção~\ref{sec:rq1}. A amplificação conta valores, e um estágio que emite mais números tende a ter amplificação maior, o que motivou a versão normalizada.
+O instrumento não foi validado contra um julgamento humano. A concordância de lineage só o compara com a cadeia declarada pelo próprio modelo, e uma rotulagem manual de uma amostra estratificada por condição e destino é o próximo passo para medir sua precisão.
 A acurácia final também depende de casar números com a resposta do benchmark, e as 18 a 22 perguntas sem resposta numérica ficaram fora dessa métrica.
 
 Os erros injetados são sintéticos.
@@ -45,11 +50,13 @@ O experimento cobre um único domínio, finanças, com um único benchmark, a am
 O documento-fonte é o trecho de evidência já recortado pelo benchmark, e não o documento completo, então o experimento não inclui recuperação nem documentos longos, situações em que a evidência carregada pelo contrato pode ser mais difícil de localizar e de usar.
 A topologia é linear e tem três estágios, enquanto sistemas reais podem envolver conversas entre vários agentes com ferramentas \cite{wu2023autogen} ou simulações com mais de mil agentes \cite{altera2024sid}.
 Os três modelos são das faixas mais baratas de cada família, e não se sabe se modelos maiores reproduziriam o mesmo padrão.
+As condições complementares rodaram só nos dois modelos de API, e o Qwen ficou sem as verificações que dependem de executar o pipeline de novo.
 
 \subsection{Validade de conclusão}\label{sec:ameacas-conclusao}
 
-A Tabela~\ref{tab:deltas} reúne 63 comparações, sem correção para comparações múltiplas.
-Com intervalos de 95\%, é esperado que algumas diferenças apareçam como significativas por acaso.
-Os achados centrais não dependem desse limite, porque seus intervalos ficam longe de zero e se repetem entre modelos, como o aumento da profundidade de A para B, o aumento da RCCA de B para C e os efeitos da evidência nos modelos de API.
-Resultados isolados, com intervalos que mal excluem zero, devem ser lidos com cautela.
+A Tabela~\ref{tab:deltas} reúne 72 comparações.
+Com intervalos de 95\%, é esperado que algumas diferenças apareçam como significativas por acaso, e por isso a tabela marca as que não sobrevivem à correção de Holm sobre as 24 comparações de cada modelo.
+Das diferenças com intervalo fora de zero, 14 de 16 resistem à correção no GPT, 14 de 18 no Haiku e apenas 3 de 9 no Qwen. As que caem são as de efeito pequeno, como a queda de acurácia de A para B no GPT e no Qwen e quase todos os ganhos de C para D no Qwen, com exceção da acurácia final.
+Os achados centrais resistem à correção e se repetem entre modelos, como o aumento da profundidade de A para B e os efeitos da evidência nos modelos de API.
+O ganho de RCCA de B para C pelo critério de conteúdo resiste à correção só no GPT, e deve ser lido com cautela nos outros dois modelos.
 O subestudo do Qwen tem apenas 19 perguntas, e seus resultados são indicativos.

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00288_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: cash decreased from $1,874M at FY2023 year-end (January 28, 2023) to $1,093M in Q2 FY2024 (July 29, 2023), a drop of $781M. The analyst arithmetic and writer conclusion are correct."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1414,
+    "output_tokens": 268,
+    "total_tokens": 1682,
+    "cached_tokens": 0,
+    "reasoning_tokens": 147,
+    "cost_usd": 0.0006044,
+    "latency_ms": 3157.6838750042953,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1414,
+      "output_tokens": 268,
+      "total_tokens": 1682,
+      "reasoning_tokens": 147,
+      "time_to_first_token": 3.1571066660108045,
+      "duration": 3.1572424580226652,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1414,
+            "output_tokens": 268,
+            "total_tokens": 1682,
+            "reasoning_tokens": 147,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1435,
+    "output_tokens": 821,
+    "total_tokens": 2256,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9244.435613043606,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1435,
+      "output_tokens": 821,
+      "total_tokens": 2256,
+      "time_to_first_token": 9.244127764017321,
+      "duration": 9.244234045036137,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1435,
+            "output_tokens": 821,
+            "total_tokens": 2256,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9211899900,
+              "load_duration": 467451,
+              "prompt_eval_duration": 360590000,
+              "eval_duration": 8806524000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

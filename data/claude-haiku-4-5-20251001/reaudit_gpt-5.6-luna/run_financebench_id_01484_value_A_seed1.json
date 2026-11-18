@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01484_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported Johnson & Johnson US sales in FY2021 as $47,156 million.",
+    "reported_metric": "Johnson & Johnson US sales in FY2021",
+    "reported_value": 47156.0,
+    "confidence": 0.98,
+    "rationale": "The reported FY2022 US sales of $84,580 million and 3% growth imply FY2021 sales of roughly $82,000 million, not $47,156 million. The International figures are internally consistent with the stated -0.6% growth, so the first apparent error is the extracted US FY2021 sales value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1112,
+    "output_tokens": 496,
+    "total_tokens": 1608,
+    "cached_tokens": 0,
+    "reasoning_tokens": 342,
+    "cost_usd": 0.0008175999999999999,
+    "latency_ms": 5176.4100000145845,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1112,
+      "output_tokens": 496,
+      "total_tokens": 1608,
+      "reasoning_tokens": 342,
+      "time_to_first_token": 5.1745757079916075,
+      "duration": 5.174886707973201,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1112,
+            "output_tokens": 496,
+            "total_tokens": 1608,
+            "reasoning_tokens": 342,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1616,
+    "output_tokens": 205,
+    "total_tokens": 1821,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002641,
+    "latency_ms": 3762.4598749680445,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1616,
+      "output_tokens": 205,
+      "total_tokens": 1821,
+      "time_to_first_token": 3.7616287920391187,
+      "duration": 3.7618586249882355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1616,
+            "output_tokens": 205,
+            "total_tokens": 1821,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

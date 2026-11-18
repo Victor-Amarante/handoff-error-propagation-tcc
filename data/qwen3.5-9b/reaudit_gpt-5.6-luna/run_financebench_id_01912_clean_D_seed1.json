@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01912_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly identified Macau as the region associated with $3.8 billion in FY2022 net revenues; the trace attributes $3.8 billion to Regional Operations, while MGM China (Macau) is reported at $674 million.",
+    "reported_metric": "Worst performing MGM region FY2022",
+    "reported_value": 3800.0,
+    "confidence": 0.94,
+    "rationale": "The analyst’s A02 claim concerns Regional Operations, not Macau. The extractor separately reports MGM China at $674 million, which is lower than Regional Operations’ $3.8 billion and Las Vegas Strip Resorts’ $8.4 billion. Thus the first substantive error is the writer’s unsupported relabeling of Regional Operations as Macau."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1315,
+    "output_tokens": 1210,
+    "total_tokens": 2525,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.001715,
+    "latency_ms": 11112.837541033514,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1315,
+      "output_tokens": 1210,
+      "total_tokens": 2525,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.11227574996883,
+      "duration": 11.112479790986981,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1315,
+            "output_tokens": 1210,
+            "total_tokens": 2525,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1283,
+    "output_tokens": 374,
+    "total_tokens": 1657,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4491.012269980274,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1283,
+      "output_tokens": 374,
+      "total_tokens": 1657,
+      "time_to_first_token": 4.490777597005945,
+      "duration": 4.490850177011453,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1283,
+            "output_tokens": 374,
+            "total_tokens": 1657,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4463547269,
+              "load_duration": 452107,
+              "prompt_eval_duration": 348956000,
+              "eval_duration": 4058388000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

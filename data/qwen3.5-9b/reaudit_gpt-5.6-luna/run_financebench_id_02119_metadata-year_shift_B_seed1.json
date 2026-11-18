@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02119_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JPM liquidation proceeds per share would be $0 in 2021.",
+    "reported_metric": "liquidation_proceeds_per_share",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor supplied a positive TBVPS of 66.56, but the analyst changed this into zero liquidation proceeds without any stated basis. The writer merely repeated the analyst's unsupported claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 660,
+    "output_tokens": 270,
+    "total_tokens": 930,
+    "cached_tokens": 0,
+    "reasoning_tokens": 153,
+    "cost_usd": 0.000456,
+    "latency_ms": 3267.7567080245353,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 660,
+      "output_tokens": 270,
+      "total_tokens": 930,
+      "reasoning_tokens": 153,
+      "time_to_first_token": 3.2668368750019,
+      "duration": 3.267110417014919,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 660,
+            "output_tokens": 270,
+            "total_tokens": 930,
+            "reasoning_tokens": 153,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 475,
+    "output_tokens": 343,
+    "total_tokens": 818,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4048.1621230137534,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 475,
+      "output_tokens": 343,
+      "total_tokens": 818,
+      "time_to_first_token": 4.047925308987033,
+      "duration": 4.047996678040363,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 475,
+            "output_tokens": 343,
+            "total_tokens": 818,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4023071735,
+              "load_duration": 633887,
+              "prompt_eval_duration": 138439000,
+              "eval_duration": 3809080000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00585_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the effective tax rates are internally consistent with the extracted figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "Using income tax expense/benefit divided by loss before income taxes: FY2022 is (-31)/(-5022) = 0.62%, and FY2021 is 743/(-5033) = -14.75%. The final comparison matches the analyst output and these calculations."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 850,
+    "output_tokens": 219,
+    "total_tokens": 1069,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.0004328,
+    "latency_ms": 2705.259250011295,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 850,
+      "output_tokens": 219,
+      "total_tokens": 1069,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.704535708995536,
+      "duration": 2.7047825420158915,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 850,
+            "output_tokens": 219,
+            "total_tokens": 1069,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1362,
+    "output_tokens": 240,
+    "total_tokens": 1602,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002562,
+    "latency_ms": 2997.618333029095,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1362,
+      "output_tokens": 240,
+      "total_tokens": 1602,
+      "time_to_first_token": 2.9971057910006493,
+      "duration": 2.997251041000709,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1362,
+            "output_tokens": 240,
+            "total_tokens": 1602,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

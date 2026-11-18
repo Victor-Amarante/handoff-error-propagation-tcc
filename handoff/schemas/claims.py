@@ -17,13 +17,21 @@ default implicito em campo que o modelo precisa preencher.
 
 from __future__ import annotations
 
+from typing import Literal
+
 from pydantic import BaseModel, ConfigDict, Field
 
+from handoff import config
 from handoff.conditions import CLAIM_ID_PREFIX, Condition, Stage
 
 #: Unidades aceitas. Deliberadamente pequeno: unidade fora dessa lista e
 #: violacao de contrato detectavel (ver serialization.validate_contract).
 UNITS = ("USD_K", "USD_M", "USD_B", "PCT", "RATIO")
+
+#: Tipo do campo `unit` nos contratos. Na rodada principal e `str`, e a lista
+#: so aparece na descricao; com HANDOFF_STRICT_UNITS=1 vira Literal, e a
+#: decodificacao restrita deixa de aceitar outra unidade.
+Unit = Literal["USD_K", "USD_M", "USD_B", "PCT", "RATIO"] if config.STRICT_UNITS else str
 
 
 # ==========================================================================
@@ -58,8 +66,14 @@ class ClaimB(BaseModel):
 
     metric: str = Field(description="Nome canonico da metrica, ex: revenue")
     value: float
-    unit: str = Field(description=f"Uma de: {', '.join(UNITS)}")
+    unit: Unit = Field(description=f"Uma de: {', '.join(UNITS)}")
     year: int
+
+
+class ClaimE(ClaimB):
+    """E - typed + evidence, sem lineage (condicao complementar)."""
+
+    evidence: str = Field(description="Trecho literal do documento que sustenta o claim")
 
 
 class ClaimC(ClaimB):
@@ -85,6 +99,9 @@ CLAIM_SCHEMA: dict[Condition, type[BaseModel] | None] = {
     Condition.B: ClaimB,
     Condition.C: ClaimC,
     Condition.D: ClaimD,
+    Condition.E: ClaimE,
+    Condition.R: ClaimB,
+    Condition.V: ClaimD,
 }
 
 
@@ -199,6 +216,26 @@ class AnalystOutputB(BaseModel):
     claims: list[ClaimB]
 
 
+class AnalystOutputE(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    claims: list[ClaimE]
+
+
+class AnalystOutputR(BaseModel):
+    """B com espaco para raciocinar antes dos claims (condicao R).
+
+    `reasoning` vem PRIMEIRO de proposito: o modelo gera os campos na ordem do
+    schema, entao o raciocinio precede os valores. So os `claims` seguem para
+    o Redator, que recebe exatamente o mesmo handoff de B.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    reasoning: str = Field(description="Raciocinio passo a passo antes dos claims")
+    claims: list[ClaimB]
+
+
 class AnalystOutputC(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -218,6 +255,13 @@ class WriterOutputB(BaseModel):
 
     answer_text: str = Field(description="Resposta final para o usuario, 1-3 frases")
     answer_claim: ClaimB
+
+
+class WriterOutputE(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    answer_text: str = Field(description="Resposta final para o usuario, 1-3 frases")
+    answer_claim: ClaimE
 
 
 class WriterOutputC(BaseModel):
@@ -245,4 +289,10 @@ STAGE_SCHEMA: dict[tuple[Condition, Stage], type[BaseModel] | None] = {
     (Condition.B, Stage.WRITER): WriterOutputB,
     (Condition.C, Stage.WRITER): WriterOutputC,
     (Condition.D, Stage.WRITER): WriterOutputD,
+    (Condition.E, Stage.ANALYST): AnalystOutputE,
+    (Condition.E, Stage.WRITER): WriterOutputE,
+    (Condition.R, Stage.ANALYST): AnalystOutputR,
+    (Condition.R, Stage.WRITER): WriterOutputB,
+    (Condition.V, Stage.ANALYST): AnalystOutputD,
+    (Condition.V, Stage.WRITER): WriterOutputD,
 }

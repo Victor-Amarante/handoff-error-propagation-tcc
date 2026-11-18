@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03620_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Operating profit of USD 11,512 million was incorrectly labeled as FY2023; the trace’s source context indicates it corresponds to FY2022.",
+    "reported_metric": "Operating Profit",
+    "reported_value": 11512.0,
+    "confidence": 0.98,
+    "rationale": "The extractor assigns C01 to year 2023 despite citing a FY2022 10-K and a page containing FY2022 data. The analyst then propagates that claim as the FY2022 EBITDA-less-capex figure without D&A or capex inputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 954,
+    "output_tokens": 575,
+    "total_tokens": 1529,
+    "cached_tokens": 0,
+    "reasoning_tokens": 431,
+    "cost_usd": 0.0008807999999999999,
+    "latency_ms": 5598.6299170181155,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 954,
+      "output_tokens": 575,
+      "total_tokens": 1529,
+      "reasoning_tokens": 431,
+      "time_to_first_token": 5.598259957972914,
+      "duration": 5.5983776659704745,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 954,
+            "output_tokens": 575,
+            "total_tokens": 1529,
+            "reasoning_tokens": 431,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 848,
+    "output_tokens": 182,
+    "total_tokens": 1030,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2363.65571198985,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 848,
+      "output_tokens": 182,
+      "total_tokens": 1030,
+      "time_to_first_token": 2.3634190930170007,
+      "duration": 2.363491519994568,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 848,
+            "output_tokens": 182,
+            "total_tokens": 1030,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2338595687,
+              "load_duration": 514010,
+              "prompt_eval_duration": 237157000,
+              "eval_duration": 2030220000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

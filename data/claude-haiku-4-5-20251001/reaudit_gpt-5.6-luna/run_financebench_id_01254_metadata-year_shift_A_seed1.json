@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01254_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the pipeline correctly notes that the extracted FY2023 information does not establish whether dividends were paid in FY2022.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports only FY2023 dividend information, and both the analyst and writer appropriately avoid inferring FY2022 payment status from it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 682,
+    "output_tokens": 199,
+    "total_tokens": 881,
+    "cached_tokens": 0,
+    "reasoning_tokens": 84,
+    "cost_usd": 0.0003752,
+    "latency_ms": 2981.054999982007,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 682,
+      "output_tokens": 199,
+      "total_tokens": 881,
+      "reasoning_tokens": 84,
+      "time_to_first_token": 2.9807915419805795,
+      "duration": 2.980844750010874,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 682,
+            "output_tokens": 199,
+            "total_tokens": 881,
+            "reasoning_tokens": 84,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1179,
+    "output_tokens": 165,
+    "total_tokens": 1344,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002004,
+    "latency_ms": 2969.058875052724,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1179,
+      "output_tokens": 165,
+      "total_tokens": 1344,
+      "time_to_first_token": 2.96813245897647,
+      "duration": 2.9684215000015683,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1179,
+            "output_tokens": 165,
+            "total_tokens": 1344,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

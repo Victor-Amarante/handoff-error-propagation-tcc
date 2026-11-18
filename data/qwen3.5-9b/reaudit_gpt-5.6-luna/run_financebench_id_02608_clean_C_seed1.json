@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02608_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted earnings and revenue values yield margins of approximately 3.06%, 2.27%, and 3.12%. Their three-year average is approximately 2.81%, which rounds to 2.8%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1610,
+    "output_tokens": 237,
+    "total_tokens": 1847,
+    "cached_tokens": 0,
+    "reasoning_tokens": 130,
+    "cost_usd": 0.0006064,
+    "latency_ms": 2645.311542029958,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1610,
+      "output_tokens": 237,
+      "total_tokens": 1847,
+      "reasoning_tokens": 130,
+      "time_to_first_token": 2.6447995000053197,
+      "duration": 2.644933541014325,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1610,
+            "output_tokens": 237,
+            "total_tokens": 1847,
+            "reasoning_tokens": 130,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1683,
+    "output_tokens": 1177,
+    "total_tokens": 2860,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13071.382514957804,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1683,
+      "output_tokens": 1177,
+      "total_tokens": 2860,
+      "time_to_first_token": 13.071120611974038,
+      "duration": 13.071204142004717,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1683,
+            "output_tokens": 1177,
+            "total_tokens": 2860,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13042144177,
+              "load_duration": 479166,
+              "prompt_eval_duration": 432788000,
+              "eval_duration": 12545296000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

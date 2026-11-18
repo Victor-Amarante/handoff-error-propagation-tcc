@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00606_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly treated the FY2023 wages expense amount of 4,713,500 USD_K as wages expense as a percent of net sales, without providing a percentage or comparison basis.",
+    "reported_metric": "Wages expense as a percent of net sales FY2023",
+    "reported_value": 4713500.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reported an absolute wages expense amount, but the analyst relabeled that same amount as a percentage without net sales data or a prior-year comparison. The writer then propagated this unsupported value and converted it to dollars."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 659,
+    "output_tokens": 332,
+    "total_tokens": 991,
+    "cached_tokens": 0,
+    "reasoning_tokens": 180,
+    "cost_usd": 0.0005302000000000001,
+    "latency_ms": 4303.680791985244,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 659,
+      "output_tokens": 332,
+      "total_tokens": 991,
+      "reasoning_tokens": 180,
+      "time_to_first_token": 4.303076084004715,
+      "duration": 4.3032803750247695,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 659,
+            "output_tokens": 332,
+            "total_tokens": 991,
+            "reasoning_tokens": 180,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 499,
+    "output_tokens": 256,
+    "total_tokens": 755,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3114.9239710066468,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 499,
+      "output_tokens": 256,
+      "total_tokens": 755,
+      "time_to_first_token": 3.1146866210037842,
+      "duration": 3.1147592089837417,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 499,
+            "output_tokens": 256,
+            "total_tokens": 755,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3086901981,
+              "load_duration": 444028,
+              "prompt_eval_duration": 139562000,
+              "eval_duration": 2881557000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

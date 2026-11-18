@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_06655_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Amazon's cost of sales was $111,934 million in FY2018.",
+    "reported_metric": "cost_of_sales",
+    "reported_value": 111934.0,
+    "confidence": 0.98,
+    "rationale": "The extractor labels $111,934 million as FY2018 cost of sales even though the cited document and question concern FY2017. The analyst then introduces an unsupported FY2017 cost-of-sales value of $88,146 million, and the reported DPO is also not arithmetically consistent with the listed inputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1568,
+    "output_tokens": 1111,
+    "total_tokens": 2679,
+    "cached_tokens": 0,
+    "reasoning_tokens": 964,
+    "cost_usd": 0.0016468000000000001,
+    "latency_ms": 9469.387834018562,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1568,
+      "output_tokens": 1111,
+      "total_tokens": 2679,
+      "reasoning_tokens": 964,
+      "time_to_first_token": 9.468006790964864,
+      "duration": 9.468409249966498,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1568,
+            "output_tokens": 1111,
+            "total_tokens": 2679,
+            "reasoning_tokens": 964,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2234,
+    "output_tokens": 213,
+    "total_tokens": 2447,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003299,
+    "latency_ms": 3278.8892090320587,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2234,
+      "output_tokens": 213,
+      "total_tokens": 2447,
+      "time_to_first_token": 3.2779798750416376,
+      "duration": 3.278280500031542,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2234,
+            "output_tokens": 213,
+            "total_tokens": 2447,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

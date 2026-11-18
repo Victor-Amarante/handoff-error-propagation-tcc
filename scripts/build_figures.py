@@ -17,7 +17,7 @@ def ic(v):
     v=pd.Series(v).dropna().to_numpy(float); r=np.random.default_rng(0)
     m=r.choice(v,size=(5000,len(v))).mean(1); return np.quantile(m,[.025,.975])
 models=[('gpt-5.6-luna','GPT-5.6 Luna'),('claude-haiku-4-5-20251001','Claude Haiku 4.5'),('qwen3.5-9b','Qwen3.5 9B')]
-mets=[('esr','ESR (menor é melhor)'),('rcca','RCCA (maior é melhor)')]
+mets=[('esr','ESR (menor é melhor)'),('rcca_conteudo','RCCA (maior é melhor)')]
 ser=[('value','valor','#2a78d6','o','-'),('metadata','metadado','#eb6834','s','--')]
 fig,axs=plt.subplots(2,3,figsize=(7.16,3.6),sharex=True,sharey='row')
 for j,(slug,name) in enumerate(models):
@@ -25,7 +25,7 @@ for j,(slug,name) in enumerate(models):
     df=pd.DataFrame(to_records(cells))
     KEY=['question_id','condition','error_type','injection_stage']
     sa={(c.question_id,str(c.condition),c.error_type,c.injection_stage) for c in cells if not c.is_control and c.audit is None}
-    mk=df[KEY].apply(tuple,axis=1).isin(sa); df[['rcca','fesa']]=df[['rcca','fesa']].astype(object); df.loc[mk,['rcca','fesa']]=False
+    mk=df[KEY].apply(tuple,axis=1).isin(sa); df[['rcca','rcca_conteudo','fesa']]=df[['rcca','rcca_conteudo','fesa']].astype(object); df.loc[mk,['rcca','rcca_conteudo','fesa']]=False
     n=df.groupby(['injection_stage','error_type','question_id']).condition.transform('nunique'); df=df[(n==4)&(df.injection_stage=='extractor')].copy()
     for m,_ in mets: df[m]=pd.to_numeric(df[m],errors='coerce')
     for i,(m,lab) in enumerate(mets):

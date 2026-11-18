@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00941_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer aggregated three identical one-unit debt-security claims into a total of three without evidence that the extractor records represented distinct securities.",
+    "reported_metric": "debt_securities_registered",
+    "reported_value": 3.0,
+    "confidence": 0.86,
+    "rationale": "The extractor and analyst outputs contain three indistinguishable claims with the same metric, value, year, and source, but no security identifiers. The writer's value of 3 is therefore an unsupported aggregation, and the answer also fails to identify which securities."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1204,
+    "output_tokens": 650,
+    "total_tokens": 1854,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010207999999999999,
+    "latency_ms": 6335.472791979555,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1204,
+      "output_tokens": 650,
+      "total_tokens": 1854,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.334809583961032,
+      "duration": 6.3350618339609355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1204,
+            "output_tokens": 650,
+            "total_tokens": 1854,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1782,
+    "output_tokens": 187,
+    "total_tokens": 1969,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002717,
+    "latency_ms": 2709.0078750043176,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1782,
+      "output_tokens": 187,
+      "total_tokens": 1969,
+      "time_to_first_token": 2.7079895829665475,
+      "duration": 2.708287416957319,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1782,
+            "output_tokens": 187,
+            "total_tokens": 1969,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

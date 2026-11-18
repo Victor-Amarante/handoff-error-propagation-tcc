@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00678_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported gross-margin calculations are internally consistent with the extracted revenue and cost figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The arithmetic checks out for all years and categories: combined gross margin moves from approximately -9.7% in FY2020 to 4.9% in FY2021 and 5.3% in FY2022. Product and service margins also match the supplied figures. The trace contains no claim IDs and provides no basis to reject gross margin as a useful metric."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1279,
+    "output_tokens": 644,
+    "total_tokens": 1923,
+    "cached_tokens": 0,
+    "reasoning_tokens": 493,
+    "cost_usd": 0.0010286,
+    "latency_ms": 5728.15174999414,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1279,
+      "output_tokens": 644,
+      "total_tokens": 1923,
+      "reasoning_tokens": 493,
+      "time_to_first_token": 5.727179417037405,
+      "duration": 5.7272903340053745,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1279,
+            "output_tokens": 644,
+            "total_tokens": 1923,
+            "reasoning_tokens": 493,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1798,
+    "output_tokens": 149,
+    "total_tokens": 1947,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002543,
+    "latency_ms": 2228.060749999713,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1798,
+      "output_tokens": 149,
+      "total_tokens": 1947,
+      "time_to_first_token": 2.227193625003565,
+      "duration": 2.2274766659829766,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1798,
+            "output_tokens": 149,
+            "total_tokens": 1947,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

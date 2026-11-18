@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01351_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported change is consistent with 21.6% in FY2022 minus 24.6% in FY2021, equaling -3.0 percentage points.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor values and analyst calculation are internally consistent, and the writer accurately states that the effective tax rate decreased by 3.0 percentage points."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 677,
+    "output_tokens": 171,
+    "total_tokens": 848,
+    "cached_tokens": 0,
+    "reasoning_tokens": 47,
+    "cost_usd": 0.00034060000000000004,
+    "latency_ms": 2308.188416995108,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 677,
+      "output_tokens": 171,
+      "total_tokens": 848,
+      "reasoning_tokens": 47,
+      "time_to_first_token": 2.307665291999001,
+      "duration": 2.30780449998565,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 677,
+            "output_tokens": 171,
+            "total_tokens": 848,
+            "reasoning_tokens": 47,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1175,
+    "output_tokens": 129,
+    "total_tokens": 1304,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00182,
+    "latency_ms": 2293.9031669520773,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1175,
+      "output_tokens": 129,
+      "total_tokens": 1304,
+      "time_to_first_token": 2.293412500002887,
+      "duration": 2.29348575003678,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1175,
+            "output_tokens": 129,
+            "total_tokens": 1304,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00807_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor supplied cash and cash equivalents of USD 4,258 million for 2024 while the requested Q2 FY2023 analysis requires a 2023-period value.",
+    "reported_metric": "cash_and_cash_equivalents",
+    "reported_value": 4258.0,
+    "confidence": 0.86,
+    "rationale": "The extracted cash figure is explicitly labeled 2024, unlike the other inputs labeled 2023, so it is the first period-selection error. The analyst then incorporated it into quick assets; additionally, the reported 0.97 ratio is not arithmetically consistent with extracted quick assets of 9,261 divided by current liabilities of 10,936 (approximately 0.85)."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1076,
+    "output_tokens": 1490,
+    "total_tokens": 2566,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1299,
+    "cost_usd": 0.0020032,
+    "latency_ms": 13614.305833005346,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1076,
+      "output_tokens": 1490,
+      "total_tokens": 2566,
+      "reasoning_tokens": 1299,
+      "time_to_first_token": 13.613763250003103,
+      "duration": 13.6140097079915,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1076,
+            "output_tokens": 1490,
+            "total_tokens": 2566,
+            "reasoning_tokens": 1299,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1639,
+    "output_tokens": 206,
+    "total_tokens": 1845,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002669,
+    "latency_ms": 3510.9881249954924,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1639,
+      "output_tokens": 206,
+      "total_tokens": 1845,
+      "time_to_first_token": 3.5101727910223417,
+      "duration": 3.5104666250408627,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1639,
+            "output_tokens": 206,
+            "total_tokens": 1845,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

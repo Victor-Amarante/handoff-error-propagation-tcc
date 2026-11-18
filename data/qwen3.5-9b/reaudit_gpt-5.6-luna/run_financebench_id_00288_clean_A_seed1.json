@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00288_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The Q2 FY2024 cash balance was $1,874 million, treating the extracted January 28, 2023 date as a typo and implicitly changing it to January 2024.",
+    "reported_metric": "Cash & Cash equivalents",
+    "reported_value": 1874.0,
+    "confidence": 0.69,
+    "rationale": "The extractor reports $1,874M for January 28, 2023 in FY_Q2, while $1,093M is reported for July 29, 2023 in Q4. The analyst introduces an unsupported assumption that the January date should be January 2024, then bases the no-drop conclusion on that assumption. The arithmetic is correct, but the period/date reinterpretation is not established by the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1251,
+    "output_tokens": 697,
+    "total_tokens": 1948,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010865999999999998,
+    "latency_ms": 7338.110416021664,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1251,
+      "output_tokens": 697,
+      "total_tokens": 1948,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.33781708299648,
+      "duration": 7.337901916995179,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1251,
+            "output_tokens": 697,
+            "total_tokens": 1948,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1170,
+    "output_tokens": 287,
+    "total_tokens": 1457,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3617.447071010247,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1170,
+      "output_tokens": 287,
+      "total_tokens": 1457,
+      "time_to_first_token": 3.6171987719717436,
+      "duration": 3.6172750659752637,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1170,
+            "output_tokens": 287,
+            "total_tokens": 1457,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3591913876,
+              "load_duration": 475703,
+              "prompt_eval_duration": 301015000,
+              "eval_duration": 3212459000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

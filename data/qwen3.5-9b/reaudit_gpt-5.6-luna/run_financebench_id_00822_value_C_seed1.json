@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00822_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Virginia C. Drosos had substantially more votes against than any other nominee.",
+    "reported_metric": "Virginia C. Drosos had substantially more votes against (249,935 thousand) than any other nominee.",
+    "reported_value": 249935.0,
+    "confidence": 0.99,
+    "rationale": "The extractor data shows Richard A. Johnson had the highest votes against at 16,105,005, while Virginia C. Drosos had only 249,935, the lowest. The analyst's A01 claim reverses this comparison; the writer then propagated it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2803,
+    "output_tokens": 340,
+    "total_tokens": 3143,
+    "cached_tokens": 0,
+    "reasoning_tokens": 189,
+    "cost_usd": 0.0009686,
+    "latency_ms": 3460.4117919807322,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2803,
+      "output_tokens": 340,
+      "total_tokens": 3143,
+      "reasoning_tokens": 189,
+      "time_to_first_token": 3.4599419580190443,
+      "duration": 3.46009062504163,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2803,
+            "output_tokens": 340,
+            "total_tokens": 3143,
+            "reasoning_tokens": 189,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3176,
+    "output_tokens": 269,
+    "total_tokens": 3445,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3908.73772703344,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3176,
+      "output_tokens": 269,
+      "total_tokens": 3445,
+      "time_to_first_token": 3.908446384011768,
+      "duration": 3.9085363560006954,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3176,
+            "output_tokens": 269,
+            "total_tokens": 3445,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3878614173,
+              "load_duration": 522103,
+              "prompt_eval_duration": 761992000,
+              "eval_duration": 3028499000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

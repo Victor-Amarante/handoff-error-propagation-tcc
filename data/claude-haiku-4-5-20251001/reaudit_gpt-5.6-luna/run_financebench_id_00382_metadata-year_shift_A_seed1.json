@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00382_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Regional Operations had the highest EBITDAR contribution for MGM during FY2022 at $1,294,630K.",
+    "reported_metric": "EBITDAR Contribution",
+    "reported_value": 1294630.0,
+    "confidence": 0.9,
+    "rationale": "The extractor did not provide a FY2022 value for Las Vegas Strip Resorts; it provided only a FY2023 value. The analyst incorrectly treated the two extracted FY2022 regions as the complete comparison and concluded that Regional Operations was highest. The writer repeated this unsupported conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 755,
+    "output_tokens": 426,
+    "total_tokens": 1181,
+    "cached_tokens": 0,
+    "reasoning_tokens": 287,
+    "cost_usd": 0.0006622,
+    "latency_ms": 5129.869041964412,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 755,
+      "output_tokens": 426,
+      "total_tokens": 1181,
+      "reasoning_tokens": 287,
+      "time_to_first_token": 5.129313000012189,
+      "duration": 5.129509041958954,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 755,
+            "output_tokens": 426,
+            "total_tokens": 1181,
+            "reasoning_tokens": 287,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1281,
+    "output_tokens": 198,
+    "total_tokens": 1479,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002271,
+    "latency_ms": 3311.531624989584,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1281,
+      "output_tokens": 198,
+      "total_tokens": 1479,
+      "time_to_first_token": 3.31094304099679,
+      "duration": 3.311054540972691,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1281,
+            "output_tokens": 198,
+            "total_tokens": 1479,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

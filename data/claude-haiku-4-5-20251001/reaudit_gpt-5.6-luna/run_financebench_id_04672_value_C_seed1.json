@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04672_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted value of USD 7,838 million is correctly converted to USD 7.838 billion.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 7,838 USD millions, and the analyst correctly converts this to 7.838 USD billions. The writer preserves the same metric, year, and value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 828,
+    "output_tokens": 164,
+    "total_tokens": 992,
+    "cached_tokens": 0,
+    "reasoning_tokens": 47,
+    "cost_usd": 0.00036239999999999997,
+    "latency_ms": 2204.1120840003714,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 828,
+      "output_tokens": 164,
+      "total_tokens": 992,
+      "reasoning_tokens": 47,
+      "time_to_first_token": 2.203258250025101,
+      "duration": 2.2035115840262733,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 828,
+            "output_tokens": 164,
+            "total_tokens": 992,
+            "reasoning_tokens": 47,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1357,
+    "output_tokens": 142,
+    "total_tokens": 1499,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002067,
+    "latency_ms": 2154.988416994456,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1357,
+      "output_tokens": 142,
+      "total_tokens": 1499,
+      "time_to_first_token": 2.154071875032969,
+      "duration": 2.154374417033978,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1357,
+            "output_tokens": 142,
+            "total_tokens": 1499,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

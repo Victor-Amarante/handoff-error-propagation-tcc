@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01981_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Card Member retention was reported as an exact ratio of 1.0 (100%) in 2022.",
+    "reported_metric": "card_member_retention",
+    "reported_value": 1.0,
+    "confidence": 0.96,
+    "rationale": "The extractor’s evidence only states that Card Member retention 'remained high'; it does not support an exact ratio of 1.0. The analyst and writer propagated this unsupported value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 363,
+    "total_tokens": 1308,
+    "cached_tokens": 0,
+    "reasoning_tokens": 242,
+    "cost_usd": 0.0006245999999999999,
+    "latency_ms": 4009.7329589771107,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 945,
+      "output_tokens": 363,
+      "total_tokens": 1308,
+      "reasoning_tokens": 242,
+      "time_to_first_token": 4.009046958992258,
+      "duration": 4.009174041973893,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 945,
+            "output_tokens": 363,
+            "total_tokens": 1308,
+            "reasoning_tokens": 242,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1479,
+    "output_tokens": 191,
+    "total_tokens": 1670,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002434,
+    "latency_ms": 3324.6693330002017,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1479,
+      "output_tokens": 191,
+      "total_tokens": 1670,
+      "time_to_first_token": 3.323763750027865,
+      "duration": 3.324062875006348,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1479,
+            "output_tokens": 191,
+            "total_tokens": 1670,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

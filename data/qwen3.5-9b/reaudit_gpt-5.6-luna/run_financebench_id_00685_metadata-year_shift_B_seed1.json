@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00685_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor labeled revenue of 46,298 USD_M as FY2023 while assigning it year 2024, creating an inconsistent fiscal-year attribution.",
+    "reported_metric": "FY2023 Revenue",
+    "reported_value": 46298.0,
+    "confidence": 0.96,
+    "rationale": "The gross-margin calculations are arithmetically consistent with the extracted revenue, cost of sales, and gross profit figures, and the reported margins differ by less than two percentage points. However, the extractor contains a clear year-label inconsistency: FY2023 Revenue is tagged with year 2024, whereas the related FY2023 figures and earnings header are tagged 2023."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1167,
+    "output_tokens": 680,
+    "total_tokens": 1847,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010494,
+    "latency_ms": 7440.094874997158,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1167,
+      "output_tokens": 680,
+      "total_tokens": 1847,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.439512417011429,
+      "duration": 7.439630250039045,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1167,
+            "output_tokens": 680,
+            "total_tokens": 1847,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1142,
+    "output_tokens": 598,
+    "total_tokens": 1740,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 6664.09296594793,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1142,
+      "output_tokens": 598,
+      "total_tokens": 1740,
+      "time_to_first_token": 6.663762320007663,
+      "duration": 6.663913718017284,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1142,
+            "output_tokens": 598,
+            "total_tokens": 1740,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 6634585782,
+              "load_duration": 524943,
+              "prompt_eval_duration": 315050000,
+              "eval_duration": 6268193000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

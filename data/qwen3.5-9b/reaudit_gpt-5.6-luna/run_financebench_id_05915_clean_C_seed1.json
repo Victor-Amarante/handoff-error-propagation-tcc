@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_05915_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2018 fixed asset turnover ratio for CVS Health was calculated as 18.07.",
+    "reported_metric": "FY2018 Fixed Asset Turnover Ratio for CVS Health",
+    "reported_value": 18.07,
+    "confidence": 0.99,
+    "rationale": "Using the extracted inputs, 194579.0 / 10820.5 = approximately 17.98, not 18.07. The writer merely propagated the analyst's incorrect calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 952,
+    "output_tokens": 246,
+    "total_tokens": 1198,
+    "cached_tokens": 0,
+    "reasoning_tokens": 119,
+    "cost_usd": 0.00048560000000000004,
+    "latency_ms": 3444.37837501755,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 952,
+      "output_tokens": 246,
+      "total_tokens": 1198,
+      "reasoning_tokens": 119,
+      "time_to_first_token": 3.4437183330301195,
+      "duration": 3.4439537079888396,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 952,
+            "output_tokens": 246,
+            "total_tokens": 1198,
+            "reasoning_tokens": 119,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 852,
+    "output_tokens": 174,
+    "total_tokens": 1026,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2292.2630670364015,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 852,
+      "output_tokens": 174,
+      "total_tokens": 1026,
+      "time_to_first_token": 2.292014877020847,
+      "duration": 2.292088283051271,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 852,
+            "output_tokens": 174,
+            "total_tokens": 1026,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2264735825,
+              "load_duration": 451980,
+              "prompt_eval_duration": 238217000,
+              "eval_duration": 1953801000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

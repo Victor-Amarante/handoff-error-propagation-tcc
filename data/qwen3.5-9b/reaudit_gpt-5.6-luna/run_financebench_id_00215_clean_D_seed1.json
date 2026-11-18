@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00215_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A05",
+    "root_cause_claim_text": "The reported total intangibles and capital assets for FY 2022 is 297,703 USD million, but the listed components sum to 297,362 USD million.",
+    "reported_metric": "total_intangibles_and_capital_assets_2022",
+    "reported_value": 297703.0,
+    "confidence": 0.99,
+    "rationale": "A05 is the first internally inconsistent claim: 149,796 + 107,434 + 28,671 + 11,461 equals 297,362, not 297,703. The subsequent ratio and writer answer rely on this incorrect total."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2943,
+    "output_tokens": 531,
+    "total_tokens": 3474,
+    "cached_tokens": 0,
+    "reasoning_tokens": 376,
+    "cost_usd": 0.0012258,
+    "latency_ms": 5220.44599999208,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2943,
+      "output_tokens": 531,
+      "total_tokens": 3474,
+      "reasoning_tokens": 376,
+      "time_to_first_token": 5.219859000004362,
+      "duration": 5.220148458960466,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2943,
+            "output_tokens": 531,
+            "total_tokens": 3474,
+            "reasoning_tokens": 376,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 3390,
+    "output_tokens": 326,
+    "total_tokens": 3716,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4645.621678035241,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 3390,
+      "output_tokens": 326,
+      "total_tokens": 3716,
+      "time_to_first_token": 4.645294666988775,
+      "duration": 4.645367879013065,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 3390,
+            "output_tokens": 326,
+            "total_tokens": 3716,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4616097386,
+              "load_duration": 576302,
+              "prompt_eval_duration": 784219000,
+              "eval_duration": 3749901000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

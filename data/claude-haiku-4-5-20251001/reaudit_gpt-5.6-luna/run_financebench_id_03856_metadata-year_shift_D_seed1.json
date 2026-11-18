@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03856_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Cash from operations of $2,912,853 thousand was reported for FY2018, although the question requires FY2017.",
+    "reported_metric": "cash_from_operations",
+    "reported_value": 2912853.0,
+    "confidence": 0.94,
+    "rationale": "C01 is labeled year 2018 while sourced from the Adobe FY2017 10-K and is then used as the FY2017 numerator. The analyst and writer propagate this year mismatch; the arithmetic itself is consistent."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1080,
+    "output_tokens": 646,
+    "total_tokens": 1726,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009912,
+    "latency_ms": 6830.166583997197,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1080,
+      "output_tokens": 646,
+      "total_tokens": 1726,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.827621999953408,
+      "duration": 6.827770166972186,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1080,
+            "output_tokens": 646,
+            "total_tokens": 1726,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1639,
+    "output_tokens": 211,
+    "total_tokens": 1850,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002694,
+    "latency_ms": 3619.6032079751603,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1639,
+      "output_tokens": 211,
+      "total_tokens": 1850,
+      "time_to_first_token": 3.6186981659848243,
+      "duration": 3.618993666023016,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1639,
+            "output_tokens": 211,
+            "total_tokens": 1850,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

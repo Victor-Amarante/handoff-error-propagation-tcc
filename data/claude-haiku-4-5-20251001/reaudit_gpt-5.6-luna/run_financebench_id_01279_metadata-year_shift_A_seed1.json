@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01279_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly labeled the FY2022 investing cash flow of $1,999M as operating cash flow.",
+    "reported_metric": "FY2022 net cash provided by operating activities",
+    "reported_value": 1999.0,
+    "confidence": 0.99,
+    "rationale": "The extractor explicitly identified $1,999M as FY2022 investing cash flow and $3,264M as FY2022 financing cash flow, while the analyst reassigned those values to operating and investing activities. The first such reassignment occurred in the analyst stage; no claim IDs were provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 875,
+    "output_tokens": 387,
+    "total_tokens": 1262,
+    "cached_tokens": 0,
+    "reasoning_tokens": 240,
+    "cost_usd": 0.0006393999999999999,
+    "latency_ms": 4598.523624998052,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 875,
+      "output_tokens": 387,
+      "total_tokens": 1262,
+      "reasoning_tokens": 240,
+      "time_to_first_token": 4.5978981659864075,
+      "duration": 4.5981234579812735,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 875,
+            "output_tokens": 387,
+            "total_tokens": 1262,
+            "reasoning_tokens": 240,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1361,
+    "output_tokens": 183,
+    "total_tokens": 1544,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002276,
+    "latency_ms": 3274.8703749966808,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1361,
+      "output_tokens": 183,
+      "total_tokens": 1544,
+      "time_to_first_token": 3.2738709169789217,
+      "duration": 3.274167124996893,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1361,
+            "output_tokens": 183,
+            "total_tokens": 1544,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

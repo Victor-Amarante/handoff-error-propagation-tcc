@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Long-term debt was the largest liability in 2022 at USD 42,573 million.",
+    "reported_metric": "long-term debt",
+    "reported_value": 42573.0,
+    "confidence": 0.93,
+    "rationale": "The extractor includes customer deposits only for 2023, so the trace does not establish that long-term debt was the largest 2022 liability. The analyst lists 2022 liabilities but does not substantiate an overall maximum, while the writer turns that incomplete evidence into the incorrect definitive claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 940,
+    "output_tokens": 649,
+    "total_tokens": 1589,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009668,
+    "latency_ms": 6341.657083015889,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 940,
+      "output_tokens": 649,
+      "total_tokens": 1589,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.34111966699129,
+      "duration": 6.341388207976706,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 940,
+            "output_tokens": 649,
+            "total_tokens": 1589,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 845,
+    "output_tokens": 168,
+    "total_tokens": 1013,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2282.847649010364,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 845,
+      "output_tokens": 168,
+      "total_tokens": 1013,
+      "time_to_first_token": 2.282571623043623,
+      "duration": 2.282663310004864,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 845,
+            "output_tokens": 168,
+            "total_tokens": 1013,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2257709378,
+              "load_duration": 508301,
+              "prompt_eval_duration": 212710000,
+              "eval_duration": 1995420000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

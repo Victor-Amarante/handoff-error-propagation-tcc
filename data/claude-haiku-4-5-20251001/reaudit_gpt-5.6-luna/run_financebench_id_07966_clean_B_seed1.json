@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_07966_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the extracted figures and calculated three-year average are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The annual ratios are approximately 2.2%, 1.7%, and 1.8% based on the extracted capex and revenue values. Their average is approximately 1.91%, which rounds to 1.9%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1064,
+    "output_tokens": 273,
+    "total_tokens": 1337,
+    "cached_tokens": 0,
+    "reasoning_tokens": 146,
+    "cost_usd": 0.0005404,
+    "latency_ms": 3448.9094170276076,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1064,
+      "output_tokens": 273,
+      "total_tokens": 1337,
+      "reasoning_tokens": 146,
+      "time_to_first_token": 3.448228667024523,
+      "duration": 3.4484175840043463,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1064,
+            "output_tokens": 273,
+            "total_tokens": 1337,
+            "reasoning_tokens": 146,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1618,
+    "output_tokens": 216,
+    "total_tokens": 1834,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002698,
+    "latency_ms": 2655.041959020309,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1618,
+      "output_tokens": 216,
+      "total_tokens": 1834,
+      "time_to_first_token": 2.6545375830028206,
+      "duration": 2.654651874967385,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1618,
+            "output_tokens": 216,
+            "total_tokens": 1834,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

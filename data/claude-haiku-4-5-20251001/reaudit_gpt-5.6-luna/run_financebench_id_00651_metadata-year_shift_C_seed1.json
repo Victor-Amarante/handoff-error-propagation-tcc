@@ -1,0 +1,74 @@
+{
+  "log": "run_financebench_id_00651_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A02",
+    "root_cause_claim_text": "The analyst assessed adjusted EPS growth as not accelerating (0.0) even though the cited comparison is 3.45% for 2023 versus 3.5% for 2024, and the 2024 figure does not establish FY2023 acceleration.",
+    "reported_metric": "growth_acceleration_assessment",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "A01's 3.45% calculation from 2022 EPS of 10.15 to 2023 EPS of 10.5 is internally consistent. A02 is the first faulty interpretation: it compares a 2023 figure with a claim explicitly labeled 2024, and its 'no acceleration' value conflicts with 3.5% being higher than 3.45%. The writer then repeats this conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1118,
+    "output_tokens": 544,
+    "total_tokens": 1662,
+    "cached_tokens": 1115,
+    "reasoning_tokens": 341,
+    "cost_usd": 0.0006756999999999999,
+    "latency_ms": 5948.506209009793,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1118,
+      "output_tokens": 544,
+      "total_tokens": 1662,
+      "cache_read_tokens": 1115,
+      "reasoning_tokens": 341,
+      "time_to_first_token": 5.946465665998403,
+      "duration": 5.947235791012645,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1118,
+            "output_tokens": 544,
+            "total_tokens": 1662,
+            "cache_read_tokens": 1115,
+            "reasoning_tokens": 341,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1674,
+    "output_tokens": 183,
+    "total_tokens": 1857,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002589,
+    "latency_ms": 2763.33445799537,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1674,
+      "output_tokens": 183,
+      "total_tokens": 1857,
+      "time_to_first_token": 2.7624506250140257,
+      "duration": 2.7626907500089146,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1674,
+            "output_tokens": 183,
+            "total_tokens": 1857,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

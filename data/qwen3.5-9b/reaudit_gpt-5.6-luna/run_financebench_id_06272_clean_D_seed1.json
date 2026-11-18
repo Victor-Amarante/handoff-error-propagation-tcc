@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06272_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "The FY2022 dividend payout ratio was reported as 0.8% instead of approximately 79.85% based on $7,616 million in dividends divided by $9,538 million in net income attributable to shareholders.",
+    "reported_metric": "dividend_payout_ratio",
+    "reported_value": 0.8,
+    "confidence": 1.0,
+    "rationale": "The extracted dividend amount and analyst-reported net income are internally consistent, but 7,616 / 9,538 = 0.7985, which equals 79.85% when expressed as a percentage, not 0.80%. The writer propagated the analyst's incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1093,
+    "output_tokens": 267,
+    "total_tokens": 1360,
+    "cached_tokens": 0,
+    "reasoning_tokens": 99,
+    "cost_usd": 0.000539,
+    "latency_ms": 3268.8633750076406,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1093,
+      "output_tokens": 267,
+      "total_tokens": 1360,
+      "reasoning_tokens": 99,
+      "time_to_first_token": 3.2683820830425248,
+      "duration": 3.2684510000399314,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1093,
+            "output_tokens": 267,
+            "total_tokens": 1360,
+            "reasoning_tokens": 99,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1014,
+    "output_tokens": 345,
+    "total_tokens": 1359,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4212.598067999352,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1014,
+      "output_tokens": 345,
+      "total_tokens": 1359,
+      "time_to_first_token": 4.212297795980703,
+      "duration": 4.2123964129714295,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1014,
+            "output_tokens": 345,
+            "total_tokens": 1359,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4183131509,
+              "load_duration": 463783,
+              "prompt_eval_duration": 246865000,
+              "eval_duration": 3880402000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

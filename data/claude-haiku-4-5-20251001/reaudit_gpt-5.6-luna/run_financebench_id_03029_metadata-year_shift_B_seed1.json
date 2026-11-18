@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03029_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "3M's FY2018 capital expenditure was 0 USD millions.",
+    "reported_metric": "capex",
+    "reported_value": 0.0,
+    "confidence": 0.96,
+    "rationale": "The extractor returned a FY2019 value of 1,577 USD millions, not FY2018 data. The analyst returned no claims, so the writer's FY2018 value of 0 is unsupported and inconsistent with its own statement that no data was available. The extractor's FY2019 claim is not itself demonstrably incorrect from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 650,
+    "output_tokens": 392,
+    "total_tokens": 1042,
+    "cached_tokens": 0,
+    "reasoning_tokens": 250,
+    "cost_usd": 0.0006004,
+    "latency_ms": 4305.195250024553,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 650,
+      "output_tokens": 392,
+      "total_tokens": 1042,
+      "reasoning_tokens": 250,
+      "time_to_first_token": 4.304664167051669,
+      "duration": 4.304848833999131,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 650,
+            "output_tokens": 392,
+            "total_tokens": 1042,
+            "reasoning_tokens": 250,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1133,
+    "output_tokens": 189,
+    "total_tokens": 1322,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002078,
+    "latency_ms": 2724.9594170134515,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1133,
+      "output_tokens": 189,
+      "total_tokens": 1322,
+      "time_to_first_token": 2.724144750041887,
+      "duration": 2.7243737500393763,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1133,
+            "output_tokens": 189,
+            "total_tokens": 1322,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

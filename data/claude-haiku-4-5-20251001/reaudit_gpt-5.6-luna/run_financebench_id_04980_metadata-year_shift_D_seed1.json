@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04980_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "PepsiCo capital expenditure was reported as $4.625 billion for FY2022, although the relevant 2021 10-K statement concerns FY2021.",
+    "reported_metric": "capital_expenditure",
+    "reported_value": 4625.0,
+    "confidence": 0.96,
+    "rationale": "The extractor labels the $4,625 million capital spending figure as year 2022 despite the source being PepsiCo's 2021 10-K and the question asking for FY2021. The analyst propagates that year, while the writer changes it to 2021 without support from an intermediate claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 878,
+    "output_tokens": 633,
+    "total_tokens": 1511,
+    "cached_tokens": 0,
+    "reasoning_tokens": 476,
+    "cost_usd": 0.0009352000000000001,
+    "latency_ms": 6384.993374987971,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 878,
+      "output_tokens": 633,
+      "total_tokens": 1511,
+      "reasoning_tokens": 476,
+      "time_to_first_token": 6.384349709027447,
+      "duration": 6.384484499983955,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 878,
+            "output_tokens": 633,
+            "total_tokens": 1511,
+            "reasoning_tokens": 476,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1422,
+    "output_tokens": 193,
+    "total_tokens": 1615,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002387,
+    "latency_ms": 2556.8249170319177,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1422,
+      "output_tokens": 193,
+      "total_tokens": 1615,
+      "time_to_first_token": 2.5560564170009457,
+      "duration": 2.5562897080089897,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1422,
+            "output_tokens": 193,
+            "total_tokens": 1615,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

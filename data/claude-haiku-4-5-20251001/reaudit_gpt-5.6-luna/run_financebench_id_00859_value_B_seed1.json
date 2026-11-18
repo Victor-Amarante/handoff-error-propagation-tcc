@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00859_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is supported by the trace; $23,502 million is the largest of the four extracted FY 2021 notional values, although the instrument associated with it was not identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The extracted values are 19,779, 23,502, 1,000, and 932 USD million, so the analyst correctly selected 23,502 as the maximum. The trace omits instrument labels, making the answer incomplete regarding which instrument, but it does not establish a factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 800,
+    "output_tokens": 472,
+    "total_tokens": 1272,
+    "cached_tokens": 0,
+    "reasoning_tokens": 316,
+    "cost_usd": 0.0007264,
+    "latency_ms": 5044.098249985836,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 800,
+      "output_tokens": 472,
+      "total_tokens": 1272,
+      "reasoning_tokens": 316,
+      "time_to_first_token": 5.043672166997567,
+      "duration": 5.043772667006124,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 800,
+            "output_tokens": 472,
+            "total_tokens": 1272,
+            "reasoning_tokens": 316,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1323,
+    "output_tokens": 222,
+    "total_tokens": 1545,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002433,
+    "latency_ms": 3671.3787500048056,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1323,
+      "output_tokens": 222,
+      "total_tokens": 1545,
+      "time_to_first_token": 3.67047883302439,
+      "duration": 3.670773249992635,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1323,
+            "output_tokens": 222,
+            "total_tokens": 1545,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

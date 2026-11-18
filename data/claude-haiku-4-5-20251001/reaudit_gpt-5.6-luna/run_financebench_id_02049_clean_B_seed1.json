@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_02049_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extractor, analyst, and writer consistently report an average total VaR change of -$7.0 million for 2023, and the writer correctly interprets a negative change as a decrease versus 2022. No internal inconsistency or provenance-based error is present."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 705,
+    "output_tokens": 186,
+    "total_tokens": 891,
+    "cached_tokens": 0,
+    "reasoning_tokens": 76,
+    "cost_usd": 0.00036419999999999996,
+    "latency_ms": 2546.515833004378,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 705,
+      "output_tokens": 186,
+      "total_tokens": 891,
+      "reasoning_tokens": 76,
+      "time_to_first_token": 2.544520208030008,
+      "duration": 2.5446103750145994,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 705,
+            "output_tokens": 186,
+            "total_tokens": 891,
+            "reasoning_tokens": 76,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1206,
+    "output_tokens": 132,
+    "total_tokens": 1338,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001866,
+    "latency_ms": 2156.141374958679,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1206,
+      "output_tokens": 132,
+      "total_tokens": 1338,
+      "time_to_first_token": 2.15513354196446,
+      "duration": 2.15542845800519,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1206,
+            "output_tokens": 132,
+            "total_tokens": 1338,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

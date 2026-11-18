@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00299_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident in the trace. The extracted segment revenues show Corporate at -473.0 USD_M, which is lower than Commercial Banking (2393.0), Asset & Wealth Management (4077.0), Consumer & Community Banking (12517.0), and Corporate & Investment Bank (14605.0). The analyst and writer correctly identify Corporate as the lowest."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1694,
+    "output_tokens": 212,
+    "total_tokens": 1906,
+    "cached_tokens": 0,
+    "reasoning_tokens": 81,
+    "cost_usd": 0.0005932,
+    "latency_ms": 2754.7241669963114,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1694,
+      "output_tokens": 212,
+      "total_tokens": 1906,
+      "reasoning_tokens": 81,
+      "time_to_first_token": 2.7542414590134285,
+      "duration": 2.7543499169987626,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1694,
+            "output_tokens": 212,
+            "total_tokens": 1906,
+            "reasoning_tokens": 81,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1759,
+    "output_tokens": 273,
+    "total_tokens": 2032,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3530.5568060139194,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1759,
+      "output_tokens": 273,
+      "total_tokens": 2032,
+      "time_to_first_token": 3.5302591560175642,
+      "duration": 3.530354526010342,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1759,
+            "output_tokens": 273,
+            "total_tokens": 2032,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3501159968,
+              "load_duration": 474743,
+              "prompt_eval_duration": 451657000,
+              "eval_duration": 2989130000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

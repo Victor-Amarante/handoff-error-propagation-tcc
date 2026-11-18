@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00702_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Pfizer's 2019 net income attributable to common shareholders was $10,626 million.",
+    "reported_metric": "net income attributable to Pfizer Inc. common shareholders",
+    "reported_value": 10626.0,
+    "confidence": 0.99,
+    "rationale": "The extractor reported $10,626 million for 2019, but its own evidence lists net income figures of $21,979 million, $9,159 million, and $16,026 million, with $16,026 million evidently corresponding to 2019. This incorrect value propagated into the analyst's percentage calculation; moreover, $8,107 million divided by $10,626 million is about 76.3%, not 75.7%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1228,
+    "output_tokens": 483,
+    "total_tokens": 1711,
+    "cached_tokens": 0,
+    "reasoning_tokens": 303,
+    "cost_usd": 0.0008252,
+    "latency_ms": 5286.461582989432,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1228,
+      "output_tokens": 483,
+      "total_tokens": 1711,
+      "reasoning_tokens": 303,
+      "time_to_first_token": 5.286073041032068,
+      "duration": 5.286193625011947,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1228,
+            "output_tokens": 483,
+            "total_tokens": 1711,
+            "reasoning_tokens": 303,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1825,
+    "output_tokens": 200,
+    "total_tokens": 2025,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002825,
+    "latency_ms": 2761.6678749909624,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1825,
+      "output_tokens": 200,
+      "total_tokens": 2025,
+      "time_to_first_token": 2.76120633300161,
+      "duration": 2.7613165410002694,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1825,
+            "output_tokens": 200,
+            "total_tokens": 2025,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

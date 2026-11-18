@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00216_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported quick-ratio calculation and interpretation are internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "Quick assets are correctly calculated as $2,065M plus $24,506M = $26,571M, and $26,571M divided by current liabilities of $50,171M equals approximately 0.53. The final answer accurately describes this as constrained liquidity and does not treat the quick ratio as irrelevant. The analyst's liquidity_assessment value of 0.0 is ambiguous and is not used in the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1461,
+    "output_tokens": 640,
+    "total_tokens": 2101,
+    "cached_tokens": 0,
+    "reasoning_tokens": 479,
+    "cost_usd": 0.0010602,
+    "latency_ms": 6437.878583034035,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1461,
+      "output_tokens": 640,
+      "total_tokens": 2101,
+      "reasoning_tokens": 479,
+      "time_to_first_token": 6.43745108298026,
+      "duration": 6.4375742499832995,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1461,
+            "output_tokens": 640,
+            "total_tokens": 2101,
+            "reasoning_tokens": 479,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2116,
+    "output_tokens": 189,
+    "total_tokens": 2305,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003061,
+    "latency_ms": 2969.0043330192566,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2116,
+      "output_tokens": 189,
+      "total_tokens": 2305,
+      "time_to_first_token": 2.9682316670077853,
+      "duration": 2.9685325830359943,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2116,
+            "output_tokens": 189,
+            "total_tokens": 2305,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

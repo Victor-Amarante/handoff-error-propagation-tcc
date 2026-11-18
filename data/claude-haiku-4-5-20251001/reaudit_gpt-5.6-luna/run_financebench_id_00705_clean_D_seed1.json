@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00705_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "PepsiCo increased its unsecured five-year revolving credit agreement by $400 billion on May 26, 2023.",
+    "reported_metric": "unsecured_five_year_revolving_credit_agreement_increase",
+    "reported_value": 400000000000.0,
+    "confidence": 0.99,
+    "rationale": "The extractor values imply an increase from $3.8 billion to $4.2 billion, or $400 million. The analyst correctly computed 400,000,000, but the writer incorrectly rendered that amount as $400 billion. The stated total of $4.2 billion is consistent with the source values."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1126,
+    "output_tokens": 652,
+    "total_tokens": 1778,
+    "cached_tokens": 0,
+    "reasoning_tokens": 495,
+    "cost_usd": 0.0010076,
+    "latency_ms": 6455.142249993514,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1126,
+      "output_tokens": 652,
+      "total_tokens": 1778,
+      "reasoning_tokens": 495,
+      "time_to_first_token": 6.45476462499937,
+      "duration": 6.4548577920068055,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1126,
+            "output_tokens": 652,
+            "total_tokens": 1778,
+            "reasoning_tokens": 495,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1720,
+    "output_tokens": 198,
+    "total_tokens": 1918,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00271,
+    "latency_ms": 3472.8604999836534,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1720,
+      "output_tokens": 198,
+      "total_tokens": 1918,
+      "time_to_first_token": 3.471942084026523,
+      "duration": 3.472241709008813,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1720,
+            "output_tokens": 198,
+            "total_tokens": 1918,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

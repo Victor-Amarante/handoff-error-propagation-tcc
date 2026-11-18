@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01487_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "JnJ's net earnings as a percent of sales increased by 0.1 percentage points in Q2 FY2023 versus Q2 FY2022, but the writer incorrectly stated that it did not increase.",
+    "reported_metric": "net_earnings_percent_of_sales_Q2_FY2023_increase",
+    "reported_value": 0.1,
+    "confidence": 0.98,
+    "rationale": "The analyst correctly derived a positive 0.1 percentage-point change from 20.1% versus 20.0%. The writer's narrative reverses that conclusion, saying the margin did not increase, despite its own structured claim retaining value 0.1."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1164,
+    "output_tokens": 679,
+    "total_tokens": 1843,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010475999999999999,
+    "latency_ms": 6622.641749971081,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1164,
+      "output_tokens": 679,
+      "total_tokens": 1843,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.622140749997925,
+      "duration": 6.622291665989906,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1164,
+            "output_tokens": 679,
+            "total_tokens": 1843,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1087,
+    "output_tokens": 1650,
+    "total_tokens": 2737,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 18137.847019999754,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1087,
+      "output_tokens": 1650,
+      "total_tokens": 2737,
+      "time_to_first_token": 18.137587031000294,
+      "duration": 18.137669096002355,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1087,
+            "output_tokens": 1650,
+            "total_tokens": 2737,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 18108308947,
+              "load_duration": 459390,
+              "prompt_eval_duration": 297584000,
+              "eval_duration": 17734741000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

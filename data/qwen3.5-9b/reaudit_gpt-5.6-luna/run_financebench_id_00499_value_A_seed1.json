@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly reported 3M's net property, plant, and equipment as $27,213 million; the same metric was also reported as $9,178 million, creating an unresolved contradiction.",
+    "reported_metric": "Property, plant and equipment net",
+    "reported_value": 27213.0,
+    "confidence": 0.96,
+    "rationale": "The extractor produced two conflicting values for the same metric, while the analyst selected $27,213 million without resolving the discrepancy. The writer then propagated that selection and the resulting 63% calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 960,
+    "output_tokens": 653,
+    "total_tokens": 1613,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009756,
+    "latency_ms": 6910.435208992567,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 960,
+      "output_tokens": 653,
+      "total_tokens": 1613,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.909686708007939,
+      "duration": 6.909948375017848,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 960,
+            "output_tokens": 653,
+            "total_tokens": 1613,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 796,
+    "output_tokens": 210,
+    "total_tokens": 1006,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2737.4836829840206,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 796,
+      "output_tokens": 210,
+      "total_tokens": 1006,
+      "time_to_first_token": 2.7372490569832735,
+      "duration": 2.7373233559774235,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 796,
+            "output_tokens": 210,
+            "total_tokens": 1006,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2712598234,
+              "load_duration": 528416,
+              "prompt_eval_duration": 232663000,
+              "eval_duration": 2418705000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

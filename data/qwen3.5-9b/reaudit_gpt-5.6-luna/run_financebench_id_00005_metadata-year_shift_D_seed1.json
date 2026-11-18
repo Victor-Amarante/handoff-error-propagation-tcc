@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00005_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; total current assets of $7,453 million minus total current liabilities of $5,175 million equals positive working capital of $2,278 million, appropriately rounded to $2.3 billion.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The analyst’s calculation is arithmetically correct: 7,453 − 5,175 = 2,278. The writer accurately describes this as approximately $2.3 billion and answers the FY2022 question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1732,
+    "output_tokens": 213,
+    "total_tokens": 1945,
+    "cached_tokens": 0,
+    "reasoning_tokens": 68,
+    "cost_usd": 0.000602,
+    "latency_ms": 2675.2166660153307,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1732,
+      "output_tokens": 213,
+      "total_tokens": 1945,
+      "reasoning_tokens": 68,
+      "time_to_first_token": 2.674674874986522,
+      "duration": 2.6749088750220835,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1732,
+            "output_tokens": 213,
+            "total_tokens": 1945,
+            "reasoning_tokens": 68,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1797,
+    "output_tokens": 253,
+    "total_tokens": 2050,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3302.3595369886607,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1797,
+      "output_tokens": 253,
+      "total_tokens": 2050,
+      "time_to_first_token": 3.302067791984882,
+      "duration": 3.302158088015858,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1797,
+            "output_tokens": 253,
+            "total_tokens": 2050,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3273152559,
+              "load_duration": 486159,
+              "prompt_eval_duration": 452203000,
+              "eval_duration": 2764749000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

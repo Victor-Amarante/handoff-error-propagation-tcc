@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00995_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A17",
+    "root_cause_claim_text": "AMD sells or licenses portions of its intellectual property portfolio in FY22.",
+    "reported_metric": "AMD sells or licenses portions of its intellectual property portfolio in FY22",
+    "reported_value": 1.0,
+    "confidence": 0.96,
+    "rationale": "The cited evidence says AMD may sell or license IP from time to time; it does not establish that AMD did so in FY22 or that this is a major offering. The analyst converted a possibility into a definitive FY22 claim, which the writer then included as intellectual property licensing."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 5362,
+    "output_tokens": 551,
+    "total_tokens": 5913,
+    "cached_tokens": 0,
+    "reasoning_tokens": 410,
+    "cost_usd": 0.0017335999999999999,
+    "latency_ms": 5908.336584048811,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5362,
+      "output_tokens": 551,
+      "total_tokens": 5913,
+      "reasoning_tokens": 410,
+      "time_to_first_token": 5.9069789159693755,
+      "duration": 5.907756457978394,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5362,
+            "output_tokens": 551,
+            "total_tokens": 5913,
+            "reasoning_tokens": 410,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 5884,
+    "output_tokens": 202,
+    "total_tokens": 6086,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3787.827506021131,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 5884,
+      "output_tokens": 202,
+      "total_tokens": 6086,
+      "time_to_first_token": 3.7875165839795955,
+      "duration": 3.7875873949960805,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 5884,
+            "output_tokens": 202,
+            "total_tokens": 6086,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3757814358,
+              "load_duration": 665721,
+              "prompt_eval_duration": 1330664000,
+              "eval_duration": 2301241000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10499_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The FY2019 inventory turnover ratio was reported as 5.83, but using the extracted FY2019 COGS of 16,830 and average inventory of (2,721 + 2,667) / 2 = 2,694 gives approximately 6.25.",
+    "reported_metric": "Kraft Heinz FY2019 Inventory Turnover Ratio",
+    "reported_value": 5.83,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs imply 16,830 / 2,694 = 6.25, not 5.83. The writer merely repeated the analyst's incorrect result, so the first error appeared in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 809,
+    "output_tokens": 683,
+    "total_tokens": 1492,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009814000000000001,
+    "latency_ms": 6621.585458982736,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 809,
+      "output_tokens": 683,
+      "total_tokens": 1492,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.620901292015333,
+      "duration": 6.621122292010114,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 809,
+            "output_tokens": 683,
+            "total_tokens": 1492,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 669,
+    "output_tokens": 397,
+    "total_tokens": 1066,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4645.424923044629,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 669,
+      "output_tokens": 397,
+      "total_tokens": 1066,
+      "time_to_first_token": 4.6451281939516775,
+      "duration": 4.645217346958816,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 669,
+            "output_tokens": 397,
+            "total_tokens": 1066,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4616044926,
+              "load_duration": 475706,
+              "prompt_eval_duration": 176924000,
+              "eval_duration": 4375075000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

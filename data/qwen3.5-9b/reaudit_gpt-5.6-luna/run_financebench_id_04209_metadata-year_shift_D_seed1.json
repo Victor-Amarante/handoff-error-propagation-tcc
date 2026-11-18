@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04209_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Costco had total assets of $59,268 million in FY2022.",
+    "reported_metric": "total_assets",
+    "reported_value": 59268.0,
+    "confidence": 0.98,
+    "rationale": "The extractor labels the $59,268 million total-assets figure as year 2022, and that year label propagates through the analyst and writer outputs. The question asks for FY2021, while the final prose changes the year to FY2021 without correcting the underlying claim metadata."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 837,
+    "output_tokens": 613,
+    "total_tokens": 1450,
+    "cached_tokens": 0,
+    "reasoning_tokens": 479,
+    "cost_usd": 0.000903,
+    "latency_ms": 6366.09679099638,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 837,
+      "output_tokens": 613,
+      "total_tokens": 1450,
+      "reasoning_tokens": 479,
+      "time_to_first_token": 6.365424417017493,
+      "duration": 6.365566959022544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 837,
+            "output_tokens": 613,
+            "total_tokens": 1450,
+            "reasoning_tokens": 479,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 713,
+    "output_tokens": 469,
+    "total_tokens": 1182,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5382.084229029715,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 713,
+      "output_tokens": 469,
+      "total_tokens": 1182,
+      "time_to_first_token": 5.3818453080020845,
+      "duration": 5.381918881030288,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 713,
+            "output_tokens": 469,
+            "total_tokens": 1182,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5356215629,
+              "load_duration": 1032417,
+              "prompt_eval_duration": 191905000,
+              "eval_duration": 5092954000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

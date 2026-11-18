@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00882_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The total amount PepsiCo could borrow as of May 26, 2023 was $2.4 billion.",
+    "reported_metric": "total borrowing capacity under unsecured revolving credit agreements",
+    "reported_value": 2400000000.0,
+    "confidence": 0.9,
+    "rationale": "The extractor presents $2.4 billion as the amount as of May 26 while also stating that the amount increased to $4.95 billion. The latter is the post-increase amount matching the date in the question, so treating the earlier $2.4 billion figure as the as-of amount is the first error. The analyst and writer then incorrectly preserve the ambiguity instead of selecting the increased total."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 850,
+    "output_tokens": 962,
+    "total_tokens": 1812,
+    "cached_tokens": 0,
+    "reasoning_tokens": 785,
+    "cost_usd": 0.0013243999999999999,
+    "latency_ms": 8606.049875030294,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 850,
+      "output_tokens": 962,
+      "total_tokens": 1812,
+      "reasoning_tokens": 785,
+      "time_to_first_token": 8.605693499965128,
+      "duration": 8.60581475001527,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 850,
+            "output_tokens": 962,
+            "total_tokens": 1812,
+            "reasoning_tokens": 785,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 659,
+    "output_tokens": 165,
+    "total_tokens": 824,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2191.5738389943726,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 659,
+      "output_tokens": 165,
+      "total_tokens": 824,
+      "time_to_first_token": 2.191345105995424,
+      "duration": 2.1914154299884103,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 659,
+            "output_tokens": 165,
+            "total_tokens": 824,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2164022094,
+              "load_duration": 617624,
+              "prompt_eval_duration": 200569000,
+              "eval_duration": 1892787000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

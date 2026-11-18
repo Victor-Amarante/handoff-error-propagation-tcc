@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00859_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable; the trace supports that $32,502 million was the highest listed notional value, but it does not identify the corresponding derivative instrument.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.86,
+    "rationale": "The extractor provides four notional values without instrument labels. The analyst correctly identifies $32,502 million as the maximum and explicitly notes that the instrument type cannot be determined; the writer preserves that limitation. The response is incomplete relative to the question, but no factual value error is established from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 835,
+    "output_tokens": 471,
+    "total_tokens": 1306,
+    "cached_tokens": 0,
+    "reasoning_tokens": 323,
+    "cost_usd": 0.0007321999999999999,
+    "latency_ms": 5278.522666019853,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 835,
+      "output_tokens": 471,
+      "total_tokens": 1306,
+      "reasoning_tokens": 323,
+      "time_to_first_token": 5.277923625020776,
+      "duration": 5.278167292010039,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 835,
+            "output_tokens": 471,
+            "total_tokens": 1306,
+            "reasoning_tokens": 323,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1340,
+    "output_tokens": 186,
+    "total_tokens": 1526,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00227,
+    "latency_ms": 3071.3941670255736,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1340,
+      "output_tokens": 186,
+      "total_tokens": 1526,
+      "time_to_first_token": 3.070482750015799,
+      "duration": 3.0707806660211645,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1340,
+            "output_tokens": 186,
+            "total_tokens": 1526,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

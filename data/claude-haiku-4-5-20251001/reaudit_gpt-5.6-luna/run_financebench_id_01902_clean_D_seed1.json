@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01902_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Entertainment was identified as the best-performing domestic category based on 9.0% comparable-sales growth, even though the question asks for the category with the best top-line sales.",
+    "reported_metric": "best_performing_category_q2_fy2024_usa",
+    "reported_value": 9.0,
+    "confidence": 0.98,
+    "rationale": "The extractor reported comparable-sales percentage changes, but no top-line sales values. The analyst therefore selected the largest growth rate (Entertainment, 9.0%) as the answer to a top-line question; the writer merely propagated that mismatch."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1344,
+    "output_tokens": 361,
+    "total_tokens": 1705,
+    "cached_tokens": 0,
+    "reasoning_tokens": 209,
+    "cost_usd": 0.000702,
+    "latency_ms": 4438.51154204458,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1344,
+      "output_tokens": 361,
+      "total_tokens": 1705,
+      "reasoning_tokens": 209,
+      "time_to_first_token": 4.4377203329931945,
+      "duration": 4.4379545410047285,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1344,
+            "output_tokens": 361,
+            "total_tokens": 1705,
+            "reasoning_tokens": 209,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1948,
+    "output_tokens": 155,
+    "total_tokens": 2103,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002723,
+    "latency_ms": 3766.662042005919,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1948,
+      "output_tokens": 155,
+      "total_tokens": 2103,
+      "time_to_first_token": 3.7662245410028845,
+      "duration": 3.7663168330327608,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1948,
+            "output_tokens": 155,
+            "total_tokens": 2103,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

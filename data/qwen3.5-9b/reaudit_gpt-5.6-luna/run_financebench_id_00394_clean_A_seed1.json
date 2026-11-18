@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00394_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is evident; all stages consistently identify Consumer & Community Banking as having the highest Q2 2022 net income at $3,100 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports Consumer & Community Banking at $3,100 million, higher than Asset & Wealth Management at $1,004 million, Commercial Banking at $994 million, and the negative values for the other segments. The analyst and writer preserve this conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 793,
+    "output_tokens": 201,
+    "total_tokens": 994,
+    "cached_tokens": 0,
+    "reasoning_tokens": 63,
+    "cost_usd": 0.0003998,
+    "latency_ms": 2626.6163749969564,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 793,
+      "output_tokens": 201,
+      "total_tokens": 994,
+      "reasoning_tokens": 63,
+      "time_to_first_token": 2.626108333002776,
+      "duration": 2.6262575830332935,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 793,
+            "output_tokens": 201,
+            "total_tokens": 994,
+            "reasoning_tokens": 63,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 620,
+    "output_tokens": 267,
+    "total_tokens": 887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3265.4516440234147,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 620,
+      "output_tokens": 267,
+      "total_tokens": 887,
+      "time_to_first_token": 3.2651684100273997,
+      "duration": 3.265251318051014,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 620,
+            "output_tokens": 267,
+            "total_tokens": 887,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3232825742,
+              "load_duration": 463844,
+              "prompt_eval_duration": 180018000,
+              "eval_duration": 3003866000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

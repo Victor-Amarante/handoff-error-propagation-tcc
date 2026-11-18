@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00299_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; among the four business segments carried into the analyst output, Commercial Banking has the lowest net revenue at $2,393 million.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.86,
+    "rationale": "The extractor also lists Corporate at -$473 million, but Corporate is not presented as a business segment and is correctly excluded by the analyst. Commercial Banking is the minimum among the four business segments included, and the writer preserves that conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 955,
+    "output_tokens": 355,
+    "total_tokens": 1310,
+    "cached_tokens": 0,
+    "reasoning_tokens": 219,
+    "cost_usd": 0.000617,
+    "latency_ms": 4683.797249977943,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 955,
+      "output_tokens": 355,
+      "total_tokens": 1310,
+      "reasoning_tokens": 219,
+      "time_to_first_token": 4.683266708976589,
+      "duration": 4.683470459014643,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 955,
+            "output_tokens": 355,
+            "total_tokens": 1310,
+            "reasoning_tokens": 219,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 857,
+    "output_tokens": 218,
+    "total_tokens": 1075,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2730.537151976023,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 857,
+      "output_tokens": 218,
+      "total_tokens": 1075,
+      "time_to_first_token": 2.73026335099712,
+      "duration": 2.730353374965489,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 857,
+            "output_tokens": 218,
+            "total_tokens": 1075,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2705530988,
+              "load_duration": 595308,
+              "prompt_eval_duration": 237678000,
+              "eval_duration": 2410649000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

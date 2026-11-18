@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01107_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace consistently supports a 2022 opioid-settlement disclosure, though it does not address 2021 or 2020.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.93,
+    "rationale": "The extractor, analyst, and writer all report the same 2022 values: $4,300 million maximum remediation and $625 million in attorneys' fees and costs. The answer is incomplete relative to the multi-year question, but the trace provides no internal inconsistency or provenance establishing those claims as factually incorrect."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 796,
+    "output_tokens": 310,
+    "total_tokens": 1106,
+    "cached_tokens": 0,
+    "reasoning_tokens": 161,
+    "cost_usd": 0.0005312,
+    "latency_ms": 3480.3568749921396,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 796,
+      "output_tokens": 310,
+      "total_tokens": 1106,
+      "reasoning_tokens": 161,
+      "time_to_first_token": 3.479990708990954,
+      "duration": 3.4801597919431515,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 796,
+            "output_tokens": 310,
+            "total_tokens": 1106,
+            "reasoning_tokens": 161,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1318,
+    "output_tokens": 172,
+    "total_tokens": 1490,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002178,
+    "latency_ms": 2252.876707992982,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1318,
+      "output_tokens": 172,
+      "total_tokens": 1490,
+      "time_to_first_token": 2.252169249986764,
+      "duration": 2.2523904999834485,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1318,
+            "output_tokens": 172,
+            "total_tokens": 1490,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

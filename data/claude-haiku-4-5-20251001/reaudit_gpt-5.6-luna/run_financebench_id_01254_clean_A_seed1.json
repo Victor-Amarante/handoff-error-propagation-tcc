@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01254_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports a $0.01 dividend per share, and both the analyst and writer consistently infer and state that dividends were paid. The trace contains no contradictory evidence or provenance indicating an error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 563,
+    "output_tokens": 197,
+    "total_tokens": 760,
+    "cached_tokens": 0,
+    "reasoning_tokens": 103,
+    "cost_usd": 0.000349,
+    "latency_ms": 2493.4143330319785,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 563,
+      "output_tokens": 197,
+      "total_tokens": 760,
+      "reasoning_tokens": 103,
+      "time_to_first_token": 2.4929759170045145,
+      "duration": 2.4931492919567972,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 563,
+            "output_tokens": 197,
+            "total_tokens": 760,
+            "reasoning_tokens": 103,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1046,
+    "output_tokens": 153,
+    "total_tokens": 1199,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001811,
+    "latency_ms": 1969.8502499959432,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1046,
+      "output_tokens": 153,
+      "total_tokens": 1199,
+      "time_to_first_token": 1.968851999961771,
+      "duration": 1.9691479579778388,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1046,
+            "output_tokens": 153,
+            "total_tokens": 1199,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

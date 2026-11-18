@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01244_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "CVS Health paid a quarterly cash dividend of $0.55 million to common shareholders in Q2 of FY2022.",
+    "reported_metric": "quarterly cash dividend to common shareholders",
+    "reported_value": 0.55,
+    "confidence": 0.86,
+    "rationale": "The extractor is the first stage to introduce the unsupported $0.55M figure; the analyst and writer merely repeat it. The figure is likely a unit or amount misstatement, since a quarterly dividend is typically reported per common share or as an aggregate dollar amount, not as $0.55 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 574,
+    "output_tokens": 614,
+    "total_tokens": 1188,
+    "cached_tokens": 0,
+    "reasoning_tokens": 464,
+    "cost_usd": 0.0008515999999999999,
+    "latency_ms": 6217.780292034149,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 574,
+      "output_tokens": 614,
+      "total_tokens": 1188,
+      "reasoning_tokens": 464,
+      "time_to_first_token": 6.217460415966343,
+      "duration": 6.217524207953829,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 574,
+            "output_tokens": 614,
+            "total_tokens": 1188,
+            "reasoning_tokens": 464,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 368,
+    "output_tokens": 304,
+    "total_tokens": 672,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3563.8951489818282,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 368,
+      "output_tokens": 304,
+      "total_tokens": 672,
+      "time_to_first_token": 3.5636097450042143,
+      "duration": 3.563679000013508,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 368,
+            "output_tokens": 304,
+            "total_tokens": 672,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3531825123,
+              "load_duration": 421941,
+              "prompt_eval_duration": 110722000,
+              "eval_duration": 3374900000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

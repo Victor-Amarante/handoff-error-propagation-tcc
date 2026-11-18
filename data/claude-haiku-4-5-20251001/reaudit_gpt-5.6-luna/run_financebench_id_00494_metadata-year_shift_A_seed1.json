@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00494_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly converted the extracted 777X production status of 0 into a claim that the 777X had a production rate of zero and had not entered production.",
+    "reported_metric": "777X production rate",
+    "reported_value": 0.0,
+    "confidence": 0.91,
+    "rationale": "The extractor only reported a 777X production status of 0, not a production rate or the reason for that status. The analyst introduced that unsupported interpretation, which the writer then repeated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 761,
+    "output_tokens": 392,
+    "total_tokens": 1153,
+    "cached_tokens": 0,
+    "reasoning_tokens": 261,
+    "cost_usd": 0.0006226000000000001,
+    "latency_ms": 4576.773125038017,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 761,
+      "output_tokens": 392,
+      "total_tokens": 1153,
+      "reasoning_tokens": 261,
+      "time_to_first_token": 4.576368167006876,
+      "duration": 4.576539000030607,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 761,
+            "output_tokens": 392,
+            "total_tokens": 1153,
+            "reasoning_tokens": 261,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1250,
+    "output_tokens": 196,
+    "total_tokens": 1446,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00223,
+    "latency_ms": 2817.6923749851994,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1250,
+      "output_tokens": 196,
+      "total_tokens": 1446,
+      "time_to_first_token": 2.8171417500125244,
+      "duration": 2.8172538750222884,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1250,
+            "output_tokens": 196,
+            "total_tokens": 1446,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

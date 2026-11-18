@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01936_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The analyst relabeled the employee-related restructuring liability balance from calendar year 2022 (December 31, 2022) to year 2023 without support from the cited evidence.",
+    "reported_metric": "restructuring_liability_employee_costs",
+    "reported_value": 81.0,
+    "confidence": 0.86,
+    "rationale": "The extractor evidence explicitly states the balance was at December 31, 2022, while the analyst changes the year metadata to 2023 for the first derived claim and all subsequent claims. The dollar amounts remain internally consistent, but the analyst's year attribution is unsupported and is the first apparent error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1803,
+    "output_tokens": 675,
+    "total_tokens": 2478,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0011706,
+    "latency_ms": 6370.177042030264,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1803,
+      "output_tokens": 675,
+      "total_tokens": 2478,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.369472165999468,
+      "duration": 6.369712332962081,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1803,
+            "output_tokens": 675,
+            "total_tokens": 2478,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2516,
+    "output_tokens": 214,
+    "total_tokens": 2730,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003586,
+    "latency_ms": 3172.726834018249,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2516,
+      "output_tokens": 214,
+      "total_tokens": 2730,
+      "time_to_first_token": 3.17181462503504,
+      "duration": 3.172128417005297,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2516,
+            "output_tokens": 214,
+            "total_tokens": 2730,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

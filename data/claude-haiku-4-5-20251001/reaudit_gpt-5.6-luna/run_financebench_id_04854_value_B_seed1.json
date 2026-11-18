@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04854_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported FCF equals cash from operations minus capex (6376.2 - 460.8 = 5915.4).",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor values are internally consistent with the analyst and writer calculation: 6376.2 - 460.8 = 5915.4 USD millions."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 716,
+    "output_tokens": 179,
+    "total_tokens": 895,
+    "cached_tokens": 0,
+    "reasoning_tokens": 58,
+    "cost_usd": 0.000358,
+    "latency_ms": 2235.7960829976946,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 716,
+      "output_tokens": 179,
+      "total_tokens": 895,
+      "reasoning_tokens": 58,
+      "time_to_first_token": 2.235234791005496,
+      "duration": 2.235371583024971,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 716,
+            "output_tokens": 179,
+            "total_tokens": 895,
+            "reasoning_tokens": 58,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1219,
+    "output_tokens": 127,
+    "total_tokens": 1346,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001854,
+    "latency_ms": 2956.358833005652,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1219,
+      "output_tokens": 127,
+      "total_tokens": 1346,
+      "time_to_first_token": 2.9553487499943003,
+      "duration": 2.955649916024413,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1219,
+            "output_tokens": 127,
+            "total_tokens": 1346,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

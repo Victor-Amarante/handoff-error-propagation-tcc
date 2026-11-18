@@ -87,11 +87,20 @@ C & \textit{Tipado + lineage}: campos de B + claim\_id, source\_id, page, genera
 \hline
 D & \textit{Tipado + lineage + evidência}: campos de C + evidence \\
 \hline
+\multicolumn{2}{|l|}{\textit{Condições complementares (Seção~\ref{sec:complementares})}} \\
+\hline
+E & \textit{Tipado + evidência}: campos de B + evidence, sem lineage \\
+\hline
+B$'$ & Campos de B, com um campo \texttt{reasoning} antes dos claims na saída do Analista \\
+\hline
+D$'$ & Campos de D, com uma instrução para conferir cada valor contra a evidência \\
+\hline
 \end{tabular}
 \end{table}
 
 A Tabela~\ref{tab:condicoes} mostra o que cada contrato carrega.
-Na condição A, o handoff é prosa. Para não introduzir uma variável a mais, essa prosa vem de um template fixo, e não de uma paráfrase feita pelo modelo: cada claim vira uma frase como ``According to the report, revenue in FY2017 was \$14.2M.'', sem identificador, fonte ou página.
+Na condição A, o handoff é prosa. Para não introduzir uma variável a mais, a prosa do handoff entre Extrator e Analista vem de um template fixo, e não de uma paráfrase feita pelo modelo: cada claim vira uma frase como ``According to the report, revenue in FY2017 was \$14.2M.'', sem identificador, fonte ou página.
+O template vale só para esse primeiro handoff, que é onde o erro é injetado. Do Analista para o Redator, o handoff de A é o texto que o próprio Analista escreveu.
 Nas condições B, C e D, o handoff é uma lista de claims tipados e validados por schema.
 B leva só a estrutura, C acrescenta a proveniência de cada claim, chamada aqui de lineage (fonte, página, estágio que o gerou e claims de origem), e D acrescenta o trecho literal do documento que sustenta o claim.
 
@@ -161,6 +170,17 @@ O controle é necessário porque o pipeline erra algumas perguntas por conta pr�
 Sem essa linha de base, não há como separar o erro injetado do erro nativo, nem distinguir um erro contido de um erro que se propagou e, por coincidência, levou à resposta certa.
 Todas as métricas de contenção comparam a execução injetada com o controle da mesma condição e da mesma pergunta, e a comparação nunca cruza condições.
 O controle também mede a taxa de falso positivo do auditor, isto é, quantas execuções sem erro injetado recebem um culpado.
+Como o injetor é determinístico, o claim que seria corrompido é conhecido também no controle, e isso permite medir um placebo: com que frequência o auditor de uma execução limpa aponta exatamente esse claim, ou o Extrator, como origem de um erro que não existe.
+Por fim, como toda métrica de contenção compara duas execuções, parte da diferença entre elas pode ser só variação de amostragem. Uma réplica dos controles de 50 perguntas, comparada com o controle original pelo mesmo instrumento, mede esse piso de ruído.
+
+\subsection{Condições complementares}\label{sec:complementares}
+
+O desenho aninhado mede o efeito de cada mecanismo dado o anterior, e não permite dizer se uma camada é dispensável.
+Por isso, nos dois modelos de API, o experimento foi estendido com três condições que reaproveitam o mesmo estado extraído e o mesmo erro injetado da rodada principal (Tabela~\ref{tab:condicoes}).
+A condição E carrega a evidência sem o lineage. Com B, C e D, ela fecha um fatorial 2 $\times$ 2 entre lineage e evidência, e permite medir o efeito de cada mecanismo na presença e na ausência do outro.
+A condição B$'$ acrescenta ao schema do Analista, antes dos claims, um campo de texto em que o modelo pode desenvolver o cálculo. Ela roda só nas execuções de controle e serve para separar o efeito do contrato tipado do efeito de impor uma saída em JSON sem espaço para raciocinar, mecanismo que Tam et al. associam à perda de acurácia sob restrições de formato \cite{tam2024speak}. O Redator de B$'$ recebe exatamente o handoff de B.
+A condição D$'$ é a D com uma frase a mais na instrução do Analista e do Redator, que pede para conferir cada valor contra o trecho de evidência e, havendo divergência, confiar na evidência.
+Ela é a única que altera o que o estágio é instruído a fazer, e por isso fica fora do desenho principal e entra apenas como teste do papel da instrução.
 
 \subsection{Instrumento de medida e destino do erro}\label{sec:destino}
 
@@ -177,8 +197,11 @@ Se a resposta final traz números que não estão no controle, ele foi \emph{amp
 Se nenhum estágio mudou em relação ao controle, a execução é marcada como \emph{sem efeito}.
 O erro foi \emph{corrigido} quando o valor original reaparece em algum estágio e a resposta final volta a ser a do controle. Nos demais casos, como recusas ou omissão da figura, ele foi \emph{contido}.
 
-A categoria sem efeito não estava no protocolo original e foi incluída de propósito.
-Quase sempre ela indica que o claim corrompido estava fora do caminho da resposta, e somá-la à contenção inflaria a métrica com execuções em que o contrato nunca foi posto à prova.
+A categoria sem efeito não estava no protocolo original.
+A intenção era separar as execuções em que o claim corrompido estava fora do caminho da resposta, mas essa é uma propriedade da pergunta, e não da condição, já que o estado corrompido é o mesmo em A, B, C e D.
+Por isso, só é tratada como fora do caminho a execução sem efeito nas quatro condições ao mesmo tempo.
+Quando a execução fica sem efeito em uma condição e o mesmo erro altera algum estágio em outra, o erro foi \emph{neutralizado no Analista}: ele chegou ao estágio, mas não deixou marca em nenhum número posterior.
+A Seção~\ref{sec:res-controle} mostra que quase todas as execuções sem efeito caem nesse segundo caso.
 
 \subsection{Auditor de causa raiz}\label{sec:auditor}
 
@@ -186,9 +209,12 @@ A atribuição de origem é medida por um auditor que roda depois do pipeline, c
 Assim, Extrator, Analista e Redator ficam idênticos entre as condições, e nenhum deles carrega a tarefa extra de diagnosticar o próprio erro.
 O auditor usa o mesmo modelo do pipeline e recebe a pergunta, a resposta final e o trace da execução na forma em que o contrato o preservou: prosa em A, claims tipados sem identificadores em B e claims com a cadeia de proveniência em C e D.
 Ele não vê o documento, a resposta do benchmark nem o registro da injeção.
+Para separar a qualidade do trace da qualidade de quem o audita, os traces já gravados de Haiku e Qwen foram auditados uma segunda vez pelo auditor do GPT, sem rodar o pipeline de novo, o que forma um cruzamento entre o modelo do pipeline e o modelo do auditor.
 
 A saída do auditor segue um schema único nas quatro condições, com o estágio em que o primeiro erro apareceu (ou a indicação de que não há erro), o identificador e a descrição do claim de origem, a métrica e o valor desse claim e uma confiança entre 0 e 1.
 O que varia entre as condições é a entrada do auditor, não o formato da resposta, e é isso que torna as medidas comparáveis.
 A formulação segue a de Zhang et al., que definem a atribuição de falhas como a identificação do agente responsável e do passo decisivo \cite{zhang2025which}. Aqui, os equivalentes são o estágio de origem e o claim de origem.
-Em A e B não há identificadores, então o acerto do claim é verificado pela métrica e pelo valor informados pelo auditor, comparados com os do claim corrompido. Em C e D, apontar o identificador do claim corrompido também conta como acerto, e a Seção~\ref{sec:rq2} mostra o que muda quando o mesmo critério de métrica e valor é aplicado às quatro condições.
+O acerto do claim é verificado pelo conteúdo, com o mesmo critério nas quatro condições: o auditor precisa informar a métrica e o valor do claim corrompido tal como ele aparece no trace.
+No erro de valor, esse valor é o número corrompido. No erro de metadado, o número do claim continua intacto e o errado é o ano, então vale o número do claim, já que o auditor que aponta o claim certo informa esse número, e não o ano.
+O critério original do protocolo aceitava também o identificador do claim, que só existe em C e D, e, no erro de metadado, exigia que o auditor informasse o ano corrompido, o que quase nunca acontece. Ele é reportado como medida secundária, e a Seção~\ref{sec:rq2} mostra o efeito dessa diferença.
 O custo do auditor é registrado à parte e não entra no custo operacional do pipeline.

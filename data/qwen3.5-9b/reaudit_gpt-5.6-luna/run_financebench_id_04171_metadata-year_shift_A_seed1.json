@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04171_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports only a FY2019 accounts-payable figure ($302,578 thousand), while the question asks for FY2018. The analyst and writer consistently state that FY2018 data is unavailable; no incorrect claim is identifiable from the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 617,
+    "output_tokens": 267,
+    "total_tokens": 884,
+    "cached_tokens": 0,
+    "reasoning_tokens": 162,
+    "cost_usd": 0.00044379999999999995,
+    "latency_ms": 3395.322958007455,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 617,
+      "output_tokens": 267,
+      "total_tokens": 884,
+      "reasoning_tokens": 162,
+      "time_to_first_token": 3.3946610420243815,
+      "duration": 3.3947981250239536,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 617,
+            "output_tokens": 267,
+            "total_tokens": 884,
+            "reasoning_tokens": 162,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 422,
+    "output_tokens": 245,
+    "total_tokens": 667,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3021.6973789501935,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 422,
+      "output_tokens": 245,
+      "total_tokens": 667,
+      "time_to_first_token": 3.0213979890104383,
+      "duration": 3.021490647981409,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 422,
+            "output_tokens": 245,
+            "total_tokens": 667,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2992531150,
+              "load_duration": 475179,
+              "prompt_eval_duration": 125395000,
+              "eval_duration": 2819218000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

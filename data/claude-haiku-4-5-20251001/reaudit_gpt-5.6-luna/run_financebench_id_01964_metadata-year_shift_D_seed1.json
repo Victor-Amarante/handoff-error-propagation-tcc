@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Customer deposits were $110,239 million, but the claim was incorrectly labeled as year 2023 instead of 2022.",
+    "reported_metric": "customer_deposits",
+    "reported_value": 110239.0,
+    "confidence": 0.99,
+    "rationale": "The extractor assigned the $110,239 million customer-deposit amount to 2023, causing the analyst to exclude it from the 2022 comparison. The remaining liabilities then incorrectly identified long-term debt at $42,573 million as the largest."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1331,
+    "output_tokens": 503,
+    "total_tokens": 1834,
+    "cached_tokens": 0,
+    "reasoning_tokens": 364,
+    "cost_usd": 0.0008698,
+    "latency_ms": 5151.664333010558,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1331,
+      "output_tokens": 503,
+      "total_tokens": 1834,
+      "reasoning_tokens": 364,
+      "time_to_first_token": 5.151123624993488,
+      "duration": 5.151286749984138,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1331,
+            "output_tokens": 503,
+            "total_tokens": 1834,
+            "reasoning_tokens": 364,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1938,
+    "output_tokens": 235,
+    "total_tokens": 2173,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003113,
+    "latency_ms": 4300.319875008427,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1938,
+      "output_tokens": 235,
+      "total_tokens": 2173,
+      "time_to_first_token": 4.299392166023608,
+      "duration": 4.29970441601472,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1938,
+            "output_tokens": 235,
+            "total_tokens": 2173,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

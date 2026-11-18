@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00299_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is identifiable from the trace; the reported Corporate net revenue of -$473 million is correctly the lowest among the listed segments.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor lists all segment values, and -$473 million is mathematically lower than the other reported values. The analyst and writer preserve this comparison consistently."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 794,
+    "output_tokens": 170,
+    "total_tokens": 964,
+    "cached_tokens": 0,
+    "reasoning_tokens": 56,
+    "cost_usd": 0.00036280000000000004,
+    "latency_ms": 2409.056624979712,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 794,
+      "output_tokens": 170,
+      "total_tokens": 964,
+      "reasoning_tokens": 56,
+      "time_to_first_token": 2.4085705829784274,
+      "duration": 2.4086863749544136,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 794,
+            "output_tokens": 170,
+            "total_tokens": 964,
+            "reasoning_tokens": 56,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 625,
+    "output_tokens": 206,
+    "total_tokens": 831,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2554.881373012904,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 625,
+      "output_tokens": 206,
+      "total_tokens": 831,
+      "time_to_first_token": 2.554648344987072,
+      "duration": 2.554721286986023,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 625,
+            "output_tokens": 206,
+            "total_tokens": 831,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2527022682,
+              "load_duration": 448979,
+              "prompt_eval_duration": 158268000,
+              "eval_duration": 2300279000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

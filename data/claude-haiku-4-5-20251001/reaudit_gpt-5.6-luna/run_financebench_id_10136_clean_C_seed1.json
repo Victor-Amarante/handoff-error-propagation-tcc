@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10136_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "No error is evident. Using the traced values, dividend payout is 1244.5 / 2707.3 = 0.46, so the retention ratio is 1 - 0.46 = approximately 0.54, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1053,
+    "output_tokens": 227,
+    "total_tokens": 1280,
+    "cached_tokens": 0,
+    "reasoning_tokens": 116,
+    "cost_usd": 0.000483,
+    "latency_ms": 2780.9747079736553,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1053,
+      "output_tokens": 227,
+      "total_tokens": 1280,
+      "reasoning_tokens": 116,
+      "time_to_first_token": 2.780205792048946,
+      "duration": 2.78042775002541,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1053,
+            "output_tokens": 227,
+            "total_tokens": 1280,
+            "reasoning_tokens": 116,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1615,
+    "output_tokens": 176,
+    "total_tokens": 1791,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002495,
+    "latency_ms": 2555.452707980294,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1615,
+      "output_tokens": 176,
+      "total_tokens": 1791,
+      "time_to_first_token": 2.554891209001653,
+      "duration": 2.555003458983265,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1615,
+            "output_tokens": 176,
+            "total_tokens": 1791,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

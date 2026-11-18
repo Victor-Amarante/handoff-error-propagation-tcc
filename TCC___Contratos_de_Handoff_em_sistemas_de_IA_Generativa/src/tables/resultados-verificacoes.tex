@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\caption{Verificações do instrumento: piso de ruído (teste A/A) e auditoria cruzada}
+\label{tab:verificacoes}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{|l|cccc|cccc|cccc|}
+\hline
+ & \multicolumn{4}{c|}{\textbf{GPT-5.6 Luna}} & \multicolumn{4}{c|}{\textbf{Claude Haiku 4.5}} & \multicolumn{4}{c|}{\textbf{Qwen3.5 9B}} \\
+\textbf{Métrica} & A & B & C & D & A & B & C & D & A & B & C & D \\
+\hline
+\multicolumn{13}{|l|}{\textit{Piso de ruído: réplica do controle contra o controle original}} \\
+ESR nula & 0,28 & 0,23 & 0,38 & 0,40 & 0,40 & 0,47 & 0,56 & 0,42 & -- & -- & -- & -- \\
+Profundidade nula & 0,55 & 0,49 & 0,66 & 0,81 & 0,95 & 0,84 & 1,09 & 0,74 & -- & -- & -- & -- \\
+Mesmo acerto da réplica & 0,98 & 0,96 & 0,98 & 0,96 & 0,95 & 0,95 & 0,81 & 0,91 & -- & -- & -- & -- \\
+\multicolumn{13}{|l|}{\textit{Auditoria cruzada: traces do pipeline lidos pelo auditor do GPT}} \\
+RCCA, auditor do próprio modelo & -- & -- & -- & -- & 0,38 & 0,35 & 0,43 & 0,78 & 0,14 & 0,36 & 0,45 & 0,45 \\
+RCCA, auditor do GPT & -- & -- & -- & -- & 0,28 & 0,23 & 0,42 & 0,82 & 0,22 & 0,27 & 0,31 & 0,73 \\
+\quad placebo, auditor do GPT & -- & -- & -- & -- & 0,06 & 0,08 & 0,08 & 0,04 & 0,06 & 0,11 & 0,13 & 0,15 \\
+FESA, auditor do GPT & -- & -- & -- & -- & 0,28 & 0,22 & 0,39 & 0,81 & 0,26 & 0,27 & 0,32 & 0,73 \\
+Falso positivo, auditor do GPT & -- & -- & -- & -- & 0,33 & 0,43 & 0,41 & 0,34 & 0,42 & 0,56 & 0,60 & 0,64 \\
+\hline
+\end{tabular}
+\\[2pt]{\scriptsize\raggedright Piso de ruído: as métricas de contenção calculadas entre duas execuções limpas da mesma pergunta e condição (47, 43 perguntas no GPT e no Haiku); o Qwen não foi replicado. Auditoria cruzada: estudo principal, 134, 137 perguntas no Haiku e no Qwen; no GPT o auditor é o próprio, e os valores estão na Tabela~\ref{tab:principal}.\par}
+\end{table*}

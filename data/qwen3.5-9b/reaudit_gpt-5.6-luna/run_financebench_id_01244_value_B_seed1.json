@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01244_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "CVS Health did not pay dividends to common shareholders in Q2 FY2022.",
+    "reported_metric": "dividends_paid",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The extractor explicitly reports a $5.05 million quarterly cash dividend for FY2022 Q2, and the analyst preserves that value. The writer incorrectly reverses the conclusion and reports zero dividends, introducing the first error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 665,
+    "output_tokens": 266,
+    "total_tokens": 931,
+    "cached_tokens": 0,
+    "reasoning_tokens": 145,
+    "cost_usd": 0.0004522,
+    "latency_ms": 3024.787208007183,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 665,
+      "output_tokens": 266,
+      "total_tokens": 931,
+      "reasoning_tokens": 145,
+      "time_to_first_token": 3.024169000040274,
+      "duration": 3.024408375029452,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 665,
+            "output_tokens": 266,
+            "total_tokens": 931,
+            "reasoning_tokens": 145,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 484,
+    "output_tokens": 294,
+    "total_tokens": 778,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3544.4565510260873,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 484,
+      "output_tokens": 294,
+      "total_tokens": 778,
+      "time_to_first_token": 3.5441715820343234,
+      "duration": 3.544260713038966,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 484,
+            "output_tokens": 294,
+            "total_tokens": 778,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3519248230,
+              "load_duration": 631652,
+              "prompt_eval_duration": 160201000,
+              "eval_duration": 3292787000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06272_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported total cash dividends paid of USD 7,616 million for FY2023 instead of providing the FY2022 dividends required for the payout-ratio calculation.",
+    "reported_metric": "total_cash_dividends_paid",
+    "reported_value": 7616.0,
+    "confidence": 0.98,
+    "rationale": "The extracted dividend figure is explicitly labeled 2023, while the question asks for FY2022. The extractor also omitted net income attributable to shareholders, so the analyst's 0.0% ratio was unsupported and could not be correctly calculated."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 663,
+    "output_tokens": 244,
+    "total_tokens": 907,
+    "cached_tokens": 0,
+    "reasoning_tokens": 97,
+    "cost_usd": 0.0004254,
+    "latency_ms": 2827.211166964844,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 663,
+      "output_tokens": 244,
+      "total_tokens": 907,
+      "reasoning_tokens": 97,
+      "time_to_first_token": 2.826551542035304,
+      "duration": 2.826815708016511,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 663,
+            "output_tokens": 244,
+            "total_tokens": 907,
+            "reasoning_tokens": 97,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 481,
+    "output_tokens": 214,
+    "total_tokens": 695,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2694.871122017503,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 481,
+      "output_tokens": 214,
+      "total_tokens": 695,
+      "time_to_first_token": 2.6946174949989654,
+      "duration": 2.6946909879916348,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 481,
+            "output_tokens": 214,
+            "total_tokens": 695,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2665219318,
+              "load_duration": 442487,
+              "prompt_eval_duration": 138186000,
+              "eval_duration": 2455144000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

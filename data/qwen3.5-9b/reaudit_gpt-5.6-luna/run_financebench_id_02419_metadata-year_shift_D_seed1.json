@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02419_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "Pfizer's spin-off status was reported as 1.0 PCT (100%) in 2024.",
+    "reported_metric": "spin_off_status",
+    "reported_value": 1.0,
+    "confidence": 0.99,
+    "rationale": "The extractor only reported expected separation costs of $700 million (C01); it did not establish a spin-off status or identify Mylan. The analyst incorrectly transformed that cost claim into a 1.0 PCT spin-off-status claim, which the writer then repeated as 100%."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1067,
+    "output_tokens": 271,
+    "total_tokens": 1338,
+    "cached_tokens": 0,
+    "reasoning_tokens": 129,
+    "cost_usd": 0.0005386,
+    "latency_ms": 3032.763708033599,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1067,
+      "output_tokens": 271,
+      "total_tokens": 1338,
+      "reasoning_tokens": 129,
+      "time_to_first_token": 3.0323679170105606,
+      "duration": 3.032488959026523,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1067,
+            "output_tokens": 271,
+            "total_tokens": 1338,
+            "reasoning_tokens": 129,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 976,
+    "output_tokens": 302,
+    "total_tokens": 1278,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3662.737466976978,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 976,
+      "output_tokens": 302,
+      "total_tokens": 1278,
+      "time_to_first_token": 3.6625101410318166,
+      "duration": 3.662579939002171,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 976,
+            "output_tokens": 302,
+            "total_tokens": 1278,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3633731948,
+              "load_duration": 556237,
+              "prompt_eval_duration": 267141000,
+              "eval_duration": 3292228000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

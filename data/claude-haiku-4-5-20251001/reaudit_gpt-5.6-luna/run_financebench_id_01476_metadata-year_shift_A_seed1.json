@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01476_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "PepsiCo raised full-year core constant-currency EPS growth guidance by 1 percentage point as of FY2023Q1, from 8% to 9%.",
+    "reported_metric": "Full-year core constant-currency EPS growth guidance increase",
+    "reported_value": 1.0,
+    "confidence": 0.96,
+    "rationale": "The extractor compares FY2023Q1 guidance of 8% with FY2024Q1 guidance of 9%, but that does not establish a raise announced as of FY2023Q1. The analyst explicitly notes this temporal mismatch and nevertheless treats the 1-point FY2023Q1-to-FY2024Q1 comparison as the answer, which the writer repeats."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 730,
+    "output_tokens": 481,
+    "total_tokens": 1211,
+    "cached_tokens": 0,
+    "reasoning_tokens": 305,
+    "cost_usd": 0.0007231999999999999,
+    "latency_ms": 4866.494290996343,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 730,
+      "output_tokens": 481,
+      "total_tokens": 1211,
+      "reasoning_tokens": 305,
+      "time_to_first_token": 4.865978041954804,
+      "duration": 4.866158499964513,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 730,
+            "output_tokens": 481,
+            "total_tokens": 1211,
+            "reasoning_tokens": 305,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1230,
+    "output_tokens": 219,
+    "total_tokens": 1449,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002325,
+    "latency_ms": 3070.8669170271605,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1230,
+      "output_tokens": 219,
+      "total_tokens": 1449,
+      "time_to_first_token": 3.0701053329976276,
+      "duration": 3.070342124963645,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1230,
+            "output_tokens": 219,
+            "total_tokens": 1449,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

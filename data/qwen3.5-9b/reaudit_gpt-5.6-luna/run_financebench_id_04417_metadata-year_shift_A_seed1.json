@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04417_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor incorrectly labeled the $5,209 million inventory amount as FY2018 instead of FY2019.",
+    "reported_metric": "total inventories",
+    "reported_value": 5209.0,
+    "confidence": 0.94,
+    "rationale": "The balance-sheet-style pair of values is FY2020 $5,409 million and FY2019 $5,209 million; the extractor's one-year mislabel caused the analyst and writer to conclude that FY2019 was unavailable."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 653,
+    "output_tokens": 507,
+    "total_tokens": 1160,
+    "cached_tokens": 0,
+    "reasoning_tokens": 380,
+    "cost_usd": 0.000739,
+    "latency_ms": 4965.386166993994,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 653,
+      "output_tokens": 507,
+      "total_tokens": 1160,
+      "reasoning_tokens": 380,
+      "time_to_first_token": 4.964732541993726,
+      "duration": 4.964912249997724,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 653,
+            "output_tokens": 507,
+            "total_tokens": 1160,
+            "reasoning_tokens": 380,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 462,
+    "output_tokens": 155,
+    "total_tokens": 617,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2006.4170060213655,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 462,
+      "output_tokens": 155,
+      "total_tokens": 617,
+      "time_to_first_token": 2.0061217559850775,
+      "duration": 2.006194546003826,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 462,
+            "output_tokens": 155,
+            "total_tokens": 617,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1980717000,
+              "load_duration": 494172,
+              "prompt_eval_duration": 135755000,
+              "eval_duration": 1796914000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

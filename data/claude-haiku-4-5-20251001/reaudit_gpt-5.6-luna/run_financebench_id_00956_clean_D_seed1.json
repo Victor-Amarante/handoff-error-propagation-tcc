@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00956_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A03",
+    "root_cause_claim_text": "FY2022 was assigned a high-growth indicator of 0.0 despite no defined threshold establishing whether 6.1% organic growth qualifies as high growth.",
+    "reported_metric": "high_growth_indicator",
+    "reported_value": 0.0,
+    "confidence": 0.83,
+    "rationale": "The extractor's figures and the analyst's arithmetic are internally consistent: sales growth was 1.3%, down from 13.6%, and organic growth was 6.1% (6.9% volume minus 0.8% price). However, A03 introduces an unsupported binary classification because the trace provides no definition or benchmark for 'high growth.' The writer then inherits that unsupported conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1819,
+    "output_tokens": 686,
+    "total_tokens": 2505,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001187,
+    "latency_ms": 6521.0697909933515,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1819,
+      "output_tokens": 686,
+      "total_tokens": 2505,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.520063916977961,
+      "duration": 6.520525083004031,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1819,
+            "output_tokens": 686,
+            "total_tokens": 2505,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2456,
+    "output_tokens": 306,
+    "total_tokens": 2762,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003986,
+    "latency_ms": 4209.166374988854,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2456,
+      "output_tokens": 306,
+      "total_tokens": 2762,
+      "time_to_first_token": 4.208146292017773,
+      "duration": 4.2084540000068955,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2456,
+            "output_tokens": 306,
+            "total_tokens": 2762,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

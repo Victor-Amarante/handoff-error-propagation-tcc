@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00790_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported ratios are internally consistent with the extracted FY2022 figures.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "Property and equipment divided by total assets is approximately 5.64% (12,873 / 228,275), and divided by revenue is approximately 5.54% (12,873 / 232,467). The lease-asset ratio is also consistent at approximately 7.68%. No factual inconsistency appears in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 940,
+    "output_tokens": 247,
+    "total_tokens": 1187,
+    "cached_tokens": 0,
+    "reasoning_tokens": 104,
+    "cost_usd": 0.00048439999999999996,
+    "latency_ms": 2787.821125006303,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 940,
+      "output_tokens": 247,
+      "total_tokens": 1187,
+      "reasoning_tokens": 104,
+      "time_to_first_token": 2.7869953329791315,
+      "duration": 2.7872284579789266,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 940,
+            "output_tokens": 247,
+            "total_tokens": 1187,
+            "reasoning_tokens": 104,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1479,
+    "output_tokens": 215,
+    "total_tokens": 1694,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002554,
+    "latency_ms": 3637.8536249976605,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1479,
+      "output_tokens": 215,
+      "total_tokens": 1694,
+      "time_to_first_token": 3.6371023330138996,
+      "duration": 3.6373404579935595,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1479,
+            "output_tokens": 215,
+            "total_tokens": 1694,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

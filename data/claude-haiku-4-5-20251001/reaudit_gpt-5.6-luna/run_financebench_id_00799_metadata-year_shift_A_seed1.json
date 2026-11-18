@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00799_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly used the extracted FY2024 cash balance of $689M as Amcor's FY2023 cash balance and reported a FY2023 quick ratio of 0.57x.",
+    "reported_metric": "FY2023 quick ratio",
+    "reported_value": 0.57,
+    "confidence": 0.99,
+    "rationale": "The extractor explicitly labels $689M as FY2024 cash, while providing no FY2023 cash figure. The analyst relabels that amount as FY2023 cash, so the FY2023 quick-ratio calculation is unsupported and the writer repeats the resulting error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1138,
+    "output_tokens": 395,
+    "total_tokens": 1533,
+    "cached_tokens": 0,
+    "reasoning_tokens": 240,
+    "cost_usd": 0.0007016,
+    "latency_ms": 4768.528332991991,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1138,
+      "output_tokens": 395,
+      "total_tokens": 1533,
+      "reasoning_tokens": 240,
+      "time_to_first_token": 4.768057584005874,
+      "duration": 4.768174875003751,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1138,
+            "output_tokens": 395,
+            "total_tokens": 1533,
+            "reasoning_tokens": 240,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1696,
+    "output_tokens": 211,
+    "total_tokens": 1907,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002751,
+    "latency_ms": 2892.2817920101807,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1696,
+      "output_tokens": 211,
+      "total_tokens": 1907,
+      "time_to_first_token": 2.8912789589958265,
+      "duration": 2.8915766249992885,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1696,
+            "output_tokens": 211,
+            "total_tokens": 1907,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01484_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "U.S. sales growth was reported as 3.0% with a year field of 2023, despite being labeled as FY2022.",
+    "reported_metric": "U.S. sales growth",
+    "reported_value": 3.0,
+    "confidence": 0.96,
+    "rationale": "The extractor output is internally inconsistent: the metric explicitly says FY2022 while its year field says 2023. The analyst propagated this mismatch, although the writer/final answer used FY2022 consistently."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 740,
+    "output_tokens": 645,
+    "total_tokens": 1385,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.000922,
+    "latency_ms": 5942.474207957275,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 740,
+      "output_tokens": 645,
+      "total_tokens": 1385,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 5.941994208027609,
+      "duration": 5.942156583012547,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 740,
+            "output_tokens": 645,
+            "total_tokens": 1385,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 572,
+    "output_tokens": 270,
+    "total_tokens": 842,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3274.357632966712,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 572,
+      "output_tokens": 270,
+      "total_tokens": 842,
+      "time_to_first_token": 3.2740824689972214,
+      "duration": 3.274174494028557,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 572,
+            "output_tokens": 270,
+            "total_tokens": 842,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3248684667,
+              "load_duration": 488424,
+              "prompt_eval_duration": 153309000,
+              "eval_duration": 3047041000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

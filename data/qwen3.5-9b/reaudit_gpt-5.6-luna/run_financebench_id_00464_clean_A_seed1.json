@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00464_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the analyst and writer accurately conveyed the limited evidence and its insufficiency to determine whether Boeing's business is cyclical.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The analyst and writer consistently qualify the extracted 1% airline-industry cyclicality figure and do not overstate it as evidence about Boeing's overall business. The anomalous year -9999 is explicitly described as unspecified, and no internal contradiction or unsupported conclusion appears."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 673,
+    "output_tokens": 291,
+    "total_tokens": 964,
+    "cached_tokens": 0,
+    "reasoning_tokens": 155,
+    "cost_usd": 0.00048379999999999994,
+    "latency_ms": 3874.1255829809234,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 673,
+      "output_tokens": 291,
+      "total_tokens": 964,
+      "reasoning_tokens": 155,
+      "time_to_first_token": 3.87388445797842,
+      "duration": 3.8739559579989873,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 673,
+            "output_tokens": 291,
+            "total_tokens": 964,
+            "reasoning_tokens": 155,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 462,
+    "output_tokens": 202,
+    "total_tokens": 664,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2456.054889014922,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 462,
+      "output_tokens": 202,
+      "total_tokens": 664,
+      "time_to_first_token": 2.455816321016755,
+      "duration": 2.4558909620391205,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 462,
+            "output_tokens": 202,
+            "total_tokens": 664,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2431203019,
+              "load_duration": 490498,
+              "prompt_eval_duration": 135729000,
+              "eval_duration": 2247820000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01107_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "CVS Health had a materially important ongoing legal battle in 2022, inferred from the reported settlement and attorneys' fees.",
+    "reported_metric": "has_legal_battles",
+    "reported_value": 1.0,
+    "confidence": 0.9,
+    "rationale": "The extracted and analyzed amounts are internally consistent, including the conversion of $3.4 billion to $340 million. However, the writer converts settlement amounts into a binary claim about ongoing legal battles and addresses only 2022, with no trace evidence for 2021 or 2020."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 994,
+    "output_tokens": 658,
+    "total_tokens": 1652,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009884000000000002,
+    "latency_ms": 6213.7916249921545,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 994,
+      "output_tokens": 658,
+      "total_tokens": 1652,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.213516791001894,
+      "duration": 6.213604999997187,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 994,
+            "output_tokens": 658,
+            "total_tokens": 1652,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 890,
+    "output_tokens": 242,
+    "total_tokens": 1132,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3010.8394069829956,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 890,
+      "output_tokens": 242,
+      "total_tokens": 1132,
+      "time_to_first_token": 3.010558941983618,
+      "duration": 3.010648454015609,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 890,
+            "output_tokens": 242,
+            "total_tokens": 1132,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2985121365,
+              "load_duration": 528731,
+              "prompt_eval_duration": 217182000,
+              "eval_duration": 2693480000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

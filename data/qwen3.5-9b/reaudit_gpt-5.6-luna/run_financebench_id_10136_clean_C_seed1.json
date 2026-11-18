@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10136_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The FY2022 retention ratio was reported as 53.97%, but using (net income attributable to shareholders minus cash dividends paid) divided by net income gives 54.03%.",
+    "reported_metric": "retention_ratio",
+    "reported_value": 53.97,
+    "confidence": 0.99,
+    "rationale": "The extractor inputs are internally consistent. Calculating (2707.3 - 1244.5) / 2707.3 × 100 yields 54.03%, so the first error appears in the analyst's 53.97% calculation; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1024,
+    "output_tokens": 494,
+    "total_tokens": 1518,
+    "cached_tokens": 0,
+    "reasoning_tokens": 337,
+    "cost_usd": 0.0007975999999999999,
+    "latency_ms": 4866.089417017065,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1024,
+      "output_tokens": 494,
+      "total_tokens": 1518,
+      "reasoning_tokens": 337,
+      "time_to_first_token": 4.865418707951903,
+      "duration": 4.865666124969721,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1024,
+            "output_tokens": 494,
+            "total_tokens": 1518,
+            "reasoning_tokens": 337,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 932,
+    "output_tokens": 412,
+    "total_tokens": 1344,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4771.828527038451,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 932,
+      "output_tokens": 412,
+      "total_tokens": 1344,
+      "time_to_first_token": 4.771564215014223,
+      "duration": 4.77164155599894,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 932,
+            "output_tokens": 412,
+            "total_tokens": 1344,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4744598313,
+              "load_duration": 454450,
+              "prompt_eval_duration": 263733000,
+              "eval_duration": 4426543000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00723_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported AMEX revenues for the year ended December 31 as $42,967 million.",
+    "reported_metric": "Revenues",
+    "reported_value": 42967.0,
+    "confidence": 0.97,
+    "rationale": "The extracted figures are internally inconsistent: revenues of $42,967M minus interest expense of $2,763M cannot produce reported net revenues of $52,862M. The latter appears to be the gross revenue figure, indicating the extractor likely misreported the revenues value. No claim IDs were provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1155,
+    "output_tokens": 398,
+    "total_tokens": 1553,
+    "cached_tokens": 0,
+    "reasoning_tokens": 259,
+    "cost_usd": 0.0007085999999999999,
+    "latency_ms": 5902.207750012167,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1155,
+      "output_tokens": 398,
+      "total_tokens": 1553,
+      "reasoning_tokens": 259,
+      "time_to_first_token": 5.901358916016761,
+      "duration": 5.9016682500368915,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1155,
+            "output_tokens": 398,
+            "total_tokens": 1553,
+            "reasoning_tokens": 259,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 983,
+    "output_tokens": 771,
+    "total_tokens": 1754,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 8437.572781986091,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 983,
+      "output_tokens": 771,
+      "total_tokens": 1754,
+      "time_to_first_token": 8.43733411602443,
+      "duration": 8.437410979007836,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 983,
+            "output_tokens": 771,
+            "total_tokens": 1754,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 8412154458,
+              "load_duration": 434028,
+              "prompt_eval_duration": 266428000,
+              "eval_duration": 8088681000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

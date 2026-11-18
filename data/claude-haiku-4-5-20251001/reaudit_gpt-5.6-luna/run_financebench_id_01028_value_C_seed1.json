@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the trace contains revenue data but no extracted data specifying operating geographies.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.88,
+    "rationale": "The extractor produced revenue figures, but none identify geographies. The analyst produced no claims, and the writer appropriately stated that specific operating geographies could not be provided; its wording refers to data relevant to the query, not the absence of all extracted data."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 981,
+    "output_tokens": 478,
+    "total_tokens": 1459,
+    "cached_tokens": 0,
+    "reasoning_tokens": 353,
+    "cost_usd": 0.0007698000000000001,
+    "latency_ms": 5186.917834042106,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 981,
+      "output_tokens": 478,
+      "total_tokens": 1459,
+      "reasoning_tokens": 353,
+      "time_to_first_token": 5.186562708986457,
+      "duration": 5.1866743749706075,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 981,
+            "output_tokens": 478,
+            "total_tokens": 1459,
+            "reasoning_tokens": 353,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1536,
+    "output_tokens": 179,
+    "total_tokens": 1715,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002431,
+    "latency_ms": 2631.2083329539746,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1536,
+      "output_tokens": 179,
+      "total_tokens": 1715,
+      "time_to_first_token": 2.630188499984797,
+      "duration": 2.6304812079761177,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1536,
+            "output_tokens": 179,
+            "total_tokens": 1715,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

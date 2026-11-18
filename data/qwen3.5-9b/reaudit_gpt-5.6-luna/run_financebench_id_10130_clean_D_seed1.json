@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_10130_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "FY2020 Days Payable Outstanding for Corning was calculated as 74.55 days.",
+    "reported_metric": "FY2020 Days Payable Outstanding",
+    "reported_value": 74.55,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs are internally consistent, but applying the stated formula gives 365 × ((1,174 + 1,587) / 2) ÷ (7,772 + (2,438 − 2,320)) = 63.86 days, not 74.55. The first incorrect claim therefore appears in the analyst stage, and the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1525,
+    "output_tokens": 380,
+    "total_tokens": 1905,
+    "cached_tokens": 0,
+    "reasoning_tokens": 218,
+    "cost_usd": 0.000761,
+    "latency_ms": 3885.4136660229415,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1525,
+      "output_tokens": 380,
+      "total_tokens": 1905,
+      "reasoning_tokens": 218,
+      "time_to_first_token": 3.8851539170136675,
+      "duration": 3.8852515000035055,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1525,
+            "output_tokens": 380,
+            "total_tokens": 1905,
+            "reasoning_tokens": 218,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1573,
+    "output_tokens": 2593,
+    "total_tokens": 4166,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 27457.38757698564,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1573,
+      "output_tokens": 2593,
+      "total_tokens": 4166,
+      "time_to_first_token": 27.457061182998586,
+      "duration": 27.45718115096679,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1573,
+            "output_tokens": 2593,
+            "total_tokens": 4166,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 27424558842,
+              "load_duration": 506783,
+              "prompt_eval_duration": 378934000,
+              "eval_duration": 26989675000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

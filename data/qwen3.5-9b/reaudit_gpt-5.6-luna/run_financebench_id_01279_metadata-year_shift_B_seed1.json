@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted and analyzed FY22 net cash figures are internally consistent: operating activities provided $3,565 million, investing activities provided $1,999 million, and financing activities used $3,264 million. Operating activities therefore brought in the most cash, as stated in the final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2099,
+    "output_tokens": 203,
+    "total_tokens": 2302,
+    "cached_tokens": 0,
+    "reasoning_tokens": 91,
+    "cost_usd": 0.0006634,
+    "latency_ms": 2588.209083012771,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2099,
+      "output_tokens": 203,
+      "total_tokens": 2302,
+      "reasoning_tokens": 91,
+      "time_to_first_token": 2.587575833022129,
+      "duration": 2.587671000044793,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2099,
+            "output_tokens": 203,
+            "total_tokens": 2302,
+            "reasoning_tokens": 91,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2213,
+    "output_tokens": 176,
+    "total_tokens": 2389,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2660.8913489617407,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2213,
+      "output_tokens": 176,
+      "total_tokens": 2389,
+      "time_to_first_token": 2.660591506981291,
+      "duration": 2.660716823011171,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2213,
+            "output_tokens": 176,
+            "total_tokens": 2389,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2631450443,
+              "load_duration": 460214,
+              "prompt_eval_duration": 553317000,
+              "eval_duration": 2025073000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

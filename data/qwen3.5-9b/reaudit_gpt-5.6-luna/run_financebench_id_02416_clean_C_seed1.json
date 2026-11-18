@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02416_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The report does not list the names of three main companies acquired by Pfizer, implying that the count of listed acquired companies is one.",
+    "reported_metric": "list of main acquired companies",
+    "reported_value": 1.0,
+    "confidence": 0.9,
+    "rationale": "The extractor trace explicitly mentions Array and Therachon, so the writer's claim that the report does not list acquired-company names is inconsistent with the available provenance. The extractor and analyst outputs contain no evident incorrect claims; the unsupported denial first appears in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 2420,
+    "output_tokens": 574,
+    "total_tokens": 2994,
+    "cached_tokens": 0,
+    "reasoning_tokens": 433,
+    "cost_usd": 0.0011727999999999999,
+    "latency_ms": 6392.519792017993,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2420,
+      "output_tokens": 574,
+      "total_tokens": 2994,
+      "reasoning_tokens": 433,
+      "time_to_first_token": 6.392126165970694,
+      "duration": 6.392285000008997,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2420,
+            "output_tokens": 574,
+            "total_tokens": 2994,
+            "reasoning_tokens": 433,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2700,
+    "output_tokens": 302,
+    "total_tokens": 3002,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4065.1785819791257,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2700,
+      "output_tokens": 302,
+      "total_tokens": 3002,
+      "time_to_first_token": 4.064945560996421,
+      "duration": 4.06501828704495,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2700,
+            "output_tokens": 302,
+            "total_tokens": 3002,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4038307378,
+              "load_duration": 673875,
+              "prompt_eval_duration": 654283000,
+              "eval_duration": 3324220000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

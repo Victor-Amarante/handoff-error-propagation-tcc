@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01279_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported changes in prepaid expenses and other assets as a cash outflow of $1,197 million, but this amount is inconsistent with the other extracted operating-cash-flow components and the reported operating total.",
+    "reported_metric": "Changes in prepaid expenses and other assets",
+    "reported_value": -1197.0,
+    "confidence": 0.97,
+    "rationale": "The listed operating-activity components sum to $3,577 million, not the reported $3,565 million. Replacing the extracted -$1,197 million figure with -$1,209 million reconciles the components to the reported total, so the first error appears in the extractor; the analyst and writer merely propagate the category totals."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1709,
+    "output_tokens": 1552,
+    "total_tokens": 3261,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1365,
+    "cost_usd": 0.0022042,
+    "latency_ms": 14652.733040973544,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1709,
+      "output_tokens": 1552,
+      "total_tokens": 3261,
+      "reasoning_tokens": 1365,
+      "time_to_first_token": 14.6516820830293,
+      "duration": 14.652100583014544,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1709,
+            "output_tokens": 1552,
+            "total_tokens": 3261,
+            "reasoning_tokens": 1365,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1567,
+    "output_tokens": 598,
+    "total_tokens": 2165,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 7182.498687994666,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1567,
+      "output_tokens": 598,
+      "total_tokens": 2165,
+      "time_to_first_token": 7.182266240008175,
+      "duration": 7.182340122992173,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1567,
+            "output_tokens": 598,
+            "total_tokens": 2165,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 7157318758,
+              "load_duration": 1022942,
+              "prompt_eval_duration": 402246000,
+              "eval_duration": 6702174000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

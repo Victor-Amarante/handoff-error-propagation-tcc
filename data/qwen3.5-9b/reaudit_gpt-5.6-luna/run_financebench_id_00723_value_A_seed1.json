@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00723_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly characterized $50,680M of revenues net of interest expense after provisions for credit losses as “core operating earnings”; it is a revenue measure before general expenses and taxes, not earnings.",
+    "reported_metric": "Total revenues net of interest expense after provisions for credit losses",
+    "reported_value": 50680.0,
+    "confidence": 0.78,
+    "rationale": "The extracted figures show that subtracting total expenses of $41,095M from $50,680M produces pretax income of $9,585M. Thus $50,680M is not operating earnings. The final conclusion about lacking a multi-year trend is otherwise supported by the trace, which supplies only one year."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1060,
+    "output_tokens": 684,
+    "total_tokens": 1744,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010328,
+    "latency_ms": 6969.65529199224,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1060,
+      "output_tokens": 684,
+      "total_tokens": 1744,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.968866833020002,
+      "duration": 6.9691707079764456,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1060,
+            "output_tokens": 684,
+            "total_tokens": 1744,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 871,
+    "output_tokens": 183,
+    "total_tokens": 1054,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2314.1648890450597,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 183,
+      "total_tokens": 1054,
+      "time_to_first_token": 2.3139315900043584,
+      "duration": 2.3140029299538583,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 183,
+            "total_tokens": 1054,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2289196433,
+              "load_duration": 2213258,
+              "prompt_eval_duration": 215383000,
+              "eval_duration": 2019385000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

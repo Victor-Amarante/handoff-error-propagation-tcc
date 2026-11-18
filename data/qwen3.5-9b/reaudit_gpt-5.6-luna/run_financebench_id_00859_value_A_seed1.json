@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00859_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst claimed that $26,288 million was the highest derivative notional value in FY 2021, although the extracted values appear in annual pairs and $26,288 million is the second-year value rather than the FY 2021 value.",
+    "reported_metric": "FY 2021 derivative notional value",
+    "reported_value": 26288.0,
+    "confidence": 0.82,
+    "rationale": "The extractor lists values in apparent two-year pairs: $19,779/$17,768, $23,502/$26,288, $1,000/$2,000, and $932/$1,405. The analyst selected the overall maximum without restricting the comparison to the FY 2021 entries. The writer merely repeated that analyst claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 773,
+    "output_tokens": 1172,
+    "total_tokens": 1945,
+    "cached_tokens": 0,
+    "reasoning_tokens": 981,
+    "cost_usd": 0.001561,
+    "latency_ms": 11597.968082991429,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 773,
+      "output_tokens": 1172,
+      "total_tokens": 1945,
+      "reasoning_tokens": 981,
+      "time_to_first_token": 11.59746100002667,
+      "duration": 11.597626792034134,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 773,
+            "output_tokens": 1172,
+            "total_tokens": 1945,
+            "reasoning_tokens": 981,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 598,
+    "output_tokens": 289,
+    "total_tokens": 887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3508.0125049571507,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 598,
+      "output_tokens": 289,
+      "total_tokens": 887,
+      "time_to_first_token": 3.507744336966425,
+      "duration": 3.5078256859560497,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 598,
+            "output_tokens": 289,
+            "total_tokens": 887,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3483066300,
+              "load_duration": 489425,
+              "prompt_eval_duration": 156872000,
+              "eval_duration": 3257247000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

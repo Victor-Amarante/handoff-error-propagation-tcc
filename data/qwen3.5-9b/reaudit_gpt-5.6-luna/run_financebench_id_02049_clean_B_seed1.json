@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02049_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim was identified; the trace provides only the Q2 2023 VaR value and no prior-year comparison value.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst consistently report average total VaR of 7.0 million USD for 2023, and the writer correctly notes that the prior-year figure is unavailable in the provided data. There is no internally supported factual error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 693,
+    "output_tokens": 215,
+    "total_tokens": 908,
+    "cached_tokens": 0,
+    "reasoning_tokens": 87,
+    "cost_usd": 0.00039660000000000004,
+    "latency_ms": 2721.369875012897,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 693,
+      "output_tokens": 215,
+      "total_tokens": 908,
+      "reasoning_tokens": 87,
+      "time_to_first_token": 2.720732540998142,
+      "duration": 2.7209634999744594,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 693,
+            "output_tokens": 215,
+            "total_tokens": 908,
+            "reasoning_tokens": 87,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 506,
+    "output_tokens": 190,
+    "total_tokens": 696,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2390.937361982651,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 506,
+      "output_tokens": 190,
+      "total_tokens": 696,
+      "time_to_first_token": 2.390674206020776,
+      "duration": 2.3907553639728576,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 506,
+            "output_tokens": 190,
+            "total_tokens": 696,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2364010105,
+              "load_duration": 552659,
+              "prompt_eval_duration": 162626000,
+              "eval_duration": 2135431000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

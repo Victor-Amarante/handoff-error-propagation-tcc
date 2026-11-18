@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01476_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The trace is internally consistent: guidance increased from 8% to 9%, which is a 1 percentage-point increase. No error appears in any stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 682,
+    "output_tokens": 139,
+    "total_tokens": 821,
+    "cached_tokens": 0,
+    "reasoning_tokens": 52,
+    "cost_usd": 0.0003032,
+    "latency_ms": 1941.3693340029567,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 682,
+      "output_tokens": 139,
+      "total_tokens": 821,
+      "reasoning_tokens": 52,
+      "time_to_first_token": 1.9408722500083968,
+      "duration": 1.9410032500163652,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 682,
+            "output_tokens": 139,
+            "total_tokens": 821,
+            "reasoning_tokens": 52,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 477,
+    "output_tokens": 831,
+    "total_tokens": 1308,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 9337.938493001275,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 477,
+      "output_tokens": 831,
+      "total_tokens": 1308,
+      "time_to_first_token": 9.337704267993104,
+      "duration": 9.337778635963332,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 477,
+            "output_tokens": 831,
+            "total_tokens": 1308,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 9310176529,
+              "load_duration": 549200,
+              "prompt_eval_duration": 159384000,
+              "eval_duration": 9103081000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

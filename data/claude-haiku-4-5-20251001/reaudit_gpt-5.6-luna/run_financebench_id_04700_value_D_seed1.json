@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04700_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Microsoft's FY2016 cost of revenue (COGS) was 37,280 USD million.",
+    "reported_metric": "cost_of_revenue",
+    "reported_value": 37280.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim reports 37,280, but its attached evidence states 'Total cost of revenue 32,780.' The analyst and writer propagated the extractor's incorrect value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 866,
+    "output_tokens": 173,
+    "total_tokens": 1039,
+    "cached_tokens": 0,
+    "reasoning_tokens": 55,
+    "cost_usd": 0.0003808,
+    "latency_ms": 2618.768916989211,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 866,
+      "output_tokens": 173,
+      "total_tokens": 1039,
+      "reasoning_tokens": 55,
+      "time_to_first_token": 2.6180080419871956,
+      "duration": 2.6182449589832686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 866,
+            "output_tokens": 173,
+            "total_tokens": 1039,
+            "reasoning_tokens": 55,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1392,
+    "output_tokens": 161,
+    "total_tokens": 1553,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002197,
+    "latency_ms": 2275.96637501847,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1392,
+      "output_tokens": 161,
+      "total_tokens": 1553,
+      "time_to_first_token": 2.2749380830209702,
+      "duration": 2.2752409169916064,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1392,
+            "output_tokens": 161,
+            "total_tokens": 1553,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

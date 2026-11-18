@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01491_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The cash proceeds from the Kenvue separation were reported as $31.2 billion, although the accompanying evidence states $13.2 billion.",
+    "reported_metric": "cash_proceeds_from_kenvue_separation",
+    "reported_value": 31.2,
+    "confidence": 1.0,
+    "rationale": "The extractor's numeric value conflicts directly with its own evidence, which says the company secured $13.2 billion. The analyst and writer propagated the same erroneous value from claim C01."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 974,
+    "output_tokens": 182,
+    "total_tokens": 1156,
+    "cached_tokens": 0,
+    "reasoning_tokens": 49,
+    "cost_usd": 0.00041320000000000007,
+    "latency_ms": 2191.9889159617014,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 974,
+      "output_tokens": 182,
+      "total_tokens": 1156,
+      "reasoning_tokens": 49,
+      "time_to_first_token": 2.191508584015537,
+      "duration": 2.1916350420215167,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 974,
+            "output_tokens": 182,
+            "total_tokens": 1156,
+            "reasoning_tokens": 49,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1498,
+    "output_tokens": 160,
+    "total_tokens": 1658,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002298,
+    "latency_ms": 2248.32404096378,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1498,
+      "output_tokens": 160,
+      "total_tokens": 1658,
+      "time_to_first_token": 2.2473054580041207,
+      "duration": 2.247601333016064,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1498,
+            "output_tokens": 160,
+            "total_tokens": 1658,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

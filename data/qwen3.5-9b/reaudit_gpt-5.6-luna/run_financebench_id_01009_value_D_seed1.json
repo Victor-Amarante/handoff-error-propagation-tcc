@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01009_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "PepsiCo operates in 230 countries and territories as of FY2022.",
+    "reported_metric": "geographies",
+    "reported_value": 230.0,
+    "confidence": 0.99,
+    "rationale": "The cited evidence only states that PepsiCo serves customers in more than 200 countries and territories; it does not support the specific value 230. The extractor introduced that unsupported value, which was propagated through the analyst and writer stages."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1579,
+    "output_tokens": 308,
+    "total_tokens": 1887,
+    "cached_tokens": 0,
+    "reasoning_tokens": 186,
+    "cost_usd": 0.0006854,
+    "latency_ms": 3685.301416029688,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1579,
+      "output_tokens": 308,
+      "total_tokens": 1887,
+      "reasoning_tokens": 186,
+      "time_to_first_token": 3.6847619579639286,
+      "duration": 3.6849524999852292,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1579,
+            "output_tokens": 308,
+            "total_tokens": 1887,
+            "reasoning_tokens": 186,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1503,
+    "output_tokens": 246,
+    "total_tokens": 1749,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3169.17010396719,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1503,
+      "output_tokens": 246,
+      "total_tokens": 1749,
+      "time_to_first_token": 3.168857553973794,
+      "duration": 3.16893116600113,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1503,
+            "output_tokens": 246,
+            "total_tokens": 1749,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3137320620,
+              "load_duration": 498477,
+              "prompt_eval_duration": 372763000,
+              "eval_duration": 2706422000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

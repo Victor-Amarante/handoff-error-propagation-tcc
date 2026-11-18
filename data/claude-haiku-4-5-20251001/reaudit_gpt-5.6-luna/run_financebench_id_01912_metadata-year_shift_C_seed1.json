@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01912_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "MGM's Las Vegas Strip region generated $3,800 million in revenue during FY2022.",
+    "reported_metric": "revenue",
+    "reported_value": 3800.0,
+    "confidence": 0.96,
+    "rationale": "The extractor and analyst trace support only an unlabeled FY2022 revenue value of $3,800 million (C02/A01). No provenance identifies that value as the Las Vegas Strip, so the regional attribution first appears unsupported in the writer output."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1026,
+    "output_tokens": 551,
+    "total_tokens": 1577,
+    "cached_tokens": 0,
+    "reasoning_tokens": 421,
+    "cost_usd": 0.0008664,
+    "latency_ms": 5707.40095898509,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1026,
+      "output_tokens": 551,
+      "total_tokens": 1577,
+      "reasoning_tokens": 421,
+      "time_to_first_token": 5.706765374983661,
+      "duration": 5.706955500005279,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1026,
+            "output_tokens": 551,
+            "total_tokens": 1577,
+            "reasoning_tokens": 421,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1573,
+    "output_tokens": 179,
+    "total_tokens": 1752,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002468,
+    "latency_ms": 2637.800874945242,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1573,
+      "output_tokens": 179,
+      "total_tokens": 1752,
+      "time_to_first_token": 2.636977582995314,
+      "duration": 2.637204875005409,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1573,
+            "output_tokens": 179,
+            "total_tokens": 1752,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

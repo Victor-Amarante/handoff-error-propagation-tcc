@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_03069_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; FY2015 D&A margin is correctly calculated as 167.0 / 9391.0 × 100 = 1.78%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports FY2015 revenue of $9,391 million and D&A of $167 million. Their ratio is approximately 1.78%, matching the analyst and writer outputs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 776,
+    "output_tokens": 191,
+    "total_tokens": 967,
+    "cached_tokens": 0,
+    "reasoning_tokens": 64,
+    "cost_usd": 0.00038439999999999997,
+    "latency_ms": 2622.5415840162896,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 776,
+      "output_tokens": 191,
+      "total_tokens": 967,
+      "reasoning_tokens": 64,
+      "time_to_first_token": 2.6218858750071377,
+      "duration": 2.6222104590269737,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 776,
+            "output_tokens": 191,
+            "total_tokens": 967,
+            "reasoning_tokens": 64,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1277,
+    "output_tokens": 149,
+    "total_tokens": 1426,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002022,
+    "latency_ms": 3072.9165410157293,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1277,
+      "output_tokens": 149,
+      "total_tokens": 1426,
+      "time_to_first_token": 3.0719588749925606,
+      "duration": 3.0722662499756552,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1277,
+            "output_tokens": 149,
+            "total_tokens": 1426,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

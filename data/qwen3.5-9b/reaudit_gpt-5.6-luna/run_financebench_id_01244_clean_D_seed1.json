@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01244_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The quarterly cash dividend for FY2022 Q2 was reported as 0.55 USD_M, although the cited evidence specifies $0.55 per share rather than millions of U.S. dollars.",
+    "reported_metric": "quarterly cash dividend FY2022 Q2",
+    "reported_value": 0.55,
+    "confidence": 0.98,
+    "rationale": "The extractor is the first stage with an internally inconsistent claim: its unit is USD_M, while its own evidence clearly states the dividend was $0.55 per share. Later stages propagate this misclassified value and additionally frame it as a Q2 payment."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 945,
+    "output_tokens": 562,
+    "total_tokens": 1507,
+    "cached_tokens": 0,
+    "reasoning_tokens": 404,
+    "cost_usd": 0.0008634,
+    "latency_ms": 5238.3277919725515,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 945,
+      "output_tokens": 562,
+      "total_tokens": 1507,
+      "reasoning_tokens": 404,
+      "time_to_first_token": 5.237741749966517,
+      "duration": 5.237923040986061,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 945,
+            "output_tokens": 562,
+            "total_tokens": 1507,
+            "reasoning_tokens": 404,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 830,
+    "output_tokens": 194,
+    "total_tokens": 1024,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2544.236808025744,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 830,
+      "output_tokens": 194,
+      "total_tokens": 1024,
+      "time_to_first_token": 2.5439756879932247,
+      "duration": 2.5440506400191225,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 830,
+            "output_tokens": 194,
+            "total_tokens": 1024,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2512566100,
+              "load_duration": 452406,
+              "prompt_eval_duration": 213810000,
+              "eval_duration": 2226971000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00711_value_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "JnJ's FY2022 inventory turnover ratio was 7.64 times.",
+    "reported_metric": "inventory_turnover_ratio",
+    "reported_value": 7.64,
+    "confidence": 0.97,
+    "rationale": "The analyst introduced the first unsupported claim by reporting turnover as 7.64 times. Conventional inventory turnover is calculated using cost of goods sold divided by average inventory, but the trace provides only sales to customers and ending inventories; sales divided by inventory is not the conventional turnover ratio. No claim IDs are present in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 723,
+    "output_tokens": 377,
+    "total_tokens": 1100,
+    "cached_tokens": 0,
+    "reasoning_tokens": 236,
+    "cost_usd": 0.000597,
+    "latency_ms": 4048.7217089976184,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 723,
+      "output_tokens": 377,
+      "total_tokens": 1100,
+      "reasoning_tokens": 236,
+      "time_to_first_token": 4.047962208976969,
+      "duration": 4.04820712498622,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 723,
+            "output_tokens": 377,
+            "total_tokens": 1100,
+            "reasoning_tokens": 236,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 564,
+    "output_tokens": 118,
+    "total_tokens": 682,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1744.1407180158421,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 564,
+      "output_tokens": 118,
+      "total_tokens": 682,
+      "time_to_first_token": 1.7438836230430752,
+      "duration": 1.7439565370441414,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 564,
+            "output_tokens": 118,
+            "total_tokens": 682,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1714645168,
+              "load_duration": 2070687,
+              "prompt_eval_duration": 169293000,
+              "eval_duration": 1475775000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

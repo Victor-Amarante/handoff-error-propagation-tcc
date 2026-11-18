@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_06247_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "FY2018 Walmart days payable outstanding was calculated as 75.58 days.",
+    "reported_metric": "days_payable_outstanding_fy2018",
+    "reported_value": 75.58,
+    "confidence": 0.99,
+    "rationale": "The extracted inputs are internally consistent, but applying the requested formula gives 365 × ((46,092 + 41,433) / 2) / (373,396 + (43,783 − 43,046)) = 42.69 days, not 75.58. The first incorrect claim therefore appears in the analyst output; the writer merely repeats it."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1743,
+    "output_tokens": 454,
+    "total_tokens": 2197,
+    "cached_tokens": 0,
+    "reasoning_tokens": 295,
+    "cost_usd": 0.0008933999999999999,
+    "latency_ms": 4600.621666992083,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1743,
+      "output_tokens": 454,
+      "total_tokens": 2197,
+      "reasoning_tokens": 295,
+      "time_to_first_token": 4.600209208030719,
+      "duration": 4.600271916016936,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1743,
+            "output_tokens": 454,
+            "total_tokens": 2197,
+            "reasoning_tokens": 295,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1903,
+    "output_tokens": 379,
+    "total_tokens": 2282,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4717.857747047674,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1903,
+      "output_tokens": 379,
+      "total_tokens": 2282,
+      "time_to_first_token": 4.71760853996966,
+      "duration": 4.717684249975719,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1903,
+            "output_tokens": 379,
+            "total_tokens": 2282,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4692712481,
+              "load_duration": 621333,
+              "prompt_eval_duration": 473411000,
+              "eval_duration": 4175982000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

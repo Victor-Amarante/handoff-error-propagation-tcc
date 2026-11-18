@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01077_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Yardbird Furniture was assigned to fiscal year 2021, although the evidence states that the acquisition occurred in fiscal 2022.",
+    "reported_metric": "acquisition_date",
+    "reported_value": 2021.0,
+    "confidence": 0.98,
+    "rationale": "The evidence explicitly says Yardbird was acquired in fiscal 2022, on November 4, 2021. Claim C02 incorrectly assigns the fiscal-year dimension as 2021; downstream stages then propagate inconsistent year assignments and produce the wrong final answer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1567,
+    "output_tokens": 652,
+    "total_tokens": 2219,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0010957999999999999,
+    "latency_ms": 6713.517749973107,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1567,
+      "output_tokens": 652,
+      "total_tokens": 2219,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.71269133297028,
+      "duration": 6.71300904097734,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1567,
+            "output_tokens": 652,
+            "total_tokens": 2219,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1543,
+    "output_tokens": 384,
+    "total_tokens": 1927,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4699.577367049642,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1543,
+      "output_tokens": 384,
+      "total_tokens": 1927,
+      "time_to_first_token": 4.699320418003481,
+      "duration": 4.69939239800442,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1543,
+            "output_tokens": 384,
+            "total_tokens": 1927,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4672395834,
+              "load_duration": 469227,
+              "prompt_eval_duration": 401236000,
+              "eval_duration": 4187937000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

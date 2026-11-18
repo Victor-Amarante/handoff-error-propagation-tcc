@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01482_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the writer accurately carried forward the vote counts from the extractor and analyst outputs.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The vote totals are identical across extractor, analyst, and writer stages, with consistent provenance and no internal contradiction. The answer directly reports both votes for and votes against."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1172,
+    "output_tokens": 235,
+    "total_tokens": 1407,
+    "cached_tokens": 0,
+    "reasoning_tokens": 127,
+    "cost_usd": 0.0005164,
+    "latency_ms": 4238.737209001556,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1172,
+      "output_tokens": 235,
+      "total_tokens": 1407,
+      "reasoning_tokens": 127,
+      "time_to_first_token": 4.237761542026419,
+      "duration": 4.238083874981385,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1172,
+            "output_tokens": 235,
+            "total_tokens": 1407,
+            "reasoning_tokens": 127,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1134,
+    "output_tokens": 1398,
+    "total_tokens": 2532,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 14915.20542697981,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1134,
+      "output_tokens": 1398,
+      "total_tokens": 2532,
+      "time_to_first_token": 14.914961071975995,
+      "duration": 14.915045694971923,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1134,
+            "output_tokens": 1398,
+            "total_tokens": 2532,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 14886618101,
+              "load_duration": 417709,
+              "prompt_eval_duration": 292779000,
+              "eval_duration": 14517296000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

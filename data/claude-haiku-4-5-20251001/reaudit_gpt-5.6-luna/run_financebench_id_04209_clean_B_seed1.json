@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04209_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor, analyst, writer, and final answer all report the same total_assets value of 59,268 USD millions for FY2021. The trace contains no contradictory information or claim IDs."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 660,
+    "output_tokens": 147,
+    "total_tokens": 807,
+    "cached_tokens": 0,
+    "reasoning_tokens": 53,
+    "cost_usd": 0.00030839999999999996,
+    "latency_ms": 2161.9757500011474,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 660,
+      "output_tokens": 147,
+      "total_tokens": 807,
+      "reasoning_tokens": 53,
+      "time_to_first_token": 2.1614157499861903,
+      "duration": 2.1615736249950714,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 660,
+            "output_tokens": 147,
+            "total_tokens": 807,
+            "reasoning_tokens": 53,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1155,
+    "output_tokens": 122,
+    "total_tokens": 1277,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.001765,
+    "latency_ms": 2250.742750009522,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1155,
+      "output_tokens": 122,
+      "total_tokens": 1277,
+      "time_to_first_token": 2.2499228329979815,
+      "duration": 2.2501497920020483,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1155,
+            "output_tokens": 122,
+            "total_tokens": 1277,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

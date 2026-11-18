@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_04672_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported FY2018 net property, plant and equipment as 7,838 USD million, despite the cited evidence showing 8,738.",
+    "reported_metric": "property_plant_equipment_net",
+    "reported_value": 7838.0,
+    "confidence": 0.99,
+    "rationale": "The extractor's numeric value conflicts directly with its evidence. The analyst and writer merely converted and repeated 7,838 million as 7.838 billion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 892,
+    "output_tokens": 187,
+    "total_tokens": 1079,
+    "cached_tokens": 0,
+    "reasoning_tokens": 63,
+    "cost_usd": 0.00040280000000000003,
+    "latency_ms": 2620.683458982967,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 892,
+      "output_tokens": 187,
+      "total_tokens": 1079,
+      "reasoning_tokens": 63,
+      "time_to_first_token": 2.6202543339459226,
+      "duration": 2.6203753339941613,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 892,
+            "output_tokens": 187,
+            "total_tokens": 1079,
+            "reasoning_tokens": 63,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1427,
+    "output_tokens": 191,
+    "total_tokens": 1618,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002382,
+    "latency_ms": 2680.961332982406,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1427,
+      "output_tokens": 191,
+      "total_tokens": 1618,
+      "time_to_first_token": 2.6801207920070738,
+      "duration": 2.68041904194979,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1427,
+            "output_tokens": 191,
+            "total_tokens": 1618,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

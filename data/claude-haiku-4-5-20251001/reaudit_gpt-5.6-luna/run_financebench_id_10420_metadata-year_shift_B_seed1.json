@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_10420_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "AES's FY2022 return on assets was -1.68%, using the extracted net income value of -505.0 million.",
+    "reported_metric": "return_on_assets",
+    "reported_value": -1.68,
+    "confidence": 0.98,
+    "rationale": "The extractor labels the -505.0 million net income as FY2023, not FY2022. Moreover, using the supplied assets, average assets are (38,363 + 32,963) / 2 = 35,663 million, and -505 / 35,663 × 100 = approximately -1.42%, not -1.68%. The first incorrect derived claim therefore appears in the analyst stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 791,
+    "output_tokens": 407,
+    "total_tokens": 1198,
+    "cached_tokens": 0,
+    "reasoning_tokens": 232,
+    "cost_usd": 0.0006466,
+    "latency_ms": 4393.8237089896575,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 791,
+      "output_tokens": 407,
+      "total_tokens": 1198,
+      "reasoning_tokens": 232,
+      "time_to_first_token": 4.3931614169850945,
+      "duration": 4.393341374990996,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 791,
+            "output_tokens": 407,
+            "total_tokens": 1198,
+            "reasoning_tokens": 232,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1310,
+    "output_tokens": 160,
+    "total_tokens": 1470,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.00211,
+    "latency_ms": 2149.453874968458,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1310,
+      "output_tokens": 160,
+      "total_tokens": 1470,
+      "time_to_first_token": 2.148436292016413,
+      "duration": 2.14873845805414,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1310,
+            "output_tokens": 160,
+            "total_tokens": 1470,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

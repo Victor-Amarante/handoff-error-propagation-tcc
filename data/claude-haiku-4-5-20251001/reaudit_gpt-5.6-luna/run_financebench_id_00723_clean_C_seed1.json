@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00723_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "The writer incorrectly states that operating margin declined from 21.9% in 2021 to 22.2% in 2022; 22.2% is an increase.",
+    "reported_metric": "operating_margin",
+    "reported_value": 22.2,
+    "confidence": 0.99,
+    "rationale": "The extractor values support margins of approximately 22.2% in 2022 and 21.9% in 2021, so the analyst calculations are internally correct. The writer reverses the direction of the year-over-year change. The 2020-to-2022 comparison does decline overall, but the stated 2021-to-2022 decline is false."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1646,
+    "output_tokens": 545,
+    "total_tokens": 2191,
+    "cached_tokens": 0,
+    "reasoning_tokens": 372,
+    "cost_usd": 0.0009832,
+    "latency_ms": 5268.377040978521,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1646,
+      "output_tokens": 545,
+      "total_tokens": 2191,
+      "reasoning_tokens": 372,
+      "time_to_first_token": 5.2676360420300625,
+      "duration": 5.267879125021864,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1646,
+            "output_tokens": 545,
+            "total_tokens": 2191,
+            "reasoning_tokens": 372,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2314,
+    "output_tokens": 220,
+    "total_tokens": 2534,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003414,
+    "latency_ms": 4021.5975839528255,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2314,
+      "output_tokens": 220,
+      "total_tokens": 2534,
+      "time_to_first_token": 4.020847042032983,
+      "duration": 4.021140541997738,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2314,
+            "output_tokens": 220,
+            "total_tokens": 2534,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

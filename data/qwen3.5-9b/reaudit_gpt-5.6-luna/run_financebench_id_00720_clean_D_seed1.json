@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00720_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "Discount revenue drove American Express's FY2022 gross-margin change.",
+    "reported_metric": "Gross Margin Driver Explanation",
+    "reported_value": 0.0,
+    "confidence": 0.93,
+    "rationale": "The extractor established only revenue figures, not gross margin, cost of revenue, or a gross-margin change. The analyst output even leaves the gross-margin definition and driver explanation unsupported. The writer nevertheless asserts that discount revenue drove gross-margin change, and fails to state that gross margin is not a useful or established metric here."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 4001,
+    "output_tokens": 649,
+    "total_tokens": 4650,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.001579,
+    "latency_ms": 7183.342541044112,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4001,
+      "output_tokens": 649,
+      "total_tokens": 4650,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 7.182935082993936,
+      "duration": 7.183053333021235,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4001,
+            "output_tokens": 649,
+            "total_tokens": 4650,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 4642,
+    "output_tokens": 385,
+    "total_tokens": 5027,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 5500.511618040036,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 4642,
+      "output_tokens": 385,
+      "total_tokens": 5027,
+      "time_to_first_token": 5.500278075982351,
+      "duration": 5.500350978982169,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 4642,
+            "output_tokens": 385,
+            "total_tokens": 5027,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 5475664122,
+              "load_duration": 668344,
+              "prompt_eval_duration": 1074318000,
+              "eval_duration": 4301353000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

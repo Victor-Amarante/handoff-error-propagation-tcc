@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01107_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "The extractor reported a liquor-related settlement amount of 3.4 USD billion for 2022, despite evidence stating $4.3 billion.",
+    "reported_metric": "settlement_amount_liquor",
+    "reported_value": 3.4,
+    "confidence": 0.99,
+    "rationale": "Claim C01 is internally inconsistent: its numeric value is 3.4 USD_B while the attached evidence says $4.3 billion. The analyst and writer propagated this incorrect amount, with the analyst converting it to 3400 USD_M."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1066,
+    "output_tokens": 278,
+    "total_tokens": 1344,
+    "cached_tokens": 0,
+    "reasoning_tokens": 136,
+    "cost_usd": 0.0005468,
+    "latency_ms": 3043.6222919961438,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1066,
+      "output_tokens": 278,
+      "total_tokens": 1344,
+      "reasoning_tokens": 136,
+      "time_to_first_token": 3.0430952080059797,
+      "duration": 3.043258292018436,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1066,
+            "output_tokens": 278,
+            "total_tokens": 1344,
+            "reasoning_tokens": 136,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 981,
+    "output_tokens": 360,
+    "total_tokens": 1341,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4310.043985024095,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 981,
+      "output_tokens": 360,
+      "total_tokens": 1341,
+      "time_to_first_token": 4.309806635021232,
+      "duration": 4.309879569977056,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 981,
+            "output_tokens": 360,
+            "total_tokens": 1341,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4284264841,
+              "load_duration": 537693,
+              "prompt_eval_duration": 244847000,
+              "eval_duration": 3964745000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

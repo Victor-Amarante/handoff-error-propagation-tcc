@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00521_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "Ulta Beauty reported acquisitions of -1,220 USD_K in FY2024.",
+    "reported_metric": "acquisitions",
+    "reported_value": -1220.0,
+    "confidence": 0.98,
+    "rationale": "The extractor is the first stage containing the problematic claim: it assigns FY2024 to a source identified as the 2023 10-K and reports the value in USD_K. The analyst merely copies it, while the writer additionally misstates -1,220 USD_K as a positive $1.22 billion and uses it to answer a FY2022/FY2023 question."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 813,
+    "output_tokens": 607,
+    "total_tokens": 1420,
+    "cached_tokens": 0,
+    "reasoning_tokens": 452,
+    "cost_usd": 0.000891,
+    "latency_ms": 6147.60320802452,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 813,
+      "output_tokens": 607,
+      "total_tokens": 1420,
+      "reasoning_tokens": 452,
+      "time_to_first_token": 6.1423525419668294,
+      "duration": 6.145299291994888,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 813,
+            "output_tokens": 607,
+            "total_tokens": 1420,
+            "reasoning_tokens": 452,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 674,
+    "output_tokens": 211,
+    "total_tokens": 885,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2674.763078975957,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 674,
+      "output_tokens": 211,
+      "total_tokens": 885,
+      "time_to_first_token": 2.674530515971128,
+      "duration": 2.67460150399711,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 674,
+            "output_tokens": 211,
+            "total_tokens": 885,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2649058852,
+              "load_duration": 454446,
+              "prompt_eval_duration": 203488000,
+              "eval_duration": 2376279000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

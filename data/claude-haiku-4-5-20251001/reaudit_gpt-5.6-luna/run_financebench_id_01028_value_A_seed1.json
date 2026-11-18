@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The United States represents a substantial majority of American Express's total revenues across the four regions.",
+    "reported_metric": "United States share of combined regional revenues",
+    "reported_value": null,
+    "confidence": 0.96,
+    "rationale": "The extracted regional revenues total $26,019 million, of which the United States contributes $14,396 million, or about 55.3%. That is a narrow majority, not a substantial majority. The unsupported characterization first appears in the analyst output and is repeated by the writer."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 923,
+    "output_tokens": 612,
+    "total_tokens": 1535,
+    "cached_tokens": 0,
+    "reasoning_tokens": 475,
+    "cost_usd": 0.000919,
+    "latency_ms": 6014.395667007193,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 923,
+      "output_tokens": 612,
+      "total_tokens": 1535,
+      "reasoning_tokens": 475,
+      "time_to_first_token": 6.013384166988544,
+      "duration": 6.01381274999585,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 923,
+            "output_tokens": 612,
+            "total_tokens": 1535,
+            "reasoning_tokens": 475,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1417,
+    "output_tokens": 151,
+    "total_tokens": 1568,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002172,
+    "latency_ms": 2799.259625026025,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1417,
+      "output_tokens": 151,
+      "total_tokens": 1568,
+      "time_to_first_token": 2.798498791991733,
+      "duration": 2.798751791997347,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1417,
+            "output_tokens": 151,
+            "total_tokens": 1568,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

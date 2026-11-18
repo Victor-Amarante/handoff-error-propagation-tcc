@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00941_value_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim is established by the trace; it supports only that no qualifying debt securities were identified in the provided input.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.84,
+    "rationale": "The extractor provides only three monetary values and no security names or registration details. The analyst and writer appropriately state that the requested securities cannot be identified from the supplied evidence, without asserting that no such securities exist."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 734,
+    "output_tokens": 950,
+    "total_tokens": 1684,
+    "cached_tokens": 0,
+    "reasoning_tokens": 824,
+    "cost_usd": 0.0012868,
+    "latency_ms": 9697.75758398464,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 734,
+      "output_tokens": 950,
+      "total_tokens": 1684,
+      "reasoning_tokens": 824,
+      "time_to_first_token": 9.697354000003543,
+      "duration": 9.697487541998271,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 734,
+            "output_tokens": 950,
+            "total_tokens": 1684,
+            "reasoning_tokens": 824,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 529,
+    "output_tokens": 256,
+    "total_tokens": 785,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3105.4460320156068,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 529,
+      "output_tokens": 256,
+      "total_tokens": 785,
+      "time_to_first_token": 3.105203436978627,
+      "duration": 3.105279575975146,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 529,
+            "output_tokens": 256,
+            "total_tokens": 785,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3079545668,
+              "load_duration": 410548,
+              "prompt_eval_duration": 143336000,
+              "eval_duration": 2886204000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

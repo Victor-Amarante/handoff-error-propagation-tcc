@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_03882_metadata-year_shift_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C02",
+    "root_cause_claim_text": "Trade receivables, net of 1,615.9 million USD was incorrectly tagged as year 2021, despite the balance sheet being dated June 30, 2020.",
+    "reported_metric": "net_ar",
+    "reported_value": 1615.9,
+    "confidence": 0.94,
+    "rationale": "C02 conflicts with C03, which identifies the balance-sheet reporting date as June 30, 2020. The analyst subsequently corrected the year to 2020, so the initial inconsistency originated in the extractor."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1069,
+    "output_tokens": 655,
+    "total_tokens": 1724,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009998,
+    "latency_ms": 6149.891583016142,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1069,
+      "output_tokens": 655,
+      "total_tokens": 1724,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.149300333985593,
+      "duration": 6.149539124977309,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1069,
+            "output_tokens": 655,
+            "total_tokens": 1724,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 990,
+    "output_tokens": 321,
+    "total_tokens": 1311,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3913.617856975179,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 990,
+      "output_tokens": 321,
+      "total_tokens": 1311,
+      "time_to_first_token": 3.9133416790282354,
+      "duration": 3.913433669018559,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 990,
+            "output_tokens": 321,
+            "total_tokens": 1311,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3888148927,
+              "load_duration": 644007,
+              "prompt_eval_duration": 268778000,
+              "eval_duration": 3544145000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

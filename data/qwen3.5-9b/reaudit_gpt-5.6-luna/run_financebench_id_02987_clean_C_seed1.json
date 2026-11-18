@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_02987_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the calculation 6489.0 / ((282.0 + 253.0) / 2) = 24.26 is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extracted revenue and PP&E values are propagated consistently. Average PP&E is (282.0 + 253.0) / 2 = 267.5, and 6489.0 / 267.5 = 24.2579, which rounds to 24.26."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1623,
+    "output_tokens": 222,
+    "total_tokens": 1845,
+    "cached_tokens": 0,
+    "reasoning_tokens": 71,
+    "cost_usd": 0.000591,
+    "latency_ms": 2661.3307499792427,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1623,
+      "output_tokens": 222,
+      "total_tokens": 1845,
+      "reasoning_tokens": 71,
+      "time_to_first_token": 2.660843208024744,
+      "duration": 2.6609960420173593,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1623,
+            "output_tokens": 222,
+            "total_tokens": 1845,
+            "reasoning_tokens": 71,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1682,
+    "output_tokens": 1267,
+    "total_tokens": 2949,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 13823.901973024476,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1682,
+      "output_tokens": 1267,
+      "total_tokens": 2949,
+      "time_to_first_token": 13.823647589015309,
+      "duration": 13.823734791018069,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1682,
+            "output_tokens": 1267,
+            "total_tokens": 2949,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 13796543839,
+              "load_duration": 492544,
+              "prompt_eval_duration": 432395000,
+              "eval_duration": 13302646000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

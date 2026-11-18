@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00601_metadata-year_shift_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor attributed the 23.5% SG&A-to-net-sales figure to FY2024 even though the metric is labeled FY2023, creating an inconsistent fiscal-year claim.",
+    "reported_metric": "SG&A expenses as a percentage of net sales",
+    "reported_value": 23.5,
+    "confidence": 0.98,
+    "rationale": "The extractor output is internally inconsistent: the metric says FY2023 while the year field says 2024. The analyst propagated this error, and the writer consequently compared FY2021 with FY2024 instead of addressing FY2023."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 801,
+    "output_tokens": 524,
+    "total_tokens": 1325,
+    "cached_tokens": 0,
+    "reasoning_tokens": 375,
+    "cost_usd": 0.000789,
+    "latency_ms": 5570.3655410325155,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 801,
+      "output_tokens": 524,
+      "total_tokens": 1325,
+      "reasoning_tokens": 375,
+      "time_to_first_token": 5.56979241699446,
+      "duration": 5.570059999998193,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 801,
+            "output_tokens": 524,
+            "total_tokens": 1325,
+            "reasoning_tokens": 375,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 648,
+    "output_tokens": 344,
+    "total_tokens": 992,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4089.671036985237,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 648,
+      "output_tokens": 344,
+      "total_tokens": 992,
+      "time_to_first_token": 4.089389925007708,
+      "duration": 4.089465113996994,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 648,
+            "output_tokens": 344,
+            "total_tokens": 992,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4060475499,
+              "load_duration": 459502,
+              "prompt_eval_duration": 199766000,
+              "eval_duration": 3810187000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

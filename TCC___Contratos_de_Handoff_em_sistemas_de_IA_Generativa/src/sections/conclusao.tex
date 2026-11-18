@@ -2,27 +2,30 @@
 \section{Conclusão}\label{sec:conclusao}
 
 Este trabalho investigou como o contrato de handoff entre os estágios de um pipeline de IA generativa influencia o destino de um erro já presente no sistema.
-Com um pipeline fixo de três estágios, um injetor determinístico e quatro contratos que acrescentam um mecanismo de cada vez, foi possível separar o efeito da estrutura, da proveniência e da evidência sobre o mesmo erro, em três modelos de famílias diferentes.
+Com um pipeline fixo de três estágios, um injetor determinístico e quatro contratos que acrescentam um mecanismo de cada vez, foi possível separar o efeito da estrutura, da proveniência e da evidência sobre o mesmo erro, em três modelos de famílias diferentes, e uma condição com evidência e sem lineage completou um fatorial entre os dois últimos mecanismos nos modelos de API.
 
 A resposta à RQ1 é que estruturar o handoff, sozinho, não torna o pipeline mais confiável.
-A estrutura não melhorou a correção nem a contenção, aumentou a profundidade de propagação nos três modelos, em média de 0,26 a 0,43 estágio a mais, e, no Haiku e no Qwen, custou acurácia mesmo sem erro injetado.
-O claim tipado transporta o erro com a mesma fidelidade com que transporta o dado correto.
+A estrutura não melhorou a correção nem a contenção e aumentou a profundidade de propagação nos três modelos, em média de 0,26 a 0,43 estágio a mais, quase toda pela repetição do valor corrompido que o schema exige.
+A perda de acurácia que ela impôs ao Haiku mesmo sem erro desapareceu quando o schema deu ao modelo um campo para raciocinar, o que indica que essa perda vem do modo de saída.
 
 A resposta à RQ2 é que a proveniência ajuda a diagnosticar, mas não a conter.
-O lineage elevou a RCCA em cerca de 0,34 nos três modelos sem reduzir a sobrevivência do erro.
-Esse ganho, porém, veio sobretudo de o auditor poder apontar o identificador do claim e dos erros de ano, em que o nome do documento revelava o valor original. Com um critério de acerto comum às quatro condições, ele praticamente desaparece.
+O lineage elevou a RCCA nos três modelos sem reduzir a sobrevivência do erro, mas, com o acerto contado pelo conteúdo do claim, o ganho foi de 0,07 a 0,15, e não de cerca de 0,34 como no critério original.
+O que resta dele está quase todo nos erros de ano, em que o nome do documento revelava o valor original, e, com a evidência já presente, acrescentar o lineage melhorou a atribuição e, no GPT, a retenção quase só nesses erros, a um custo de cerca de mil tokens por execução.
 A proveniência indica onde olhar, mas não o que está errado.
 
-A resposta à RQ3 é que a evidência foi o único mecanismo que reduziu a sobrevivência e a propagação do erro, nos dois modelos de API.
-De C para D, a ESR caiu 0,10 no GPT e 0,14 no Haiku, a acurácia final subiu 0,15 e 0,10, e a RCCA chegou a cerca de 0,8, com valores de 0,97 e 0,88 no erro de valor.
-No Qwen3.5 9B, a evidência melhorou a acurácia final, mas não a contenção nem a atribuição, o que mostra que o efeito depende de o modelo conseguir usar o que recebe.
-Quanto ao custo, a condição D usou quase quatro vezes mais tokens que o texto livre nos modelos de API, mas a maior parte desse acréscimo veio do lineage, e a evidência acrescentou entre 259 e 357 tokens por execução.
+A resposta à RQ3 é que a evidência foi o mecanismo que melhorou o destino do erro de valor nos dois modelos de API.
+De C para D, a acurácia final subiu 0,15 no GPT e 0,10 no Haiku, a retenção subiu 0,17 e 0,14, e a RCCA chegou a cerca de 0,8, com 0,96 e 0,87 no erro de valor, e efeitos do mesmo tamanho apareceram quando a evidência entrou sem lineage.
+As quedas de ESR que acompanharam esses ganhos não se distinguem do piso de ruído do instrumento, que o teste A/A mostrou ser alto.
+Uma instrução para conferir o valor contra a evidência ampliou o efeito e, no GPT, levou a ESR do erro de valor de 0,69 para 0,25, por menos de cem tokens a mais.
+No Qwen3.5 9B, a evidência melhorou a acurácia final, e o trace passou a permitir localizar o erro, mas só quando lido pelo auditor do GPT.
 
-A principal contribuição do trabalho é mostrar, com o contrato isolado como única variável, que o que torna um handoff mais confiável é o conteúdo verificável que ele carrega, e não o seu formato nem os seus ponteiros.
-Junto com esse resultado, o trabalho deixa um protocolo e um instrumento de medida que podem ser reaplicados a outros pipelines: perturbações determinísticas com ground truth registrado, um braço de controle sem injeção, métricas calculadas da mesma forma nas quatro condições e a taxa de falso positivo do auditor como linha de base para qualquer métrica de atribuição.
+A principal contribuição do trabalho é mostrar, com o contrato isolado como variável manipulada, que, num handoff tipado, o que reduziu o dano de um erro de valor foi acrescentar conteúdo verificável, com ou sem proveniência, e que a proveniência sozinha melhorou a atribuição sem conter o erro.
+O desenho não testou a evidência em prosa, e por isso não permite dizer se o mesmo efeito apareceria sem a estrutura.
+Junto com esse resultado, o trabalho deixa um protocolo e um instrumento de medida que podem ser reaplicados a outros pipelines: perturbações determinísticas com ground truth registrado, um braço de controle sem injeção, métricas calculadas da mesma forma em todas as condições e três linhas de base para interpretá-las, o placebo do auditor, o piso de ruído e a auditoria cruzada.
 
-O trabalho deixa três extensões diretas.
-A primeira é testar uma condição com evidência e sem lineage, para saber se a evidência sozinha produz o mesmo efeito com uma fração do custo, já que a maior parte dos tokens adicionais veio da proveniência.
-A segunda é repetir a condição C com identificadores de fonte opacos, sem o ano no nome do documento, para medir o efeito da proveniência sem o vazamento discutido na Seção~\ref{sec:ameacas}, de preferência com um auditor fixo e igual para todos os modelos.
-A terceira é combinar a evidência carregada pelo contrato com portões de verificação entre os estágios, que Singh e Pawar mostraram ser eficazes para reduzir a sobrevivência de alucinações \cite{singh2026snowball}. A evidência daria ao portão o material para comparar, e o portão daria à evidência a garantia de que alguém a confere.
-Além dessas, vale levar o protocolo a documentos completos com recuperação, a outros domínios e a modelos maiores, para saber até onde os resultados se mantêm.
+O trabalho deixa quatro extensões diretas.
+A primeira é tornar a ESR robusta ao ruído de amostragem, comparando cada execução injetada com mais de uma execução de controle.
+A segunda é repetir a condição C com identificadores de fonte opacos e perguntas que não citem o ano, para medir o efeito da proveniência sem os vazamentos discutidos na Seção~\ref{sec:ameacas}.
+A terceira é testar a evidência em prosa, o que completaria o fatorial com a estrutura e diria se o formato tipado é necessário para que a evidência funcione.
+A quarta é combinar a evidência carregada pelo contrato com portões de verificação dedicados entre os estágios, que Singh e Pawar mostraram ser eficazes para reduzir a sobrevivência de alucinações \cite{singh2026snowball}. A condição D$'$ sugere que boa parte desse ganho já vem de instruir o próprio estágio a conferir a evidência que recebe.
+Além dessas, vale repetir as verificações complementares no Qwen e levar o protocolo a documentos completos com recuperação, a outros domínios e a modelos maiores, para saber até onde os resultados se mantêm.

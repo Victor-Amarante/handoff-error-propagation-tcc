@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00222_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "No error is evident from the trace. The quick-ratio calculation is internally consistent: (4,835 + 1,020 + 4,126) / 6,369 = approximately 1.57. The extractor provides all inputs, and there are no claim IDs in the trace."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 994,
+    "output_tokens": 315,
+    "total_tokens": 1309,
+    "cached_tokens": 0,
+    "reasoning_tokens": 200,
+    "cost_usd": 0.0005767999999999999,
+    "latency_ms": 3780.0189169938676,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 994,
+      "output_tokens": 315,
+      "total_tokens": 1309,
+      "reasoning_tokens": 200,
+      "time_to_first_token": 3.779225124977529,
+      "duration": 3.7794439169811085,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 994,
+            "output_tokens": 315,
+            "total_tokens": 1309,
+            "reasoning_tokens": 200,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1521,
+    "output_tokens": 189,
+    "total_tokens": 1710,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002466,
+    "latency_ms": 2459.1770410188474,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1521,
+      "output_tokens": 189,
+      "total_tokens": 1710,
+      "time_to_first_token": 2.458290000038687,
+      "duration": 2.4585865000262856,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1521,
+            "output_tokens": 189,
+            "total_tokens": 1710,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

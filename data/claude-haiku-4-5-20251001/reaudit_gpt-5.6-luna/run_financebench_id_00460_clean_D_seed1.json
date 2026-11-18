@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00460_clean_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the reported decline from 930 to 907 stores is internally consistent.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports 907 stores for Q2 FY2024 and 930 for Q2 FY2023; the analyst correctly calculates 907 - 930 = -23, and the writer accurately states the resulting decline."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1012,
+    "output_tokens": 257,
+    "total_tokens": 1269,
+    "cached_tokens": 0,
+    "reasoning_tokens": 139,
+    "cost_usd": 0.0005108,
+    "latency_ms": 2958.206584036816,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1012,
+      "output_tokens": 257,
+      "total_tokens": 1269,
+      "reasoning_tokens": 139,
+      "time_to_first_token": 2.957791000022553,
+      "duration": 2.9579094169894233,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1012,
+            "output_tokens": 257,
+            "total_tokens": 1269,
+            "reasoning_tokens": 139,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1589,
+    "output_tokens": 220,
+    "total_tokens": 1809,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002689,
+    "latency_ms": 3745.308500016108,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1589,
+      "output_tokens": 220,
+      "total_tokens": 1809,
+      "time_to_first_token": 3.74440612498438,
+      "duration": 3.7447049579932354,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1589,
+            "output_tokens": 220,
+            "total_tokens": 1809,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

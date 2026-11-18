@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01476_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.99,
+    "rationale": "The extractor reports guidance increasing from 8.0% to 9.0%, which is a 1.0 percentage-point increase. The analyst and writer outputs correctly preserve that calculation."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 827,
+    "output_tokens": 168,
+    "total_tokens": 995,
+    "cached_tokens": 0,
+    "reasoning_tokens": 70,
+    "cost_usd": 0.000367,
+    "latency_ms": 2596.185417030938,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 827,
+      "output_tokens": 168,
+      "total_tokens": 995,
+      "reasoning_tokens": 70,
+      "time_to_first_token": 2.595368582988158,
+      "duration": 2.595582125009969,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 827,
+            "output_tokens": 168,
+            "total_tokens": 995,
+            "reasoning_tokens": 70,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 670,
+    "output_tokens": 136,
+    "total_tokens": 806,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 1845.2204409986734,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 670,
+      "output_tokens": 136,
+      "total_tokens": 806,
+      "time_to_first_token": 1.8449541049776599,
+      "duration": 1.8450388810015284,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 670,
+            "output_tokens": 136,
+            "total_tokens": 806,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1818505580,
+              "load_duration": 786714,
+              "prompt_eval_duration": 179304000,
+              "eval_duration": 1590918000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01912_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "The $764.0 million revenue figure was treated as the worst-performing region, although the extracted claims contain no region labels or evidence identifying which region each value represents.",
+    "reported_metric": "revenue",
+    "reported_value": 764.0,
+    "confidence": 0.96,
+    "rationale": "C03 only reports revenue of $764.0M and does not identify a region. The analyst is the first stage to elevate that value into the comparative 'worst region' conclusion; the writer then repeats it without adding supporting provenance."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 988,
+    "output_tokens": 653,
+    "total_tokens": 1641,
+    "cached_tokens": 0,
+    "reasoning_tokens": 511,
+    "cost_usd": 0.0009812,
+    "latency_ms": 6814.327290980145,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 988,
+      "output_tokens": 653,
+      "total_tokens": 1641,
+      "reasoning_tokens": 511,
+      "time_to_first_token": 6.81366662500659,
+      "duration": 6.813870041980408,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 988,
+            "output_tokens": 653,
+            "total_tokens": 1641,
+            "reasoning_tokens": 511,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1539,
+    "output_tokens": 164,
+    "total_tokens": 1703,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002359,
+    "latency_ms": 2583.5217499989085,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1539,
+      "output_tokens": 164,
+      "total_tokens": 1703,
+      "time_to_first_token": 2.5826039999956265,
+      "duration": 2.5829065410071053,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1539,
+            "output_tokens": 164,
+            "total_tokens": 1703,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

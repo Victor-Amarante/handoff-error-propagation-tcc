@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_04254_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.98,
+    "rationale": "The extractor reports operating income of 1196.0 and depreciation and amortization of 636.0 for FY2021; the analyst correctly sums them to 1832.0, and the writer reproduces that result consistently."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 864,
+    "output_tokens": 235,
+    "total_tokens": 1099,
+    "cached_tokens": 0,
+    "reasoning_tokens": 133,
+    "cost_usd": 0.0004548,
+    "latency_ms": 2846.576832991559,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 864,
+      "output_tokens": 235,
+      "total_tokens": 1099,
+      "reasoning_tokens": 133,
+      "time_to_first_token": 2.845980125013739,
+      "duration": 2.8461360830115154,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 864,
+            "output_tokens": 235,
+            "total_tokens": 1099,
+            "reasoning_tokens": 133,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 716,
+    "output_tokens": 355,
+    "total_tokens": 1071,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4393.119137967005,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 716,
+      "output_tokens": 355,
+      "total_tokens": 1071,
+      "time_to_first_token": 4.392836584011093,
+      "duration": 4.39294269803213,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 716,
+            "output_tokens": 355,
+            "total_tokens": 1071,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4364090852,
+              "load_duration": 500899,
+              "prompt_eval_duration": 190997000,
+              "eval_duration": 4101086000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

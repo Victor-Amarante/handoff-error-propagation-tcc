@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01028_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No incorrect claim identified; the writer accurately states that the available analysis does not provide American Express's operating geographies.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.97,
+    "rationale": "The extractor output contains only revenue figures, the analyst output is empty, and the writer appropriately explains that the requested geography information cannot be answered from the available analysis. The writer's 0.0 claim represents the absence of provided information rather than an asserted geography metric."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 977,
+    "output_tokens": 209,
+    "total_tokens": 1186,
+    "cached_tokens": 0,
+    "reasoning_tokens": 78,
+    "cost_usd": 0.0004462,
+    "latency_ms": 2761.9340830133297,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 977,
+      "output_tokens": 209,
+      "total_tokens": 1186,
+      "reasoning_tokens": 78,
+      "time_to_first_token": 2.7613219170016237,
+      "duration": 2.7615693749976344,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 977,
+            "output_tokens": 209,
+            "total_tokens": 1186,
+            "reasoning_tokens": 78,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1532,
+    "output_tokens": 149,
+    "total_tokens": 1681,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002277,
+    "latency_ms": 2444.012833002489,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1532,
+      "output_tokens": 149,
+      "total_tokens": 1681,
+      "time_to_first_token": 2.4429932499770075,
+      "duration": 2.4432918329839595,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1532,
+            "output_tokens": 149,
+            "total_tokens": 1681,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

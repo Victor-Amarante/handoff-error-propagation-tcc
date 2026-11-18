@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01964_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst claimed that other liabilities were the largest individual liability at $37,350M.",
+    "reported_metric": "other liabilities",
+    "reported_value": 37350.0,
+    "confidence": 0.99,
+    "rationale": "The extracted figures show long-term debt of $42,573M, which is greater than other liabilities of $37,350M. The analyst therefore made an incorrect comparison before the writer repeated it. No claim IDs were provided."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 972,
+    "output_tokens": 634,
+    "total_tokens": 1606,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0009551999999999999,
+    "latency_ms": 6666.952125029638,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 972,
+      "output_tokens": 634,
+      "total_tokens": 1606,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.666278416989371,
+      "duration": 6.666432041965891,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 972,
+            "output_tokens": 634,
+            "total_tokens": 1606,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 825,
+    "output_tokens": 314,
+    "total_tokens": 1139,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3770.216781995259,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 825,
+      "output_tokens": 314,
+      "total_tokens": 1139,
+      "time_to_first_token": 3.769982883008197,
+      "duration": 3.7700538930366747,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 825,
+            "output_tokens": 314,
+            "total_tokens": 1139,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3744752333,
+              "load_duration": 450983,
+              "prompt_eval_duration": 211679000,
+              "eval_duration": 3476309000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

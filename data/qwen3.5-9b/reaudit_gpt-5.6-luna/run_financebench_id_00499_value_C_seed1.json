@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00499_value_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A04",
+    "root_cause_claim_text": "The FY2021 capex ratio is reported as -0.0371, but the claim cites FY2021 PP&E and purchases while the calculation appears to use FY2022 net sales; using the cited FY2021 PP&E value is also inconsistent with the stated ratio.",
+    "reported_metric": "Purchases of property, plant and equipment (net) / Net sales (Capex ratio FY2021)",
+    "reported_value": -0.0371,
+    "confidence": 0.97,
+    "rationale": "A04 is internally inconsistent with its provenance: it cites C03 and C05, yet -1603/43229 equals approximately -0.0371, showing that FY2022 net sales C01 was used despite not being listed as a dependency. The FY2022 claims feeding the final answer are arithmetically consistent, so A04 is the first identifiable incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1715,
+    "output_tokens": 727,
+    "total_tokens": 2442,
+    "cached_tokens": 0,
+    "reasoning_tokens": 512,
+    "cost_usd": 0.0012154000000000002,
+    "latency_ms": 6996.5837089694105,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1715,
+      "output_tokens": 727,
+      "total_tokens": 2442,
+      "reasoning_tokens": 512,
+      "time_to_first_token": 6.995792582980357,
+      "duration": 6.996019666956272,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1715,
+            "output_tokens": 727,
+            "total_tokens": 2442,
+            "reasoning_tokens": 512,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1767,
+    "output_tokens": 370,
+    "total_tokens": 2137,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 4577.737668005284,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1767,
+      "output_tokens": 370,
+      "total_tokens": 2137,
+      "time_to_first_token": 4.577504296961706,
+      "duration": 4.5775748519808985,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1767,
+            "output_tokens": 370,
+            "total_tokens": 2137,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 4552429486,
+              "load_duration": 1038945,
+              "prompt_eval_duration": 451036000,
+              "eval_duration": 4043975000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

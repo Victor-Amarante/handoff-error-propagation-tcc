@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01254_metadata-year_shift_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": "W01",
+    "root_cause_claim_text": "MGM Resorts paid $0.00 per common share in FY2022, implying it did not pay dividends to common shareholders.",
+    "reported_metric": "dividend_per_share",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor and analyst only report a $0.01 dividend per share for 2023. The writer incorrectly inferred a zero 2022 dividend and stated that no dividends were paid; the upstream claims do not establish that conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 822,
+    "output_tokens": 320,
+    "total_tokens": 1142,
+    "cached_tokens": 0,
+    "reasoning_tokens": 187,
+    "cost_usd": 0.0005484,
+    "latency_ms": 3758.1754160346463,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 822,
+      "output_tokens": 320,
+      "total_tokens": 1142,
+      "reasoning_tokens": 187,
+      "time_to_first_token": 3.757591792033054,
+      "duration": 3.7578283750335686,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 822,
+            "output_tokens": 320,
+            "total_tokens": 1142,
+            "reasoning_tokens": 187,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1349,
+    "output_tokens": 188,
+    "total_tokens": 1537,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002289,
+    "latency_ms": 2563.9743329957128,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1349,
+      "output_tokens": 188,
+      "total_tokens": 1537,
+      "time_to_first_token": 2.5632743749883957,
+      "duration": 2.563498041999992,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1349,
+            "output_tokens": 188,
+            "total_tokens": 1537,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

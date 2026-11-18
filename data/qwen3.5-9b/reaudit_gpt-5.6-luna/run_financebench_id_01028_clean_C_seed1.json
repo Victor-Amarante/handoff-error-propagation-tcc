@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_01028_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "American Express's geographies were represented as a numeric value of 0.0 for 2022 rather than identifying the geographic markets or regions.",
+    "reported_metric": "geographies",
+    "reported_value": 0.0,
+    "confidence": 0.97,
+    "rationale": "The extractor is the first stage to introduce the invalid representation: a categorical geography metric is encoded as 0.0 with no geography names or supporting page reference. The analyst and writer merely propagate this missing/invalid extraction."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 770,
+    "output_tokens": 400,
+    "total_tokens": 1170,
+    "cached_tokens": 0,
+    "reasoning_tokens": 267,
+    "cost_usd": 0.000634,
+    "latency_ms": 4376.300124975387,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 770,
+      "output_tokens": 400,
+      "total_tokens": 1170,
+      "reasoning_tokens": 267,
+      "time_to_first_token": 4.375656332995277,
+      "duration": 4.375807999982499,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 770,
+            "output_tokens": 400,
+            "total_tokens": 1170,
+            "reasoning_tokens": 267,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 616,
+    "output_tokens": 152,
+    "total_tokens": 768,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2019.6697830106132,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 616,
+      "output_tokens": 152,
+      "total_tokens": 768,
+      "time_to_first_token": 2.0194142920081504,
+      "duration": 2.0194864359800704,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 616,
+            "output_tokens": 152,
+            "total_tokens": 768,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 1988761905,
+              "load_duration": 435228,
+              "prompt_eval_duration": 157783000,
+              "eval_duration": 1762558000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

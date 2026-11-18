@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01079_metadata-year_shift_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The extractor reported that Amcor's FY2023 acquisition purchase consideration was $59 million, while also reporting the same metric and fiscal year as $60 million and $45 million.",
+    "reported_metric": "FY2023 acquisition purchase consideration",
+    "reported_value": 59.0,
+    "confidence": 0.94,
+    "rationale": "The extractor produced mutually inconsistent values for the same metric and period. The analyst then incorrectly interpreted these repeated, conflicting totals as three separate acquisitions and summed them to $164 million."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 871,
+    "output_tokens": 640,
+    "total_tokens": 1511,
+    "cached_tokens": 0,
+    "reasoning_tokens": 508,
+    "cost_usd": 0.0009422,
+    "latency_ms": 7195.840957982,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 871,
+      "output_tokens": 640,
+      "total_tokens": 1511,
+      "reasoning_tokens": 508,
+      "time_to_first_token": 7.195138541981578,
+      "duration": 7.195514916966204,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 871,
+            "output_tokens": 640,
+            "total_tokens": 1511,
+            "reasoning_tokens": 508,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1408,
+    "output_tokens": 179,
+    "total_tokens": 1587,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002303,
+    "latency_ms": 3483.982208010275,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1408,
+      "output_tokens": 179,
+      "total_tokens": 1587,
+      "time_to_first_token": 3.4832366249756888,
+      "duration": 3.4834704169770703,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1408,
+            "output_tokens": 179,
+            "total_tokens": 1587,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

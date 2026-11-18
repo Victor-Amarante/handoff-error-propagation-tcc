@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "No factual error is evident from the trace. The analyst and writer correctly state that the supplied data lacks revenue and cost-of-goods-sold figures, so gross margin and its drivers cannot be determined from the available input. The response does not fully address whether gross margin is useful for J&J, but that is an omission rather than an incorrect claim."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 913,
+    "output_tokens": 422,
+    "total_tokens": 1335,
+    "cached_tokens": 0,
+    "reasoning_tokens": 296,
+    "cost_usd": 0.000689,
+    "latency_ms": 4460.273207980208,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 913,
+      "output_tokens": 422,
+      "total_tokens": 1335,
+      "reasoning_tokens": 296,
+      "time_to_first_token": 4.460034916002769,
+      "duration": 4.460104249999858,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 913,
+            "output_tokens": 422,
+            "total_tokens": 1335,
+            "reasoning_tokens": 296,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 719,
+    "output_tokens": 166,
+    "total_tokens": 885,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2123.8956520101056,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 719,
+      "output_tokens": 166,
+      "total_tokens": 885,
+      "time_to_first_token": 2.1236086059943773,
+      "duration": 2.1236809139954858,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 719,
+            "output_tokens": 166,
+            "total_tokens": 885,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2098718363,
+              "load_duration": 491494,
+              "prompt_eval_duration": 213284000,
+              "eval_duration": 1824466000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

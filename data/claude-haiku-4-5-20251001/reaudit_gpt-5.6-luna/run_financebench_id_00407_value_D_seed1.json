@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_00407_value_D_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "extractor",
+    "root_cause_claim_id": "C01",
+    "root_cause_claim_text": "U.S. government securities short-term investments were reported as 75,696 USD thousand, but the accompanying evidence states 57,696.",
+    "reported_metric": "short_term_investments_us_government_securities",
+    "reported_value": 75696.0,
+    "confidence": 0.99,
+    "rationale": "The extractor claim's numeric value conflicts with its own evidence. Although this error does not change the largest category—corporate bonds remain largest—the first incorrect claim appears in the extractor stage."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1261,
+    "output_tokens": 244,
+    "total_tokens": 1505,
+    "cached_tokens": 0,
+    "reasoning_tokens": 110,
+    "cost_usd": 0.000545,
+    "latency_ms": 3175.2235000021756,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1261,
+      "output_tokens": 244,
+      "total_tokens": 1505,
+      "reasoning_tokens": 110,
+      "time_to_first_token": 3.174642166995909,
+      "duration": 3.1747762500308454,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1261,
+            "output_tokens": 244,
+            "total_tokens": 1505,
+            "reasoning_tokens": 110,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1858,
+    "output_tokens": 185,
+    "total_tokens": 2043,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002783,
+    "latency_ms": 3374.4913340196945,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1858,
+      "output_tokens": 185,
+      "total_tokens": 2043,
+      "time_to_first_token": 3.3738340829731897,
+      "duration": 3.3739770829561166,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1858,
+            "output_tokens": 185,
+            "total_tokens": 2043,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

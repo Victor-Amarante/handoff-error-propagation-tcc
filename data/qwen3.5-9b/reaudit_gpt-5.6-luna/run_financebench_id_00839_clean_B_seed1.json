@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00839_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "writer",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "Mary N. Dillon was previously the CEO of Hot Topic, a company similar to Foot Locker.",
+    "reported_metric": "Mary N. Dillon previous CEO experience in a similar company to Footlocker",
+    "reported_value": 1.0,
+    "confidence": 0.95,
+    "rationale": "The extractor and analyst outputs only indicate a former-role indicator; neither provides Hot Topic, CEO experience, or similarity to Foot Locker. The writer introduced that unsupported specific claim, making it the first identifiable error."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 819,
+    "output_tokens": 474,
+    "total_tokens": 1293,
+    "cached_tokens": 0,
+    "reasoning_tokens": 344,
+    "cost_usd": 0.0007325999999999999,
+    "latency_ms": 5234.395333973225,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 819,
+      "output_tokens": 474,
+      "total_tokens": 1293,
+      "reasoning_tokens": 344,
+      "time_to_first_token": 5.234036999987438,
+      "duration": 5.234121249988675,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 819,
+            "output_tokens": 474,
+            "total_tokens": 1293,
+            "reasoning_tokens": 344,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 660,
+    "output_tokens": 305,
+    "total_tokens": 965,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3630.56466600392,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 660,
+      "output_tokens": 305,
+      "total_tokens": 965,
+      "time_to_first_token": 3.630322231038008,
+      "duration": 3.6303962329984643,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 660,
+            "output_tokens": 305,
+            "total_tokens": 965,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 3604929067,
+              "load_duration": 446553,
+              "prompt_eval_duration": 178524000,
+              "eval_duration": 3375913000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

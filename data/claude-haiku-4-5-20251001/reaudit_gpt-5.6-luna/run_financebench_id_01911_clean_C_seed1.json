@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01911_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": "A01",
+    "root_cause_claim_text": "FY2022 interest coverage ratio was 0.0, calculated from Adjusted EBIT divided by annual Interest Expense.",
+    "reported_metric": "interest_coverage_ratio",
+    "reported_value": 0.0,
+    "confidence": 0.98,
+    "rationale": "The extractor supplied only annual Interest Expense of 594954.0 USD_K and no Adjusted EBIT numerator. Therefore the analyst could not validly calculate a ratio, yet reported 0.0; the writer merely propagated that unsupported value."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 869,
+    "output_tokens": 259,
+    "total_tokens": 1128,
+    "cached_tokens": 0,
+    "reasoning_tokens": 126,
+    "cost_usd": 0.0004846,
+    "latency_ms": 3065.3317910037003,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 869,
+      "output_tokens": 259,
+      "total_tokens": 1128,
+      "reasoning_tokens": 126,
+      "time_to_first_token": 3.0643838749965653,
+      "duration": 3.0647019590251148,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 869,
+            "output_tokens": 259,
+            "total_tokens": 1128,
+            "reasoning_tokens": 126,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 1405,
+    "output_tokens": 214,
+    "total_tokens": 1619,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.002475,
+    "latency_ms": 2889.4665840198286,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1405,
+      "output_tokens": 214,
+      "total_tokens": 1619,
+      "time_to_first_token": 2.88896333304001,
+      "duration": 2.8890710420091636,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1405,
+            "output_tokens": 214,
+            "total_tokens": 1619,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

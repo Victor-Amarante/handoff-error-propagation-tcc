@@ -1,0 +1,72 @@
+{
+  "log": "run_financebench_id_01198_clean_C_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "none",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "No demonstrably incorrect claim appears in the trace: $23.6B minus $16.4B equals $7.2B, and $7.2B divided by $16.4B is approximately 44%.",
+    "reported_metric": null,
+    "reported_value": null,
+    "confidence": 0.9,
+    "rationale": "The numerical claims are internally consistent, and the writer's statement that Data Center growth outpaced Gaming is directly supported by the cited 64% versus 21% figures. The trace does not provide enough information to disprove the characterization of Data Center as the primary driver."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 1462,
+    "output_tokens": 1186,
+    "total_tokens": 2648,
+    "cached_tokens": 0,
+    "reasoning_tokens": 1024,
+    "cost_usd": 0.0017156,
+    "latency_ms": 11953.733915986959,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 1462,
+      "output_tokens": 1186,
+      "total_tokens": 2648,
+      "reasoning_tokens": 1024,
+      "time_to_first_token": 11.953218000009656,
+      "duration": 11.95335399999749,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 1462,
+            "output_tokens": 1186,
+            "total_tokens": 2648,
+            "reasoning_tokens": 1024,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 2106,
+    "output_tokens": 239,
+    "total_tokens": 2345,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.003301,
+    "latency_ms": 4152.815959008876,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 2106,
+      "output_tokens": 239,
+      "total_tokens": 2345,
+      "time_to_first_token": 4.15196820802521,
+      "duration": 4.152200250013266,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 2106,
+            "output_tokens": 239,
+            "total_tokens": 2345,
+            "id": "claude-haiku-4-5-20251001",
+            "provider": "Anthropic"
+          }
+        ]
+      }
+    }
+  }
+}

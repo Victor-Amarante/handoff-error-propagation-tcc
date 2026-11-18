@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00517_clean_A_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst initially claimed that no product or service category represented more than 20% of Boeing's FY2022 revenue.",
+    "reported_metric": "Number of categories representing more than 20% of total revenue",
+    "reported_value": 0.0,
+    "confidence": 0.99,
+    "rationale": "The extracted figures show Commercial Airplanes, Defense, Space & Security, and Global Services at approximately 38.8%, 34.8%, and 26.4%, respectively, so the analyst's initial summary of zero qualifying categories was incorrect. The analyst later contradicted and corrected that statement, and the writer used the corrected conclusion."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 989,
+    "output_tokens": 286,
+    "total_tokens": 1275,
+    "cached_tokens": 0,
+    "reasoning_tokens": 127,
+    "cost_usd": 0.000541,
+    "latency_ms": 3236.929250007961,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 989,
+      "output_tokens": 286,
+      "total_tokens": 1275,
+      "reasoning_tokens": 127,
+      "time_to_first_token": 3.2361792500014417,
+      "duration": 3.236398749984801,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 989,
+            "output_tokens": 286,
+            "total_tokens": 1275,
+            "reasoning_tokens": 127,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 876,
+    "output_tokens": 220,
+    "total_tokens": 1096,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 2749.4544310029596,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 876,
+      "output_tokens": 220,
+      "total_tokens": 1096,
+      "time_to_first_token": 2.74921635404462,
+      "duration": 2.7492813150165603,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 876,
+            "output_tokens": 220,
+            "total_tokens": 1096,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2717648322,
+              "load_duration": 461784,
+              "prompt_eval_duration": 215293000,
+              "eval_duration": 2450685000
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "log": "run_financebench_id_00669_clean_B_seed1.jsonl",
+  "auditor_model": "gpt-5.6-luna",
+  "audit_report": {
+    "first_error_stage": "analyst",
+    "root_cause_claim_id": null,
+    "root_cause_claim_text": "The analyst incorrectly reported J&J's FY2022 gross margin as 33.8%, despite the extractor providing only pre-tax earnings margin data.",
+    "reported_metric": "gross_margin",
+    "reported_value": 33.8,
+    "confidence": 0.97,
+    "rationale": "The extractor's 24.3% FY2021 and 22.9% FY2022 figures are explicitly for earnings before taxes as a percentage of sales, whose change is -1.4 percentage points. No gross-margin data appears in the trace, so the analyst introduced an unsupported metric substitution; the writer then repeated that misclassification."
+  },
+  "schema_valid": true,
+  "usage": {
+    "input_tokens": 947,
+    "output_tokens": 663,
+    "total_tokens": 1610,
+    "cached_tokens": 0,
+    "reasoning_tokens": 505,
+    "cost_usd": 0.000985,
+    "latency_ms": 6742.761375033297,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 947,
+      "output_tokens": 663,
+      "total_tokens": 1610,
+      "reasoning_tokens": 505,
+      "time_to_first_token": 6.742374458000995,
+      "duration": 6.742443541996181,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 947,
+            "output_tokens": 663,
+            "total_tokens": 1610,
+            "reasoning_tokens": 505,
+            "id": "gpt-5.6-luna",
+            "provider": "OpenAI Chat"
+          }
+        ]
+      }
+    }
+  },
+  "original_audit_usage": {
+    "input_tokens": 816,
+    "output_tokens": 246,
+    "total_tokens": 1062,
+    "cached_tokens": 0,
+    "reasoning_tokens": 0,
+    "cost_usd": 0.0,
+    "latency_ms": 3001.042641000822,
+    "n_calls": 1,
+    "raw": {
+      "input_tokens": 816,
+      "output_tokens": 246,
+      "total_tokens": 1062,
+      "time_to_first_token": 3.000801404006779,
+      "duration": 3.000875220983289,
+      "details": {
+        "model": [
+          {
+            "input_tokens": 816,
+            "output_tokens": 246,
+            "total_tokens": 1062,
+            "id": "qwen3.5:9b",
+            "provider": "Ollama",
+            "provider_metrics": {
+              "total_duration": 2975497115,
+              "load_duration": 543289,
+              "prompt_eval_duration": 235552000,
+              "eval_duration": 2670208000
+            }
+          }
+        ]
+      }
+    }
+  }
+}
