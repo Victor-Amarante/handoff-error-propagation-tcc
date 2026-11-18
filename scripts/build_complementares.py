@@ -267,6 +267,33 @@ def write_tables():
     (TAB / "resultados-verificacoes.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
+def strict_units(slug="qwen3.5-9b"):
+    """B7: unidade como Literal e penalidade de presenca zerada (logs_strict_units)
+    contra as mesmas perguntas e condicoes (B, C) da rodada principal."""
+    d = Path("data") / slug / "logs_strict_units"
+    if not d.exists():
+        return None
+    from handoff.measure import contract_validity
+    rows = []
+    for tag, folder in (("original", Path("data") / slug / "logs"), ("restrito", d)):
+        for c in load_cells(folder):
+            if str(c.condition) not in "BC" or c.injection_stage != "extractor" or not is_complete(c.path):
+                continue
+            rows.append({"versao": tag, "q": c.question_id, "cond": str(c.condition), "controle": c.is_control,
+                         "validade": contract_validity(c), "acc": final_correct(c)})
+    df = pd.DataFrame(rows)
+    qs = set(df[df.versao == "restrito"].q)
+    df = df[df.q.isin(qs)]
+    out = {}
+    for v in ("original", "restrito"):
+        x = df[df.versao == v]
+        out[v] = {"validade_contrato": x.validade.mean(),
+                  "acuracia_controle": pd.to_numeric(x[x.controle].acc, errors="coerce").mean(),
+                  "acuracia_injetada": pd.to_numeric(x[~x.controle].acc, errors="coerce").mean(),
+                  "n_perguntas": x.q.nunique()}
+    return out
+
+
 if __name__ == "__main__":
     L = []
     for slug, name in API:
@@ -319,6 +346,19 @@ if __name__ == "__main__":
                 s, v = fd(pv[y] - pv[x])
                 R["reasoning_delta"][x + y] = list(v)
             print(f"R ({r.q.nunique()} perguntas):", g.round(2).to_dict(), R["reasoning_delta"])
+
+    qr = reasoning("qwen3.5-9b") if (Path("data") / "qwen3.5-9b" / "logs_parecer").exists() else pd.DataFrame()
+    if len(qr):
+        R = OUT.setdefault("Qwen3.5 9B", {})
+        R["reasoning"] = qr.groupby("cond")[["acc", "out"]].mean().round(4).to_dict()
+        R["reasoning_n"] = qr.q.nunique()
+        pv = qr.pivot_table(index="q", columns="cond", values="acc")
+        R["reasoning_delta"] = {x + y: list(fd(pv[y] - pv[x])[1]) for x, y in [("B", "R"), ("A", "R"), ("A", "B")]}
+        print(f"\nR Qwen ({qr.q.nunique()} perguntas):", R["reasoning"], R["reasoning_delta"])
+    su = strict_units()
+    if su:
+        OUT.setdefault("Qwen3.5 9B", {})["strict_units"] = su
+        print("B7 Qwen unidade restrita:", su)
 
     for slug, name in [("claude-haiku-4-5-20251001", "Claude Haiku 4.5"), ("qwen3.5-9b", "Qwen3.5 9B")]:
         x = cross_audit(slug)

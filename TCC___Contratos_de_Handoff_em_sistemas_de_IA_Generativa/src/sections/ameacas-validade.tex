@@ -18,7 +18,7 @@ Pelo mesmo motivo, cada execução rodou com uma única seed e com a temperatura
 Essa variação aleatória não é pequena nem igual entre condições. No teste A/A, duas execuções limpas da mesma pergunta diferiram pela ESR em 23\% a 56\% dos casos, e o piso mudou de uma condição para outra. As diferenças de ESR entre condições vizinhas, descontado o piso, não se distinguem de zero, e as de profundidade, só a de A para B se mantém. Por isso, as conclusões sobre o destino do erro se apoiam nas medidas que não comparam a execução com o controle, como a acurácia, a retenção e a presença literal do valor corrompido. O piso foi medido em menos de 50 perguntas e só nos modelos de API, e uma réplica maior estreitaria os intervalos ajustados. Um critério de ESR mais robusto, que exija diferença em relação a mais de uma execução de controle, é a correção natural do instrumento.
 
 De A para B mudam duas coisas ao mesmo tempo, o formato da entrada e o da saída, e no Haiku e no Qwen a saída em JSON ficou bem mais curta que a prosa.
-A condição B$'$ mostrou que, no Haiku, a perda de acurácia do controle de A para B desaparece quando o schema do Analista tem um campo para o raciocínio, então parte do efeito atribuído à estrutura na RQ1 é efeito do modo de saída. A mesma verificação não foi feita no Qwen, que é o modelo com a maior perda.
+A condição B$'$ mostrou que, quando o schema do Analista tem um campo para o raciocínio, a perda de acurácia do controle de A para B desaparece no Haiku e cai a cerca de um terço no Qwen. Parte do efeito atribuído à estrutura na RQ1 é, assim, efeito do modo de saída, e a comparação A $\times$ B mede as duas coisas juntas.
 
 Por fim, as condições não diferem só na informação que carregam, mas também no tamanho das mensagens, já que um handoff de D chega a quase quatro vezes os tokens de um de A.
 Essa diferença é inerente ao que se quer medir e não pode ser separada da informação adicional sem outro desenho, como condições de controle com texto de enchimento.
@@ -50,7 +50,7 @@ O experimento cobre um único domínio, finanças, com um único benchmark, a am
 O documento-fonte é o trecho de evidência já recortado pelo benchmark, e não o documento completo, então o experimento não inclui recuperação nem documentos longos, situações em que a evidência carregada pelo contrato pode ser mais difícil de localizar e de usar.
 A topologia é linear e tem três estágios, enquanto sistemas reais podem envolver conversas entre vários agentes com ferramentas \cite{wu2023autogen} ou simulações com mais de mil agentes \cite{altera2024sid}.
 Os três modelos são das faixas mais baratas de cada família, e não se sabe se modelos maiores reproduziriam o mesmo padrão.
-As condições complementares rodaram só nos dois modelos de API, e o Qwen ficou sem as verificações que dependem de executar o pipeline de novo.
+As condições E e D$'$ e o teste A/A rodaram só nos dois modelos de API. No Qwen, rodaram apenas a condição B$'$ e a verificação da unidade restrita, esta última em 28 perguntas.
 
 \subsection{Validade de conclusão}\label{sec:ameacas-conclusao}
 

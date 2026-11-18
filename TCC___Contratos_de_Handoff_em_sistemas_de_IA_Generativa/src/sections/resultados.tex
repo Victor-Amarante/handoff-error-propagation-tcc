@@ -134,7 +134,9 @@ GPT e Haiku praticamente não violaram o contrato, enquanto o Qwen violou cerca 
 Das 2.448 saídas estruturadas do Qwen no estudo principal, 1.210 usaram uma unidade fora da lista permitida, na maior parte das vezes variações como ``\%'', ``percent'' e ``ratio'' no lugar dos rótulos previstos, ou o campo vazio.
 Identificadores duplicados apareceram em 54 saídas, e \texttt{derived\_from} apontando para um claim inexistente, em apenas 2.
 Todas essas saídas passaram na validação estrutural porque o schema declara a unidade como texto livre e traz a lista permitida só na descrição do campo.
-Com a unidade declarada como enumeração, a decodificação restrita impediria essas violações, então a validade de contrato de 0,51 do Qwen mede em boa parte essa omissão do schema, e não só uma limitação do modelo.
+Para testar essa explicação, as condições B e C do Qwen foram repetidas em 30 perguntas com a unidade declarada como enumeração no schema e a penalidade de presença zerada. Duas perguntas ficaram de fora porque o estado extraído na rodada principal já tinha unidades fora da lista, como \texttt{USD\_T} e \texttt{STORES}, e não cabia no schema restrito.
+Nas 28 restantes, a validade de contrato subiu de 0,60 para 0,98 nas execuções de controle (+0,38, IC $[+0{,}26; +0{,}51]$) e na mesma proporção nas injetadas. A acurácia final teve uma alta pequena, de 0,21 para 0,28 nas injetadas, com intervalo encostando em zero.
+A validade de contrato de 0,51 do Qwen mede sobretudo a omissão do schema, e não uma incapacidade do modelo de seguir a lista. Como as duas mudanças foram feitas juntas, o teste não separa o efeito da enumeração do da penalidade.
 A concordância de lineage ficou entre 0,74 e 0,83 nas condições C e D. Na maior parte das execuções, a cadeia declarada pelo modelo aponta para o claim corrompido, o que é coerente com as alterações que o instrumento textual detecta nos estágios seguintes.
 
 \subsection{Custo operacional}\label{sec:custo}
@@ -164,7 +166,8 @@ A RCCA ficou no mesmo nível de D, o que é esperado, já que o auditor não rec
 A condição B$'$, com espaço para o raciocínio no schema do Analista, testou a perda de acurácia do controle de A para B.
 No Haiku, a acurácia do controle foi de 0,59 em B para 0,73 em B$'$, uma diferença de +0,14 (IC $[+0{,}06; +0{,}21]$), e voltou ao nível de A (0,72).
 No GPT, que já raciocina em tokens ocultos, ela não mudou (0,68 em B e 0,65 em B$'$).
-A perda de acurácia do Haiku com o formato estruturado vem do modo de saída, que tira do modelo o espaço para calcular por extenso. O contrato de handoff, que B$'$ mantém igual ao de B, não explica a queda.
+No Qwen, o modelo que mais perdia, ela foi de 0,44 em B para 0,57 em B$'$, uma diferença de +0,13 (IC $[+0{,}06; +0{,}21]$), e recuperou cerca de dois terços da distância para A (0,63).
+A perda de acurácia dos dois modelos sem raciocínio vem, em boa parte, do modo de saída, que tira do modelo o espaço para calcular por extenso. O contrato de handoff, que B$'$ mantém igual ao de B, não explica a queda.
 
 \input{tables/resultados-verificacoes}
 

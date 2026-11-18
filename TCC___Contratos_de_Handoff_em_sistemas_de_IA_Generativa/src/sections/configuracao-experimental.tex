@@ -67,7 +67,7 @@ Claude Haiku 4.5 & API Anthropic & desligado & 1,00 / 5,00 \\
 Qwen3.5 9B & local (Ollama) & desligado & -- \\
 \hline
 \multicolumn{4}{l}{\scriptsize $^{a}$Entrada / saída, preços de tabela \cite{openai2026pricing, anthropic2026pricing}.} \\
-\multicolumn{4}{p{0.92\columnwidth}}{\scriptsize Identificadores: \texttt{gpt-5.6-luna}, \texttt{claude-haiku-4-5-20251001} e \texttt{qwen3.5:9b} (Q4\_K\_M).} \\
+\multicolumn{4}{p{0.92\columnwidth}}{\scriptsize Identificadores: \texttt{gpt-5.6-luna}, \texttt{claude-haiku-4-5-20251001} e \texttt{qwen3.5:9b} (Q4\_K\_M, ID \texttt{56671c2ab938} no Ollama).} \\
 \end{tabular}
 \end{table}
 
@@ -86,14 +86,14 @@ Como o piloto cobriu só o GPT e só a resposta final, o ruído entre execuçõe
 A orquestração usa o Agno \cite{agno}, sem ferramentas, memória ou histórico em nenhum agente, e sem novas tentativas automáticas: um handoff inválido fica registrado como inválido.
 Nas condições B, C e D, a saída de cada estágio é definida por schemas Pydantic \cite{pydantic} e gerada com o suporte nativo de cada provedor a saída estruturada.
 No GPT, o modo estrito garante que a resposta siga o JSON Schema fornecido \cite{openai2026structured}, e no Qwen o Ollama restringe a saída ao schema pelo parâmetro \texttt{format} \cite{ollama2024structured}.
-Para o Qwen, foi usada a tag padrão do modelo no Ollama, \texttt{qwen3.5:9b}, com quantização Q4\_K\_M, porque no piloto a variante otimizada para MLX ignorava o schema sem emitir erro.
+Para o Qwen, foi usada a tag padrão do modelo no Ollama, \texttt{qwen3.5:9b} (ID \texttt{56671c2ab938}), com quantização Q4\_K\_M, porque no piloto a variante otimizada para MLX ignorava o schema sem emitir erro.
 Os parâmetros de amostragem também ficaram no padrão da tag: temperatura 1, \emph{top-k} 20, \emph{top-p} 0,95 e penalidade de presença 1,5.
 Essa penalidade desestimula o modelo a repetir tokens que já emitiu e pode ter contribuído para a variação dos rótulos de unidade discutida na Seção~\ref{sec:res-validade}.
 O tamanho de contexto também não foi alterado. O maior prompt registrado nos logs do Qwen teve 31.985 tokens, e nenhuma contagem se acumula em um limite fixo, o que indica que nenhum prompt foi truncado.
 O Qwen rodou numa GPU NVIDIA GeForce RTX 3090 de 24 GB.
 A Tabela~\ref{tab:amostra} traz também a duração e o custo de cada rodada completa, incluindo as execuções de controle e o auditor.
 Dentro de cada pergunta, as quatro condições rodaram em sequência, intercaladas, de modo que diferenças de latência entre condições não refletem o horário da execução.
-As condições complementares, a réplica dos controles e a reauditoria rodaram depois, em 17/11/2026, reaproveitando o estado extraído guardado em cache. Somadas, custaram US\$ 12,10, dos quais US\$ 4,60 no GPT, incluída a reauditoria, e US\$ 7,50 no Haiku.
+As condições complementares, a réplica dos controles e a reauditoria rodaram depois, em 17 e 18/11/2026, reaproveitando o estado extraído guardado em cache. As do Qwen rodaram na mesma GPU da rodada principal. Somadas, custaram US\$ 12,10, dos quais US\$ 4,60 no GPT, incluída a reauditoria, e US\$ 7,50 no Haiku.
 O código, os prompts, os schemas e os logs estão disponíveis no repositório do trabalho \cite{repositorio}, e os prompts e schemas estão também no Apêndice~\ref{sec:apendice}.
 
 \subsection{Métricas}\label{sec:metricas}
