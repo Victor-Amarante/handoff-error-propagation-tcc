@@ -127,7 +127,8 @@ uv run python scripts/parecer_reanalise.py     # A1, A4, A6, B1, B3, B5, B6, Hol
 uv run python scripts/build_tables.py          # tabelas do artigo (RCCA por conteudo, placebo, retencao)
 uv run python scripts/build_complementares.py  # E, V, R, A/A e auditoria cruzada
 uv run python scripts/build_apendice.py        # apendice com os prompts literais
-uv run python scripts/concordancia_rotulagem.py  # depois de rotular analysis/rotulagem_manual.csv
+uv run python scripts/build_rotulagem_html.py   # pagina de rotulagem (B8) -> analysis/rotulagem_manual.html
+uv run python scripts/concordancia_rotulagem.py  # concordancia humano x instrumento: 50/50, kappa 1,00
 ```
 
 `--shard k/n` divide as celulas pendentes entre processos paralelos.

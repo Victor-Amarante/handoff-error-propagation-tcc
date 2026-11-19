@@ -203,6 +203,11 @@ Por isso, só é tratada como fora do caminho a execução sem efeito nas quatro
 Quando a execução fica sem efeito em uma condição e o mesmo erro altera algum estágio em outra, o erro foi \emph{neutralizado no Analista}: ele chegou ao estágio, mas não deixou marca em nenhum número posterior.
 A Seção~\ref{sec:res-controle} mostra que quase todas as execuções sem efeito caem nesse segundo caso.
 
+Para conferir o instrumento contra um julgamento humano, 50 execuções injetadas do estudo principal foram rotuladas manualmente.
+A amostra foi estratificada por condição, com 12 ou 13 execuções em cada uma, e pelo destino atribuído pelo instrumento, e cobre os três modelos e os dois tipos de erro.
+Para cada execução, o rotulador via a pergunta, a resposta do benchmark, os valores original e corrompido e as saídas do Analista e do Redator no controle e na execução injetada, e escolhia o destino pelas definições acima, sem acesso ao rótulo do instrumento.
+O acordo entre os dois é medido pela proporção de concordância e pelo kappa de Cohen \cite{cohen1960coefficient}.
+
 \subsection{Auditor de causa raiz}\label{sec:auditor}
 
 A atribuição de origem é medida por um auditor que roda depois do pipeline, como instrumento de medida, e não como estágio.

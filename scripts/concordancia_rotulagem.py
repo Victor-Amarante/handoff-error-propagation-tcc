@@ -1,9 +1,9 @@
 """Concordancia entre o instrumento textual e a rotulagem humana (parecer, B8).
 
-1. Preencha a coluna `destino_humano` de analysis/rotulagem_manual.csv com um de:
-   preservado, transformado, amplificado, corrigido, contido, sem_efeito
-   (definicoes na Secao III-G do artigo), sem olhar o gabarito.
-2. uv run python scripts/concordancia_rotulagem.py
+1. Rotule em analysis/rotulagem_manual.html (gerada por scripts/build_rotulagem_html.py),
+   sem olhar o gabarito, e clique em "Baixar CSV".
+2. mv ~/Downloads/rotulagem_manual.csv analysis/
+3. uv run python scripts/concordancia_rotulagem.py
 """
 import pandas as pd
 

@@ -37,7 +37,10 @@ A auditoria cruzada mostrou que essa dependência é real: lidos pelo auditor do
 O instrumento de medida trabalha com os números presentes no texto de cada estágio.
 Erros expressos por extenso ou números que coincidem por acaso com o valor procurado podem escapar ou ser contados indevidamente, e o ano original pode reaparecer na resposta por estar na própria pergunta, o que motivou a regra mais estrita para distinguir correção de contenção (Seção~\ref{sec:destino}).
 Algumas métricas também dependem do formato da saída, embora o instrumento seja o mesmo nas quatro condições. A profundidade conta como alterado um estágio que só repete o valor corrompido, e o schema de B, C e D obriga essa repetição, o que levou à decomposição apresentada na Seção~\ref{sec:rq1}. A amplificação conta valores, e um estágio que emite mais números tende a ter amplificação maior, o que motivou a versão normalizada.
-O instrumento não foi validado contra um julgamento humano. A concordância de lineage só o compara com a cadeia declarada pelo próprio modelo, e uma rotulagem manual de uma amostra estratificada por condição e destino é o próximo passo para medir sua precisão.
+O instrumento concordou com a rotulagem manual nas 50 execuções da amostra, mas essa validação tem dois limites.
+O rotulador seguiu as mesmas definições operacionais do instrumento, de modo que ela confirma que a extração e a comparação de números no texto aplicam essas definições como um leitor humano as aplicaria, mas não que as seis categorias sejam a melhor descrição do destino do erro.
+Houve também um único rotulador, o que impede medir a concordância entre pessoas.
+A concordância de lineage é uma conferência mais fraca, porque só compara o instrumento com a cadeia declarada pelo próprio modelo.
 A acurácia final também depende de casar números com a resposta do benchmark, e as 18 a 22 perguntas sem resposta numérica ficaram fora dessa métrica.
 
 Os erros injetados são sintéticos.

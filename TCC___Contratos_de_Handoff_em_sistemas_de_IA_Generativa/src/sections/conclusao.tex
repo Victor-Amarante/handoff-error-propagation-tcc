@@ -22,6 +22,7 @@ No Qwen3.5 9B, a evidência melhorou a acurácia final, e o trace passou a permi
 A principal contribuição do trabalho é mostrar, com o contrato isolado como variável manipulada, que, num handoff tipado, o que reduziu o dano de um erro de valor foi acrescentar conteúdo verificável, com ou sem proveniência, e que a proveniência sozinha melhorou a atribuição sem conter o erro.
 O desenho não testou a evidência em prosa, e por isso não permite dizer se o mesmo efeito apareceria sem a estrutura.
 Junto com esse resultado, o trabalho deixa um protocolo e um instrumento de medida que podem ser reaplicados a outros pipelines: perturbações determinísticas com ground truth registrado, um braço de controle sem injeção, métricas calculadas da mesma forma em todas as condições e três linhas de base para interpretá-las, o placebo do auditor, o piso de ruído e a auditoria cruzada.
+Na amostra rotulada manualmente, o instrumento atribuiu o mesmo destino que o rotulador em todas as 50 execuções.
 
 O trabalho deixa quatro extensões diretas.
 A primeira é tornar a ESR robusta ao ruído de amostragem, comparando cada execução injetada com mais de uma execução de controle.
