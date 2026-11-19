@@ -309,6 +309,8 @@ def write_tables():
     naa = ", ".join(str(OUT[n]["aa_n"]) for n in com_aa)
     nomes = [curto[n] for n in com_aa]
     aa_nota = " perguntas no " + (", no ".join(nomes[:-1]) + " e no " + nomes[-1] if len(nomes) > 1 else nomes[0]) + ")"
+    if QWEN[1] in com_aa:
+        aa_nota += "; no Qwen, a réplica usou outra seed nos estágios posteriores ao Extrator, porque com a mesma seed ela sai idêntica ao controle"
     ident = OUT.get(QWEN[1], {}).get("aa_mesma_seed")
     if "Qwen" in sem_aa and ident:
         aa_nota += (f"; no Qwen, a réplica com a mesma seed saiu idêntica ao controle em {ident[0]} de {ident[1]} execuções, "

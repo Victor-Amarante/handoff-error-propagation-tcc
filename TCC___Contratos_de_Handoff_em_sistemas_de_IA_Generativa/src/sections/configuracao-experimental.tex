@@ -81,7 +81,7 @@ A temperatura não foi enviada a nenhum dos provedores, e cada um usou seu valor
 Cada execução rodou com uma única seed.
 No piloto com o GPT-5.6 Luna, duas seeds diferentes produziram respostas finais numericamente idênticas em 16 de 16 execuções, e tratar réplicas assim como observações independentes estreitaria o intervalo de confiança de forma artificial.
 A seed foi enviada à OpenAI e ao Ollama. A API da Anthropic não aceita esse parâmetro.
-Como o piloto cobriu só o GPT e só a resposta final, o ruído entre execuções foi medido de novo, nos dois modelos de API, pela réplica dos controles descrita na Seção~\ref{sec:controle}.
+Como o piloto cobriu só o GPT e só a resposta final, o ruído entre execuções foi medido de novo, nos três modelos, pela réplica dos controles descrita na Seção~\ref{sec:controle}. No Qwen, em que o Ollama reproduz a execução byte a byte quando a seed é fixa, a réplica manteve o estado do Extrator e usou a seed 2 nos estágios seguintes.
 
 A orquestração usa o Agno \cite{agno}, sem ferramentas, memória ou histórico em nenhum agente, e sem novas tentativas automáticas: um handoff inválido fica registrado como inválido.
 Nas condições B, C e D, a saída de cada estágio é definida por schemas Pydantic \cite{pydantic} e gerada com o suporte nativo de cada provedor a saída estruturada.
@@ -93,7 +93,7 @@ O tamanho de contexto também não foi alterado. O maior prompt registrado nos l
 O Qwen rodou numa GPU NVIDIA GeForce RTX 3090 de 24 GB.
 A Tabela~\ref{tab:amostra} traz também a duração e o custo de cada rodada completa, incluindo as execuções de controle e o auditor.
 Dentro de cada pergunta, as quatro condições rodaram em sequência, intercaladas, de modo que diferenças de latência entre condições não refletem o horário da execução.
-As condições complementares, a réplica dos controles e a reauditoria rodaram depois, em 17 e 18/11/2026, reaproveitando o estado extraído guardado em cache. As do Qwen rodaram na mesma GPU da rodada principal. Somadas, custaram US\$ 12,10, dos quais US\$ 4,60 no GPT, incluída a reauditoria, e US\$ 7,50 no Haiku.
+As condições complementares, a réplica dos controles e a reauditoria rodaram depois, de 17 a 19/11/2026, reaproveitando o estado extraído guardado em cache. As do Qwen rodaram na mesma GPU da rodada principal. Somadas, custaram US\$ 12,10, dos quais US\$ 4,60 no GPT, incluída a reauditoria, e US\$ 7,50 no Haiku.
 O código, os prompts, os schemas e os logs estão disponíveis no repositório do trabalho \cite{repositorio}, e os prompts e schemas estão também no Apêndice~\ref{sec:apendice}.
 
 \subsection{Métricas}\label{sec:metricas}

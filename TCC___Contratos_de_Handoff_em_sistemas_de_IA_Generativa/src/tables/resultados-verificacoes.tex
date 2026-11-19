@@ -10,9 +10,9 @@
 \textbf{Métrica} & A & B & C & D & A & B & C & D & A & B & C & D \\
 \hline
 \multicolumn{13}{|l|}{\textit{Piso de ruído: réplica do controle contra o controle original}} \\
-ESR nula & 0,28 & 0,23 & 0,38 & 0,40 & 0,40 & 0,47 & 0,56 & 0,42 & -- & -- & -- & -- \\
-Profundidade nula & 0,55 & 0,49 & 0,66 & 0,81 & 0,95 & 0,84 & 1,09 & 0,74 & -- & -- & -- & -- \\
-Mesmo acerto da réplica & 0,98 & 0,96 & 0,98 & 0,96 & 0,95 & 0,95 & 0,81 & 0,91 & -- & -- & -- & -- \\
+ESR nula & 0,28 & 0,23 & 0,38 & 0,40 & 0,40 & 0,47 & 0,56 & 0,42 & 0,46 & 0,56 & 0,68 & 0,62 \\
+Profundidade nula & 0,55 & 0,49 & 0,66 & 0,81 & 0,95 & 0,84 & 1,09 & 0,74 & 1,04 & 1,10 & 1,42 & 1,30 \\
+Mesmo acerto da réplica & 0,98 & 0,96 & 0,98 & 0,96 & 0,95 & 0,95 & 0,81 & 0,91 & 0,84 & 0,92 & 0,94 & 0,96 \\
 \multicolumn{13}{|l|}{\textit{Auditoria cruzada: traces do pipeline lidos pelo auditor do GPT}} \\
 RCCA, auditor do próprio modelo & -- & -- & -- & -- & 0,38 & 0,35 & 0,43 & 0,78 & 0,14 & 0,36 & 0,45 & 0,45 \\
 RCCA, auditor do GPT & -- & -- & -- & -- & 0,28 & 0,23 & 0,42 & 0,82 & 0,22 & 0,27 & 0,31 & 0,73 \\
@@ -21,5 +21,5 @@ FESA, auditor do GPT & -- & -- & -- & -- & 0,28 & 0,22 & 0,39 & 0,81 & 0,26 & 0,
 Falso positivo, auditor do GPT & -- & -- & -- & -- & 0,33 & 0,43 & 0,41 & 0,34 & 0,42 & 0,56 & 0,60 & 0,64 \\
 \hline
 \end{tabular}
-\\[2pt]{\scriptsize\raggedright Piso de ruído: as métricas de contenção calculadas entre duas execuções limpas da mesma pergunta e condição (47, 43 perguntas no GPT e no Haiku); no Qwen, a réplica com a mesma seed saiu idêntica ao controle em 200 de 200 execuções, e o piso de amostragem não foi medido. Auditoria cruzada: estudo principal, 134, 137 perguntas no Haiku e no Qwen; no GPT o auditor é o próprio, e os valores estão na Tabela~\ref{tab:principal}.\par}
+\\[2pt]{\scriptsize\raggedright Piso de ruído: as métricas de contenção calculadas entre duas execuções limpas da mesma pergunta e condição (47, 43, 50 perguntas no GPT, no Haiku e no Qwen); no Qwen, a réplica usou outra seed nos estágios posteriores ao Extrator, porque com a mesma seed ela sai idêntica ao controle. Auditoria cruzada: estudo principal, 134, 137 perguntas no Haiku e no Qwen; no GPT o auditor é o próprio, e os valores estão na Tabela~\ref{tab:principal}.\par}
 \end{table*}
