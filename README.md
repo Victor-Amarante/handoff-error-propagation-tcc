@@ -121,6 +121,8 @@ HANDOFF_LOG_SUBDIR=logs_aa uv run python scripts/run_experiment.py --conditions 
 HANDOFF_PROVIDER=openai HANDOFF_MODEL=gpt-5.6-luna uv run python scripts/reaudit.py --pipeline qwen3.5-9b
 # Qwen (A5 e B7), na maquina com GPU: refaz o cache a partir dos logs e roda tudo
 bash scripts/qwen_parecer.sh
+# Qwen: teste A/A e condicoes E e V (~3 h na RTX 3090), para igualar os modelos de API
+bash scripts/qwen_complementar.sh 2>&1 | tee qwen_complementar.log
 
 # analises (sem API)
 uv run python scripts/parecer_reanalise.py     # A1, A4, A6, B1, B3, B5, B6, Holm, custo por ganho

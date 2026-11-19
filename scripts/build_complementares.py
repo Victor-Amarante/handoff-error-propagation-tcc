@@ -31,6 +31,7 @@ from handoff.measure import (
 )
 
 API = [("gpt-5.6-luna", "GPT-5.6 Luna"), ("claude-haiku-4-5-20251001", "Claude Haiku 4.5")]
+QWEN = ("qwen3.5-9b", "Qwen3.5 9B")
 OUT = {}
 TAB = Path("TCC___Contratos_de_Handoff_em_sistemas_de_IA_Generativa/src/tables")
 
@@ -62,6 +63,8 @@ def per_q(df):
 # A3 + insight 1: E e V contra B, C, D (mesmas perguntas, mesmo estado)
 # --------------------------------------------------------------------------
 def factorial(slug):
+    if not has_ev(slug):
+        return None, 0
     main, ctr_main, _ = load(slug, "extractor")
     extra, ctr_extra, _ = load_extra(slug)
     df = pd.concat([main, extra])
@@ -77,6 +80,11 @@ def factorial(slug):
     return df, len(common)
 
 
+def has_ev(slug):
+    d = Path("data") / slug / "logs_parecer"
+    return d.exists() and any(d.glob("*_E_seed*.jsonl")) and any(d.glob("*_V_seed*.jsonl"))
+
+
 def load_extra(slug):
     """Como build_tables.load, mas para logs_parecer (condicoes E e V)."""
     df, ctr, n = load(slug, "extractor", subdir="logs_parecer", nconds=2)
@@ -87,8 +95,10 @@ def load_extra(slug):
 # A2: teste A/A
 # --------------------------------------------------------------------------
 def aa(slug):
+    if not (Path("data") / slug / "logs_aa").exists():
+        return pd.DataFrame()
     rep = {(c.question_id, str(c.condition)): c for c in load_cells(Path("data") / slug / "logs_aa")
-           if is_complete(c.path) and c.is_control}
+           if is_complete(c.path) and c.is_control and c.injection_stage == "extractor"}
     rows = []
     for c in load_cells(Path("data") / slug / "logs"):
         if not (c.is_control and c.injection_stage == "extractor"):
@@ -201,14 +211,14 @@ def noise_adjusted(slug):
     return out
 
 
-def write_tables():
-    names = [n for _, n in API]
-    L = [r"\begin{table*}[t]", r"\caption{Fatorial entre lineage e evidência e efeito da instrução de conferência (estudo principal, modelos de API)}",
-         r"\label{tab:fatorial}", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{3.2pt}",
-         r"\begin{tabular}{|l|ccccc|ccccc|}", r"\hline",
+def write_factorial(names, caption, label, fname):
+    k = len(names)
+    L = [r"\begin{table*}[t]", r"\caption{" + caption + "}",
+         r"\label{" + label + "}", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{3.2pt}",
+         r"\begin{tabular}{|l|" + "ccccc|" * k + "}", r"\hline",
          " & " + " & ".join(r"\multicolumn{5}{c|}{\textbf{" + n + "}}" for n in names) + r" \\",
-         r"\textbf{Métrica} & " + " & ".join(["B & C & E & D & D$'$"] * 2) + r" \\",
-         r"\multicolumn{1}{|l|}{} & " + " & ".join([r"\scriptsize --/-- & \scriptsize L/-- & \scriptsize --/E & \scriptsize L/E & \scriptsize L/E+i"] * 2) + r" \\", r"\hline"]
+         r"\textbf{Métrica} & " + " & ".join(["B & C & E & D & D$'$"] * k) + r" \\",
+         r"\multicolumn{1}{|l|}{} & " + " & ".join([r"\scriptsize --/-- & \scriptsize L/-- & \scriptsize --/E & \scriptsize L/E & \scriptsize L/E+i"] * k) + r" \\", r"\hline"]
     for lab, m, dec in ROWS:
         cells = []
         for n in names:
@@ -216,9 +226,9 @@ def write_tables():
                 v = OUT[n]["means"][c][m]
                 cells.append(fi(v) if dec == 0 else f(v))
         L.append(lab + " & " + " & ".join(cells) + r" \\")
-    L += [r"\hline", r"\end{tabular}", r"\\[4pt]", r"{\scriptsize\setlength{\tabcolsep}{2pt}", r"\begin{tabular}{|l|ccc|ccc|}", r"\hline",
+    L += [r"\hline", r"\end{tabular}", r"\\[4pt]", r"{\scriptsize\setlength{\tabcolsep}{2pt}", r"\begin{tabular}{|l|" + "ccc|" * k + "}", r"\hline",
           " & " + " & ".join(r"\multicolumn{3}{c|}{\textbf{" + n + "}}" for n in names) + r" \\",
-          r"\textbf{Diferença pareada} & " + " & ".join([r"B $\to$ E & E $\to$ D & D $\to$ D$'$"] * 2) + r" \\", r"\hline"]
+          r"\textbf{Diferença pareada} & " + " & ".join([r"B $\to$ E & E $\to$ D & D $\to$ D$'$"] * k) + r" \\", r"\hline"]
     for lab, m, dec in ROWS:
         cells = []
         for n in names:
@@ -229,10 +239,19 @@ def write_tables():
     L += [r"\hline", r"\end{tabular}}"]
     nq = ", ".join(f"{OUT[n]['factorial_n']}" for n in names)
     L += [r"\\[2pt]{\scriptsize\raggedright L: lineage; E: evidência; i: instrução de conferência. Médias e diferenças por pergunta sobre as mesmas "
-          + nq + r" perguntas, com IC95\% bootstrap; em negrito, intervalo que não inclui zero. A retenção usa as perguntas cujo controle acerta nas cinco condições. "
+          + nq + r" perguntas, com IC95\% bootstrap; em negrito, intervalo que não inclui zero. A retenção usa as perguntas cujo controle acerta nas seis condições (A a D, E e D$'$). "
           r"$^{a}$Fração das execuções do erro de valor em que o valor corrompido aparece literalmente na resposta final; não depende da comparação com o controle.\par}",
           r"\end{table*}"]
-    (TAB / "resultados-fatorial.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
+    (TAB / fname).write_text("\n".join(L) + "\n", encoding="utf-8")
+
+
+def write_tables():
+    api = [n for _, n in API if "means" in OUT.get(n, {})]
+    write_factorial(api, "Fatorial entre lineage e evidência e efeito da instrução de conferência (estudo principal, modelos de API)",
+                    "tab:fatorial", "resultados-fatorial.tex")
+    if "means" in OUT.get(QWEN[1], {}):
+        write_factorial([QWEN[1]], "Fatorial entre lineage e evidência e efeito da instrução de conferência no Qwen3.5 9B (estudo principal)",
+                        "tab:fatorial-qwen", "resultados-fatorial-qwen.tex")
 
     M3 = [("GPT-5.6 Luna", None), ("Claude Haiku 4.5", "Claude Haiku 4.5"), ("Qwen3.5 9B", "Qwen3.5 9B")]
     L = [r"\begin{table*}[t]", r"\caption{Verificações do instrumento: piso de ruído (teste A/A) e auditoria cruzada}", r"\label{tab:verificacoes}",
@@ -257,11 +276,17 @@ def write_tables():
                 cr = OUT.get(key, {}).get("cross") if key else None
                 cells.append(f(cr[c][k]) if cr else "--")
         L.append(lab + " & " + " & ".join(cells) + r" \\")
-    naa = ", ".join(str(OUT[n].get("aa_n", "--")) for _, n in API)
+    curto = {"GPT-5.6 Luna": "GPT", "Claude Haiku 4.5": "Haiku", "Qwen3.5 9B": "Qwen"}
+    com_aa = [n for n, _ in M3 if "aa_n" in OUT.get(n, {})]
+    sem_aa = [curto[n] for n, _ in M3 if n not in com_aa]
+    naa = ", ".join(str(OUT[n]["aa_n"]) for n in com_aa)
+    nomes = [curto[n] for n in com_aa]
+    aa_nota = " perguntas no " + (", no ".join(nomes[:-1]) + " e no " + nomes[-1] if len(nomes) > 1 else nomes[0]) + ")"
+    aa_nota += "; o " + " e o ".join(sem_aa) + " não foi replicado" if sem_aa else ""
     ncr = ", ".join(str(OUT[n].get("cross_n", "--")) for n in ("Claude Haiku 4.5", "Qwen3.5 9B"))
     L += [r"\hline", r"\end{tabular}",
           r"\\[2pt]{\scriptsize\raggedright Piso de ruído: as métricas de contenção calculadas entre duas execuções limpas da mesma pergunta e condição ("
-          + naa + r" perguntas no GPT e no Haiku); o Qwen não foi replicado. Auditoria cruzada: estudo principal, "
+          + naa + aa_nota + r". Auditoria cruzada: estudo principal, "
           + ncr + r" perguntas no Haiku e no Qwen; no GPT o auditor é o próprio, e os valores estão na Tabela~\ref{tab:principal}.\par}",
           r"\end{table*}"]
     (TAB / "resultados-verificacoes.tex").write_text("\n".join(L) + "\n", encoding="utf-8")
@@ -294,34 +319,42 @@ def strict_units(slug="qwen3.5-9b"):
     return out
 
 
+def factorial_report(R, df, ncommon):
+    p = per_q(df)
+    nq = df.question_id.nunique()
+    R["factorial_n"] = nq
+    R["factorial_ncommon"] = ncommon
+    R["means"] = {c: p.loc[c].mean().round(4).to_dict() for c in "BCDEV" if c in p.index.get_level_values(0)}
+    print(f"fatorial: {nq} perguntas, retencao sobre {ncommon}")
+    for c in "BCDEV":
+        print("  ", c, {k: round(v, 2) for k, v in R["means"][c].items()})
+    R["deltas"] = {}
+    for a, b in [("B", "E"), ("C", "D"), ("B", "C"), ("E", "D"), ("D", "V")]:
+        R["deltas"][a + b] = {}
+        for m in MET:
+            s, (mu, lo, hi) = fd(p.loc[b][m] - p.loc[a][m])
+            R["deltas"][a + b][m] = [mu, lo, hi]
+        print(f"  {a}->{b}:", {m: [round(x, 2) for x in v] for m, v in R["deltas"][a + b].items()})
+    # por braco: ESR e RCCA de E e V
+    for et in ("value", "metadata"):
+        q = df[df.error_type == et].copy()
+        for m in ("esr", "rcca_conteudo", "final_correct"):
+            q[m] = pd.to_numeric(q[m], errors="coerce")
+        R[f"braco_{et}"] = q.groupby("condition")[["esr", "rcca_conteudo", "final_correct"]].mean().round(4).to_dict()
+        print(f"   braco {et}:", q.groupby("condition")[["esr", "rcca_conteudo", "final_correct"]].mean().round(2).to_dict())
+
+
 if __name__ == "__main__":
-    L = []
-    for slug, name in API:
+    # cada etapa roda so para os modelos que tem os logs correspondentes; no
+    # Qwen, E, V e o A/A dependem de scripts/qwen_complementar.sh
+    for slug, name in API + [QWEN]:
         R = OUT[name] = {}
         print(f"\n========== {name} ==========")
         df, ncommon = factorial(slug)
-        p = per_q(df)
-        nq = df.question_id.nunique()
-        R["factorial_n"] = nq
-        R["factorial_ncommon"] = ncommon
-        R["means"] = {c: p.loc[c].mean().round(4).to_dict() for c in "BCDEV" if c in p.index.get_level_values(0)}
-        print(f"fatorial: {nq} perguntas, retencao sobre {ncommon}")
-        for c in "BCDEV":
-            print("  ", c, {k: round(v, 2) for k, v in R["means"][c].items()})
-        R["deltas"] = {}
-        for a, b in [("B", "E"), ("C", "D"), ("B", "C"), ("E", "D"), ("D", "V")]:
-            R["deltas"][a + b] = {}
-            for m in MET:
-                s, (mu, lo, hi) = fd(p.loc[b][m] - p.loc[a][m])
-                R["deltas"][a + b][m] = [mu, lo, hi]
-            print(f"  {a}->{b}:", {m: [round(x, 2) for x in v] for m, v in R["deltas"][a + b].items()})
-        # por braco: ESR e RCCA de E e V
-        for et in ("value", "metadata"):
-            q = df[df.error_type == et].copy()
-            for m in ("esr", "rcca_conteudo", "final_correct"):
-                q[m] = pd.to_numeric(q[m], errors="coerce")
-            R[f"braco_{et}"] = q.groupby("condition")[["esr", "rcca_conteudo", "final_correct"]].mean().round(4).to_dict()
-            print(f"   braco {et}:", q.groupby("condition")[["esr", "rcca_conteudo", "final_correct"]].mean().round(2).to_dict())
+        if df is None:
+            print("fatorial: sem condicoes E e V")
+        else:
+            factorial_report(R, df, ncommon)
 
         a = aa(slug)
         if len(a):
@@ -329,13 +362,11 @@ if __name__ == "__main__":
             R["aa"] = g.round(4).to_dict()
             R["aa_n"] = a.q.nunique()
             print(f"A/A ({a.q.nunique()} perguntas):", g.round(2).to_dict())
-
-        if len(a):
             R["aa_ajustado"] = noise_adjusted(slug)
             for k, v in R["aa_ajustado"].items():
                 print("   ajustado", k, [round(x, 2) for x in v])
 
-        r = reasoning(slug)
+        r = reasoning(slug) if (Path("data") / slug / "logs_parecer").exists() else pd.DataFrame()
         if len(r):
             g = r.groupby("cond")[["acc", "out"]].mean()
             R["reasoning"] = g.round(4).to_dict()
@@ -347,14 +378,6 @@ if __name__ == "__main__":
                 R["reasoning_delta"][x + y] = list(v)
             print(f"R ({r.q.nunique()} perguntas):", g.round(2).to_dict(), R["reasoning_delta"])
 
-    qr = reasoning("qwen3.5-9b") if (Path("data") / "qwen3.5-9b" / "logs_parecer").exists() else pd.DataFrame()
-    if len(qr):
-        R = OUT.setdefault("Qwen3.5 9B", {})
-        R["reasoning"] = qr.groupby("cond")[["acc", "out"]].mean().round(4).to_dict()
-        R["reasoning_n"] = qr.q.nunique()
-        pv = qr.pivot_table(index="q", columns="cond", values="acc")
-        R["reasoning_delta"] = {x + y: list(fd(pv[y] - pv[x])[1]) for x, y in [("B", "R"), ("A", "R"), ("A", "B")]}
-        print(f"\nR Qwen ({qr.q.nunique()} perguntas):", R["reasoning"], R["reasoning_delta"])
     su = strict_units()
     if su:
         OUT.setdefault("Qwen3.5 9B", {})["strict_units"] = su
