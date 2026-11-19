@@ -164,6 +164,14 @@ De D para D$'$, a retenção subiu 0,17 no GPT e 0,14 no Haiku, a acurácia fina
 No GPT, a ESR do braço de valor caiu de 0,69 para 0,25 e a acurácia final desse braço quase dobrou, de 0,37 para 0,67. No Haiku, a ESR agregada não mudou de forma significativa ($-0{,}05$), embora a do braço de valor tenha caído de 0,71 para 0,53.
 A RCCA ficou no mesmo nível de D, o que é esperado, já que o auditor não recebe a instrução.
 
+\input{tables/resultados-fatorial-qwen}
+
+No Qwen, as condições E e D$'$ rodaram sobre as mesmas 137 perguntas (Tabela~\ref{tab:fatorial-qwen}), e só parte do padrão se repetiu.
+De B para E, a evidência sem lineage elevou a RCCA em 0,11, mais do que o lineage de B para C (+0,08), e a retenção em 0,12, com intervalo que encosta em zero. A acurácia final e a presença literal do valor corrompido não mudaram de forma significativa.
+De E para D, ao contrário do que ocorreu nos modelos de API, o lineage reduziu a presença literal do valor corrompido em 0,10, sem mudar a acurácia, a retenção ou a RCCA, por 840 tokens a mais.
+A instrução de conferência não teve efeito no Qwen. De D para D$'$, nenhuma métrica mudou de forma significativa, e a ESR do braço de valor ficou em 0,75 nas duas condições.
+A retenção do Qwen se apoia em só 34 perguntas, as únicas cujo controle acerta nas seis condições.
+
 A condição B$'$, com espaço para o raciocínio no schema do Analista, testou a perda de acurácia do controle de A para B.
 No Haiku, a acurácia do controle foi de 0,59 em B para 0,73 em B$'$, uma diferença de +0,14 (IC $[+0{,}06; +0{,}21]$), e voltou ao nível de A (0,72).
 No GPT, que já raciocina em tokens ocultos, ela não mudou (0,68 em B e 0,65 em B$'$).
@@ -178,6 +186,7 @@ A causa é o segundo termo da Eq.~\ref{eq:esr}: duas respostas corretas da mesma
 A acurácia, que não depende do controle, é bem mais estável, e a réplica teve o mesmo acerto do controle em 81\% a 98\% das perguntas.
 O piso também varia entre condições, sem uma ordem comum aos dois modelos.
 Descontada a diferença dos pisos, o aumento de profundidade de A para B continua fora de zero (+0,49 no GPT e +0,37 no Haiku), mas as diferenças de ESR entre condições vizinhas deixam de se distinguir de zero, em parte porque o piso foi medido em apenas 47 e 43 perguntas. No Haiku, a queda de ESR de C para D ($-0{,}14$) é igual à diferença dos pisos.
+No Qwen, a réplica com a mesma seed da rodada principal saiu idêntica ao controle, byte a byte, nas 200 execuções, porque o Ollama torna a decodificação determinística quando a seed é fixa. Ela confirma que o instrumento não introduz ruído próprio, mas não mede o ruído de amostragem do Qwen, que exigiria uma réplica com outra seed.
 Os efeitos da evidência sobre o destino do erro ficam sustentados pelas medidas que não comparam a execução com o controle: a acurácia final, a acurácia estrita, a retenção e, nas condições E e D$'$, a presença literal do valor corrompido.
 
 Na auditoria cruzada, o auditor do GPT leu os traces de Haiku e Qwen sem que o pipeline rodasse de novo.
@@ -189,5 +198,5 @@ O falso positivo do auditor do GPT nos controles do Qwen, entre 0,42 e 0,64, é 
 \subsection{Replicação entre modelos}\label{sec:replicacao}
 
 Dois resultados se repetiram nos três modelos: a estrutura sozinha não melhorou a correção e aumentou a profundidade de propagação, quase toda por repetição literal do valor corrompido, e o lineage elevou a RCCA sem reduzir a sobrevivência do erro, com um ganho que se concentra no erro de metadado e que encolhe de cerca de 0,34 para 0,07 a 0,15 quando o acerto é contado pelo conteúdo.
-O efeito da evidência se replicou entre os dois modelos de API, com aumento de retenção e de acurácia estrita e RCCA perto de 0,8, e, no fatorial, ele aparece com ou sem lineage. No Qwen, a evidência melhorou a acurácia final, mas a atribuição só melhorou quando os traces foram lidos pelo auditor do GPT.
+O efeito da evidência se replicou entre os dois modelos de API, com aumento de retenção e de acurácia estrita e RCCA perto de 0,8, e, no fatorial, ele aparece com ou sem lineage. No Qwen, a evidência melhorou a acurácia final, mas a atribuição só melhorou quando os traces foram lidos pelo auditor do GPT. No fatorial, a evidência sem lineage elevou a RCCA do Qwen, e a instrução de conferência, que nos modelos de API quase eliminou a presença literal do valor corrompido, não teve efeito nele.
 O Qwen também foi o único modelo a violar o contrato com frequência e o que mais perdeu acurácia com o formato estruturado nas execuções de controle.

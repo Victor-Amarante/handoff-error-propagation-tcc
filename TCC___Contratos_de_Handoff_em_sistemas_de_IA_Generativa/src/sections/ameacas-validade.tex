@@ -53,7 +53,7 @@ O experimento cobre um único domínio, finanças, com um único benchmark, a am
 O documento-fonte é o trecho de evidência já recortado pelo benchmark, e não o documento completo, então o experimento não inclui recuperação nem documentos longos, situações em que a evidência carregada pelo contrato pode ser mais difícil de localizar e de usar.
 A topologia é linear e tem três estágios, enquanto sistemas reais podem envolver conversas entre vários agentes com ferramentas \cite{wu2023autogen} ou simulações com mais de mil agentes \cite{altera2024sid}.
 Os três modelos são das faixas mais baratas de cada família, e não se sabe se modelos maiores reproduziriam o mesmo padrão.
-As condições E e D$'$ e o teste A/A rodaram só nos dois modelos de API. No Qwen, rodaram apenas a condição B$'$ e a verificação da unidade restrita, esta última em 28 perguntas.
+As condições complementares rodaram nos três modelos, mas o piso de ruído do Qwen não foi medido, porque, com a seed fixa, o Ollama reproduz a execução byte a byte e a réplica do controle saiu idêntica a ele. A verificação da unidade restrita rodou só no Qwen, em 28 perguntas.
 
 \subsection{Validade de conclusão}\label{sec:ameacas-conclusao}
 

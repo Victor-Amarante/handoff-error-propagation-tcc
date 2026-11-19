@@ -176,7 +176,7 @@ Por fim, como toda métrica de contenção compara duas execuções, parte da di
 \subsection{Condições complementares}\label{sec:complementares}
 
 O desenho aninhado mede o efeito de cada mecanismo dado o anterior, e não permite dizer se uma camada é dispensável.
-Por isso, o experimento foi estendido com três condições que reaproveitam o mesmo estado extraído e o mesmo erro injetado da rodada principal (Tabela~\ref{tab:condicoes}). E e D$'$ rodaram nos dois modelos de API, e B$'$, nos três.
+Por isso, o experimento foi estendido com três condições que reaproveitam o mesmo estado extraído e o mesmo erro injetado da rodada principal (Tabela~\ref{tab:condicoes}). As três rodaram nos três modelos.
 A condição E carrega a evidência sem o lineage. Com B, C e D, ela fecha um fatorial 2 $\times$ 2 entre lineage e evidência, e permite medir o efeito de cada mecanismo na presença e na ausência do outro.
 A condição B$'$ acrescenta ao schema do Analista, antes dos claims, um campo de texto em que o modelo pode desenvolver o cálculo. Ela roda só nas execuções de controle e serve para separar o efeito do contrato tipado do efeito de impor uma saída em JSON sem espaço para raciocinar, mecanismo que Tam et al. associam à perda de acurácia sob restrições de formato \cite{tam2024speak}. O Redator de B$'$ recebe exatamente o handoff de B.
 A condição D$'$ é a D com uma frase a mais na instrução do Analista e do Redator, que pede para conferir cada valor contra o trecho de evidência e, havendo divergência, confiar na evidência.

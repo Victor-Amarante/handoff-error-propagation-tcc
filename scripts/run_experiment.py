@@ -151,6 +151,16 @@ def main() -> int:
         default="0/1",
         help="k/n: roda so a k-esima de n fatias das celulas pendentes (paralelismo)",
     )
+    parser.add_argument(
+        "--stage-seed",
+        type=int,
+        default=None,
+        help=(
+            "seed de Analista, Redator e auditor, com o estado do Extrator da "
+            "seed de --seeds. Usado no teste A/A do Qwen: no Ollama a mesma "
+            "seed reproduz a execucao byte a byte, e a replica precisa de outro sorteio"
+        ),
+    )
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
@@ -175,7 +185,7 @@ def main() -> int:
             row["question_id"],
             arm,
             cond,
-            seed,
+            args.stage_seed or seed,
             stage,
             variant=args.metadata_subtype if arm == "metadata" else None,
         )
@@ -221,7 +231,7 @@ def main() -> int:
             _com_retomada_de_falha_transitoria(
                 run_cell,
                 row,
-                seed,
+                args.stage_seed or seed,
                 arm,  # type: ignore[arg-type]
                 condition,
                 extraction=extraction,

@@ -1,0 +1,39 @@
+\begin{table}[t]
+\caption{Fatorial entre lineage e evidência e efeito da instrução de conferência no Qwen3.5 9B (estudo principal)}
+\label{tab:fatorial-qwen}
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{|l|ccccc|}
+\hline
+ & \multicolumn{5}{c|}{\textbf{Qwen3.5 9B}} \\
+\textbf{Métrica} & B & C & E & D & D$'$ \\
+\multicolumn{1}{|l|}{} & \scriptsize --/-- & \scriptsize L/-- & \scriptsize --/E & \scriptsize L/E & \scriptsize L/E+i \\
+\hline
+Acurácia factual final & 0,30 & 0,28 & 0,36 & 0,37 & 0,37 \\
+Retenção & 0,58 & 0,58 & 0,70 & 0,71 & 0,73 \\
+ESR & 0,69 & 0,71 & 0,63 & 0,66 & 0,63 \\
+Sobrevivência literal$^{a}$ & 0,23 & 0,25 & 0,21 & 0,11 & 0,13 \\
+RCCA & 0,36 & 0,45 & 0,47 & 0,45 & 0,48 \\
+FESA líquida & 0,25 & 0,23 & 0,30 & 0,33 & 0,33 \\
+Tokens por execução & 946 & 1.912 & 1.334 & 2.171 & 2.232 \\
+\hline
+\end{tabular}
+\\[4pt]
+\resizebox{\columnwidth}{!}{{\scriptsize\setlength{\tabcolsep}{2pt}
+\begin{tabular}{|l|ccc|}
+\hline
+ & \multicolumn{3}{c|}{\textbf{Qwen3.5 9B}} \\
+\textbf{Diferença pareada} & B $\to$ E & E $\to$ D & D $\to$ D$'$ \\
+\hline
+Acurácia factual final & +0,05 [$-$0,01; +0,12] & +0,02 [$-$0,04; +0,07] & +0,00 [$-$0,05; +0,04] \\
+Retenção & +0,12 [+0,00; +0,24] & +0,02 [$-$0,08; +0,11] & +0,02 [$-$0,09; +0,12] \\
+ESR & $-$0,07 [$-$0,14; +0,00] & +0,03 [$-$0,03; +0,09] & $-$0,03 [$-$0,10; +0,03] \\
+Sobrevivência literal$^{a}$ & $-$0,03 [$-$0,10; +0,05] & \textbf{$-$0,10 [$-$0,17; $-$0,03]} & +0,03 [$-$0,03; +0,09] \\
+RCCA & \textbf{+0,11 [+0,05; +0,18]} & $-$0,02 [$-$0,10; +0,05] & +0,03 [$-$0,04; +0,09] \\
+FESA líquida & +0,06 [$-$0,04; +0,16] & +0,03 [$-$0,07; +0,12] & +0,01 [$-$0,09; +0,11] \\
+Tokens por execução & +388 & +837 & +61 \\
+\hline
+\end{tabular}}}
+\\[2pt]{\scriptsize\raggedright L: lineage; E: evidência; i: instrução de conferência. Médias e diferenças por pergunta sobre as mesmas 137 perguntas, com IC95\% bootstrap; em negrito, intervalo que não inclui zero. A retenção usa as perguntas cujo controle acerta nas seis condições (A a D, E e D$'$). $^{a}$Fração das execuções do erro de valor em que o valor corrompido aparece literalmente na resposta final; não depende da comparação com o controle.\par}
+\end{table}

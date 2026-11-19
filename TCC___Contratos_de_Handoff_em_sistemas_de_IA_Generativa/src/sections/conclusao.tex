@@ -17,7 +17,7 @@ A resposta à RQ3 é que a evidência foi o mecanismo que melhorou o destino do 
 De C para D, a acurácia final subiu 0,15 no GPT e 0,10 no Haiku, a retenção subiu 0,17 e 0,14, e a RCCA chegou a cerca de 0,8, com 0,96 e 0,87 no erro de valor, e efeitos do mesmo tamanho apareceram quando a evidência entrou sem lineage.
 As quedas de ESR que acompanharam esses ganhos não se distinguem do piso de ruído do instrumento, que o teste A/A mostrou ser alto.
 Uma instrução para conferir o valor contra a evidência ampliou o efeito e, no GPT, levou a ESR do erro de valor de 0,69 para 0,25, por menos de cem tokens a mais.
-No Qwen3.5 9B, a evidência melhorou a acurácia final, e o trace passou a permitir localizar o erro, mas só quando lido pelo auditor do GPT.
+No Qwen3.5 9B, a evidência melhorou a acurácia final, e o trace passou a permitir localizar o erro, mas só quando lido pelo auditor do GPT, e a instrução de conferência não teve efeito.
 
 A principal contribuição do trabalho é mostrar, com o contrato isolado como variável manipulada, que, num handoff tipado, o que reduziu o dano de um erro de valor foi acrescentar conteúdo verificável, com ou sem proveniência, e que a proveniência sozinha melhorou a atribuição sem conter o erro.
 O desenho não testou a evidência em prosa, e por isso não permite dizer se o mesmo efeito apareceria sem a estrutura.
@@ -29,4 +29,4 @@ A primeira é tornar a ESR robusta ao ruído de amostragem, comparando cada exec
 A segunda é repetir a condição C com identificadores de fonte opacos e perguntas que não citem o ano, para medir o efeito da proveniência sem os vazamentos discutidos na Seção~\ref{sec:ameacas}.
 A terceira é testar a evidência em prosa, o que completaria o fatorial com a estrutura e diria se o formato tipado é necessário para que a evidência funcione.
 A quarta é combinar a evidência carregada pelo contrato com portões de verificação dedicados entre os estágios, que Singh e Pawar mostraram ser eficazes para reduzir a sobrevivência de alucinações \cite{singh2026snowball}. A condição D$'$ sugere que boa parte desse ganho já vem de instruir o próprio estágio a conferir a evidência que recebe.
-Além dessas, vale repetir no Qwen as condições E e D$'$ e o teste A/A, e levar o protocolo a documentos completos com recuperação, a outros domínios e a modelos maiores, para saber até onde os resultados se mantêm.
+Além dessas, vale medir o piso de ruído do Qwen com uma réplica de outra seed e levar o protocolo a documentos completos com recuperação, a outros domínios e a modelos maiores, para saber até onde os resultados se mantêm.

@@ -94,10 +94,34 @@ def load_extra(slug):
 # --------------------------------------------------------------------------
 # A2: teste A/A
 # --------------------------------------------------------------------------
+def aa_dir(slug):
+    """Pasta da replica. No Ollama a mesma seed reproduz a execucao byte a byte
+    (logs_aa do Qwen), entao o piso do Qwen vem da replica com outra seed."""
+    for d in ("logs_aa_seed2",) if slug == QWEN[0] else ("logs_aa",):
+        if (Path("data") / slug / d).exists():
+            return Path("data") / slug / d
+    return None
+
+
+def aa_identicas(slug):
+    """Replicas de logs_aa com saidas de Analista e Redator iguais byte a byte
+    as do controle original. Retorna (iguais, total)."""
+    d = Path("data") / slug / "logs_aa"
+    if not d.exists():
+        return 0, 0
+    def saidas(p):
+        return [e.get("output_raw") for e in map(json.loads, open(p))
+                if e["event_type"] == "stage_output" and e.get("stage") in ("analyst", "writer")]
+    pares = [(f, Path("data") / slug / "logs" / f.name) for f in sorted(d.glob("*.jsonl"))]
+    pares = [(f, g) for f, g in pares if g.exists()]
+    return sum(saidas(f) == saidas(g) for f, g in pares), len(pares)
+
+
 def aa(slug):
-    if not (Path("data") / slug / "logs_aa").exists():
+    d = aa_dir(slug)
+    if d is None:
         return pd.DataFrame()
-    rep = {(c.question_id, str(c.condition)): c for c in load_cells(Path("data") / slug / "logs_aa")
+    rep = {(c.question_id, str(c.condition)): c for c in load_cells(d)
            if is_complete(c.path) and c.is_control and c.injection_stage == "extractor"}
     rows = []
     for c in load_cells(Path("data") / slug / "logs"):
@@ -213,7 +237,8 @@ def noise_adjusted(slug):
 
 def write_factorial(names, caption, label, fname):
     k = len(names)
-    L = [r"\begin{table*}[t]", r"\caption{" + caption + "}",
+    env = "table*" if k > 1 else "table"
+    L = [r"\begin{" + env + "}[t]", r"\caption{" + caption + "}",
          r"\label{" + label + "}", r"\centering", r"\footnotesize", r"\setlength{\tabcolsep}{3.2pt}",
          r"\begin{tabular}{|l|" + "ccccc|" * k + "}", r"\hline",
          " & " + " & ".join(r"\multicolumn{5}{c|}{\textbf{" + n + "}}" for n in names) + r" \\",
@@ -226,7 +251,9 @@ def write_factorial(names, caption, label, fname):
                 v = OUT[n]["means"][c][m]
                 cells.append(fi(v) if dec == 0 else f(v))
         L.append(lab + " & " + " & ".join(cells) + r" \\")
-    L += [r"\hline", r"\end{tabular}", r"\\[4pt]", r"{\scriptsize\setlength{\tabcolsep}{2pt}", r"\begin{tabular}{|l|" + "ccc|" * k + "}", r"\hline",
+    # numa coluna so, a tabela de diferencas nao cabe na largura natural
+    caixa = (r"\resizebox{\columnwidth}{!}{", "}") if k == 1 else ("", "")
+    L += [r"\hline", r"\end{tabular}", r"\\[4pt]", caixa[0] + r"{\scriptsize\setlength{\tabcolsep}{2pt}", r"\begin{tabular}{|l|" + "ccc|" * k + "}", r"\hline",
           " & " + " & ".join(r"\multicolumn{3}{c|}{\textbf{" + n + "}}" for n in names) + r" \\",
           r"\textbf{Diferença pareada} & " + " & ".join([r"B $\to$ E & E $\to$ D & D $\to$ D$'$"] * k) + r" \\", r"\hline"]
     for lab, m, dec in ROWS:
@@ -236,12 +263,12 @@ def write_factorial(names, caption, label, fname):
                 v = OUT[n]["deltas"][k][m]
                 cells.append(f"{v[0]:+,.0f}".replace(",", ".") if dec == 0 else fdelta(v))
         L.append(lab + " & " + " & ".join(cells) + r" \\")
-    L += [r"\hline", r"\end{tabular}}"]
+    L += [r"\hline", r"\end{tabular}}" + caixa[1]]
     nq = ", ".join(f"{OUT[n]['factorial_n']}" for n in names)
     L += [r"\\[2pt]{\scriptsize\raggedright L: lineage; E: evidência; i: instrução de conferência. Médias e diferenças por pergunta sobre as mesmas "
           + nq + r" perguntas, com IC95\% bootstrap; em negrito, intervalo que não inclui zero. A retenção usa as perguntas cujo controle acerta nas seis condições (A a D, E e D$'$). "
           r"$^{a}$Fração das execuções do erro de valor em que o valor corrompido aparece literalmente na resposta final; não depende da comparação com o controle.\par}",
-          r"\end{table*}"]
+          r"\end{" + env + "}"]
     (TAB / fname).write_text("\n".join(L) + "\n", encoding="utf-8")
 
 
@@ -282,7 +309,12 @@ def write_tables():
     naa = ", ".join(str(OUT[n]["aa_n"]) for n in com_aa)
     nomes = [curto[n] for n in com_aa]
     aa_nota = " perguntas no " + (", no ".join(nomes[:-1]) + " e no " + nomes[-1] if len(nomes) > 1 else nomes[0]) + ")"
-    aa_nota += "; o " + " e o ".join(sem_aa) + " não foi replicado" if sem_aa else ""
+    ident = OUT.get(QWEN[1], {}).get("aa_mesma_seed")
+    if "Qwen" in sem_aa and ident:
+        aa_nota += (f"; no Qwen, a réplica com a mesma seed saiu idêntica ao controle em {ident[0]} de {ident[1]} execuções, "
+                    "e o piso de amostragem não foi medido")
+    elif sem_aa:
+        aa_nota += "; o " + " e o ".join(sem_aa) + " não foi replicado"
     ncr = ", ".join(str(OUT[n].get("cross_n", "--")) for n in ("Claude Haiku 4.5", "Qwen3.5 9B"))
     L += [r"\hline", r"\end{tabular}",
           r"\\[2pt]{\scriptsize\raggedright Piso de ruído: as métricas de contenção calculadas entre duas execuções limpas da mesma pergunta e condição ("
@@ -356,6 +388,9 @@ if __name__ == "__main__":
         else:
             factorial_report(R, df, ncommon)
 
+        if slug == QWEN[0]:
+            R["aa_mesma_seed"] = list(aa_identicas(slug))
+            print("A/A mesma seed, replicas identicas:", R["aa_mesma_seed"])
         a = aa(slug)
         if len(a):
             g = a.groupby("cond")[["esr0", "depth0", "acc_igual"]].mean()
