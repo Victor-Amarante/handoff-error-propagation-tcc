@@ -21,7 +21,6 @@ def block(title, text):
 parts = [
     "% !TEX root = ../tcc.tex",
     "% Gerado por scripts/build_apendice.py a partir de handoff/prompts.py. Nao edite a mao.",
-    "\\appendices",
     "\\section{Prompts e schemas}\\label{sec:apendice}",
     "",
     "Os prompts abaixo são os que rodaram no experimento, em inglês. A instrução de cada estágio é a de tarefa seguida da de formato da condição. "

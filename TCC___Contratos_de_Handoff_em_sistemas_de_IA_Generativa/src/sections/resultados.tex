@@ -8,7 +8,7 @@
 
 A Tabela~\ref{tab:principal} reúne as métricas do estudo principal por modelo e condição, e a Tabela~\ref{tab:deltas} traz as diferenças pareadas entre condições vizinhas, que respondem às três perguntas de pesquisa.
 Todos os intervalos são de 95\%, obtidos por bootstrap sobre as perguntas, e uma diferença é chamada de significativa quando seu intervalo não inclui zero (Seção~\ref{sec:estatistica}).
-As condições complementares e as verificações do instrumento estão na Seção~\ref{sec:res-complementares}.
+As condições complementares e as verificações do instrumento estão na Seção~\ref{sec:res-complementares}, e as tabelas do subestudo e do fatorial do Qwen, no Apêndice~\ref{sec:apendice-tabelas}.
 
 \input{tables/resultados-principal}
 \input{tables/resultados-deltas}
@@ -117,9 +117,7 @@ No braço de valor, a evidência elevou a RCCA do Qwen de 0,24 para 0,38, mas no
 
 \subsection{Subestudo de atribuição de estágio}\label{sec:res-subestudo}
 
-\input{tables/resultados-subestudo}
-
-No subestudo, o erro percentual é injetado na saída do Analista e só o Redator roda por condição (Tabela~\ref{tab:subestudo}).
+No subestudo, o erro percentual é injetado na saída do Analista e só o Redator roda por condição (Tabela~\ref{tab:subestudo}, no Apêndice~\ref{sec:apendice-tabelas}).
 No GPT, o auditor localizou o estágio e o claim da injeção quase sempre, com RCCA e FESA entre 0,96 e 0,98 em todas as condições, inclusive em A, e placebos de no máximo 0,11.
 Com um único estágio entre a injeção e a resposta, e com um percentual que pode ser recalculado a partir dos claims do trace, a atribuição não dependeu de proveniência.
 A evidência, por outro lado, reduziu a sobrevivência do erro de 0,93 para 0,71 de C para D, uma diferença de $-0{,}21$ (IC $[-0{,}34; -0{,}09]$).
@@ -154,6 +152,7 @@ A latência cresceu no mesmo sentido no Haiku (de 4,3~s para 5,4~s) e no Qwen (d
 \input{tables/resultados-fatorial}
 
 A Tabela~\ref{tab:fatorial} traz o fatorial entre lineage e evidência nos dois modelos de API, sobre as mesmas perguntas e o mesmo erro injetado da rodada principal.
+Das diferenças com intervalo fora de zero, só uma não resiste à correção de Holm, a alta de retenção de E para D no GPT (+0,09).
 Acrescentar a evidência a um handoff tipado sem lineage, de B para E, teve um efeito do mesmo tamanho que o de acrescentá-la sobre o lineage, de C para D, e às vezes maior.
 A retenção subiu 0,25 no GPT e 0,24 no Haiku, a acurácia final subiu 0,21 e 0,16, a RCCA subiu 0,44 e 0,32, e a presença literal do valor corrompido na resposta do erro de valor caiu 0,13 e 0,20, com um acréscimo de cerca de 360 tokens por execução.
 Já acrescentar o lineage a um handoff que já tinha a evidência, de E para D, não reduziu a ESR nem a presença literal do erro, aumentou a profundidade de propagação (+0,14 e +0,16) e custou de 950 a 1.320 tokens a mais por execução.
@@ -164,21 +163,19 @@ De D para D$'$, a retenção subiu 0,17 no GPT e 0,14 no Haiku, a acurácia fina
 No GPT, a ESR do braço de valor caiu de 0,69 para 0,25 e a acurácia final desse braço quase dobrou, de 0,37 para 0,67. No Haiku, a ESR agregada não mudou de forma significativa ($-0{,}05$), embora a do braço de valor tenha caído de 0,71 para 0,53.
 A RCCA ficou no mesmo nível de D, o que é esperado, já que o auditor não recebe a instrução.
 
-\input{tables/resultados-fatorial-qwen}
-
-No Qwen, as condições E e D$'$ rodaram sobre as mesmas 137 perguntas (Tabela~\ref{tab:fatorial-qwen}), e só parte do padrão se repetiu.
+No Qwen, as condições E e D$'$ rodaram sobre as mesmas 137 perguntas (Tabela~\ref{tab:fatorial-qwen}, no Apêndice~\ref{sec:apendice-tabelas}), e só parte do padrão se repetiu.
 De B para E, a evidência sem lineage elevou a RCCA em 0,11, mais do que o lineage de B para C (+0,08), e a retenção em 0,12, com intervalo que encosta em zero. A acurácia final e a presença literal do valor corrompido não mudaram de forma significativa.
-De E para D, ao contrário do que ocorreu nos modelos de API, o lineage reduziu a presença literal do valor corrompido em 0,10, sem mudar a acurácia, a retenção ou a RCCA, por 840 tokens a mais.
+De E para D, o lineage reduziu a presença literal do valor corrompido em 0,10, diferença que não resiste à correção de Holm, sem mudar a acurácia, a retenção ou a RCCA, por 840 tokens a mais.
 A instrução de conferência não teve efeito no Qwen. De D para D$'$, nenhuma métrica mudou de forma significativa, e a ESR do braço de valor ficou em 0,75 nas duas condições.
 A retenção do Qwen se apoia em só 34 perguntas, as únicas cujo controle acerta nas seis condições.
+
+\input{tables/resultados-verificacoes}
 
 A condição B$'$, com espaço para o raciocínio no schema do Analista, testou a perda de acurácia do controle de A para B.
 No Haiku, a acurácia do controle foi de 0,59 em B para 0,73 em B$'$, uma diferença de +0,14 (IC $[+0{,}06; +0{,}21]$), e voltou ao nível de A (0,72).
 No GPT, que já raciocina em tokens ocultos, ela não mudou (0,68 em B e 0,65 em B$'$).
 No Qwen, o modelo que mais perdia, ela foi de 0,44 em B para 0,57 em B$'$, uma diferença de +0,13 (IC $[+0{,}06; +0{,}21]$), e recuperou cerca de dois terços da distância para A (0,63).
 A perda de acurácia dos dois modelos sem raciocínio vem, em boa parte, do modo de saída, que tira do modelo o espaço para calcular por extenso. O contrato de handoff, que B$'$ mantém igual ao de B, não explica a queda.
-
-\input{tables/resultados-verificacoes}
 
 O teste A/A mostra que a ESR e a profundidade têm um piso de ruído alto (Tabela~\ref{tab:verificacoes}).
 Comparando duas execuções limpas da mesma pergunta e condição pelo mesmo instrumento, a ESR nula ficou entre 0,23 e 0,40 no GPT, entre 0,40 e 0,56 no Haiku e entre 0,46 e 0,68 no Qwen, e a profundidade nula, entre 0,49 e 1,42 estágio.

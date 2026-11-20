@@ -23,7 +23,7 @@ sys.path.insert(0, "scripts")
 import numpy as np
 import pandas as pd
 
-from build_tables import load, ic
+from build_tables import load, ic, boot_p
 from handoff.logger import is_complete
 from handoff.measure import (
     esr, final_correct, load_cell, load_cells, placebo_attribution, propagation_depth,
@@ -196,15 +196,18 @@ def cross_audit(slug):
     return df[n == 4]
 
 
-def fdelta(v):
-    mu, lo, hi = v
+def fdelta(v, holm=True):
+    mu, lo, hi = v[:3]
     s = f"{mu:+.2f} [{lo:+.2f}; {hi:+.2f}]".replace(".", ",").replace("-", "$-$")
-    return r"\textbf{" + s + "}" if (lo > 0 or hi < 0) else s
+    return r"\textbf{" + s + "}" + ("" if holm else r"$^{\dagger}$") if (lo > 0 or hi < 0) else s
 
 
+HOLM_COMPS = ("BE", "ED", "DV")
 ROWS = [("Acurácia factual final", "final_correct", 2), ("Retenção", "retention", 2), ("ESR", "esr", 2),
         ("Sobrevivência literal$^{a}$", "esr_literal_valor", 2), ("RCCA", "rcca_conteudo", 2),
         ("FESA líquida", "fesa_liq", 2), ("Tokens por execução", "pipeline_tokens", 0)]
+# Holm sobre as diferencas da tabela, sem tokens: tres comparacoes x seis metricas
+HOLM_K = len(HOLM_COMPS) * sum(1 for *_, dec in ROWS if dec)
 
 
 def fi(x):
@@ -261,12 +264,13 @@ def write_factorial(names, caption, label, fname):
         for n in names:
             for k in ("BE", "ED", "DV"):
                 v = OUT[n]["deltas"][k][m]
-                cells.append(f"{v[0]:+,.0f}".replace(",", ".") if dec == 0 else fdelta(v))
+                cells.append(f"{v[0]:+,.0f}".replace(",", ".") if dec == 0 else fdelta(v, f"{k}:{m}" in OUT[n]["holm"]))
         L.append(lab + " & " + " & ".join(cells) + r" \\")
     L += [r"\hline", r"\end{tabular}}" + caixa[1]]
     nq = ", ".join(f"{OUT[n]['factorial_n']}" for n in names)
     L += [r"\\[2pt]{\scriptsize\raggedright L: lineage; E: evidência; i: instrução de conferência. Médias e diferenças por pergunta sobre as mesmas "
-          + nq + r" perguntas, com IC95\% bootstrap; em negrito, intervalo que não inclui zero. A retenção usa as perguntas cujo controle acerta nas seis condições (A a D, E e D$'$). "
+          + nq + r" perguntas, com IC95\% bootstrap; em negrito, intervalo que não inclui zero; $^{\dagger}$: não sobrevive à correção de Holm sobre as " + str(HOLM_K)
+          + r" diferenças de cada modelo. A retenção usa as perguntas cujo controle acerta nas seis condições (A a D, E e D$'$). "
           r"$^{a}$Fração das execuções do erro de valor em que o valor corrompido aparece literalmente na resposta final; não depende da comparação com o controle.\par}",
           r"\end{" + env + "}"]
     (TAB / fname).write_text("\n".join(L) + "\n", encoding="utf-8")
@@ -366,8 +370,16 @@ def factorial_report(R, df, ncommon):
     for a, b in [("B", "E"), ("C", "D"), ("B", "C"), ("E", "D"), ("D", "V")]:
         R["deltas"][a + b] = {}
         for m in MET:
-            s, (mu, lo, hi) = fd(p.loc[b][m] - p.loc[a][m])
-            R["deltas"][a + b][m] = [mu, lo, hi]
+            d = p.loc[b][m] - p.loc[a][m]
+            s, (mu, lo, hi) = fd(d)
+            R["deltas"][a + b][m] = [mu, lo, hi, boot_p(d)]
+    # como na Tabela de deltas do estudo principal
+    tests = sorted(((R["deltas"][k][m][3], f"{k}:{m}") for k in HOLM_COMPS for _, m, dec in ROWS if dec))
+    R["holm"] = []
+    for r, (pv, key) in enumerate(tests):
+        if pv > 0.05 / (len(tests) - r):
+            break
+        R["holm"].append(key)
         print(f"  {a}->{b}:", {m: [round(x, 2) for x in v] for m, v in R["deltas"][a + b].items()})
     # por braco: ESR e RCCA de E e V
     for et in ("value", "metadata"):

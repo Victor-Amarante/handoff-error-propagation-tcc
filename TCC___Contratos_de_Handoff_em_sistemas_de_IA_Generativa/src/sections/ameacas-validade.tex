@@ -47,6 +47,12 @@ Os erros injetados são sintéticos.
 A transposição de dígitos e o deslocamento de um ano produzem erros plausíveis, mas não necessariamente parecidos com as alucinações que um modelo comete sozinho, e Singh e Pawar usaram perturbações de outro tipo, com deslocamentos multiplicativos de 15\% a 40\% \cite{singh2026snowball}.
 A facilidade de detectar o erro de ano, que pode entrar em conflito com a pergunta, também difere da do erro de valor, o que justifica reportar os dois braços separadamente.
 
+O injetor também favorece a evidência por construção.
+Ele troca o valor ou o ano do claim e deixa intacto o trecho de evidência que o acompanha, de modo que, nas condições D, E e D$'$, o erro chega ao Analista junto com a prova de que está errado.
+No braço de valor, esse trecho continha o valor original em todas as execuções, nos três modelos, porque o Extrator é instruído a copiar da fonte um trecho com os dígitos do valor.
+Numa alucinação real, o estágio que erra o valor pode também registrar uma evidência errada, ou nenhuma, e o trecho deixaria de ser uma referência confiável.
+O efeito da evidência medido na RQ3 e no fatorial é, por isso, o de uma evidência sempre íntegra, o caso mais favorável a ela. Um desenho que corrompesse também o trecho, ou o retirasse de parte dos claims, diria quanto desse efeito resiste.
+
 \subsection{Validade externa}\label{sec:ameacas-externa}
 
 O experimento cobre um único domínio, finanças, com um único benchmark, a amostra aberta de 150 perguntas do FinanceBench \cite{islam2023financebench}.
@@ -62,4 +68,5 @@ Com intervalos de 95\%, é esperado que algumas diferenças apareçam como signi
 Das diferenças com intervalo fora de zero, 14 de 16 resistem à correção no GPT, 14 de 18 no Haiku e apenas 3 de 9 no Qwen. As que caem são as de efeito pequeno, como a queda de acurácia de A para B no GPT e no Qwen e quase todos os ganhos de C para D no Qwen, com exceção da acurácia final.
 Os achados centrais resistem à correção e se repetem entre modelos, como o aumento da profundidade de A para B e os efeitos da evidência nos modelos de API.
 O ganho de RCCA de B para C pelo critério de conteúdo resiste à correção só no GPT, e deve ser lido com cautela nos outros dois modelos.
+No fatorial, a mesma correção, sobre 18 diferenças por modelo, derruba só duas, a alta de retenção de E para D no GPT e a queda da presença literal de E para D no Qwen.
 O subestudo do Qwen tem apenas 19 perguntas, e seus resultados são indicativos.

@@ -4,13 +4,12 @@
 \begin{abstract}
 Em pipelines de IA generativa com vários estágios, um erro introduzido cedo pode chegar à resposta final sem que se saiba onde começou.
 Este trabalho investiga como o contrato de handoff, o formato da informação trocada entre estágios, afeta a propagação, a correção e a atribuição desse erro.
-Um pipeline fixo de três estágios roda sobre o FinanceBench com quatro contratos, texto livre (A), tipado (B), tipado com lineage (C) e tipado com lineage e o trecho de evidência da fonte (D), e um injetor determinístico corrompe o mesmo claim nas quatro, com GPT-5.6 Luna, Claude Haiku 4.5 e Qwen3.5 9B.
-A estrutura sozinha não melhorou a acurácia nem a sobrevivência do erro e aumentou a profundidade de propagação, quase toda pela repetição do valor corrompido que o schema exige.
-O lineage elevou a atribuição do claim de origem em 0,07 a 0,15, sobretudo nos erros de ano, cujo valor original o nome do documento revelava, sem reduzir a sobrevivência do erro.
-Nos dois modelos de API, a evidência aumentou a retenção da resposta correta no erro de valor e levou a atribuição a cerca de 0,8, com ou sem lineage, e uma instrução de conferência ampliou esse efeito por menos de cem tokens.
-Um teste A/A mostrou que a sobrevivência medida contra um único controle tem piso de ruído alto.
-No Qwen, o trace com evidência só permitiu localizar o erro quando lido por um auditor mais forte.
-Num handoff tipado, o ganho de confiabilidade veio do conteúdo verificável que o claim carrega, mais do que da proveniência, e depende de o modelo saber usá-lo.
+Um pipeline fixo de três estágios responde perguntas do FinanceBench com quatro contratos, texto livre (A), tipado (B), com lineage (C) e com lineage e evidência da fonte (D), e um injetor determinístico corrompe o mesmo claim nas quatro, com GPT-5.6 Luna, Claude Haiku 4.5 e Qwen3.5 9B.
+A estrutura sozinha não melhorou a acurácia nem conteve o erro, e o aumento de propagação que ela trouxe veio quase todo da repetição do valor corrompido que o schema exige.
+O lineage melhorou pouco a atribuição do claim de origem, e quase só nos erros de ano, em que o nome do documento revelava o valor original.
+A evidência foi o mecanismo que melhorou o destino do erro de valor. Nos modelos de API, ela aumentou a retenção da resposta correta e levou a atribuição a cerca de 0,8, com ou sem lineage, e uma instrução de conferência ampliou o efeito. No Qwen, ela melhorou a acurácia, e a atribuição só subiu com um auditor mais forte.
+Um teste A/A mostrou ainda que a sobrevivência do erro medida contra um único controle tem piso de ruído alto.
+Num handoff tipado e com a evidência íntegra, o ganho de confiabilidade veio do conteúdo verificável que o claim carrega, mais do que da proveniência.
 \end{abstract}
 
 \begin{IEEEkeywords}
@@ -24,13 +23,12 @@ pipelines de IA generativa, propagação de erros, sistemas multiagente, observa
 \begin{abstract}
 In multi-stage generative AI pipelines, an error introduced early can reach the final answer with no trace of where it started.
 This work investigates how the handoff contract, the format of the information exchanged between stages, affects the propagation, correction and attribution of such an error.
-A fixed three-stage pipeline runs on FinanceBench under four contracts, free text (A), typed (B), typed with lineage (C), and typed with lineage plus the source evidence snippet (D), and a deterministic injector corrupts the same claim in all four, with GPT-5.6 Luna, Claude Haiku 4.5 and Qwen3.5 9B.
-Structure alone improved neither accuracy nor error survival and increased propagation depth, almost entirely because the schema makes the next stage repeat the corrupted value.
-Lineage raised root-cause claim attribution by 0.07 to 0.15 without reducing error survival, and this gain is concentrated in year errors, where the document name revealed the original value.
-In the two API models, evidence increased the retention of the correct answer for value errors and brought attribution to about 0.8, with or without lineage, and an instruction to check values against the evidence amplified this effect for fewer than one hundred tokens.
-An A/A test showed that survival measured against a single control has a high noise floor.
-In Qwen, the trace with evidence allowed the error to be located only when read by a stronger auditor.
-In a typed handoff, reliability gains came from verifiable content rather than provenance, and they depend on the model being able to use it.
+A fixed three-stage pipeline answers FinanceBench questions under four contracts, free text (A), typed (B), with lineage (C), and with lineage plus source evidence (D), and a deterministic injector corrupts the same claim in all four, with GPT-5.6 Luna, Claude Haiku 4.5 and Qwen3.5 9B.
+Structure alone improved neither accuracy nor containment, and the increase in propagation it brought came almost entirely from the schema making the next stage repeat the corrupted value.
+Lineage improved root-cause claim attribution only slightly, and almost only for year errors, where the document name revealed the original value.
+Evidence was the mechanism that improved the fate of value errors. In the API models, it increased the retention of the correct answer and brought attribution to about 0.8, with or without lineage, and a checking instruction amplified the effect. In Qwen, it improved accuracy, and attribution rose only with a stronger auditor.
+An A/A test also showed that error survival measured against a single control has a high noise floor.
+In a typed handoff with intact evidence, reliability gains came from the verifiable content the claim carries rather than from provenance.
 \end{abstract}
 
 \begin{IEEEkeywords}

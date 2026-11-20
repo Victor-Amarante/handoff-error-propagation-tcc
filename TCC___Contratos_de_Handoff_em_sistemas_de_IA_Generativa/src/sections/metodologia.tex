@@ -177,6 +177,7 @@ Por fim, como toda métrica de contenção compara duas execuções, parte da di
 
 O desenho aninhado mede o efeito de cada mecanismo dado o anterior, e não permite dizer se uma camada é dispensável.
 Por isso, o experimento foi estendido com três condições que reaproveitam o mesmo estado extraído e o mesmo erro injetado da rodada principal (Tabela~\ref{tab:condicoes}). As três rodaram nos três modelos.
+Elas foram definidas depois da análise da rodada principal, a partir das perguntas que ela deixou em aberto, e não fazem parte do teste das hipóteses. Os resultados que dependem delas devem ser lidos como exploratórios.
 A condição E carrega a evidência sem o lineage. Com B, C e D, ela fecha um fatorial 2 $\times$ 2 entre lineage e evidência, e permite medir o efeito de cada mecanismo na presença e na ausência do outro.
 A condição B$'$ acrescenta ao schema do Analista, antes dos claims, um campo de texto em que o modelo pode desenvolver o cálculo. Ela roda só nas execuções de controle e serve para separar o efeito do contrato tipado do efeito de impor uma saída em JSON sem espaço para raciocinar, mecanismo que Tam et al. associam à perda de acurácia sob restrições de formato \cite{tam2024speak}. O Redator de B$'$ recebe exatamente o handoff de B.
 A condição D$'$ é a D com uma frase a mais na instrução do Analista e do Redator, que pede para conferir cada valor contra o trecho de evidência e, havendo divergência, confiar na evidência.
@@ -221,5 +222,6 @@ O que varia entre as condições é a entrada do auditor, não o formato da resp
 A formulação segue a de Zhang et al., que definem a atribuição de falhas como a identificação do agente responsável e do passo decisivo \cite{zhang2025which}. Aqui, os equivalentes são o estágio de origem e o claim de origem.
 O acerto do claim é verificado pelo conteúdo, com o mesmo critério nas quatro condições: o auditor precisa informar a métrica e o valor do claim corrompido tal como ele aparece no trace.
 No erro de valor, esse valor é o número corrompido. No erro de metadado, o número do claim continua intacto e o errado é o ano, então vale o número do claim, já que o auditor que aponta o claim certo informa esse número, e não o ano.
-O critério original do protocolo aceitava também o identificador do claim, que só existe em C e D, e, no erro de metadado, exigia que o auditor informasse o ano corrompido, o que quase nunca acontece. Ele é reportado como medida secundária, e a Seção~\ref{sec:rq2} mostra o efeito dessa diferença.
+O critério original do protocolo aceitava também o identificador do claim, que só existe em C e D, e, no erro de metadado, exigia que o auditor informasse o ano corrompido, o que quase nunca acontece.
+O critério de conteúdo foi adotado depois da primeira análise, quando ficou claro que o original dava a A e B um acerto perto de zero por construção. Por isso, o original continua reportado como medida secundária, e a Seção~\ref{sec:rq2} mostra o efeito dessa diferença.
 O custo do auditor é registrado à parte e não entra no custo operacional do pipeline.
