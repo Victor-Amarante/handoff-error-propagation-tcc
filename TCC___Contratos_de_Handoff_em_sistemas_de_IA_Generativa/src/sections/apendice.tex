@@ -97,17 +97,17 @@ Return `answer_text` with the final answer, plus `answer_claim`: the typed claim
 Return `answer_text` with the final answer, plus `answer_claim`: the typed claim that the answer asserts. Give it an id of the form W01, set `generated_by` to 'writer', list in `derived_from` the ids of the analyst claims it came from, and carry over the `evidence` snippet.
 \end{lstlisting}
 
-\noindent\textit{Condição E (Analista e Redator): como B, acrescida de}
+\noindent\textit{Condição E (Analista e Redator): como B, acrescida da instrução abaixo}
 \begin{lstlisting}
 Carry over the `evidence` snippet of the input claim you used.
 \end{lstlisting}
 
-\noindent\textit{Condição B' (Analista): como B, acrescida de}
+\noindent\textit{Condição B' (Analista): como B, acrescida da instrução abaixo}
 \begin{lstlisting}
 Use `reasoning` to work through the computation before writing the claims.
 \end{lstlisting}
 
-\noindent\textit{Condição D' (Analista e Redator): como D, acrescida de}
+\noindent\textit{Condição D' (Analista e Redator): como D, acrescida da instrução abaixo}
 \begin{lstlisting}
 Before using any input value, check it against its `evidence` snippet; if they disagree, trust the evidence.
 \end{lstlisting}

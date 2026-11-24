@@ -35,9 +35,9 @@ parts.append(block("Redator: instrução de tarefa", WRITER_TASK))
 for c in MAIN_CONDITIONS:
     parts.append(block(f"Redator: formato da condição {c}", WRITER_FORMAT[c]))
 parts += [
-    block("Condição E (Analista e Redator): como B, acrescida de", "Carry over the `evidence` snippet of the input claim you used."),
-    block("Condição B' (Analista): como B, acrescida de", "Use `reasoning` to work through the computation before writing the claims."),
-    block("Condição D' (Analista e Redator): como D, acrescida de", VERIFY_SENTENCE),
+    block("Condição E (Analista e Redator): como B, acrescida da instrução abaixo", "Carry over the `evidence` snippet of the input claim you used."),
+    block("Condição B' (Analista): como B, acrescida da instrução abaixo", "Use `reasoning` to work through the computation before writing the claims."),
+    block("Condição D' (Analista e Redator): como D, acrescida da instrução abaixo", VERIFY_SENTENCE),
     block("Auditor", AUDITOR_INSTRUCTIONS),
     "Os schemas são modelos Pydantic com \\texttt{extra=\"forbid\"}. Os campos de cada claim por condição estão na Tabela~\\ref{tab:condicoes}: "
     "\\texttt{metric} (texto), \\texttt{value} (número), \\texttt{unit} (texto, com a lista USD\\_K, USD\\_M, USD\\_B, PCT e RATIO só na descrição), "
