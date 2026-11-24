@@ -191,9 +191,3 @@ Nos traces do Haiku, a RCCA do auditor do GPT ficou perto da do próprio Haiku e
 Nos traces do Qwen, a diferença foi grande. Lida pelo auditor do GPT, a condição D teve RCCA de 0,73, contra 0,45 com o auditor do próprio Qwen, e o ganho de C para D passou de +0,01 para +0,42.
 A atribuição baixa do Qwen em D vinha do auditor. O handoff do Qwen carrega a evidência que permite localizar o erro, mas o próprio Qwen não a usa para isso.
 O falso positivo do auditor do GPT nos controles do Qwen, entre 0,42 e 0,64, é mais alto que nos do próprio GPT, o que é coerente com a acurácia mais baixa do controle do Qwen: parte desses culpados pode ser erro nativo do pipeline, e não alarme falso.
-
-\subsection{Replicação entre modelos}\label{sec:replicacao}
-
-Dois resultados se repetiram nos três modelos: a estrutura sozinha não melhorou a correção e aumentou a profundidade de propagação, quase toda por repetição literal do valor corrompido, embora no Qwen esse aumento não se distinga do piso de ruído, e o lineage elevou a RCCA sem reduzir a sobrevivência do erro, com um ganho que se concentra no erro de metadado e que encolhe de cerca de 0,34 para 0,07 a 0,15 quando o acerto é contado pelo conteúdo.
-O efeito da evidência se replicou entre os dois modelos de API, com aumento de retenção e de acurácia estrita e RCCA perto de 0,8, e, no fatorial, ele aparece com ou sem lineage. No Qwen, a evidência melhorou a acurácia final, mas a atribuição só melhorou quando os traces foram lidos pelo auditor do GPT. No fatorial, a evidência sem lineage elevou a RCCA do Qwen, e a instrução de conferência, que nos modelos de API quase eliminou a presença literal do valor corrompido, não teve efeito nele.
-O Qwen também foi o único modelo a violar o contrato com frequência e o que mais perdeu acurácia com o formato estruturado nas execuções de controle.

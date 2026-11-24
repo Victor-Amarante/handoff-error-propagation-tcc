@@ -19,7 +19,8 @@ As quedas de ESR que acompanharam esses ganhos não se distinguem do piso de ru�
 Uma instrução para conferir o valor contra a evidência ampliou o efeito e, no GPT, levou a ESR do erro de valor de 0,69 para 0,25, por menos de cem tokens a mais.
 No Qwen3.5 9B, a evidência melhorou a acurácia final, e o trace passou a permitir localizar o erro, mas só quando lido pelo auditor do GPT, e a instrução de conferência não teve efeito.
 
-A principal contribuição do trabalho é mostrar, com o contrato isolado como variável manipulada, que, num handoff tipado, o que reduziu o dano de um erro de valor foi acrescentar conteúdo verificável, com ou sem proveniência, e que a proveniência sozinha melhorou a atribuição sem conter o erro.
+A principal contribuição do trabalho é mostrar, com o contrato isolado como variável manipulada, que, num handoff tipado, o que reduziu o dano de um erro de valor foi acrescentar conteúdo verificável, e que a proveniência sozinha melhorou a atribuição sem conter o erro.
+A indicação de que esse efeito não depende da proveniência vem da condição E, exploratória e definida depois da primeira análise.
 Esse efeito foi medido com a evidência sempre íntegra, já que o injetor corrompe o valor e preserva o trecho da fonte, e corresponde ao caso mais favorável a ela.
 O desenho também não testou a evidência em prosa, e por isso não permite dizer se o mesmo efeito apareceria sem a estrutura.
 Junto com esse resultado, o trabalho deixa um protocolo e um instrumento de medida que podem ser reaplicados a outros pipelines: perturbações determinísticas com ground truth registrado, um braço de controle sem injeção, métricas calculadas da mesma forma em todas as condições e três linhas de base para interpretá-las, o placebo do auditor, o piso de ruído e a auditoria cruzada.

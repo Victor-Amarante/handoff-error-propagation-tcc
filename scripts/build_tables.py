@@ -160,6 +160,7 @@ def table_delta(stage,label,caption,comps):
         L.append(r'\hline')
     L+=[r'\end{tabular}',
         r'\\[2pt]{\scriptsize\raggedright Diferença média pareada por pergunta (segunda condição menos a primeira) e IC95\% bootstrap. Em negrito: intervalo que não inclui zero; $^{\dagger}$: não sobrevive à correção de Holm sobre as 24 comparações do modelo. '
+        r'Para ESR e profundidade, descontado o piso de ruído do teste A/A (Tabela~\ref{tab:verificacoes}), só o aumento de profundidade de A para B no GPT e no Haiku continua fora de zero. '
         r'$^{a}$Calculada só sobre as perguntas elegíveis nas duas condições comparadas, por isso não é a diferença das médias da Tabela~\ref{tab:principal}. '
         r'$^{b}$FESA menos o placebo da mesma pergunta e condição.\par}',
         r'\end{table*}']
@@ -176,7 +177,8 @@ def table_fate(stage,label,caption):
         for slug,_ in MODELS:
             fr=data[(slug,stage)]['fate']
             for c in 'ABCD':
-                cells.append(f"{100*fr.get(c,{}).get(key,0):.0f}")
+                v=100*fr.get(c,{}).get(key,0)
+                cells.append('$<$1' if 0<v<0.5 else f"{v:.0f}")
         L.append(lab+' & '+' & '.join(cells)+r' \\')
     L+=[r'\hline',r'\end{tabular}',
         r'\\[2pt]{\scriptsize\raggedright Percentual das execuções injetadas de cada condição. As colunas somam 100\% a menos de arredondamento. '
